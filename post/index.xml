@@ -6,10 +6,28 @@
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jul 2017 11:25:42 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jul 2017 12:30:42 +0900</lastBuildDate>
     
 	<atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hoge5</title>
+      <link>http://example.org/post/hoge5/</link>
+      <pubDate>Wed, 05 Jul 2017 12:30:42 +0900</pubDate>
+      
+      <guid>http://example.org/post/hoge5/</guid>
+      <description>githubから直接作成- two time</description>
+    </item>
+    
+    <item>
+      <title>Hoge4</title>
+      <link>http://example.org/post/hoge4/</link>
+      <pubDate>Wed, 05 Jul 2017 11:48:42 +0900</pubDate>
+      
+      <guid>http://example.org/post/hoge4/</guid>
+      <description>githubから直接作成3</description>
+    </item>
     
     <item>
       <title>Hoge3</title>
