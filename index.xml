@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>takatm&#39;s blog</title>
+    <title>takatomo&#39;s blog</title>
     <link>/</link>
-    <description>Recent content on takatm&#39;s blog</description>
+    <description>Recent content on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 05 Jul 2017 10:21:23 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About Me</title>
+      <link>/me/</link>
+      <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/me/</guid>
+      <description>Takatomo Honda chngng0103@gmail.com
+My featured skills and endorsements : Back-End Web Development, Web Scraping, Ruby on Rails, API Development, Test Automation, Network Design, Wireless Networking
+work history freee Software Engineer July 2016 - July 2017
+Business Development Engineering
+ collaborating partners and engineering new service never before directing project, designing architecture, programming, software testing and oparating  Archievements
+ https://corp.freee.co.jp/news/freee-paypal-1213-5949.html https://corp.freee.co.jp/news/20170329jnb-6167.html https://smaregi.jp/news/press/20170111391.php  nttdata R&amp;amp;D Engineer October 2012 - June 2016</description>
+    </item>
     
     <item>
       <title>hugo first post</title>
@@ -18,20 +32,6 @@
       
       <guid>/post/hoge/</guid>
       <description>ようこそ， Hugo の世界へ！</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>/me/</link>
-      <pubDate>Tue, 08 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/me/</guid>
-      <description>Takatomo Honda chngng0103@gmail.com
-My featured skills and endorsements : Back-End Web Development, Web Scraping, Ruby on Rails, API Development, Test Automation, Network Design, Wireless Networking
-work history freee Software Engineer July 2016 - July 2017
-Business Development Engineering - collaborating partners and engineering new service never before - directing project, designing architecture, programming, software testing and oparating
-Archievements - https://corp.freee.co.jp/news/freee-paypal-1213-5949.html - https://corp.freee.co.jp/news/20170329jnb-6167.html - https://smaregi.jp/news/press/20170111391.php
-nttdata R&amp;amp;D Engineer October 2012 - June 2016</description>
     </item>
     
   </channel>
