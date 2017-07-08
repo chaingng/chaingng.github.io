@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>takatm&#39;s blog</title>
+    <link>/</link>
+    <description>Recent content on takatm&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Jul 2017 11:48:42 +0900</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hoge4</title>
-      <link>http://example.org/post/hoge4/</link>
+      <link>/post/hoge4/</link>
       <pubDate>Wed, 05 Jul 2017 11:48:42 +0900</pubDate>
       
-      <guid>http://example.org/post/hoge4/</guid>
+      <guid>/post/hoge4/</guid>
       <description>githubから直接作成3</description>
     </item>
     
     <item>
       <title>Hoge3</title>
-      <link>http://example.org/post/hoge3/</link>
+      <link>/post/hoge3/</link>
       <pubDate>Wed, 05 Jul 2017 11:25:42 +0900</pubDate>
       
-      <guid>http://example.org/post/hoge3/</guid>
+      <guid>/post/hoge3/</guid>
       <description>3度目の投稿、hugoコマンドからではなく直接作る
 touch test.log  </description>
     </item>
     
     <item>
       <title>Hoge2</title>
-      <link>http://example.org/post/hoge2/</link>
+      <link>/post/hoge2/</link>
       <pubDate>Wed, 05 Jul 2017 11:15:42 +0900</pubDate>
       
-      <guid>http://example.org/post/hoge2/</guid>
+      <guid>/post/hoge2/</guid>
       <description>2度目の投稿
 touch test.log  </description>
     </item>
     
     <item>
       <title>Hoge</title>
-      <link>http://example.org/post/hoge/</link>
+      <link>/post/hoge/</link>
       <pubDate>Wed, 05 Jul 2017 10:21:23 +0900</pubDate>
       
-      <guid>http://example.org/post/hoge/</guid>
+      <guid>/post/hoge/</guid>
       <description>ようこそ， Hugo の世界へ！</description>
     </item>
     
