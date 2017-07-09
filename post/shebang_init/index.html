@@ -3,17 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>takatomo&#39;s blog</title>
+<title>shebangから理解するUNIXの仕組み</title>
 
 <meta name="generator" content="Hugo 0.25-DEV" />
-<meta property="og:title" content="takatomo&#39;s blog" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:title" content="shebangから理解するUNIXの仕組み" />
+<meta property="og:description" content="unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。 その当たり前をマジックとして理解せずに置いておいていけはいけないなと思い、 仕組みについて調べて理解してみた。
+Fork-Exec まずはFork-Execについて知っている必要がある。
+fork -wikipediaによると以下の通り。
+Fork-Execは、UNIXで一般的に使われる手法であり、新たなプログラムをプロセスとして実行する。 fork()は親プロセスを2つの同一内容のプロセスに（フォークの先のように）分岐させるシステムコールである。 fork()によって子プロセスが親プロセスのコピーとして生成され、子プロセスがexec()システムコールを呼び出すことで（子プロセス）自身の内容を置き換える。  要は、UNIXでコマンドを実行されると実行したいコマンドはforkにより 子プロセスが生成され、その子プロセスにてexec()にて実行される。
+exec() exec() -wikipediaによると execveをシステムコールとするとのこと。
+現代のたいていのUnixにおける実装では、最も汎用的なexecveをシステムコールとし（すなわちexecve(2)）、 他はそれを呼ぶライブラリ関数（たとえばexec(3)）としている。  なので、execve()を調べてみる。
+evecve() EXECVEによると、 指定されたプログラムはバイナリ形式、または以下の形式の行で始まるスクリプトでなければならないとある。
+execve() は、filename によって指定されたプログラムを実行する。 filename は、バイナリ実行形式か、 以下の形式の行で始まるスクリプトでなければならない。 #! interpreter [optional-arg]  つまり、execve()にてファイルを実行するための形式として、ファイルの先頭にシェバンを指定しなければならないことがわかった。
+まとめ シェバンと呼ばれ、スクリプトの最初で指定している#!/bin/shは
+ UNIXでコマンドが実行される仕組みはFork-Execであり Fork-Execではコマンドはexec()で実行される exec()はシステムコールでexecve()を呼び出す execve()で実行できるfileはバイナリ形式またはファイルの先頭に#! interpreter [optional-arg] を指定しなければならない  ということが理解できた。仕組み理解するの大事。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/shebang_init/" />
 
 
 
-<meta property="og:updated_time" content="2017-07-09T09:22:00&#43;09:00"/>
+<meta property="article:published_time" content="2017-07-09T09:22:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-07-09T09:22:00&#43;09:00"/>
+
 
 
 
@@ -26,7 +37,7 @@
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-<link rel="alternate" type="application/rss+xml" title="takatomo&#39;s blog Feed" href="/index.xml">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="/js/scripts.js"></script>
@@ -54,54 +65,86 @@
 		</header>
 		<div class="wrapper clearfix">
 
-	<div class="main-content list content" role="main">
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/shebang_init/" rel="bookmark">shebangから理解するUNIXの仕組み</a>
-			</h3>
-			<div class="list__meta meta">
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">shebangから理解するUNIXの仕組み</h1>
+			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2017-07-09T09:22:00">July 09, 2017</time>
-			</div>
+				<time class="post__meta-date" datetime="2017-07-09T09:22:00">July 09, 2017</time>
+			</p>
 		</header>
-		<div class="list__excerpt">
-			unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。 その当たり前をマジックとして理解せずに置いておいていけはいけないなと思い、 仕組みについて調べて理解してみた。
-Fork-Exec まずはFork-Execについて知っている必要がある。
-fork -wikipediaによると以下の通り。
-Fork-Execは、UNIXで一般的に使われる手法であり、新たなプログラムをプロセスとして実行する。 fork()は親プロセスを2つの同一内容のプロセスに（フォークの先のように）分岐させるシステムコールである。 fork()によって子プロセスが親プロセスのコピーとして生成され、子プロセスがexec()システムコールを呼び出すことで（子プロセス）自身の内容を置き換える。  要は、UNIXでコマンドを実行されると実行したいコマンドはforkにより 子プロセスが生成され、その子プロセスにてexec()にて実行される。
-exec() exec() -wikipediaによると execveをシステムコールとするとのこと。
-現代のたいていのUnixにおける実装では、最も汎用的なexecveをシステムコールとし（すなわちexecve(2)）、 他はそれを呼ぶライブラリ関数（たとえばexec(3)）としている。  なので、execve()を調べてみる。
-evecve() EXECVEによると、 指定されたプログラムはバイナリ形式、または以下の形式の行で始まるスクリプトでなければならないとある。
-execve() は、filename によって指定されたプログラムを実行する。 filename は、バイナリ実行形式か、 以下の形式の行で始まるスクリプトでなければならない。 #! interpreter [optional-arg]  つまり、execve()にてファイルを実行するための形式として、ファイルの先頭にシェバンを指定しなければならないことがわかった。
-まとめ シェバンと呼ばれ、スクリプトの最初で指定している#!/bin/shは
- UNIXでコマンドが実行される仕組みはFork-Execであり Fork-Execではコマンドはexec()で実行される exec()はシステムコールでexecve()を呼び出す execve()で実行できるfileはバイナリ形式またはファイルの先頭に#! interpreter [optional-arg] を指定しなければならない  ということが理解できた。仕組み理解するの大事。
-		</div>
-	</div>
-</article>
+		<div class="post__content clearfix">
+			
 
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/hoge/" rel="bookmark">hugo first post</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2017-07-05T10:21:23">July 05, 2017</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			ようこそ， Hugo の世界へ！
-		</div>
-	</div>
-</article>
+<p>unixでシェルスクリプトを書くとき、冒頭に<code>#!/bin/sh</code>と書くことは当たり前なのだけど、
+時々コマンドなんだっけ、と忘れることがあった。
+その当たり前をマジックとして理解せずに置いておいていけはいけないなと思い、
+仕組みについて調べて理解してみた。</p>
 
+<h1 id="fork-exec">Fork-Exec</h1>
+
+<p>まずはFork-Execについて知っている必要がある。</p>
+
+<p><a href="https://ja.wikipedia.org/wiki/Fork#Fork-Exec">fork -wikipedia</a>によると以下の通り。</p>
+
+<pre><code>Fork-Execは、UNIXで一般的に使われる手法であり、新たなプログラムをプロセスとして実行する。
+fork()は親プロセスを2つの同一内容のプロセスに（フォークの先のように）分岐させるシステムコールである。
+fork()によって子プロセスが親プロセスのコピーとして生成され、子プロセスがexec()システムコールを呼び出すことで（子プロセス）自身の内容を置き換える。
+</code></pre>
+
+<p>要は、UNIXでコマンドを実行されると実行したいコマンドはforkにより
+子プロセスが生成され、その子プロセスにてexec()にて実行される。</p>
+
+<h1 id="exec">exec()</h1>
+
+<p><a href="https://ja.wikipedia.org/wiki/Exec">exec() -wikipedia</a>によると
+execveをシステムコールとするとのこと。</p>
+
+<pre><code>現代のたいていのUnixにおける実装では、最も汎用的なexecveをシステムコールとし（すなわちexecve(2)）、
+他はそれを呼ぶライブラリ関数（たとえばexec(3)）としている。
+</code></pre>
+
+<p>なので、execve()を調べてみる。</p>
+
+<h1 id="evecve">evecve()</h1>
+
+<p><a href="https://linuxjm.osdn.jp/html/LDP_man-pages/man2/execve.2.html">EXECVE</a>によると、
+指定されたプログラムはバイナリ形式、または以下の形式の行で始まるスクリプトでなければならないとある。</p>
+
+<pre><code>execve() は、filename によって指定されたプログラムを実行する。 filename は、バイナリ実行形式か、 以下の形式の行で始まるスクリプトでなければならない。
+#! interpreter [optional-arg]
+</code></pre>
+
+<p>つまり、execve()にてファイルを実行するための形式として、ファイルの先頭にシェバンを指定しなければならないことがわかった。</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>シェバンと呼ばれ、スクリプトの最初で指定している<code>#!/bin/sh</code>は</p>
+
+<ul>
+<li>UNIXでコマンドが実行される仕組みはFork-Execであり</li>
+<li>Fork-Execではコマンドはexec()で実行される</li>
+<li>exec()はシステムコールでexecve()を呼び出す</li>
+<li>execve()で実行できるfileはバイナリ形式またはファイルの先頭に<code>#! interpreter [optional-arg]</code> を指定しなければならない</li>
+</ul>
+
+<p>ということが理解できた。仕組み理解するの大事。</p>
+
+		</div>
 		
 
-		
+	</article>
+	
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/post/hoge/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">hugo first post</p></a>
 	</div>
+</nav>
+
+	
+</div>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 	

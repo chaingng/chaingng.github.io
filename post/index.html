@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-07-05T10:21:23&#43;09:00"/>
+<meta property="og:updated_time" content="2017-07-09T09:22:00&#43;09:00"/>
 
 
 
@@ -62,6 +62,32 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/post/shebang_init/" rel="bookmark">shebangから理解するUNIXの仕組み</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2017-07-09T09:22:00">July 09, 2017</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。 その当たり前をマジックとして理解せずに置いておいていけはいけないなと思い、 仕組みについて調べて理解してみた。
+Fork-Exec まずはFork-Execについて知っている必要がある。
+fork -wikipediaによると以下の通り。
+Fork-Execは、UNIXで一般的に使われる手法であり、新たなプログラムをプロセスとして実行する。 fork()は親プロセスを2つの同一内容のプロセスに（フォークの先のように）分岐させるシステムコールである。 fork()によって子プロセスが親プロセスのコピーとして生成され、子プロセスがexec()システムコールを呼び出すことで（子プロセス）自身の内容を置き換える。  要は、UNIXでコマンドを実行されると実行したいコマンドはforkにより 子プロセスが生成され、その子プロセスにてexec()にて実行される。
+exec() exec() -wikipediaによると execveをシステムコールとするとのこと。
+現代のたいていのUnixにおける実装では、最も汎用的なexecveをシステムコールとし（すなわちexecve(2)）、 他はそれを呼ぶライブラリ関数（たとえばexec(3)）としている。  なので、execve()を調べてみる。
+evecve() EXECVEによると、 指定されたプログラムはバイナリ形式、または以下の形式の行で始まるスクリプトでなければならないとある。
+execve() は、filename によって指定されたプログラムを実行する。 filename は、バイナリ実行形式か、 以下の形式の行で始まるスクリプトでなければならない。 #! interpreter [optional-arg]  つまり、execve()にてファイルを実行するための形式として、ファイルの先頭にシェバンを指定しなければならないことがわかった。
+まとめ シェバンと呼ばれ、スクリプトの最初で指定している#!/bin/shは
+ UNIXでコマンドが実行される仕組みはFork-Execであり Fork-Execではコマンドはexec()で実行される exec()はシステムコールでexecve()を呼び出す execve()で実行できるfileはバイナリ形式またはファイルの先頭に#! interpreter [optional-arg] を指定しなければならない  ということが理解できた。仕組み理解するの大事。
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/post/hoge/" rel="bookmark">hugo first post</a>
 			</h3>
 			<div class="list__meta meta">
@@ -96,6 +122,7 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/shebang_init/">shebangから理解するUNIXの仕組み</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/hoge/">hugo first post</a></li>
 		</ul>
 	</div>
