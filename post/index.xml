@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on takatomo&#39;s blog</title>
-    <link>/post/</link>
+    <link>https://chaingng.github.io/post/</link>
     <description>Recent content in Posts on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 09 Jul 2017 09:22:00 +0900</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chaingng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>shebangから理解するUNIXの仕組み</title>
-      <link>/post/shebang_init/</link>
+      <link>https://chaingng.github.io/post/shebang_init/</link>
       <pubDate>Sun, 09 Jul 2017 09:22:00 +0900</pubDate>
       
-      <guid>/post/shebang_init/</guid>
+      <guid>https://chaingng.github.io/post/shebang_init/</guid>
       <description>unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。 その当たり前をマジックとして理解せずに置いておいていけはいけないなと思い、 仕組みについて調べて理解してみた。
 Fork-Exec まずはFork-Execについて知っている必要がある。
 fork -wikipediaによると以下の通り。
@@ -31,10 +31,10 @@ execve() は、filename によって指定されたプログラムを実行す�
     
     <item>
       <title>hugo first post</title>
-      <link>/post/hoge/</link>
+      <link>https://chaingng.github.io/post/hoge/</link>
       <pubDate>Wed, 05 Jul 2017 10:21:23 +0900</pubDate>
       
-      <guid>/post/hoge/</guid>
+      <guid>https://chaingng.github.io/post/hoge/</guid>
       <description>ようこそ， Hugo の世界へ！</description>
     </item>
     
