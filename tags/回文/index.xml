@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>回文 on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E5%9B%9E%E6%96%87/</link>
+    <description>Recent content in 回文 on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 05 Nov 2014 10:01:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E5%9B%9E%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRM 625 DIV1 Easy - PalindromePermutations (×)</title>
+      <link>https://chaingng.github.io/post/srm-625-div1-easy---palindromepermutations-/</link>
+      <pubDate>Wed, 05 Nov 2014 10:01:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-625-div1-easy---palindromepermutations-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11856&amp;amp;rd=15858
+・ある文字列が与えられる。
+・この文字をシャッフルした時に、回文となる確率を求める。
+解き方 
+・まず与えられた文字列が回文となるかどうか判定する必要がある。
+・すべてのアルファベットについて出現回数を調べる。
+・このとき、すべてのアルファベットの出現回数が偶数回なら回文となる。
+また、奇数回出現するアルファベットが１つだけなら回文となる。
+それ以外は回文とならない。
+・次に、回文となるときの確率を求める。
+
+→System Failed
+・まず奇数回出現するアルファベットがある場合、その中央にそのアルファベットを
+置く必要がある。その確率はその出現回数／文字列長。
+そこから出現回数と文字列長をデクリメントする。
+・あとはすべてのアルファベットが偶数回の出現回数となる。
+あるアルファベット２つ置く時、それが回文となるのはひとつアルファベットを置いたときに
+一意に定まる。
+よって、ひとつアルファベットを置かれたとき、そのあと残りのアルファベットを指定の場所に置く　ので(出現回数-1)/(L-1)となる。
+&amp;nbsp; （例）
+L(文字列長)=4 ,アルファベットaのcnt(出現回数)=2のとき
+すべての並び：aaxx, axax, axxa, xaax, xaxa, xxaa
+うち回文のもの：axxa, xaax
+&amp;nbsp; つまり(cnt-1)/(L-1)となる。
+・反省：確率の計算の基本が・・・。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i !</description>
+    </item>
+    
+    <item>
+      <title>SRM 607 DIV1 Easy - PalindromicSubstringsDiv1 xx</title>
+      <link>https://chaingng.github.io/post/srm-607-div1-easy---palindromicsubstringsdiv1-xx/</link>
+      <pubDate>Wed, 05 Feb 2014 22:34:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-607-div1-easy---palindromicsubstringsdiv1-xx/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12964&amp;amp;rd=15840
+ある文字列が与えられる。
+文字列はアルファベットと、？からなり、？には任意の文字を入れることができる。
+？に任意の文字が入れられたとき、
+その文字列中の回文であるサブ文字列の数の期待値を求める。
+解き方 
+文字列は最大５０００であるため、？の全ての場合に対して期待値を求めては間に合わない。
+ここで回文の判定については、その両端の２つの文字列だけを見ればよいことがわかる。
+ある文字列が回文であれば、その両端の文字の判定結果をかけていけば回文の判定は時間内に間に合う。
+データ構造としてdp[i][j]をi番目からj番目までの文字列、と定義することで
+計算量は最大で5000*5000/2になるので時間内に解くことができる。
+コード 
+double dp[5010][5010];
+string s;
+class PalindromicSubstringsDiv1 {
+public:
+double calc(int i,int j){
+if(s[i]!=&#39;?&#39;&amp;amp;&amp;amp;s[j]!=&#39;?&#39;) return s[i]==s[j] ? 1.0 : 0.0;
+return 1.0/26.0;
+}
+double expectedPalindromes(vector&amp;lt;string&amp;gt; S1, vector&amp;lt;string&amp;gt; S2) {
+double ret=0.0;
+memset(dp,0,sizeof(dp));
+s=&#34;&#34;;
+FORE(i,0,S1.size())s+=S1[i];
+FORE(i,0,S2.size())s+=S2[i];
+int n=s.size();
+FORE(i,0,n){
+dp[i][i]=1.0;
+ret+=dp[i][i];
+}
+FORE(i,0,n-1){
+dp[i][i+1]=calc(i,i+1);
+ret+=dp[i][i+1];
+}
+FORE(len,3,n+1){
+for(int i=0;i+len-1&amp;lt;n;i++){
+int j=i+len-1;
+dp[i][j]=dp[i+1][j-1]*calc(i,j);
+ret+=dp[i][j];
+}
+}
+return ret;</description>
+    </item>
+    
+  </channel>
+</rss>

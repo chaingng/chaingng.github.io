@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>takatomo&#39;s blog</title>
+
+<meta name="generator" content="Hugo 0.25-DEV" />
+<meta property="og:title" content="takatomo&#39;s blog" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chaingng.github.io/" />
+
+
+
+<meta property="og:updated_time" content="2014-11-08T11:57:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="takatomo&#39;s blog Feed" href="https://chaingng.github.io/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+	<div class="main-content list content" role="main">
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2013-tco-round-1c-easy---thearray-/" rel="bookmark">2013 TCO Round 1C Easy - TheArray (×○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-08T11:57:00">November 08, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12455&amp;rd=15585
+・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。
+・スタート位置からn回移動し、最後に最後の位置に到達している必要があるとき、
+途中で到達しうる最大の高さを求める。
+解き方 
+・問題として２分探索が使えそう。
+・ある位置を考えた時、スタート位置から到達するために必要なターン数と、そこから最後の位置に到達するためのターン数の和がｎ以下であればよさそう。
+・２分探索の最小値はスタート位置もしくは最後の位置のうち小さいもの、最後に得られた値と小喜一のうち最大のものが答えになる。
+→System Passed
+・他の解き方、というか一番わかりやすい解き方として、nは10^6で全探索できるので
+各ターンにおいて最初の位置から到達しうる高さ、最後の位置から到達しうる高さのうち最小の　ものを取り、そのうち最大のものを求めれば簡単。
+・反省：全探索できる変数、探索を考えてみる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class TheArray {
+public: int find(int n, int d, int first, int last) {
+if(d==0)return max(first,last);
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2013-tco-round-1c-easy---thearray-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-628-div1-easy---divisorspower-/" rel="bookmark">SRM 628 DIV1 Easy - DivisorsPower (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-07T21:28:00">November 07, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13241&amp;rd=16009
+・ある正の整数nを考えた時、その約数の数である関数d(n)とh(n)=n*d(n)を考える。
+・nが与えられた時、h(x)を満たす最も小さいxを求める。そのようなxがなければ-1を返す。
+解き方 
+・nは10^18のため工夫が必要そう。
+・与えられたnを素因数分解して、その階乗で考えればよいか。
+・でも素因数分解が間に合わなさそう。
+・ではｎから平方根、３乗根・・・としていき探索すればよいか。
+・３乗根以上はベースの数を求めるのが難しそう。２分探索も無理がある。
+→他の人のコードをみる
+・２乗の場合を除けば、３乗以上になるのでベースの数は10^6までになるので
+全探索できる。
+・２乗の場合は平方根をとれば簡単に確かめられる。
+・反省：階乗の問題は２乗と３乗以上を別に考えて探索範囲を狭めることで全探索ができる、
+という視点は勉強になった。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class DivisorsPower {
+public:
+long long calc(long long x){
+long long ret=0;
+for(long long i=1;i*i&lt;=x;i++)if(x%i==0)ret+=1+(i*i!
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-628-div1-easy---divisorspower-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-627-div1-easy----happyletterdiv1-/" rel="bookmark">SRM 627 DIV1 Easy -  HappyLetterDiv1 (××)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-06T22:39:00">November 06, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13274&amp;rd=16008
+・ある文字列が与えられる。
+・２つ異なる文字を選んで消す操作を繰り返し、最後に残るアルファベットがひとつもしくは
+すべて同じアルファベットであるなら、そのアルファベットは答えとなる。
+・複数そのようなアルファベットがある際は、連結して昇順に並べたものを返す。
+解き方 
+・各アルファベットの出現回数を調べる。
+・すべてのアルファベットに対し、そのアルファベットを除いたものすべてに対しペアを求め
+あまりがそのアルファベット-1以上であれば答えを満たす。
+・ペアの消し方については、昇順にソートし１番最後と２番目に最後を引いていきソートを繰り返す。
+・サンプル通った。提出。
+→System Failed.
+・ペアの消し方がまずそう。１番最後と２番目に最後の文字を一つずつ引いていけば最適となる。
+・システム通った。
+・別解として、一番多く出現するアルファベットが過半数を超えなく、かつ合計が偶数であればすべて消すことができる。この方法は知っていたのに引き出せなかった。
+・反省：計算量が間に合うのであれば一番確実な方法を採用する。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class HappyLetterDiv1 {
+public: string getHappyLetters(string letters) {
+int n=letters.size();
+int num[26];
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-627-div1-easy----happyletterdiv1-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-626-div1-easy---fixeddicegamediv1-/" rel="bookmark">SRM 626 DIV1 Easy - FixedDiceGameDiv1 (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-05T18:55:00">November 05, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13239&amp;rd=15859
+・AliceとBobでゲームを行う。
+・Aliceはa個b面あるサイコロを投げ、Bobはc個d面あるサイコロを投げる。
+・b面あるサイコロは1～bの数字が書かれており、d面あるサイコロは1～dの数字が書かれている。
+・Aliceが勝った時、出た目の期待値を求める。
+・Aliceが勝つケースがないときは-1を返す。
+解き方 
+・まずAliceが勝つかどうか判定する。
+・Bobの一番小さい数はcであるので、c+1以上の面が出るときに勝つことができる。
+・次にAliceの勝つ面について、どれだけの確率があるか計算する。
+・dpを用いればできそう。
+・現在までに使ったサイコロの数、現在までの合計のスコアを持つdpを作れば
+場合の数は計算できる。
+・確率として、勝つ面が出た時のすべての場合の数の和を取り、最後に割ってあげる。
+・サンプルはすべて通った。
+→System Failed
+・Aliceだけの面をみていたが、Bobの面も見る必要がある。
+・つまり、Aliceの勝つ数についての場合の数＊Bobがそれに負けるときの場合の数を足してあげ、
+その和を全てとり最後に割ってあげる必要がある。
+・反省：確率の問題に弱い・・・。基礎が足りないのを実感。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class FixedDiceGameDiv1 {
+public: double getExpectation(int a, int b, int c, int d) {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-626-div1-easy---fixeddicegamediv1-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-625-div1-easy---palindromepermutations-/" rel="bookmark">SRM 625 DIV1 Easy - PalindromePermutations (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-05T10:01:00">November 05, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11856&amp;rd=15858
+・ある文字列が与えられる。
+・この文字をシャッフルした時に、回文となる確率を求める。
+解き方 
+・まず与えられた文字列が回文となるかどうか判定する必要がある。
+・すべてのアルファベットについて出現回数を調べる。
+・このとき、すべてのアルファベットの出現回数が偶数回なら回文となる。
+また、奇数回出現するアルファベットが１つだけなら回文となる。
+それ以外は回文とならない。
+・次に、回文となるときの確率を求める。
+
+→System Failed
+・まず奇数回出現するアルファベットがある場合、その中央にそのアルファベットを
+置く必要がある。その確率はその出現回数／文字列長。
+そこから出現回数と文字列長をデクリメントする。
+・あとはすべてのアルファベットが偶数回の出現回数となる。
+あるアルファベット２つ置く時、それが回文となるのはひとつアルファベットを置いたときに
+一意に定まる。
+よって、ひとつアルファベットを置かれたとき、そのあと残りのアルファベットを指定の場所に置く　ので(出現回数-1)/(L-1)となる。
+&nbsp; （例）
+L(文字列長)=4 ,アルファベットaのcnt(出現回数)=2のとき
+すべての並び：aaxx, axax, axxa, xaax, xaxa, xxaa
+うち回文のもの：axxa, xaax
+&nbsp; つまり(cnt-1)/(L-1)となる。
+・反省：確率の計算の基本が・・・。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i !
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-625-div1-easy---palindromepermutations-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-624-div1-easy---buildingheights-/" rel="bookmark">SRM 624 DIV1 Easy - BuildingHeights (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-04T19:24:00">November 04, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13211&amp;rd=15857
+・様々な高さを持つ建物が与えられる。
+・建物の高さを１変えるのにコストが１かかる。
+・同じ建物がｍ個必ずあるようにしたい。
+・建物の数をｎとしたとき、ｍは１～ｎすべての値としてそれぞれの最小コストのXORを求める。
+解き方 
+・ｍを１～ｎそれぞれについて調べることとし、各建物の長さについて答えを求める。
+・求め方として２分探索？でも最小値を求めるので使えなさそう。
+・全探索では4000*4000*4000かかりそう。
+→他の人のコードをみてみる
+・ｍを固定した時、どの長さにするかは各建物の元々の長さにすればよい、、ことを単純ながら見落としてしまった。
+・あとは各建物の長さに固定した時のコスト計算をO(１)とするために、累積和をとっておけばよい。
+・反省：最適解探索の検討がまだまだ足りない。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class BuildingHeights {
+public:
+int minimum(vector&lt;int&gt; heights) {
+int n=heights.size();
+sort(all(heights));
+int sum[n+1];
+sum[0]=0;
+FORE(i,1,n+1)sum[i]=sum[i-1]+heights[i-1];
+int ret=0;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-624-div1-easy---buildingheights-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2013-tco-round-2b-easy---fruittrees-/" rel="bookmark">2013 TCO Round 2B Easy - FruitTrees (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-02T22:33:00">November 02, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12520&amp;rd=15633
+・appleとkiwi、grapeがあり、それぞれ与えられた間隔で一定に置いていく。
+・このとき、２つの果物間の最短距離が最も大きくなるような並べ方のときの
+&nbsp;最短距離を求める。
+解き方 
+・３つ果実があると複雑そう。
+・appleの距離が４、kiwiの距離が３のとき、と考えるとどう置いても重なる・・うまく見つからない。
+→他の人のコードをみてみる
+・もう少し洞察してみると、２つの果実の距離のgcdのMODが最短距離となる。
+・よって、appleを固定し、kiwiとgrapeを変化させそのときの最短距離を求めればよい。
+・反省：紙に書いてもっと検討・試行錯誤してみることが必要。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class FruitTrees {
+public:
+int gcd(int x,int y){
+return y ? gcd(y,x%y) : x;
+}
+int maxDist(int apple, int kiwi, int grape) {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2013-tco-round-2b-easy---fruittrees-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-622-div1-easy---buildingroutes-/" rel="bookmark">SRM 622 DIV1 Easy - BuildingRoutes ××○</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-02T21:50:00">November 02, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13193&amp;rd=15855
+・有向グラフとエッジの距離が与えられる。
+・ある点からある点に行くまでに通る最短の経路を考えるとき、
+すべての点から点までの最短経路で通る数がT以上であれば、その経路の距離の和を求める。
+解き方 ・最短距離といえばワーシャルフロイドだが、途中の経路を知る必要がある。
+・それではダイクストラ？でも途中の経路を知るのは難しい・・・で断念。
+→他の人のコードをみる
+・ワーシャルフロイドを適用したあと、ある最短経路のうちあるエッジを通るかは、
+そのエッジを含めた距離が最短経路と一致していればよい。
+・反省：最短経路と途中の経路の関係を応用できるようにすべき。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class BuildingRoutes {
+public: int build(vector&lt;string&gt; dist, int T) {
+int n=dist.size();
+int d[n][n],cnt[n][n];
+memset(cnt,0,sizeof(cnt));
+FORE(i,0,n)FORE(j,0,n)d[i][j]=dist[i][j]-'0';
+FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)d[i][j]=min(d[i][j],d[i][k]+d[k][j]);
+FORE(i,0,n)FORE(j,0,n)if(i!=j){
+FORE(k,0,n)FORE(l,0,n)if(k!=l &amp;&amp; d[i][k]+dist[k][l]-'0'+d[l][j]==d[i][j])cnt[k][l]++;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-622-div1-easy---buildingroutes-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-623-div1-easy---uniformboard-/" rel="bookmark">SRM 623 DIV1 Easy - UniformBoard （○）</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-02T10:55:00">November 02, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13209&amp;rd=15856
+・N×Nのボードが与えられる。
+・ボードの各セルには空白、apple,pearいずれかが置かれている。
+・また、１回の操作でappleかpearを空白に移すことができる。
+・最大の操作回数はKで、任意の長方形の中のセルがすべてappleであるようなときの
+最大の長方形の面積を求める。
+解き方 
+・すべての長方形で検索すればよさそう。
+・長方形を作ったとき、そもそも全体のappleより大きいセルは作れないので
+最初にすべてのappleの数を調べる必要がある。
+・長方形を作ったときにpearが含まれているとき、空白が一つもないと移せないので
+最初に空白があるかどうかを調べる必要がある。
+・空白は１回の操作でappleを置くことができるが、pearは一回どかしてからappleを置く必要が
+あるので２回の操作が必要。
+・よって任意の長方形を考えた時、セルの数が全体のapple以下かつ、
+pearもしくは空白が含まれていないか、空白の数＋pearの数×２＜＝Kかつ空白が全体に
+存在するときはその長方形をすべてappleにできる。
+→System Passed.
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class UniformBoard {
+public: int getBoard(vector&lt;string&gt; board, int K) {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-623-div1-easy---uniformboard-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/" rel="bookmark">2014 TCO Round 2C Easy - SubstringReversal (復習×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-01T20:31:00">November 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12516&amp;rd=16016
+・ある文字列が与えられる。
+・この文字列の２つの場所を選んで、その間の文字列を順番を逆にすることができる。
+・順番を入れ替えた後最も辞書順に小さくすることのできる、入れ替える場所（ｘ、ｙ）を
+求める。
+・ただし同じ文字列が得られるときはｙが小さい方、さらにｙが小さい時はｘが小さい方の場所を
+求める。
+解き方 
+・単純に入れ替えるｘを小さい方から見ていき、より小さくできる場所があればそこが
+最適になりそう。
+・入れ替える先に同じアルファベットが複数存在するときは、一番手前にあれば一番手前の
+場所になるので最適。
+→System Failed.
+・選んだところの文字列をすべて逆順、という一番基本のところを軽くスルーしてしまった。
+・入れ替える先に同じアルファベットが存在するときは、
+入れ替えた後の文字列が小さいものを選ばなければいけない。
+・入れ替えたアルファベットすべてに対して探索しても計算量は
+2.5*10^3*(1250+2500)=2.5*10^3*3.7*10^3=10^7まではいかないので十分に間に合う。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SubstringReversal {
+public: vector&lt;int&gt; solve(string S) {
+int n=S.size();
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+		
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/page/21/">«</a>
+	<span class="pagination__item pagination__item--current">22/55</span>
+	<a class="pagination__item pagination__item--next" href="/page/23/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/shebang_init/">shebangから理解するUNIXの仕組み</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hoge/">hugo first post</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">防御的プログラミング</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%81%AE%E8%A6%8B%E7%9B%B4%E3%81%97%E3%81%BE%E3%81%A8%E3%82%81/">投資信託の見直しまとめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-668-div1-easy---painttheroom-/">SRM 668 DIV1 Easy - PaintTheRoom ○</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-670-div1-easy---doubleoroneeasy-x/">SRM 670 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-677-div1-easy---doubleoroneeasy-x/">SRM 677 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-669-div1-easy---subdividedslimes-x/">SRM 669 DIV1 Easy - SubdividedSlimes x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-671-div1-easy---bearcries-x/">SRM 671 DIV1 Easy - BearCries x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-673-div1-easy---bearcavalry-x/">SRM 673 DIV1 Easy - BearCavalry x</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/https://www.facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/https://www.linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp</a>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math</a>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム</a>
+	</div>
+</div>
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

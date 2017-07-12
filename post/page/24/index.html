@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posts</title>
+
+<meta name="generator" content="Hugo 0.25-DEV" />
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chaingng.github.io/post/" />
+
+
+
+<meta property="og:updated_time" content="2014-10-29T18:43:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="takatomo&#39;s blog Feed" href="https://chaingng.github.io/post/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+	<div class="main-content list content" role="main">
+		<header class="page-header">
+			<h1 class="page-header__title">Posts</h1>
+		</header>
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2011-tco-qualification-round-1---minimumliars/" rel="bookmark">2011 TCO Qualification Round 1 - MinimumLiars</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-29T18:43:00">October 29, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11414&amp;rd=14524
+・複数の人が存在し、それぞれそのグループに何人以上嘘つきがいるかと言っているかの
+&nbsp;liarの値がわかっている。
+・誰が嘘つきかはわからないが、矛盾しないように嘘つきが何人いるかを求める。
+複数の可能性がある場合は、そのうち最小の人数を求める。
+また、あらゆるケースで矛盾する場合は-1を返す。
+解き方 
+・liarの値は最大で100、人数の最大は50であるため全探索ができそう。
+・よって嘘つきの人数を0～100人までと固定し、その時の嘘つきの数を数えて
+一致するものが矛盾しないケースとなる。
+そのうち、最小のものを返してあげればよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class MinimumLiars {
+public: int getMinimum(vector&lt;int&gt; claim) {
+int n=claim.size();
+int ret=1e+9;
+FORE(i,0,101){
+int tmp=0;
+FORE(j,0,n)if(claim[j]&gt;i)tmp++;
+if(i==tmp)ret=min(ret,i);
+}
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2011-tco-qualification-round-1---minimumliars/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/linux%E3%81%A7%E8%A4%87%E6%95%B0%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%B5%90%E5%90%88/" rel="bookmark">linuxで複数のファイルを結合</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-29T18:28:00">October 29, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			catコマンドを使う。
+下記のコマンドで指定したディレクトリ以下の全てのファイルを結合し、
+newfilename.txtにその結果を保存できる。
+cat targetdir/* &gt; newfilename.txt&nbsp;
+ちなみにmanコマンドは以下の通り。
+Concatenate　filesなのでcatコマンド。
+CAT(1) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; User Commands &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CAT(1)
+NAME
+&nbsp; &nbsp; &nbsp; &nbsp;cat - concatenate files and print on the standard output
+SYNOPSIS
+&nbsp; &nbsp; &nbsp; &nbsp;cat [OPTION]... [FILE]...
+DESCRIPTION
+&nbsp; &nbsp; &nbsp; &nbsp;Concatenate FILE(s), or standard input, to standard output.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/linux%E3%81%A7%E8%A4%87%E6%95%B0%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%B5%90%E5%90%88/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2010-tco-qualification-round-1---girlsandboys/" rel="bookmark">2010 TCO Qualification Round 1 - GirlsAndBoys</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-29T18:18:00">October 29, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=7794&amp;rd=14294
+・男の子と女の子が並んでいる。
+・このうち、男の子と女の子が隣に並んでいる並びをできるだけ少なくしたい。
+・並びを変えるには、一回の操作で任意の２人を入れ替えることができる。
+・このときの、最小の操作回数を求める。
+解き方 
+・最小の並べ方はBBBGGGもしくはGGGBBBとなる並べ方になる。
+・よって、上の２つの並べ方のうち操作回数が小さいものが答えになる。
+コード 
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class GirlsAndBoys {
+public: int sortThem(string row) {
+int INF=1e+8,n=row.size();
+int cost=INF;
+int tmpcost=0,pos=0;
+for(int letter=0;letter&lt;n;letter++){
+if(row[letter]!='B')continue;
+tmpcost+=abs(letter-pos);
+pos++;
+}
+cost=min(cost,tmpcost);
+tmpcost=0,pos=0;
+for(int letter=0;letter&lt;n;letter++){
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2010-tco-qualification-round-1---girlsandboys/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2014-tco-round-2a-easy---sixteenbricks-/" rel="bookmark">2014 TCO Round 2A Easy - SixteenBricks (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-29T18:11:00">October 29, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996
+・正方形に並べられた１６個のマスがある。
+・各マスに、高さheightが分かっているタワーを置く。
+・このとき、見えている表面積が最も高くなるようにタワーを置く時の面積を求める。
+解き方 
+・下側は見えないので無視してよさそう。
+・上側は常に１６となる。
+・あとはどう横に置くか。
+→思いつかなかったため、他の人のコードをみてみる。
+・サンプルの一つにあるように、互い違いに置くことで（#の場所）８つ分はheight×４を足す。
+*#*#
+&nbsp; #*#*
+&nbsp; *#*#
+&nbsp; #*#*
+・残りのうち、置く場所によって見えなくなる面の数が異なる。
+0#2#
+&nbsp; #4#2
+&nbsp; 2#4#
+&nbsp; #2#0
+・よってheightでソートし、大きいうちから8つはheight×4を足し、
+小さい方から2つはheight×4を引き、次の4つはheight×2を引けばよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SixteenBricks {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2014-tco-round-2a-easy---sixteenbricks-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2013-tco-round-1b-easy---ellyspairs-/" rel="bookmark">2013 TCO Round 1B Easy - EllysPairs (○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-29T16:16:00">October 29, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12450&amp;rd=15580
+・生徒が複数存在し、それぞれの生徒のknowledgeの値がわかっている。
+・生徒が２人ずつのペアを作る。このとき、ペアのknowledgeは各生徒のknowledgeの和となる。
+・各ペアのknowledgeの差をできるだけ小さくした時の、最小の差を求める。
+解き方 
+・小さいknowledgeであるほど大きいknowledgeと組み合わせるのが最適解。
+・よってknowledgeの順にソートし、一番左と一番右をペア、といったように
+順に組み合わせていき、ペアの最大と最小の差が答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class EllysPairs {
+public: int getDifference(vector&lt;int&gt; knowledge) {
+int n=knowledge.size();
+sort(all(knowledge));
+int maxp=knowledge[0]+knowledge[n-1];
+int minp=knowledge[0]+knowledge[n-1];
+FORE(i,0,n/2){
+maxp=max(maxp,knowledge[i]+knowledge[n-1-i]);
+minp=min(minp,knowledge[i]+knowledge[n-1-i]);
+}
+return maxp-minp;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2013-tco-round-1b-easy---ellyspairs-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2013-tco-round-1a-easy---housebuilding-/" rel="bookmark">2013 TCO Round 1A Easy - HouseBuilding (○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-29T16:11:00">October 29, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12396&amp;rd=15571
+・与えられた長方形の地面を平らにしたい。
+・地面はセルで区別されており、それぞれのセルの現在の高さがわかっている。
+・高さを変化させるには、変化させた高さの分の労力がかかる。
+・全てのセルの高さをそれぞれが高々１以下の差にしたいとき、
+必要な最小の労力を求める。
+解き方 
+・高さは０～９の９通り。
+・このうち、高さの差が高々１になる場合は、
+ならした後の高さは（０，１）、（１，２）・・・（８，９）の８通り。
+・よって、それぞれの高さにするときに必要な労力をそれぞれ求め、そのうち最小のものが
+答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class HouseBuilding {
+public: int getMinimum(vector&lt;string&gt; area) {
+int ret=1e+9;
+int h=area.size(),w=area[0].size();
+FORE(i,0,9){
+int tmp=0;
+FORE(j,0,h)FORE(k,0,w){
+tmp+=min(abs(area[j][k]-'0'-i),abs(area[j][k]-'0'-(i+1)));
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2013-tco-round-1a-easy---housebuilding-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2013-tco-round-2c-easy---dancingfoxes-/" rel="bookmark">2013 TCO Round 2C Easy - DancingFoxes (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-29T15:45:00">October 29, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12548&amp;rd=15656
+・友達が複数存在し、互いに誰と誰が友達であるかがわかっている。
+・パーティにて、ダンスが任意の回数行われる。ダンスは２人ペアで行われる。
+・ペアとなれるのは友達同士か、もしくは共通の友達がいる必要がある。
+・一度ダンスを行えば、そのペアは友達となる。
+・このとき、０番目の人と１番目の人が友達になるまでに必要な
+最小のダンス回数を求める。
+解き方 
+・最短経路を求める問題なので、ワーシャルフロイドが使えそう。
+・サンプルを見ると、０と１との最短経路－１が答え？
+・サンプルは通ったので提出。
+→SystemFailed.
+・問題文を良く見ると、毎回のダンスで複数の友達がペアになるので、
+初期状態の距離だけでは答えは求まらない。
+・具体的には「0-A-B-C-D-1」のときは１回のダンスで「0-B-C-1」となる。
+・つまり、最初の距離dから(d+1)/3ずつ引いていき、１以下になるまでのダンス回数が
+答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class DancingFoxes {
+public: int minimalDays(vector&lt;string&gt; friendship) {
+int n=friendship.size();
+int d[n][n];
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2013-tco-round-2c-easy---dancingfoxes-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2014-tco-round-2b-easy---switchinggame-/" rel="bookmark">2014 TCO Round 2B Easy - SwitchingGame (○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-28T22:14:00">October 28, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996
+・ONとOFFができるスイッチが複数与えられる。
+・最初は全てOFFの状態。
+・複数スイッチの状態が与えられ、順番にその状態に変化させていく。
+・スイッチの状態はON,OFF,？の３つであり、？はON/OFFどちらでもよい。
+・スイッチの状態変化は、好きなだけ＋に変化させる動作が１動作、
+好きなだけ－に変化させる動作が１動作、
+状態を一緒に合わせたあとボタンを押すのに１動作かかる。
+・このとき、必要な動作回数の最小値を求める。
+解き方 
+・前のスイッチの状態を持っておき、毎回変化数を記録しておけばよさそう。
+・？については好きな状態でよい。
+・つまり、そのあとに出てくるのが＋でプラスの動作が行われるのであれば＋にしてしまい、
+逆に出てくるのが－でマイナスの動作が行われるのであれば－にしてしまうのが
+最適な動作になる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SwitchingGame {
+public: int timeToWin(vector&lt;string&gt; states) {
+int m=states[0].size();
+int n=states.size();
+int ret=n;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2014-tco-round-2b-easy---switchinggame-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2014-tco-round-1b-easy---spamchecker-/" rel="bookmark">2014 TCO Round 1B Easy - SpamChecker (○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-28T20:52:00">October 28, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13119&amp;rd=15950
+・与えられたe-mailがスパムかどうかチェックしたい。
+・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であるという
+情報が与えられる。
+・○が現れたら○のときのスコアを足し、×のときは×のときのスコアを引く。
+・最初のスコアは０であり１行目から順にスコアを計算していき、１度でもスコアが
+マイナスになったらそのe-mailはスパムとなる。
+・このとき、与えられたe-mailがスパムであるかどうかを求める。
+解き方 
+単純に実装するだけ。
+スコアを順に計算して毎回マイナスかどうかを判定すればよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SpamChecker {
+public: string spamCheck(string judgeLog, int good, int bad) {
+int n=judgeLog.size();
+int score=0;
+FORE(i,0,n){
+if(judgeLog[i]=='o')score+=good;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2014-tco-round-1b-easy---spamchecker-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2014-tco-round-1c-easy---unique-/" rel="bookmark">2014 TCO Round 1C Easy - Unique (○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-28T20:47:00">October 28, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13067&amp;rd=15958
+・ある文字列が与えられる。
+・そのうち、同じアルファベットは一度しか使わないようにしたい。
+・同じアルファベットが出現する場合、最初のアルファベットのみ残すようにしたときに
+最後に残る文字列を求める。
+解き方 
+単に実装するだけ。
+アルファベットの出現回数を保持する配列を持っておき、
+初めて出現するアルファベットのみ答えに足していけばよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class Unique {
+public: string removeDuplicates(string S) {
+string ret="";
+int n=S.size();
+int ch[26];
+memset(ch,0,sizeof(ch));
+FORE(i,0,n){
+if(ch[S[i]-'a']==0){
+ret+=S[i];
+ch[S[i]-'a']++;
+}
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2014-tco-round-1c-easy---unique-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/post/page/23/">«</a>
+	<span class="pagination__item pagination__item--current">24/55</span>
+	<a class="pagination__item pagination__item--next" href="/post/page/25/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/shebang_init/">shebangから理解するUNIXの仕組み</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hoge/">hugo first post</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">防御的プログラミング</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%81%AE%E8%A6%8B%E7%9B%B4%E3%81%97%E3%81%BE%E3%81%A8%E3%82%81/">投資信託の見直しまとめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-668-div1-easy---painttheroom-/">SRM 668 DIV1 Easy - PaintTheRoom ○</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-670-div1-easy---doubleoroneeasy-x/">SRM 670 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-677-div1-easy---doubleoroneeasy-x/">SRM 677 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-669-div1-easy---subdividedslimes-x/">SRM 669 DIV1 Easy - SubdividedSlimes x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-671-div1-easy---bearcries-x/">SRM 671 DIV1 Easy - BearCries x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-673-div1-easy---bearcavalry-x/">SRM 673 DIV1 Easy - BearCavalry x</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/https://www.facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/https://www.linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp</a>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math</a>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム</a>
+	</div>
+</div>
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

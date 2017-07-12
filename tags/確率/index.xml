@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>確率 on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E7%A2%BA%E7%8E%87/</link>
+    <description>Recent content in 確率 on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 16 Mar 2015 20:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E7%A2%BA%E7%8E%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRM 650 DIV1 Easy - TaroFillingAStringDiv1 (○)</title>
+      <link>https://chaingng.github.io/post/srm-650-div1-easy---tarofillingastringdiv1-/</link>
+      <pubDate>Mon, 16 Mar 2015 20:11:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-650-div1-easy---tarofillingastringdiv1-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13669&amp;amp;rd=16314
+・AとBから成る文字列を作りたい。
+・ただし、i番目の文字はAかBか決まっており、最初にその情報が与えられる。
+・また、できるだけAとBが連続しているようにはしたくない。
+・上記の情報が与えられるとき、できるだけAとBが連続しないような文字列の場合の数を
+求める。
+解き方 
+・まず、できるだけAとBが連続しないような文字列を求める。
+与えられた情報の位置でソートし、それぞれの間について考える。
+このとき、それぞれのスペースの数＋両端のAかBの一致か不一致かによって
+AとBがひとつも連続しないか、そうでないかがわかる。
+・次に、そのような場合の数を求める。
+・AとBが連続しないようなケースの場合は1通りしか置き方はない。
+・AとBが連続するようなケースは、スペースの数だけ場合の数が存在する。
+・最後にそれぞれのスペースについての積をとってあげれば答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+int MOD=1000000007;
+class TaroFillingAStringDiv1 {
+public: int getNumber(int N, vector&amp;lt;int&amp;gt; position, string value) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 626 DIV1 Easy - FixedDiceGameDiv1 (×)</title>
+      <link>https://chaingng.github.io/post/srm-626-div1-easy---fixeddicegamediv1-/</link>
+      <pubDate>Wed, 05 Nov 2014 18:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-626-div1-easy---fixeddicegamediv1-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13239&amp;amp;rd=15859
+・AliceとBobでゲームを行う。
+・Aliceはa個b面あるサイコロを投げ、Bobはc個d面あるサイコロを投げる。
+・b面あるサイコロは1～bの数字が書かれており、d面あるサイコロは1～dの数字が書かれている。
+・Aliceが勝った時、出た目の期待値を求める。
+・Aliceが勝つケースがないときは-1を返す。
+解き方 
+・まずAliceが勝つかどうか判定する。
+・Bobの一番小さい数はcであるので、c+1以上の面が出るときに勝つことができる。
+・次にAliceの勝つ面について、どれだけの確率があるか計算する。
+・dpを用いればできそう。
+・現在までに使ったサイコロの数、現在までの合計のスコアを持つdpを作れば
+場合の数は計算できる。
+・確率として、勝つ面が出た時のすべての場合の数の和を取り、最後に割ってあげる。
+・サンプルはすべて通った。
+→System Failed
+・Aliceだけの面をみていたが、Bobの面も見る必要がある。
+・つまり、Aliceの勝つ数についての場合の数＊Bobがそれに負けるときの場合の数を足してあげ、
+その和を全てとり最後に割ってあげる必要がある。
+・反省：確率の問題に弱い・・・。基礎が足りないのを実感。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class FixedDiceGameDiv1 {
+public: double getExpectation(int a, int b, int c, int d) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 156 DIV1 Easy - BombSweeper （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-156-div1-easy---bombsweeper-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 10:11:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-156-div1-easy---bombsweeper-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1778&amp;amp;rd=4585
+マリンスイーパーを解く。
+最初に好きな場所を選ぶ。
+①そこにボムがあれば負け
+②ボムがなくても周りにボムがあれば違うセルを選ぶ
+③ボムがなくて、かつ周りにボムがなければ勝ち
+このとき、勝率を求める。
+解き方 
+ボムがなくて周りにボムがある場合は違うセルを選ぶ、つまりノーカウントとなるので、
+①と③の数のみ調べて100*③／（①＋③）が答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class BombSweeper {
+public: double winPercentage(vector&amp;lt;string&amp;gt; board) {
+int w=board[0].size(),h=board.size();
+int ret=0,bomb=0;
+FORE(i,0,h){
+FORE(j,0,w){
+int valid=1;
+FORE(x,max(i-1,0),min(i+2,h))FORE(y,max(j-1,0),min(j+2,w))if(board[x][y]==&#39;B&#39;)valid=0;
+if(valid)ret++;
+if(board[i][j]==&#39;B&#39;)bomb++;</description>
+    </item>
+    
+    <item>
+      <title>SRM 174 DIV1 Easy - BirthdayOdds (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 00:24:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1848&amp;amp;rd=4675
+何人かのグループを考えた時、ある割合で同じ誕生日の人が存在する。
+同じ誕生日の人がいる確率が与えられ、また誕生日となりうる日数が与えられた時、
+何人の人がいれば与えられた確率以上で同じ誕生日の人が存在するかを求める。
+解き方 
+日数をＤとすると、Ｄ／Ｄ＊（Ｄ－１）／Ｄ・・・と計算していき
+この値が１００－与えられた確率以下になるときの人数を答えればよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class BirthdayOdds {
+public: int minPeople(int minOdds, int daysInYear) {
+double p=1.0;
+FORE(i,1,daysInYear){
+p*=(double)(daysInYear-i)/daysInYear;
+if(p*100&amp;lt;=100-minOdds)return i+1;
+}
+return daysInYear+1;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 293 DIV1 Easy - ScrabbleBet （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-293-div1-easy---scrabblebet-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 05 Feb 2014 20:36:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-293-div1-easy---scrabblebet-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6116&amp;amp;rd=9814
+１セットあたりのゲーム回数が与えられ、それを指定回数分のセット数行う。
+１ゲームにたいして勝つ確率が与えられ、そのセット数で勝つために必要な勝ちゲーム数が与えられる。
+このとき、少なくとも１つのセットで勝つことのできる確率を求める。
+解き方 
+問題文の理解に少し時間がかかった。
+１セットあたりに負ける確率さえ計算できれば、答えは１－負ける確率＾セット数で求められる。
+１セットあたりに負ける確率の計算に順列を使ってもよいが、
+ゲーム数は２０なので全探索してもたかだか１０＾６程度なので間に合う。
+コード 
+class ScrabbleBet {
+public: double estimate(int trials, int games, int winsNeeded, int winChance) {
+double loses=0.0;
+double p=winChance/100.0;
+for(int i=0;i&amp;lt;(1&amp;lt;&amp;lt;games);i++){
+int x=0;
+for(int j=0;j&amp;lt;20;j++)if(i&amp;amp;(1&amp;lt;&amp;lt;j))x++;
+if(x&amp;lt;winsNeeded)loses+=pow(p,x)*pow(1.0-p,games-x);
+}
+return 1.0-pow(loses,trials);
+}
+};
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).</description>
+    </item>
+    
+    <item>
+      <title>SRM 286 DIV1 Easy - ExtraBall (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 27 Jan 2014 21:50:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=5891&amp;amp;rd=8083
+・ビンゴゲームを行う。
+・最初に紙には１～７５の数字が書いてあり、その数字がコールされるとその場所をくり抜くことができる。
+・ビンゴゲームが終わったときに、与えられたパターンと同じところがくりぬかれたらそのパターンにおけるスコアを得ることができる。
+・ここで、ゲームが終わった後にもう一つだけ数字をコールしてもらえることを考える。
+・このとき、もう一つ数字をコールしてもらったときに得られる期待値を返す。
+解き方 
+Exampleを読むことで問題のルールを把握することができるので、あとは実装するだけ。
+くり抜かれたパターンが一致するかの関数を作り、くり抜かれていない差が一つかどうかを判定すればあとは簡単。
+コード 
+class ExtraBall {
+public:
+bool match(string a,string b){
+int dif=0;
+FORE(i,0,a.size())if(a[i]==&#39;.&#39;&amp;amp;&amp;amp;b[i]==&#39;X&#39;)dif++;
+return dif==1;
+}
+double expectedPayout(vector&amp;lt;int&amp;gt; card, vector&amp;lt;int&amp;gt; balls, vector&amp;lt;string&amp;gt; patterns, vector&amp;lt;int&amp;gt; prizes) {
+string org=&#34;&#34;;
+FORE(i,0,card.size())org+=&#39;.&#39;;
+FORE(i,0,card.size())FORE(j,0,balls.size())if(card[i]==balls[j])org[i]=&#39;X&#39;;
+int cost=0;
+FORE(i,0,patterns.size())if(match(org,patterns[i]))cost+=prizes[i];
+return (double)cost/(double)(75-balls.size());
+}
+}; </description>
+    </item>
+    
+  </channel>
+</rss>

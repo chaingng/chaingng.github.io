@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posts</title>
+
+<meta name="generator" content="Hugo 0.25-DEV" />
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chaingng.github.io/post/" />
+
+
+
+<meta property="og:updated_time" content="2014-02-01T16:46:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="takatomo&#39;s blog Feed" href="https://chaingng.github.io/post/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+	<div class="main-content list content" role="main">
+		<header class="page-header">
+			<h1 class="page-header__title">Posts</h1>
+		</header>
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-421-div1-easy---equilibriumpoints-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 421 DIV1 Easy - EquilibriumPoints (復習○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-01T16:46:00">February 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=10104&amp;rd=13512
+直線状に複数の点とその点にある球の数が与えられる。
+ある点を考えた時、その点と点ｘの距離をｄ、点ｘの球の数をｍとすると
+Ｆ＝Ｇ＊ｍ１＊ｍ２／ｄ＾２で引力が表わされる。
+ここでＧは定数。
+このとき、引力が左右均衡となる点を求める。
+点が複数存在する場合は、昇順に並べる。
+解き方 
+サンプルを見ると各点の間ごとに均衡点があることがわかる。
+あとは、その間すべてに対して２分探索すれば答えが求められる。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class EquilibriumPoints {
+public:
+double calc(int m,double d){
+return m/d/d;
+}
+vector&lt;double&gt; getPoints(vector&lt;int&gt; x, vector&lt;int&gt; m) {
+vector&lt;double&gt; ans;
+int n=x.size();
+FORE(i,0,n-1){
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-421-div1-easy---equilibriumpoints-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 441 DIV1 Easy - PerfectPermutation (復習○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-01T14:59:00">February 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=10463&amp;rd=13749
+ある０～n-1の数がランダムに並べられた、長さｎの配列が与えられる。
+このとき、childpermutation Bは、
+B[0]=0, B[i]=B[A[B[i-1]]で現した時
+もとの配列と同様に0~n-1の数が存在するものと定義する。
+最初に与えられた数列がchildpermutationを含む時は０を、
+配列の数字の入れ替えが発生する場合は元の数列と異なる要素数のうち
+最小の差のものを求める。
+解き方 
+すべてpermutationしていては要素数が５０のため間に合わない。
+ここで、全ての数が現れる場合というのはＢがループしている場合ということがわかる。
+ループが１つの場合はそのまま答えになるが、
+ループが複数存在する場合はお互いの数字を入れ替えることで一つのループにすることができる。
+よって、ループの数を計算し１つであれば０、複数存在するのであればループ数を返す。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PerfectPermutation {
+public: int reorder(vector&lt;int&gt; P) {
+int n=P.size();
+int ans=0;
+int used[n];
+memset(used,0,sizeof(used));
+FORE(i,0,n){
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 488 DIV1 Easy - TheBoredomDivOne (復習××)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-01T14:05:00">February 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11193&amp;rd=14241
+友人が複数いて、既に飽きている友人と飽きていない友人がいる。
+毎回その中から２人を選んで、握手させる。握手した友人は飽きてしまう。
+このとき、全員が飽きるまでに要する回数を求める。
+解き方 
+通常のｄｐで解くと、数が変わらないときに無限ループになってしまうので工夫が必要。
+ここで、dp[x]をx人が飽きていないときの回数と定義する。
+p1は飽きていない人がｘ人のときから友人を選んで
+飽きていない人の数がx-1人になる確率、p2はx-2人になる確率とすると、
+dp[x]=1+p0*dp[x]+p1*dp[x-1]+p2*dp[x-2]　と表わすことができる。
+式を変形すると、dp[x]=(1+p1*dp[x-1]+p2*dp[x-2])/(1-p0)となりdpで解くことができる。
+dpはそれまでの状態の数がわかれば通常は解くことができるが、
+今回のケースのように状態が変わらないケースが存在するときは等号式を作って変形させてあげる必要がある。
+コード 
+class TheBoredomDivOne {
+public: double find(int n, int m) {
+int t=n+m;
+double dp[t+1];
+memset(dp,0,sizeof(dp));
+FORE(i,1,m+1){
+double sum=t*(t-1)/2.0;
+double p0=(t-i)*(t-i-1)/(sum*2.0);
+double p2=i*(i-1)/(sum*2.0);
+double p1=1.0-p0-p2;
+if(i==1)dp[i]=(1+p1*dp[i-1]+p2*0)/(1-p0);
+else dp[i]=(1+p1*dp[i-1]+p2*dp[i-2])/(1-p0);
+}
+return dp[m];
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 484 DIV1 Easy - RabbitNumber (復習×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-01T12:17:00">February 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11131&amp;rd=14237
+ある数xの平方数yを考えたとき、(x*x=y),
+かつnの各桁の和で表わされるS(n)について、S(x)*S(x)=S(y)が成り立つとき
+その数はRabbit Numberになる。
+このとき、lowからhighまでの間のRabbit Numberの数を求める。
+解き方 
+普通に解くとlow,highともに10^9であるため解くことができない。
+そのため法則がないか考える。
+ここで、ｘの各桁の数が３以下であればRabbit Numberになる可能性がある。
+1*1=1,S(1)*S(1)=1
+2*2=4,S(2)*S(2)=4
+3*3=9,S(3)*S(3)=9　しかし、4以上のとき、つまり桁上がりしてしまうときは決してRabbit Numberにならない。
+4*4=16,S(4)*S(4)=16 (≠7)　5*5=25,S(5)*S(5)=25 (≠7)
+
+つまり、各桁が０～３の全ての数のうち、平方数のS(n)とイコールになるものについて(この中でも２ケタ以上の数では桁上がりは発生しうるので)、lowとhighの間の数をカウントしてあげればよい。　コード 
+class RabbitNumber {
+public:
+int S(long long x){
+int ret=0;
+while(x&gt;0){
+ret+=x%10;
+x/=10;
+}
+return ret;
+}
+int calc(int low,int high,int cur){
+int ret=0;
+FORE(i,0,4){
+int x=10*cur+i;
+if(x==0||S(x)*S(x)!=S((long long)x*x))continue;
+if(low&lt;=x&amp;&amp;x&lt;=high)ret++;
+if(x&lt;=high/10)ret+=calc(low,high,x);
+}
+return ret;
+}
+int theCount(int low, int high) {
+return calc(low,high,0);
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-472-div1-easy---potatogame-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 472 DIV1 Easy - PotatoGame (復習×○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-01T11:26:00">February 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=10759&amp;rd=14154
+・TaroとHanakoの２人がゲームをする。
+・ポテトの数が与えられて、４の階乗分だけ自分のターンのときに食べることができる。
+・ポテトの数が０になったら勝ち。
+・最初はTaroのターン。
+・このとき、勝つ方のプレイヤーの名前を求める。
+解き方 
+１０＾９のため全探索では解くことができない。
+パターンを見つけようとdpで１０００ほど出力させてみると、
+MOD5のとき0もしくは２のときHanakoが勝つことがわかる。
+次に上記の証明。
+4の階乗を引くということは、mod5で考えた時±1していることと同じ。
+例えば、4のときは 4^2 mod5=-1 、16のときは 4^2 mod5=1となる。
+ここで、Taroが勝つポジションを n=1,3,4(mod5)としたとき、
+4^Kを引いた場合に相手に負けるポジションに移動させることができる。
+例外としてN=1,3のときは1を引くことしかできない。
+N=1 のときは1を引くことで勝ちとなるのでＯＫ．
+N=3 のときは1を引いてN=2と負けのポジションに移動させられるのでＯＫ．
+逆に、負けるポジション n=0,2(mod5)にいた場合は
+4^Kを引いても相手を負けるポジションに移動させることができない。
+よって、最初のMOD5のときのポジションで勝ち負けが一意に決まる。
+コード 
+class PotatoGame {
+public: string theWinner(int n) {
+return n%5==0||n%5==2 ? "Hanako" : "Taro";
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 258 DIV1 Easy - AutoLoan (復習○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-01T09:18:00">February 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=3970&amp;rd=7993
+・車をローンで購入する。
+・車の費用はあらかじめわかっており、ディーラーは月額の固定支払額と払い終わるまでの月数を教えてくれる。
+・ただしその場合のローン率は教えてくれない。
+・支払いは毎月残額にたいしてローン率／１２が足された後、毎月の固定支払額が引かれる計算となる。
+・このとき、ローン率がいくらになるか求める。
+解き方 
+２分探索で簡単に解くことができる。
+相対誤差で計算してもよいが、100回まわせば誤差1e-9に対して精度は10^2/10^100なので十分。
+コード 
+class AutoLoan {
+public: double interestRate(double price, double monthlyPayment, int loanTerm) {
+double low=0.0,high=100.0;
+FORE(i,0,100){
+double mid=(high+low)/2.0;
+double cost=price;
+FORE(j,0,loanTerm){
+cost+=cost*mid/12.0;
+cost-=monthlyPayment;
+}
+if(cost&lt;=0)low=mid;
+else high=mid;
+}
+return low*100.0;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-289-div1-easy---fallingball/" rel="bookmark">SRM 289 DIV1 Easy - FallingBall</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-01T08:44:00">February 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+・トライアングル上に釘が打ってある台からボールを落とす。
+・台の高さはあらかじめ与えられる。
+・ボールを落としたとき、下に落ちる場所は釘の左側か右側になる。
+・また、通って欲しい釘の場所が複数与えられる。
+・このとき、通って欲しい場所を通るボールの落ち方の場合の数を求める。
+そのような場合がない場合はー１を返す。
+解き方 
+パスカルの三角形を使えば解くことができる。
+最初に与えられた台の数のパスカルの三角形を作り、
+各座標の差だけパスカルの三角形の場合の数をかけていく。
+座標の差が通ることができない差であればー１を返す。
+最後に、台の高さと最後の座標の高さの差の数だけ２の階乗すれば答えが求まる。
+コード 
+class FallingBall {
+public: int howMany(vector&lt;string&gt; cells, int n) {
+int ret=1;
+vector&lt;pair&lt;int,int&gt; &gt; p;
+int dp[n+1][n+1];
+memset(dp,0,sizeof(dp));
+dp[0][0]=1;
+FORE(i,1,n+1){
+dp[i][0]=1;
+FORE(j,1,n+1)dp[i][j]=dp[i-1][j-1]+dp[i-1][j];
+}
+FORE(i,0,cells.size()){
+stringstream out(cells[i]);
+int a,b;
+out&gt;&gt;a&gt;&gt;b;
+p.push_back(make_pair(a,b));
+}
+p.push_back(make_pair(0,0));
+sort(all(p));
+FORE(i,1,p.size()){
+int dy=p[i].first-p[i-1].first;
+int dx=p[i].second-p[i-1].second;
+if(dx&lt;0||dx&gt;dy)return 0;
+ret*=dp[dy][dx];
+}
+return ret*(1&lt;&lt;(n-1-p[p.size()-1].first));
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/beautifulsoup%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9/" rel="bookmark">BeautifulSoupの第一歩</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-31T23:22:00">January 31, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			クローラーで取ってきたHTMLを解析するのにBeautifulSoupが使いやすそうだったので使ってみました。以下は簡単な使い方のメモ。
+バージョン
+BeautifulSoupは３と４がありますが
+現在はBeautiful Soup３は終了していてBeautiful Soup４が主流とのこと。
+Webをみていると３の使い方が多いので注意。
+そしてPython3はBS3が使えないです。
+インポート
+まずはインポート。
+BeautifulSoup4は以下の書き方になります。
+from bs4 import BeautifulSoup
+まずは全文抽出
+まずは、以下のように書くことでhtmlの全文が保存されます。
+datas = BeautifulSoup(datas)
+
+findで指定のタグを抽出
+次にfind文で指定のタグを抽出できます。
+今回はfindAll文を使うことで、html中の指定のタグを抽出しました。
+以下ではdivタグのresult classを抽出。
+datas2 = datas.findAll("div", attrs={"class": "result"})
+
+さらに下層の情報取得とテキスト抽出
+ここで抽出された情報は配列となっているので、
+さらにそこから抽出したい情報があれば配列番号でアクセス。
+result_name=datas2[1].find("h5").get_text().replace(' ','')
+score=datas2[2].find("h5").get_text()
+ここでは1番目と2番目にあるh5タグを抽出しています。
+これまでだとタグと本文を含めてまとめて抽出されるので、
+本文だけを取りだしたい場合はget_text()を利用。
+また、タグ内の属性情報を取り出したいときはget('href')など指定することで可能です。
+タグ名を取りだしたいときは .nameで取れます。
+ 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 184 DIV1 Easy - RaceCalculator (復習×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-31T23:05:00">January 31, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=2250&amp;rd=4740
+・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。
+・同じペースで走ることができ、予想される時間が計算できるのが理想だが、疲れが影響してペースは一定にはならない。
+・ある地点における予想時間は、その他の任意の２点を使って計算できる。
+・このとき、一番実際の時間と予想時間との差が小さくなる地点を求める。
+解き方 
+問題文の意味を読み解くのに苦労しました。
+ある地点に対する予想時間はその他の任意の２点を使って求めるということがわかれば、
+３点の取り方に対する全ての場合の数を計算してあげれば答えが求まります。
+コード 
+class RaceCalculator {
+public: int bestRace(vector&lt;int&gt; distances, vector&lt;int&gt; times) {
+int n=times.size();
+double badness[n];
+FORE(i,0,n)badness[i]=-(1e+9);
+FORE(i,0,n)FORE(j,0,n)FORE(k,0,n){
+if(i==j||j==k||i==k)continue;
+double a=log(times[j]/(double)times[i]);
+double b=log(distances[i]/(double)distances[k]);
+double c=log(distances[i]/(double)distances[j]);
+double expected=times[i]*exp(a*b/c);
+badness[k]=max(badness[k],(times[k]-expected)/expected);
+}
+int best=0;
+FORE(i,0,n)if(badness[i]&lt;badness[best])best=i;
+return best;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-606-div1-easy---ellysnumberguessing-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 606 DIV1 Easy - EllysNumberGuessing （復習○）</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-30T19:19:00">January 30, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12975&amp;rd=15839
+・２人でゲームを行い、一人は１～１０＾９までの数を思い浮かべ、
+もう一人が言った数との絶対値を答える。
+・このターンを何度か繰り返したとき、最後に思い浮かべた数を返す。
+ただし、そのような数が存在しないときはー２、複数存在するときは－１を返す。
+解き方 
+各ターンごとに存在しうる数字についてＡＮＤをとり、最後に残ったものが答えになる。
+具体的には最初のターンで存在しうる２通りの数について、各ターンごとに現れるのであれば残し、なければfalseとして最後に判定すればよい。
+また、最初に１～１０＾９内にある数か判定してあげればその後は毎回判定しなくてもよい。
+単純に数を数えるコーディングや、同じセットが複数存在するときにエラーとなるコーディングではひっかかるので上記のように問題にシンプルに従って実装する。
+コード 
+class EllysNumberGuessing {
+public: int getNumber(vector&lt;int&gt; guesses, vector&lt;int&gt; answers) {
+int num1=guesses[0]+answers[0];
+int num2=guesses[0]-answers[0];
+int flag1=0,flag2=0;
+if(1&lt;=num1&amp;&amp;num1&lt;=1000000000)flag1=1;
+if(1&lt;=num2&amp;&amp;num2&lt;=1000000000)flag2=1;
+FORE(i,0,guesses.size()){
+if(guesses[i]+answers[i]!=num1&amp;&amp;guesses[i]-answers[i]!=num1)flag1=0;
+if(guesses[i]+answers[i]!=num2&amp;&amp;guesses[i]-answers[i]!=num2)flag2=0;
+}
+if(flag1&amp;&amp;flag2)return -1;
+if(!flag1&amp;&amp;!flag2)return -2;
+if(flag1)return num1;
+return num2;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/post/page/41/">«</a>
+	<span class="pagination__item pagination__item--current">42/55</span>
+	<a class="pagination__item pagination__item--next" href="/post/page/43/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/shebang_init/">shebangから理解するUNIXの仕組み</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hoge/">hugo first post</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">防御的プログラミング</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%81%AE%E8%A6%8B%E7%9B%B4%E3%81%97%E3%81%BE%E3%81%A8%E3%82%81/">投資信託の見直しまとめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-668-div1-easy---painttheroom-/">SRM 668 DIV1 Easy - PaintTheRoom ○</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-670-div1-easy---doubleoroneeasy-x/">SRM 670 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-677-div1-easy---doubleoroneeasy-x/">SRM 677 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-669-div1-easy---subdividedslimes-x/">SRM 669 DIV1 Easy - SubdividedSlimes x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-671-div1-easy---bearcries-x/">SRM 671 DIV1 Easy - BearCries x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-673-div1-easy---bearcavalry-x/">SRM 673 DIV1 Easy - BearCavalry x</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/https://www.facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/https://www.linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp</a>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math</a>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム</a>
+	</div>
+</div>
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

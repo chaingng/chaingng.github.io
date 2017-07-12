@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>グラフ on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E3%82%B0%E3%83%A9%E3%83%95/</link>
+    <description>Recent content in グラフ on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 16 Mar 2015 20:27:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E3%82%B0%E3%83%A9%E3%83%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRM 648 DIV2 Middle - Fragile2 (○)</title>
+      <link>https://chaingng.github.io/post/srm-648-div2-middle---fragile2-/</link>
+      <pubDate>Mon, 16 Mar 2015 20:27:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-648-div2-middle---fragile2-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13648&amp;amp;rd=16312
+
+・無向グラフの隣接行列のリストが与えられる。
+・このうち２つの頂点を選び、グラフから消した時に木の集合が増える
+頂点の選び方を全て求める。
+解き方 
+・頂点数は２０なので、頂点の選び方は２０C2となり全探索で解ける。
+・２つの頂点を選んだときにできる木の集合の数を求め、頂点を消さないときよりも
+集合の数が増えるかどうか判定すればよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+int used[30],n;
+vector&amp;lt;string&amp;gt; g;
+class Fragile2 {
+public:
+void dfs(int x){
+used[x]=1;
+FORE(i,0,n)if(!used[i] &amp;amp;&amp;amp; g[x][i]==&#39;Y&#39;)dfs(i);
+}
+int countPairs(vector&amp;lt;string&amp;gt; graph) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 640 DIV1 Easy - ChristmasTreeDecoration (○)</title>
+      <link>https://chaingng.github.io/post/srm-640-div1-easy---christmastreedecoration-/</link>
+      <pubDate>Thu, 11 Dec 2014 08:46:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-640-div1-easy---christmastreedecoration-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13551&amp;amp;rd=16083
+・クリスマスツリーをデコレーションするのに、N個の星とN-1個のリボンがある。
+・星には色がついていて、全ての星をリボンで一つにつなげたい。
+・ただし、できるだけリボンでつなげるときの星の色は異なるようにしたい。
+・また、つなぐことのできる星のペアもわかっている。
+・このとき、同じ色同士の星をつなげるリボンの最小数を求める。
+解き方 
+・ぱっと見て、ダイクストラ法に見える。
+・ただし、ダイクストラでつなげていって最後に同じ色同士の星しかつなげられない場合、
+つなげた星によって解が異なってしまう。
+・よって、まずは部分的につながっていなくて、かつ異なる色の星をつなげていく。
+・そのような星がなくなったら、同じ色の星をつなげる。
+・集合を使おうかと思ったが、ワーシャルフロイドで計算量は
+50*50*50*50=25*25*10000=625*10^4=6.25*10^6で間に合う。
+→System Passed
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class ChristmasTreeDecoration {
+public: int solve(vector&amp;lt;int&amp;gt; col, vector&amp;lt;int&amp;gt; x, vector&amp;lt;int&amp;gt; y) {
+int n=col.size();</description>
+    </item>
+    
+    <item>
+      <title>SRM 618 DIV1 Easy - Family (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-618-div1-easy---family-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 10 Nov 2014 19:42:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-618-div1-easy---family-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10541&amp;amp;rd=15851
+・有効グラフが２つ与えられる。
+・それぞれのグラフは親と子の関係を示しており、ｘ→ｙのときｘが親、ｙが子になる。
+・子は親がいないか、２人の親がいるかのどちらかでなければならない。
+・子のノード番号より、親のノード番号の方が小さくてはならない。
+・２人親がいる場合は、１人が父親、１人が母親でなくてはならない。
+・与えられたグラフが上記の条件を満たす場合は&#34;Possible&#34;、満たさない場合は
+&#34;Impossible&#34;を返す。
+解き方 
+・まず、子について親が０もしくは２人でないかを判定する。
+・次に、ノード番号について規則通りかを判定する。
+・次に、母親と父親とペアになるべきノードについて無向グラフを作成する。
+・最後に、そのグラフについて母親もしくは父親を埋めていき、条件を満たすかどうか判定する。
+→System Failed
+・母親もしくは父親の埋め方がまずかった。
+・最初はすべてのノードを順番に埋めていったが、これでは最適な埋め方にならない。
+・最初に埋めていないノードを選択して父親か母親としたとき、それに連結したノードをBFSで調べていけばよい。
+・反省：自分の書いたコードが正しいかのトレース不足だった。思いつきだけではなく
+きちんと検証する癖をつける。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class Family {
+public: string isFamily(vector&amp;lt;int&amp;gt; parent1, vector&amp;lt;int&amp;gt; parent2) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 622 DIV1 Easy - BuildingRoutes ××○</title>
+      <link>https://chaingng.github.io/post/srm-622-div1-easy---buildingroutes-/</link>
+      <pubDate>Sun, 02 Nov 2014 21:50:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-622-div1-easy---buildingroutes-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13193&amp;amp;rd=15855
+・有向グラフとエッジの距離が与えられる。
+・ある点からある点に行くまでに通る最短の経路を考えるとき、
+すべての点から点までの最短経路で通る数がT以上であれば、その経路の距離の和を求める。
+解き方 ・最短距離といえばワーシャルフロイドだが、途中の経路を知る必要がある。
+・それではダイクストラ？でも途中の経路を知るのは難しい・・・で断念。
+→他の人のコードをみる
+・ワーシャルフロイドを適用したあと、ある最短経路のうちあるエッジを通るかは、
+そのエッジを含めた距離が最短経路と一致していればよい。
+・反省：最短経路と途中の経路の関係を応用できるようにすべき。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class BuildingRoutes {
+public: int build(vector&amp;lt;string&amp;gt; dist, int T) {
+int n=dist.size();
+int d[n][n],cnt[n][n];
+memset(cnt,0,sizeof(cnt));
+FORE(i,0,n)FORE(j,0,n)d[i][j]=dist[i][j]-&#39;0&#39;;
+FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)d[i][j]=min(d[i][j],d[i][k]+d[k][j]);
+FORE(i,0,n)FORE(j,0,n)if(i!=j){
+FORE(k,0,n)FORE(l,0,n)if(k!=l &amp;amp;&amp;amp; d[i][k]+dist[k][l]-&#39;0&#39;+d[l][j]==d[i][j])cnt[k][l]++;</description>
+    </item>
+    
+    <item>
+      <title>SRM 630 DIV1 Easy - Egalitarianism3 (××)</title>
+      <link>https://chaingng.github.io/post/srm-630-div1-easy---egalitarianism3-/</link>
+      <pubDate>Fri, 19 Sep 2014 12:43:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-630-div1-easy---egalitarianism3-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13284&amp;amp;rd=16061
+エッジのコストがわかっている、無向グラフが与えられる。
+このとき、ノード間のコストが全て等しいサブグラフのうち、最も多いノード数を求める。
+解き方 
+・エッジの数＝ノード数N-1
+・ノードA－ノードB－ノードCを考えた時、ノードA-ノードCとなるペアは存在しない。
+・同じ距離の集合を考えた時、必ずハブとなるノードBが存在する。
+・全てのノードをハブと考えた時、ノードA-ノードBの距離をｄとすると
+ノードA-ノードCの距離が２ｄとなる集合のうち最大のものを求めればよい
+・ｎ＝１のときの答えは１
+・ｎ＝２のときの答えは２
+・ｎ＞＝２のとき答えは必ず２以上となる
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class Egalitarianism3 {
+public: int maxCities(int n, vector&amp;lt;int&amp;gt; a, vector&amp;lt;int&amp;gt; b, vector&amp;lt;int&amp;gt; len) {
+if(n&amp;lt;=2)return n;
+int g[n][n];</description>
+    </item>
+    
+    <item>
+      <title>SRM 410 DIV1 Easy - AddElectricalWires (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 22 Feb 2014 07:54:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8817&amp;amp;rd=12182
+ノードが複数存在し、任意のノード同士がつながっている。
+また、任意のノードが電力源につながっている。ただし、複数の電力源につながってはいけない。
+このとき、接続可能なエッジの数を求める。
+解き方 
+各電力源につながっているノードの集合ごとに、残りでつなぐことのできるエッジ数を求める。
+また、そのうち最大の集合と、電力源につながっていないノードの積も答えに加わる。
+あるノードの集合におけるエッジ数は、残りのエッジ数ではなく最大エッジ数を求めた後で、最後に最初に存在するエッジ数を引いてあげればコーディングが簡単になる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+int cnt,p[50],n;
+vector&amp;lt;string&amp;gt; W;
+class AddElectricalWires {
+public:
+void dfs(int x){
+if(p[x])return;
+p[x]=1;
+cnt++;
+FORE(i,0,n)if(W[x][i]==&#39;1&#39;&amp;amp;&amp;amp;p[i]==0)dfs(i);
+}
+int maxNewWires(vector&amp;lt;string&amp;gt; wires, vector&amp;lt;int&amp;gt; grid) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 435 DIV1 Easy - CellRemoval （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 19 Feb 2014 21:53:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10275&amp;amp;rd=13697
+有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。
+ただし、根のノードはー１が入っている。
+この有向グラフに、ある指定されたノードが削除され、その子となっているノードも削除される。
+このとき、元のノードの葉であり削除されていない葉の数を求める。
+解き方 
+元のグラフの葉のノードは、どのノードからも参照されていないノードになる。
+また、あるノードが削除されたときに、その子であるノードはＢＦＳで探索できる。
+上記の２つの処理を行うことで答えを求めることができる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class CellRemoval {
+public: int cellsLeft(vector&amp;lt;int&amp;gt; parent, int deletedCell) {
+int n=parent.size();
+int p[n+1];
+memset(p,1,sizeof(p));
+FORE(i,0,n)p[parent[i]]=0;
+queue&amp;lt;int&amp;gt; q;
+q.push(deletedCell);
+while(!q.empty()){</description>
+    </item>
+    
+    <item>
+      <title>SRM 591 DIV1 Easy - TheTree (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-591-div1-easy---thetree-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Thu, 13 Feb 2014 15:08:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-591-div1-easy---thetree-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12746&amp;amp;rd=15703
+グラフの各深さに対する頂点数が与えられる。
+このとき、そのグラフの直径を求める。
+解き方 
+グラフを最大のケースで作ってもよいが、場合分けをすれば簡単に求められる。
+まず、答えの最小は各深さの頂点が１のとき、つまり深さ＋１（要素数）となる。
+次に、直径の長さはその深さにおける頂点数が１もしくは２以上の場合しか影響されない。
+②頂点数が２以上の場合
+折り返し分の直径が増えるので、その値と比較して最大値を更新
+①頂点数が１の場合
+折り返し分はリセットされる。
+リセットされた際の最大値の更新は①で比較済み。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class TheTree {
+public: int maximumDiameter(vector&amp;lt;int&amp;gt; cnt) {
+int n=cnt.size();
+int ret=n;
+int last=-1,len=0;
+FORE(i,0,n){
+if(cnt[i]==1){
+last=i,len=0;</description>
+    </item>
+    
+    <item>
+      <title>SRM 407 DIV1 Easy - CorporationSalary（復習○）</title>
+      <link>https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Thu, 13 Feb 2014 14:38:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9824&amp;amp;rd=12179
+部下とマネージャーからなるサラリーマンの会社がある。
+配列が与えられ、ある人に対してその部下が誰かがわかっている。
+また、ある人の部下の部下は、ある人の部下でもあり、
+あるひとのマネージャーのマネージャーは、ある人のマネージャーでもある。
+ここで、ある人の給料は、その人の部下の給料の合計になる。
+部下がいないひとの給料は１になる。
+このとき、その会社のサラリーマン全員の給料の合計を求める。
+解き方 
+ある人の給料はその人の部下全員の給料の合計であるので、ＤＦＳにて答えを求めてあげればよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+long long dp[60];
+vector&amp;lt;string&amp;gt; R;
+class CorporationSalary {
+public:
+long long f(int x){
+if(dp[x]!=-1)return dp[x];
+long long ret=0;
+FORE(i,0,R.size())if(R[x][i]==&#39;Y&#39;)ret+=f(i);</description>
+    </item>
+    
+    <item>
+      <title>SRM 584 DIV1 Easy - Egalitarianism （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-584-div1-easy---egalitarianism-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 16:26:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-584-div1-easy---egalitarianism-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12613&amp;amp;rd=15696
+友達のつながりの集合が与えられる。
+それぞれの人はお金を所ゆすることができるが、
+友達同士は、ｄ以下の差でなければいけない。
+このとき、集合にある人のお金の差の最大値を求める。
+差が無限大になる場合はー１を返す。
+解き方 
+友達以外にはお金の制限がないことから、全員が友達でない場合は
+差が無限大になるのでー１．
+全て友達のつながりがある場合は、最も遠い友達との距離×ｄが答えになることが
+わかる。
+距離を求める問題なので、ワーシャルフロイド法を用いて最大となる友達との距離を求める。
+Challenge
+(i,i)は自分との連結なので探索から除外する。
+コード 
+int INF=1e+9;
+class Egalitarianism {
+public: int maxDifference(vector&amp;lt;string&amp;gt; isFriend, int d) {
+int n=isFriend.size();
+int check[n][n];
+int ans=0;
+FORE(i,0,n){
+FORE(j,0,n){
+if(isFriend[i][j]==&#39;Y&#39;)check[i][j]=1;
+else check[i][j]=INF;
+}
+}
+FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)check[i][j]=min(check[i][j],check[i][k]+check[k][j]);
+FORE(i,0,n){
+FORE(j,0,n){
+if(i==j)continue;
+if(check[i][j]==INF)return -1;
+ans=max(ans,check[i][j]);
+}
+}
+return ans*d;
+}
+}; </description>
+    </item>
+    
+  </channel>
+</rss>

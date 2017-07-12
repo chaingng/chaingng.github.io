@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実装</title>
+
+<meta name="generator" content="Hugo 0.25-DEV" />
+<meta property="og:title" content="実装" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chaingng.github.io/tags/%E5%AE%9F%E8%A3%85/" />
+
+
+
+<meta property="og:updated_time" content="2014-02-09T00:04:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="takatomo&#39;s blog Feed" href="https://chaingng.github.io/tags/%E5%AE%9F%E8%A3%85/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+	<div class="main-content list content" role="main">
+		<header class="page-header">
+			<h1 class="page-header__title">実装</h1>
+		</header>
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 245 DIV1 Easy - Flush (復習×○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-09T00:04:00">February 09, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=4487&amp;rd=7220
+４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。
+Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlushスコアになる。
+このとき、Flushスコアの期待値を求める。
+解き方 
+カードの種類は４種類、カード数は１３枚なので、
+あり得る全てのカードの取り方について全探索すればよい。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class Flush {
+public:
+double f(int x,int y){
+double ret=1.0;
+for(int i=y;i&gt;y-x;i--)ret*=i;
+for(int i=x;i&gt;0;i--)ret/=i;
+return ret;
+}
+double size(vector&lt;int&gt; s, int number) {
+double ret=0.0;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-265-div1-easy---schedulestrength-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 265 DIV1 Easy - ScheduleStrength (復習○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-08T10:02:00">February 08, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+複数のチームがあり対戦を行う。
+総当たり戦ではなく、対戦しないチーム同士もある。
+ここで、各チームの強さを求めたい。
+あるチームの強さは、対戦した他のチーム全てに対し、
+「他のチームの勝ち数／他のチームの勝ち数＋他のチームの負け数」
+が少ないほど強いチームにある。
+ただし、他のチームの勝ち数からは自チームの負け数、他のチームの負け数からは自チームの勝ち数を引いてカウントしなければならない。
+このとき、各チームを強さの順にソートして返す。強さが同じ時はチーム名の昇順に並べる。
+解き方 
+シミュレーション問題なので、いかにシンプルにコーディングするか。
+いきなり計算してもよいのですが、各チームの勝ち負け数をカウントしてから
+強さを計算することでシンプルに実装できます。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class ScheduleStrength {
+public: vector&lt;string&gt; calculate(vector&lt;string&gt; teams, vector&lt;string&gt; results) {
+int n=teams.size();
+int win[n],lose[n];
+memset(win,0,sizeof(win));
+memset(lose,0,sizeof(lose));
+FORE(i,0,n){
+FORE(j,0,n){
+if(results[i][j]=='W')win[i]++;
+if(results[i][j]=='L')lose[i]++;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-265-div1-easy---schedulestrength-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 333 DIV1 Easy - BirthNumbersValidator (復習×○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-02-01T17:06:00">February 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=7291&amp;rd=10657
+誕生日を表わす１０桁の数字が与えられる。
+その数字を"YYMMDDCCCC"とすると、以下で表わされる。
+ＹＹが１９０７～２００６までの西暦の下２桁。
+うるう年も存在する。うるう年は４００で割れるか、４で割れて１００で割れない年。
+ＭＭが月であり、ＭＭは女性の場合に限り５１～６２の範囲になる。
+ＤＤが日付。
+ＣＣＣＣはチェックサムで、１０ケタの数字を１１で割った余りが０になるようになっている。
+このとき、与えられた数字が有効であればＹＥＳを、無効な数字であればＮＯを返す。
+解き方 
+シミュレーション問題なので以下にシンプルに解くか。
+今回の実装のポイントは３つ。
+・各条件の判定には関数を用いる
+・月の判定には配列を用いる。
+・ＹＥＳ，ＮＯの判定にはbool値を定義し、andを取って判定する。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class BirthNumbersValidator {
+public:
+long long calc(string str){
+stringstream out(str);
+long long num;
+out&gt;&gt;num;
+return num;
+}
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 184 DIV1 Easy - RaceCalculator (復習×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-31T23:05:00">January 31, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=2250&amp;rd=4740
+・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。
+・同じペースで走ることができ、予想される時間が計算できるのが理想だが、疲れが影響してペースは一定にはならない。
+・ある地点における予想時間は、その他の任意の２点を使って計算できる。
+・このとき、一番実際の時間と予想時間との差が小さくなる地点を求める。
+解き方 
+問題文の意味を読み解くのに苦労しました。
+ある地点に対する予想時間はその他の任意の２点を使って求めるということがわかれば、
+３点の取り方に対する全ての場合の数を計算してあげれば答えが求まります。
+コード 
+class RaceCalculator {
+public: int bestRace(vector&lt;int&gt; distances, vector&lt;int&gt; times) {
+int n=times.size();
+double badness[n];
+FORE(i,0,n)badness[i]=-(1e+9);
+FORE(i,0,n)FORE(j,0,n)FORE(k,0,n){
+if(i==j||j==k||i==k)continue;
+double a=log(times[j]/(double)times[i]);
+double b=log(distances[i]/(double)distances[k]);
+double c=log(distances[i]/(double)distances[j]);
+double expected=times[i]*exp(a*b/c);
+badness[k]=max(badness[k],(times[k]-expected)/expected);
+}
+int best=0;
+FORE(i,0,n)if(badness[i]&lt;badness[best])best=i;
+return best;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-288-div1-easy---findtriangle/" rel="bookmark">SRM 288 DIV1 Easy - FindTriangle</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-30T08:05:00">January 30, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。
+・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作ることができる。
+・このとき、作ることのできる三角形の最大の面積を求める。
+解き方 
+三角形の求め方がポイント。
+ヘロンの法則を使って求めると、誤差が生じてしまう。
+そのため、２つのベクトルの外積が平行四角形の面積になることを利用して解く。
+コード 
+class FindTriangle {
+public:
+double largestArea(vector&lt;string&gt; points) {
+int n=points.size();
+int c[n],x[n],y[n],z[n];
+FORE(i,0,n){
+stringstream out(points[i]);
+char ch;
+out&gt;&gt;ch&gt;&gt;x[i]&gt;&gt;y[i]&gt;&gt;z[i];
+if(ch=='R')c[i]=1;
+else if(ch=='G')c[i]=2;
+else c[i]=4;
+}
+double ret=0.0;
+FORE(i,0,n){
+FORE(j,i+1,n){
+FORE(k,j+1,n){
+int flag=c[i]|c[j]|c[k];
+if(flag==1||flag==2||flag==4||flag==7){
+double dx1=x[j]-x[i];
+double dy1=y[j]-y[i];
+double dz1=z[j]-z[i];
+double dx2=x[k]-x[i];
+double dy2=y[k]-y[i];
+double dz2=z[k]-z[i];
+double len=(dy1*dz2-dz1*dy2)*(dy1*dz2-dz1*dy2);
+len+=(dz1*dx2-dx1*dz2)*(dz1*dx2-dx1*dz2);
+len+=(dx1*dy2-dy1*dx2)*(dx1*dy2-dy1*dx2);
+ret=max(ret,len);
+}
+}
+}
+}
+return sqrt(ret)/2.0;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 287 DIV1 Easy - TwoEquations (復習○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-28T08:38:00">January 28, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=6013&amp;rd=9808
+・２次方程式が与えられる。
+・このとき、ｘ、ｙを求める。
+ただし解がない時は"NO SOLUTIONS"、解が複数あるときは"MULTIPLE SOLUTIONS"を返す。
+解き方 
+シミュレーションの問題なので、いかに簡単に実装するか。
+ポイントは３つ。
+１つめは、文字列から数字を取り出すところ。
+２つめは、解がない時、複数あるときの例外判定。
+３つめは、ｘ、ｙの求め方。
+１つめについては数字の取り出しとかっこの判定を分けることで実装。
+２つめ、３つめについては方程式を
+Ax+ by= c、Dx+ ey= fとしたとき、
+X= ce-bf / ae-bd,　Y= cd-af / bd-ae　となる。
+２つめ、ae-bdが０のとき ce-bfかつcd-afが０であれば解が複数あり、そうでなければ解が存在しない。
+またx,yのすべての係数が０のとき、右の項がすべて０なら解が複数あり、そうでなければ解が存在しない。
+３つめについては上記の式でｘ、ｙを求めればよい。
+コード 
+class TwoEquations {
+public:
+int getnum2(string str){
+string org;
+if(str[0]=='(')org=str.substr(1,2);
+else org=str[0];
+stringstream out(org);
+int ans;
+out&gt;&gt;ans;
+return ans;
+}
+vector&lt;int&gt; getnum(string str){
+stringstream out(str);
+vector&lt;int&gt; ans(3,0);
+string a0,a1,a2,b,c;
+out&gt;&gt;a0&gt;&gt;b&gt;&gt;a1&gt;&gt;c&gt;&gt;a2;
+ans[0]=getnum2(a0);
+ans[1]=getnum2(a1);
+ans[2]=getnum2(a2);
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 485 DIV1 Easy - AfraidOfEven (復習×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-26T13:28:00">January 26, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11146&amp;rd=14238
+・ある数列が与えられる。
+・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。
+このとき、もとの等差数列を求める。
+解き方 
+等差数列の差と、初項が決まれば等差数列になるかどうかは容易に判定できる。
+問題文から数字はintの範囲なので、この範囲で全探索すれば答えが求まる。
+＃もしくは、初項が偶数・奇数、差が偶数、奇数の場合を考えると
+２項目から０項目の差/2、もしくは３項目から１項目の差/2が答えになることがわかる。
+コード 
+class AfraidOfEven {
+public:
+vector&lt;int&gt; calc(vector&lt;int&gt; org,int d){
+int invalid=0;
+FORE(i,1,org.size()){
+while(1){
+if(org[i]!=org[i-1]+d)org[i]*=2;
+else break;
+if(org[i]&lt;1||org[i]&gt;org[i-1]+d){
+invalid=1;
+break;
+}
+}
+if(invalid){
+org[0]=-1;
+return org;
+}
+}
+return org;
+}
+vector&lt;int&gt; restoreProgression(vector&lt;int&gt; seq) {
+vector&lt;int&gt; ans;
+FORE(d,-1000,1001){
+vector&lt;int&gt; cur=seq;
+while(cur[0]&lt;=1e+9){
+vector&lt;int&gt; tmp=calc(cur,d);
+if(tmp[0]!=-1 &amp;&amp; (ans.empty()||ans&gt;tmp))ans=tmp;
+if(cur[0]&gt;1e+8)break;
+cur[0]*=2;
+}
+}
+return ans;
+}
+};
+using namespace std;
+#define all(c) (c).
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 207 DIV1 Easy - RegularSeason (復習○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-25T20:56:00">January 25, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=2866&amp;rd=5853
+・複数のチームが総当たりで対戦する。
+・各チームは与えられた対戦数をホーム・アウェーで対戦する。
+・対戦する際の勝率が与えられる。
+・勝つ試合数は勝率＊対戦数の和を最後に四捨五入(round up)したものになる。
+・最後に勝った試合数の降順、同じ場合は四捨五入前の勝った試合数の降順、それも同じ場合はチーム名の昇順で”チーム名　勝った試合数”のフォーマットで返す。
+解き方 
+勝率の求め方が少しわかりにくくて苦労しました。
+最後のソートは構造体のソートを書きましたが、
+四捨五入前の数字があれば勝った試合数の降順は使わなくてもよいことに気づけばもっと単純にかけました。
+計算ごとに１００で割るのではなく、最後に１００で割るのが丸め誤差を防ぐポイント。
+コード 
+class RegularSeason {
+public:
+struct team{
+double points;
+int score;
+string name;
+bool operator&lt;(const team &amp; v)const{
+if(score!=v.score)return score&gt;v.score;
+if(points!=v.points)return points&gt;v.points;
+return name&lt;v.name;
+}
+};
+vector&lt;string&gt; finalStandings(vector&lt;string&gt; teams, int rounds) {
+int n=teams.size();
+vector&lt;team&gt; t(n);
+vector&lt;string&gt; ans(n,"");
+FORE(i,0,n){
+stringstream out(teams[i]);
+out&gt;&gt;t[i].name;
+FORE(j,0,n){
+double num;
+out&gt;&gt;num;
+if(i==j)continue;
+else{
+t[i].points+=num*rounds;
+t[j].points+=(100-num)*rounds;
+}
+}
+}
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-145-div1-easy---bonuses-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 145 DIV1 Easy - Bonuses （復習○）</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-25T15:47:00">January 25, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://topcoder.bgcoder.com/print.php?id=276
+・従業員それぞれに対し、稼いだポイントが与えられる。
+・稼いだポイントに対し、ボーナスの配分を決めたい。
+・ボーナスの配分の割合は、全従業員のポイント数に対する各従業員のポイントとする。ただし、割り切れない場合は切り捨てとする。
+・最後に切り捨てて余った分の割合は、ポイントの多い従業員から順に１％ずつ割り当てる。同じポイントの場合は順番が最初の方に割り当てる。
+解き方 
+余ったポイントの割り当て方だけコーディングできれば簡単に解ける。
+ソートを使いたいところだが、規則が簡単なので割り当て済みかを判定する配列を使ってあげれば簡単に実装できる。
+コード 
+class Bonuses {
+public: vector&lt;int&gt; getDivision(vector&lt;int&gt; points) {
+int n=points.size();
+vector&lt;int&gt; ans(n,0);
+double sum=0;
+FORE(i,0,n)sum+=points[i];
+int score=100;
+FORE(i,0,n){
+int tmp=(points[i]/sum)*100.0;
+ans[i]=tmp;
+score-=tmp;
+}
+vector&lt;int&gt; used(n,0);
+FORE(i,0,score){
+int cmax=-1,idx=-1;
+FORE(j,0,n){
+if(used[j])continue;
+if(cmax&lt;points[j]){
+cmax=points[j];
+idx=j;
+}
+}
+ans[idx]++;
+used[idx]=1;
+}
+return ans;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-171-div1-easy---crosscountry-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 171 DIV1 Easy - CrossCountry (復習○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-01-25T13:09:00">January 25, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=1950&amp;rd=4660
+・チーム数と、ゴールしたメンバーのチーム名が到着順に与えられる。
+・チームのスコアは最初にゴールした５人の到着順の和になる。
+ゴールした人数が５人未満のチームはカウント対象にならない。
+・スコアの小さい順にチームを並べる。
+スコアが同じとき、６人目のゴール者がいる場合はその到着が早い方が先になる。
+６人目のゴール者がいない場合は６人目のゴール者がいる方が先になる。
+それでも同一の場合は、チーム名の昇順になる。
+このとき、チーム名を順番に並べた文字列を返す。
+解き方 
+ソートの方法が複雑なので、独自にソート順を定義する。
+こちらを参考にさせていただきました。
+http://d.hatena.ne.jp/minus9d/20130501/1367415668
+コード 
+class CrossCountry {
+public:
+struct team{
+int score;
+int sixth;
+char name;
+bool operator&lt;(const team &amp; a)const{
+if(score!=a.score)return score&lt;a.score;
+if(sixth!=a.sixth)return sixth&lt;a.sixth;
+return name&lt;a.name;
+}
+};
+string scoreMeet(int numTeams, string finishOrder) {
+vector&lt;team&gt; teams;
+string ans="";
+FORE(i,0,numTeams){
+team t;
+t.score=0;
+t.sixth=10000;
+t.name='A'+i;
+int num=0;
+FORE(j,0,finishOrder.size()){
+if(('A'+i)==finishOrder[j]){
+if(num&lt;5)t.score+=j;
+else if(num==5)t.sixth=j;
+num++;
+}
+}
+if(num&gt;=5)teams.push_back(t);
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-171-div1-easy---crosscountry-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/tags/%E5%AE%9F%E8%A3%85/">«</a>
+	<span class="pagination__item pagination__item--current">2/3</span>
+	<a class="pagination__item pagination__item--next" href="/tags/%E5%AE%9F%E8%A3%85/page/3/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/shebang_init/">shebangから理解するUNIXの仕組み</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hoge/">hugo first post</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">防御的プログラミング</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%81%AE%E8%A6%8B%E7%9B%B4%E3%81%97%E3%81%BE%E3%81%A8%E3%82%81/">投資信託の見直しまとめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-668-div1-easy---painttheroom-/">SRM 668 DIV1 Easy - PaintTheRoom ○</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-670-div1-easy---doubleoroneeasy-x/">SRM 670 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-677-div1-easy---doubleoroneeasy-x/">SRM 677 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-669-div1-easy---subdividedslimes-x/">SRM 669 DIV1 Easy - SubdividedSlimes x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-671-div1-easy---bearcries-x/">SRM 671 DIV1 Easy - BearCries x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-673-div1-easy---bearcavalry-x/">SRM 673 DIV1 Easy - BearCavalry x</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/https://www.facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/https://www.linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp</a>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math</a>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム</a>
+	</div>
+</div>
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

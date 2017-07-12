@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考察</title>
+
+<meta name="generator" content="Hugo 0.25-DEV" />
+<meta property="og:title" content="考察" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chaingng.github.io/tags/%E8%80%83%E5%AF%9F/" />
+
+
+
+<meta property="og:updated_time" content="2013-10-19T08:26:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="takatomo&#39;s blog Feed" href="https://chaingng.github.io/tags/%E8%80%83%E5%AF%9F/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+	<div class="main-content list content" role="main">
+		<header class="page-header">
+			<h1 class="page-header__title">考察</h1>
+		</header>
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 503 DIV1 Easy - ToastXToast (復習×○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-10-19T08:26:00">October 19, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11204&amp;rd=14432
+様々な種類のトーストがあり、ある焼き時間になるとポッピングシャワーとなるが
+その時間未満だと生焼け、その時間を過ぎると焼きすぎになる。
+ポッピングシャワーとなる焼き時間はトーストの種類により異なる。
+生焼けのトーストとその焼き時間の集合、
+焼きすぎのトーストとその焼き時間の集合が与えられた時、
+最低何種類のトーストが存在したかを求める。
+ただし、集合のうち生焼けと焼きすぎのペアは少なくとも１つは存在する。
+そのようなペアが存在しなければー１を返す。
+解き方 
+生焼けと焼きすぎの境界が１つしかなければ、生焼けのものを１つ、焼きすぎのものを１つにまとめることができるので１種類。
+一番生焼けのものが時間が一番早く、一番焦げすぎのものが一番遅ければ、
+一番生焼けのもの＆一番焦げすぎのもの以外をまとめて１種類、
+一番生焼け以外のもの＆一番焦げすぎのものをまとめて１種類なので
+合計２種類。
+一番生焼けのものが時間が一番早く、一番焦げすぎのものが一番遅くなければ
+ペアが存在しないのでー１。
+コード 
+class ToastXToast {
+public: int bake(vector&lt;int&gt; under, vector&lt;int&gt; over) {
+int n=under.size();
+int m=over.size();
+sort(all(under));
+sort(all(over));
+if(under[0]&gt;over[0]||over[m-1]&lt;under[n-1])return -1;
+if(under[n-1]&lt;over[0])return 1;
+return 2;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-571-div1-easy---foxandmp3-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 571 DIV1 Easy - FoxAndMp3 (復習×○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-08-20T08:21:00">August 20, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12436&amp;rd=15491
+１～Ｎまでの数字が付けられたN.mp3ファイルを昇順に並べる。
+Ｎが５０を超える場合は、最初の５０個の昇順に並べられたファイル数を返す。
+解き方 
+Ｎが１０＾９のため全てのファイルを出力してからソートしては求めることができない。
+そのため規則性を見つける必要がある。
+Ｎ＝１０１８のとき、
+最初は１から始め，
+１０，１００，１０００と「１０をかけ、Ｎ以下ならその数」になる。
+次は１００１、１００２、１００９、１０１と「１を足していき、１０で割ってＮ以下ならその数」となる。
+また、１０１０、、、１０１８、１０２とＮを超えた場合は「１０で割って１を足し、Ｎ以下ならその数」になる。
+最後に、１９１、、１９９、２、と１０で割りつづけられるなら割り続ける必要がある。
+つまり、
+①１０をかけ、Ｎ以下ならその数
+②Ｎより大きい場合、１を足して１０の倍数もしくはＮと等しいなら、１０で割れなくなるまで割り続けた数に１を足した数なる。
+これをmin(N,50)まで操作してあげたものが答えになる。
+コード 
+class FoxAndMp3 {
+public: vector&lt;string&gt; playList(int n) {
+long long cur=1,num=1;
+vector&lt;string&gt; ans(min(n,50));
+FORE(num,0,min(50,n)){
+stringstream out;
+out&lt;&lt;cur&lt;&lt;".mp3";
+ans[num]=out.str();
+if(cur*10&lt;=n)cur*=10;
+else{
+while(cur%10==9 || cur==n)cur/=10;
+cur++;
+}
+}
+return ans;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-562-div1-easy---pastingpaintingdivone-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 562 DIV1 Easy - PastingPaintingDivOne （復習○）</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-08-18T18:57:00">August 18, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12317&amp;rd=15184
+長方形の模様が与えられる。
+模様はの各セルはＲ，Ｇ，Ｂのいずれかの色、もしくは．で表わされる透明のセルで
+構成される。
+最初は左上に重なるように模様がスタンプされ、次は左上の座標を右に１、下に１移動させてスタンプする。
+Ｔ回スタンプしたとき、Ｒ，Ｇ，Ｂの数を求める。
+解き方 
+Ｔが１０＾９のため、スタンプごとに全探索しては解けない。
+ここでスタンプされた時のＲＧＢの変化は、
+高さ分の回数スタンプした後は常に一定になることがわかれば
+それ以降の回数×Ｔ×ＲＧＢそれぞれの増加数、で解くことができる。
+コード 
+class PastingPaintingDivOne {
+public: vector&lt;long long&gt; countColors(vector&lt;string&gt; clipboard, int T) {
+char check[200][200];
+vector&lt;long long&gt; ans(3,0);
+int h=clipboard.size(),w=clipboard[0].size();
+long long pr=0,pg=0,pb=0;
+FORE(i,0,200)FORE(j,0,200)check[i][j]='.';
+FORE(n,0,h){
+T--;
+FORE(i,n,h+n)FORE(j,n,w+n)if(clipboard[i-n][j-n]!='.')check[i][j]=clipboard[i-n][j-n];
+ans[0]=ans[1]=ans[2]=0;
+FORE(i,0,200)FORE(j,0,200){
+if(check[i][j]=='R')ans[0]++;
+if(check[i][j]=='G')ans[1]++;
+if(check[i][j]=='B')ans[2]++;
+}
+if(T==0)return ans;
+}
+FORE(i,h,clipboard.size()+h)FORE(j,h,clipboard[0].size()+h)if(clipboard[i-h][j-h]!='.')check[i][j]=clipboard[i-h][j-h];
+FORE(i,0,200)FORE(j,0,200){
+if(check[i][j]=='R')pr++;
+if(check[i][j]=='G')pg++;
+if(check[i][j]=='B')pb++;
+}
+pr-=ans[0],pg-=ans[1],pb-=ans[2];
+ans[0]+=pr*T,ans[1]+=pg*T,ans[2]+=pb*T;
+return ans;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-536-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 536 DIV1 Easy - MergersDivOne （復習○）</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-08-18T10:30:00">August 18, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11799&amp;rd=14728
+複数の会社が与えられる。
+そのうち任意の数を選択し、その価値の和／選択した数が合併した後の価値になる。
+すべての会社を合併した時、最大となる価値を求める。
+解き方 
+最初の数の順番は回答に関係しないので昇順にソート。
+このとき、すべての点をプロットすると、２つずつ左から合併を繰り返した方がよいことがわかる。
+（合併後の点が順に右に移動していく。仮に３つを選択した時はその中間になり間の値があまり意味を持たないため、２つずつがよいことがわかる）
+コード 
+class MergersDivOne {
+public: double findMaximum(vector&lt;int&gt; revenues) {
+sort(revenues.begin(),revenues.end());
+double ans=revenues[0];
+FORE(i,1,revenues.size())ans=(ans+revenues[i])/2.0;
+return ans;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-554-div1-easy---thebricktowereasydivone-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 554 DIV1 Easy - TheBrickTowerEasyDivOne （復習○）</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-08-18T10:15:00">August 18, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12159&amp;rd=15176
+２つの色のレンガと、レンガの個数がそれぞれ与えられる。
+レンガは違う色を交互にだけ積み重ねることができる。
+このとき、とりうる高さの場合の数を求める。
+解き方 
+いくつか例を出してみると、積み重ねたレンガの数が偶数のときは2通り存在し、
+それ以外の場合は１通りしか存在しないことがわかる。
+１）積み重ねたレンガが偶数のときの場合の数　２色のうち最小の数
+２）レンガが奇数のときの場合の数
+＜レンガの長さが違う時＞
+レンガの数が２色とも同じ
+その数×２
+レンガの数が２色で異なる
+少ない方×２＋１
+＜レンガの長さが２色とも同じ時＞
+レンガの数が２色とも同じ
+その数
+レンガの数が２色で異なる
+少ない方＋１
+コード 
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class TheBrickTowerEasyDivOne {
+public: int find(int redCount, int redHeight, int blueCount, int blueHeight) {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-554-div1-easy---thebricktowereasydivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-547-div1-easy---pillars-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 547 DIV1 Easy - Pillars (復習×○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-08-18T10:00:00">August 18, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12055&amp;rd=14739
+柱が２つ与えられる。柱の間の距離はｗ。
+２つの柱の最大の長さｘ、ｙが与えられ、１～ｘ、１～ｙの間で好きに決めることができる。
+最後に、柱のてっぺんをロープで結び、その長さの平均値を求める。
+解き方 
+ｘ、ｙが１０＾５のため、全探索で解くことはできない。
+２つの柱の差の数は、２つの求め方がある。
+１）ｘ、ｙから計算式を求めて一意に決定
+２）ｘのみ１～ｘまで変化させ、それぞれに対しとりうる値を区間で求める。
+今回は２の方法でコーディングしました。
+１つエラーではまった原因としては、iをint型で計算したため数が大きい場合にエラーになってしまいました。
+「計算は全て型を一致させる」、という基本を忘れないようにします。
+ちなみに１の場合は、長さのとりうる値１－ｘからｙ－１までループさせ、
+i&lt;=０のときはmin(y,x+i)
+i&gt;0のときはmin(x,y-i)分だけその長さが存在することになります。
+コード 
+class Pillars {
+public: double getExpectedLength(int w, int x, int y) {
+if(x&gt;y)swap(x,y);
+double ret=w*x;
+for(int len=1;len&lt;=y-1;len++){
+int cnt=max(0,min(x,y-len))+max(0,min(x-len,y));
+ret+=cnt*sqrt((double)len*len+w*w);
+}
+return ret/x/y;
+}
+};
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i !
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-547-div1-easy---pillars-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-586-div1-easy---piecewiselinearfunction-%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 586 DIV1 Easy - PiecewiseLinearFunction （復習○）</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-08-18T08:24:00">August 18, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12691&amp;rd=15698
+座標上の点が複数与えられて、それぞれ線で結ぶ。
+このとき、一番多く存在する線上のｙの値について、最大値を求める。
+解き方 すべてのｙに対して値を求めると計算量が間に合わない。
+そこで、「ｙが増えるのは与えられたｙ座標の近辺のみ」ということがわかれば、
+調べる点は少なくてもよいことがわかる。
+ここで与えられたｙ座標のみと最初に考えてしまうが、
+「折れ線のときはその前後の値の方がより多く存在」する。
+つまり、与えられたｙ座標の前後を全て調べて、最大の値を返せばよい。
+Challenge
+例外条件：隣り合う点が平行→全ての点が平行
+「＜」と「＜＝」がかぶらないようにして、同じ点について複数数えないようにする
+コード 
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PiecewiseLinearFunction {
+public: int maximumSolutions(vector&lt;int&gt; Y) {
+int ret=0;
+int n=Y.size();
+FORE(i,0,n-1)if(Y[i]==Y[i+1])return -1;
+vector&lt;double&gt; vx;
+FORE(i,0,n){
+vx.push_back(Y[i]-0.5);
+vx.push_back(Y[i]);
+vx.push_back(Y[i]+0.5);
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-586-div1-easy---piecewiselinearfunction-%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm539-div2--level2/" rel="bookmark">SRM539 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-07-09T08:28:00">July 09, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題
+①数字の配列が２つ与えられる。
+それぞれの番号は、岩が入るＢＯＸの最小の数と最大の数を表わす。
+②あなたは岩を無数に持っており、選んだＢＯＸに最小の数以上、
+最大の数まで岩を入れることができる。
+③このとき、岩を９００１個以上入れた時に表わすことのできる
+岩の個数の場合の数を返す。
+解き方
+問題文を最初ミスリーディングしてしまったのですが、
+「９００１個以上入れることのできる場合の数」ではなく、
+「表わすことのできる岩の個数の場合の数」になります。
+最初にこのまま全探索しても手掛かりがないため、
+全てのＢＯＸの選び方はＯ（２＾１５＝１０＾３＊３２）で選ぶことができるため
+選んだＢＯＸについて考える。
+そうすることで最小の岩の数と最大の岩の数がわかるため、
+９００１以上の表わせる岩の個数がわかる。
+ただし表わせる岩の個数を配列に保存しようとすると
+次に、岩の数は１０＾６とかなり大きいため、
+Ｏ（１０＾６＊１０＾３＊３２）で計算できない。
+そこで、全て配列に保存するのではなく
+範囲を保存することを考える。
+始点の岩の数の配列を＋１とし、終点の次の配列をー１とすることで、
+＋のときはその間の数は存在することとなる。
+この処理を全て行っていくと、
+配列の数を最初から足していったとき＋１以上のときはその数は存在することとなる。
+Ｃｈａｌｌｅｎｇｅポイント
+配列（ループ）の数を１０＾７＊２だとエラーになってしまいました。
+１０＾６＊１．６だと通ったので、
+１０＾７＊２以上にならないことがＣｈａｌｌｅｎｇｅのポイントになりそうです。
+またケアレスミスをしてしまいましたが
+ビット列計算をするときは＆＆ではなく＆になります。
+コード
+class Over9000Rocks {
+public: int countPossibilities(vector&lt;int&gt; lowerBound, vector&lt;int&gt; upperBound) {
+int n=lowerBound.size(),ans=0;
+vector&lt;int&gt; check(16000000,0);
+for(int select=1;select&lt;(1&lt;&lt;n);select++){
+int upper=0,lower=0;
+for(int j=0;j&lt;n;j++){
+if(select&amp;1&lt;&lt;j){
+lower+=lowerBound[j];
+upper+=upperBound[j];
+}
+}
+check[lower]++;
+check[upper+1]--;
+}
+int parity=0;
+FORE(i,0,(int)check.size()){
+parity+=check[i];
+if(i&gt;9000 &amp;&amp; parity&gt;0)ans++;
+}
+return ans;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm539-div2--level2/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm536-div2--level2/" rel="bookmark">SRM536 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-07-03T22:54:00">July 03, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			&lt;問題&gt;
+①１～９個の面を持つサイコロがあり、決められた数だけ存在する。
+②どのサイコロを与えられたかはわからない。同じ面を持つサイコロは複数存在しうる。
+③そのサイコロの集合を複数回投げて、出た表の面の集合が与えられる。
+④このとき、可能性のあるサイコロの集合のうち最も面の数が少なくなるような和を返す。
+＜解き方＞
+全ての面の出方についてそれぞれソートする。
+ソートした後、それぞれの１番目の要素の中で最大のものが
+１番目の要素の最小の答えとなる。
+２番目以降も同様。
+最後に求めた全ての要素の和を返す。
+＜コード＞
+class RollingDiceDivTwo {
+public: int minimumFaces(vector&lt;string&gt; rolls) {
+int n=rolls.size(),ret=0;
+vector &lt;int&gt; ans(rolls[0].size(),0);
+FORE(i,0,n)sort(rolls[i].begin(),rolls[i].end());
+FORE(i,0,n){
+FORE(j,0,rolls[0].size()){
+if(ans[j]&lt;rolls[i][j]-'0')ans[j]=rolls[i][j]-'0';
+}
+}
+FORE(i,0,rolls[0].size())ret+=ans[i];
+return ret;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm564-div2--level2/" rel="bookmark">SRM564 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-29T23:17:00">June 29, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			＜問題＞
+①赤のボールの数、緑のボールの数、青のボールの数と１つの整数が与えられる。
+②システムは赤のボールがあれば1個壊し、次に緑のボールがあれば１個壊し、次に青のボールがあれば１個壊す。この操作を繰り返す。
+③このとき、与えられた整数のターンの時に壊すボールの色を返す。
+＜解き方＞
+整数が３つのボールのうち１番小さい数×３以下であれば３で割った余りで色を判別できる。
+それ以上であればいったん一番小さい数を除いたあと、２つの色で判定。
+そのあとは残りの１色となる。
+if文の分岐で記載することもできるが、
+ループ処理で書くことによって処理が間違えにくくなる。
+色の数を３から減らしていくことと、
+１つの色の処理ごとに、配列を詰めていくやり方でコードを書く。
+＜コード＞
+class AlternateColors {
+public: string getColor(long long r, long long g, long long b, long long k) {
+long long c[]={r,g,b};
+string name[]={"RED","GREEN","BLUE"};
+int t=3;
+while(t&gt;1){
+long long m=c[0];
+FORE(i,1,t)m=min(m,c[i]);
+if(k&lt;=m*t)return name[(k-1)%t];
+k-=(m*t);
+int tmp=t;
+t=0;
+FORE(i,0,tmp){
+if(c[i]-m&gt;0){
+c[t]=c[i]-m;
+name[t]=name[i];
+t++;
+}
+}
+}
+return name[0];
+}
+}; 
+		</div>
+	</div>
+</article>
+
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/tags/%E8%80%83%E5%AF%9F/">«</a>
+	<span class="pagination__item pagination__item--current">2/3</span>
+	<a class="pagination__item pagination__item--next" href="/tags/%E8%80%83%E5%AF%9F/page/3/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/shebang_init/">shebangから理解するUNIXの仕組み</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hoge/">hugo first post</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">防御的プログラミング</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%81%AE%E8%A6%8B%E7%9B%B4%E3%81%97%E3%81%BE%E3%81%A8%E3%82%81/">投資信託の見直しまとめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-668-div1-easy---painttheroom-/">SRM 668 DIV1 Easy - PaintTheRoom ○</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-670-div1-easy---doubleoroneeasy-x/">SRM 670 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-677-div1-easy---doubleoroneeasy-x/">SRM 677 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-669-div1-easy---subdividedslimes-x/">SRM 669 DIV1 Easy - SubdividedSlimes x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-671-div1-easy---bearcries-x/">SRM 671 DIV1 Easy - BearCries x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-673-div1-easy---bearcavalry-x/">SRM 673 DIV1 Easy - BearCavalry x</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/https://www.facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/https://www.linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp</a>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math</a>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム</a>
+	</div>
+</div>
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

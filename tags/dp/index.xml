@@ -1,0 +1,1435 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dp on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/dp/</link>
+    <description>Recent content in Dp on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 28 Apr 2015 21:04:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRM 401 DIV1 Easy - FIELDDiagrams</title>
+      <link>https://chaingng.github.io/post/srm-401-div1-easy---fielddiagrams/</link>
+      <pubDate>Tue, 28 Apr 2015 21:04:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-401-div1-easy---fielddiagrams/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8776&amp;amp;rd=12173
+整数fieldDiagramが与えられて、fieldDiagram行からなるBOXを作る。
+各行0,1,2,...において、長さはそれぞれfieldDiagram,fieldDiagram-1,fieldDiagram-2以下で
+なければならない。
+また、各行において上の行以下の長さでなければならない。
+このような条件を満たすようなBOXの作り方の総数を求める。
+解き方 
+上の行における長さがわかっていれば、上から順にたどっていくことで総数が
+計算できるのでｄｐで解ける。
+すべて０の場合は空になるので、最後にそのケース１通りを引いてあげれば良い。
+コード 
+class FIELDDiagrams {
+public: long long countDiagrams(int f) {
+long long dp[f+1][f+1];
+memset(dp,0,sizeof(dp));
+dp[0][f]=1LL;
+FORE(i,0,f)FORE(j,0,f+1){
+for(int k=min(j,f-i);k&amp;gt;=0;k--)dp[i+1][k]+=dp[i][j];
+}
+long long ret=0;
+FORE(i,0,f+1)ret+=dp[f][i];
+return ret-1;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 642 DIV1 Easy - WaitingForBus x</title>
+      <link>https://chaingng.github.io/post/srm-642-div1-easy---waitingforbus-x/</link>
+      <pubDate>Tue, 21 Apr 2015 16:12:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-642-div1-easy---waitingforbus-x/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13540&amp;amp;rd=16085
+・バスが複数あり、各バスごとに１周にかかる時間と、そのバスが選ばれる確率が与えられる。
+・スタート時にひとつのバスが与えられた確率で選ばれ、そのバスが戻ってきたときに
+また、そのバスを含むすべてのバスからひとつ選ばれ出発する。
+・あなたが到着する時間が与えられるとき、待ち時間の期待値を求める。
+解き方 
+期待値を求めるのでｄｐが使えそう。
+dp[現在の時刻]と定義する。
+各dp[i]について、すべてのバスjに対してdp[i+time[j]]を更新する。
+このとき、i+time[j]が自分が到着する時間よりも大きければその待ち時間を
+答えの期待値に加えていけば良い。
+コード 
+double dp[100001];
+class WaitingForBus {
+public: double whenWillBusArrive(vector&amp;lt;int&amp;gt; time, vector&amp;lt;int&amp;gt; prob, int s) {
+if(s==0)return 0.0;
+int n=time.size();
+double ret=0.0;
+memset(dp,0,sizeof(dp));
+dp[0]=1.0;
+for(int i=0;i&amp;lt;s;i++){
+FORE(j,0,n){
+if(s&amp;lt;=i+time[j])ret+=(i+time[j]-s)*dp[i]*prob[j]/100.0;
+else dp[i+time[j]]+=dp[i]*prob[j]/100.0;
+}
+}
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 656 DIV1 Easy - RandomPancakeStack xx</title>
+      <link>https://chaingng.github.io/post/srm-656-div1-easy---randompancakestack-xx/</link>
+      <pubDate>Tue, 21 Apr 2015 15:58:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-656-div1-easy---randompancakestack-xx/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13747&amp;amp;rd=16416
+・N個のパンケーキが与えられ、i番目のパンケーキの幅はi+1になる。
+また、各パンケーキのおいしさの値が与えられる。
+・ここからパンケーキをひとつづつ選び、上に重ねていく。
+ただし、現在積み重ねられている一番上のパンケーキより幅が大きいパンケーキを選んだらそこで終了となる。
+・ランダムにパンケーキが重ねられるとき、パンケーキおおいしさの値の期待値を求める。
+解き方 
+期待値の問題なのでｄｐが使えそう。（SRM607）
+現在積み重ねられているパンケーキについて、
+dp[現在の幅の広さ][現在のパンケーキの数]と定義する。
+このとき、各dp[i][j]についてdp[0〜i][j+1]を更新してあげればよい。
+コード 
+double dp[310][310];
+class RandomPancakeStack {
+public: double expectedDeliciousness(vector&amp;lt;int&amp;gt; d) {
+memset(dp,0,sizeof(dp));
+int n=d.size();
+FORE(i,0,n+1)dp[n][0]=1.0;
+//recurrence
+for(int i=n-1;i&amp;gt;=0;i--){
+for(int j=1;j&amp;lt;=n;j++){
+for(int k=i+1;k&amp;lt;=n;k++)dp[i][j]+=dp[k][j-1]/(n-(j-1));
+}
+}
+//transition
+/*for(int i=n;i&amp;gt;=0;i--){
+for(int j=0;j&amp;lt;n;j++){
+for(int k=0;k&amp;lt;i;k++)dp[k][j+1]+=dp[i][j]/(n-j);
+}
+}*/
+double ret=0.0;
+FORE(i,0,n)FORE(j,0,n+1)ret+=d[i]*dp[i][j];
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 653 DIV1 Easy - CountryGroupHard</title>
+      <link>https://chaingng.github.io/post/srm-653-div1-easy---countrygrouphard/</link>
+      <pubDate>Sun, 12 Apr 2015 10:42:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-653-div1-easy---countrygrouphard/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13688&amp;amp;rd=16317
+・様々な国の人々が、１列になって並んでいる。
+・同じ国の人々は連続して並んでいる。
+・ここで、その国の人がどのように並んでいるか確かめたい。
+・並んでいる人に対して、同じ国の人が何人連続で並んでいるか聞くことができ、
+その結果が与えられる。
+ただし、聞いていない人の数は０になる。
+・このとき、並べ方が１通りに定まればSufficient、そうでなければInsufficientを返す。
+解き方 
+場合の数を求めるのでｄｐを使う。
+SRM411の応用で、ある位置iを考えた時、それより前の長さjからｊ-iまでの長さを
+足すことができるか判定する、ｄｐになる。
+今回長さを足すことができるかの判定は、
+j-iまでの区間について0を除く人の答えが、すべてj-iの長さと一致していればよい。
+最終的に、場合の数が１通りであればSuffientになる。
+コード 
+class CountryGroupHard {
+public: string solve(vector&amp;lt;int&amp;gt; a) {
+int n=a.size();
+int dp[n+1];
+memset(dp,0,sizeof(dp));
+dp[0]=1;
+FORE(i,0,n){
+FORE(j,0,i+1){
+int len=i-j+1;
+int valid=1;
+FORE(k,j,i+1){
+if(a[k]==0)continue;
+if(a[k]!=len)valid=0;
+}
+if(valid)dp[i+1]+=dp[j];
+}
+}
+return dp[n]==1 ? &#34;Sufficient&#34; : &#34;Insufficient&#34;;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 612 DIV2 Middle - EmoticonsDiv2 (○○)</title>
+      <link>https://chaingng.github.io/post/srm-612-div2-middle---emoticonsdiv2-/</link>
+      <pubDate>Thu, 19 Mar 2015 20:29:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-612-div2-middle---emoticonsdiv2-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13041
+・笑顔のアイコンをsmiles数だけ送りたい。
+・最初は１個のアイコンだけすでに送られており、クリップボードは空になっている。
+・送り方としては次の２つの操作がある。
+（１）クリップボードの数だけの笑顔を送る
+（２）現在すでに送っているアイコン数だけクリップボードに張り付ける。
+・このとき、最小の操作回数を求める。
+解き方 
+操作の方法について、単純にｄｐを適用してあげればよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+int dp[1001][1001];
+class EmoticonsDiv2 {
+public: int printSmiles(int smiles) {
+FORE(i,0,smiles+1)FORE(j,0,smiles+1)dp[i][j]=1e+9;
+dp[0][1]=0,dp[1][1]=1;
+FORE(i,1,smiles+1)FORE(j,0,smiles+1){
+if(i+j&amp;lt;=smiles)dp[i][i+j]=min(dp[i][i+j],dp[i][j]+1);
+dp[j][j]=min(dp[j][j],dp[i][j]+1);
+}
+int ret=1e+9;
+FORE(i,0,smiles+1)ret=min(ret,dp[i][smiles]);
+return ret;</description>
+    </item>
+    
+    <item>
+      <title>SRM 619 DIV2 Middle - ChooseTheBestOne (×○)</title>
+      <link>https://chaingng.github.io/post/srm-619-div2-middle---choosethebestone-/</link>
+      <pubDate>Thu, 19 Mar 2015 20:07:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-619-div2-middle---choosethebestone-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13146
+・N人が円になって並んでいる。
+・そこから各ターンｔごとにｔ＾３番目にいる人を消し、その次の人へ移動する。
+・このとき、最後に残る人の番号を求める。
+解き方 ・各ターンごとに移動する数は、そのターンで残っている人でMODを取れば
+計算量が間に合うので、あとはメモ化すれば解くことができる。
+・MOD関連でシステムで一度落ちてしまったので、できるだけ実装はシンプルに。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class ChooseTheBestOne {
+public: int countNumber(int N) {
+int dp[N];
+memset(dp,0,sizeof(dp));
+int s=0;
+for(long long t=1;t&amp;lt;N;t++){
+while(dp[s])s=(s+1)%N;
+long long num=N-t+1;
+int move=(((t*t*t)%num)+num-1)%num;</description>
+    </item>
+    
+    <item>
+      <title>SRM 596 DIV2 Middle - ColorfulRoad (○○)</title>
+      <link>https://chaingng.github.io/post/srm-596-div2-middle---colorfulroad-/</link>
+      <pubDate>Thu, 19 Mar 2015 19:53:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-596-div2-middle---colorfulroad-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12837
+複数のタイルからなる１列の道路があり、各タイルは赤、緑、青のいずれかの色が塗られている。
+また、最初のタイルは赤色である。
+このタイルからスタートし、赤→緑→青→赤・・・の順で右側にあるタイルにジャンプできる。
+ただし、ジャンプしたときにその距離の２乗のコストがかかる。
+このとき、ゴールまで到達するのに最小のコストを求める。
+ゴールまでたどり着けない場合は－1を返す。
+解き方 
+単純なｄｐで解ける。
+道路の配列を文字列から０～２で現すようにしてあげれば
+場合分けも簡単になる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class ColorfulRoad {
+public: int getMin(string road) {
+int n=road.size();
+int R[n];
+memset(R,0,sizeof(R));
+FORE(i,0,n){
+if(road[i]==&#39;G&#39;)R[i]=1;
+else if(road[i]==&#39;B&#39;)R[i]=2;
+}</description>
+    </item>
+    
+    <item>
+      <title>SRM 621 DIV2 Middle - NumbersChallenge (○○)</title>
+      <link>https://chaingng.github.io/post/srm-621-div2-middle---numberschallenge-/</link>
+      <pubDate>Thu, 19 Mar 2015 19:19:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-621-div2-middle---numberschallenge-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13166
+・整数の集合Sが与えられる。
+・この整数の組み合わせで表わせないような、最小の正の整数を求める。
+解き方 
+・Sの数が２０、各要素が10^5から
+計算量O（20*10^5=2*10^6）でメモリ、速度とも足りそうなのでｄｐで解ける。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+int dp[2000001];
+class NumbersChallenge {
+public: int MinNumber(vector&amp;lt;int&amp;gt; S) {
+int n=S.size();
+memset(dp,0,sizeof(dp));
+dp[0]=1;
+FORE(i,0,n)for(int j=2000000-S[i];j&amp;gt;=0;j--)dp[S[i]+j]+=dp[j];
+FORE(i,1,2000001)if(dp[i]==0)return i;
+return 2000001;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 598 DIV1 Easy - BinPacking (○×)</title>
+      <link>https://chaingng.github.io/post/srm-598-div1-easy---binpacking-/</link>
+      <pubDate>Wed, 10 Dec 2014 21:34:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-598-div1-easy---binpacking-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12861&amp;amp;rd=15710
+複数のアイテムが与えられ、それを瓶に格納したい。
+１つの瓶には重さ３００までのアイテムしか入れられない。
+各アイテムの重さがわかっているとき、最低でいくつ瓶が必要か求める。
+解き方 
+・問題文だけを考えると、かなりの数の組み合わせがありそう。
+・条件をみると、ひとつのアイテムの重さは１００～３００．
+・これから、１つの瓶に入るアイテムは１～３つ。
+・アイテムの重さが２０１以上であれば１つの瓶には１つしか入らない。
+・重さが１００であるアイテムが３つあれば１つの瓶に３つ入れられる。
+・残りはソートして、一番大きいアイテムと小さいアイテムの合計が３００以下であれば
+一つに入れて、そうでなければ大きいアイテム１つだけ瓶に入れる。
+・上記の条件を貪欲法で、と思ったが
+１００のアイテムを３つ入れるケースと一番大きいアイテムと
+小さいアイテムの２つを入れるケースでは、どちらがよいかは選択できない。
+・こういうときはｄｐに切り替える。
+→System Passed
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+int dp[60][60];
+vector&amp;lt;int&amp;gt; items;
+class BinPacking {
+public:
+int rec(int l,int r){</description>
+    </item>
+    
+    <item>
+      <title>SRM 612 DIV1 Easy - EmoticonsDiv1 (××○)</title>
+      <link>https://chaingng.github.io/post/srm-612-div1-easy---emoticonsdiv1-/</link>
+      <pubDate>Sat, 15 Nov 2014 21:52:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-612-div1-easy---emoticonsdiv1-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10543&amp;amp;rd=15845
+・笑顔の顔文字をsmiles分送りたい。
+・最初はsmiles１個分送っている。
+・１回の操作で、現在の送っている数をクリップボードにコピーできる。
+・１回の操作で、クリップボードにコピーしている分の顔文字を送ることができる。
+・１回の操作で、現在送っている数を一つ減らすことができる。
+・このときの最小の操作回数を求める。
+解き方 
+・dpで解けそう
+・パラメータとしては、これまでに送っている顔文字の数、クリップボードにコピーされている顔文字の数で計算量も足りそう
+・サンプルは通った
+→System Failed
+・削除はｄｐの順序が変わるんで単純なｄｐでは解けない
+・なのでBFSで解く必要がある。距離が小さくなればキューに入れて、smiles数分送ったときの距離が答えになる。
+・反省：ｄｐっぽいが、探索の順が一方向でないときは単純に適用できなく、BFSを用いるケースがある。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+int d[3001][2001];
+class EmoticonsDiv1 {
+public: int printSmiles(int smiles) {
+FORE(i,0,3001)FORE(j,0,2001)d[i][j]=1e+9;
+d[1][0]=0;
+queue&amp;lt;pair&amp;lt;int,int&amp;gt; &amp;gt; q;</description>
+    </item>
+    
+    <item>
+      <title>2013 TCO Round 2A Easy - TheLargestString (××)</title>
+      <link>https://chaingng.github.io/post/2013-tco-round-2a-easy---thelargeststring-/</link>
+      <pubDate>Thu, 30 Oct 2014 11:35:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/2013-tco-round-2a-easy---thelargeststring-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12494&amp;amp;rd=15594
+・文字列sと、文字列tが与えられる。
+・sとtは同じ長さ。
+・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合する。
+・このとき、最も辞書順に大きくなるような結合後の文字列を求める。
+解き方 
+・一見、貪欲法で解けそう
+・まずはsの大きくなる選び方で試してみる
+・最後のサンプルがエラー。sの選び方に加え、選ばずにs+tの方が辞書順に大きくなる可能性が　あるため貪欲法では解けない。
+・よってｄｐで解く必要がある。
+・最初からｄｐを適用していくと、選び方を全探索しないといけないが、
+後ろから適用していけば、現在の文字列をつなげるかどうかを判断すればよいので
+計算量も間に合う。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class TheLargestString {
+public: string find(string s, string t) {
+int n=s.size();
+pair&amp;lt;string,string&amp;gt; dp[60][60];
+FORE(i,0,60)FORE(j,0,60)dp[i][j]=make_pair(&#34;&#34;,&#34;&#34;);</description>
+    </item>
+    
+    <item>
+      <title>SRM 159 DIV1 Middle -  ThePriceIsRight　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-159-div1-middle----thepriceisright%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 14 Mar 2014 00:05:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-159-div1-middle----thepriceisright%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://topcoder.bgcoder.com/print.php?id=328
+商品の価格の一覧が与えられる。
+最初はすべて伏せられていて金額がいくらかわからない。
+ここで、プレイヤーは任意の数だけ伏せられている数をめくり、めくったものが昇順に並んでいるようにしたい。
+このとき、昇順となる一番最長のめくった数とその場合の数を求める。
+解き方 
+単純なｄｐでは数字が１０＾６であるため解けないので、少し工夫したｄｐを使う。
+ｄｆｓによる降順からの探索ではなく、漸化式のように順に最適値を求めていき、すでに求まっている最適値からその位置での最適値を求めるようにする。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class ThePriceIsRight {
+public: vector&amp;lt;int&amp;gt; howManyReveals(vector&amp;lt;int&amp;gt; prices) {
+int n=prices.size();
+int len[n],cnt[n];
+memset(len,0,sizeof(len));
+memset(cnt,0,sizeof(cnt));
+FORE(i,0,n){
+int maxlen=0;
+FORE(j,0,i)if(prices[i]&amp;gt;prices[j])maxlen=max(maxlen,len[j]);
+FORE(j,0,i)if(len[j]==maxlen&amp;amp;&amp;amp;prices[i]&amp;gt;prices[j])cnt[i]+=cnt[j];
+if(maxlen==0)cnt[i]=1;
+len[i]=maxlen+1;</description>
+    </item>
+    
+    <item>
+      <title>SRM 331 DIV1 Easy - CarolsSinging (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 21 Feb 2014 10:02:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7280&amp;amp;rd=10011
+一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。
+このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。
+解き方 
+歌詞の長さは１０なので、全探索可能。
+ビットマスクを利用して全探索する。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class CarolsSinging {
+public:
+int choose(vector&amp;lt;string&amp;gt; lyrics) {
+int n=lyrics[0].size();
+int ret=1e+9;
+for(int i=0;i&amp;lt;(1&amp;lt;&amp;lt;n);i++){
+int cnt=0;
+vector&amp;lt;int&amp;gt; p(n,0);
+for(int j=0;j&amp;lt;n;j++){
+if(i&amp;amp;(1&amp;lt;&amp;lt;j)){
+cnt++;
+p[n-j-1]=1;</description>
+    </item>
+    
+    <item>
+      <title>SRM 199 DIV1 Easy - TriangleCount （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 14:59:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2889&amp;amp;rd=5074
+１辺の長さが与えられる。
+各辺の長さが１の三角形を組み合わせて、１辺の長さが与えられた長さになるよう
+三角形を作る。
+このとき、１辺が１～与えられた長さである三角形の数の合計を求める。
+解き方 
+なにか法則がありそう。
+単純な三角形の数だけ見ても法則はないが、
+普通の三角形と逆にした三角形を別々に考えると以下の法則があることがわかる。
+１辺の長さがｘの三角形を考えると、その数は以下の通りになる。
+普通の三角形：長さがｘのとき１個、ｘ＋１のとき３個、３のとき６個・・・と等差数列の値だけ増加
+逆の三角形　：長さがｘ＊２のとき１個、ｘ＊２＋１のとき３個・・・と等差数列の値だけ増加
+あとはdpにて実装して、最後に全ての和を足すことで答えが求められる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class TriangleCount {
+public: int count(int N) {
+int dp[N];
+memset(dp,0,sizeof(dp));
+FORE(i,0,N){
+int cnt=1;
+FORE(j,i,N){</description>
+    </item>
+    
+    <item>
+      <title>SRM 488 DIV1 Easy - TheBoredomDivOne (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 14:05:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11193&amp;amp;rd=14241
+友人が複数いて、既に飽きている友人と飽きていない友人がいる。
+毎回その中から２人を選んで、握手させる。握手した友人は飽きてしまう。
+このとき、全員が飽きるまでに要する回数を求める。
+解き方 
+通常のｄｐで解くと、数が変わらないときに無限ループになってしまうので工夫が必要。
+ここで、dp[x]をx人が飽きていないときの回数と定義する。
+p1は飽きていない人がｘ人のときから友人を選んで
+飽きていない人の数がx-1人になる確率、p2はx-2人になる確率とすると、
+dp[x]=1+p0*dp[x]+p1*dp[x-1]+p2*dp[x-2]　と表わすことができる。
+式を変形すると、dp[x]=(1+p1*dp[x-1]+p2*dp[x-2])/(1-p0)となりdpで解くことができる。
+dpはそれまでの状態の数がわかれば通常は解くことができるが、
+今回のケースのように状態が変わらないケースが存在するときは等号式を作って変形させてあげる必要がある。
+コード 
+class TheBoredomDivOne {
+public: double find(int n, int m) {
+int t=n+m;
+double dp[t+1];
+memset(dp,0,sizeof(dp));
+FORE(i,1,m+1){
+double sum=t*(t-1)/2.0;
+double p0=(t-i)*(t-i-1)/(sum*2.0);
+double p2=i*(i-1)/(sum*2.0);
+double p1=1.0-p0-p2;
+if(i==1)dp[i]=(1+p1*dp[i-1]+p2*0)/(1-p0);
+else dp[i]=(1+p1*dp[i-1]+p2*dp[i-2])/(1-p0);
+}
+return dp[m];
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 289 DIV1 Easy - FallingBall</title>
+      <link>https://chaingng.github.io/post/srm-289-div1-easy---fallingball/</link>
+      <pubDate>Sat, 01 Feb 2014 08:44:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-289-div1-easy---fallingball/</guid>
+      <description>問題 
+・トライアングル上に釘が打ってある台からボールを落とす。
+・台の高さはあらかじめ与えられる。
+・ボールを落としたとき、下に落ちる場所は釘の左側か右側になる。
+・また、通って欲しい釘の場所が複数与えられる。
+・このとき、通って欲しい場所を通るボールの落ち方の場合の数を求める。
+そのような場合がない場合はー１を返す。
+解き方 
+パスカルの三角形を使えば解くことができる。
+最初に与えられた台の数のパスカルの三角形を作り、
+各座標の差だけパスカルの三角形の場合の数をかけていく。
+座標の差が通ることができない差であればー１を返す。
+最後に、台の高さと最後の座標の高さの差の数だけ２の階乗すれば答えが求まる。
+コード 
+class FallingBall {
+public: int howMany(vector&amp;lt;string&amp;gt; cells, int n) {
+int ret=1;
+vector&amp;lt;pair&amp;lt;int,int&amp;gt; &amp;gt; p;
+int dp[n+1][n+1];
+memset(dp,0,sizeof(dp));
+dp[0][0]=1;
+FORE(i,1,n+1){
+dp[i][0]=1;
+FORE(j,1,n+1)dp[i][j]=dp[i-1][j-1]+dp[i-1][j];
+}
+FORE(i,0,cells.size()){
+stringstream out(cells[i]);
+int a,b;
+out&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;
+p.push_back(make_pair(a,b));
+}
+p.push_back(make_pair(0,0));
+sort(all(p));
+FORE(i,1,p.size()){
+int dy=p[i].first-p[i-1].first;
+int dx=p[i].second-p[i-1].second;
+if(dx&amp;lt;0||dx&amp;gt;dy)return 0;
+ret*=dp[dy][dx];
+}
+return ret*(1&amp;lt;&amp;lt;(n-1-p[p.size()-1].first));
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 501 DIV1 Easy - FoxPlayingGame (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 26 Jan 2014 10:06:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11284&amp;amp;rd=14430
+・nA,nB,paramA,paramBが与えられる。
+・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけparamB/1000をかける。それぞれは好きな順番で行ってもよい。
+このとき、最大となる値を求める。
+解き方 
+２つ解き方がある。
+１つ目は、与えられたパラメータによって法則を見つける、場合分けして解く方法。
+きちんと整理すれば解くことはできるが、少し複雑なので時間がかかってしまう。
+２つ目は、dpを利用する方法。
+今回は乗算の際に最大と最小が入れかわる可能性があるので、最大を求める通常のｄｐ１と最小を求めるｄｐ２の２つが必要。
+データ構造と解き方が分かればこちらが確実でコーディングも早い。
+コードは上記がｄｐの方法、コメントアウトしているのが１つめの方法。
+コード 
+class FoxPlayingGame {
+public:
+double theMax(int nA, int nB, int paramA, int paramB) {
+double dp1[60][60]={},dp2[60][60]={};
+FORE(i,0,nA+1){
+FORE(j,0,nB+1){
+if(i+j){
+dp1[i][j]=-1e+100;
+dp2[i][j]=1e+100;
+}
+if(i)dp1[i][j]=max(dp1[i][j],dp1[i-1][j]+0.001*paramA);
+if(j)dp1[i][j]=max(dp1[i][j],max(dp1[i][j-1]*0.001*paramB,dp2[i][j-1]*0.001*paramB));
+if(i)dp2[i][j]=min(dp2[i][j],dp2[i-1][j]+0.001*paramA);
+if(j)dp2[i][j]=min(dp2[i][j],min(dp1[i][j-1]*0.001*paramB,dp2[i][j-1]*0.001*paramB));
+}
+}
+return dp1[nA][nB];
+/*double ret=0.0;
+double pA=paramA/1000.0;
+double pB=paramB/1000.0;
+if(pA&amp;gt;=0){
+if(pB&amp;gt;=1)ret=nA*pA*pow(pB,nB);
+else if(-1&amp;lt;=pB&amp;amp;&amp;amp;pB&amp;lt;1)ret=nA*pA;
+else {
+if(nB%2==1)nB=max(0,nB-1);
+ret=nA*pA*pow(pB,nB);
+}
+}
+else{
+if(pB&amp;gt;=1)ret=nA*pA;
+else if(0&amp;lt;=pB&amp;amp;&amp;amp;pB&amp;lt;1)ret=nA*pA*pow(pB,nB);
+else if(-1&amp;lt;=pB&amp;amp;&amp;amp;pB&amp;lt;0)ret=nA*pA*pow(pB,nB&amp;gt;0);
+else{</description>
+    </item>
+    
+    <item>
+      <title>SRM 249 DIV1 Easy - TableSeating (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 25 Jan 2014 10:51:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4616&amp;amp;rd=7224
+・テーブルが複数存在する。
+・各グループ人数ごとに来店する確率が与えられる。
+来店する回数に制限はない。
+・グループがきたときに、空いているテーブルにランダムに案内する。
+ただし、グループが複数人のときは連続したテーブルに案内しなければならない。
+各テーブルには１人席に着く。
+このとき、テーブルに着席する人数の期待値を求める。
+解き方
+全探索では解けないので、ｄｐを利用する。
+ｄｐをどう設計するかがポイントで、現在の席の空き状態を引数とすることで解くことができる。
+同じグループ人数については何度選択してもよいので、その空き状態に対して全てのグループ数とその座り方について探索する。
+こちらのコードを参考にさせていただきました。
+http://community.topcoder.com/stat?c=problem_solution&amp;amp;rd=7224&amp;amp;pm=4616&amp;amp;cr=7459326
+コード 
+class TableSeating {
+public:
+double getExpected(int num, vector&amp;lt;int&amp;gt; probs) {
+double dp[(1&amp;lt;&amp;lt;12)]={0};
+bool can[15];
+FORE(i,1,(1&amp;lt;&amp;lt;num)){
+FORE(j,0,probs.size()){
+int s=j+1;
+double p=probs[j]/100.0;
+FORE(k,0,15)can[k]=false;
+FORE(k,0,15){
+int uu=(1&amp;lt;&amp;lt;(k+s))-(1&amp;lt;&amp;lt;k);
+if(k+s&amp;lt;=num &amp;amp;&amp;amp; ((i&amp;amp;uu)==uu) )can[k]=true;
+}
+int cnt=0;
+FORE(k,0,15)cnt+=can[k];
+p/=(double)cnt;
+FORE(k,0,15){
+if(!can[k])continue;
+int uu=(1&amp;lt;&amp;lt;(k+s))-(1&amp;lt;&amp;lt;k);
+dp[i]+=p*(dp[i-uu]+s);
+}
+}
+}
+return dp[(1&amp;lt;&amp;lt;num)-1];
+}
+};
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)</description>
+    </item>
+    
+    <item>
+      <title>SRM 296 DIV1 Easy - NewAlbum (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-296-div1-easy---newalbum-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 24 Jan 2014 00:34:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-296-div1-easy---newalbum-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6085&amp;amp;rd=9817
+・与えられた曲を全てＣＤに収録したい。
+・曲の長さは全て同じ秒数。
+・１つのＣＤに入れられる秒数も決められている。
+・ＣＤに収録する際、曲の間には必ず１秒空けなければいけない。
+・ただし、１つのＣＤに収録される曲数は１３の倍数になってはいけない。
+曲の長さと１つのＣＤに入れられる秒数、全曲数が与えられた時、
+必要なＣＤの最小数を求める。
+解き方 
+数学的に解くことができるが、少しトリッキー。
+ＣＤに入れられる曲数だけめいっぱい入れていき、
+最後に余った曲数に対して、１３の倍数でなければ１曲のみ他のＣＤに移せばよいので、答えはＣＤに入れられる曲数で割った数になる。
+１３の倍数のとき、他のＣＤがないとき、もしくは１引いたときその数が１３の倍数になるときは新たなＣＤに焼かなければいけないので＋１となる。
+上記のように少し考察が必要だが、ｄｐで解けば簡単に解くことができる。
+文字列のｄｐと同様１次元配列を用い、
+その曲数までの最小ＣＤ数を求めてあげればよい。
+コード 
+class NewAlbum {
+public: int leastAmountOfCDs(int nSongs, int length, int cdCapacity) {
+int dp[nSongs+1];
+int num=(cdCapacity+1)/(length+1);
+dp[0]=0;
+FORE(i,1,nSongs+1){
+dp[i]=100000;
+FORE(j,1,min(num,i)+1)if(j%13!=0)dp[i]=min(dp[i],1+dp[i-j]);
+}
+return dp[nSongs];
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 304 DIV1 Easy - PolyMove (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 22 Jan 2014 23:36:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6190&amp;amp;rd=9825
+・ある多角形が与えられる。
+・多角形のうち複数の点を１だけ動かすことができる。
+・ただし、１度動かした点と隣り合う点は動かすことができない。
+・また最初の点と最後の点との接続には境界があり、この２つを接続しているとみなすことはできない。
+このとき、任意の点を動かした時最大となる面積の増分を求める。
+解き方 
+ｄｐの問題。
+dp[i] ： 点i-1までの最大面積と定義
+点i-1を動かすか動かさないか、以下のいずれかの最大値を取る
+・dp[i-1] (点i-1を動かさないケース)
+・dp[i-2]+score(点i-1を動かしたときのスコア、点iと点i-2は動かさない)
+ただし、線形にｄｐで解くためには境界についての条件を考慮しなければならない。
+境界について以下の３つに分けることで単純なｄｐになる。
+・点０、点n－１が動かない場合（０とn－１の間に境界）
+・点０のみ動く場合（１と２の間に境界）
+・点ｎ－１のみ動く場合（０と１の間に境界）
+３つの最大のものが最終的な答えになる。
+
+
+コード 
+class PolyMove {
+public:
+double calc(int x1,int y1,int x2,int y2){
+return sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))*0.5;
+}
+double addedArea(vector&amp;lt;int&amp;gt; x, vector&amp;lt;int&amp;gt; y) {
+double ret=0.0;
+int n=x.size();
+double dp[n];
+memset(dp,0,sizeof(dp));
+FORE(i,2,n)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
+ret=max(ret,dp[n-1]);
+memset(dp,0,sizeof(dp));
+dp[1]=calc(x[1],y[1],x[n-1],y[n-1]);
+dp[2]=dp[1];
+FORE(i,3,n)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
+ret=max(ret,dp[n-1]);
+memset(dp,0,sizeof(dp));
+dp[0]=calc(x[0],y[0],x[n-2],y[n-2]);
+dp[1]=dp[0];
+FORE(i,2,n-1)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
+ret=max(ret,dp[n-2]);
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 325 DIV1 Easy - FenceRepairing （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 22 Jan 2014 07:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6827&amp;amp;rd=10005
+・穴のあいたフェンスがある。
+・フェンスを修理するには、sqrt(選んだ長さ)のコストが必要になる。
+このとき、フェンスを修理するのに最小のコストを求める。
+解き方 
+必ずしも、部分的に修理するのが最適解ではないと問題文にあるように、修理方法をパターン化するのは難しい。
+そこで、ｄｐを使って解く。
+現在のフェンスの箇所が穴が開いていなければ前のｄｐと同じ答えになることから、
+dp[n+1]にてdp[i]はi-1番目までのフェンスの修理コストの最小と定義する。
+i番目からn番目まで走査し、0のときは前の値がないのでdp[0]=0として解いてあげればよい。
+コード 
+class FenceRepairing {
+public:
+double calculateCost(vector&amp;lt;string&amp;gt; boards) {
+string str=&#34;&#34;;
+double INF=10000.0;
+FORE(i,0,boards.size())str+=boards[i];
+int n=str.size();
+double dp[n+1];
+FORE(i,1,n+1)dp[i]=INF;
+dp[0]=0.0;
+FORE(i,1,n+1){
+if(str[i-1]==&#39;.&#39;)dp[i]=dp[i-1];
+else FORE(j,0,i)dp[i]=min(dp[i],dp[j]+sqrt(i-j));
+}
+return dp[n];
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 327 DIV1 Easy - NiceOrUgly (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 20 Jan 2014 20:47:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6871&amp;amp;rd=10007
+・？を含んだ文字列が与えられる。
+・母音が３つ連続する、または子音が５つ連続したらその文字列はＵＧＬYであり、そうでなければＮＩＣＥである。
+・？は任意の文字に置き換えられる。
+このとき、与えられた文字列がＮＩＣＥであればＮＩＣＥを返し、ＵＧＬＹであればＵＧＬＹ，どちらもあり得るのであれば４２を返す。
+解き方 
+文字の長さが最大５０であることから全探索はできない。
+ここでｄｐを考えると、状態の数はdp[50][3][5]であるためdpで解くことができる。
+コード 
+int dp[100][100][100];
+string str;
+class NiceOrUgly {
+public:
+bool is_vow(char ch){
+return ch==&#39;A&#39;||ch==&#39;E&#39;||ch==&#39;I&#39;||ch==&#39;O&#39;||ch==&#39;U&#39;;
+}
+int calc(int pos,int x,int y){
+if(x&amp;gt;=3||y&amp;gt;=5)return 2;
+if(pos&amp;gt;=str.size())return 1;
+if(dp[pos][x][y]!=-1)return dp[pos][x][y];
+int ret=0;
+if(str[pos]==&#39;?&#39;){
+ret|=calc(pos+1,x+1,0);
+ret|=calc(pos+1,0,y+1);
+}
+else{
+if(is_vow(str[pos]))ret|=calc(pos+1,x+1,0);
+else ret|=calc(pos+1,0,y+1);
+}
+return dp[pos][x][y]=ret;
+}
+string describe(string s) {
+memset(dp,-1,sizeof(dp));
+str=s;
+int ret=calc(0,0,0);
+if(ret==3)return &#34;42&#34;;
+if(ret==1)return &#34;NICE&#34;;
+return &#34;UGLY&#34;;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 352 DIV1 Easy - NumberofFiboCalls （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-352-div1-easy---numberoffibocalls-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 18 Jan 2014 09:29:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-352-div1-easy---numberoffibocalls-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2292&amp;amp;rd=10709
+フィボナッチ数の計算が再帰プログラムで書かれている。
+このとき、ある整数ｎのフィボナッチ数を求めるときに再帰プログラムにて１と０が出力される回数を求める。
+解き方 
+ｎの最大が４０のため全探索では解くことができない。
+ここで、ある数xまでに出力される０と１の回数もフィボナッチ数と同様に、
+x-1とあるx-2の０と１の回数の和で求められることがわかる。
+これをｄｐで実装する。
+コード 
+class NumberofFiboCalls {
+public: vector&amp;lt;int&amp;gt; fiboCallsMade(int n) {
+vector&amp;lt;int&amp;gt; ans;
+int dp0[n+1],dp1[n+1];
+memset(dp0,0,sizeof(dp0));
+memset(dp1,0,sizeof(dp1));
+dp0[0]=1,dp1[1]=1;
+FORE(i,2,n+1){
+dp0[i]=dp0[i-1]+dp0[i-2];
+dp1[i]=dp1[i-1]+dp1[i-2];
+}
+ans.push_back(dp0[n]);
+ans.push_back(dp1[n]);
+return ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 366 DIV1 Easy - ChangingSounds （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-366-div1-easy---changingsounds-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 17 Jan 2014 22:24:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-366-div1-easy---changingsounds-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7973&amp;amp;rd=10781
+・ある曲数分、その曲を再生する前に調整可能なボリュームが与えられる。
+・与えられたボリュームに対し、そのボリューム分音を大きくするか、小さくすることができる。ただし、０以上最大ボリューム以下にならなければいけない。
+・最初のボリュームが与えられた時、最後の曲を再生し終わった後に最大のボリューム数を求める。全て再生できなければー１を返す。
+解き方 
+2^50=10^15のため全探索することはできない。
+ただし、ボリューム数が０～１０００の間に収まり曲数が最大５０のため
+dpで解くことができる。
+コード 
+class ChangingSounds {
+public:
+int maxFinal(vector&amp;lt;int&amp;gt; C, int beginLevel, int maxLevel) {
+int ret=-1,n=C.size();
+int dp[n+1][maxLevel+1];
+memset(dp,0,sizeof(dp));
+dp[0][beginLevel]=1;
+FORE(i,0,n){
+FORE(j,0,maxLevel+1){
+if(dp[i][j]){
+if(j+C[i]&amp;lt;=maxLevel)dp[i+1][j+C[i]]=1;
+if(j-C[i]&amp;gt;=0)dp[i+1][j-C[i]]=1;
+}
+}
+}
+FORE(i,0,maxLevel+1)if(dp[n][i])ret=i;
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 411 DIV1 Easy - SentenceDecomposition （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-411-div1-easy---sentencedecomposition-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 17 Jan 2014 08:27:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-411-div1-easy---sentencedecomposition-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8692&amp;amp;rd=12183
+・ある文と、単語の一覧が与えられる。
+・ある文を、与えられた単語を使って変換したい。
+・与えられた単語の順番を変えることで、ある文の一部と一致すればその一部を変換することができる。
+・変換するコストは、順番を変えた数になる。
+このとき、変換するコストの最小値を求める。変換できなければー１を返す。
+解き方 
+ｄｐを使って解く。
+dp[n=与えられた文字数]をとり、dp[i]をi番目までの最小のコストと定義する。
+dp[i]はiまでの文字をまとめて変換できるか、
+j&amp;lt;iとなるdp[j]が存在する場合j+1～iまでの文字が変換できるかを判定し
+最小値を更新していく。
+コード 
+class SentenceDecomposition {
+public:
+int rec(string s1,string s2){
+int cost=0;
+FORE(i,0,s1.size())if(s1[i]!=s2[i])cost++;
+sort(all(s1));
+sort(all(s2));
+return s1==s2 ? cost : 1e+9;
+}
+int decompose(string sentence, vector&amp;lt;string&amp;gt; validWords) {
+int n=sentence.size();
+int dp[n+1];
+FORE(i,0,n+1)dp[i]=1e+9;
+dp[0]=0;
+for(int i=0;i&amp;lt;n;i++)if(dp[i]!=1e+9){
+FORE(j,0,validWords.size()){
+int len=validWords[j].size();
+if(i+len-1&amp;lt;n){
+int cost=rec(sentence.substr(i,len),validWords[j]);
+dp[i+len]=min(dp[i+len],dp[i]+cost);
+}
+}
+}
+return dp[n]&amp;gt;=1e+9 ? -1 : dp[n];
+}
+};
+using namespace std;</description>
+    </item>
+    
+    <item>
+      <title>SRM 594 DIV1 Easy - AstronomicalRecords (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-594-div1-easy---astronomicalrecords-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 14 Jan 2014 23:38:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-594-div1-easy---astronomicalrecords-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12804&amp;amp;rd=15706
+・惑星がｎ個存在する。
+・惑星の相対サイズを測るシステムＡ，Ｂが存在する。
+・各システムは太陽からの距離が近い順からランダムな数を選び、そのシステムとの相対距離を計算する。
+このとき、存在しうる惑星の数の最小値を求める。
+解き方 
+相対距離の最大値は10^9のため全ての値について全探索はできない。
+そこで、要素数は最大５０であることから５０＊５０＝２５００分だけの組み合わせに対して調べればよい。
+このとき、掛け算で値を考えると小数になるため計算しにくい。
+そのため、最小公倍数の計算の仕方を用いて、A[i],B[j]のペアを選んだときＢの要素には全てA[i]をかけ、Aの要素には全てB[j]をかければよい。
+上記の処理後は、LCM（Longest Common Sequence）問題に帰着できる。
+dpはＡの要素数とＢの要素数の２次元配列を用いる。
+dp[i][j]はi,jに到達するまでの最大値と定義し、状態遷移にて答えを求める。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class AstronomicalRecords {
+public:
+int gcd(int x,int y){
+return y ? gcd(y,x%y) : x;</description>
+    </item>
+    
+    <item>
+      <title>SRM 602 DIV1 Easy - TypoCoderDiv1 (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-602-div1-easy---typocoderdiv1-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 13 Jan 2014 23:48:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-602-div1-easy---typocoderdiv1-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12924&amp;amp;rd=15820
+・現在のレートとコンテストごとの点数が与えられる。
+・そのコンテストに勝利した場合はその点数が足され、負けた場合は引かれる。ただし０　未満にはならない。
+・レートが２２００以上だとbrown、それ未満だとcielの称号になる。
+・２つのコンテスト連続でbrownの称号にならないようにする。
+このとき、brownとcielの称号が変化する最大の数を求める。
+解き方 
+要素数が５０なので全探索では2^50となり間に合わない。
+点数の最大が10^9と全てdpすると間に合わないが、連続してbrownにはならないことを考えると点数が2200までのdp[50][2200]を考えればよい。
+または、全状態数は50×2200なのでこちらでdpするとより簡単なコードになる。
+コード 
+map&amp;lt; pair &amp;lt; int, int &amp;gt;, int &amp;gt; p;
+vector&amp;lt;int&amp;gt; R;
+class TypoCoderDiv1 {
+public:
+int calc(int pos,int rate){
+if(p.count(make_pair(pos,rate)))return p[make_pair(pos,rate)];
+if(pos==R.size())return p[make_pair(pos,rate)]=0;
+int ret=0;
+if(rate&amp;gt;=2200){
+int score=rate-min(R[pos],rate);
+if(score&amp;gt;=2200)ret=-1000000;
+else ret=max(ret,1+calc(pos+1,score));
+}else{
+int score=rate+R[pos];
+if(score&amp;gt;=2200)ret=max(ret,1+calc(pos+1,score));
+else ret=max(ret,calc(pos+1,score));
+score=rate-min(R[pos],rate);
+ret=max(ret,calc(pos+1,score));
+}
+return p[make_pair(pos,rate)]=ret;
+}
+int getmax(vector&amp;lt;int&amp;gt; D, int X) {
+p.clear();
+R=D;
+return calc(0,X);
+}</description>
+    </item>
+    
+    <item>
+      <title>SRM 517 DIV1 Easy - CompositeSmash （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 10:58:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11535&amp;amp;rd=14542
+正の整数Ｎとtargetが与えられる。
+Ｎはスマッシュするとx*y=N（x,yは整数）となるｘとｙに分割することができる。
+このとき、どうスマッシュしてもtargetが得られるならYes,得られないならNoを返す。
+解き方 
+ＤＦＳで全探索。
+１つの判定関数の中で全ての割り切れる数に対してtrueとなり、
+かつ割り切れる数で得られるx,yのいずれかが判定関数でtrueとなるか判定する。
+dp化しなければ計算量が超えそうかと思ったけど超えなかった。
+こちらのソリューションでメモ化した方がよいかも。
+http://community.topcoder.com/stat?c=problem_solution&amp;amp;cr=22263204&amp;amp;rd=14542&amp;amp;pm=11535
+コード 
+int T;
+class CompositeSmash {
+public:
+bool f(int N){
+if(N==T)return true;
+bool allfound=true,flag=false;
+for(int i=2;i*i&amp;lt;=N;i++){
+if(N%i==0){
+flag=true;
+allfound&amp;amp;=f(i)|f(N/i);
+}
+}
+return flag ? allfound : false;
+}
+string thePossible(int N, int target) {
+T=target;
+return f(N) ?&#34;Yes&#34; : &#34;No&#34; ;
+}
+};
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i !</description>
+    </item>
+    
+    <item>
+      <title>SRM 531 DIV1 Easy - NoRepeatPlaylist (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-531-div1-easy---norepeatplaylist-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 29 Sep 2013 18:09:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-531-div1-easy---norepeatplaylist-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11774&amp;amp;rd=14724
+プレイヤーにＮ曲の曲が入っており、Ｐ曲からなるプレイリストを作りたい。
+Ｎ曲はそれぞれ少なくとも１回は再生しなければならない。
+また、１度再生した曲はＭ曲以上開ければまた再生できる。
+このとき、作成できるプレイリストの場合の数を求める。
+解き方 
+Ｃの順列の問題のとき、この場合は各変数を決めてＤＦＳを使うことで解くことができる。
+ＤＦＳでは各曲は区別しなくてもよい。
+変数は①Ｐ曲の曲を作るので現在までで作っている曲数、②Ｎ曲をすべて再生しなければならないのでまだ再生していない曲数、③これまでに再生した曲数となる。
+ＤＦＳのみの実装だとＯ（２＾１００＝１０＾１０）となるが、
+ｄｐを使うことでｄｐのサイズ１００＾３＝１０＾６まで減る。
+さらに向上させようとすれば、まだ再生していない曲はＮ－これまでに再生した曲だけ考えればよいので１０＾３まで減らすこともできる。
+コード 
+class NoRepeatPlaylist {
+public:
+long long f(int idx,int XS, int YS){
+if(idx==P)return YS==0 ? 1 : 0;
+if(dp[idx][XS][YS]!=-1)return dp[idx][XS][YS];
+long long ans=0;
+if(YS&amp;gt;0)ans+=YS*f(idx+1,XS+1,YS-1)%MOD;
+if(XS-M&amp;gt;0)ans+=(XS-M)*f(idx+1,XS,YS)%MOD;
+return dp[idx][XS][YS]=ans%MOD;
+}
+int numPlaylists(int N1, int M1, int P1) {
+FORE(i,0,101)FORE(j,0,101)FORE(k,0,101)dp[i][j][k]=-1;
+P=P1;
+M=M1;
+return f(0,0,N1);
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 533 DIV1 Easy - CasketOfStar (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-533-div1-easy---casketofstar-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 24 Aug 2013 07:46:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-533-div1-easy---casketofstar-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11781&amp;amp;rd=14726
+数字の文字列が与えられる。
+ひとつずつ文字を選び、その両端の値をかけたものがスコアになる。
+選んだあとはその文字は消滅する。
+最初と最後の値になるまでこの処理を繰り返した時、最大となるスコアを求める。
+解き方 
+単純に深さ優先探索を行おうとすると、最大でＯ（４８！）のため
+解くことができない。
+そこで、処理を逆にできないか考えてみる。
+ここで、ある数字を選んで挿入することを考えると
+そのときのスコアは一意に定まる。
+また、そこから挿入するときの最大のスコアは最初～挿入した場所＋挿入した場所～最後
+のスコアになる。
+この場合は区間ごとの最大値の判定となり葉の判定が増えるのでｄｐが活用でき、
+さらに判定回数も減るのでＯ（５０×５０）ほどになる。
+コード 
+int dp[60][60];
+vector&amp;lt;int&amp;gt; w;
+class CasketOfStar {
+public:
+int solve(int l,int r){
+if(dp[l][r]!=-1)return dp[l][r];
+if(l+1==r)return 0;
+FORE(i,l+1,r)dp[l][r]=max(dp[l][r],solve(l,i)+solve(i,r)+w[l]*w[r]);
+return dp[l][r];
+}
+int maxEnergy(vector&amp;lt;int&amp;gt; weight) {
+w=weight;
+FORE(i,0,60)FORE(j,0,60)dp[i][j]=-1;
+return solve(0,weight.size()-1);
+}
+};
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).</description>
+    </item>
+    
+    <item>
+      <title>SRM 565 DIV1 Easy - MonstersValley (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-565-div1-easy---monstersvalley-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 21 Aug 2013 07:50:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-565-div1-easy---monstersvalley-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12350&amp;amp;rd=15187
+モンスターが複数いる谷を越える。
+各モンスターには恐さとコインの値を持つ。
+プレイヤーは各モンスターに対し、そのコインを払って仲間にするか、
+もしくは仲間の恐さの和がそのモンスター以上であればそのまま通り過ぎることが
+できる。
+このとき、全てのモンスターを越えたときに支払う最小のコインの数を求める。
+解き方 
+モンスターの数が５０のため、Ｏ（２＾５０）となり
+深さ優先探索では求めることができない。
+ここでコインの数は最大でモンスターの数×２となるため、
+モンスターの位置にいるとき所有しているコインの数をパラメータ、
+返り値を恐さの値としたｄｐで解くことができる。
+コード 
+class MonstersValley {
+public:
+int minimumPrice(vector&amp;lt;long long&amp;gt; dread, vector&amp;lt;int&amp;gt; price) {
+int n=dread.size();
+long long maxp[2*n+1][n+1],INF=1e+18;
+FORE(p,0,2*n+1){
+maxp[p][0]=0;
+FORE(j,1,n+1)maxp[p][j]=-INF;
+FORE(j,1,n+1){
+if(p&amp;gt;=price[j-1])maxp[p][j]=maxp[p-price[j-1]][j-1]+dread[j-1];
+if(maxp[p][j-1]&amp;gt;=dread[j-1])maxp[p][j]=max(maxp[p][j],maxp[p][j-1]);
+}
+}
+FORE(i,0,2*n)if(maxp[i][n]&amp;gt;=0)return i;
+return 2*n;;
+}
+};
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).</description>
+    </item>
+    
+    <item>
+      <title>SRM 585 DIV1 Easy - TrafficCongestion (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-585-div1-easy---trafficcongestion-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 16:44:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-585-div1-easy---trafficcongestion-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11361&amp;amp;rd=15697
+２分木の高さが与えられる。
+車は一筆書きでそのセルを移動することができる。
+ただし、一度車が通った道は行くことができない。
+このとき、すべてのセルを移動するのに必要な車の台数を求める。
+解き方 
+いくつか例を並べてみると、前の高さで必要な車の数＋２つ前で必要な車の数×２が答えになるという法則が出てくる。
+あとはこれをｄｐで実装すればよい。
+Challenge
+高さが０のときはセルが1個存在するので答えは１になる。
+値が０、１のときにコードがそのままでよいのか、例外条件を書かなければいけないのかを確かめる。
+特にこの問題の場合は2つ前の配列を調べることからスタートは２からになるので
+特に注意する。
+dpの配列の宣言がなぜかうまく通らなかったのですが、vectorで宣言するとうまくいきました。１０＾６を超えるなど大きい場合のときはvectorを用いるのがよさそうです。
+コード 
+class TrafficCongestion {
+public: int theMinCars(int treeHeight) {
+vector&amp;lt;long long&amp;gt; dp(treeHeight+1,0);
+long long MOD=1000000007;
+dp[0]=1,dp[1]=1;
+FORE(i,2,treeHeight+1)dp[i]=(dp[i-1]+2*dp[i-2])%MOD;
+return (int)dp[treeHeight];
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 556 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm-556-div2--level2/</link>
+      <pubDate>Tue, 16 Jul 2013 21:41:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-556-div2--level2/</guid>
+      <description>問題 
+①複数の地点が与えられて、それぞれの地点に値を持つ。
+②また地点によっては道路で結ばれていて、
+道路として結ばれている２次元配列が与えられる。
+③ユーザは地点０から始まり、地点０のスコアを持つ。
+④地点０から結ばれている地点に何度も行くことができ、
+移動したときのスコアは、今まで持つスコアと移動した地点のスコアのＸＯＲとなる。
+⑤このとき、最大となるスコアを求める。
+解き方 
+ぱっとみたときに何度も同じ地点を行き来することができるので、
+全探索も浮かびにくい。
+手掛かりとなる制約条件がないか例を出してシミュレーションしてみると、
+ある地点に移動したとき、持っているスコアは１度しか現れないことがわかる。
+つまり幅優先探索を行い、
+地点とスコアの2次元配列を作成し
+通ったことがあるかないかを判定すれば収束させることができる。
+計算量はＯ（５０＊５０＊１０２４＝２．５＊１０＾６）なのでＯＫ．
+コード 
+class XorTravelingSalesman {
+public: int maxProfit(vector&amp;lt;int&amp;gt; cityValues, vector&amp;lt;string&amp;gt; roads) {
+int ans=cityValues[0];
+bool visited[50][1023];
+queue&amp;lt; pair&amp;lt;int,int&amp;gt; &amp;gt; q;
+FORE(i,0,50)FORE(j,0,1023)visited[i][j]=false;
+q.push(make_pair(0,cityValues[0]));
+visited[0][cityValues[0]]=true;
+while(!q.empty()){
+int cur=q.front().first;
+int value=q.front().second;
+q.pop();
+FORE(i,0,cityValues.size()){
+if(i==cur)continue;
+int tmpvalue=value^cityValues[i];
+if( (roads[cur][i]==&#39;Y&#39; || roads[i][cur]==&#39;Y&#39;) &amp;amp;&amp;amp; !visited[i][tmpvalue]){
+ans=max(ans,tmpvalue);
+visited[i][tmpvalue]=true;
+q.push(make_pair(i,tmpvalue));
+}
+}
+}
+return ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM547 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm547-div2--level2/</link>
+      <pubDate>Sat, 13 Jul 2013 09:08:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm547-div2--level2/</guid>
+      <description>問題 
+①それぞれの棒について、最大の高さを表わす配列が与えられる。
+②それぞれの棒について、１～最大の高さまで任意に設定することができる。
+③また、それぞれの棒の距離を示すｗが与えられる。
+④このとき、すべての棒の頂点を結ぶ紐を考えた時、最大となる紐の長さを求める。
+解き方 
+棒Ｎ個の時の最大の長さは、
+Ｎ－１個の棒が１～最大の長さに対するそれまでの最大の紐の長さがわかれば
+すぐに求めることができる。
+また、Ｎ個のときの棒の長さはＮ－１個までの最大の紐の長さに影響を与えないため、
+動的計画法で解くことができる。
+Eclipseで利用した時、&amp;lt;math&amp;gt;でインポートしようとしたのがうまくいかなくて
+&amp;lt;math.h&amp;gt;でなんとかうまくいったのですがかなりひっかかりました。。
+コード 
+class PillarsDivTwo {
+public: double maximalLength(vector&amp;lt;int&amp;gt; height, int w) {
+int n=height.size();
+double dp[n][101],ans=0.0;
+FORE(i,0,n)FORE(j,0,101)dp[i][j]=0.0;
+FORE(i,0,n-1){
+FORE(j,0,height[i+1]){
+FORE(k,0,height[i]){
+double length=sqrt(w*w+(j-k)*(j-k));
+dp[i+1][j]=max(dp[i+1][j],dp[i][k]+length);
+}
+}
+}
+FORE(i,0,101)ans=max(ans,dp[n-1][i]);
+return ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM565 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm565-div2--level2/</link>
+      <pubDate>Sun, 30 Jun 2013 00:05:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm565-div2--level2/</guid>
+      <description>＜問題＞
+①モンスターの集合が与えられ、各モンスターは怖さの値とコインの値を持つ。
+②プレイヤーは最初から順番にモンスターに遭遇する。
+③このとき、プレイヤーはモンスターにそのコインの値を支払って仲間にすることができる。
+④もしくは、仲間にしたモンスターの怖さの和がそのモンスターの怖さの値以上であれば、何もせずに通り過ぎることができる。それ未満であれば、仲間にしないといけない。
+⑤このとき、すべてのモンスターに遭遇した後に最小のコイン消費枚数を返す。
+＜解き方＞
+まさに動的計画法。
+参照用のvectorをグローバルで宣言してpush_backでコピーしようとしたんですが、
+エラーが出たので引数で渡すことに。
+suztomoさんのページを拝見させていただいたのですが、
+１０＾７以上のループに加え、あまり大きな数を扱ってもダメなのかもしれないです。
+http://topcoder.g.hatena.ne.jp/suztomo/20081208/1228768981
+＜コード＞
+class MonstersValley2 {
+public:
+int f(int cur, double cdread, vector&amp;lt;int&amp;gt; d, vector&amp;lt;int&amp;gt; p){
+int coin=0;
+if(cur==n)return 0;
+if(cdread&amp;lt;d[cur])coin=p[cur]+f(cur+1,cdread+d[cur],d,p);
+else coin=min(f(cur+1,cdread,d,p),f(cur+1,cdread+d[cur],d,p)+p[cur]);
+return coin;
+}
+int minimumPrice(vector&amp;lt;int&amp;gt; dread, vector&amp;lt;int&amp;gt; price) {
+n=dread.size();
+return f(1,dread[0],dread,price)+price[0];
+}
+};
+
+ </description>
+    </item>
+    
+  </channel>
+</rss>

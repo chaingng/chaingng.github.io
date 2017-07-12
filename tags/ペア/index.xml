@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ペア on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E3%83%9A%E3%82%A2/</link>
+    <description>Recent content in ペア on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 29 Oct 2014 16:16:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E3%83%9A%E3%82%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2013 TCO Round 1B Easy - EllysPairs (○)</title>
+      <link>https://chaingng.github.io/post/2013-tco-round-1b-easy---ellyspairs-/</link>
+      <pubDate>Wed, 29 Oct 2014 16:16:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/2013-tco-round-1b-easy---ellyspairs-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12450&amp;amp;rd=15580
+・生徒が複数存在し、それぞれの生徒のknowledgeの値がわかっている。
+・生徒が２人ずつのペアを作る。このとき、ペアのknowledgeは各生徒のknowledgeの和となる。
+・各ペアのknowledgeの差をできるだけ小さくした時の、最小の差を求める。
+解き方 
+・小さいknowledgeであるほど大きいknowledgeと組み合わせるのが最適解。
+・よってknowledgeの順にソートし、一番左と一番右をペア、といったように
+順に組み合わせていき、ペアの最大と最小の差が答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class EllysPairs {
+public: int getDifference(vector&amp;lt;int&amp;gt; knowledge) {
+int n=knowledge.size();
+sort(all(knowledge));
+int maxp=knowledge[0]+knowledge[n-1];
+int minp=knowledge[0]+knowledge[n-1];
+FORE(i,0,n/2){
+maxp=max(maxp,knowledge[i]+knowledge[n-1-i]);
+minp=min(minp,knowledge[i]+knowledge[n-1-i]);
+}
+return maxp-minp;</description>
+    </item>
+    
+    <item>
+      <title>SRM 573 DIV1 Easy - TeamContest （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-573-div1-easy---teamcontest-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 11:28:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-573-div1-easy---teamcontest-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12470&amp;amp;rd=15493
+それぞれのプレイヤーの強さが与えられる。
+３人でチームを作り、チームの強さはそのうち最小と最大の強さを足したものになる。
+自分のチームは最初の３人であり、このとき一番数字が大きくなる順位を求める。
+解き方 
+最初の順番は答えに関係ないので、自分のチームの強さを保存した後
+除いたものを昇順にソートする。
+一番左と一番右のindexを用意し、最強のプレイヤーが最弱のプレイヤーとチームを組んだ場合を考える。
+自分のチームより強ければチームを作り、左のインデックスを２つ動かし、右のインデックスを一つ左に動かす。
+自分のチームより弱ければその最弱のプレイヤーはどれと組んでも負けるので、左のインデックスのみ３つ動かす。
+Challenge
+自分のプレイヤーを除いたのにカウントしてしまったミスを最初してしまったので操作には注意する。
+コード 
+class TeamContest {
+public: int worstRank(vector&amp;lt;int&amp;gt; strength) {
+int my=min(strength[0],min(strength[1],strength[2]))+max(strength[0],max(strength[1],strength[2]));
+int rank=1;
+vector&amp;lt;int&amp;gt; v;
+FORE(i,3,strength.size())v.push_back(strength[i]);
+sort(v.begin(),v.end());
+int l=0,r=v.size()-1;
+while(l&amp;lt;r){
+if(v[l]+v[r]&amp;gt;my){
+rank++;
+l+=2;
+r--;
+}
+else{
+l+=3;
+}
+}
+return rank;
+}
+}; </description>
+    </item>
+    
+  </channel>
+</rss>

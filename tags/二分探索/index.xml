@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二分探索 on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2/</link>
+    <description>Recent content in 二分探索 on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 28 Apr 2015 20:26:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRM 657 DIV1 Easy - ProblemSets x</title>
+      <link>https://chaingng.github.io/post/srm-657-div1-easy---problemsets-x/</link>
+      <pubDate>Tue, 28 Apr 2015 20:26:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-657-div1-easy---problemsets-x/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13771&amp;amp;rd=16417
+・問題Easy,EM,Middle,MH,Hardの数が与えられる。
+・ここから問題のセットをできるだけ多く作りたい。
+・各問題セットは、Easy,Middle,Hardの問題を各一つ含む必要がある。
+・問題EMはEasyもしくはMiddleの代わり、MHはMiddleもしくはHardの代わりに使える。
+・このとき、作ることのできる最大の問題セット数を求める。
+解き方 
+まずは法則がないか考えてしまうが、かなり複雑になりそう。
+ここで作ることの問題セットがわかっていれば、それを作ることができるかどうかは
+すぐに判定することができる。
+よって二分探索を用いればよい。
+コード 
+class ProblemSets {
+public:
+bool ispossible(long long x,long long E, long long EM, long long M, long long MH, long long H){
+if(EM&amp;lt;x-E)return false;
+if(MH&amp;lt;x-H)return false;
+if(E&amp;lt;x)EM-=(x-E);
+if(H&amp;lt;x)MH-=(x-H);
+return M+EM+MH&amp;gt;=x;
+}
+long long maxSets(long long E, long long EM, long long M, long long MH, long long H) {
+long long low=0,high=LONG_MAX;
+while(high-low&amp;gt;1){
+long long mid=(low+high)/2;</description>
+    </item>
+    
+    <item>
+      <title>SRM 230 DIV1 Easy - SortEstimate （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 08:53:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3561&amp;amp;rd=6519
+ソートアルゴリズムの計算量を計算したい。
+計算量はc*n*log2(n)で表わされ、これをtime以下でかつ最大となるときのｎを求めたい。
+cとtimeはあらかじめ与えられる。
+解き方 
+nが一意に決まれば計算量は算出できるので、二分探索が適用できる。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SortEstimate {
+public: double howMany(int c, int time) {
+double low=0.0,high=1e+18;
+FORE(i,0,100){
+double mid=(low+high)/2.0;
+if(c*mid*log(mid)/log(2)&amp;lt;=time)low=mid;
+else high=mid;
+}
+return low;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 440 DIV1 Easy - IncredibleMachine (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 05 Feb 2014 19:41:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10310&amp;amp;rd=13748
+ある惑星上にて（ｘ、ｙ）からなる点が複数与えられる。
+その惑星の重力ｇは不明だが、すべての点を順番に通った時の合計時間Tはわかっている。
+また、１つの点から次の点までの距離dは以下の式で計算される。
+d=v0*t+0.5*a*t
+ここでtは２点間の移動に必要な時間、a=g*sinで表わされる。
+v0は速度であり次の点に移ったときの速度はv1=v0+a*tで表わされる。
+このとき、その惑星の重力gを求める。
+解き方 
+ｇが決まればそのときの合計時間T(g)は一意に求めることができる。
+つまり、二分探索で解くことができる。
+コード 
+class IncredibleMachine {
+public:
+double calc(vector&amp;lt;int&amp;gt; x,vector&amp;lt;int&amp;gt; y,double g){
+double ret=0.0;
+double v0=0.0;
+FORE(i,0,x.size()-1){
+double d=sqrt((x[i]-x[i+1])*(x[i]-x[i+1])+(y[i]-y[i+1])*(y[i]-y[i+1]));
+double a=g*abs(y[i]-y[i+1])/d;
+double t=(-v0+sqrt(v0*v0+2.0*a*d))/a;
+v0+=a*t;
+ret+=t;
+}
+return ret;
+}
+double gravitationalAcceleration(vector&amp;lt;int&amp;gt; x, vector&amp;lt;int&amp;gt; y, int T) {
+double low=0.0,high=1e+9;
+FORE(i,0,200){
+double mid=(low+high)/2.0;
+if(calc(x,y,mid)&amp;lt;T)high=mid;
+else low=mid;
+}
+return high;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 258 DIV1 Easy - AutoLoan (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 09:18:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3970&amp;amp;rd=7993
+・車をローンで購入する。
+・車の費用はあらかじめわかっており、ディーラーは月額の固定支払額と払い終わるまでの月数を教えてくれる。
+・ただしその場合のローン率は教えてくれない。
+・支払いは毎月残額にたいしてローン率／１２が足された後、毎月の固定支払額が引かれる計算となる。
+・このとき、ローン率がいくらになるか求める。
+解き方 
+２分探索で簡単に解くことができる。
+相対誤差で計算してもよいが、100回まわせば誤差1e-9に対して精度は10^2/10^100なので十分。
+コード 
+class AutoLoan {
+public: double interestRate(double price, double monthlyPayment, int loanTerm) {
+double low=0.0,high=100.0;
+FORE(i,0,100){
+double mid=(high+low)/2.0;
+double cost=price;
+FORE(j,0,loanTerm){
+cost+=cost*mid/12.0;
+cost-=monthlyPayment;
+}
+if(cost&amp;lt;=0)low=mid;
+else high=mid;
+}
+return low*100.0;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 582 DIV1 Easy - SpaceWarDiv1 (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-582-div1-easy---spacewardiv1-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 16:15:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-582-div1-easy---spacewardiv1-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12604&amp;amp;rd=15502
+魔法少女が敵を倒す。
+それぞれの敵には強さとその強さの個体数、それぞれの魔法少女は強さを持つ。
+魔法少女は自分よりも強さが敵を倒すことができる。
+その際、その魔法少女の疲れの値が１増える。
+このとき、魔法少女が敵を全て倒したときの疲れの最小値を求める。
+全て倒せないときはー１を返す。
+解き方 
+疲れの値を２分探索させて、最小の疲れの値を求める。
+敵の数が最大１０＾１４のため、
+その疲れの値が有効かどうかの関数の実装に注意。
+降順のソートには「sort(rbegin(),rend())&amp;nbsp;」が利用可能。
+long longの値を扱うには数字の後に「1234567890LL」とLLをつける。
+コード 
+class SpaceWarDiv1 {
+public:
+bool ispossible(long long maxbattle,vector&amp;lt;int&amp;gt; &amp;amp;girls,vector&amp;lt;pair&amp;lt;int,long long&amp;gt; &amp;gt; &amp;amp;enemies){
+long long girlnum=maxbattle,enemynum=enemies[0].second;
+int gi=0,ei=0;
+while(gi&amp;lt;girls.size() &amp;amp;&amp;amp; ei&amp;lt;enemies.size()){
+if(girlnum==0){
+gi++;
+girlnum=maxbattle;
+}
+if(enemynum==0){
+if(ei==enemies.size()-1)return true;
+ei++;
+enemynum=enemies[ei].second;
+}
+if(girls[gi]&amp;lt;enemies[ei].first){
+gi++;
+continue;
+}
+long long battle=min(girlnum,enemynum);
+girlnum-=battle;
+enemynum-=battle;
+}
+return false;
+}
+long long minimalFatigue(vector&amp;lt;int&amp;gt; girls, vector&amp;lt;int&amp;gt; enemyStrength, vector&amp;lt;long long&amp;gt; enemyCount) {</description>
+    </item>
+    
+  </channel>
+</rss>

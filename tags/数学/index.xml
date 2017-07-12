@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数学 on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E6%95%B0%E5%AD%A6/</link>
+    <description>Recent content in 数学 on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 21 Apr 2015 16:45:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRM 641 DIV1 Easy - TrianglesContainOrigin x</title>
+      <link>https://chaingng.github.io/post/srm-641-div1-easy---trianglescontainorigin-x/</link>
+      <pubDate>Tue, 21 Apr 2015 16:45:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-641-div1-easy---trianglescontainorigin-x/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13309&amp;amp;rd=16084
+・２次元の座標上の点が複数与えられる。
+・このうち選んだ３点がなす三角形が原点を含む場合の数を求める。
+解き方 
+まず３点を選んだ時に、その三角形が原点を含むかの判定をする必要がある。
+これはatan2を使い、２点i,jを選んだときiのatan2+πとjのatan2＋πの間に
+もうひとつの点があれば原点を含む三角形となる。
+次にこのような三角形の選び方は、N=2500のため
+O(2500*2500*2500）では前探索できない。
+ここで2点を選んだ時に残りの１点について２分探索を使うことで、
+O(2500*2500*log2500）で計算量を間に合わせることができる。
+コード 
+class TrianglesContainOrigin {
+public: long long count(vector&amp;lt;int&amp;gt; x, vector&amp;lt;int&amp;gt; y) {
+int n=x.size();
+long long ret=0LL;
+vector&amp;lt;double&amp;gt; p(n);
+FORE(i,0,n)p[i]=atan2((double)x[i],(double)y[i]);
+sort(all(p));
+FORE(i,0,n)FORE(j,i+1,n)if(p[j]-p[i]&amp;lt;PI){
+int e=lower_bound(p.begin(),p.end(),p[j]+PI)-p.begin();
+int s=lower_bound(p.begin(),p.end(),p[i]+PI)-p.begin();
+ret+=e-s;
+}
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 643 DIV1 Easy - TheKingsFactorization x○</title>
+      <link>https://chaingng.github.io/post/srm-643-div1-easy---thekingsfactorization-x/</link>
+      <pubDate>Sun, 19 Apr 2015 12:12:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-643-div1-easy---thekingsfactorization-x/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13594&amp;amp;rd=16086
+整数Nを素因数分解したい。
+ただし、Nはとても大きいため、Nを素因数分解したときの答えの
+昇順に1番目、3番目、、と一つ置きの因数が与えられる。
+このとき、すべての因数を求める。
+解き方 
+Nが最大で10^18のため計算量の考慮が必要。
+まず、Nを与えられた素因数で割ってから残りの数を求めようとすると
+{2,(2),2,(10^16)}のときO(10^8)となり計算量オーバー。
+次に、与えられた素因数の間の数prime[i]とprime[i+1]の間を求めていくやり方も
+{2,(2),10^16}のときO(10^16)となり計算量オーバー。
+そこで、両方の判定を加えてあげることで
+{2,(2),10^6,(10^11)}の場合でも、最大でO(10^6)に収められる。
+コード 
+class TheKingsFactorization {
+public: vector&amp;lt;long long&amp;gt; getVector(long long N, vector&amp;lt;long long&amp;gt; primes) {
+int n=primes.size();
+FORE(i,0,n)N/=primes[i];
+vector&amp;lt;long long&amp;gt; ans=primes;
+FORE(i,0,n-1){
+for(long long j=primes[i];j&amp;lt;=primes[i+1] &amp;amp;&amp;amp; j*j&amp;lt;=N;j++){
+while(N%j==0){
+ans.push_back(j);
+N/=j;
+}
+}
+}
+if(N!=1)ans.push_back(N);
+sort(all(ans));
+return ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 639 DIV2 Middle - AliceGameEasy (○)</title>
+      <link>https://chaingng.github.io/post/srm-639-div2-middle---alicegameeasy-/</link>
+      <pubDate>Mon, 16 Mar 2015 19:25:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-639-div2-middle---alicegameeasy-/</guid>
+      <description>問題 
+・整数ｘとｙが与えられる。
+・ｘ＝０、ｙ＝０からスタートし、１から順に数を増やしていき毎回ｘとｙのどちらかにその数を足す。
+・与えられたｘとｙにすることができるなら、そのうちｘに数を足す最小の回数を求める。
+・そのような足し方がない場合は-1を返す。
+解き方 
+・１から順番に和をとっていき、ｘ＋ｙ以上となったときちょうどｘ＋ｙとなればそのような
+足し方は存在し、そうでなければ存在しない。
+ｘ＋ｙ=2*10^12で、n*(n+1)/2がnまでの和なので最大でn=10^6なので間に合う。
+・そのような足し方が存在した場合、今度は上で求めた最大のnから1ずつ引いていく。
+そして毎回x以下であればxを引いていき、0になるまでの引いた数が
+最終的な答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class AliceGameEasy {
+public: long long findMinimumValue(long long x, long long y) {
+long long sum=0,n=0;
+while(sum&amp;lt;x+y){
+n++;</description>
+    </item>
+    
+    <item>
+      <title>SRM 633 DIV1 Easy - PeriodicJumping (×××)</title>
+      <link>https://chaingng.github.io/post/srm-633-div1-easy---periodicjumping-/</link>
+      <pubDate>Mon, 24 Nov 2014 21:25:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-633-div1-easy---periodicjumping-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13234&amp;amp;rd=16076
+・点（０，０）からスタートし、ゴール（ｘ、０）まで到達したい。
+・ジャンプして移動することができ、ジャンプできる距離の配列が与えられる。
+この順にジャンプして到達する必要がある。配列が終了したら最初の要素に戻る。
+・このとき、ゴールまで到達するのに必要な最小のジャンプ回数を求める。
+解き方 ・多角形を構成する問題であり、構成するには最大の辺＜その他の辺の合計である
+必要がある。今回は直線でもよいので等号が成立する。
+・配列の長さをｎ、配列の距離の合計をSとする。
+・ｘ＜＝Sのとき
+２＊ｎまでにゴールに到達することができる。
+ｎ＝０～２ｎ－１まで順に調べていき、それまでの距離の合計がｘ以上であり
+かつ最大の長さの辺が合計距離の半分以下であればそこが答えになる。
+・それ以外（ｘ＞S）のとき
+順に調べていき、距離の和がｘを超えた時が答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PeriodicJumping {
+public: int minimalTime(int x, vector&amp;lt;int&amp;gt; jumpLengths) {
+if(x==0)return 0;
+if(x&amp;lt;0)x=-x;
+int n=jumpLengths.size();</description>
+    </item>
+    
+    <item>
+      <title>SRM 611 DIV1 Easy - LCMSet (××)</title>
+      <link>https://chaingng.github.io/post/srm-611-div1-easy---lcmset-/</link>
+      <pubDate>Sat, 15 Nov 2014 20:45:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-611-div1-easy---lcmset-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12918&amp;amp;rd=15844
+・数字のセットAとBが与えられる。
+・与えられた数字のセットXに対し、その任意の組み合わせのLCMで作られる集合をLCM（X)とする。
+・AとBについて、LCM(A)＝LCM(B)になるかどうか求める。
+解き方 
+・各セットすべてのLCMを求め、それが一致するかどうかでよいか
+・しかしサンプルを見ると計算するとオーバーフローしそう
+・片方のセットすべてのLCMを、もう片方のセットのすべてで割れたらよいか
+・通らないサンプルがある
+・片方のセットそれぞれの数について、もう片方のセットで作れたらよさそう
+・とりあえず各数について割れたら割っていって、最後に１になればよいか。
+・これも通らないサンプルがある。
+・たしかに、４について２で割って４で割ろうとすると割れないが１になる組み合わせがある
+・ここで行き詰ってしまう
+→他の人のサンプルをみる
+・片方のそれぞれの数について、もう片方のセットの任意のLCMで作れたらよかった
+・確かに求めるのはLCMなので、割るのではなかった
+・LCMで作れるかどうかは、どの数を選ぶかがキーとなる。
+・選び方としてその数についてもう片方の要素で割り切れるならばLCMの要素とすれば
+その要素は超えないのでOK
+・反省：惜しいところまではいっていたがもう一歩。LCMとGCDの使いこなし方をまた学んだ。
+(別解)
+各集合Xのうち、LCM(X)を作れる最小の要素のみを抽出して、それが一致するか確かめてもよい。
+ある集合の数aについてそれが必要な数かどうかは、その他の数yについて
+aをyで割りきることができればそのLCMをとっていき、最後に一致するかどうかで判定できる。
+（＝aを構成できる最大のLCM）
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class LCMSet {</description>
+    </item>
+    
+    <item>
+      <title>2011 TCO Qualification Round 3 - AllButOneDivisor (○)</title>
+      <link>https://chaingng.github.io/post/2011-tco-qualification-round-3---allbutonedivisor-/</link>
+      <pubDate>Sat, 08 Nov 2014 23:14:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/2011-tco-qualification-round-3---allbutonedivisor-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11415&amp;amp;rd=14531
+・ｎ個の数字が与えられる。
+・このうち、n-1個の数字で割ることができ残りの数字で割ることのできない数のうち最小のものを求める。そのような数字がないときは-1を返す。
+解き方 
+・数字の数は最大６個なので全探索できそう。
+・n-1個の数字で割ることができる数、つまりn-1個の数字の最小公倍数がこれを満たす。
+この数字が残りの数字で割ることができなければ解の候補となる。
+逆に残りの数字で割ることができればどのようにとっても割ることができてしまうため満たさない。
+→System Passed
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class AllButOneDivisor {
+public:
+int gcd(int x,int y){
+return y ? gcd(y,x%y) : x;
+}
+int getMinimum(vector&amp;lt;int&amp;gt; divisors) {</description>
+    </item>
+    
+    <item>
+      <title>2013 TCO Round 2B Easy - FruitTrees (×)</title>
+      <link>https://chaingng.github.io/post/2013-tco-round-2b-easy---fruittrees-/</link>
+      <pubDate>Sun, 02 Nov 2014 22:33:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/2013-tco-round-2b-easy---fruittrees-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12520&amp;amp;rd=15633
+・appleとkiwi、grapeがあり、それぞれ与えられた間隔で一定に置いていく。
+・このとき、２つの果物間の最短距離が最も大きくなるような並べ方のときの
+&amp;nbsp;最短距離を求める。
+解き方 
+・３つ果実があると複雑そう。
+・appleの距離が４、kiwiの距離が３のとき、と考えるとどう置いても重なる・・うまく見つからない。
+→他の人のコードをみてみる
+・もう少し洞察してみると、２つの果実の距離のgcdのMODが最短距離となる。
+・よって、appleを固定し、kiwiとgrapeを変化させそのときの最短距離を求めればよい。
+・反省：紙に書いてもっと検討・試行錯誤してみることが必要。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class FruitTrees {
+public:
+int gcd(int x,int y){
+return y ? gcd(y,x%y) : x;
+}
+int maxDist(int apple, int kiwi, int grape) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 620 DIV1 Easy - PairGame (××)</title>
+      <link>https://chaingng.github.io/post/srm-620-div1-easy---pairgame-/</link>
+      <pubDate>Fri, 31 Oct 2014 19:49:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-620-div1-easy---pairgame-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13142&amp;amp;rd=15853
+・(x,y)のペアを考える。
+・このペアは(x+y,y)もしくは（x,x+y）のペアに変換することができる。
+・(a,b),(c,d)のペアが与えられたとき、どちらのペアも作ることのできるペア(x,y)のうち
+もっともx+yが大きくなるときのx+yの値を求める。
+解き方 
+・全探索は難しそう。
+・なにか法則を見つける必要がありそうだが。。
+・サンプルをみたとき、(15,4)→(11,4)→(7,4)となるのでなにかありそうだが
+&amp;nbsp;うまく見つからなく断念。
+→他の人のコードをみてみる。
+・サンプルから、(a,b)でa&amp;gt;=bのときは(a-b,b)から遷移しなく、
+a&amp;lt;bのときは(a,b-a)からしか遷移しないことがわかる。
+・よって、答えである(a,b),(c,d)をそれぞれ遷移させ、共通するもののうち
+最大となるペアの和が答えになる。
+反省：問題文からもっといろいろ紙に整理してみるのが足りていないと実感。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i=(c).begin(); i!=(c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PairGame {
+public: int maxSum(int a, int b, int c, int d) {
+set&amp;lt;pair&amp;lt;int,int&amp;gt; &amp;gt; p1,p2;</description>
+    </item>
+    
+    <item>
+      <title>SRM 635 DIV1 Easy - SimilarRatingGraph (×)</title>
+      <link>https://chaingng.github.io/post/srm-635-div1-easy---similarratinggraph-/</link>
+      <pubDate>Sun, 05 Oct 2014 22:15:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-635-div1-easy---similarratinggraph-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13485&amp;amp;rd=16078
+日付とその日付に行われたコンテストの後のレーティングが時系列で与えられる。
+そのグラフのうち２つの似通ったサブグラフを探し、最大の長さのサブグラフを求める。
+サブグラフは各点が連続していなければならない。
+似通ったサブグラフ同士は、同じ長さで片方に係数をかけるもしくはスライドすると同一になるものを言う。
+解き方 
+問題文を正確に読めてなかったのが反省点。
+・サンプルを見ると、同じ傾きのサブグラフを求めることになりそう。
+・同じ傾きのサブグラフのうち、切片が異なるサブグラフの集合の有無で答えが異なりそう。
+・上記の条件ではコードに落とし込むのが複雑そう
+ここで解き方に困ってしまい、他の人のコードをみる。
+コードをみてから問題文を改めてみると、似通ったグラフとは同じ長さでなければならないこと、さらに連続するという条件がわかれば簡単に求められる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SimilarRatingGraph {
+public: double maxLength(vector&amp;lt;int&amp;gt; date, vector&amp;lt;int&amp;gt; rating) {
+double ans=0;
+int n=date.size();
+FORE(a,0,n-1)FORE(b,0,n-1)if(a!=b){
+double l=0;</description>
+    </item>
+    
+    <item>
+      <title>SRM 534 DIV1 Middle - EllysNumbers　（復習×××）</title>
+      <link>https://chaingng.github.io/post/srm-534-div1-middle---ellysnumbers%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 02 Mar 2014 23:13:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-534-div1-middle---ellysnumbers%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11787&amp;amp;rd=14727
+エリーが好きな数であるｎが存在する。
+ここで、複数の数が与えられ、その中から任意の数選んだ数字の積がｎになるようにしたい。
+ただし、選んだ数字それぞれは約数を持たない数でなければいけない。
+このとき、選んだ数字の積がｎとなる選び方の場合の数を求める。
+解き方 
+問題文で最初見落としたが重要なところは、選んだ数字それぞれは約数を持たない数であるということ。
+つまり、N=x^i * y^j *z^k　で表わせるとき、
+x,y,zではなく、x^i , y^j , z^kを最小単位の固まりとして考えることができる。
+記を最小単位の固まりとして考えるとき、
+与えられた数字xはnで割り切れ、かつn/xはxとの最大公約数が１でなければならない。
+これに従って、まずは候補の数字を洗い出す。
+次に、洗い出した候補の数字に対して最大公約数で割っていき、１にならなければ答えが存在しないので０を返す。
+ここで洗い出した候補の数字に対して、その素因数がｎの素因数でもあるので
+どの素因数からなるかのビットマスクを作成する。
+ビットマスクを作成後、ｄｐを回してすべてのビットマスクが１となるものが答えとなる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class EllysNumbers {
+public:
+long long gcd(long long x,long long y){</description>
+    </item>
+    
+    <item>
+      <title>SRM 302 DIV1 Easy - DivisorInc （復習××○）</title>
+      <link>https://chaingng.github.io/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 21:09:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6186&amp;amp;rd=9823
+ある整数から、ある整数へ変換したい。
+ある整数からの変換は、１とその数以外の、その整数で割りきれる数を足すことができる。
+このとき、最小の変換回数を求める。
+解き方 
+ぱっと見てdpで解く問題。
+ただし、整数Ｎ割り切れる数を探すのにＮ/2まで探索しては間に合わない。
+そこで、sqrt(Ｎ）まで探索してその数iとN/iの両方で検査する。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class DivisorInc {
+public: int countOperations(int N, int M) {
+int dp[M+1];
+FORE(i,N,M+1)dp[i]=1e+9;
+dp[N]=0;
+FORE(i,N,M+1){
+if(dp[i]==1e+9)continue;
+for(int j=2;j*j&amp;lt;=i;j++){
+if(i%j!=0)continue;
+if(i+j&amp;lt;=M)dp[i+j]=min(dp[i+j],dp[i]+1);
+if(i+i/j&amp;lt;=M)dp[i+i/j]=min(dp[i+i/j],dp[i]+1);</description>
+    </item>
+    
+    <item>
+      <title>SRM 151 DIV1 Easy - Archimedes (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-151-div1-easy---archimedes-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 09:25:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-151-div1-easy---archimedes-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1693&amp;amp;rd=4560
+円周率を正多角形から求めたい。
+円の外周は２＊円周率＊半径の長さで求められる。
+このとき、正ｎ角形を考えた時に計算できる円周率を求める。
+解き方 
+求めたい円周率をx,半径をr、正n角形の外周をyとすると、
+2*x*r=y　...①
+また、正多角形のうち一つの二等辺三角形の底辺dを考えると
+正ｎ角形の外周はy= n*d
+ここで、dの長さは
+sinα=(d/2)/r
+α=(2*Pi)/(n*2)=Pi/nであるため
+d=2*r*sin(Pi/n)
+y=n*2*r*sin(Pi/n)　...②
+①、②より、
+2*x*r=n*2*r*sin(Pi/n)
+x=n*sin(Pi/n)
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class Archimedes {
+public: double approximatePi(int numSides) {
+return numSides*sin(M_PI/numSides);</description>
+    </item>
+    
+    <item>
+      <title>SRM 188 DIV1 Easy - Percents (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 17:25:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2386&amp;amp;rd=4760
+あるアンケートに対して、yesと答えた人の割合が％で与えられる。
+このとき、その割合になるときに必要なアンケート人数の母数を求める。
+ただし、小数点３位以下は四捨五入される。
+解き方 
+最初に文字列からｐを取りだすのにそのままの小数点を取りだすと、整数にしようと掛け算をした時に誤差が出てしまうので、文字から直接取りだした。
+母数を１～１００００まで順に操作し、
+そのときのyesと答えた人の割合は切り捨てとなる場合と切り上げになる場合の
+両方を検査する。
+ｎで割ったときの判定については、ｎの半分を足すことで四捨五入の値を求めることができる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class Percents {
+public: int minSamples(string percent) {
+int p=(percent[0]-&#39;0&#39;)*1000+(percent[1]-&#39;0&#39;)*100+(percent[3]-&#39;0&#39;)*10+(percent[4]-&#39;0&#39;);
+FORE(n,1,10000){
+int cost=n*p/10000;
+if((cost*10000+n/2)/n==p)return n;
+if(((cost+1)*10000+n/2)/n==p)return n;
+}
+return 10000;</description>
+    </item>
+    
+    <item>
+      <title>SRM 189 DIV1 Easy - Display (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 15:39:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2295&amp;amp;rd=4765
+縦横が-10^6～10^6の間にあるｘ、ｙ座標上の点を、
+0～10^3の座標上に変換したい。
+このとき、変換後の座標を求める。
+解き方 
+Exampleを見るとx,ｙ座標それぞれに対して
+最小の数を０になるよう足し引きして、その後最大の座標が１０００になるよう縮尺してあげればよい。
+システムテストで落ちないように以下の四則演算には注意。
+・最後に０．５単位の数を繰り上げる際には、掛け算をしてから割り算をする。
+・０になるよう足し引きする際は、最小が＋－のときどのような操作になるかを
+手書きで確かめてから実装する。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class Display {
+public: vector&amp;lt;string&amp;gt; transform(vector&amp;lt;int&amp;gt; x, vector&amp;lt;int&amp;gt; y) {
+int n=x.size();
+int minx=1e+9,miny=1e+9;
+FORE(i,0,n){
+minx=min(minx,x[i]);
+miny=min(miny,y[i]);
+}</description>
+    </item>
+    
+    <item>
+      <title>SRM 490 DIV1 Easy - Starport (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 02 Feb 2014 18:34:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11227&amp;amp;rd=14243
+Ｍ秒間隔でスペースシャトルが到着し、Ｎ秒間隔でテレポートが始まる。
+スペースシャトルが到着したときにテレポート間隔とぴったりでなければ、次のテレポート時間まで待つ。
+このとき、待ち時間の平均時間を求める。
+解き方 
+数学的に解く問題。
+サンプルを元に計算すると、
+N=10 M=4 (gcd=2 lcm=20)M:4 8 12 16 20 24 28 32 36 40 44N: &amp;nbsp; &amp;nbsp;10 &amp;nbsp; &amp;nbsp; &amp;nbsp; 20 &amp;nbsp; &amp;nbsp; &amp;nbsp; 30 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 40 50 60 70
+１サイクルの待ち時間 T=6+2+8+4+0=20となる。
+また、要素数はlcm/Mとなることがわかる。
+また要素をgcdにて割ると、
+M&#39;:2 4 6 8 10&amp;nbsp;N&#39;: &amp;nbsp; &amp;nbsp;5 &amp;nbsp; &amp;nbsp; &amp;nbsp;10 &amp;nbsp;
+１サイクルの待ち時間はT=gcd*(3+1+4+2+0)
+また、0,1,...N&#39;-1のすべての要素が出現することがわかる。
+つまり、合計待ち時間T、要素数Kと答えとなるT/Kは以下のように計算できる。
+T=gcd*N&#39;*(N&#39;-1)/2
+&amp;nbsp; =gcd*(N/gcd)(N/gcd-1)/2
+&amp;nbsp; =N(N/gcd-1)/2
+K=lcm/M=N/gcd
+T/K= (N(N/gcd-1)/2) &amp;nbsp;/(N/gcd)
+&amp;nbsp; &amp;nbsp; &amp;nbsp;= (N(N/gcd-1)*gcd) &amp;nbsp;/(N*2)</description>
+    </item>
+    
+    <item>
+      <title>SRM 599 DIV1 Easy - BigFatInteger (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-599-div1-easy---bigfatinteger-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 02 Feb 2014 11:04:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-599-div1-easy---bigfatinteger-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12867&amp;amp;rd=15711
+・最初は１から始まり、Ａ＾Ｂとなる数にしたい。
+・操作方法は、素数をかけるか、現在の数の約数をかけるかの２通り。
+このとき、最小の操作回数を求める。
+解き方 
+サンプルを例に素因数分解してみる。
+Ａ＝360、Ｂ＝8のとき、
+Ａ＝2＾3＋3＾2＋5
+Ａ＾Ｂ＝2＾24＋3^16＋5＾8
+ここで、最も大きい階乗２４に対して2^K&amp;gt;=24となるＫを考えた時
+素因数の数＋Ｋが答えになることがわかる。
+コード 
+class BigFatInteger {
+public: int minOperations(int A, int B) {
+int x0=0;
+int x1=0;
+for(int i=2;i&amp;lt;=A;i++){
+int cnt=0;
+while(A%i==0){
+A/=i;
+cnt++;
+}
+if(cnt==0)continue;
+x0++;
+cnt*=B;
+int p=1,tmp=0;
+while(p&amp;lt;cnt){
+p*=2;
+tmp++;
+}
+x1=max(x1,tmp);
+}
+return x0+x1;
+}
+};
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i !</description>
+    </item>
+    
+    <item>
+      <title>SRM 436 DIV1 Easy - BestView （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-436-div1-easy---bestview-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 21:51:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-436-div1-easy---bestview-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10341&amp;amp;rd=13698
+間隔１で一列に高層ビルが並んでいる。
+高層ビルの上から他のビルをできるだけ多く見渡したい。
+他のビルを見渡すには、そのビルと他のビルの屋上を結んだときに間に他のビルがなければよい。
+このとき、一番多く見渡せるビルの数を求める。
+解き方 
+各ビルにおいて見渡せるビルの数を全探索する。
+最初は三平方の定理を使ってしまったが、座標の傾きを使えば簡単に他のビルがさえぎっているかどうかを判定することができる。
+aからbを見渡す時、uがさえぎっていないかを判定するには
+(h(u)-h(a))/(b-a) *x +h(a) &amp;lt;= h(u) ここでx=(u-a)のときにビルuがさえぎってしまうので
+(h(u)-h(a))/(b-a) *(u-a) +h(a) &amp;lt;= h(u) (h(u)-h(a))/(b-a) *(u-a) &amp;lt;= h(u) -h(a)
+(h(u)-h(a)) *(u-a) &amp;lt;= (h(u) -h(a)) *(b-a)
+この式で判定できる。
+見渡すビルを固定した時に他のビルを見渡せるかの判定については、
+最初順序を決めて左と右の走査と分けてしまったが
+間のビルがさえぎっていないかどうかだけを判定すればよいので
+それがわかればよりシンプルに実装することができる。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)</description>
+    </item>
+    
+    <item>
+      <title>SRM 427 DIV1 Easy - DesignCalendar （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 20:08:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10155&amp;amp;rd=13518
+１日あたりの日数Ｄと１年あたりの日数Ｙが与えられる。
+１年あたりの日数が１日あたりの日数で割り切れるのに必要な年数を求める。
+解き方 
+問題文がとにかく難しい。
+要は、必要な年数をＸとすると
+（Ｙ＊Ｘ）％Ｄ＝＝０となる最小のＸを求めればよい。
+ここでＹ％Ｄ＝aとすると、求めるxは
+（例）
+a=4,D=6のとき lcd=12 gcd=2となりx=3
+a=4,D=14のとき lcd=28 gcd=2となりx=7
+
+つまり、x=D/gcd(a,D)となる。
+例外処理として、aが割り切れる場合は答えは１となるのに注意。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class DesignCalendar {
+public:
+int gcd(int a,int b){
+if(a%b==0)return b;
+return gcd(b,a%b);
+}
+int shortestPeriod(int dayLength, int yearLength) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 416 DIV1 Easy - NextNumber （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 25 Jan 2014 17:40:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8576&amp;amp;rd=13507
+・整数Ｎが与えられる。
+・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。
+解き方 
+法則が少し複雑。
+サンプルを見てみると、以下のことがわかる。
+①右から走査し、最初に１が存在したらそこから次に０が出る箇所が１になる。
+②１にした箇所より右を、それまで残っている１の分だけ右から詰める。
+ビット列走査により以下のように求められる。
+最初に１が存在する箇所：N &amp;amp; -N(=x)
+０から１にする箇所　：~(N+x=y)&amp;amp;N(=z)
+１にした箇所から左部分：y(=N+x)
+１にした箇所より右部分：z/x&amp;gt;&amp;gt;1
+コード 
+class NextNumber {
+public: int getNextNumber(int N) {
+int x=N&amp;amp;(-N);
+int y=N+x;
+int z=N&amp;amp;(~y);
+return y|(z/x&amp;gt;&amp;gt;1);
+}
+};
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)</description>
+    </item>
+    
+    <item>
+      <title>SRM 226 DIV1 Easy - ManhattanMovement (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-226-div1-easy---manhattanmovement-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 25 Jan 2014 11:27:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-226-div1-easy---manhattanmovement-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3498&amp;amp;rd=6515
+・直線ax+by=1、スタート位置（x0,y0）が与えられる。
+・スタート位置から直線上の点まで移動する。
+・ただし、ｘ軸に平行、もしくはｙ軸に平行のどちらか１回しか移動できない。
+このとき、スタート位置から直線上の点まで移動するための最小の距離を求める。
+解き方 
+問題文のｘ軸に平行もしくはｙ軸に平行の部分について、どちらも利用できると判断してしまった。
+計算式を変換して、ｘ軸に対する平行移動とｙ軸に対する平行移動のうちどちらか最小を返してあげればよい。
+コード 
+class ManhattanMovement {
+public: double getDistance(int a, int b, int x0, int y0) {
+double ans=1e+18;
+if(a!=0)ans=min(ans,fabs( (1.0-(double)b*(double)y0)/(double)a -(double)x0 ));
+if(b!=0)ans=min(ans,fabs( (1.0-(double)a*(double)x0)/(double)b -(double)y0 ));
+return &amp;nbsp;ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 422 DIV1 Easy - PrimeSoccer (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 18 Jan 2014 09:04:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10033&amp;amp;rd=13513
+・チームＡとＢがサッカーゲームを行う。
+・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。
+・各セグメントごと、各チームはあらかじめ与えられた確率でゴールする。
+・各セグメントごとのゴール数は０か１となる。
+このとき、ゲームが終わったときＡもしくはＢのスコアが素数となる確率を求める。
+解き方 
+２＾３６となるので全探索では解くことができない。
+ここで、最大が１８なので素数の数は７個に限られる。
+次に、ゴール数をｎ、Ａのゴールする確率がＰのときの確率は
+P^n * (1-P)^(18-n)*18Cnとなる。
+最後に、Aの素数となる確率とＢの素数となる確率で重複が発生する。
+Aのゴール数が素数となる確率をPa、Ｂのゴール数が素数となる確率をPbとすると
+Pa+Pb-Pa*Pbが答えになる。
+コード 
+class PrimeSoccer {
+public:
+double calc(double x){
+int p[]={2,3,5,7,11,13,17};
+double ret=0.0;
+FORE(i,0,7){
+double tmp=1.0;
+for(double n=18.0;n&amp;gt;(double)(18-p[i]);n--)tmp*=n;
+for(double n=1.0;n&amp;lt;=(double)p[i];n++)tmp/=n;
+tmp=tmp*pow(x,p[i])*pow(1.0-x,18-p[i]);
+ret+=tmp;
+}
+return ret;
+}
+double getProbability(int skillOfTeamA, int skillOfTeamB) {
+double Pa=calc((double)skillOfTeamA/100.0);
+double Pb=calc((double)skillOfTeamB/100.0);
+return Pa+Pb-Pa*Pb;
+}
+};
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i !</description>
+    </item>
+    
+    <item>
+      <title>SRM 431 DIV1 Easy - LaserShooting (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 19 Oct 2013 07:36:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10258&amp;amp;rd=13522
+（０，０）の位置からレーザーが発射される。
+レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、ｙ２の範囲は[-2/PI,2/PI]。
+このような（ｘ、ｙ１）（ｘ、ｙ２）が複数与えられるとき、ある点がレーザーに当たる確率を求める。
+解き方 
+全ての点について確率を求めていては間に合わない。
+そのため、各(x,y1)(x,y2)に対しレーザーの当たる範囲の確率を足していけばよい。
+arctanの使い方を忘れていたので、こちらのサイトを拝見させていただきました。
+http://78578203.at.webry.info/201101/article_2.html
+コード 
+class LaserShooting {
+public: double numberOfHits(vector&amp;lt;int&amp;gt; x, vector&amp;lt;int&amp;gt; y1, vector&amp;lt;int&amp;gt; y2) {
+double ret=0.0;
+int n=y1.size();
+FORE(i,0,n){
+double tmp1=atan((double)y1[i]/(double)x[i]);
+double tmp2=atan((double)y2[i]/(double)x[i]);
+ret+=fabs(tmp1-tmp2)/M_PI;
+}
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 523 DIV1 Easy - CountingSeries (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 07:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10957&amp;amp;rd=14548
+１からupperBoundまでの数が与えられる。
+また、a,b,c,dの正の整数が与えられる。
+このとき、a+b*x または c*d^y（x,yは任意の整数）を満たす数がいくつあるか求める。
+解き方 
+「a+b*x」、「c*d^y」は重複する場合があるので、
+重複した場合は１度しか計算しない処理が必要。
+「a+b*x」では、各整数は10^12のため全探索では不可。
+upperBoundがa以上であれば、 (upperBound-a)/b +1が満たす全ての数になる。
+「c*d^y」は全探索が可能。
+各数に対して「a+b*x」でも表わせないか判定し重複を調べる。
+（同じようにa以上かどうかを調べる）
+ただしd=1のときは無限ループになるのでbreak処理が必要。
+Challengeポイント
+階乗が出てくる場合は1の階乗のbreak処理が入っているか？
+数の判定の際は正負の判定が入っているか？
+コード 
+class CountingSeries {
+public: long long countThem(long long a, long long b, long long c, long long d, long long upperBound) {
+long long ans=upperBound&amp;gt;=a ? (upperBound-a)/b+1 :0;
+for(long long x=c;x&amp;lt;=upperBound;x*=d){
+if((x-a)&amp;lt;0||(x-a)%b!=0)ans++;
+if(d&amp;lt;=1)break;
+}
+return ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 524 DIV1 Easy - MagicDiamonds (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 07:42:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11607&amp;amp;rd=14549
+ｎ個のダイヤモンドを運びたい。
+１度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。
+このとき、消滅せずに全てのダイヤを運べる最小の回数を求める。
+解き方 
+ｎが最大１０＾１２のためＤＦＳ等では解くことができない。
+そこで法則がないかシミュレーションしてみる。
+すると、ｎ＝３（３回）のときを除いて、以下がわかる。
+①素数でない場合は、１回で運べる
+②素数の場合は、「素数ー１」個＆「１」個の２回で運べる
+あとは素数判定関数を作って実装するだけでよい。
+コード 
+class MagicDiamonds {
+public:
+bool isprimary(long long x){
+if(x==2)return true;
+if(x==1||x%2==0)return false;
+for(long long i=3;i*i&amp;lt;=x;i+=2)if(x%i==0)return false;
+return true;
+}
+long long minimalTransfer(long long n) {
+if(n==3)return 3;
+return isprimary(n) ? 2 : 1;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 578 DIV1 Easy - GooseInZooDivOne (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-578-div1-easy---gooseinzoodivone-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 21 Aug 2013 08:23:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-578-div1-easy---gooseinzoodivone-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12539&amp;amp;rd=15498
+2次元のセルが与えられ、それぞれのセルは鳥がいるかいないかで表わされる。
+鳥はガチョウとアヒルの２種類存在する。
+その鳥がどちらかはわからないが、あるガチョウとマンハッタン距離にある鳥はすべて
+ガチョウとなる。
+このとき、ガチョウの鳥の数が偶数となる場合の数を求める。
+解き方 
+あるガチョウとマンハッタン距離にある鳥は全てガチョウということは、
+マンハッタン距離にある鳥の集合それぞれは、ガチョウかアヒルになるということがわかる。
+つぎにそれぞれの集合に対して、鳥の数が偶数か奇数かに分類する。
+偶数の集合Ｎについては２＾Ｎとなる。
+奇数の集合については、ｎＣ０×ｎＣ２ｘ・・・ｎＣｎ－１となる。
+ここで二項定理により(1+x)^n=(n,0)*x^0+(n,1)*x^1...+(n,n)*x^n
+x=1,-1のとき、
+2^n=(n,0)+(n,1)+...+(n,n)
+0=(n,0)-(n,1)+(n,2)...-(n,n)
+2^n=2(n,0)+2(n,2)...+2(n,n-1)
+2^(n-1)=(n,0)+(n,2)...+(n,n-1)
+よって奇数の集合は2^(n-1)となるので、2^(n-1+N)が答えになる。
+コード 
+int H,W,D;
+int cell[55][55];
+class GooseInZooDivOne {
+public:
+int DFS(int i,int j){
+int ans=1;
+queue&amp;lt;pair&amp;lt;int,int&amp;gt; &amp;gt; q;
+q.push(make_pair(i,j));
+cell[i][j]=1;
+while(!q.empty()){
+int x=q.front().first;
+int y=q.front().second;
+q.pop();
+FORE(i,0,H)FORE(j,0,W)if(cell[i][j]==0&amp;amp;&amp;amp;abs(x-i)+abs(y-j)&amp;lt;=D){
+cell[i][j]=1;
+q.push(make_pair(i,j));
+ans++;
+}
+}
+return ans;
+}
+int count(vector&amp;lt;string&amp;gt; field, int dist) {
+long long MOD=1000000007LL,ans=1LL;
+int even=0,odd=0,cnt=0;
+H=field.size(),W=field[0].size(),D=dist;</description>
+    </item>
+    
+    <item>
+      <title>SRM 546 DIV1 Easy - KleofasTail （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-546-div1-easy---kleofastail-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 20:12:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-546-div1-easy---kleofastail-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12049&amp;amp;rd=14738
+整数が与えられる。
+整数が偶数のときは２で割り、奇数であれば１を引くことができる。
+整数の範囲とある数が与えられた時、
+その整数の範囲内である数が存在する数が何通りあるか求める。
+解き方 
+数が１０＾１８のため、範囲中の全ての数を全探索で求めることはできない。
+そのため、法則がないか数を列挙してみる。
+ここで状態遷移図を用いてみる。
+１）ｋが偶数のとき
+Ｋ←２Ｋ←２Ｋ＋１←４Ｋ＋２←８Ｋ＋４
+←４Ｋ＋３
+←４Ｋ←８Ｋ←１６Ｋ
+←８Ｋ＋１
+←４Ｋ＋１←８Ｋ＋２
+←Ｋ＋１←２Ｋ＋２←４Ｋ＋４←８Ｋ＋８
+←４Ｋ＋５
+←２Ｋ＋３←４Ｋ＋６→４Ｋ＋７
+２）ｋが奇数のとき
+Ｋ←２Ｋ←２Ｋ＋１←４Ｋ＋２←８Ｋ＋４
+←４Ｋ＋３
+←４Ｋ←８Ｋ←１６Ｋ
+←８Ｋ＋１
+←４Ｋ＋１←８Ｋ＋２
+つまり、以下の法則が導ける。
+ｋが偶数のときは
+Ｋ～Ｋ＋１，２Ｋ～２Ｋ＋３、４Ｋ～４Ｋ＋７
+ｋが奇数のときは
+Ｋ、２Ｋ～２Ｋ＋１、４Ｋ～４Ｋ＋３
+最小はＫの倍数、最大はＫもしくはＫ＋１から始まり２倍＋１となる。
+コード 
+class KleofasTail {
+public:
+long long calc(long long K,long long B){
+long long ans=0,low=K,high=K;
+if(K%2==0)high++;
+while(low&amp;lt;=B){
+ans+=min(high,B)-low+1;
+low=2*low;
+high=2*high+1;
+}
+return ans;
+}
+long long countGoodSequences(long long K, long long A, long long B) {</description>
+    </item>
+    
+    <item>
+      <title>SRM574 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm574-div2--level2/</link>
+      <pubDate>Sat, 13 Jul 2013 21:10:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm574-div2--level2/</guid>
+      <description>問題 
+①数字が二つ与えられる。
+②プレイヤーは一つ目の数字を１０で割る、もしくは逆にすることができる。
+③上記の操作によって、２つ目の数字にするとき、最小の操作回数を求める。
+２つ目の数字にできないときはー１を返す。
+解き方 
+どのような法則があるか例を出して導く。
+289が求めたい数字のとき、
+元の数字：１２８９　→３回
+２８９１　→１回
+１２８９１　→４回
+つまり、
+・最初から含まれる　→文字数の差
+・途中から含まれる　→文字列の差＋２
+ひっくり返した場合もシミュレーションすると、
+ひっくり返した文字が含まれる　→文字数の差＋１回
+ただ求めたい数字の場合は両方一致するため、
+返す数が少ない方から判定していく。
+コード 
+class TheNumberGameDiv2 {
+public:
+string f(int n){
+string str;
+stringstream out;
+out&amp;lt;&amp;lt;n;
+out&amp;gt;&amp;gt;str;
+return str;
+}
+int minimumMoves(int A, int B) {
+string As=f(A);
+string Bs=f(B);
+int dis=As.size()-Bs.size();
+int flag=0;
+if(As.find(Bs)!=string::npos)flag=1;
+if(As.find(Bs)==0)return dis;
+reverse(Bs.begin(),Bs.end());
+if(As.find(Bs)!=string::npos)return dis+1;
+if(flag==1)return dis+2;
+return -1;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 543 DIV1 Easy - EllysXors</title>
+      <link>https://chaingng.github.io/post/srm-543-div1-easy---ellysxors/</link>
+      <pubDate>Fri, 12 Jul 2013 08:36:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-543-div1-easy---ellysxors/</guid>
+      <description>問題 
+①整数ＬとＲが与えられる。
+②このとき、ＬからＲまでの間全ての数をＸＯＲした後の値を求める。
+解き方 
+Ｌ，Ｒは４＊１０＾９のため単純なシミュレーションでは解くことができない。
+そのため、数学的解法、法則を見つける。
+法則を見つけるために１からずっとＸＯＲをしたときの値を並べてみると、
+整数ｎを４で割ったときの余りによって以下になることがわかる。
+余り０　→　ｎ
+余り１　→　１
+余り２　→　ｎ　ＸＯＲ　１
+余り３　→　０
+最後に１からスタートしているわけではなくてＬからスタートしなければならない。
+これは１からＲまで求めた答えから、１からＬ－１まで求めた答えを引く、つまりＸＯＲしてあげればよい。
+コード 
+class EllysXors {
+public:
+long long f(long long n){
+long long check=n%4;
+if(check==0)return n;
+if(check==1)return 1;
+if(check==2)return n^1;
+return 0;
+}
+long long getXor(long long L, long long R) {
+return f(R)^f(L-1);
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM537 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm537-div2--level2/</link>
+      <pubDate>Tue, 09 Jul 2013 08:14:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm537-div2--level2/</guid>
+      <description>問題
+①数字のペアＡ，Ｂが与えられる。
+このとき、０以上のｐ、ｑに対し、Ａ＊ｐ＋Ｂ＊ｑで数が生成できる。
+②また、新たな数字Ｘが与えられる。
+このとき、Ａ，Ｂで表わせる全てのペアが、Ｘ，Ｙでも表わせるような
+Ｙの場合の数を求める。ただしＹが無限になる場合はー１を返す。
+解き方
+Ｘ，ＹにてＡ，Ｂが表わすことができれば、
+Ａ，Ｂで現すことのできる全ての数はＸ，Ｙで現すことができる。
+Ｙのとりうる数は１～max(A,B) (Xを除く)なので、
+全てのＹに対してＸ，ＹがＡ，Ｂで表わせるかを判定する。
+Ａ＝Ｘ＊ｐ＋Ｙ＊ｑ
+ｑ＝１として、
+pが０からＸ＊ｐがＡになるまで増やしていき、
+Ｙで割ることができるか判定する。
+ｑ＝０の場合も調べるため、ＡがＸで割り切れるかも判定する。
+全て数学的解法に頼らず、全探索との組み合わせで落とし所を探る。
+コード
+class KingXNewCurrency {
+public:
+bool f(int num,int x,int y){
+if(num%x==0)return true;
+for(int i=0;x*i&amp;lt;=num;i++)if((num-x*i)%y==0)return true;
+return false;
+}
+int howMany(int A, int B, int X) {
+if(A%X==0 &amp;amp;&amp;amp; B%X==0)return -1;
+int ans=0;
+for(int n=1;n&amp;lt;=max(A,B);n++)if(X!=n &amp;amp;&amp;amp; f(A,X,n) &amp;amp;&amp;amp; f(B,X,n))ans++;
+return ans;
+}
+};
+
+ </description>
+    </item>
+    
+    <item>
+      <title>SRM546 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm546-div2--level2/</link>
+      <pubDate>Thu, 04 Jul 2013 22:57:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm546-div2--level2/</guid>
+      <description>問題  ①座標上にある２つの長方形の左下と右上の座標が与えられる。
+②２つの長方形の重なりが四角形の時はrectangle、線で接している場合はsegment、
+点で接している場合はpoint、接していないときはnoneを返す。
+解き方  単純に場合分けで解いてもよいが複雑になり間違えやすくなる＆コードが書きにくくなるので、数学的に簡単にできないか検討する。
+まず２次元の問題ということで、それぞれ1次元の問題に分割できないか検討する。
+今回の場合はｘ軸とｙ軸はそれぞれ影響を与えないので独立に考えられる。
+次に、ｘ軸が線・点を作れるか、ｙ軸も同じように線・点を作れるか
+という考え方ができれば、ｘ軸とｙ軸の組み合わせによってどの重なりになるか
+求めることができる。
+最後に各軸が線・点を作れる場合を考える。
+１つ目の長方形の最左辺と最右辺がa、ｂとすると、
+長方形の中にあるｘ軸の値はa&amp;lt;=x&amp;lt;=bとなる。
+同様に2つ目の最左辺と最右辺をｃ、ｄとすると、
+c&amp;lt;=x&amp;lt;=dとなる。
+ここで２つの条件を合わせると、
+max(a,c)&amp;lt;x&amp;lt;min(b,d)がｘの範囲となる。
+つまりxのとりうる範囲　min(b,d)-max(a,c)が
+複数であれば線、
+１点のみであれば点、
+存在しなければ、どちらも作れないということがわかる。
+これをｙ軸も同じように判定すれば簡単に求められる。
+コード  class TwoRectangles {
+public:
+int f(int x){
+if(x&amp;gt;0)return 1;
+if(x==0)return 0;
+return -1;
+}
+string describeIntersection(vector&amp;lt;int&amp;gt; A, vector&amp;lt;int&amp;gt; B) {
+int checkx=f(min(A[2],B[2])-max(A[0],B[0]));
+int checky=f(min(A[3],B[3])-max(A[1],B[1]));
+if(checkx==1 &amp;amp;&amp;amp; checky==1)return &amp;ldquo;rectangle&amp;rdquo;;
+if(checkx==1 &amp;amp;&amp;amp; checky==0 || checkx==0 &amp;amp;&amp;amp; checky==1)return &amp;ldquo;segment&amp;rdquo;;
+if(checkx==0 &amp;amp;&amp;amp; checky==0)return &amp;ldquo;point&amp;rdquo;;
+return &amp;ldquo;none&amp;rdquo;;</description>
+    </item>
+    
+    <item>
+      <title>SRM535 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm535-div2--level2/</link>
+      <pubDate>Wed, 03 Jul 2013 23:11:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm535-div2--level2/</guid>
+      <description>＜問題＞
+①整数ＧとＬが与えられる。
+②最大公約数がＧ，かつ最小公倍数がＬである２つの数字の場合の数を返す。
+存在しない場合はー１を返す。
+＜解き方＞
+２つの数字がＸ、Ｙとすると、Ｘ＊Ｙ＝Ｇ＊Ｌとなる。
+このままではＧとＬともに１０＾１２と膨大な数のため計算式を工夫する。
+次に、Ｘ＝a*Gとなるa, Y=b*Gとなるbが必ず存在する。
+ここで、
+(a*G)*(b*G)=G*L
+つまりa*b=L/Gとなるaとbが必ず存在する。
+また、最大公約数がＧであることから、aとbは互いに素でないといけない。
+これによりＯ（１０＾６）で計算可能となる。
+まとめると、
+a*b=L/G かつ aとbは互いに素=最大公約数が1　となる全てのaとbを求めればよい。
+そして裏を返すと、LがGで割り切れない場合は-1を返す。
+＜コード＞
+class FoxAndGCDLCM {
+public:
+long long gcd(long long a,long long b){
+while(b!=0){
+long long c=b;
+b=a%b;
+a=c;
+}
+return a;
+}
+long long get(long long G, long long L) {
+long long ab=L/G,ret=-1;
+if(L%G!=0)return -1;
+for(long long a=1;a&amp;lt;=ab/a;a++){
+if(ab%a==0 &amp;amp;&amp;amp; gcd(a,ab/a)==1){
+if(ret==-1)ret=G*(a+ab/a);
+else ret=min(ret,G*(a+ab/a));
+}
+}
+return ret;
+}</description>
+    </item>
+    
+    <item>
+      <title>SRM567 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm567-div2--level2/</link>
+      <pubDate>Sat, 29 Jun 2013 10:46:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm567-div2--level2/</guid>
+      <description>＜問題＞
+①２つの整数ＮとＭが与えられる。
+②１＜＝Ａ＜＝Ｎ、１＜＝Ｂ＜＝Ｍである、(sqrt(A)+sqrt(B))^2が整数であるＸが存在するとき、ＡとＢの組み合わせの数を返す。
+＜解き方＞
+Ａが１のとき、Ｂ＝１，４，９，１６・・・
+Ａが２のとき、Ｂ＝２＊１、２＊９、２＊１６・・・であることがわかります。
+そのため、Ａを１からＮまでループさせ、
+ＢをＡ＊１＾２、Ａ＊２＾２・・・と繰り返して数を足してあげて
+最後にその和をかえしてあげればよいです。
+Ｏ（８００００＊９００＝７２００００００＝７＊１０＾７）なので微妙。
+もう少し計算量を削減するには、
+Ａが２で選ばれるＢの数と、
+Ａが２＊２＾２、２＊３＾２・・・で選ばれるＢの数は一緒であることが分かります。
+そこでＡもまとめて計算することで計算量が削減できます。
+おおまかですがＯ（９００＊９００＝８１００００＝８＊１０＾５）ぐらい。
+＜コード＞
+class TheSquareRootDilemma {
+public: int countPairs(int N, int M) {
+vector&amp;lt;int&amp;gt; check(77778,0);
+int ans=0;
+FORE(i,1,M+1){
+if(check[i]==1)continue;
+int x=0;
+for(int j=1;j*j*i&amp;lt;=M;j++){
+if(check[i*j*j]==1)continue;
+check[i*j*j]=1;
+x++;
+}
+int y=0;
+for(int j=1;j*j*i&amp;lt;=N;j++)y++;
+ans+=(x*y);
+}
+return ans;
+}
+};
+ </description>
+    </item>
+    
+  </channel>
+</rss>

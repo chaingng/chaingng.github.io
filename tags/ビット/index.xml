@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ビット on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E3%83%93%E3%83%83%E3%83%88/</link>
+    <description>Recent content in ビット on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 20 Sep 2014 08:49:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E3%83%93%E3%83%83%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2014 TCO Round 3B - IntoTheMatrix</title>
+      <link>https://chaingng.github.io/post/2014-tco-round-3b---intothematrix/</link>
+      <pubDate>Sat, 20 Sep 2014 08:49:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/2014-tco-round-3b---intothematrix/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13066&amp;amp;rd=16058
+N種類のピルがあり、どれがマジックピルかを判別したい。
+判別するのに友人に協力してもらうことができ、マジックピルを飲んだ友人は消えてしまう。
+協力してもらうターン数turnsが与えられた時、最低限必要な友人の数を求める。
+解き方 
+・問題文から、ターンと友人の数により判別できるピルの数を列挙してみる
+・問題文の誘導からか、なんとなくはまってしまう。
+・他の人のコードを読む
+・要は、人数とターンにより表わされる状態数が判別できるピルの数
+・例えば１ターンでA,Bがいるときは、{ABが残る}、{Aだけ残る}、{Bだけ残る}、{両方消える}の４通り
+・友人の数を固定すると、１人のとき1ターンで２通り、２ターンで３通り・・・Tターンで（T+1）通り
+・よって、友人の数を０から増やしていき、（T+1)＾友人の数がN以上となるところが答え
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class IntoTheMatrix {
+public: int takePills(int turns, int N) {
+int F=0;
+long long x=1;
+while(x&amp;lt;(long long)N){</description>
+    </item>
+    
+    <item>
+      <title>SRM 632 DIV1 Easy - PotentialArithmeticSequence (×)</title>
+      <link>https://chaingng.github.io/post/srm-632-div1-easy---potentialarithmeticsequence-/</link>
+      <pubDate>Fri, 19 Sep 2014 10:30:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-632-div1-easy---potentialarithmeticsequence-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13389&amp;amp;rd=16075
+数字の数列があり、その数字を２進数にしたときの末尾の０の数のリストが与えられる。
+このとき、与えられた数列のうち１ずつ増加するサブ数列の数を求める。
+解き方 
+数列に法則がないか列挙してみる。
+すると、以下のように再帰の法則があるとわかる。
+１が現れるとき：０１０
+２が現れるとき：０１０２０１０
+３が現れるとき：０１０２０１０３０１０２０１０
+よって、与えられた数列の全てのサブ数列に対し、以下の法則が成り立つか
+再帰を用いてチェックすればよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PotentialArithmeticSequence {
+public:
+bool can(vector&amp;lt;int&amp;gt; d){
+if(d.size()==1)return true;
+int p= d[0]==0 ? 0 : 1;
+int n=d.size();</description>
+    </item>
+    
+    <item>
+      <title>SRM 439 DIV1 Easy - PouringWater （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 23:32:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10408&amp;amp;rd=13747
+N個のボトルがあり、最初は１Ｌだけ水が入っている。
+ここで同じ量だけ水が入っているボトルを選んで、一つのボトルに水をまとめることができる。
+このとき、水が入っているボトルをＫ個以下にしたい。
+ただし現在のボトル数ではＫ個以下にできない場合は、ボトルを追加で買うことができる。
+このとき、水が入っているボトルをＫ個以下にしたいときに、追加で必要なボトルの最小数を求める。
+解き方 
+ぱっと見た感じだと解法が思い浮かばないので、ボトル数の計算を式に落とせないか考えてみる。
+ここで、１個、２個、４個、８個・・・のボトルは一つにまとめられることから
+２＾Ｋ個のボトルは１つにまとめることができる。
+次に例をあげてみると、
+１５＝２＾３＋＋２＾２＋２＾１＋１のように変換することができる。
+上記の式を眺めてみると、ボトルの数は２進数に変換したときの１の数と等しい
+ことがわかる。
+次にボトルを減らしたいときに買うべきボトルの数を、先の例を使って考える。
+１５＝１１１１であり、ボトルを１つ買うと
+１００００、つまりボトルが１つになる。
+つまり、右から走査し１が存在した時はその数を足し、
+ボトル数がＫ個以下になるまで繰り返してあげればよい。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PouringWater {
+public:
+int calc(int x){
+int ret=0;
+while(x&amp;gt;0){
+ret+=x%2;
+x/=2;
+}</description>
+    </item>
+    
+    <item>
+      <title>SRM 596 DIV1 Easy - IncrementAndDoubling (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-596-div1-easy---incrementanddoubling-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 26 Jan 2014 00:08:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-596-div1-easy---incrementanddoubling-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12790&amp;amp;rd=15708
+・求める整数の集合が与えられる。
+・オペレーションはひとつの整数を１足すか全ての整数を２かけるかの２種類。
+・各整数は０からスタートし、オペレーションを繰り返して求める整数の集合にする。
+・このとき、必要な最小オペレーション回数を求める。
+解き方 
+全体の積の回数を正しく求められるかがポイント。
+０にかけても０になることを利用できることがわかれば、
+各整数の中で最大の積の回数が配列全体の積の回数と等しいことが導ける。
+各整数の積と和の回数は２進数で考えることで求められる。
+積の回数は２進数にしたときの桁数ー１であり、
+和の回数は２進数にしたときの１の個数になる。
+コード 
+class IncrementAndDoubling {
+public: int getMin(vector&amp;lt;int&amp;gt; desiredArray) {
+int m=1;
+int add=0;
+FORE(i,0,desiredArray.size()){
+int tmp=0;
+while(desiredArray[i]&amp;gt;0){
+tmp++;
+add+=desiredArray[i]%2;
+desiredArray[i]/=2;
+}
+m=max(m,tmp);
+}
+return m-1+add;
+}
+};
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).</description>
+    </item>
+    
+    <item>
+      <title>SRM 519 DIV1 Easy - BinaryCards (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 10:17:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11552&amp;amp;rd=14544
+正の整数ＡとＢが与えられる。
+ＡからＢを得るには、２進数で表わされたＡから各ビットを返していく。
+この操作を行ったとき、途中で現れる最大の数を求める。
+解き方 
+Ａ，Ｂは最大１０＾１８のため単純なシミュレーションでは解くことができない。
+そのため、計算量を削減する法則がないか考える。
+２進数にしてみて、最初と最後の状態までのプロセスの変化が答えに関連しないか考えてみる。
+いくつか例を出してみると、
+一度も触ったことがないビットは固定しなければいけないが
+「ＡからＢを得るときに１度でもひっくり返したビット以降はすべて１」にできることがわかる。
+コード 
+class BinaryCards {
+public: long long largestNumber(long long A, long long B) {
+for(long long i=63;i&amp;gt;=0;i--){
+long long x=1LL&amp;lt;&amp;lt;i;
+if((A&amp;amp;x)!=(B&amp;amp;x))return A | ( (1LL&amp;lt;&amp;lt;(i+1))-1);
+}
+return A;
+}
+}; </description>
+    </item>
+    
+  </channel>
+</rss>

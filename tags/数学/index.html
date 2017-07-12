@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学</title>
+
+<meta name="generator" content="Hugo 0.25-DEV" />
+<meta property="og:title" content="数学" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chaingng.github.io/tags/%E6%95%B0%E5%AD%A6/" />
+
+
+
+<meta property="og:updated_time" content="2015-04-21T16:45:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="takatomo&#39;s blog Feed" href="https://chaingng.github.io/tags/%E6%95%B0%E5%AD%A6/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+	<div class="main-content list content" role="main">
+		<header class="page-header">
+			<h1 class="page-header__title">数学</h1>
+		</header>
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-641-div1-easy---trianglescontainorigin-x/" rel="bookmark">SRM 641 DIV1 Easy - TrianglesContainOrigin x</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-04-21T16:45:00">April 21, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13309&amp;rd=16084
+・２次元の座標上の点が複数与えられる。
+・このうち選んだ３点がなす三角形が原点を含む場合の数を求める。
+解き方 
+まず３点を選んだ時に、その三角形が原点を含むかの判定をする必要がある。
+これはatan2を使い、２点i,jを選んだときiのatan2+πとjのatan2＋πの間に
+もうひとつの点があれば原点を含む三角形となる。
+次にこのような三角形の選び方は、N=2500のため
+O(2500*2500*2500）では前探索できない。
+ここで2点を選んだ時に残りの１点について２分探索を使うことで、
+O(2500*2500*log2500）で計算量を間に合わせることができる。
+コード 
+class TrianglesContainOrigin {
+public: long long count(vector&lt;int&gt; x, vector&lt;int&gt; y) {
+int n=x.size();
+long long ret=0LL;
+vector&lt;double&gt; p(n);
+FORE(i,0,n)p[i]=atan2((double)x[i],(double)y[i]);
+sort(all(p));
+FORE(i,0,n)FORE(j,i+1,n)if(p[j]-p[i]&lt;PI){
+int e=lower_bound(p.begin(),p.end(),p[j]+PI)-p.begin();
+int s=lower_bound(p.begin(),p.end(),p[i]+PI)-p.begin();
+ret+=e-s;
+}
+return ret;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-643-div1-easy---thekingsfactorization-x/" rel="bookmark">SRM 643 DIV1 Easy - TheKingsFactorization x○</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-04-19T12:12:00">April 19, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13594&amp;rd=16086
+整数Nを素因数分解したい。
+ただし、Nはとても大きいため、Nを素因数分解したときの答えの
+昇順に1番目、3番目、、と一つ置きの因数が与えられる。
+このとき、すべての因数を求める。
+解き方 
+Nが最大で10^18のため計算量の考慮が必要。
+まず、Nを与えられた素因数で割ってから残りの数を求めようとすると
+{2,(2),2,(10^16)}のときO(10^8)となり計算量オーバー。
+次に、与えられた素因数の間の数prime[i]とprime[i+1]の間を求めていくやり方も
+{2,(2),10^16}のときO(10^16)となり計算量オーバー。
+そこで、両方の判定を加えてあげることで
+{2,(2),10^6,(10^11)}の場合でも、最大でO(10^6)に収められる。
+コード 
+class TheKingsFactorization {
+public: vector&lt;long long&gt; getVector(long long N, vector&lt;long long&gt; primes) {
+int n=primes.size();
+FORE(i,0,n)N/=primes[i];
+vector&lt;long long&gt; ans=primes;
+FORE(i,0,n-1){
+for(long long j=primes[i];j&lt;=primes[i+1] &amp;&amp; j*j&lt;=N;j++){
+while(N%j==0){
+ans.push_back(j);
+N/=j;
+}
+}
+}
+if(N!=1)ans.push_back(N);
+sort(all(ans));
+return ans;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-639-div2-middle---alicegameeasy-/" rel="bookmark">SRM 639 DIV2 Middle - AliceGameEasy (○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-03-16T19:25:00">March 16, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+・整数ｘとｙが与えられる。
+・ｘ＝０、ｙ＝０からスタートし、１から順に数を増やしていき毎回ｘとｙのどちらかにその数を足す。
+・与えられたｘとｙにすることができるなら、そのうちｘに数を足す最小の回数を求める。
+・そのような足し方がない場合は-1を返す。
+解き方 
+・１から順番に和をとっていき、ｘ＋ｙ以上となったときちょうどｘ＋ｙとなればそのような
+足し方は存在し、そうでなければ存在しない。
+ｘ＋ｙ=2*10^12で、n*(n+1)/2がnまでの和なので最大でn=10^6なので間に合う。
+・そのような足し方が存在した場合、今度は上で求めた最大のnから1ずつ引いていく。
+そして毎回x以下であればxを引いていき、0になるまでの引いた数が
+最終的な答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class AliceGameEasy {
+public: long long findMinimumValue(long long x, long long y) {
+long long sum=0,n=0;
+while(sum&lt;x+y){
+n++;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-639-div2-middle---alicegameeasy-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-633-div1-easy---periodicjumping-/" rel="bookmark">SRM 633 DIV1 Easy - PeriodicJumping (×××)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-24T21:25:00">November 24, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13234&amp;rd=16076
+・点（０，０）からスタートし、ゴール（ｘ、０）まで到達したい。
+・ジャンプして移動することができ、ジャンプできる距離の配列が与えられる。
+この順にジャンプして到達する必要がある。配列が終了したら最初の要素に戻る。
+・このとき、ゴールまで到達するのに必要な最小のジャンプ回数を求める。
+解き方 ・多角形を構成する問題であり、構成するには最大の辺＜その他の辺の合計である
+必要がある。今回は直線でもよいので等号が成立する。
+・配列の長さをｎ、配列の距離の合計をSとする。
+・ｘ＜＝Sのとき
+２＊ｎまでにゴールに到達することができる。
+ｎ＝０～２ｎ－１まで順に調べていき、それまでの距離の合計がｘ以上であり
+かつ最大の長さの辺が合計距離の半分以下であればそこが答えになる。
+・それ以外（ｘ＞S）のとき
+順に調べていき、距離の和がｘを超えた時が答えになる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PeriodicJumping {
+public: int minimalTime(int x, vector&lt;int&gt; jumpLengths) {
+if(x==0)return 0;
+if(x&lt;0)x=-x;
+int n=jumpLengths.size();
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-633-div1-easy---periodicjumping-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-611-div1-easy---lcmset-/" rel="bookmark">SRM 611 DIV1 Easy - LCMSet (××)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-15T20:45:00">November 15, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12918&amp;rd=15844
+・数字のセットAとBが与えられる。
+・与えられた数字のセットXに対し、その任意の組み合わせのLCMで作られる集合をLCM（X)とする。
+・AとBについて、LCM(A)＝LCM(B)になるかどうか求める。
+解き方 
+・各セットすべてのLCMを求め、それが一致するかどうかでよいか
+・しかしサンプルを見ると計算するとオーバーフローしそう
+・片方のセットすべてのLCMを、もう片方のセットのすべてで割れたらよいか
+・通らないサンプルがある
+・片方のセットそれぞれの数について、もう片方のセットで作れたらよさそう
+・とりあえず各数について割れたら割っていって、最後に１になればよいか。
+・これも通らないサンプルがある。
+・たしかに、４について２で割って４で割ろうとすると割れないが１になる組み合わせがある
+・ここで行き詰ってしまう
+→他の人のサンプルをみる
+・片方のそれぞれの数について、もう片方のセットの任意のLCMで作れたらよかった
+・確かに求めるのはLCMなので、割るのではなかった
+・LCMで作れるかどうかは、どの数を選ぶかがキーとなる。
+・選び方としてその数についてもう片方の要素で割り切れるならばLCMの要素とすれば
+その要素は超えないのでOK
+・反省：惜しいところまではいっていたがもう一歩。LCMとGCDの使いこなし方をまた学んだ。
+(別解)
+各集合Xのうち、LCM(X)を作れる最小の要素のみを抽出して、それが一致するか確かめてもよい。
+ある集合の数aについてそれが必要な数かどうかは、その他の数yについて
+aをyで割りきることができればそのLCMをとっていき、最後に一致するかどうかで判定できる。
+（＝aを構成できる最大のLCM）
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class LCMSet {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-611-div1-easy---lcmset-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2011-tco-qualification-round-3---allbutonedivisor-/" rel="bookmark">2011 TCO Qualification Round 3 - AllButOneDivisor (○)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-08T23:14:00">November 08, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11415&amp;rd=14531
+・ｎ個の数字が与えられる。
+・このうち、n-1個の数字で割ることができ残りの数字で割ることのできない数のうち最小のものを求める。そのような数字がないときは-1を返す。
+解き方 
+・数字の数は最大６個なので全探索できそう。
+・n-1個の数字で割ることができる数、つまりn-1個の数字の最小公倍数がこれを満たす。
+この数字が残りの数字で割ることができなければ解の候補となる。
+逆に残りの数字で割ることができればどのようにとっても割ることができてしまうため満たさない。
+→System Passed
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class AllButOneDivisor {
+public:
+int gcd(int x,int y){
+return y ? gcd(y,x%y) : x;
+}
+int getMinimum(vector&lt;int&gt; divisors) {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2011-tco-qualification-round-3---allbutonedivisor-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/2013-tco-round-2b-easy---fruittrees-/" rel="bookmark">2013 TCO Round 2B Easy - FruitTrees (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-11-02T22:33:00">November 02, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=12520&amp;rd=15633
+・appleとkiwi、grapeがあり、それぞれ与えられた間隔で一定に置いていく。
+・このとき、２つの果物間の最短距離が最も大きくなるような並べ方のときの
+&nbsp;最短距離を求める。
+解き方 
+・３つ果実があると複雑そう。
+・appleの距離が４、kiwiの距離が３のとき、と考えるとどう置いても重なる・・うまく見つからない。
+→他の人のコードをみてみる
+・もう少し洞察してみると、２つの果実の距離のgcdのMODが最短距離となる。
+・よって、appleを固定し、kiwiとgrapeを変化させそのときの最短距離を求めればよい。
+・反省：紙に書いてもっと検討・試行錯誤してみることが必要。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class FruitTrees {
+public:
+int gcd(int x,int y){
+return y ? gcd(y,x%y) : x;
+}
+int maxDist(int apple, int kiwi, int grape) {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2013-tco-round-2b-easy---fruittrees-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-620-div1-easy---pairgame-/" rel="bookmark">SRM 620 DIV1 Easy - PairGame (××)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-31T19:49:00">October 31, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13142&amp;rd=15853
+・(x,y)のペアを考える。
+・このペアは(x+y,y)もしくは（x,x+y）のペアに変換することができる。
+・(a,b),(c,d)のペアが与えられたとき、どちらのペアも作ることのできるペア(x,y)のうち
+もっともx+yが大きくなるときのx+yの値を求める。
+解き方 
+・全探索は難しそう。
+・なにか法則を見つける必要がありそうだが。。
+・サンプルをみたとき、(15,4)→(11,4)→(7,4)となるのでなにかありそうだが
+&nbsp;うまく見つからなく断念。
+→他の人のコードをみてみる。
+・サンプルから、(a,b)でa&gt;=bのときは(a-b,b)から遷移しなく、
+a&lt;bのときは(a,b-a)からしか遷移しないことがわかる。
+・よって、答えである(a,b),(c,d)をそれぞれ遷移させ、共通するもののうち
+最大となるペアの和が答えになる。
+反省：問題文からもっといろいろ紙に整理してみるのが足りていないと実感。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i=(c).begin(); i!=(c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PairGame {
+public: int maxSum(int a, int b, int c, int d) {
+set&lt;pair&lt;int,int&gt; &gt; p1,p2;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-620-div1-easy---pairgame-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-635-div1-easy---similarratinggraph-/" rel="bookmark">SRM 635 DIV1 Easy - SimilarRatingGraph (×)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-05T22:15:00">October 05, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=13485&amp;rd=16078
+日付とその日付に行われたコンテストの後のレーティングが時系列で与えられる。
+そのグラフのうち２つの似通ったサブグラフを探し、最大の長さのサブグラフを求める。
+サブグラフは各点が連続していなければならない。
+似通ったサブグラフ同士は、同じ長さで片方に係数をかけるもしくはスライドすると同一になるものを言う。
+解き方 
+問題文を正確に読めてなかったのが反省点。
+・サンプルを見ると、同じ傾きのサブグラフを求めることになりそう。
+・同じ傾きのサブグラフのうち、切片が異なるサブグラフの集合の有無で答えが異なりそう。
+・上記の条件ではコードに落とし込むのが複雑そう
+ここで解き方に困ってしまい、他の人のコードをみる。
+コードをみてから問題文を改めてみると、似通ったグラフとは同じ長さでなければならないこと、さらに連続するという条件がわかれば簡単に求められる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SimilarRatingGraph {
+public: double maxLength(vector&lt;int&gt; date, vector&lt;int&gt; rating) {
+double ans=0;
+int n=date.size();
+FORE(a,0,n-1)FORE(b,0,n-1)if(a!=b){
+double l=0;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-635-div1-easy---similarratinggraph-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-534-div1-middle---ellysnumbers%E5%BE%A9%E7%BF%92/" rel="bookmark">SRM 534 DIV1 Middle - EllysNumbers　（復習×××）</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-03-02T23:13:00">March 02, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;pm=11787&amp;rd=14727
+エリーが好きな数であるｎが存在する。
+ここで、複数の数が与えられ、その中から任意の数選んだ数字の積がｎになるようにしたい。
+ただし、選んだ数字それぞれは約数を持たない数でなければいけない。
+このとき、選んだ数字の積がｎとなる選び方の場合の数を求める。
+解き方 
+問題文で最初見落としたが重要なところは、選んだ数字それぞれは約数を持たない数であるということ。
+つまり、N=x^i * y^j *z^k　で表わせるとき、
+x,y,zではなく、x^i , y^j , z^kを最小単位の固まりとして考えることができる。
+記を最小単位の固まりとして考えるとき、
+与えられた数字xはnで割り切れ、かつn/xはxとの最大公約数が１でなければならない。
+これに従って、まずは候補の数字を洗い出す。
+次に、洗い出した候補の数字に対して最大公約数で割っていき、１にならなければ答えが存在しないので０を返す。
+ここで洗い出した候補の数字に対して、その素因数がｎの素因数でもあるので
+どの素因数からなるかのビットマスクを作成する。
+ビットマスクを作成後、ｄｐを回してすべてのビットマスクが１となるものが答えとなる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class EllysNumbers {
+public:
+long long gcd(long long x,long long y){
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-534-div1-middle---ellysnumbers%E5%BE%A9%E7%BF%92/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+
+		
+<div class="pagination clearfix">
+	<span class="pagination__item pagination__item--current">1/4</span>
+	<a class="pagination__item pagination__item--next" href="/tags/%E6%95%B0%E5%AD%A6/page/2/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/shebang_init/">shebangから理解するUNIXの仕組み</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hoge/">hugo first post</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">防御的プログラミング</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%81%AE%E8%A6%8B%E7%9B%B4%E3%81%97%E3%81%BE%E3%81%A8%E3%82%81/">投資信託の見直しまとめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-668-div1-easy---painttheroom-/">SRM 668 DIV1 Easy - PaintTheRoom ○</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-670-div1-easy---doubleoroneeasy-x/">SRM 670 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-677-div1-easy---doubleoroneeasy-x/">SRM 677 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-669-div1-easy---subdividedslimes-x/">SRM 669 DIV1 Easy - SubdividedSlimes x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-671-div1-easy---bearcries-x/">SRM 671 DIV1 Easy - BearCries x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-673-div1-easy---bearcavalry-x/">SRM 673 DIV1 Easy - BearCavalry x</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/https://www.facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/https://www.linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp</a>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math</a>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム</a>
+	</div>
+</div>
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

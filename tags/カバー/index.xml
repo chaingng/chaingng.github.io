@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>カバー on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E3%82%AB%E3%83%90%E3%83%BC/</link>
+    <description>Recent content in カバー on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 02 Nov 2014 10:55:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E3%82%AB%E3%83%90%E3%83%BC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRM 623 DIV1 Easy - UniformBoard （○）</title>
+      <link>https://chaingng.github.io/post/srm-623-div1-easy---uniformboard-/</link>
+      <pubDate>Sun, 02 Nov 2014 10:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-623-div1-easy---uniformboard-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13209&amp;amp;rd=15856
+・N×Nのボードが与えられる。
+・ボードの各セルには空白、apple,pearいずれかが置かれている。
+・また、１回の操作でappleかpearを空白に移すことができる。
+・最大の操作回数はKで、任意の長方形の中のセルがすべてappleであるようなときの
+最大の長方形の面積を求める。
+解き方 
+・すべての長方形で検索すればよさそう。
+・長方形を作ったとき、そもそも全体のappleより大きいセルは作れないので
+最初にすべてのappleの数を調べる必要がある。
+・長方形を作ったときにpearが含まれているとき、空白が一つもないと移せないので
+最初に空白があるかどうかを調べる必要がある。
+・空白は１回の操作でappleを置くことができるが、pearは一回どかしてからappleを置く必要が
+あるので２回の操作が必要。
+・よって任意の長方形を考えた時、セルの数が全体のapple以下かつ、
+pearもしくは空白が含まれていないか、空白の数＋pearの数×２＜＝Kかつ空白が全体に
+存在するときはその長方形をすべてappleにできる。
+→System Passed.
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class UniformBoard {
+public: int getBoard(vector&amp;lt;string&amp;gt; board, int K) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 629 DIV1 Easy - RectangleCovering (×)</title>
+      <link>https://chaingng.github.io/post/srm-629-div1-easy---rectanglecovering-/</link>
+      <pubDate>Fri, 19 Sep 2014 15:36:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-629-div1-easy---rectanglecovering-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13344&amp;amp;rd=16060
+長方形のホールがあり、縦と横の長さがわかっている。
+また複数の長方形のボードが与えられ、それぞれのボードの縦と横の長さもわかっている。
+ホールを覆うように複数のボードをつなげるとき、必要な最小のボードの数を求める。
+ただし、ボードは重ねるようにしてつなげてもよいが、ホールにボードの角が覆われないようにする。
+解き方 
+・普通に考えるとかなりの場合の数がありそう。
+・なにか制約がないか例をあげてみる。
+・あるボードが使えるかどうかは、そのうち小さい１辺がボードのどちらか１辺よりも大きくないといけない。
+・これで使えるボードが選別できそう。
+・ただ、それでも色々なつなげ方がありそう。
+・角が覆われないようにする条件を満たすためには、ボードは縦一列、横一列のどちらかしか並べられない。
+・これであとは上記を満たす長さのうち降順に並べればよさそう。
+・System Failed
+・ホールについて、縦に並べるか横に並べるか、両方の場合の検討が必要だった
+・さらにボードについて、例外条件を見落としていた。
+ボードの縦横両方が１辺よりも大きければ大きい方を取る。
+そうでないとき、小さい方の辺が1辺より小さければ大きい方ととる。
+そのうえでつなげる方の辺以上の長さになればよい。
+・System　Passed
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class RectangleCovering {
+public:
+int minimumNumber(int holeH, int holeW, vector&amp;lt;int&amp;gt; boardH, vector&amp;lt;int&amp;gt; boardW) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 614 DIV1 Easy - MinimumSquare　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 30 Mar 2014 08:45:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12976
+座標上に複数の点が与えられる。
+座標上に正方形を描き、その正方形の中に少なくともＫ個以上与えられた点が入っているようににしたい。
+このとき、描くことのできる最小の正方形の面積を求める。
+解き方 
+点の数は１００個なので、単純にすべての点の選び方を全探索しようとすると１００Ｃ５０で間に合わないので違う方法を考える。
+今回ｘ座標は１００個、ｙ座標は１００個とするとすべての始点の選び方は１０＾４となる。
+また、その選んだ始点に対してすべての座標を加えた場合の長さを調べ、
+Ｋ個以上となったときにその中のＫ個目の長さが最小の長さであるので、毎回その長さの正方形の面積と比較して答えを更新する。
+これで計算量は１０＾６となり間に合う。
+始点の選び方は与えられた座標ではなく、ｘ、ｙ座標それぞれの点に対して行うのがポイント。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class MinimumSquare {
+public: long long minArea(vector&amp;lt;int&amp;gt; x, vector&amp;lt;int&amp;gt; y, int K) {
+long long ret=9.2e+18;
+int n=x.size();</description>
+    </item>
+    
+    <item>
+      <title>SRM 530 DIV1 Easy - GogoXCake （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-530-div1-easy---gogoxcake-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 29 Sep 2013 18:16:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-530-div1-easy---gogoxcake-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11274&amp;amp;rd=14723
+ケーキをカットする問題。
+カットされたあとのケーキの形と、カットするナイフが与えられる。
+ナイフを当てるときは必ず、そのマスにもケーキがなければいけない。
+カット後のケーキの形にすることができればＹｅｓ，ダメならＮｏを返す。
+解き方 
+単純にシミュレーションするだけ。
+カットできるときはカットしなければ答えを導けないことがわかれば、単純に実装できる。
+最初にカットするべきマスとダメなマスをマーキング。
+次に順番にナイフを当てていき、全てカットすることができるときだけカットする。
+最後にカットするべきマスが残っていればＮｏ，残っていなければＹｅｓ．
+コード 
+class GogoXCake {
+public: string solve(vector&amp;lt;string&amp;gt; cake, vector&amp;lt;string&amp;gt; cutter) {
+int h=cake.size(),w=cake[0].size();
+int ch=cutter.size(),cw=cutter[0].size();
+int g[h][w];
+FORE(i,0,h)FORE(j,0,w){
+if(cake[i][j]==&#39;.&#39;)g[i][j]=-1;
+else g[i][j]=1;
+}
+FORE(i,0,h-ch+1){
+FORE(j,0,w-cw+1){
+int invalid=0;
+FORE(a,i,ch+i)FORE(b,j,cw+j)if(cutter[a-i][b-j]==&#39;.&#39;&amp;amp;&amp;amp;g[a][b]!=-1)invalid=1;
+if(invalid)continue;
+FORE(a,i,ch+i)FORE(b,j,cw+j)if(cutter[a-i][b-j]==&#39;.&#39;)g[a][b]=1;
+}
+}
+FORE(i,0,h)FORE(j,0,w)if(g[i][j]==-1)return &#34;NO&#34;;
+return &#34;YES&#34;;
+}
+}; </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>２人ゲーム on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%EF%BC%92%E4%BA%BA%E3%82%B2%E3%83%BC%E3%83%A0/</link>
+    <description>Recent content in ２人ゲーム on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 25 Apr 2015 06:52:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%EF%BC%92%E4%BA%BA%E3%82%B2%E3%83%BC%E3%83%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRM 603 DIV1 Easy - MaxMinTreeGame</title>
+      <link>https://chaingng.github.io/post/srm-603-div1-easy---maxmintreegame/</link>
+      <pubDate>Sat, 25 Apr 2015 06:52:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-603-div1-easy---maxmintreegame/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12946&amp;amp;rd=15836
+有向グラフが与えられる。
+各ノードについてはコストを持つ。
+２人のプレイヤーがゲームを行い、各ターンごとにグラフを２つに分割し、
+好きな方の１つを消すことができる。
+最初のプレイヤーはできるだけ最後に残るノードのコストを大きくしたく、
+２人目のプレイヤーはできるだけ小さくしたい。
+このとき、最後に残るノードの最大コストを求める。
+解き方 
+２人ゲームなので必勝法を考察する。
+今回は間にあるノードを残したくても、相手のターンで必ず消されてしまう。
+逆に端にあるノードは必ず残すことができる。
+よって、端にあるノードのうち最大のものが答えになる。
+コード 
+class MaxMinTreeGame {
+public: int findend(vector&amp;lt;int&amp;gt; edges, vector&amp;lt;int&amp;gt; costs) {
+int n=costs.size();
+int d[n][n];
+memset(d,0,sizeof(d));
+FORE(i,0,edges.size()){
+d[edges[i]][i+1]=1;
+d[i+1][edges[i]]=1;
+}
+int ret=0;
+FORE(i,0,n){
+int cnt=0;
+FORE(j,0,n)if(d[i][j])cnt++;
+if(cnt&amp;lt;=1)ret=max(ret,costs[i]);
+}
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 619 DIV1 Easy - SplitStoneGame (××)</title>
+      <link>https://chaingng.github.io/post/srm-619-div1-easy---splitstonegame-/</link>
+      <pubDate>Sat, 01 Nov 2014 09:58:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-619-div1-easy---splitstonegame-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13113&amp;amp;rd=15852
+・積み重ねられた石の山が複数存在する。
+・それぞれの山について、あらかじめいくつ石が積み重ねられているかわかっている。
+・現在の石の山から１つ選んで２つに分け、また別の山を２つ選んで振り分ける。
+・２つに分ける方法として、片方が０にならなければどのように分けてもよい。
+・上記のゲームを2人で交互に行い、分けられなくなった場合は負けになる。
+・このとき、最初のプレイヤーが勝つときはWIN,、負けるときはLOSEを返す。
+解き方 
+・サンプルと問題文からダメなパターンをみてみる。
+・まず、石の山が２つ以下の場合は必ず負ける。
+・また、全ての石の山が１のときは動かせないので必ず負ける。
+・それ以外のときとして、山が３つの時は必ず２つにできるので勝つ。
+・山が４つのときは必ず３つ→２つになるので負けてしまう。
+・よって、最初が全て１でなければ山を一つずつ必ず減らすことができる。
+・まとめると、石の山が２つ以下またはすべて１のときは負け、
+そうでないときは山の数が奇数のときは勝ち、偶数のときは負ける。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SplitStoneGame {
+public: string winOrLose(vector&amp;lt;int&amp;gt; number) {
+int n=number.size();
+int flag=1;
+FORE(i,0,n)if(number[i]!=1)flag=0;</description>
+    </item>
+    
+    <item>
+      <title>SRM 493 DIV1 Easy - StonesGame (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 02 Feb 2014 14:23:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11292&amp;amp;rd=14422
+番号が１から始まる長さＮの列に、ひとつだけ白い石が置かれている。
+そのほかの場所には黒い石が置かれている。
+ここで２人のプレイヤーでゲームを行い、連続してＫ個の石を選びその順番をひっくりかえす。
+ただし、選んだ中には白い石がなければならない。
+プレイヤーは交互にプレイする。最初はRomeoの番で、次はStrangletの番。
+このとき、勝つ方のプレイヤーの名前を返す。
+ただし、決着がつかない場合はDrawを返す。
+解き方 
+石の場所とゴールの場所が与えられた時に勝ちかどうかを判定できる関数を正確に作ることができるか。
+関数は以下の条件で作成できる。
+・ゴールと初期位置の差とＫ＋１の偶奇が一致しているか
+・ゴールと初期位置の差がＫ未満であるか
+・ひっくり返すＫの選び方が、列におさまるか
+コード 
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class StonesGame {
+public:
+bool can(int N,int M,int K,int L){
+if(M&amp;gt;L)swap(M,L);
+if(L-M&amp;gt;=K)return 0;
+if(K%2==0){
+if(abs(M-L)%2==0)return false;
+int len=(K-abs(L-M)-1)/2;</description>
+    </item>
+    
+    <item>
+      <title>SRM 472 DIV1 Easy - PotatoGame (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-472-div1-easy---potatogame-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 11:26:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-472-div1-easy---potatogame-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10759&amp;amp;rd=14154
+・TaroとHanakoの２人がゲームをする。
+・ポテトの数が与えられて、４の階乗分だけ自分のターンのときに食べることができる。
+・ポテトの数が０になったら勝ち。
+・最初はTaroのターン。
+・このとき、勝つ方のプレイヤーの名前を求める。
+解き方 
+１０＾９のため全探索では解くことができない。
+パターンを見つけようとdpで１０００ほど出力させてみると、
+MOD5のとき0もしくは２のときHanakoが勝つことがわかる。
+次に上記の証明。
+4の階乗を引くということは、mod5で考えた時±1していることと同じ。
+例えば、4のときは 4^2 mod5=-1 、16のときは 4^2 mod5=1となる。
+ここで、Taroが勝つポジションを n=1,3,4(mod5)としたとき、
+4^Kを引いた場合に相手に負けるポジションに移動させることができる。
+例外としてN=1,3のときは1を引くことしかできない。
+N=1 のときは1を引くことで勝ちとなるのでＯＫ．
+N=3 のときは1を引いてN=2と負けのポジションに移動させられるのでＯＫ．
+逆に、負けるポジション n=0,2(mod5)にいた場合は
+4^Kを引いても相手を負けるポジションに移動させることができない。
+よって、最初のMOD5のときのポジションで勝ち負けが一意に決まる。
+コード 
+class PotatoGame {
+public: string theWinner(int n) {
+return n%5==0||n%5==2 ? &#34;Hanako&#34; : &#34;Taro&#34;;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 522 DIV1 Easy - RowAndCoins （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 08:19:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11566&amp;amp;rd=14547
+AliceとBobの２人で行うゲーム。
+一行のマスの並びが与えられて、各マスにはＡかＢのどちらかが書かれている。
+ゲームはAliceから始まり、連続する任意のマスにコインを置くことができる。
+ただし、マスは最低一つコインを置かずに残さなければいけない。
+このとき、残った最後のマスがＡならAliceの勝ち、そうでなければBobの勝ちとなる。
+一行のマスが与えられた時、どちらが勝つかを求める。
+解き方 
+単純なシミュレーションに見えるが、全ての手の全探索は難しそう。
+ここで「勝ちの法則」がないかを考える。
+まず、Aliceは１マスを除いて好きなだけ連続するマスに置けるので、
+最初か最後のマスがＡであれば必ず勝ちになる。
+次にそうでない場合（両端がＢ）、どう消してもBは残ってしまうので
+どうやってもAliceは勝つことができない。
+例）BAAABABのとき
+①左のＢを消す　：AAABAB →次に右端以外を消されてしまう
+②右のＢを消す　：上記と同様
+②真ん中のＢを消す：BAAA*AB 左もしくは右のAを消されてＢは残る(B*AB or BA*B)
+つまり、両端のどちらかがＡであればAlice、そうでなければBobの勝ちとなる。
+コード 
+class RowAndCoins {
+public: string getWinner(string cells) {
+return cells[0]==&#39;B&#39;&amp;amp;&amp;amp;cells[cells.size()-1]==&#39;B&#39; ? &#34;Bob&#34; : &#34;Alice&#34;;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 574 DIV1 Easy - TheNumberGame （復習x）</title>
+      <link>https://chaingng.github.io/post/srm-574-div1-easy---thenumbergame-%E5%BE%A9%E7%BF%92x/</link>
+      <pubDate>Sun, 18 Aug 2013 16:02:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-574-div1-easy---thenumbergame-%E5%BE%A9%E7%BF%92x/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12474&amp;amp;rd=15494
+２人のプレイヤーが交互に行うゲーム。
+それぞれ正の整数が与えられる。
+各ターンにて、プレイヤーはその数字を１０で割るか、逆にすることができる。
+このとき、最初のプレイヤーの数字を２人目のプレイヤーの数字に一致させることができるかどうかを答える。
+ターン数は最大で１０００。
+解き方 
+２人目のプレイヤーの数字にすることができれば、
+その後の操作は全て一緒にできるので答えは必ずＹＥＳになる。
+仮に一緒にできなければ、２人目のプレイヤーは数字をひっくり返し続けてればよいのでＮＯとなる。
+待ち伏せる場合、２人目のプレイヤーが逆になるのを待ち伏せる場合は逆にできないので例外、と考えがちだが、逆の数字にできるということは最初の数字にもできるということなので問題ない。
+Challenge
+2人の操作で１ターンではなく、１人のプレイヤーの操作が終われば1ターンで、
+そこで判定できることを見逃してしまった。問題文の理解ミスです。
+sprintfはchar型で使うのですが、stringをchar変換しようとしたらうまくいかなかったです。そのままchar型を宣言して使いました。
+コード 
+class TheNumberGame {
+public:
+string determineOutcome(int A, int B) {
+bool win=false;
+char tx[15],ty[15];
+sprintf(tx,&#34;%d&#34;,A);
+sprintf(ty,&#34;%d&#34;,B);
+string x=tx,y=ty;
+if(x.find(y)!=string::npos)win=true;
+reverse(y.begin(),y.end());
+if(x.find(y)!=string::npos)win=true;
+return win ? &#34;Manao wins&#34; :&#34;Manao loses&#34;;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 575 DIV1 Easy - TheNumberGameDivOne (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-575-div1-easy---thenumbergamedivone-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 08:58:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-575-div1-easy---thenumbergamedivone-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12496&amp;amp;rd=15495
+２人でのゲーム。
+ある数が与えられ、プレイヤーは１とその数自身以外の約数をそこから引くことができる。
+約数を引いたら、次のプレイヤーに交替して進めていく。
+このとき、ある数が与えられたときに最初のプレイヤーが勝つなら”Ｊｏｈｎ”、
+負けるなら”Ｂｒｕｓ”を返す。
+解き方 
+与えられる数の最大は１０＾１８のため、ｄｐでは解くことができない。
+そのため、法則がないか見つける。
+とりあえず「適当な数までサンプル出力し、法則をながめる」ことが１つの手法。
+法則は以下の通り。
+１）２＾ｎ以外の偶数が与えられたら勝ち
+この場合、ｘ＝２ｙ＊２ｚ＝２（ｙ＋ｚ）、
+（ただしｙ＋ｚは２＾ｎではない、つまり奇数の約数を含む）
+で表わすことができる。
+このとき、偶数と奇数の約数が必ず存在するので勝ちとなる。
+２）奇数が与えられたら負け
+奇数は「素数」もしくは「奇数で割る」ことができる。
+奇数で割れるときは、奇数ー奇数のため必ず偶数になる。
+このとき、２＾ｎを含んでいるとすると奇数はｘ＝２＾ｎ＋ｙと表わせるが
+２＾ｎの倍数で割れないため、２＾ｎの偶数ではない。
+つまり、奇数を引いたときは２＾ｎ以外の偶数が現れる。
+２＾ｎ以外の偶数は必ず約数が存在して、
+一方奇数で割ることができなければ負けとなるためこの場合は負けとなる。
+３）２＾ｎの偶数のとき
+たとえば２＾３＝８のときは、２，４で割ることができる。
+２＾１を引くと６となり２＾ｎ以外の偶数が出るので負けとなる。
+そのため、２＾ｎが与えられた時は２＾（ｎ－１）を引くしかないが
+その結果が２、つまりｎが偶数のときは勝ちとなるが
+奇数のときは負けとなる。
+コード 
+class TheNumberGameDivOne {
+public: string find(long long n) {
+int num=0;
+if(n%2)return &#34;Brus&#34;;
+while(n%2==0){
+n/=2;
+num=(num+1)%2;
+}
+if(n!=1)return &#34;John&#34;;
+if(num)return &#34;Brus&#34;;
+return &#34;John&#34;;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM534 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm534-div2--level2/</link>
+      <pubDate>Wed, 10 Jul 2013 09:52:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm534-div2--level2/</guid>
+      <description>問題 
+①１次元の列が与えられ、ランダムな数の石がおかれている。
+②この石は右に１マスもしくは３マス動かすことができる。
+３マス動かす時はその間の石を飛び越すことができる。
+しかし、動かした先に石がある場合は動かすことができない。
+最後のマスに達したときはその石は動かすことはできなく、消えてしまう。
+③２人のプレイヤーが順にこの操作を行う。
+石を動かせなくなった方が負けとなる。
+④このとき、最初のプレイヤーが勝つならＹＥＳ,負けるならＮＯを返す。
+解き方 
+デッドロックが発生する場合を想定すると複雑になりそうに見える。
+しかし、そのように見える場合でも一番右の石は動かすことができるので、
+それぞれの石は独立に考えることができる。
+これがわかれば、動かすことのできるマスが奇数の場合は最初のプレイヤーが勝ち、
+偶数の場合は負けることがわかる。
+コード 
+class EllysCheckers {
+public: string getWinner(string board) {
+int parity=0;
+FORE(i,0,board.size()-1)if(board[i]==&#39;o&#39;)parity+=(board.size()-1-i);
+return parity%2!=0 ? &#34;YES&#34; : &#34;NO&#34; ;
+}
+}; </description>
+    </item>
+    
+  </channel>
+</rss>

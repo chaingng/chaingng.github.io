@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posts</title>
+
+<meta name="generator" content="Hugo 0.25-DEV" />
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chaingng.github.io/post/" />
+
+
+
+<meta property="og:updated_time" content="2013-06-15T11:47:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="takatomo&#39;s blog Feed" href="https://chaingng.github.io/post/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+	<div class="main-content list content" role="main">
+		<header class="page-header">
+			<h1 class="page-header__title">Posts</h1>
+		</header>
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm582-div2--level12/" rel="bookmark">SRM582 DIV2 -Level1,2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-15T11:47:00">June 15, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			やっと緑コーダーになれました。
+SYSTEMテストで２回連続で落ちていて、３度目の正直。
+Challengeを今までまったくしておらず、ちゃんとコード書けることが大事だからいらないかなと思っていました。
+ただ、撃墜できること＝自分のコードの抜け漏れがチェックできる、ということにもつながるのでこれからはちょっと力を入れていきたいです。
+Ｌｅｖｅｌ１
+＜問題＞
+①２以上のある整数Ｎが与えられる。
+②a&gt;=1,b&gt;1,a&lt;b, a*b*b=Nとなる数字が存在する場合はYes、
+そうでない場合はNoを返す。
+＜解き方＞
+単純に実装するだけです。
+全探索でもよいのですが、Yesならb*bは必ず存在するので
+bを1からb*b&lt;=Nまでまわして判定しました。
+＜コード＞
+class SemiPerfectSquare {
+public: string check(int N) {
+for(int i=1;i*i&lt;=N;i++){
+if(N%(i*i)==0 &amp;&amp; N/(i*i)&lt;i)return "Yes";
+}
+return "No";
+}
+};
+Ｌｅｖｅｌ２
+＜問題＞
+①魔法少女の強さの順列、敵の強さの順列と各敵の数が与えられる。
+②魔法少女は１匹敵を倒すたびに疲れが１増える。最初は０。
+③このとき、全ての敵を倒した時に魔法少女の中で最も大きい疲れが最小となるものを返す。全ての敵を倒せない場合はー１を返す。
+＜解き方＞
+全ての魔法少女が全ての敵を倒すことができる理想の状態を考えると、
+各魔法少女は「Ｎ＝全ての敵の数／全ての魔法少女の数」の敵を倒せばよい。
+ただそうでないケースも存在するので、その場合をシミュレーションで実装する。
+まずは魔法少女と敵を強さの昇順にソートして例外処理を行う。
+一番強い魔法少女の強さより、最も強い敵の強さが高ければ
+全ての敵を倒せないのでー１を返す。
+次に、魔法少女が倒すことができない敵が出た時は次の魔法少女に移り、
+「Ｎ＝残りの敵の数／残りの魔法少女の数」を再計算してあげる。
+すべてシミュレーションが終了した時、最も高い疲れの値を返してあげればよい。
+＜関数＞
+２つの配列について、一つの配列の値に対してソートできれば簡単になる。
+＜コード＞
+class SpaceWarDiv2 {
+public: int minimalFatigue(vector&lt;int&gt; mS, vector&lt;int&gt; eS, vector&lt;int&gt; eC) {
+vector &lt;pair &lt;int, int&gt; &gt; enemy;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm582-div2--level12/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm569-div2--level2/" rel="bookmark">SRM569 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-14T09:11:00">June 14, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			＜問題＞
+①０と１で構成される2次元配列が与えられる。
+②各ビット列の任意の２つに対し、それぞれＯＲかＸＯＲかＡＮＤ演算をするデバイスがビット列分存在する。
+③各ビット列に対しどの操作をするか決まっているが、それがどれかはわかっていない。
+④このとき、各デバイスがどの操作をするか確かめることができれば”ＹＥＳ”、できなければ”ＮＯ”を返す。
+＜解き方＞
+各ビット列に対し、特定の数字が含まれていればデバイスの操作を確かめることができる。
+ＯＲとＡＮＤの場合
+０，１→ＯＲだと１、ＡＮＤだと０
+ＯＲとＸＯＲの場合
+１，１→ＯＲだと１、ＸＯＲだと０
+ＡＮＤとＸＯＲの場合
+０，１→ＡＮＤだと０、ＸＯＲだと１
+１，１→ＡＮＤだと１、ＸＯＲだと０
+この３つを判定するには、１が２つ、０が１つ最低あればよいことになる。
+各ビット列に対し１が２つ、０が１つ以上あるか判定し、
+なければＮＯ，あればＹＥＳを返す。
+＜コード＞
+class TheDeviceDiv2 {
+public: string identify(vector&lt;string&gt; plates) {
+FORE(j,0,(int)plates[0].size()){
+int one=0,zero=0;
+FORE(i,0,(int)plates.size()){
+if(plates[i][j]=='1')one++;
+else zero++;
+}
+if(!(one&gt;=2 &amp;&amp; zero&gt;=1))return "NO";
+}
+return "YES";
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm570-div2--level2/" rel="bookmark">SRM570 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-12T23:21:00">June 12, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			&lt;問題&gt;
+①数字の順列が与えられる。
+②各数字に対して、ロボットはその数字の分前に進む。進んだ後は右に９０度回転する。
+③最後の数字まで進む処理をＴ回繰り返す。
+④このとき、最初と最後の位置のマンハッタン距離を返す。
+＜解き方＞
+数字の数は最大５０個、Ｔは最大１００回なので最大の場合でもＯ（５０００）。
+計算量が余裕で間に合うので純粋にシミュレーションを実装する。
+＜コード＞
+class RobotHerbDiv2 {
+public: int getdist(int T, vector&lt;int&gt; a) {
+int x=0,y=0,dir=0;
+FORE(h,0,T){
+FORE(i,0,a.size()){
+if(dir%4==0)y+=a[i];
+if(dir%4==1)x+=a[i];
+if(dir%4==2)y-=a[i];
+if(dir%4==3)x-=a[i];
+dir+=(a[i]%4);
+}
+}
+return abs(x)+abs(y);
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm544-div2--level2/" rel="bookmark">SRM544 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-12T21:04:00">June 12, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			＜問題＞
+①求めたい長さ(desiredL)と、求めたい長さ(desiredN)の本数と、実際の長さ(actualL)が与えられる。
+②実際の長さは好きなだけ本数が与えられる。
+③実際の長さを切ることで、求めたい長さを、求めたい本数だけ求める。
+④このとき、切る数の最小値を求める。
+＜解き方＞
+実際の長さは何本でも与えられて本数は答えに影響しないため、
+求めたい長さから実際の長さで割った余りを求める。
+そうすることで、余りの長さに対してだけ考えればよくなる。
+このとき、余りが０であれば切らなくても答えが求められるので０を返す。
+次に、単純に実際の長さから余りの長さ分切って求めると、求めたい長さの本数が求めたい長さになる。
+こう考えると数学的解放で解けそうですが、以下の例外があるため
+シミュレーションに切り替えます。
+①余りの長さ分切ったときに割り切れることができる場合
+最後に求めたい長さのものがもう１本できる。
+②余りが発生かつ、その余りが何度か出た時に足すことで余りの長さに達するとき
+もう１本分作ることができる。
+Ｃｈａｌｌｅｎｇｅポイント
+上記だと、「余りの長さがぴったりではない場合」に判定がスルーされてしまいます。
+例えば１０の長さが欲しいが余りが４のとき、
+４＋４＋４＋４＋４＝２０でずっと判定されないのですが
+実は（４＋４＋２）＋（４＋４＋２）で１回割ると２本できてしまいます。
+これを避けるためには、１０を超えた時は１０に分割することで
+この部分も判定に含めることができます。
+かなり見落としがちです。
+＜コード＞
+class BoardSplitting {
+public: int minimumCuts(int desiredL, int desiredC, int actualL) {
+int L=desiredL%actualL;
+int tmpL=actualL,remain=0,cut=0;
+if(L==0)return 0;
+while(desiredC&gt;0){
+tmpL-=L;
+cut++;
+desiredC--;
+if(tmpL&gt;L)continue;
+if(desiredC==0)break;
+remain+=tmpL;
+tmpL=actualL;
+if(remain&gt;=L){
+if(remain!=L)cut++;
+desiredC--;
+remain-=L;
+}
+}
+return cut;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm571-div2--level2/" rel="bookmark">SRM571 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-11T22:47:00">June 11, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			&lt;問題&gt;
+①数字Ｎが与えられる。
+②１からＮまでの数字が付けられたｍｐ３ファイル、"1.mp3","2.mp3"..."n.mp3"が作られる。
+③このとき、ファイル名を辞書順に並べたときの配列を返す。
+ただし、Ｎが５０を超える場合は最初の５０個を返す。
+＜解き方＞
+辞書順、ということに気づいて文字列のソートができればＯＫ．
+要素が５０個を超える場合は、最初の５０個のみ表示するということに注意。
+&lt;コード&gt;
+class FoxAndMp3Easy {
+public: vector&lt;string&gt; playList(int n) {
+vector &lt;string&gt; vx,ans;
+for(int i=1;i&lt;=n;i++){
+stringstream ss;
+ss &lt;&lt; i &lt;&lt; ".mp3";
+string tmp;
+ss &gt;&gt;tmp;
+vx.push_back(tmp);
+}
+sort(vx.begin(),vx.end());
+for(int i=0;i&lt;min(50,n);i++)ans.push_back(vx[i]);
+return ans;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm572-div2--level2/" rel="bookmark">SRM572 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-11T22:23:00">June 11, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			&lt;問題&gt;
+①２つの文字列が与えられる。
+②それぞれの文字は、1回につきprevCostで前の文字に変えることができる。(aを除く)
+③それぞれの文字は、1回につきnextCostで次の文字に変えることができる。(zを除く)
+④このとき、最初の文字列から２つ目の文字列に変換するのにかかる最小のコストを返す。ただし、いつでも文字列中に同じ文字が存在してはならない。変えることができない場合はー１を返す。
+＜解き方＞
+シミュレーションを全探索で考えるのは難しいので効率のよい探索を考える。
+まず、同じ文字が存在するかしないかは、２つの文字を相対的に見ればよい。
+次に、どのケースのとき同じ文字列が存在するかを考える。
+①２つが同じ順番のとき
+（小さい文字から大きい文字に変換）
+startが比較対象のstartより大きいかつ、goalが比較対象のgoalより小さいとＮＧ
+（大きい文字から小さい文字に変換）
+startが比較対象のstartより小さいかつ、goalが比較対象のgoalより大きいとＮＧ
+②逆の順番のとき
+startが比較対象の文字より小さいかつ、goalが比較対象のgoalより大きいとＮＧ
+もしくは
+startが比較対象の文字より大きいかつ、goalが比較対象のgoalより小さいとＮＧ
+（より、と書きましたが＝も含みます）
+上記でもＯＫですが、
+２つの文字の比較は上下が変わっても相対的に見れば同じことがわかれば
+まとめることができます。
+つまり、(start[i]-start[j])*(goal[i]-goal[j])&lt;=0のときは-1を返してやればいいです。
+あとはコストは常に移動の最小となるので、同じ文字が存在するときはー１、そうでなければ移動の最小コストを返してあげればＯＫです。
+＜コード＞
+class NextOrPrev {
+public: int getMinimum(int nextCost, int prevCost, string start, string goal) {
+int ans=0;
+int n=start.size();
+FORE(i,0,n){
+if(start[i]==goal[i])continue;
+if(start[i]&lt;goal[i])ans+=(abs(start[i]-goal[i])*nextCost);
+else ans+=(abs(start[i]-goal[i])*prevCost);
+}
+FORE(i,0,n)FORE(j,i+1,n)if((start[i]-start[j])*(goal[i]-goal[j])&lt;=0)return -1;
+return ans;
+}
+};
+ 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm573-div2--level2/" rel="bookmark">SRM573 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-10T21:59:00">June 10, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			&lt;問題&gt;
+①数字の列が与えられる。数字の数はそれぞれの人のプログラミング能力の強さを表す。
+②そのうち３人一組でチームを作り、チームの強さは３人のうち強い方から２人の強さの和となる。
+③自分のチームは数字の列の最初から３人で構成される。
+④このとき、様々なチームの組み合わせのうち、最も自分のチームの順位が低くなるときの順位を返す。
+＜解き方＞
+自分のチームは最初の３人なので、それを省いて考えると最大でＮ＝４5。
+全探索で考えると、Ｏ（４５Ｃ３×４２Ｃ3）．．．となり難しそう。
+次に貪欲法で考える。
+まずは数字列をソートすることで、小さい順に並べることで大きい数だけを扱えばよいことは思いつく。
+このとき、「チームの強さは３人のうち強い方から２人の強さの和」から
+「一番弱い一人は考えなくてよい」ので、
+最初のN/3より小さい数は考えなくてよいことがわかる。
+そのため、Ｎ／３～Ｎ－１番までの２人の組み合わせについて考えればよい。
+ここまででＯ（３０Ｃ２×２８Ｃ２・・・）。まだ足りない。
+次に、Ｎ／３番から始まる昇順で数字をindex1、Ｎ－１から降順で始まる数字をindex2とすると、
+仮にindex1=Ｎ／３のとき
+①index2=N-1の数字の和が自分のチームより大きければ
+→index1は自分よりも強いチームに所属（答えを＋）
+②小さい場合
+→index1は自分よりも弱いチームに所属（次のindex1に移動）
+することになる。
+最後に貪欲法で抜けがないか確認。
+index2=N-1がＯＫのとき、N-1未満の値でもチームが作れたとしても、
+それ以上のindex1の場合は常にindex=N-1の値はそれ以上に強いチームの値になるので
+必ず使われることになる。
+そのため単純に strength[index1]+strength[index2]の和を試し、
+自分のチーム以上であればindex1++,index2--,答えを+し、
+それ以下であればindex++のみでよいことがわかる。
+Challengeのポイント
+最初、判定後に要素を取り除いていなかったので
+きちんと要素を取り除いているかを確認する。
+＜コード＞
+class TeamContestEasy {
+public: int worstRank(vector&lt;int&gt; st) {
+int my=st[0]+st[1]+st[2]-min(st[0],min(st[1],st[2]));
+int rank=1;
+sort(st.begin()+3,st.end());
+int low=3+(st.size()-3)/3,high=st.size()-1;
+while(low&lt;high){
+if(st[low]+st[high]&gt;my){
+low++;
+high--;
+rank++;
+}
+else low++;
+}
+return rank;
+}
+};
+ 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm545-div2--level2/" rel="bookmark">SRM545 DIV2 -Level2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-09T10:54:00">June 09, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			＜問題＞
+①文字数ｎが与えられる。
+②最小文字列minStrが与えられる。
+③文字列s中の順番i&lt;jでs[i]&gt;s[j]となるとき、inversionが１となるとき、
+最小のinversion minInvが与えられる。
+④このとき、文字数nでminStrより大きく、かつminInv以上の中で
+最も辞書順で小さい文字列を求める。
+そのような文字列が存在しなければ””を返す。
+また、文字列には同じ文字が入らないとする。
+＜解き方＞
+まずは全探索で考えると、文字数nの全てに対してminInv,minStrの判定を行い
+その中で最も辞書順で小さい文字列を探索することになる。
+単純に検索するとO(26Pn=26!/(26-n)!)のため計算量を超えてしまう。
+次に貪欲法でできないか考える。
+文字の後ろから計算するとオーバーしてしまうので、最初の文字から決定していく。
+このとき、求めるのは辞書順最小であるためaから順に調べていく。
+aの後に続く文字は、そのケースのstr,invの最大を考えることでaなのか
+b以上なのか判定できる。
+（例）n=5のとき、afdcbを考え、minInv以下、もしくはminStr以下であれば
+最初の文字はa以上となる。
+この場合だとO(26*n)のため計算量に収まる。
+あと、条件に一致しなければ""を返すため、答えの初期値を""とする。
+その文字を使ったか使っていないかの判定はused[]配列を用いてもよいが、
+ビット計算でもよい。
+redcoderの人の回答を参考に書いたままです。
+&lt;コード&gt;
+class StrIIRec {
+public: string recovstr(int n, int minInv, string minStr) {
+string ans="";
+int used=0;
+FORE(i,0,n){
+FORE(j,0,n){
+if(used&amp;(1&lt;&lt;j))continue;
+string s=ans;
+s+=(j+'a');
+for(int k=n-1;k&gt;=0;k--)if(!(used&amp;(1&lt;&lt;k)) &amp;&amp; k!=j)s+=(k+'a');
+if(s&lt;minStr)continue;
+int inv=0;
+FORE(k,0,n)FORE(l,k+1,n)if(s[k]&gt;s[l])inv++;
+if(inv&lt;minInv)continue;
+ans+=(j+'a');
+used|=(1&lt;&lt;j);
+break;
+}
+}
+return ans;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2/" rel="bookmark">二分探索</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-07T09:20:00">June 07, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			二分探索について考えたいと思います。
+■適用できそうな問題
+・最長・最短というキーワードがあること。
+・Ｃ（ｘ)を満たすという条件があること。
+・全てのｘ’がＣ（ｘ’）を満たすこと。
+■計算量
+O(log N)
+log Nというのが今までイメージしにくかったのですが、
+N=8であれば8/2→4/2→2/2→1となるので例を出すと納得。
+■終了条件
+整数を返すのであればhigh-low&gt;1で可能だが、
+double型のときは注意が必要。
+特に1e-9以下の誤差で求めるというときは
+high-low&gt;1e-9(10^-9)とすると丸め誤差で収束しないというエラーが起きる。
+対処方法は以下の２つ。
+&nbsp; &nbsp;①high-low&gt;1e-9 || (high-low)/high &gt;1e-9と
+絶対誤差と相対誤差の２つで判定する。
+ただ、highで割るときは０にならないような注意が必要。 ②for(int i=0;i&lt;100;i++)のように100回程度ループを回すことで
+2^-100→(2^10)^-10→10^-30倍となり
+1e-9以下とすることができる。
+■ＳＴＬ
+lower_bound(num.begin(),num.end(),7)
+指定した値「以上」の要素が最初に現れる位置を返す
+ 
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm548-div2--500points/" rel="bookmark">SRM548 DIV2 -500points</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2013-06-06T00:01:00">June 06, 2013</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			&lt;問題&gt;
+①数字の順列が与えられる。
+②魔法の数字Ｌを使うことで、それぞれの数字からＬを引く、または足すことができる。
+③このとき、与えられた数字の順列を昇順にするために必要な最小のＬを返す。
+&lt;解き方&gt;
+二分探索で解けることがわかれば、の問題でした。
+終了条件の設定を間違えると無限ループが続いてしまったり、
+答えがlowかhighのどちらかの判定を加えなければいけなくなります。
+そこで答えを満たす時はmidを範囲に加えて、
+満たさないときはlow=mid+1とmidを範囲に加えないことで
+low&lt;highの条件で収束することができます。
+&lt;コード&gt;
+class KingdomAndTrees {
+bool f(vector&lt;int&gt; h, int x){
+int prev=0;
+FORE(i,0,(int)h.size()){
+if(h[i]+x&lt;=prev)return false;
+prev=max(prev+1,h[i]-x);
+}
+return true;
+}
+public:
+int minLevel(vector&lt;int&gt; heights) {
+int low=0,high=1000000000;
+while(high-low&gt;0){
+int mid=(low+high)/2;
+if(f(heights,mid))high=mid;
+else low=mid+1;
+}
+return high;
+}
+}; 
+		</div>
+	</div>
+</article>
+
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/post/page/52/">«</a>
+	<span class="pagination__item pagination__item--current">53/55</span>
+	<a class="pagination__item pagination__item--next" href="/post/page/54/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/shebang_init/">shebangから理解するUNIXの仕組み</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hoge/">hugo first post</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">防御的プログラミング</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%81%AE%E8%A6%8B%E7%9B%B4%E3%81%97%E3%81%BE%E3%81%A8%E3%82%81/">投資信託の見直しまとめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-668-div1-easy---painttheroom-/">SRM 668 DIV1 Easy - PaintTheRoom ○</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-670-div1-easy---doubleoroneeasy-x/">SRM 670 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-677-div1-easy---doubleoroneeasy-x/">SRM 677 DIV1 Easy - DoubleOrOneEasy x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-669-div1-easy---subdividedslimes-x/">SRM 669 DIV1 Easy - SubdividedSlimes x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-671-div1-easy---bearcries-x/">SRM 671 DIV1 Easy - BearCries x</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/srm-673-div1-easy---bearcavalry-x/">SRM 673 DIV1 Easy - BearCavalry x</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/https://www.facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/https://www.linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp</a>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math</a>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム</a>
+	</div>
+</div>
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

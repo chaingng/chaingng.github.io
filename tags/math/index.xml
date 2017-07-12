@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/math/</link>
+    <description>Recent content in Math on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 18 Oct 2014 21:57:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数学Aの順列（１）</title>
+      <link>https://chaingng.github.io/post/%E6%95%B0%E5%AD%A6a%E3%81%AE%E9%A0%86%E5%88%97%EF%BC%91/</link>
+      <pubDate>Sat, 18 Oct 2014 21:57:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/%E6%95%B0%E5%AD%A6a%E3%81%AE%E9%A0%86%E5%88%97%EF%BC%91/</guid>
+      <description>プログラムで場合の数の問題がしばしば出てくるので
+数学の順列の問題の解き方整理。
+（１）ある場合の数からある条件を含まない場合を求めたいときは
+それぞれの場合の数をもとめて集合の排他を計算する。
+（例）０，１，２，４を並べて４ケタの数をつくる　＝４！－３！
+（２）a&amp;lt;b&amp;lt;c&amp;lt;dからa,b,c,dを選ぶ場合の数はC,組み合わせ順列に帰着できる。
+逆にこの形に変換できれば組み合わせ順列の適用が可能。
+（例）１～９の数字から重複を許して４回数字を選び、
+その数字がa&amp;lt;b&amp;lt;c&amp;lt;dとなるようにする
+（３）人を一列に並べるなど、人を扱う順列の場合は区別するのでPで計算する。
+（例）男子５人、女子３人を一列に並べる
+（４）隣り合う場合はそのパターンを一つとみなす、
+隣り合わない場合はその他の要素の間に入れる
+（例）AさんとBさんは隣り合う→「AB」を一人とみなす
+（例）男子が隣り合わない→女子の間に入れる
+（５）単純な順列計算ができないときは場合分けを行う。
+かつ、その中で重複がないようにする。
+（例）１～４の数字から重複を許して５回数字を選び５ケタの数字を作る。
+このうち１２の並びとなる場合の数を求める。
+ </description>
+    </item>
+    
+  </channel>
+</rss>

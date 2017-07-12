@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>考察 on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/%E8%80%83%E5%AF%9F/</link>
+    <description>Recent content in 考察 on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 22 Apr 2015 22:02:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/%E8%80%83%E5%AF%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2014 TCO Semifinal2 DIV1 Easy - PlankTiling</title>
+      <link>https://chaingng.github.io/post/2014-tco-semifinal2-div1-easy---planktiling/</link>
+      <pubDate>Wed, 22 Apr 2015 22:02:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/2014-tco-semifinal2-div1-easy---planktiling/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13437&amp;amp;rd=16188
+・１＊Hの棒が与えられる。
+・この棒を、（２H-1）＊Wのセルに敷き詰める場合の数を求める。
+・WはHの倍数となる。
+解き方 
+WがHの倍数のときにすべて敷き詰めることができる。
+敷き詰め方としては、W＝３、H＝３のとき
+---
+---
+---
+---
+---
+が必ず１通り存在し、さらに
+||
+||
+||
+と縦に並べる並べ方がH通りあるので合計H＋１通り。
+さらにWが３増えると（H+1）＊H通り＋（H+1）通りになる。
+加えて、WがH+1以上のときは
+上記のようにWをH個のブロック区切りで考える他に、
+区切りの間に敷き詰める方法がある。
+上記の３つについてｄｐを適用させていけば良い。
+コード 
+class PlankTiling {
+public: int sumup(int H, int W) {
+int dp[W+1];
+int MOD=1000000007;
+memset(dp,0,sizeof(dp));
+dp[0]=1;
+for(int i=0;i&amp;lt;W;i++){
+if(i+H&amp;lt;=W)dp[i+H]=(dp[i+H]+dp[i])%MOD;
+if(i%H==0)dp[i+1]=(dp[i+1]+dp[i]*1LL*H)%MOD;
+else dp[i+1]=(dp[i+1]+dp[i])%MOD;
+}
+return dp[W];
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 617 DIV1 Easy - MyLongCake (○)</title>
+      <link>https://chaingng.github.io/post/srm-617-div1-easy---mylongcake-/</link>
+      <pubDate>Mon, 10 Nov 2014 19:35:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-617-div1-easy---mylongcake-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13137&amp;amp;rd=15850
+・ある長さｎのケーキがある。
+・人が何人訪れるかわかっていないが、ｎの約数の人数だけ人が訪れる可能性がある。
+・１人人が現れた時、あらかじめ分けられたケーキのうち残りの最初から好きな数だけ
+分け与えることができる。
+・このとき、何人訪れた場合でもすべての人に同じ長さだけ均等にケーキをわけられるような
+ケーキの分割数を求める。
+解き方 
+・訪れる可能性のある人数全てに対し等分にケーキを切り、最後に残ったケーキの分割数が
+答えになりそう。
+・求め方として、すべての約数に対しケーキを分ける箇所すべてを答えに保存して
+最後に重複なしの数を返せばよい。
+→System Passed
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class MyLongCake {
+public:
+int cut(int n) {
+set&amp;lt;int&amp;gt; ans;
+FORE(i,1,n)if(n%i==0){
+int d=n/i;
+for(int j=d;j&amp;lt;=n;j+=d)ans.insert(j);</description>
+    </item>
+    
+    <item>
+      <title>2014 TCO Round 2A Easy - SixteenBricks (×)</title>
+      <link>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</link>
+      <pubDate>Wed, 29 Oct 2014 18:11:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996
+・正方形に並べられた１６個のマスがある。
+・各マスに、高さheightが分かっているタワーを置く。
+・このとき、見えている表面積が最も高くなるようにタワーを置く時の面積を求める。
+解き方 
+・下側は見えないので無視してよさそう。
+・上側は常に１６となる。
+・あとはどう横に置くか。
+→思いつかなかったため、他の人のコードをみてみる。
+・サンプルの一つにあるように、互い違いに置くことで（#の場所）８つ分はheight×４を足す。
+*#*#
+&amp;nbsp; #*#*
+&amp;nbsp; *#*#
+&amp;nbsp; #*#*
+・残りのうち、置く場所によって見えなくなる面の数が異なる。
+0#2#
+&amp;nbsp; #4#2
+&amp;nbsp; 2#4#
+&amp;nbsp; #2#0
+・よってheightでソートし、大きいうちから8つはheight×4を足し、
+小さい方から2つはheight×4を引き、次の4つはheight×2を引けばよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class SixteenBricks {</description>
+    </item>
+    
+    <item>
+      <title>SRM 631 DIV1 Easy - TaroJiroGrid (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-631-div1-easy---tarojirogrid-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 19 Sep 2014 11:40:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-631-div1-easy---tarojirogrid-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13393&amp;amp;rd=16062
+N*Nのボードがあり、WかBの色が塗られている。
+１回の操作で１つの行の色をWかB一色にすることができる。
+このとき、全ての列について、同じ色がN/2より多く連続しないようにするための
+最小の操作回数を求める。
+解き方 
+同じ色がN/2より多く連続しない、というのがポイント。
+最悪のケースでは、N/2行とN/2+1行を別の色にすれば条件を満たすのでよいので２回で済む。
+よって、操作回数０回と１回の場合を全探索すればよい。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class TaroJiroGrid {
+public:
+bool check(vector&amp;lt;string&amp;gt; g){
+int n=g.size();
+FORE(j,0,n){
+char prev=g[0][j];
+int cnt=1;
+FORE(i,1,n){
+if(g[i][j]==prev)cnt++;
+else{
+if(cnt&amp;gt;n/2)return false;
+prev=g[i][j];</description>
+    </item>
+    
+    <item>
+      <title>SRM 168 DIV1 Easy - NumberGuesser (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-168-div1-easy---numberguesser-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 09:52:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-168-div1-easy---numberguesser-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1869&amp;amp;rd=4645
+１～９９９８までの数字を考える。
+（例）４３２１
+各桁の数を入れ替えて、元の数字より小さければ入れ替えた数を引く。
+（例）４３２１－１２３４＝３０８７
+引いた後の数に、０ではない桁の数字を引き、３ケタ未満であれば０を最初につける。
+（例）０８７
+この操作をしたあとにできる数があらかじめ与えられた時、
+引かれた桁の数字が何であるかを求める。
+解き方 
+数字が10^4、かつ数の入れ替えが4!=24通りであるため、
+全探索可能。
+あとはシミュレーションなので、シンプルに間違いのないよう実装する。
+別解として、元の数を1000a+100b+10c+dとすると引く数は1000d+100c+10b+aとなる。
+この数を引くと、999a+99b-90c-999d、つまり9の倍数となる。
+9の倍数は各桁の数の和も9の倍数となるから、これを利用して簡単に解くことができる。
+コード 
+using namespace std;
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class NumberGuesser {
+public:
+int f(vector&amp;lt;int&amp;gt; a,vector&amp;lt;int&amp;gt; b){
+int num=0,idx=-1;
+FORE(i,1,10){
+if(b[i]-a[i]==1)num++,idx=i;
+else if(b[i]-a[i]&amp;gt;0||b[i]-a[i]&amp;lt;0)return -1;</description>
+    </item>
+    
+    <item>
+      <title>SRM 281 DIV1 Easy - IntegerGenerator (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-281-div1-easy---integergenerator-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 08 Feb 2014 11:01:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-281-div1-easy---integergenerator-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6093&amp;amp;rd=9824
+有効な一ケタの数字一覧と、現在の数字が与えられる。
+現在の数字より大きく、かつ有効な数字のみで構成された数を求める。
+ただし無効である場合は”INVALID INPUT”を返す。
+解き方 
+例外判定がまずは大事。
+現在の数字に無効な数字が含まれているか、０から始まるのであれば無効。
+あとは一ケタ目から有効な数字をインクリメントしてあげればよい。
+その桁において、元の数より大きい数になればそこで終了、
+そうでなければ桁上がりするので次の桁に進む。
+最後までインクリメントされるのであれば、最初に一番小さい有効な数字を足す。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class IntegerGenerator {
+public: string nextInteger(vector&amp;lt;int&amp;gt; allowed, string current) {
+int num[10]={0};
+FORE(i,0,allowed.size())num[allowed[i]]=1;
+FORE(i,0,current.size())if(num[current[i]-&#39;0&#39;]==0)return &#34;INVALID INPUT&#34;;
+if(current[0]==&#39;0&#39;)return &#34;INVALID INPUT&#34;;
+for(int i=current.</description>
+    </item>
+    
+    <item>
+      <title>SRM 608 DIV1 Easy - MysticAndCandies (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-608-div1-easy---mysticandcandies-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 08 Feb 2014 09:23:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-608-div1-easy---mysticandcandies-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12997&amp;amp;rd=15841
+複数の箱それぞれに対しlowとhighの値が割り振られ、lowからhighの間の数のキャンディーが入っている。
+また、合計のキャンディーの数もわかっている。
+プレイヤーは複数の箱を選び、Ｘ個以上のキャンディーを食べたい。
+このとき、どの箱を選んでもＸ個以上のキャンディーが入っているような、最小の箱の数を求める。
+解き方 
+問題文のどのキャンディーの入り方でもＸ個以上、という最悪条件になっていることに気付くのに時間がかかってしまいました。
+答えは最大で箱の数なので、選ぶ数は１～ｎまで順番に調べていき
+条件を満たせばそこで答えになります。
+条件の満たし方は以下の２通りのうちいずれかを満たせばよいです。
+①最小のキャンディーは必ず入っているので、最小の数のみの和でＸ以上になること
+②選んでいない残りの箱の最大数がＣ－Ｘ以下になること。
+例外条件として、②は選んだ箱の取りうるキャンディー数がＸを満たすか気になります。
+これは、選んだ箱の取りうるキャンディー数がＸ未満の場合、残りの箱は最大数を選んでいるため合計のキャンディー数が決して満たない数になってしまいます。
+①の例外条件として合計だけでは満たさなくとも、残りで最大を選んだときのバッファを足せば満たすかがありますが、これはまさに②なので大丈夫です。
+例外条件をちゃんと確かめるか、もしくはコードでカバーしておくかが大事です。
+コード 
+#define all(c) (c).begin(),(c).end()
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class MysticAndCandies {
+public: int minBoxes(int C, int X, vector&amp;lt;int&amp;gt; low, vector&amp;lt;int&amp;gt; high) {
+int n=low.size();</description>
+    </item>
+    
+    <item>
+      <title>SRM 484 DIV1 Easy - RabbitNumber (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 12:17:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11131&amp;amp;rd=14237
+ある数xの平方数yを考えたとき、(x*x=y),
+かつnの各桁の和で表わされるS(n)について、S(x)*S(x)=S(y)が成り立つとき
+その数はRabbit Numberになる。
+このとき、lowからhighまでの間のRabbit Numberの数を求める。
+解き方 
+普通に解くとlow,highともに10^9であるため解くことができない。
+そのため法則がないか考える。
+ここで、ｘの各桁の数が３以下であればRabbit Numberになる可能性がある。
+1*1=1,S(1)*S(1)=1
+2*2=4,S(2)*S(2)=4
+3*3=9,S(3)*S(3)=9　しかし、4以上のとき、つまり桁上がりしてしまうときは決してRabbit Numberにならない。
+4*4=16,S(4)*S(4)=16 (≠7)　5*5=25,S(5)*S(5)=25 (≠7)
+
+つまり、各桁が０～３の全ての数のうち、平方数のS(n)とイコールになるものについて(この中でも２ケタ以上の数では桁上がりは発生しうるので)、lowとhighの間の数をカウントしてあげればよい。　コード 
+class RabbitNumber {
+public:
+int S(long long x){
+int ret=0;
+while(x&amp;gt;0){
+ret+=x%10;
+x/=10;
+}
+return ret;
+}
+int calc(int low,int high,int cur){
+int ret=0;
+FORE(i,0,4){
+int x=10*cur+i;
+if(x==0||S(x)*S(x)!=S((long long)x*x))continue;
+if(low&amp;lt;=x&amp;amp;&amp;amp;x&amp;lt;=high)ret++;
+if(x&amp;lt;=high/10)ret+=calc(low,high,x);
+}
+return ret;
+}
+int theCount(int low, int high) {
+return calc(low,high,0);</description>
+    </item>
+    
+    <item>
+      <title>SRM 505 DIV1 Easy - RectangleArea (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-505-div1-easy---rectanglearea-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 26 Jan 2014 08:58:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-505-div1-easy---rectanglearea-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11400&amp;amp;rd=14434
+・縦横の長さが異なる四角形がＮ＊Ｍ個与えられる。
+ただし、同じ行にある四角形の縦の長さは同じであり、同じ列にある四角形の横の長さは同じである。
+・最初にそれぞれの四角形について縦横の長さがわかっているもの、わかっていないもののリストが与えられる。
+・わかっていない四角形については質問することで教えてもらうことができる。
+・Ｎ＊Ｍ個の四角形を合わせた全体の面積を求めたいとき、必要な質問の最小回数を求める。
+解き方 
+Exampleより、任意の四角形を作ったときの３辺がわかれば残りの１辺を求めることができる。
+配列全体に対し上記の処理を行う関数を作り、収束するたびに質問を加え、
+関数を再実行することを繰り返していけばよい。
+・反省：Exampleよりすべての面積を求める方法、ととらえてしまった。
+４辺のうち３つがわかると残りの一つがわかる、ととらえられるかがポイントだった。
+コード 
+class RectangleArea {
+public:
+bool calc(){
+FORE(i,0,H){
+FORE(j,0,W){
+FORE(k,1,H-i){
+FORE(l,1,W-j){
+if(dp[i][j]+dp[i][j+l]+dp[i+k][j]+dp[i+k][j+l]==3){
+dp[i][j]=dp[i][j+l]=dp[i+k][j]=dp[i+k][j+l]=1;
+calc();
+return true;
+}
+}
+}
+}
+}
+return false;
+}
+int minimumQueries(vector&amp;lt;string&amp;gt; known) {
+int ret=0;
+W=known[0].size();
+H=known.size();
+memset(dp,0,sizeof(dp));
+FORE(i,0,H)FORE(j,0,W)if(known[i][j]==&#39;Y&#39;)dp[i][j]=1;
+calc();
+while(1){
+int finish=1,xidx=0,yidx=0;
+FORE(i,0,H)if(dp[i][0]==0)finish=0,xidx=0,yidx=i;
+FORE(j,0,W)if(dp[0][j]==0)finish=0,xidx=j,yidx=0;
+if(finish)break;
+dp[yidx][xidx]=1;
+ret++;
+calc();
+}
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 340 DIV1 Easy - ProblemsToSolve ××○</title>
+      <link>https://chaingng.github.io/post/srm-340-div1-easy---problemstosolve-/</link>
+      <pubDate>Mon, 20 Jan 2014 19:09:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-340-div1-easy---problemstosolve-/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7504&amp;amp;rd=10664
+・各問題について、その楽しさの値が与えられる。
+・最初は０番目の問題を解く。その後、次の問題かその次の問題を選んでいく。
+・選んだ問題の楽しさの値の最小と最大の差が、指定された値より大きくなればそこで終了。そうでなければ、全ての問題を解かなければいけない。
+このとき、解かなければならない問題の最小値を求める。
+解き方 
+問題数が最大５０なので、全探索で解けない。
+問題の条件より、ある２つを選んだときその差が指定値より大きければ終了になる。
+そのため全ての２つの組み合わせの中から、その差が指定値より大きくなるもの全てについて最小値を求めて更新していけばよい。
+コード 
+class ProblemsToSolve {
+public: int minNumber(vector&amp;lt;int&amp;gt; p, int variety) {
+int n=p.size();
+int ret=n;
+FORE(i,0,n)FORE(j,i+1,n){
+if(abs(p[j]-p[i])&amp;gt;=variety)ret=min(ret,(i+3)/2+(j-i+1)/2);
+}
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 503 DIV1 Easy - ToastXToast (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 19 Oct 2013 08:26:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11204&amp;amp;rd=14432
+様々な種類のトーストがあり、ある焼き時間になるとポッピングシャワーとなるが
+その時間未満だと生焼け、その時間を過ぎると焼きすぎになる。
+ポッピングシャワーとなる焼き時間はトーストの種類により異なる。
+生焼けのトーストとその焼き時間の集合、
+焼きすぎのトーストとその焼き時間の集合が与えられた時、
+最低何種類のトーストが存在したかを求める。
+ただし、集合のうち生焼けと焼きすぎのペアは少なくとも１つは存在する。
+そのようなペアが存在しなければー１を返す。
+解き方 
+生焼けと焼きすぎの境界が１つしかなければ、生焼けのものを１つ、焼きすぎのものを１つにまとめることができるので１種類。
+一番生焼けのものが時間が一番早く、一番焦げすぎのものが一番遅ければ、
+一番生焼けのもの＆一番焦げすぎのもの以外をまとめて１種類、
+一番生焼け以外のもの＆一番焦げすぎのものをまとめて１種類なので
+合計２種類。
+一番生焼けのものが時間が一番早く、一番焦げすぎのものが一番遅くなければ
+ペアが存在しないのでー１。
+コード 
+class ToastXToast {
+public: int bake(vector&amp;lt;int&amp;gt; under, vector&amp;lt;int&amp;gt; over) {
+int n=under.size();
+int m=over.size();
+sort(all(under));
+sort(all(over));
+if(under[0]&amp;gt;over[0]||over[m-1]&amp;lt;under[n-1])return -1;
+if(under[n-1]&amp;lt;over[0])return 1;
+return 2;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 571 DIV1 Easy - FoxAndMp3 (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-571-div1-easy---foxandmp3-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 20 Aug 2013 08:21:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-571-div1-easy---foxandmp3-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12436&amp;amp;rd=15491
+１～Ｎまでの数字が付けられたN.mp3ファイルを昇順に並べる。
+Ｎが５０を超える場合は、最初の５０個の昇順に並べられたファイル数を返す。
+解き方 
+Ｎが１０＾９のため全てのファイルを出力してからソートしては求めることができない。
+そのため規則性を見つける必要がある。
+Ｎ＝１０１８のとき、
+最初は１から始め，
+１０，１００，１０００と「１０をかけ、Ｎ以下ならその数」になる。
+次は１００１、１００２、１００９、１０１と「１を足していき、１０で割ってＮ以下ならその数」となる。
+また、１０１０、、、１０１８、１０２とＮを超えた場合は「１０で割って１を足し、Ｎ以下ならその数」になる。
+最後に、１９１、、１９９、２、と１０で割りつづけられるなら割り続ける必要がある。
+つまり、
+①１０をかけ、Ｎ以下ならその数
+②Ｎより大きい場合、１を足して１０の倍数もしくはＮと等しいなら、１０で割れなくなるまで割り続けた数に１を足した数なる。
+これをmin(N,50)まで操作してあげたものが答えになる。
+コード 
+class FoxAndMp3 {
+public: vector&amp;lt;string&amp;gt; playList(int n) {
+long long cur=1,num=1;
+vector&amp;lt;string&amp;gt; ans(min(n,50));
+FORE(num,0,min(50,n)){
+stringstream out;
+out&amp;lt;&amp;lt;cur&amp;lt;&amp;lt;&#34;.mp3&#34;;
+ans[num]=out.str();
+if(cur*10&amp;lt;=n)cur*=10;
+else{
+while(cur%10==9 || cur==n)cur/=10;
+cur++;
+}
+}
+return ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 562 DIV1 Easy - PastingPaintingDivOne （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-562-div1-easy---pastingpaintingdivone-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 18:57:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-562-div1-easy---pastingpaintingdivone-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12317&amp;amp;rd=15184
+長方形の模様が与えられる。
+模様はの各セルはＲ，Ｇ，Ｂのいずれかの色、もしくは．で表わされる透明のセルで
+構成される。
+最初は左上に重なるように模様がスタンプされ、次は左上の座標を右に１、下に１移動させてスタンプする。
+Ｔ回スタンプしたとき、Ｒ，Ｇ，Ｂの数を求める。
+解き方 
+Ｔが１０＾９のため、スタンプごとに全探索しては解けない。
+ここでスタンプされた時のＲＧＢの変化は、
+高さ分の回数スタンプした後は常に一定になることがわかれば
+それ以降の回数×Ｔ×ＲＧＢそれぞれの増加数、で解くことができる。
+コード 
+class PastingPaintingDivOne {
+public: vector&amp;lt;long long&amp;gt; countColors(vector&amp;lt;string&amp;gt; clipboard, int T) {
+char check[200][200];
+vector&amp;lt;long long&amp;gt; ans(3,0);
+int h=clipboard.size(),w=clipboard[0].size();
+long long pr=0,pg=0,pb=0;
+FORE(i,0,200)FORE(j,0,200)check[i][j]=&#39;.&#39;;
+FORE(n,0,h){
+T--;
+FORE(i,n,h+n)FORE(j,n,w+n)if(clipboard[i-n][j-n]!=&#39;.&#39;)check[i][j]=clipboard[i-n][j-n];
+ans[0]=ans[1]=ans[2]=0;
+FORE(i,0,200)FORE(j,0,200){
+if(check[i][j]==&#39;R&#39;)ans[0]++;
+if(check[i][j]==&#39;G&#39;)ans[1]++;
+if(check[i][j]==&#39;B&#39;)ans[2]++;
+}
+if(T==0)return ans;
+}
+FORE(i,h,clipboard.size()+h)FORE(j,h,clipboard[0].size()+h)if(clipboard[i-h][j-h]!=&#39;.&#39;)check[i][j]=clipboard[i-h][j-h];
+FORE(i,0,200)FORE(j,0,200){
+if(check[i][j]==&#39;R&#39;)pr++;
+if(check[i][j]==&#39;G&#39;)pg++;
+if(check[i][j]==&#39;B&#39;)pb++;
+}
+pr-=ans[0],pg-=ans[1],pb-=ans[2];
+ans[0]+=pr*T,ans[1]+=pg*T,ans[2]+=pb*T;
+return ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 536 DIV1 Easy - MergersDivOne （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-536-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 10:30:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-536-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11799&amp;amp;rd=14728
+複数の会社が与えられる。
+そのうち任意の数を選択し、その価値の和／選択した数が合併した後の価値になる。
+すべての会社を合併した時、最大となる価値を求める。
+解き方 
+最初の数の順番は回答に関係しないので昇順にソート。
+このとき、すべての点をプロットすると、２つずつ左から合併を繰り返した方がよいことがわかる。
+（合併後の点が順に右に移動していく。仮に３つを選択した時はその中間になり間の値があまり意味を持たないため、２つずつがよいことがわかる）
+コード 
+class MergersDivOne {
+public: double findMaximum(vector&amp;lt;int&amp;gt; revenues) {
+sort(revenues.begin(),revenues.end());
+double ans=revenues[0];
+FORE(i,1,revenues.size())ans=(ans+revenues[i])/2.0;
+return ans;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM 554 DIV1 Easy - TheBrickTowerEasyDivOne （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-554-div1-easy---thebricktowereasydivone-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 10:15:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-554-div1-easy---thebricktowereasydivone-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12159&amp;amp;rd=15176
+２つの色のレンガと、レンガの個数がそれぞれ与えられる。
+レンガは違う色を交互にだけ積み重ねることができる。
+このとき、とりうる高さの場合の数を求める。
+解き方 
+いくつか例を出してみると、積み重ねたレンガの数が偶数のときは2通り存在し、
+それ以外の場合は１通りしか存在しないことがわかる。
+１）積み重ねたレンガが偶数のときの場合の数　２色のうち最小の数
+２）レンガが奇数のときの場合の数
+＜レンガの長さが違う時＞
+レンガの数が２色とも同じ
+その数×２
+レンガの数が２色で異なる
+少ない方×２＋１
+＜レンガの長さが２色とも同じ時＞
+レンガの数が２色とも同じ
+その数
+レンガの数が２色で異なる
+少ない方＋１
+コード 
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class TheBrickTowerEasyDivOne {
+public: int find(int redCount, int redHeight, int blueCount, int blueHeight) {</description>
+    </item>
+    
+    <item>
+      <title>SRM 547 DIV1 Easy - Pillars (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-547-div1-easy---pillars-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 10:00:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-547-div1-easy---pillars-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12055&amp;amp;rd=14739
+柱が２つ与えられる。柱の間の距離はｗ。
+２つの柱の最大の長さｘ、ｙが与えられ、１～ｘ、１～ｙの間で好きに決めることができる。
+最後に、柱のてっぺんをロープで結び、その長さの平均値を求める。
+解き方 
+ｘ、ｙが１０＾５のため、全探索で解くことはできない。
+２つの柱の差の数は、２つの求め方がある。
+１）ｘ、ｙから計算式を求めて一意に決定
+２）ｘのみ１～ｘまで変化させ、それぞれに対しとりうる値を区間で求める。
+今回は２の方法でコーディングしました。
+１つエラーではまった原因としては、iをint型で計算したため数が大きい場合にエラーになってしまいました。
+「計算は全て型を一致させる」、という基本を忘れないようにします。
+ちなみに１の場合は、長さのとりうる値１－ｘからｙ－１までループさせ、
+i&amp;lt;=０のときはmin(y,x+i)
+i&amp;gt;0のときはmin(x,y-i)分だけその長さが存在することになります。
+コード 
+class Pillars {
+public: double getExpectedLength(int w, int x, int y) {
+if(x&amp;gt;y)swap(x,y);
+double ret=w*x;
+for(int len=1;len&amp;lt;=y-1;len++){
+int cnt=max(0,min(x,y-len))+max(0,min(x-len,y));
+ret+=cnt*sqrt((double)len*len+w*w);
+}
+return ret/x/y;
+}
+};
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i !</description>
+    </item>
+    
+    <item>
+      <title>SRM 586 DIV1 Easy - PiecewiseLinearFunction （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-586-div1-easy---piecewiselinearfunction-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 18 Aug 2013 08:24:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-586-div1-easy---piecewiselinearfunction-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 
+http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12691&amp;amp;rd=15698
+座標上の点が複数与えられて、それぞれ線で結ぶ。
+このとき、一番多く存在する線上のｙの値について、最大値を求める。
+解き方 すべてのｙに対して値を求めると計算量が間に合わない。
+そこで、「ｙが増えるのは与えられたｙ座標の近辺のみ」ということがわかれば、
+調べる点は少なくてもよいことがわかる。
+ここで与えられたｙ座標のみと最初に考えてしまうが、
+「折れ線のときはその前後の値の方がより多く存在」する。
+つまり、与えられたｙ座標の前後を全て調べて、最大の値を返せばよい。
+Challenge
+例外条件：隣り合う点が平行→全ての点が平行
+「＜」と「＜＝」がかぶらないようにして、同じ点について複数数えないようにする
+コード 
+using namespace std;
+#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
+#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
+#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+#define ISEQ(c) (c).begin(), (c).end()
+class PiecewiseLinearFunction {
+public: int maximumSolutions(vector&amp;lt;int&amp;gt; Y) {
+int ret=0;
+int n=Y.size();
+FORE(i,0,n-1)if(Y[i]==Y[i+1])return -1;
+vector&amp;lt;double&amp;gt; vx;
+FORE(i,0,n){
+vx.push_back(Y[i]-0.5);
+vx.push_back(Y[i]);
+vx.push_back(Y[i]+0.5);</description>
+    </item>
+    
+    <item>
+      <title>SRM539 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm539-div2--level2/</link>
+      <pubDate>Tue, 09 Jul 2013 08:28:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm539-div2--level2/</guid>
+      <description>問題
+①数字の配列が２つ与えられる。
+それぞれの番号は、岩が入るＢＯＸの最小の数と最大の数を表わす。
+②あなたは岩を無数に持っており、選んだＢＯＸに最小の数以上、
+最大の数まで岩を入れることができる。
+③このとき、岩を９００１個以上入れた時に表わすことのできる
+岩の個数の場合の数を返す。
+解き方
+問題文を最初ミスリーディングしてしまったのですが、
+「９００１個以上入れることのできる場合の数」ではなく、
+「表わすことのできる岩の個数の場合の数」になります。
+最初にこのまま全探索しても手掛かりがないため、
+全てのＢＯＸの選び方はＯ（２＾１５＝１０＾３＊３２）で選ぶことができるため
+選んだＢＯＸについて考える。
+そうすることで最小の岩の数と最大の岩の数がわかるため、
+９００１以上の表わせる岩の個数がわかる。
+ただし表わせる岩の個数を配列に保存しようとすると
+次に、岩の数は１０＾６とかなり大きいため、
+Ｏ（１０＾６＊１０＾３＊３２）で計算できない。
+そこで、全て配列に保存するのではなく
+範囲を保存することを考える。
+始点の岩の数の配列を＋１とし、終点の次の配列をー１とすることで、
+＋のときはその間の数は存在することとなる。
+この処理を全て行っていくと、
+配列の数を最初から足していったとき＋１以上のときはその数は存在することとなる。
+Ｃｈａｌｌｅｎｇｅポイント
+配列（ループ）の数を１０＾７＊２だとエラーになってしまいました。
+１０＾６＊１．６だと通ったので、
+１０＾７＊２以上にならないことがＣｈａｌｌｅｎｇｅのポイントになりそうです。
+またケアレスミスをしてしまいましたが
+ビット列計算をするときは＆＆ではなく＆になります。
+コード
+class Over9000Rocks {
+public: int countPossibilities(vector&amp;lt;int&amp;gt; lowerBound, vector&amp;lt;int&amp;gt; upperBound) {
+int n=lowerBound.size(),ans=0;
+vector&amp;lt;int&amp;gt; check(16000000,0);
+for(int select=1;select&amp;lt;(1&amp;lt;&amp;lt;n);select++){
+int upper=0,lower=0;
+for(int j=0;j&amp;lt;n;j++){
+if(select&amp;amp;1&amp;lt;&amp;lt;j){
+lower+=lowerBound[j];
+upper+=upperBound[j];
+}
+}
+check[lower]++;
+check[upper+1]--;
+}
+int parity=0;
+FORE(i,0,(int)check.size()){
+parity+=check[i];
+if(i&amp;gt;9000 &amp;amp;&amp;amp; parity&amp;gt;0)ans++;
+}
+return ans;</description>
+    </item>
+    
+    <item>
+      <title>SRM536 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm536-div2--level2/</link>
+      <pubDate>Wed, 03 Jul 2013 22:54:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm536-div2--level2/</guid>
+      <description>&amp;lt;問題&amp;gt;
+①１～９個の面を持つサイコロがあり、決められた数だけ存在する。
+②どのサイコロを与えられたかはわからない。同じ面を持つサイコロは複数存在しうる。
+③そのサイコロの集合を複数回投げて、出た表の面の集合が与えられる。
+④このとき、可能性のあるサイコロの集合のうち最も面の数が少なくなるような和を返す。
+＜解き方＞
+全ての面の出方についてそれぞれソートする。
+ソートした後、それぞれの１番目の要素の中で最大のものが
+１番目の要素の最小の答えとなる。
+２番目以降も同様。
+最後に求めた全ての要素の和を返す。
+＜コード＞
+class RollingDiceDivTwo {
+public: int minimumFaces(vector&amp;lt;string&amp;gt; rolls) {
+int n=rolls.size(),ret=0;
+vector &amp;lt;int&amp;gt; ans(rolls[0].size(),0);
+FORE(i,0,n)sort(rolls[i].begin(),rolls[i].end());
+FORE(i,0,n){
+FORE(j,0,rolls[0].size()){
+if(ans[j]&amp;lt;rolls[i][j]-&#39;0&#39;)ans[j]=rolls[i][j]-&#39;0&#39;;
+}
+}
+FORE(i,0,rolls[0].size())ret+=ans[i];
+return ret;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM564 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm564-div2--level2/</link>
+      <pubDate>Sat, 29 Jun 2013 23:17:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm564-div2--level2/</guid>
+      <description>＜問題＞
+①赤のボールの数、緑のボールの数、青のボールの数と１つの整数が与えられる。
+②システムは赤のボールがあれば1個壊し、次に緑のボールがあれば１個壊し、次に青のボールがあれば１個壊す。この操作を繰り返す。
+③このとき、与えられた整数のターンの時に壊すボールの色を返す。
+＜解き方＞
+整数が３つのボールのうち１番小さい数×３以下であれば３で割った余りで色を判別できる。
+それ以上であればいったん一番小さい数を除いたあと、２つの色で判定。
+そのあとは残りの１色となる。
+if文の分岐で記載することもできるが、
+ループ処理で書くことによって処理が間違えにくくなる。
+色の数を３から減らしていくことと、
+１つの色の処理ごとに、配列を詰めていくやり方でコードを書く。
+＜コード＞
+class AlternateColors {
+public: string getColor(long long r, long long g, long long b, long long k) {
+long long c[]={r,g,b};
+string name[]={&#34;RED&#34;,&#34;GREEN&#34;,&#34;BLUE&#34;};
+int t=3;
+while(t&amp;gt;1){
+long long m=c[0];
+FORE(i,1,t)m=min(m,c[i]);
+if(k&amp;lt;=m*t)return name[(k-1)%t];
+k-=(m*t);
+int tmp=t;
+t=0;
+FORE(i,0,tmp){
+if(c[i]-m&amp;gt;0){
+c[t]=c[i]-m;
+name[t]=name[i];
+t++;
+}
+}
+}
+return name[0];
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM569 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm569-div2--level2/</link>
+      <pubDate>Fri, 14 Jun 2013 09:11:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm569-div2--level2/</guid>
+      <description>＜問題＞
+①０と１で構成される2次元配列が与えられる。
+②各ビット列の任意の２つに対し、それぞれＯＲかＸＯＲかＡＮＤ演算をするデバイスがビット列分存在する。
+③各ビット列に対しどの操作をするか決まっているが、それがどれかはわかっていない。
+④このとき、各デバイスがどの操作をするか確かめることができれば”ＹＥＳ”、できなければ”ＮＯ”を返す。
+＜解き方＞
+各ビット列に対し、特定の数字が含まれていればデバイスの操作を確かめることができる。
+ＯＲとＡＮＤの場合
+０，１→ＯＲだと１、ＡＮＤだと０
+ＯＲとＸＯＲの場合
+１，１→ＯＲだと１、ＸＯＲだと０
+ＡＮＤとＸＯＲの場合
+０，１→ＡＮＤだと０、ＸＯＲだと１
+１，１→ＡＮＤだと１、ＸＯＲだと０
+この３つを判定するには、１が２つ、０が１つ最低あればよいことになる。
+各ビット列に対し１が２つ、０が１つ以上あるか判定し、
+なければＮＯ，あればＹＥＳを返す。
+＜コード＞
+class TheDeviceDiv2 {
+public: string identify(vector&amp;lt;string&amp;gt; plates) {
+FORE(j,0,(int)plates[0].size()){
+int one=0,zero=0;
+FORE(i,0,(int)plates.size()){
+if(plates[i][j]==&#39;1&#39;)one++;
+else zero++;
+}
+if(!(one&amp;gt;=2 &amp;amp;&amp;amp; zero&amp;gt;=1))return &#34;NO&#34;;
+}
+return &#34;YES&#34;;
+}
+}; </description>
+    </item>
+    
+    <item>
+      <title>SRM544 DIV2 -Level2</title>
+      <link>https://chaingng.github.io/post/srm544-div2--level2/</link>
+      <pubDate>Wed, 12 Jun 2013 21:04:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm544-div2--level2/</guid>
+      <description>＜問題＞
+①求めたい長さ(desiredL)と、求めたい長さ(desiredN)の本数と、実際の長さ(actualL)が与えられる。
+②実際の長さは好きなだけ本数が与えられる。
+③実際の長さを切ることで、求めたい長さを、求めたい本数だけ求める。
+④このとき、切る数の最小値を求める。
+＜解き方＞
+実際の長さは何本でも与えられて本数は答えに影響しないため、
+求めたい長さから実際の長さで割った余りを求める。
+そうすることで、余りの長さに対してだけ考えればよくなる。
+このとき、余りが０であれば切らなくても答えが求められるので０を返す。
+次に、単純に実際の長さから余りの長さ分切って求めると、求めたい長さの本数が求めたい長さになる。
+こう考えると数学的解放で解けそうですが、以下の例外があるため
+シミュレーションに切り替えます。
+①余りの長さ分切ったときに割り切れることができる場合
+最後に求めたい長さのものがもう１本できる。
+②余りが発生かつ、その余りが何度か出た時に足すことで余りの長さに達するとき
+もう１本分作ることができる。
+Ｃｈａｌｌｅｎｇｅポイント
+上記だと、「余りの長さがぴったりではない場合」に判定がスルーされてしまいます。
+例えば１０の長さが欲しいが余りが４のとき、
+４＋４＋４＋４＋４＝２０でずっと判定されないのですが
+実は（４＋４＋２）＋（４＋４＋２）で１回割ると２本できてしまいます。
+これを避けるためには、１０を超えた時は１０に分割することで
+この部分も判定に含めることができます。
+かなり見落としがちです。
+＜コード＞
+class BoardSplitting {
+public: int minimumCuts(int desiredL, int desiredC, int actualL) {
+int L=desiredL%actualL;
+int tmpL=actualL,remain=0,cut=0;
+if(L==0)return 0;
+while(desiredC&amp;gt;0){
+tmpL-=L;
+cut++;
+desiredC--;
+if(tmpL&amp;gt;L)continue;
+if(desiredC==0)break;
+remain+=tmpL;
+tmpL=actualL;
+if(remain&amp;gt;=L){
+if(remain!=L)cut++;
+desiredC--;
+remain-=L;
+}
+}
+return cut;
+}
+}; </description>
+    </item>
+    
+  </channel>
+</rss>
