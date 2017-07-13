@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 421 DIV1 Easy - EquilibriumPoints (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10104&amp;rd=13512
-直線状に複数の点とその点にある球の数が与えられる。
-ある点を考えた時、その点と点ｘの距離をｄ、点ｘの球の数をｍとすると
-Ｆ＝Ｇ＊ｍ１＊ｍ２／ｄ＾２で引力が表わされる。
-ここでＧは定数。
-このとき、引力が左右均衡となる点を求める。
-点が複数存在する場合は、昇順に並べる。
-解き方 
-サンプルを見ると各点の間ごとに均衡点があることがわかる。
-あとは、その間すべてに対して２分探索すれば答えが求められる。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class EquilibriumPoints {
-public:
-double calc(int m,double d){
-return m/d/d;
-}
-vector&lt;double&gt; getPoints(vector&lt;int&gt; x, vector&lt;int&gt; m) {
-vector&lt;double&gt; ans;
-int n=x.size();
-FORE(i,0,n-1){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10104&amp;rd=13512 直線状に複数の点とその点にある球の数が与えられる。 ある点を考えた時、その点と点ｘの距離をｄ、点ｘの球の数をｍとすると Ｆ＝Ｇ＊ｍ１＊ｍ２" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-421-div1-easy---equilibriumpoints-%E5%BE%A9%E7%BF%92/" />
 

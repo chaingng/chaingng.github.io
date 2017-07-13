@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2015 TCO Round 1A Easy - Similars" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13714&amp;rd=16432
-ある数字ｘとｙが与えられた時、０〜９のうち同じ数字が存在する数だけSimilarityの値が高くなる。
-（例）ｘ＝１１２４、ｙ＝１１２２　１と２が双方に出るのでSimilarityは２
-数字の範囲LとRが与えられた時、L~Rのうちの２つの数字のペアのうち、
-最も高いSimilarityを求める。
-解き方 
-数字が10^5のため、全探索すると10^10で間に合わない。
-このような場合、探索する集合を変換できないか考える。
-今回は１〜９の出現数が答えであるので、
-「数字の集合」→「１〜９までの出現数の集合」に変換できる。
-このとき、集合の総数は10^3（0から9の数字がそれぞれ出現するかどうか）となるので
-全探索が可能になる。
-コード 
-class Similars {
-public: int maxsim(int L, int R) {
-int dp[1024];
-memset(dp,0,sizeof(dp));
-for(int i=L;i&lt;=R;i&#43;&#43;){
-int x=i;
-int mask=0;
-while(x&gt;0){
-mask|=1&lt;&lt;(x%10);
-x/=10;
-}
-dp[mask]&#43;&#43;;
-}
-int ret=0;
-FORE(i,0,1024)FORE(j,0,1024){
-if(i==j &amp;&amp; dp[i]&lt;=1)continue;
-if(dp[i]==0 || dp[j]==0)continue;
-ret=max(ret,__builtin_popcount(i&amp;j));
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13714&amp;rd=16432 ある数字ｘとｙが与えられた時、０〜９のうち同じ数字が存在する数だけSimilarityの値が高くなる。 （例）ｘ＝１１２４、ｙ＝１１２２" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2015-tco-round-1a-easy---similars/" />
 

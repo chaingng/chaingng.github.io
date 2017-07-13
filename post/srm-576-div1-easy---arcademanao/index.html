@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 576 DIV1 Easy - ArcadeManao" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12504&amp;rd=15496
-解き方 
-各はしごの数について昇順で調べることができる。
-通常の経路探索に、はしごの長さを考慮すればよい。
-コード 
-class ArcadeManao {
-public:
-int shortestLadder(vector&lt;string&gt; level, int coinRow, int coinColumn) {
-int h=level.size(),w=level[0].size();
-int used[h][w];
-int dx[]={1,0,-1,0},dy[]={0,1,0,-1};
-for(int len=0;len&lt;50;len&#43;&#43;){
-queue&lt;pair&lt;int,int&gt; &gt; q;
-q.push(make_pair(h-1,0));
-memset(used,0,sizeof(used));
-used[h-1][0]=1;
-while(!q.empty()){
-int r=q.front().first,c=q.front().second;
-q.pop();
-FORE(i,0,4)for(int j=0;j&lt;=len;j&#43;&#43;){
-int nr=r&#43;dx[i]*j,nc=c&#43;dy[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; !used[nr][nc] &amp;&amp; level[nr][nc]==&#39;X&#39;){
-used[nr][nc]=1;
-q.push(make_pair(nr,nc));
-}
-}
-}
-if(used[coinRow-1][coinColumn-1])return len;
-}
-return 50;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12504&amp;rd=15496 解き方 各はしごの数について昇順で調べることができる。 通常の経路探索に、はしごの長さを考慮すればよい。 コード class ArcadeManao { public: int shortestLadder(vector&lt;string&gt; level, int coinRow, int coinColumn) { int h=level.size(),w=level[0].size();" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-576-div1-easy---arcademanao/" />
 

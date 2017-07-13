@@ -74,30 +74,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=3561&amp;rd=6519
-ソートアルゴリズムの計算量を計算したい。
-計算量はc*n*log2(n)で表わされ、これをtime以下でかつ最大となるときのｎを求めたい。
-cとtimeはあらかじめ与えられる。
-解き方 
-nが一意に決まれば計算量は算出できるので、二分探索が適用できる。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SortEstimate {
-public: double howMany(int c, int time) {
-double low=0.0,high=1e+18;
-FORE(i,0,100){
-double mid=(low+high)/2.0;
-if(c*mid*log(mid)/log(2)&lt;=time)low=mid;
-else high=mid;
-}
-return low;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=3561&amp;rd=6519 ソートアルゴリズムの計算量を計算したい。 計算量はc*n*log2(n)で表わされ、これをtime以下でかつ最大となるときのｎを求めたい
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -114,30 +94,7 @@ return low;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4487&amp;rd=7220
-４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。
-Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlushスコアになる。
-このとき、Flushスコアの期待値を求める。
-解き方 
-カードの種類は４種類、カード数は１３枚なので、
-あり得る全てのカードの取り方について全探索すればよい。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Flush {
-public:
-double f(int x,int y){
-double ret=1.0;
-for(int i=y;i&gt;y-x;i--)ret*=i;
-for(int i=x;i&gt;0;i--)ret/=i;
-return ret;
-}
-double size(vector&lt;int&gt; s, int number) {
-double ret=0.0;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4487&amp;rd=7220 ４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。 Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlus
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -157,34 +114,7 @@ double ret=0.0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4495&amp;rd=7222
-椅子取りゲームを行う。
-プレイヤーはｎ人、椅子はn-1個で等間隔でサークル上に置かれる。
-プレイヤーはＡが椅子の横、Ｂがその次に続き、Ｃがその次に・・・とサークル上に等間隔で位置している。
-プレイヤーは椅子のサークルをtime秒だけ周回し、止まったときにある椅子に最も近いプレイヤーがその椅子に座る。
-ただし、10秒でちょうど一周することになる。
-このとき、負けるプレイヤーが誰になるかを求める。
-解き方 
-問題条件をいかにシミュレーションできるか、簡単にコーディングできるかになる。
-まず、１周の長さを１とすると、各プレイヤーは周る方向とは逆の順にＢ，Ｃ、と並ぶ。
-各プレイヤーの間隔は1/n、各椅子は同様にして、1/(n-1)離れている。
-最後に、最も椅子から離れているプレイヤーが負けるプレイヤーになる。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Musical {
-public: string loser(int n, double time) {
-time=fmod(time,10.0)/10.0;
-vector&lt;double&gt; x,c;
-FORE(i,0,n)x.push_back(fmod((double)i/n+1.0-time,1.0));
-FORE(i,0,n-1)c.push_back((double)i/(n-1));
-double worst=0.0;
-int ret=-1;
-FORE(i,0,n){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4495&amp;rd=7222 椅子取りゲームを行う。 プレイヤーはｎ人、椅子はn-1個で等間隔でサークル上に置かれる。 プレイヤーはＡが椅子の横、Ｂがその次に続き、Ｃが
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-247-div1-easy---musical-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -204,28 +134,10 @@ FORE(i,0,n){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4811&amp;rd=8081
-１辺の最小の長さと、最大の長さが与えられる。
-このとき、とりうる三角形の数を求める。
-ただし、回転して同じ三角形になる場合は同じものとみなす。
-答えが10^9を超える場合は-1を返す。
-解き方 
-２重ループでは計算量として間に合わない、はずなのですが
-10^9以上は-1を返すので２重ループで収まります。
-コード 
-class TriCount {
-public: int count(int minLength, int maxLength) {
-long long ret=0LL;
-FORE(i,minLength,maxLength+1){
-FORE(j,i,maxLength+1){
-ret+=min(maxLength,i+j-1)-j+1;
-if(ret&gt;1000000000)return -1;
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4811&amp;rd=8081 １辺の最小の長さと、最大の長さが与えられる。 このとき、とりうる三角形の数を求める。 ただし、回転して同じ三角形になる場合は同じものとみな
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-284-div1-easy---tricount-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -242,31 +154,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6093&amp;rd=9824
-有効な一ケタの数字一覧と、現在の数字が与えられる。
-現在の数字より大きく、かつ有効な数字のみで構成された数を求める。
-ただし無効である場合は”INVALID INPUT”を返す。
-解き方 
-例外判定がまずは大事。
-現在の数字に無効な数字が含まれているか、０から始まるのであれば無効。
-あとは一ケタ目から有効な数字をインクリメントしてあげればよい。
-その桁において、元の数より大きい数になればそこで終了、
-そうでなければ桁上がりするので次の桁に進む。
-最後までインクリメントされるのであれば、最初に一番小さい有効な数字を足す。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class IntegerGenerator {
-public: string nextInteger(vector&lt;int&gt; allowed, string current) {
-int num[10]={0};
-FORE(i,0,allowed.size())num[allowed[i]]=1;
-FORE(i,0,current.size())if(num[current[i]-'0']==0)return "INVALID INPUT";
-if(current[0]=='0')return "INVALID INPUT";
-for(int i=current.
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6093&amp;rd=9824 有効な一ケタの数字一覧と、現在の数字が与えられる。 現在の数字より大きく、かつ有効な数字のみで構成された数を求める。 ただし無効である場合
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-281-div1-easy---integergenerator-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -286,35 +174,7 @@ for(int i=current.
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-複数のチームがあり対戦を行う。
-総当たり戦ではなく、対戦しないチーム同士もある。
-ここで、各チームの強さを求めたい。
-あるチームの強さは、対戦した他のチーム全てに対し、
-「他のチームの勝ち数／他のチームの勝ち数＋他のチームの負け数」
-が少ないほど強いチームにある。
-ただし、他のチームの勝ち数からは自チームの負け数、他のチームの負け数からは自チームの勝ち数を引いてカウントしなければならない。
-このとき、各チームを強さの順にソートして返す。強さが同じ時はチーム名の昇順に並べる。
-解き方 
-シミュレーション問題なので、いかにシンプルにコーディングするか。
-いきなり計算してもよいのですが、各チームの勝ち負け数をカウントしてから
-強さを計算することでシンプルに実装できます。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ScheduleStrength {
-public: vector&lt;string&gt; calculate(vector&lt;string&gt; teams, vector&lt;string&gt; results) {
-int n=teams.size();
-int win[n],lose[n];
-memset(win,0,sizeof(win));
-memset(lose,0,sizeof(lose));
-FORE(i,0,n){
-FORE(j,0,n){
-if(results[i][j]=='W')win[i]++;
-if(results[i][j]=='L')lose[i]++;
+			問題 複数のチームがあり対戦を行う。 総当たり戦ではなく、対戦しないチーム同士もある。 ここで、各チームの強さを求めたい。 あるチームの強さは、対戦
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-265-div1-easy---schedulestrength-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -334,32 +194,7 @@ if(results[i][j]=='L')lose[i]++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12997&amp;rd=15841
-複数の箱それぞれに対しlowとhighの値が割り振られ、lowからhighの間の数のキャンディーが入っている。
-また、合計のキャンディーの数もわかっている。
-プレイヤーは複数の箱を選び、Ｘ個以上のキャンディーを食べたい。
-このとき、どの箱を選んでもＸ個以上のキャンディーが入っているような、最小の箱の数を求める。
-解き方 
-問題文のどのキャンディーの入り方でもＸ個以上、という最悪条件になっていることに気付くのに時間がかかってしまいました。
-答えは最大で箱の数なので、選ぶ数は１～ｎまで順番に調べていき
-条件を満たせばそこで答えになります。
-条件の満たし方は以下の２通りのうちいずれかを満たせばよいです。
-①最小のキャンディーは必ず入っているので、最小の数のみの和でＸ以上になること
-②選んでいない残りの箱の最大数がＣ－Ｘ以下になること。
-例外条件として、②は選んだ箱の取りうるキャンディー数がＸを満たすか気になります。
-これは、選んだ箱の取りうるキャンディー数がＸ未満の場合、残りの箱は最大数を選んでいるため合計のキャンディー数が決して満たない数になってしまいます。
-①の例外条件として合計だけでは満たさなくとも、残りで最大を選んだときのバッファを足せば満たすかがありますが、これはまさに②なので大丈夫です。
-例外条件をちゃんと確かめるか、もしくはコードでカバーしておくかが大事です。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class MysticAndCandies {
-public: int minBoxes(int C, int X, vector&lt;int&gt; low, vector&lt;int&gt; high) {
-int n=low.size();
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12997&amp;rd=15841 複数の箱それぞれに対しlowとhighの値が割り振られ、lowからhighの間の数のキャンディーが入っている。 また、合計のキャンディー
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-608-div1-easy---mysticandcandies-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -379,50 +214,7 @@ int n=low.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12964&amp;rd=15840
-ある文字列が与えられる。
-文字列はアルファベットと、？からなり、？には任意の文字を入れることができる。
-？に任意の文字が入れられたとき、
-その文字列中の回文であるサブ文字列の数の期待値を求める。
-解き方 
-文字列は最大５０００であるため、？の全ての場合に対して期待値を求めては間に合わない。
-ここで回文の判定については、その両端の２つの文字列だけを見ればよいことがわかる。
-ある文字列が回文であれば、その両端の文字の判定結果をかけていけば回文の判定は時間内に間に合う。
-データ構造としてdp[i][j]をi番目からj番目までの文字列、と定義することで
-計算量は最大で5000*5000/2になるので時間内に解くことができる。
-コード 
-double dp[5010][5010];
-string s;
-class PalindromicSubstringsDiv1 {
-public:
-double calc(int i,int j){
-if(s[i]!='?'&amp;&amp;s[j]!='?') return s[i]==s[j] ? 1.0 : 0.0;
-return 1.0/26.0;
-}
-double expectedPalindromes(vector&lt;string&gt; S1, vector&lt;string&gt; S2) {
-double ret=0.0;
-memset(dp,0,sizeof(dp));
-s="";
-FORE(i,0,S1.size())s+=S1[i];
-FORE(i,0,S2.size())s+=S2[i];
-int n=s.size();
-FORE(i,0,n){
-dp[i][i]=1.0;
-ret+=dp[i][i];
-}
-FORE(i,0,n-1){
-dp[i][i+1]=calc(i,i+1);
-ret+=dp[i][i+1];
-}
-FORE(len,3,n+1){
-for(int i=0;i+len-1&lt;n;i++){
-int j=i+len-1;
-dp[i][j]=dp[i+1][j-1]*calc(i,j);
-ret+=dp[i][j];
-}
-}
-return ret;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12964&amp;rd=15840 ある文字列が与えられる。 文字列はアルファベットと、？からなり、？には任意の文字を入れることができる。 ？に任意の文字が入れられたとき、 そ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-607-div1-easy---palindromicsubstringsdiv1-xx/">Read more…</a>
@@ -442,34 +234,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6116&amp;rd=9814
-１セットあたりのゲーム回数が与えられ、それを指定回数分のセット数行う。
-１ゲームにたいして勝つ確率が与えられ、そのセット数で勝つために必要な勝ちゲーム数が与えられる。
-このとき、少なくとも１つのセットで勝つことのできる確率を求める。
-解き方 
-問題文の理解に少し時間がかかった。
-１セットあたりに負ける確率さえ計算できれば、答えは１－負ける確率＾セット数で求められる。
-１セットあたりに負ける確率の計算に順列を使ってもよいが、
-ゲーム数は２０なので全探索してもたかだか１０＾６程度なので間に合う。
-コード 
-class ScrabbleBet {
-public: double estimate(int trials, int games, int winsNeeded, int winChance) {
-double loses=0.0;
-double p=winChance/100.0;
-for(int i=0;i&lt;(1&lt;&lt;games);i++){
-int x=0;
-for(int j=0;j&lt;20;j++)if(i&amp;(1&lt;&lt;j))x++;
-if(x&lt;winsNeeded)loses+=pow(p,x)*pow(1.0-p,games-x);
-}
-return 1.0-pow(loses,trials);
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6116&amp;rd=9814 １セットあたりのゲーム回数が与えられ、それを指定回数分のセット数行う。 １ゲームにたいして勝つ確率が与えられ、そのセット数で勝つために必
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-293-div1-easy---scrabblebet-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -489,43 +254,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10310&amp;rd=13748
-ある惑星上にて（ｘ、ｙ）からなる点が複数与えられる。
-その惑星の重力ｇは不明だが、すべての点を順番に通った時の合計時間Tはわかっている。
-また、１つの点から次の点までの距離dは以下の式で計算される。
-d=v0*t+0.5*a*t
-ここでtは２点間の移動に必要な時間、a=g*sinで表わされる。
-v0は速度であり次の点に移ったときの速度はv1=v0+a*tで表わされる。
-このとき、その惑星の重力gを求める。
-解き方 
-ｇが決まればそのときの合計時間T(g)は一意に求めることができる。
-つまり、二分探索で解くことができる。
-コード 
-class IncredibleMachine {
-public:
-double calc(vector&lt;int&gt; x,vector&lt;int&gt; y,double g){
-double ret=0.0;
-double v0=0.0;
-FORE(i,0,x.size()-1){
-double d=sqrt((x[i]-x[i+1])*(x[i]-x[i+1])+(y[i]-y[i+1])*(y[i]-y[i+1]));
-double a=g*abs(y[i]-y[i+1])/d;
-double t=(-v0+sqrt(v0*v0+2.0*a*d))/a;
-v0+=a*t;
-ret+=t;
-}
-return ret;
-}
-double gravitationalAcceleration(vector&lt;int&gt; x, vector&lt;int&gt; y, int T) {
-double low=0.0,high=1e+9;
-FORE(i,0,200){
-double mid=(low+high)/2.0;
-if(calc(x,y,mid)&lt;T)high=mid;
-else low=mid;
-}
-return high;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10310&amp;rd=13748 ある惑星上にて（ｘ、ｙ）からなる点が複数与えられる。 その惑星の重力ｇは不明だが、すべての点を順番に通った時の合計時間Tはわかっている。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>

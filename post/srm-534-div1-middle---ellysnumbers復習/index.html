@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 534 DIV1 Middle - EllysNumbers　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11787&amp;rd=14727
-エリーが好きな数であるｎが存在する。
-ここで、複数の数が与えられ、その中から任意の数選んだ数字の積がｎになるようにしたい。
-ただし、選んだ数字それぞれは約数を持たない数でなければいけない。
-このとき、選んだ数字の積がｎとなる選び方の場合の数を求める。
-解き方 
-問題文で最初見落としたが重要なところは、選んだ数字それぞれは約数を持たない数であるということ。
-つまり、N=x^i * y^j *z^k　で表わせるとき、
-x,y,zではなく、x^i , y^j , z^kを最小単位の固まりとして考えることができる。
-記を最小単位の固まりとして考えるとき、
-与えられた数字xはnで割り切れ、かつn/xはxとの最大公約数が１でなければならない。
-これに従って、まずは候補の数字を洗い出す。
-次に、洗い出した候補の数字に対して最大公約数で割っていき、１にならなければ答えが存在しないので０を返す。
-ここで洗い出した候補の数字に対して、その素因数がｎの素因数でもあるので
-どの素因数からなるかのビットマスクを作成する。
-ビットマスクを作成後、ｄｐを回してすべてのビットマスクが１となるものが答えとなる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysNumbers {
-public:
-long long gcd(long long x,long long y){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11787&amp;rd=14727 エリーが好きな数であるｎが存在する。 ここで、複数の数が与えられ、その中から任意の数選んだ数字の積がｎになるようにしたい。 ただし、選んだ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-534-div1-middle---ellysnumbers%E5%BE%A9%E7%BF%92/" />
 

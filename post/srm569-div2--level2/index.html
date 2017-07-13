@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM569 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①０と１で構成される2次元配列が与えられる。
-②各ビット列の任意の２つに対し、それぞれＯＲかＸＯＲかＡＮＤ演算をするデバイスがビット列分存在する。
-③各ビット列に対しどの操作をするか決まっているが、それがどれかはわかっていない。
-④このとき、各デバイスがどの操作をするか確かめることができれば”ＹＥＳ”、できなければ”ＮＯ”を返す。
-＜解き方＞
-各ビット列に対し、特定の数字が含まれていればデバイスの操作を確かめることができる。
-ＯＲとＡＮＤの場合
-０，１→ＯＲだと１、ＡＮＤだと０
-ＯＲとＸＯＲの場合
-１，１→ＯＲだと１、ＸＯＲだと０
-ＡＮＤとＸＯＲの場合
-０，１→ＡＮＤだと０、ＸＯＲだと１
-１，１→ＡＮＤだと１、ＸＯＲだと０
-この３つを判定するには、１が２つ、０が１つ最低あればよいことになる。
-各ビット列に対し１が２つ、０が１つ以上あるか判定し、
-なければＮＯ，あればＹＥＳを返す。
-＜コード＞
-class TheDeviceDiv2 {
-public: string identify(vector&lt;string&gt; plates) {
-FORE(j,0,(int)plates[0].size()){
-int one=0,zero=0;
-FORE(i,0,(int)plates.size()){
-if(plates[i][j]==&#39;1&#39;)one&#43;&#43;;
-else zero&#43;&#43;;
-}
-if(!(one&gt;=2 &amp;&amp; zero&gt;=1))return &#34;NO&#34;;
-}
-return &#34;YES&#34;;
-}
-}; " />
+<meta property="og:description" content="＜問題＞ ①０と１で構成される2次元配列が与えられる。 ②各ビット列の任意の２つに対し、それぞれＯＲかＸＯＲかＡＮＤ演算をするデバイスがビット列" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm569-div2--level2/" />
 

@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 440 DIV1 Easy - IncredibleMachine (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10310&amp;rd=13748
-ある惑星上にて（ｘ、ｙ）からなる点が複数与えられる。
-その惑星の重力ｇは不明だが、すべての点を順番に通った時の合計時間Tはわかっている。
-また、１つの点から次の点までの距離dは以下の式で計算される。
-d=v0*t&#43;0.5*a*t
-ここでtは２点間の移動に必要な時間、a=g*sinで表わされる。
-v0は速度であり次の点に移ったときの速度はv1=v0&#43;a*tで表わされる。
-このとき、その惑星の重力gを求める。
-解き方 
-ｇが決まればそのときの合計時間T(g)は一意に求めることができる。
-つまり、二分探索で解くことができる。
-コード 
-class IncredibleMachine {
-public:
-double calc(vector&lt;int&gt; x,vector&lt;int&gt; y,double g){
-double ret=0.0;
-double v0=0.0;
-FORE(i,0,x.size()-1){
-double d=sqrt((x[i]-x[i&#43;1])*(x[i]-x[i&#43;1])&#43;(y[i]-y[i&#43;1])*(y[i]-y[i&#43;1]));
-double a=g*abs(y[i]-y[i&#43;1])/d;
-double t=(-v0&#43;sqrt(v0*v0&#43;2.0*a*d))/a;
-v0&#43;=a*t;
-ret&#43;=t;
-}
-return ret;
-}
-double gravitationalAcceleration(vector&lt;int&gt; x, vector&lt;int&gt; y, int T) {
-double low=0.0,high=1e&#43;9;
-FORE(i,0,200){
-double mid=(low&#43;high)/2.0;
-if(calc(x,y,mid)&lt;T)high=mid;
-else low=mid;
-}
-return high;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10310&amp;rd=13748 ある惑星上にて（ｘ、ｙ）からなる点が複数与えられる。 その惑星の重力ｇは不明だが、すべての点を順番に通った時の合計時間Tはわかっている。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/" />
 

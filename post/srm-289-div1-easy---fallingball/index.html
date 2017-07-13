@@ -7,48 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 289 DIV1 Easy - FallingBall" />
-<meta property="og:description" content="問題 
-・トライアングル上に釘が打ってある台からボールを落とす。
-・台の高さはあらかじめ与えられる。
-・ボールを落としたとき、下に落ちる場所は釘の左側か右側になる。
-・また、通って欲しい釘の場所が複数与えられる。
-・このとき、通って欲しい場所を通るボールの落ち方の場合の数を求める。
-そのような場合がない場合はー１を返す。
-解き方 
-パスカルの三角形を使えば解くことができる。
-最初に与えられた台の数のパスカルの三角形を作り、
-各座標の差だけパスカルの三角形の場合の数をかけていく。
-座標の差が通ることができない差であればー１を返す。
-最後に、台の高さと最後の座標の高さの差の数だけ２の階乗すれば答えが求まる。
-コード 
-class FallingBall {
-public: int howMany(vector&lt;string&gt; cells, int n) {
-int ret=1;
-vector&lt;pair&lt;int,int&gt; &gt; p;
-int dp[n&#43;1][n&#43;1];
-memset(dp,0,sizeof(dp));
-dp[0][0]=1;
-FORE(i,1,n&#43;1){
-dp[i][0]=1;
-FORE(j,1,n&#43;1)dp[i][j]=dp[i-1][j-1]&#43;dp[i-1][j];
-}
-FORE(i,0,cells.size()){
-stringstream out(cells[i]);
-int a,b;
-out&gt;&gt;a&gt;&gt;b;
-p.push_back(make_pair(a,b));
-}
-p.push_back(make_pair(0,0));
-sort(all(p));
-FORE(i,1,p.size()){
-int dy=p[i].first-p[i-1].first;
-int dx=p[i].second-p[i-1].second;
-if(dx&lt;0||dx&gt;dy)return 0;
-ret*=dp[dy][dx];
-}
-return ret*(1&lt;&lt;(n-1-p[p.size()-1].first));
-}
-}; " />
+<meta property="og:description" content="問題 ・トライアングル上に釘が打ってある台からボールを落とす。 ・台の高さはあらかじめ与えられる。 ・ボールを落としたとき、下に落ちる場所は釘の左" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-289-div1-easy---fallingball/" />
 

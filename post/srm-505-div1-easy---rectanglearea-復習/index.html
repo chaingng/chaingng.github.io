@@ -7,57 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 505 DIV1 Easy - RectangleArea (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11400&amp;rd=14434
-・縦横の長さが異なる四角形がＮ＊Ｍ個与えられる。
-ただし、同じ行にある四角形の縦の長さは同じであり、同じ列にある四角形の横の長さは同じである。
-・最初にそれぞれの四角形について縦横の長さがわかっているもの、わかっていないもののリストが与えられる。
-・わかっていない四角形については質問することで教えてもらうことができる。
-・Ｎ＊Ｍ個の四角形を合わせた全体の面積を求めたいとき、必要な質問の最小回数を求める。
-解き方 
-Exampleより、任意の四角形を作ったときの３辺がわかれば残りの１辺を求めることができる。
-配列全体に対し上記の処理を行う関数を作り、収束するたびに質問を加え、
-関数を再実行することを繰り返していけばよい。
-・反省：Exampleよりすべての面積を求める方法、ととらえてしまった。
-４辺のうち３つがわかると残りの一つがわかる、ととらえられるかがポイントだった。
-コード 
-class RectangleArea {
-public:
-bool calc(){
-FORE(i,0,H){
-FORE(j,0,W){
-FORE(k,1,H-i){
-FORE(l,1,W-j){
-if(dp[i][j]&#43;dp[i][j&#43;l]&#43;dp[i&#43;k][j]&#43;dp[i&#43;k][j&#43;l]==3){
-dp[i][j]=dp[i][j&#43;l]=dp[i&#43;k][j]=dp[i&#43;k][j&#43;l]=1;
-calc();
-return true;
-}
-}
-}
-}
-}
-return false;
-}
-int minimumQueries(vector&lt;string&gt; known) {
-int ret=0;
-W=known[0].size();
-H=known.size();
-memset(dp,0,sizeof(dp));
-FORE(i,0,H)FORE(j,0,W)if(known[i][j]==&#39;Y&#39;)dp[i][j]=1;
-calc();
-while(1){
-int finish=1,xidx=0,yidx=0;
-FORE(i,0,H)if(dp[i][0]==0)finish=0,xidx=0,yidx=i;
-FORE(j,0,W)if(dp[0][j]==0)finish=0,xidx=j,yidx=0;
-if(finish)break;
-dp[yidx][xidx]=1;
-ret&#43;&#43;;
-calc();
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11400&amp;rd=14434 ・縦横の長さが異なる四角形がＮ＊Ｍ個与えられる。 ただし、同じ行にある四角形の縦の長さは同じであり、同じ列にある四角形の横の長さは同じで" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-505-div1-easy---rectanglearea-%E5%BE%A9%E7%BF%92/" />
 

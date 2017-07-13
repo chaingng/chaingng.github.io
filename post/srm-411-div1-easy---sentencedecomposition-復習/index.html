@@ -7,47 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 411 DIV1 Easy - SentenceDecomposition （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8692&amp;rd=12183
-・ある文と、単語の一覧が与えられる。
-・ある文を、与えられた単語を使って変換したい。
-・与えられた単語の順番を変えることで、ある文の一部と一致すればその一部を変換することができる。
-・変換するコストは、順番を変えた数になる。
-このとき、変換するコストの最小値を求める。変換できなければー１を返す。
-解き方 
-ｄｐを使って解く。
-dp[n=与えられた文字数]をとり、dp[i]をi番目までの最小のコストと定義する。
-dp[i]はiまでの文字をまとめて変換できるか、
-j&lt;iとなるdp[j]が存在する場合j&#43;1～iまでの文字が変換できるかを判定し
-最小値を更新していく。
-コード 
-class SentenceDecomposition {
-public:
-int rec(string s1,string s2){
-int cost=0;
-FORE(i,0,s1.size())if(s1[i]!=s2[i])cost&#43;&#43;;
-sort(all(s1));
-sort(all(s2));
-return s1==s2 ? cost : 1e&#43;9;
-}
-int decompose(string sentence, vector&lt;string&gt; validWords) {
-int n=sentence.size();
-int dp[n&#43;1];
-FORE(i,0,n&#43;1)dp[i]=1e&#43;9;
-dp[0]=0;
-for(int i=0;i&lt;n;i&#43;&#43;)if(dp[i]!=1e&#43;9){
-FORE(j,0,validWords.size()){
-int len=validWords[j].size();
-if(i&#43;len-1&lt;n){
-int cost=rec(sentence.substr(i,len),validWords[j]);
-dp[i&#43;len]=min(dp[i&#43;len],dp[i]&#43;cost);
-}
-}
-}
-return dp[n]&gt;=1e&#43;9 ? -1 : dp[n];
-}
-};
-using namespace std;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8692&amp;rd=12183 ・ある文と、単語の一覧が与えられる。 ・ある文を、与えられた単語を使って変換したい。 ・与えられた単語の順番を変えることで、ある文の一部と" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-411-div1-easy---sentencedecomposition-%E5%BE%A9%E7%BF%92/" />
 

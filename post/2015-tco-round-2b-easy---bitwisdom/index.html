@@ -7,38 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2015 TCO Round 2B Easy - Bitwisdom " />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13778&amp;rd=16500
-解き方 
-dpで解く。
-dp[現在の位置][現在が1か0か][1が最初から連続しているかのフラグ]とする。
-現在のビット０になったとき、
-１が最初から連続していれば１回の操作が必要で、
-連続していなければ２回の操作が必要になる。
-#英出張中で出れなかったが、日本だと出場しやすい時間だったので出たかった…
-コード 
-class Bitwisdom {
-public: double expectedActions(vector&lt;int&gt; p) {
-int n=p.size();
-double dp[301][2][2];
-memset(dp,0,sizeof(dp));
-double ret=0;
-dp[0][0][0]=(100-p[0])*0.01;
-dp[0][1][1]=p[0]*0.01;
-for(int i=1;i&lt;n;i&#43;&#43;){
-ret&#43;=dp[i-1][1][0]*(100-p[i])*0.02;
-ret&#43;=dp[i-1][1][1]*(100-p[i])*0.01;
-dp[i][0][0]&#43;=dp[i-1][0][0]*(100-p[i])*0.01;
-dp[i][0][0]&#43;=dp[i-1][1][0]*(100-p[i])*0.01;
-dp[i][0][0]&#43;=dp[i-1][1][1]*(100-p[i])*0.01;
-dp[i][1][0]&#43;=dp[i-1][0][0]*p[i]*0.01;
-dp[i][1][0]&#43;=dp[i-1][1][0]*p[i]*0.01;
-dp[i][1][1]&#43;=dp[i-1][1][1]*p[i]*0.01;
-}
-ret&#43;=dp[n-1][1][1]&#43;dp[n-1][1][0];
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13778&amp;rd=16500 解き方 dpで解く。 dp[現在の位置][現在が1か0か][1が最初から連続しているかのフラグ]とする。 現在のビット０になったとき、 １が最" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2015-tco-round-2b-easy---bitwisdom/" />
 

@@ -17,45 +17,7 @@
       <pubDate>Wed, 22 Apr 2015 15:34:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2014-tco-celebrity-match-div1-easy---aneasyproblem/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13527&amp;amp;rd=16191
-・関数F（h,r）が与えられる。その要素は{1,2,3,...h-1,h,h-1...r+1,r}となる。
-（例）F(3,2)={1,2,3,2}
-・関数Fの和があらかじめわかっているとき、その和を構成できる関数Fのうち
-最も少ない要素数を求める。
-そのようなFがない場合は−１を返す。
-解き方 
-和の最大が10^12であるため、n*(n+1)/2&amp;lt;=10^12から
-nは最大でも10^6程度なので全探索できそう。
-まず１から単調増加で和を計算していき、そのような和が構成できれば
-それは最小要素なので答えになる。
-そのような最小要素がなければ、途中で折り返す要素を計算する。
-この場合最悪ケースで10^12になってしまうので、工夫が必要。
-このとき、折り返し分の要素は最大のnからn-1,n-2・・・の和のいずれかであるので
-あらかじめ累積和を計算しておき、二分探索することで
-計算量を20*10^6に収めることができる。
-コード 
-long long dp[1500000];
-class AnEasyProblem {
-public: int solve(long long sum) {
-long long cur=0;
-int n=0;
-while(cur+n+1&amp;lt;=sum){
-n++;
-cur+=n;
-}
-if(cur==sum)return n;
-dp[0]=0;
-for(int i=1;i&amp;lt;=n;i++)dp[i]=dp[i-1]+i;
-for(int x=n;x&amp;gt;=1;x--){
-if(dp[x-1]*2+x&amp;lt;sum)break;
-long long tmp=dp[x-1]-(sum-dp[x]);
-int m = (lower_bound(dp,dp+n,tmp)) - dp ;
-if(dp[m]==tmp)return (x-1)-m+x;
-}
-return -1;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13527&amp;amp;rd=16191 ・関数F（h,r）が与えられる。その要素は{1,2,3,...h-1,h,h-1...r+1,r}となる。 （例）F(3,2)={1,2</description>
     </item>
     
     <item>
@@ -64,35 +26,7 @@ return -1;
       <pubDate>Tue, 18 Nov 2014 08:57:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-610-div1-easy---thematrix-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13035&amp;amp;rd=15843
-・白と黒で表わされる２次元のボードが与えられる。
-・ここから任意の長方形を選び、それが交互に白と黒が現れる模様であればそれはチェスボードと呼ぶことができる。
-・そのうち、最大の大きさとなるチェスボードの面積を求める。
-解き方 
-・ボードの大きさは最大１００＊１００
-・ボードの長方形の選び方は１０＾８なのでギリギリそう。
-・長方形を選んだときにそれがチェスボードとO(1)で判断できれば間に合うが・・・
-→他の人のコードをみる
-・あらかじめ各行について、どの長さまでチェスボードが成立するか事前計算しておく。
-・長方形の左上の点のすべてについて、一つずつ下に拡大していき
-左の点がチェスボードが続けば、その下の行の続くチェスボードの長さとの最小をとれば
-そのときの最大のチェスボードを計算することができる。
-・反省：ボードの計算方法をシミュレーションするのが不足していた。もっと紙に書くのが必要。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int d[101][101];
-class TheMatrix {
-public: int MaxArea(vector&amp;lt;string&amp;gt; board) {
-int h=board.size(),w=board[0].size();
-memset(d,0,sizeof(d));
-FORE(i,0,h)FORE(j,0,w){
-int len=1;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13035&amp;amp;rd=15843 ・白と黒で表わされる２次元のボードが与えられる。 ・ここから任意の長方形を選び、それが交互に白と黒が現れる模様であればそれはチェスボード</description>
     </item>
     
     <item>
@@ -101,36 +35,7 @@ int len=1;</description>
       <pubDate>Tue, 04 Nov 2014 19:24:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-624-div1-easy---buildingheights-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13211&amp;amp;rd=15857
-・様々な高さを持つ建物が与えられる。
-・建物の高さを１変えるのにコストが１かかる。
-・同じ建物がｍ個必ずあるようにしたい。
-・建物の数をｎとしたとき、ｍは１～ｎすべての値としてそれぞれの最小コストのXORを求める。
-解き方 
-・ｍを１～ｎそれぞれについて調べることとし、各建物の長さについて答えを求める。
-・求め方として２分探索？でも最小値を求めるので使えなさそう。
-・全探索では4000*4000*4000かかりそう。
-→他の人のコードをみてみる
-・ｍを固定した時、どの長さにするかは各建物の元々の長さにすればよい、、ことを単純ながら見落としてしまった。
-・あとは各建物の長さに固定した時のコスト計算をO(１)とするために、累積和をとっておけばよい。
-・反省：最適解探索の検討がまだまだ足りない。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BuildingHeights {
-public:
-int minimum(vector&amp;lt;int&amp;gt; heights) {
-int n=heights.size();
-sort(all(heights));
-int sum[n+1];
-sum[0]=0;
-FORE(i,1,n+1)sum[i]=sum[i-1]+heights[i-1];
-int ret=0;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13211&amp;amp;rd=15857 ・様々な高さを持つ建物が与えられる。 ・建物の高さを１変えるのにコストが１かかる。 ・同じ建物がｍ個必ずあるようにしたい。 ・建物の数をｎと</description>
     </item>
     
     <item>
@@ -139,33 +44,7 @@ int ret=0;</description>
       <pubDate>Sat, 18 Oct 2014 13:41:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-636-div1-easy---chocolatedividingeasy-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13497&amp;amp;rd=16079
-１＊１のセルが組み合わされた長方形のチョコレートケーキがある。
-各セルごとにおいしさの値が与えられる。
-このケーキを横に２つ、縦に２つ切って９つにわける。
-このとき、分けたかけらのうちの最小のおいしさの値が最大となる値を求める。
-解き方 
-・計算量の見積もりを誤ってしまった。
-・縦に２つ、横に２つなので50C2*50C2＝1.5*10^6ぐらい。
-・分けたときの各かけらの値を累積和の差として求めれば間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int b[100][100];
-int f[100][100];
-class ChocolateDividingEasy {
-public: int findBest(vector&amp;lt;string&amp;gt; chocolate) {
-int n=chocolate.size();
-int m=chocolate[0].size();
-FORE(i,1,n+1)FORE(j,1,m+1)b[i][j]=chocolate[i-1][j-1]-&#39;0&#39;;
-FORE(i,0,n+1)FORE(j,0,m+1){
-if(i==0||j==0)f[i][j]=0;
-else{</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13497&amp;amp;rd=16079 １＊１のセルが組み合わされた長方形のチョコレートケーキがある。 各セルごとにおいしさの値が与えられる。 このケーキを横に２つ、縦に２つ切っ</description>
     </item>
     
   </channel>

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 564 DIV1 Easy - KnightCircuit2 （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10968&amp;rd=15186
-ボードの長さと高さが与えられる。
-このとき、ナイトが動けるマスを返す。
-解き方 
-１辺の最大の長さは４５０００のため、Ｏ（１０＾８）となり全探索では求められない。
-そこで法則を探すことにする。
-１）マスの１辺が１のとき
-動くことができないので、答えは１
-２）マスの１辺が２のとき
-もう一つの辺の長さによって答えが変わる。
-１マスのときは＋１、２マスの時は＋１、３マスのときは＋２、４マスのときは＋２
-これが繰り返される。
-３）マスが３*３のとき
-３＊３のときは真ん中だけいけないので８．
-４）それ以外
-全てのマスに行くことができるので全てのマスの数が答え。
-コード 
-class KnightCircuit2 {
-public: int maxSize(int w, int h) {
-if(w&gt;h)swap(w,h);
-if(w==1)return 1;
-if(w==2)return (h&#43;1)/2;
-if(w==3 &amp;&amp; h==3)return 8;
-return w*h;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10968&amp;rd=15186 ボードの長さと高さが与えられる。 このとき、ナイトが動けるマスを返す。 解き方 １辺の最大の長さは４５０００のため、Ｏ（１０＾８）となり全探" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-564-div1-easy---knightcircuit2-%E5%BE%A9%E7%BF%92/" />
 

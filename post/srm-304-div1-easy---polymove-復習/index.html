@@ -7,53 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 304 DIV1 Easy - PolyMove (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6190&amp;rd=9825
-・ある多角形が与えられる。
-・多角形のうち複数の点を１だけ動かすことができる。
-・ただし、１度動かした点と隣り合う点は動かすことができない。
-・また最初の点と最後の点との接続には境界があり、この２つを接続しているとみなすことはできない。
-このとき、任意の点を動かした時最大となる面積の増分を求める。
-解き方 
-ｄｐの問題。
-dp[i] ： 点i-1までの最大面積と定義
-点i-1を動かすか動かさないか、以下のいずれかの最大値を取る
-・dp[i-1] (点i-1を動かさないケース)
-・dp[i-2]&#43;score(点i-1を動かしたときのスコア、点iと点i-2は動かさない)
-ただし、線形にｄｐで解くためには境界についての条件を考慮しなければならない。
-境界について以下の３つに分けることで単純なｄｐになる。
-・点０、点n－１が動かない場合（０とn－１の間に境界）
-・点０のみ動く場合（１と２の間に境界）
-・点ｎ－１のみ動く場合（０と１の間に境界）
-３つの最大のものが最終的な答えになる。
-
-
-コード 
-class PolyMove {
-public:
-double calc(int x1,int y1,int x2,int y2){
-return sqrt((x2-x1)*(x2-x1)&#43;(y2-y1)*(y2-y1))*0.5;
-}
-double addedArea(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-double ret=0.0;
-int n=x.size();
-double dp[n];
-memset(dp,0,sizeof(dp));
-FORE(i,2,n)dp[i]=max(dp[i-1],dp[i-2]&#43;calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-1]);
-memset(dp,0,sizeof(dp));
-dp[1]=calc(x[1],y[1],x[n-1],y[n-1]);
-dp[2]=dp[1];
-FORE(i,3,n)dp[i]=max(dp[i-1],dp[i-2]&#43;calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-1]);
-memset(dp,0,sizeof(dp));
-dp[0]=calc(x[0],y[0],x[n-2],y[n-2]);
-dp[1]=dp[0];
-FORE(i,2,n-1)dp[i]=max(dp[i-1],dp[i-2]&#43;calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-2]);
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6190&amp;rd=9825 ・ある多角形が与えられる。 ・多角形のうち複数の点を１だけ動かすことができる。 ・ただし、１度動かした点と隣り合う点は動かすことができない" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/" />
 

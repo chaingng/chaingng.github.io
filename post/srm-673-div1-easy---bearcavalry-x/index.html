@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 673 DIV1 Easy - BearCavalry x" />
-<meta property="og:description" content="問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=14081&amp;rd=16616
-解き方 
-w[0]について各組み合わせを決めることで、最大にならければならないスコアが決まる。
-あとは残りについて、その数を超えないように全ての組み合わせ数を求める。
-ここで各兵士について、乗ることができる馬の数を考える。
-この数でソートすることで、i番目の兵士は、「乗ることのできる馬の数-(i-1)」が選ぶことのできる数であり、よって組み合わせていく順番が一意に決まる。
-ある値（最大スコア）を固定することで、残りを貪欲法で選ぶことができないか、選ぶことのできる観点（各兵士について乗ることのできる馬の数）がないか考える。
-コード 
-class BearCavalry {
-public:
-int countAssignments(vector&lt;int&gt; warriors, vector&lt;int&gt; horses) {
-long long ret=0;
-int n=warriors.size();
-int MOD=1000000007;
-FORE(i,0,n){
-int value=warriors[0]*horses[i];
-int cur[n-1];
-memset(cur,0,sizeof(cur));
-FORE(j,0,n-1)FORE(k,0,n)if(k!=i &amp;&amp; warriors[j&#43;1]*horses[k]&lt;value)cur[j]&#43;&#43;;
-sort(cur,cur&#43;n-1);
-long long tmp=1;
-FORE(j,0,n-1)tmp=(tmp*max(0,cur[j]-j))%MOD;
-ret&#43;=tmp;
-}
-return ret%MOD;
-}
-};
-
- " />
+<meta property="og:description" content="問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=14081&amp;rd=16616 解き方 w[0]について各組み合わせを決めることで、最大にならければならないスコアが決まる。 あとは残りについて、その数を超えないように全" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-673-div1-easy---bearcavalry-x/" />
 

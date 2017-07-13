@@ -74,35 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13113&amp;rd=15852
-・積み重ねられた石の山が複数存在する。
-・それぞれの山について、あらかじめいくつ石が積み重ねられているかわかっている。
-・現在の石の山から１つ選んで２つに分け、また別の山を２つ選んで振り分ける。
-・２つに分ける方法として、片方が０にならなければどのように分けてもよい。
-・上記のゲームを2人で交互に行い、分けられなくなった場合は負けになる。
-・このとき、最初のプレイヤーが勝つときはWIN,、負けるときはLOSEを返す。
-解き方 
-・サンプルと問題文からダメなパターンをみてみる。
-・まず、石の山が２つ以下の場合は必ず負ける。
-・また、全ての石の山が１のときは動かせないので必ず負ける。
-・それ以外のときとして、山が３つの時は必ず２つにできるので勝つ。
-・山が４つのときは必ず３つ→２つになるので負けてしまう。
-・よって、最初が全て１でなければ山を一つずつ必ず減らすことができる。
-・まとめると、石の山が２つ以下またはすべて１のときは負け、
-そうでないときは山の数が奇数のときは勝ち、偶数のときは負ける。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SplitStoneGame {
-public: string winOrLose(vector&lt;int&gt; number) {
-int n=number.size();
-int flag=1;
-FORE(i,0,n)if(number[i]!=1)flag=0;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13113&amp;rd=15852 ・積み重ねられた石の山が複数存在する。 ・それぞれの山について、あらかじめいくつ石が積み重ねられているかわかっている。 ・現在の石の山から
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-619-div1-easy---splitstonegame-/">Read more…</a>
@@ -122,24 +94,10 @@ FORE(i,0,n)if(number[i]!=1)flag=0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			Windowsのプロキシには２種類存在する。
-１つめはInternetExplorerのプロキシサーバー設定、もう一つは主にWindows Updateに使用されるWinhttpのプロキシ設定。
-InternetExplorerはIEのインターネットオプションから設定できるが、
-Winhttpはnetshコマンドにて設定する。
-設定方法としては、直接設定するものとIEの設定をコピーする方法の２つ。
-直接設定する方法
-netsh winhttp set proxy proxy-server="myProxyServer:8080" bypass-list="&lt;local&gt;;*.microsoft.com;*.foo.ne"
-IEの設定をコピーする方法
-netsh winhttp import proxy source=ie
-現在の設定は、以下のコマンドで確認できる。
-netsh winhttp show proxy
-また、以下のコマンドで設定をリセット（プロキシなしに）できる。
-netsh winhttp reset proxy
-WindowsUpdateは手動での更新時はIEの設定が利用されるが、
-自動更新時はWinhttpのプロキシ設定が適用されるため、プロキシ環境下で自動更新を行いたいときは必要な設定となる。
-（参考）公式ページ
-http://support.microsoft.com/kb/2894304/ja
- 
+			Windowsのプロキシには２種類存在する。 １つめはInternetExplorerのプロキシサーバー設定、もう一つは主にWindows Up
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/windows%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -156,33 +114,7 @@ http://support.microsoft.com/kb/2894304/ja
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13142&amp;rd=15853
-・(x,y)のペアを考える。
-・このペアは(x+y,y)もしくは（x,x+y）のペアに変換することができる。
-・(a,b),(c,d)のペアが与えられたとき、どちらのペアも作ることのできるペア(x,y)のうち
-もっともx+yが大きくなるときのx+yの値を求める。
-解き方 
-・全探索は難しそう。
-・なにか法則を見つける必要がありそうだが。。
-・サンプルをみたとき、(15,4)→(11,4)→(7,4)となるのでなにかありそうだが
-&nbsp;うまく見つからなく断念。
-→他の人のコードをみてみる。
-・サンプルから、(a,b)でa&gt;=bのときは(a-b,b)から遷移しなく、
-a&lt;bのときは(a,b-a)からしか遷移しないことがわかる。
-・よって、答えである(a,b),(c,d)をそれぞれ遷移させ、共通するもののうち
-最大となるペアの和が答えになる。
-反省：問題文からもっといろいろ紙に整理してみるのが足りていないと実感。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i=(c).begin(); i!=(c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PairGame {
-public: int maxSum(int a, int b, int c, int d) {
-set&lt;pair&lt;int,int&gt; &gt; p1,p2;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13142&amp;rd=15853 ・(x,y)のペアを考える。 ・このペアは(x+y,y)もしくは（x,x+y）のペアに変換することができる。 ・(a,b),(c,d)のペ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-620-div1-easy---pairgame-/">Read more…</a>
@@ -202,18 +134,10 @@ set&lt;pair&lt;int,int&gt; &gt; p1,p2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			makeにはいくつかの種類がある。
-・GNU make
-&nbsp;gmakeとかいわれる。
-&nbsp;UNIX系で標準的に使われるもので、Windows系ではcygwinとかでも使われている。
-・Microsoft Program Maintenance Utility
-&nbsp;nmakeともいわれる。
-&nbsp;Visual Studio C++などを使うときはこちらでmakeする必要あり。
-・BSD make
-&nbsp;pmakeとも言われる。
-&nbsp;BSD系のUnixではこちらを使う必要がある。
-そのため、利用する環境に応じてmakeする必要があるので注意。
- 
+			makeにはいくつかの種類がある。 ・GNU make &nbsp;gmakeとかいわれる。 &nbsp;UNIX系で標準的に使われるもので、Window
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/make%E3%81%AE%E7%A8%AE%E9%A1%9E/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -230,33 +154,7 @@ set&lt;pair&lt;int,int&gt; &gt; p1,p2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11418&amp;rd=14530
-・黒と白の石が並べられている配列が与えられる。
-・その石をswapすることで、白白・・白黒黒・・黒としたい。
-・ただし、swapできる距離１つごとに１回のswapしかできない。
-・このとき、必要な最小の操作回数を求める。
-解き方 
-・swapの距離によらず、各１回の操作で白と黒を入れ替えることができそう。
-・白と黒が分かれるようにswapする。
-→system failed
-・問題文を見落としてしまった。
-・まず問題文は白→黒の順と決まっていることと、白と黒の数は任意であること。
-・問題文をきちんと読んで条件を整理する基本を徹底せねば。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BlackWhiteMagic {
-public: int count(string creatures) {
-int n=creatures.size();
-int w=0,ret=0;
-FORE(i,0,n)if(creatures[i]=='W')w++;
-FORE(i,0,w)if(creatures[i]=='B')ret++;
-return ret;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11418&amp;rd=14530 ・黒と白の石が並べられている配列が与えられる。 ・その石をswapすることで、白白・・白黒黒・・黒としたい。 ・ただし、swapできる距離
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2011-tco-qualification-round-2---blackwhitemagic/">Read more…</a>
@@ -276,17 +174,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			chkconfigを使う。
-ランレベル２～５での自動起動
-chkconfig httpd on
-起動レベルを指定（ランレベル３，５で起動）
-chkconfig httpd on --level 35
-自動起動しているサービス一覧の表示
-chkconfig --list
-ランレベルとはOSが起動するときのシステムの状態。
-現在どのランレベルで起動しているか、以下のコマンドで知ることができる。
-/sbin/runlevel
- 
+			chkconfigを使う。 ランレベル２～５での自動起動 chkconfig httpd on 起動レベルを指定（ランレベル３，５で起動） chkconfig httpd on --level 35 自動起動しているサービス一覧
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%87%AA%E5%8B%95%E8%B5%B7%E5%8B%95/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -303,32 +194,7 @@ chkconfig --list
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12494&amp;rd=15594
-・文字列sと、文字列tが与えられる。
-・sとtは同じ長さ。
-・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合する。
-・このとき、最も辞書順に大きくなるような結合後の文字列を求める。
-解き方 
-・一見、貪欲法で解けそう
-・まずはsの大きくなる選び方で試してみる
-・最後のサンプルがエラー。sの選び方に加え、選ばずにs+tの方が辞書順に大きくなる可能性が　あるため貪欲法では解けない。
-・よってｄｐで解く必要がある。
-・最初からｄｐを適用していくと、選び方を全探索しないといけないが、
-後ろから適用していけば、現在の文字列をつなげるかどうかを判断すればよいので
-計算量も間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheLargestString {
-public: string find(string s, string t) {
-int n=s.size();
-pair&lt;string,string&gt; dp[60][60];
-FORE(i,0,60)FORE(j,0,60)dp[i][j]=make_pair("","");
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12494&amp;rd=15594 ・文字列sと、文字列tが与えられる。 ・sとtは同じ長さ。 ・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2013-tco-round-2a-easy---thelargeststring-/">Read more…</a>
@@ -348,34 +214,7 @@ FORE(i,0,60)FORE(j,0,60)dp[i][j]=make_pair("","");
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11843&amp;rd=15090
-・アップルジュースとオレンジジュースが１ガロンずつある。
-・プレイヤーは順番に交互のジュースを半分ずつ飲んでいく。
-・ここで、プレイヤーの集合が与えられる。ただし、実際に飲んだ順番はわかっていない。
-・このとき、存在しうる一番ジュースを飲んだプレイヤーを求める。
-・ただし、一番ジュースを飲んだ量が同じであるプレイヤーが複数存在した場合は
-勝者は存在しない。
-解き方 
-・プレイヤー数は８なので、全探索ができそう。
-・ただし、実装が若干大変。
-・そこで問題文から、複数名前が存在するプレイヤー、もしくはプレイヤーの数が１人のとき
-そのプレイヤーが勝者になることがわかる。
-・これがわかれば、実装するだけ。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysJuice {
-public: vector&lt;string&gt; getWinners(vector&lt;string&gt; players) {
-int n=players.size();
-int maxn=0;
-map&lt;string,int&gt; m;
-FORE(i,0,n){
-m[players[i]]++;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11843&amp;rd=15090 ・アップルジュースとオレンジジュースが１ガロンずつある。 ・プレイヤーは順番に交互のジュースを半分ずつ飲んでいく。 ・ここで、プレイヤーの
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2012-tco-round-1a-easy---ellysjuice-/">Read more…</a>
@@ -395,30 +234,7 @@ m[players[i]]++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10896&amp;rd=14277
-・１つの硬貨Jingleをある硬貨Ringleで売るsellerが複数人と、
-１つの硬貨Jingleをある硬貨Ringleで買うbuyerが複数人いる。
-また、buyerに売るときは売るときの硬貨floor(X*tax/100)の税金がかかる。
-・１人のsellerからは１回、１人のbuyerからは１回の取引しかできないとき、
-得られる最大のprofitを求める。
-解き方 
-・貪欲法で解くことができそう。
-・ソートし、一番安いsellerと一番高く売れるbuyerについて税金も含めて利益が出るときは取引し、そうでないときは取引しなければよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class JingleRingle {
-public: int profit(vector&lt;int&gt; buyOffers, vector&lt;int&gt; sellOffers, int tax) {
-int n=buyOffers.size();
-int m=sellOffers.size();
-if(n==0||m==0)return 0;
-sort(all(buyOffers));
-sort(all(sellOffers));
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10896&amp;rd=14277 ・１つの硬貨Jingleをある硬貨Ringleで売るsellerが複数人と、 １つの硬貨Jingleをある硬貨Ringleで買うbuye
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2010-tco-qualification-round-2----jingleringle/">Read more…</a>
@@ -438,32 +254,7 @@ sort(all(sellOffers));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11809&amp;rd=15091
-・複数の長さの棒が与えられ、ここからK-gramを作りたい。
-・K-gramとはK個からなる集合で、
-各要素は長さKの棒もしくは2つの棒を組み合わせて長さK-1のものとなる。
-・与えられた棒から作ることのできるK-gramのうち、最も大きいKのものを求める。
-解き方 
-・棒の個数は最大５０個、長さも最大５０なので全探索ができそう。
-・すべてのKに対してK-gramが作ることができるか判定すればよい。
-・判定の方法としては、棒の長さでソートし１個の棒で成り立つものをカウント後、
-それ以下の長さのペアを左側と右側双方から探索すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class FoxAndKgram {
-public: int maxK(vector&lt;int&gt; len) {
-int n=len.size();
-sort(all(len));
-int ret=0;
-FORE(i,1,n+1){
-int l=0,r=n-1,cnt=0;
-while(r&gt;=0 &amp;&amp; len[r]&gt;=i){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11809&amp;rd=15091 ・複数の長さの棒が与えられ、ここからK-gramを作りたい。 ・K-gramとはK個からなる集合で、 各要素は長さKの棒もしくは2つの棒を
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2012-tco-round-1b-easy---foxandkgram-/">Read more…</a>

@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 448 DIV1 Easy - TheBlackJackDivOne" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10615&amp;rd=13902
-解き方 
-探索箇所が少ないので全探索可能。
-各カードについて既に使ったかどうかの情報が必要なので、
-その情報を更新しつつDFSを用いればよい。
-コード 
-int s[]={0,11,2,3,4,5,6,7,8,9,10,10,10,10};
-int c[14];
-class TheBlackJackDivOne {
-public:
-double rec(int cur){
-if(cur&gt;=21)return 0;
-int sum=0;
-double ret=0.0;
-FORE(i,0,14)sum&#43;=c[i];
-FORE(i,0,14)if(c[i]!=0){
-c[i]--;
-ret&#43;=(1&#43;rec(s[i]&#43;cur))*(c[i]&#43;1)/sum;
-c[i]&#43;&#43;;
-}
-return ret;
-}
-double expected(vector&lt;string&gt; cards) {
-int score=0;
-FORE(i,0,14)c[i]=4;
-c[0]=0;
-FORE(i,0,cards.size()){
-if(cards[i][0]==&#39;A&#39;)c[1]--,score&#43;=11;
-else if(cards[i][0]==&#39;T&#39;)c[10]--,score&#43;=10;
-else if(cards[i][0]==&#39;J&#39;)c[11]--,score&#43;=10;
-else if(cards[i][0]==&#39;Q&#39;)c[12]--,score&#43;=10;
-else if(cards[i][0]==&#39;K&#39;)c[13]--,score&#43;=10;
-else c[cards[i][0]-&#39;0&#39;]--,score&#43;=cards[i][0]-&#39;0&#39;;
-}
-return rec(score);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10615&amp;rd=13902 解き方 探索箇所が少ないので全探索可能。 各カードについて既に使ったかどうかの情報が必要なので、 その情報を更新しつつDFSを用いればよい。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-448-div1-easy---theblackjackdivone/" />
 

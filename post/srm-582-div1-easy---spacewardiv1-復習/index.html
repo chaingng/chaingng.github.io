@@ -7,47 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 582 DIV1 Easy - SpaceWarDiv1 (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12604&amp;rd=15502
-魔法少女が敵を倒す。
-それぞれの敵には強さとその強さの個体数、それぞれの魔法少女は強さを持つ。
-魔法少女は自分よりも強さが敵を倒すことができる。
-その際、その魔法少女の疲れの値が１増える。
-このとき、魔法少女が敵を全て倒したときの疲れの最小値を求める。
-全て倒せないときはー１を返す。
-解き方 
-疲れの値を２分探索させて、最小の疲れの値を求める。
-敵の数が最大１０＾１４のため、
-その疲れの値が有効かどうかの関数の実装に注意。
-降順のソートには「sort(rbegin(),rend())&nbsp;」が利用可能。
-long longの値を扱うには数字の後に「1234567890LL」とLLをつける。
-コード 
-class SpaceWarDiv1 {
-public:
-bool ispossible(long long maxbattle,vector&lt;int&gt; &amp;girls,vector&lt;pair&lt;int,long long&gt; &gt; &amp;enemies){
-long long girlnum=maxbattle,enemynum=enemies[0].second;
-int gi=0,ei=0;
-while(gi&lt;girls.size() &amp;&amp; ei&lt;enemies.size()){
-if(girlnum==0){
-gi&#43;&#43;;
-girlnum=maxbattle;
-}
-if(enemynum==0){
-if(ei==enemies.size()-1)return true;
-ei&#43;&#43;;
-enemynum=enemies[ei].second;
-}
-if(girls[gi]&lt;enemies[ei].first){
-gi&#43;&#43;;
-continue;
-}
-long long battle=min(girlnum,enemynum);
-girlnum-=battle;
-enemynum-=battle;
-}
-return false;
-}
-long long minimalFatigue(vector&lt;int&gt; girls, vector&lt;int&gt; enemyStrength, vector&lt;long long&gt; enemyCount) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12604&amp;rd=15502 魔法少女が敵を倒す。 それぞれの敵には強さとその強さの個体数、それぞれの魔法少女は強さを持つ。 魔法少女は自分よりも強さが敵を倒すことがで" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-582-div1-easy---spacewardiv1-%E5%BE%A9%E7%BF%92/" />
 

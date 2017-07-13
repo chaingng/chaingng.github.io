@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 420 DIV1 Middle - RedIsGood　（復習××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9915
-赤いカードがＲ枚、青のカードがＢ枚存在する。
-最初にカードは伏せられており、１枚選んでひっくり返す。
-ひっくり返したカードが赤ならスコアが＋１、青ならー１となる。
-プレイヤーは任意のプレイ回数でプレイをやめてもよい。
-このとき、プレイヤーが得られるスコアの最大の期待値を求める。
-解き方 
-まずはスコアの計算方法を紙に書いて整理してみた。
-現在持っている赤のカード枚数rと青のカード枚数bであるとき
-そのときのスコアdp[r][b]は
-(dp[r-1][b]&#43;1) *r/(r&#43;b) &#43;(dp[r][b-1]-1)*b/(r&#43;b)もしくは0のうち最大のものになる。
-ただし、カード枚数はそれぞれ5000枚なので5000*5000はメモリに保存できない。
-ここで上記の式を考えると
-「dp[r-1][b]＝ひとつ前の配列」と「dp[r][b-1]＝現在の配列」の２つだけを持っているだけでよいので、2*5000となりメモリ量も足りる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-double dp[2][5001];
-class RedIsGood {
-public:
-double getProfit(int R, int B) {
-memset(dp,0,sizeof(dp));" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9915 赤いカードがＲ枚、青のカードがＢ枚存在する。 最初にカードは伏せられており、１枚選んでひっくり返す。 ひっくり返したカードが赤ならスコアが" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-420-div1-middle---redisgood%E5%BE%A9%E7%BF%92/" />
 

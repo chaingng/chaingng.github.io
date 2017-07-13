@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 540 DIV1 Easy - ImportantSequence" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11842&amp;rd=14732
-解き方 
-上限と下限を決めるのに、最初の数字は増加列になる。
-a(i)=s*a0&#43;t、(初項はs=1,t=0)とする。
-&#43;が現れた時、そのときの数字B[i]について
-a(i)&#43;a(i&#43;1)=B[i]となるので
-a(i&#43;1)=-s*a0&#43;B[i]-tとなり、このとき切片が上限となる。
-同様に-が現れた時、a(i)-a(i&#43;1)=B[i]から
-a(i&#43;1)=s*a0&#43;t-B[i]となり、このとき切片が下限となる。
-以上の条件を満たしていくことで上下限が求められる。
-コード 
-class ImportantSequence {
-public: int getCount(vector&lt;int&gt; B, string operators) {
-int n=B.size();
-long long s=1,t=0;
-long long low=0,high=LONG_MAX;
-FORE(i,0,n&#43;1){
-if(s==1){
-low=max(low,-t);
-}else{
-high=min(high,t);
-}
-if(i==n)break;
-if(operators[i]==&#39;&#43;&#39;){
-s*=-1;
-t=B[i]-t;
-}else{
-t=t-B[i];
-}
-}
-if(high==LONG_MAX)return -1;
-if(low&gt;=high)return 0;
-return high-low-1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11842&amp;rd=14732 解き方 上限と下限を決めるのに、最初の数字は増加列になる。 a(i)=s*a0&#43;t、(初項はs=1,t=0)とする。 &#43;が現れた時、そのとき" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-540-div1-easy---importantsequence/" />
 

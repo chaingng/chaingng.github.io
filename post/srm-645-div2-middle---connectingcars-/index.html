@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 645 DIV2 Middle - ConnectingCars (○)" />
-<meta property="og:description" content="問題 
-・一列の道路に車が複数あり、その車の先頭位置とその長さが与えられる。
-・全ての車を連結したいとき、必要となる最小の移動距離を求める。
-解き方 
-・車を連結させるとき、そのうち一つの車の位置は固定となることがわかれば解ける。
-・あとは実装の問題。
-ある車を固定した時の移動距離を、左側にあるものの計算と右側にあるものの計算を分けて、
-近い順に行っていけばシンプルに実装できる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class ConnectingCars {
-public: long long minimizeCost(vector&lt;int&gt; positions, vector&lt;int&gt; lengths) {
-int n=positions.size();
-vector&lt;pair&lt;int,int&gt; &gt; p;
-FORE(i,0,n)p.push_back(make_pair(positions[i],lengths[i]));
-sort(all(p));
-long long ret=1e&#43;18;
-FORE(i,0,n){" />
+<meta property="og:description" content="問題 ・一列の道路に車が複数あり、その車の先頭位置とその長さが与えられる。 ・全ての車を連結したいとき、必要となる最小の移動距離を求める。 解き方" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-645-div2-middle---connectingcars-/" />
 

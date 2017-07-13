@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 618 DIV1 Middle - LongWordsDiv1 (復習x)" />
-<meta property="og:description" content="問題 
-ｎ種類の文字が与えられる。
-これを、以下の条件にあてはまらないようにできるだけ長い文字列を作成する。
-（１）同じ文字が２つ連続しないこと
-（２）ｘｙｘｙとなるような部分文字列が存在しないこと
-このとき、最長の文字列は何通りあるか求める。
-解き方 
-文字列に法則がないか考える。
-今回は最長の文字数は、以下のパターンになるので2n-1であることがわかる。
-（１）aXYZYXa
-aは一つのアルファベット、XYZYXはaを除いたアルファベットの種類数n-1における最長の文字列 (n-1)&#43;(n-2)=2n-3
-（２）aMNaXYa　aは一つのアルファベット、MN、XYはaを除いた、お互いに同じアルファベットを含まない種類数
-&nbsp; &nbsp; で構成される。MNに含まれる種類をＰ,ＸＹに含まれる種類をQとすると
-MNの長さは2P-1,XYの長さは2Q-1, P&#43;Q=n-1から
-2P-1&#43;2Q-1=2(P&#43;Q)-2=2(n-1)-2=2x-4
-&nbsp; &nbsp; よって全体の長さは2n-1となる。
-上記について長さが1のときからnの時までdpで回してあげ、
-最後にアルファベットの種類数分だけの順列が生じるのでn!をかけてあげればよい。
-最初は最長の文字列が一意に決まると考え着かなかったので、もっと問題を洞察する必要があった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-long long dp[5010];
-int MOD=1000000007;" />
+<meta property="og:description" content="問題 ｎ種類の文字が与えられる。 これを、以下の条件にあてはまらないようにできるだけ長い文字列を作成する。 （１）同じ文字が２つ連続しないこと （２" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-618-div1-middle---longwordsdiv1-%E5%BE%A9%E7%BF%92x/" />
 

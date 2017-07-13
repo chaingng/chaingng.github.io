@@ -77,41 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=14072&amp;rd=16552
-解き方 
-素数を考えると、素数自身は交換対象とならない。
-よって、何度交換が発生しても、ｎはｎより小さい素数とｎより大きい素数の
-間に収まる。
-素数の間隔は６００以内におさまるので、その間の全ての数の約数を調べて
-シミュレーションし、最終的なｎの収束点が答えになる。
-コード 
-class Procrastination {
-public: long long findFinalAssignee(long long n) {
-long long L=max(2LL,n-600),R=n+600;
-set&lt;long long&gt; s;
-for(long long i=L;i&lt;=R;i++){
-for(long long j=2;j*j&lt;=i;j++){
-if(i%j==0){
-s.insert(j);
-s.insert(i/j);
-}
-}
-}
-vector&lt;long long&gt; vx;
-for(set&lt;long long&gt;::iterator it=s.begin();it!=s.end();it++){
-vx.push_back(*it);
-}
-sort(all(vx));
-FORE(i,0,vx.size()){
-if((n-1)%vx[i]==0 &amp;&amp; n-1&gt;vx[i])n--;
-else if(n%vx[i]==0 &amp;&amp; n&gt;vx[i])n++;
-}
-return n;
-}
-};
-
- 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=14072&amp;rd=16552 解き方 素数を考えると、素数自身は交換対象とならない。 よって、何度交換が発生しても、ｎはｎより小さい素数とｎより大きい素数の 間に収まる。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-672-div1-easy---procrastination-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -128,31 +97,10 @@ return n;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8262&amp;rd=10787
-解き方 
-最大ケースの時は5000*5000なのでメモリが足りない。
-そのため、なにかしら工夫する必要がある。
-今回width,lengthともに3以上のときはwidth-2,lengh-2かつスタート位置(r,c)を(r+1,c+1)に
-したものと等しくなる。
-最後にwidth&lt;=2もしくはlength&lt;=2となるのでこれは簡単な場合分けで解ける。
-コード 
-class SpiralRoute {
-public: vector&lt;int&gt; thronePosition(int width, int length) {
-int r=0,c=0;
-while(width&gt;=3 &amp;&amp; length&gt;=3){
-width-=2,length-=2;
-r++,c++;
-}
-if(length==1)r+=width-1;
-else if(length==2)c++;
-else if(width==1)c+=length-1;
-else c++;
-vector&lt;int&gt; ans(2);
-ans[0]=r,ans[1]=c;
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8262&amp;rd=10787 解き方 最大ケースの時は5000*5000なのでメモリが足りない。 そのため、なにかしら工夫する必要がある。 今回width,lengthと
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-371-div1-easy---spiralroute-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -169,36 +117,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8223&amp;rd=10789
-解き方 
-解くだけ。１度一周して確かめるなど、うまく条件を整理するのがポイント。
-コード 
-class RoadConstruction {
-public: int getExitTime(vector&lt;string&gt; lanes) {
-int n=lanes.size();
-int ret=0;
-int flag[n];
-memset(flag,0,sizeof(flag));
-int at=0,prev=-1;
-while(1){
-while(at&lt;n &amp;&amp; lanes[at].empty())at++;
-if(at&lt;n &amp;&amp; flag[at]==0){
-prev=at;
-flag[at]=1;
-at++;
-}else{
-if(at&gt;=n)at=prev;
-if(lanes[at][0]=='D')return ret;
-ret++;
-lanes[at]=lanes[at].substr(1);
-flag[at]=0;
-at=0,prev=-1;
-}
-}
-return -1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8223&amp;rd=10789 解き方 解くだけ。１度一周して確かめるなど、うまく条件を整理するのがポイント。 コード class RoadConstruction { public: int getExitTime(vector&lt;string&gt; lanes) { int n=lanes.size(); int ret=0; int flag[n]; memset(flag,0,sizeof(flag)); int at=0,prev=-1; while(1){ while(at&lt;n &amp;&amp; lanes[at].empty())at++; if(at&lt;n &amp;&amp; flag[at]==0){ prev=at; flag[at]=1;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-372-div1-easy---roadconstruction-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -215,38 +137,10 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8087&amp;rd=10791
-解き方 
-全探索可能なので解くだけ。
-コード 
-class StringFragmentation {
-public: int largestFontSize(string text, int width, int height) {
-vector&lt;int&gt; vx;
-stringstream out(text);
-for(string str;out&gt;&gt;str;){
-vx.push_back(str.size());
-}
-int n=vx.size();
-for(int i=5000;i&gt;=8;i--){
-int at=0,lines=0;
-while(at&lt;n){
-int cur=0;
-if(vx[at]*(i+2)&lt;=width){
-cur+=vx[at]*(i+2);
-}else break;
-while(at+1&lt;n &amp;&amp; cur+(vx[at+1]+1)*(i+2)&lt;=width){
-cur+=(vx[at+1]+1)*(i+2);
-at++;
-}
-lines++;
-at++;
-}
-if(at&gt;=n &amp;&amp; lines*2*i&lt;=height)return i;
-}
-return -1;
-}
-} 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8087&amp;rd=10791 解き方 全探索可能なので解くだけ。 コード class StringFragmentation { public: int largestFontSize(string text, int width, int height) { vector&lt;int&gt; vx; stringstream out(text); for(string str;out&gt;&gt;str;){ vx.push_back(str.size()); } int n=vx.size(); for(int i=5000;i&gt;=8;i--){ int at=0,lines=0; while(at&lt;n){ int cur=0; if(vx[at]*(i+2)&lt;=width){ cur+=vx[at]*(i+2); }else break; while(at+1&lt;n &amp;&amp; cur+(vx[at+1]+1)*(i+2)&lt;=width){ cur+=(vx[at+1]+1)*(i+2); at++; } lines++; at++; } if(at&gt;=n &amp;&amp; lines*2*i&lt;=height)return i; } return
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-373-div1-easy---stringfragmentation-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -263,48 +157,7 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8374&amp;rd=10793
-解き方 
-文字列操作の問題。
-問題文の最後の比較条件を見落としてしまった。。
-コード 
-class SyllableSorting {
-public:
-bool ispossible(char cur){
-char ch[]={'a','e','i','o','u'};
-FORE(i,0,5)if(cur==ch[i])return false;
-return true;
-}
-vector&lt;string&gt; calc(string w){
-int n=w.size();
-vector&lt;string&gt; ans;
-int at=0;
-while(at&lt;n){
-string str="";
-int flag=0;
-while(at&lt;n){
-if(ispossible(w[at])){
-if(flag==0)str+=w[at++];
-else break;
-}else{
-str+=w[at++];
-flag=1;
-}
-}
-ans.push_back(str);
-}
-return ans;
-}
-vector&lt;string&gt; sortWords(vector&lt;string&gt; words) {
-int n=words.size();
-vector&lt;pair&lt;pair&lt;vector&lt;string&gt;,vector&lt;string&gt; &gt;,string&gt; &gt; p;
-FORE(i,0,n){
-vector&lt;string&gt; cur=calc(words[i]);
-vector&lt;string&gt; cur2=cur;
-sort(all(cur));
-p.push_back(make_pair(make_pair(cur,cur2),words[i]));
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8374&amp;rd=10793 解き方 文字列操作の問題。 問題文の最後の比較条件を見落としてしまった。。 コード class SyllableSorting { public: bool ispossible(char cur){ char ch[]={'a','e','i','o','u'}; FORE(i,0,5)if(cur==ch[i])return false; return true; } vector&lt;string&gt; calc(string w){ int n=w.size(); vector&lt;string&gt; ans; int at=0; while(at&lt;n){ string str=""; int flag=0; while(at&lt;n){
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-374-div1-easy---syllablesorting-x/">Read more…</a>
@@ -324,43 +177,7 @@ p.push_back(make_pair(make_pair(cur,cur2),words[i]));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8318&amp;rd=10794
-解き方 
-2~9すべての最大公約数は2520なので
-答えは最大でもn+5桁程度であり、全探索が可能。
-コード 
-class DivisibleByDigits {
-public:
-bool ispossible(long long x,vector&lt;int&gt; vx){
-FORE(i,0,vx.size())if(x%vx[i]!=0)return false;
-return true;
-}
-long long getContinuation(int n) {
-set&lt;int&gt; s;
-int x=n;
-while(x&gt;0){
-s.insert(x%10);
-x/=10;
-}
-vector&lt;int&gt; vx;
-FORE(i,1,10)if(s.find(i)!=s.end())vx.push_back(i);
-string str;
-stringstream out;
-out &lt;&lt; n;
-out &gt;&gt; str;
-queue&lt;string&gt; q;
-q.push(str);
-while(!q.empty()){
-string cur=q.front();
-q.pop();
-stringstream out2(cur);
-long long p;
-out2 &gt;&gt; p;
-if(ispossible(p,vx))return p;
-for(char ch='0';ch&lt;='9';ch++){
-q.push(cur+ch);
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8318&amp;rd=10794 解き方 2~9すべての最大公約数は2520なので 答えは最大でもn+5桁程度であり、全探索が可能。 コード class DivisibleByDigits { public: bool ispossible(long long x,vector&lt;int&gt; vx){ FORE(i,0,vx.size())if(x%vx[i]!=0)return false; return true; } long long getContinuation(int
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-375-div1-easy---divisiblebydigits-/">Read more…</a>
@@ -380,18 +197,10 @@ q.push(cur+ch);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8414&amp;rd=10804
-解き方 
-dpで解く。
-前の状態から現在の状態までに行ける全ての場合について和をとっていく。
-前の状態から＋１回かつサイコロなので1/6を掛けたものになる。
-コード 
-class TheDiceGame {
-
-public: double expectedThrows(int candies) {memset(dp,0,sizeof(dp));for(int i=1;i&lt;=candies;i++){for(int j=1;j&lt;=6;j++){int prev=max(0,i-j);dp[i]+=(dp[prev]+1.0)/6.0;}}
-return dp[candies];}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8414&amp;rd=10804 解き方 dpで解く。 前の状態から現在の状態までに行ける全ての場合について和をとっていく。 前の状態から＋１回かつサイコロなので1/6を掛け
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-381-div1-easy---thedicegame-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -408,40 +217,10 @@ return dp[candies];}
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13922&amp;rd=16512
-解き方 
-initialからtargetを生成するよう順に解いていき、部分列が存在しないようなら
-打ち切ることで、候補数は限られるので時間内に解くことができる。
-targetからinitialに戻せるか試しても良い。
-コード 
-class ABBADiv1 {
-public:
-string rev(string str){
-string ret="";
-for(int i=str.size()-1;i&gt;=0;i--)ret+=str[i];
-return ret;
-}
-bool dfs(string cur,string target){
-if(cur.size()&gt;target.size())return false;
-if(cur.size()==target.size()){
-return cur==target;
-}
-bool valid=false;
-string s1=cur+'A';
-if(target.find(s1)!=string::npos || target.find(rev(s1))!=string::npos){
-valid|=dfs(s1,target);
-}
-string s2=cur+'B';
-if(target.find(s2)!=string::npos || target.find(rev(s2))!=string::npos){
-valid|=dfs(rev(s2),target);
-}
-return valid;
-}
-string canObtain(string initial, string target) {
-return dfs(initial,target) ? "Possible" : "Impossible";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13922&amp;rd=16512 解き方 initialからtargetを生成するよう順に解いていき、部分列が存在しないようなら 打ち切ることで、候補数は限られるので時間内
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-663-div1-easy---abbadiv1-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -458,30 +237,10 @@ return dfs(initial,target) ? "Possible" : "Impossible";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13916&amp;rd=16513
-解き方 
-数学的に解くことができるのに気がつけるか。
-A+B=Sとすると、
-A&lt;Bのとき、A=2*A=2A%S
-A&gt;Bのとき、A=A-B=A+(A-(A+B))=A+(A-S)=2A-S=2A%S
-よって常にA*2%Sとなる。
-K回かけるので、かけた後はA*2^k%Sとなり、この値とSからこの値を引いたもののうち
-最小のものが答えになる。
-Kは大きいので繰り返し２乗法を用いる。
-コード 
-class BearPlays {
-public:
-long long modpow(long long a,long long k,long long m){
-if(k==0)return 1;
-if(k%2==0)return modpow((a*a)%m,k/2,m);
-return (a*modpow(a,k-1,m))%m;
-}
-int pileSize(int A, int B, int K) {
-long long a=(A*modpow(2,K,A+B))%(A+B);
-return min(a,A+B-a);
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13916&amp;rd=16513 解き方 数学的に解くことができるのに気がつけるか。 A+B=Sとすると、 A&lt;Bのとき、A=2*A=2A%S A&gt;Bのとき、A=A
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-664-div1-easy---bearplays-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -498,24 +257,10 @@ return min(a,A+B-a);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8183&amp;rd=10802
-解き方 
-条件より、すべての４方向にいける場合とそれ以外を場合分けする。
-次に高さの値によって場合分けできることがわかる。
-高さが３以上ある場合は上に２、右に１行き、次に下に２、右に１行くのが
-最適になる。
-高さ２のときは上に１、右に２，下に１，右に２しかいけなく、
-高さ１のときは動くことができない。
-コード 
-class LameKnight {
-public: int maxCells(int height, int width) {
-if(height&gt;=3 &amp;&amp; width&gt;=7)return width-2;
-if(height&gt;=3)return min(4,width);
-if(height==2)return min(4,(width+1)/2);
-return 1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8183&amp;rd=10802 解き方 条件より、すべての４方向にいける場合とそれ以外を場合分けする。 次に高さの値によって場合分けできることがわかる。 高さが３以上ある場
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-380-div1-easy---lameknight-/">Read more…</a>
 		</div>
 	</div>
 </article>

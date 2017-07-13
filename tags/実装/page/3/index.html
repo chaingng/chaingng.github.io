@@ -77,53 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11740&amp;rd=14722
-王様の名前が与えられ、順番に並べる。
-名前はアルファベットの連続とＩ，ＩIの数字で与えられ、アルファベットの昇順、同じ場合はＩ，ＩIの小さい順になる。
-名前が与えられた時、ソート後の順列を返す。
-解き方 
-シミュレーション問題。
-数字側の規則が多いので、ここをいかに簡略化できるか。
-今回のコツは以下の３つ。
-①判定が多い場合は配列にパターンを格納し判定。
-②与えられた文字列を分解して判別するのではなく、全てのパターンを作りマッチするものを返す。
-③ソートの要素が２つあるときは、pairを２回入れ子にし最初のpairを判定の順番に格納する。
-計算量はＯ（70*50*50*2=3.5*10^5）。
-コード 
-class KingSort {
-public:
-int calc(string s){
-string c1[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
-string c10[]={"","X","XX","XXX","XL","L"};
-int num=0;
-FORE(i,0,10)FORE(j,0,6){
-if(i==0&amp;&amp;j==0)continue;
-if(c10[j]+c1[i]==s){
-num=j*10+i;
-break;
-}
-}
-return num;
-}
-vector&lt;string&gt; getSortedList(vector&lt;string&gt; kings) {
-int n=kings.size();
-vector&lt;pair&lt;pair&lt;string,int&gt;,string&gt; &gt; vx(n);
-vector&lt;string &gt; ans(n);
-FORE(i,0,kings.size()){
-string tmp1,tmp2;
-stringstream out(kings[i]);
-out&gt;&gt;tmp1;
-out&gt;&gt;tmp2;
-vx[i].first.first=tmp1;
-vx[i].first.second=calc(tmp2);
-vx[i].second=kings[i];
-}
-sort(vx.begin(),vx.end());
-FORE(i,0,n)ans[i]=vx[i].second;
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11740&amp;rd=14722 王様の名前が与えられ、順番に並べる。 名前はアルファベットの連続とＩ，ＩIの数字で与えられ、アルファベットの昇順、同じ場合はＩ，ＩIの小
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-529-div1-easy---kingsort-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -140,45 +97,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①２次元の配列が与えられる。
-②配列には”Ｘ”で表わされる床が存在する。一番下は全て床になっている。
-③また、コインのある座標が与えられる。
-④ユーザは一番下の床からスタートし、任意の長さの梯子を使って床へ移動し、コインを獲得する。
-⑤このとき、必要となる最小の梯子の長さを求める。
-解き方 
-問題の性質から、２分探索が思い浮かぶ。
-ただ高さの上限が少ないので、単純に小さい数からループさせてもよい。
-Ｃｈａｌｌｅｎｇｅのポイント
-また、移動の判定とキューへのスタックがかなりの計算量になるので、
-一度行ったことのある例外判定をきちんと行う必要がある。
-たとえばコード中の以下など。
-if(check[i][j]==1)continue;
-コード 
-class ArcadeManao {
-public: int shortestLadder(vector&lt;string&gt; level, int coinRow, int coinColumn) {
-int h=level.size(),w=level[0].size();
-int check[h][w];
-int low=0,high=h;
-for(int L=0;L&lt;100;L++){
-queue &lt;pair &lt;int, int&gt; &gt; q;
-q.push(make_pair(coinRow-1,coinColumn-1));
-int flag=0;
-FORE(i,0,h)FORE(j,0,w)check[i][j]=0;
-while(!q.empty()){
-int i=q.front().first;
-int j=q.front().second;
-q.pop();
-if(check[i][j]==1)continue;
-if(i==h-1){
-flag=1;
-break;
-}
-while(j-1&gt;=0 &amp;&amp; level[i][j-1]=='X')j--;
-for(int cur=j;level[i][cur]=='X';cur++){
-check[i][cur]=1;
-for(int up=i;up&gt;=max(0,i-L);up--)
-if(check[up][cur]==0 &amp;&amp; level[up][cur]=='X')q.push(make_pair(up,cur));
+			問題 ①２次元の配列が与えられる。 ②配列には”Ｘ”で表わされる床が存在する。一番下は全て床になっている。 ③また、コインのある座標が与えられる。
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm576-div2--level2/">Read more…</a>

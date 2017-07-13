@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 390 DIV1 Easy - ConcatenateNumber ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8589&amp;rd=11124
-解き方 
-そのままの整数でシミュレーションすると計算量が間に合わないが
-MODにして計算してあげるとシンプルになる。
-MOD後の数を保存しておき、すでに現れたMOD後の数が現れると
-ループしているので−１となる。
-コード 
-class ConcatenateNumber {
-public: int getSmallest(int number, int k) {
-long long p=1,tmp=number;
-while(tmp&gt;0){
-tmp/=10;
-p*=10;
-}
-p%=k;
-set&lt;int&gt; s;
-int cnt=1,cur=number%k,add=number%k;
-while(s.find(cur)==s.end()){
-if(cur==0)return cnt;
-s.insert(cur);
-add=(p*add)%k;
-cur=(cur&#43;add)%k;
-cnt&#43;&#43;;
-}
-return -1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8589&amp;rd=11124 解き方 そのままの整数でシミュレーションすると計算量が間に合わないが MODにして計算してあげるとシンプルになる。 MOD後の数を保存してお" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-390-div1-easy---concatenatenumber-/" />
 

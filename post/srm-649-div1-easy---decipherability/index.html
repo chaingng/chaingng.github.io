@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 649 DIV1 Easy - Decipherability" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13656&amp;rd=16313
-・a～ｚから成る文字列が与えられる。
-・この文字列から、任意のK個の文字を取り除いたとき、それがどの箇所か
-特定できればCertain、特定できなければUncertainを返す。
-解き方 
-どのような文字列が削除されると特定できないかの法則を探す。
-まず、すべての文字列が削除された場合は特定できる。
-次に、文字列の対称性を考えた場合に、a***aの文字列があった場合
-Kが４以上だとaだけを残すことができ、どちらを消したか特定できない。
-このような同じ文字ではさまれたサブ文字列すべてに対して判定を行い
-ひとつでもあてはまれば特定できない文字列となる。
-コード 
-class Decipherability {
-public: string check(string s, int K) {
-int n=s.size();
-if(K==n)return &#34;Certain&#34;;
-FORE(i,0,n)FORE(j,i&#43;1,n)if(s[i]==s[j]){
-if(j-i&lt;=K)return &#34;Uncertain&#34;;
-}
-return &#34;Certain&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13656&amp;rd=16313 ・a～ｚから成る文字列が与えられる。 ・この文字列から、任意のK個の文字を取り除いたとき、それがどの箇所か 特定できればCertain、特" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-649-div1-easy---decipherability/" />
 

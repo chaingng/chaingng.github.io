@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 157 DIV1 Easy - Salary (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1786&amp;rd=4590
-サラリーマンは出社したときと退社した時にスタンプカードを押し、その時間がわかっている。ただし、退社した時の時間は仕事時間に含まれない。
-合わせて時給がわかっており、０：００～５：５９の間、かつ１８：００～２３：５９の間は時給が１．５倍になる。
-このとき、サラリーマンの一日の給料を求める。
-ただし、小数点以下は切り下げる。
-解き方 
-シミュレーション問題なので以下にシンプルに実装するか。
-同じ計算は記載ミスを招くので、２度以上現れる計算は変数に保存して扱うことでミスをより少なくできる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Salary {
-public:
-int calc(string str){
-int h=(str[0]-&#39;0&#39;)*10&#43;(str[1]-&#39;0&#39;);
-int m=(str[3]-&#39;0&#39;)*10&#43;(str[4]-&#39;0&#39;);
-int s=(str[6]-&#39;0&#39;)*10&#43;(str[7]-&#39;0&#39;);
-return h*3600&#43;m*60&#43;s;
-}
-int howMuch(vector&lt;string&gt; arrival, vector&lt;string&gt; departure, int wage) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1786&amp;rd=4590 サラリーマンは出社したときと退社した時にスタンプカードを押し、その時間がわかっている。ただし、退社した時の時間は仕事時間に含まれない。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-157-div1-easy---salary-%E5%BE%A9%E7%BF%92/" />
 

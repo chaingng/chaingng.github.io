@@ -74,11 +74,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			yumをインターネット経由ではなくローカルで使用したい場合のエイリアス設定。
-/etc/bashrcもしくは~/.bashrcについて、以下を設定してあげればよい。
-(rhel-redhatはrepoの名前)
-alias yum='yum --disablerepo=\* --enablerepo=rhel-redhat'
- 
+			yumをインターネット経由ではなくローカルで使用したい場合のエイリアス設定。 /etc/bashrcもしくは~/.bashrcについて、以下を
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/yum%E3%82%92%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -95,17 +94,10 @@ alias yum='yum --disablerepo=\* --enablerepo=rhel-redhat'
 			</div>
 		</header>
 		<div class="list__excerpt">
-			端末が増えてくるとそれぞれusb接続してadbコマンドを打つと大変になった。
-そこで、usbに接続しなくとも無線LAN経由にてadbを利用する方法があったので整理しておく。
-１．下準備として、端末にusb接続してtcpポートを解放。
-$adb tcpip 5555
-２．usbを外して、adb connectにて端末のIPアドレス(ここでは仮に10.10.10.10)にアクセス。
-このとき、操作元の端末と操作したい端末は同じWi-Fiネットワーク下にあること。
-$adb kill-server
-$adb connect 10.10.10.10:5555
-これだけで無線LAN経由でadbコマンドを打つことが可能になる。
-ちなみに、公式ページを下の方にも解説がある。
-http://developer.android.com/tools/help/adb.html 
+			端末が増えてくるとそれぞれusb接続してadbコマンドを打つと大変になった。 そこで、usbに接続しなくとも無線LAN経由にてadbを利用する
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/adb%E3%82%92wi-fi%E7%B5%8C%E7%94%B1%E3%81%A7%E5%88%A9%E7%94%A8/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -122,31 +114,7 @@ http://developer.android.com/tools/help/adb.html
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13066&amp;rd=16058
-N種類のピルがあり、どれがマジックピルかを判別したい。
-判別するのに友人に協力してもらうことができ、マジックピルを飲んだ友人は消えてしまう。
-協力してもらうターン数turnsが与えられた時、最低限必要な友人の数を求める。
-解き方 
-・問題文から、ターンと友人の数により判別できるピルの数を列挙してみる
-・問題文の誘導からか、なんとなくはまってしまう。
-・他の人のコードを読む
-・要は、人数とターンにより表わされる状態数が判別できるピルの数
-・例えば１ターンでA,Bがいるときは、{ABが残る}、{Aだけ残る}、{Bだけ残る}、{両方消える}の４通り
-・友人の数を固定すると、１人のとき1ターンで２通り、２ターンで３通り・・・Tターンで（T+1）通り
-・よって、友人の数を０から増やしていき、（T+1)＾友人の数がN以上となるところが答え
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class IntoTheMatrix {
-public: int takePills(int turns, int N) {
-int F=0;
-long long x=1;
-while(x&lt;(long long)N){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13066&amp;rd=16058 N種類のピルがあり、どれがマジックピルかを判別したい。 判別するのに友人に協力してもらうことができ、マジックピルを飲んだ友人は消えてしま
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2014-tco-round-3b---intothematrix/">Read more…</a>
@@ -166,37 +134,7 @@ while(x&lt;(long long)N){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13344&amp;rd=16060
-長方形のホールがあり、縦と横の長さがわかっている。
-また複数の長方形のボードが与えられ、それぞれのボードの縦と横の長さもわかっている。
-ホールを覆うように複数のボードをつなげるとき、必要な最小のボードの数を求める。
-ただし、ボードは重ねるようにしてつなげてもよいが、ホールにボードの角が覆われないようにする。
-解き方 
-・普通に考えるとかなりの場合の数がありそう。
-・なにか制約がないか例をあげてみる。
-・あるボードが使えるかどうかは、そのうち小さい１辺がボードのどちらか１辺よりも大きくないといけない。
-・これで使えるボードが選別できそう。
-・ただ、それでも色々なつなげ方がありそう。
-・角が覆われないようにする条件を満たすためには、ボードは縦一列、横一列のどちらかしか並べられない。
-・これであとは上記を満たす長さのうち降順に並べればよさそう。
-・System Failed
-・ホールについて、縦に並べるか横に並べるか、両方の場合の検討が必要だった
-・さらにボードについて、例外条件を見落としていた。
-ボードの縦横両方が１辺よりも大きければ大きい方を取る。
-そうでないとき、小さい方の辺が1辺より小さければ大きい方ととる。
-そのうえでつなげる方の辺以上の長さになればよい。
-・System　Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class RectangleCovering {
-public:
-int minimumNumber(int holeH, int holeW, vector&lt;int&gt; boardH, vector&lt;int&gt; boardW) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13344&amp;rd=16060 長方形のホールがあり、縦と横の長さがわかっている。 また複数の長方形のボードが与えられ、それぞれのボードの縦と横の長さもわかっている。 ホ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-629-div1-easy---rectanglecovering-/">Read more…</a>
@@ -216,30 +154,7 @@ int minimumNumber(int holeH, int holeW, vector&lt;int&gt; boardH, vector&lt;int&
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13284&amp;rd=16061
-エッジのコストがわかっている、無向グラフが与えられる。
-このとき、ノード間のコストが全て等しいサブグラフのうち、最も多いノード数を求める。
-解き方 
-・エッジの数＝ノード数N-1
-・ノードA－ノードB－ノードCを考えた時、ノードA-ノードCとなるペアは存在しない。
-・同じ距離の集合を考えた時、必ずハブとなるノードBが存在する。
-・全てのノードをハブと考えた時、ノードA-ノードBの距離をｄとすると
-ノードA-ノードCの距離が２ｄとなる集合のうち最大のものを求めればよい
-・ｎ＝１のときの答えは１
-・ｎ＝２のときの答えは２
-・ｎ＞＝２のとき答えは必ず２以上となる
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Egalitarianism3 {
-public: int maxCities(int n, vector&lt;int&gt; a, vector&lt;int&gt; b, vector&lt;int&gt; len) {
-if(n&lt;=2)return n;
-int g[n][n];
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13284&amp;rd=16061 エッジのコストがわかっている、無向グラフが与えられる。 このとき、ノード間のコストが全て等しいサブグラフのうち、最も多いノード数を求める
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-630-div1-easy---egalitarianism3-/">Read more…</a>
@@ -259,35 +174,7 @@ int g[n][n];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13393&amp;rd=16062
-N*Nのボードがあり、WかBの色が塗られている。
-１回の操作で１つの行の色をWかB一色にすることができる。
-このとき、全ての列について、同じ色がN/2より多く連続しないようにするための
-最小の操作回数を求める。
-解き方 
-同じ色がN/2より多く連続しない、というのがポイント。
-最悪のケースでは、N/2行とN/2+1行を別の色にすれば条件を満たすのでよいので２回で済む。
-よって、操作回数０回と１回の場合を全探索すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TaroJiroGrid {
-public:
-bool check(vector&lt;string&gt; g){
-int n=g.size();
-FORE(j,0,n){
-char prev=g[0][j];
-int cnt=1;
-FORE(i,1,n){
-if(g[i][j]==prev)cnt++;
-else{
-if(cnt&gt;n/2)return false;
-prev=g[i][j];
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13393&amp;rd=16062 N*Nのボードがあり、WかBの色が塗られている。 １回の操作で１つの行の色をWかB一色にすることができる。 このとき、全ての列について、同
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-631-div1-easy---tarojirogrid-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -307,31 +194,7 @@ prev=g[i][j];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13389&amp;rd=16075
-数字の数列があり、その数字を２進数にしたときの末尾の０の数のリストが与えられる。
-このとき、与えられた数列のうち１ずつ増加するサブ数列の数を求める。
-解き方 
-数列に法則がないか列挙してみる。
-すると、以下のように再帰の法則があるとわかる。
-１が現れるとき：０１０
-２が現れるとき：０１０２０１０
-３が現れるとき：０１０２０１０３０１０２０１０
-よって、与えられた数列の全てのサブ数列に対し、以下の法則が成り立つか
-再帰を用いてチェックすればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PotentialArithmeticSequence {
-public:
-bool can(vector&lt;int&gt; d){
-if(d.size()==1)return true;
-int p= d[0]==0 ? 0 : 1;
-int n=d.size();
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13389&amp;rd=16075 数字の数列があり、その数字を２進数にしたときの末尾の０の数のリストが与えられる。 このとき、与えられた数列のうち１ずつ増加するサブ数列の
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-632-div1-easy---potentialarithmeticsequence-/">Read more…</a>
@@ -351,39 +214,7 @@ int n=d.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-０からiまでの数字のカードが与えられる。
-各数字のカードは、cardsnum[i]枚だけ与えられる。
-このとき、カードを並べた時に左からみて増加列になっているサブ集合がＫだけ存在するようにしたい。
-サブ集合がＫとなるときの場合の数を求める。
-解き方 
-いくつか例を出して考えてみる。
-あるカードが並べられているとき、増加列が増えないときはその数字より小さいところに
-カードを加えたときになる。
-つまりカードの大きさを小さい順に走査したとき、増加列の数Ｌだけ、増加列が増えない置き方が存在する。
-現在のカードの枚数をＸとすると、組み合わせでＬ（Ｃ）Ｘ通りの置き方が存在する。
-このうちＫ枚だけ増加列が増えないように置くとすると、Ｌ（Ｃ)Ｋとなる。
-また増加列が増えるときは、現在置かれているカード枚数をＳＵＭとしたとき、置き方はＳＵＭ＋１通り、
-そこから上記の置き方を引くとＳＵＭ+1－（Ｌ－Ｘ）通りとなる。
-こちらは重複組み合わせになるので、ＳＵＭ＋１－（Ｌ－Ｘ）（Ｈ）（Ｘ－Ｋ）通りとなる。
-上記をｄｐにて実装する。
-また、重複組み合わせはpCq=p+q-1Cqに変換でき、
-組み合わせも以下の式よりｄｐで求めることができる。
-xCy=x-1Cy-1+x-1Cy
-例えば5C3のとき、5枚から3枚を選ぶ組み合わせになる。
-4C3は4枚から3枚選ぶ組み合わせになり、
-さらに残りで選ばれていない1枚＋4枚から2枚選ぶ組み合わせの合計に分解できる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int MOD=1000000007;
-int dp[40][1300];
-long long C[1300][1300];
-class LISNumber {
+			問題 ０からiまでの数字のカードが与えられる。 各数字のカードは、cardsnum[i]枚だけ与えられる。 このとき、カードを並べた時に左からみて
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-585-div1-middle---lisnumber-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -403,31 +234,7 @@ class LISNumber {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-1から2Nまでの数字を、２つの集合に分けたい。
-各集合にはＮ個の数字が入るようにし、それぞれ昇順でi番目の数字の差がＫ－１以下になるようにしたい。
-このとき、何通りの集合の分け方があるか求める。
-解き方 
-TopCoder SRM 605 Div1 Medium AlienAndSetDiv1を参考にさせていただきました。
-全ての数字がＡに使ったかＢに使ったか保存することはできないが、小さい順に処理をしていくということ、さらにその場合に現在の数からＫ－１まで小さい数までの情報を持っていればよい。
-Ｋは最大１０なので情報を持つことができる。
-あとはＤＦＳにして問題を解く。
-ｄｐの状態として「いままで選んだＡの数」「いままで選んだＢの数」「Ｋ－１まででＡを選んだ数」を持ち、値は場合の数とする。
-ＡはＮを超えた際に０を返すようにしてＡは無条件に足していく。
-Ｂは直前のＫ－１がＡである数が今まで選んだＡ－Ｂ個以上だと差がＫ以上になってしまうので、
-この条件を満たさないときにＢを足していけばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int N,K,mask;
-int dp[60][60][(1&lt;&lt;10)+1];
-class AlienAndSetDiv1 {
-public:
-int rec(int x,int y,int bits){
+			問題 1から2Nまでの数字を、２つの集合に分けたい。 各集合にはＮ個の数字が入るようにし、それぞれ昇順でi番目の数字の差がＫ－１以下になるように
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-605-div1-middle---alienandsetdiv1-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -447,29 +254,7 @@ int rec(int x,int y,int bits){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 ペアプログラミングのコンテストを開催する。
-各大学から複数の参加者がおり、２人組みのペアを作る。
-ペアを作るにあたってどの大学のペアかは関係ないが、同じ名前のもの同士がペアを組まないようにしたい。
-各大学iについて、参加者がcount[i]、一人目の名前がfirst[i]、
-二人目以降の名前は(first[i]+mult[i]+add[i])%Mとなる。
-このとき、最大となるペア数を求める。
-解き方 
-名前の数は10^9となり配列に保存できない。
-参加者数は5*10^7となりこちらも配列に保存できないので、メモリを確保できない。
-そのため、うまくメモリを使う方法を考える必要がある。
-今回、同じ名前が過半数を超えなければ、参加者数／２がペア数になることがわかる。
-そのため、過半数となる名前が存在するかどうかを判定するとよい。
-過半数となる人が存在する可能性があるかどうかを判定するアルゴリズムは、ボイヤー・ムーア法を参考にさせていただきました。
-一度回しただけではその人が過半数となる可能性があるだけで必ず過半数をとっているわけではないので、一度判定し、その後数を数えて確かめる必要がある。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysPairing {
-public: int getMax(int M, vector&lt;int&gt; count, vector&lt;int&gt; first, vector&lt;int&gt; mult, vector&lt;int&gt; add) {
+			問題 ペアプログラミングのコンテストを開催する。 各大学から複数の参加者がおり、２人組みのペアを作る。 ペアを作るにあたってどの大学のペアかは関係
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-606-div1-middle---ellyspairing-%E5%BE%A9%E7%BF%92/">Read more…</a>

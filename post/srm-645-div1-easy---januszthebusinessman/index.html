@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 645 DIV1 Easy - JanuszTheBusinessman" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13603&amp;rd=16277
-ホテルに複数の人が宿泊に訪れる。
-各ゲストについて到着日と出発日がわかっている。
-ここで、ホテルでプロモーションを行うことができ、プロモーションを行うとその日に宿泊している人はよいレビューを残してくれる。
-また、プロモーションを受けた人とそうでない人の宿泊日が重なると、プロモーションを受けていない人もよいレビューを残してくれる。
-このとき、すべての宿泊客がよいレビューを残してくれる最小のプロモーション開催日数を求める。
-解き方 
-条件を満たす集合の数を求めていけばよい。
-プロモーションを「直接」受けている人と宿泊日が重ならなければ
-よいレビューを残さないことに注意。
-まず、プロモーションの開催日を求める。
-このとき、一番早く出発する人からプロモーション日を求めていけば貪欲法で解ける。
-プロモーション日が決まったら、そのプロモーションを直接受けられる宿泊客のうち
-最も遅く出発する日を求める。
-その最も遅い出発日と重なる宿泊客は同じ集合にすることができ、
-このオペレーションの回数が最小のプロモーション開催日数となる。
-コード 
-class JanuszTheBusinessman {
-public: int makeGuestsReturn(vector&lt;int&gt; arrivals, vector&lt;int&gt; departures) {
-int n=arrivals.size();
-&nbsp; &nbsp; &nbsp; &nbsp; int ok[n];
-&nbsp; &nbsp; &nbsp; &nbsp; memset(ok,0,sizeof(ok));
-&nbsp; &nbsp; &nbsp; &nbsp; int ret=0;
-&nbsp; &nbsp; &nbsp; &nbsp; while(true){
-&nbsp; &nbsp; &nbsp; &nbsp; int promday=1e&#43;9;
-&nbsp; &nbsp; &nbsp; &nbsp; FORE(i,0,n)if(!ok[i])promday=min(promday,departures[i]);
-&nbsp; &nbsp; &nbsp; &nbsp; if(promday==1e&#43;9)break;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13603&amp;rd=16277 ホテルに複数の人が宿泊に訪れる。 各ゲストについて到着日と出発日がわかっている。 ここで、ホテルでプロモーションを行うことができ、プロモー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-645-div1-easy---januszthebusinessman/" />
 

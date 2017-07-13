@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 524 DIV1 Easy - MagicDiamonds (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11607&amp;rd=14549
-ｎ個のダイヤモンドを運びたい。
-１度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。
-このとき、消滅せずに全てのダイヤを運べる最小の回数を求める。
-解き方 
-ｎが最大１０＾１２のためＤＦＳ等では解くことができない。
-そこで法則がないかシミュレーションしてみる。
-すると、ｎ＝３（３回）のときを除いて、以下がわかる。
-①素数でない場合は、１回で運べる
-②素数の場合は、「素数ー１」個＆「１」個の２回で運べる
-あとは素数判定関数を作って実装するだけでよい。
-コード 
-class MagicDiamonds {
-public:
-bool isprimary(long long x){
-if(x==2)return true;
-if(x==1||x%2==0)return false;
-for(long long i=3;i*i&lt;=x;i&#43;=2)if(x%i==0)return false;
-return true;
-}
-long long minimalTransfer(long long n) {
-if(n==3)return 3;
-return isprimary(n) ? 2 : 1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11607&amp;rd=14549 ｎ個のダイヤモンドを運びたい。 １度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。 このとき、消滅せずに全てのダイヤを運" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/" />
 

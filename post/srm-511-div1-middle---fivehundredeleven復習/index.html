@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 511 DIV1 Middle - FiveHundredEleven　（復習×）" />
-<meta property="og:description" content="問題 
-０～５１１の間である数字の配列が与えられ、2人でゲームを行う。
-最初はFoxの番から始まり、次はToastmanの番になる。
-ゲームは配列から好きな数字を選び、現在までの数字とのORを取る。
-ORをとったときに５１１になるか、選ぶ数字がなくなった方の負けになる。
-数字の配列が与えられた時、どちらが勝つかを求める。
-解き方 
-配列数は５０なので全探索しようとすると50!で間に合わない。
-ORをした後は現在まで選んだ数字の順番は関係なくなるので、50C25としても間に合わない。
-そこで、終了条件について考える。
-終了条件は残りのどの配列を選んでも５１１になるか、選ぶものはないかなので、最後にＯＲとなった数の配列数が奇数ならFOX、偶数ならToastmanの勝ちになる。
-ＯＲとなった数の配列数は簡単に求められる。
-また、FOXはORとなった数が奇数になるように、Toastmanは偶数になるように選んでいくのが最適な戦略であるので、これをdpと再帰で書いてあげれば答えは求まる。
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[512][2],score[512];
-vector&lt;int&gt; cards;
-class FiveHundredEleven {
-public:
-int dfs(int x,int turn){
-if(dp[x][turn]!=-1)return dp[x][turn];
-int win=0,cnt=0;
-FORE(i,0,cards.size()){
-if(x!=(x|cards[i]) &amp;&amp; (x|cards[i])!=511 ){" />
+<meta property="og:description" content="問題 ０～５１１の間である数字の配列が与えられ、2人でゲームを行う。 最初はFoxの番から始まり、次はToastmanの番になる。 ゲームは配列か" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/" />
 

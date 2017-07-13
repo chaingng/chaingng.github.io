@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 422 DIV1 Easy - PrimeSoccer (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10033&amp;rd=13513
-・チームＡとＢがサッカーゲームを行う。
-・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。
-・各セグメントごと、各チームはあらかじめ与えられた確率でゴールする。
-・各セグメントごとのゴール数は０か１となる。
-このとき、ゲームが終わったときＡもしくはＢのスコアが素数となる確率を求める。
-解き方 
-２＾３６となるので全探索では解くことができない。
-ここで、最大が１８なので素数の数は７個に限られる。
-次に、ゴール数をｎ、Ａのゴールする確率がＰのときの確率は
-P^n * (1-P)^(18-n)*18Cnとなる。
-最後に、Aの素数となる確率とＢの素数となる確率で重複が発生する。
-Aのゴール数が素数となる確率をPa、Ｂのゴール数が素数となる確率をPbとすると
-Pa&#43;Pb-Pa*Pbが答えになる。
-コード 
-class PrimeSoccer {
-public:
-double calc(double x){
-int p[]={2,3,5,7,11,13,17};
-double ret=0.0;
-FORE(i,0,7){
-double tmp=1.0;
-for(double n=18.0;n&gt;(double)(18-p[i]);n--)tmp*=n;
-for(double n=1.0;n&lt;=(double)p[i];n&#43;&#43;)tmp/=n;
-tmp=tmp*pow(x,p[i])*pow(1.0-x,18-p[i]);
-ret&#43;=tmp;
-}
-return ret;
-}
-double getProbability(int skillOfTeamA, int skillOfTeamB) {
-double Pa=calc((double)skillOfTeamA/100.0);
-double Pb=calc((double)skillOfTeamB/100.0);
-return Pa&#43;Pb-Pa*Pb;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i !" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10033&amp;rd=13513 ・チームＡとＢがサッカーゲームを行う。 ・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。 ・各セグメントごと、各チームはあ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/" />
 

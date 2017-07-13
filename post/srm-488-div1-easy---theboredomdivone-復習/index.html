@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 488 DIV1 Easy - TheBoredomDivOne (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11193&amp;rd=14241
-友人が複数いて、既に飽きている友人と飽きていない友人がいる。
-毎回その中から２人を選んで、握手させる。握手した友人は飽きてしまう。
-このとき、全員が飽きるまでに要する回数を求める。
-解き方 
-通常のｄｐで解くと、数が変わらないときに無限ループになってしまうので工夫が必要。
-ここで、dp[x]をx人が飽きていないときの回数と定義する。
-p1は飽きていない人がｘ人のときから友人を選んで
-飽きていない人の数がx-1人になる確率、p2はx-2人になる確率とすると、
-dp[x]=1&#43;p0*dp[x]&#43;p1*dp[x-1]&#43;p2*dp[x-2]　と表わすことができる。
-式を変形すると、dp[x]=(1&#43;p1*dp[x-1]&#43;p2*dp[x-2])/(1-p0)となりdpで解くことができる。
-dpはそれまでの状態の数がわかれば通常は解くことができるが、
-今回のケースのように状態が変わらないケースが存在するときは等号式を作って変形させてあげる必要がある。
-コード 
-class TheBoredomDivOne {
-public: double find(int n, int m) {
-int t=n&#43;m;
-double dp[t&#43;1];
-memset(dp,0,sizeof(dp));
-FORE(i,1,m&#43;1){
-double sum=t*(t-1)/2.0;
-double p0=(t-i)*(t-i-1)/(sum*2.0);
-double p2=i*(i-1)/(sum*2.0);
-double p1=1.0-p0-p2;
-if(i==1)dp[i]=(1&#43;p1*dp[i-1]&#43;p2*0)/(1-p0);
-else dp[i]=(1&#43;p1*dp[i-1]&#43;p2*dp[i-2])/(1-p0);
-}
-return dp[m];
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11193&amp;rd=14241 友人が複数いて、既に飽きている友人と飽きていない友人がいる。 毎回その中から２人を選んで、握手させる。握手した友人は飽きてしまう。 このと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/" />
 

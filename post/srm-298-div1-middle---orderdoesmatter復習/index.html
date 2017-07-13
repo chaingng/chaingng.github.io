@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 298 DIV1 Middle - OrderDoesMatter　（復習○）" />
-<meta property="og:description" content="問題 
-複数のN[i]とM[i]の行列が与えられ、積の計算を行う。
-行列計算はAxB、CxDにおいてB=CであればAxDの値と等しくなる。
-また、計算結果の要素数はAxDの値となる。
-このとき、行列の計算順序を入れ替えることですべての積をひとつにまとめることができるのであれば、そのうち計算結果が最大の要素となる要素数を求める。
-まとめることができない場合はー１を返す。
-解き方 
-行列をひとつにまとめることができるか、ということなので
-つまり一筆書きができるか、オイラー路があるかと考えることができる。
-オイラー路があるかどうか、あるときにそのルートを求める方法は以下に解説されています。
-http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E3%82%B0%E3%83%A9%E3%83%95%2F%E5%B7%A1%E5%9B%9E%E8%B7%AF%2F%E6%9C%89%E5%90%91%E3%82%AA%E3%82%A4%E3%83%A9%E3%83%BC%E8%B7%AF
-今回は始点と終点を求められるようにコーディングする。
-まずは各数に対して出次数と入次数を計算し、その差の次数が２以上であれば一筆書きできない。
-また差の入次数１のノードが１つ、差の出次数１のノードが１つでなければ一筆書きできない。
-次に全てのノードをたどっていったとき、たどっていないノードがあれば一筆書きできない。
-最後に入次数１のノードが１つ、出次数１のノードが１つであればそのノードの積が答えになり、すべての次数が０であればどこからでもスタートできるので最大のＮ＊Ｎが答えになる。
-コーディングの際、配列の数は十分か注意する。
-（p[x][y]は実際の要素数を表わすので、p[60][60]ではなくp[1001][1001]）
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int p[1001][1001];
-int deg[1001],used[1001];
-class OrderDoesMatter {
-public:
-void f(int x){
-used[x]=1;" />
+<meta property="og:description" content="問題 複数のN[i]とM[i]の行列が与えられ、積の計算を行う。 行列計算はAxB、CxDにおいてB=CであればAxDの値と等しくなる。 また、計" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-298-div1-middle---orderdoesmatter%E5%BE%A9%E7%BF%92/" />
 

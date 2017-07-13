@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 504.5 DIV1 Easy - TheNumbersWithLuckyLastDigit" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11096&amp;rd=14514
-下１桁が４または７である数はラッキーナンバーとなる。
-ある整数Nが与えられたとき、その数をラッキーナンバーの和で表したい。
-ラッキーナンバーの数で表すことができれば必要な最小のラッキーナンバーの
-数を返す。
-表すことができなければー１を返す。
-解き方 
-チャレンジされやすそうな問題。
-小さい数で試してみると、２１以上の数はすべてラッキーナンバーの和で
-表すことができることがわかる。
-またラッキーナンバーの和で表すことができる場合、下２桁以外の数は
-いくらであっても必要な数は変わらない。
-よって作ることのできるすべての下３桁の数について試し、
-その最小のものが答えになる。
-単純に下２桁をMOD１００でとると１０２０のような場合にー１となってしまうので
-２桁の数で下１桁が４と７の数を引いたときの下２桁を求めれば
-すべての場合で確かめることができる。
-条件分岐のIF文をできるだけ少なくすることがシステムテストで落ちないためのコツ。
-コード 
-class TheNumbersWithLuckyLastDigit {
-public: int find(int n) {
-int dp[100];
-FORE(i,0,100)dp[i]=1e&#43;9;
-FORE(i,1,100){
-if(i%10==4||i%10==7)dp[i]=1;
-for(int j=4;i&#43;j&lt;100;j&#43;=10)dp[i&#43;j]=min(dp[i&#43;j],dp[i]&#43;1);
-for(int j=7;i&#43;j&lt;100;j&#43;=10)dp[i&#43;j]=min(dp[i&#43;j],dp[i]&#43;1);
-}
-int ret=1e&#43;9;
-ret=min(ret,dp[n%100]);
-for(int i=4;i&lt;100&amp;&amp;n-i&gt;=0;i&#43;=10)ret=min(ret,dp[(n-i)%100]&#43;1);
-for(int i=7;i&lt;100&amp;&amp;n-i&gt;=0;i&#43;=10)ret=min(ret,dp[(n-i)%100]&#43;1);
-return ret==1e&#43;9 ? -1 : ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11096&amp;rd=14514 下１桁が４または７である数はラッキーナンバーとなる。 ある整数Nが与えられたとき、その数をラッキーナンバーの和で表したい。 ラッキーナンバ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-504.5-div1-easy---thenumberswithluckylastdigit/" />
 

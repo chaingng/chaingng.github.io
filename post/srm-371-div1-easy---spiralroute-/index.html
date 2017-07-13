@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 371 DIV1 Easy - SpiralRoute ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8262&amp;rd=10787
-解き方 
-最大ケースの時は5000*5000なのでメモリが足りない。
-そのため、なにかしら工夫する必要がある。
-今回width,lengthともに3以上のときはwidth-2,lengh-2かつスタート位置(r,c)を(r&#43;1,c&#43;1)に
-したものと等しくなる。
-最後にwidth&lt;=2もしくはlength&lt;=2となるのでこれは簡単な場合分けで解ける。
-コード 
-class SpiralRoute {
-public: vector&lt;int&gt; thronePosition(int width, int length) {
-int r=0,c=0;
-while(width&gt;=3 &amp;&amp; length&gt;=3){
-width-=2,length-=2;
-r&#43;&#43;,c&#43;&#43;;
-}
-if(length==1)r&#43;=width-1;
-else if(length==2)c&#43;&#43;;
-else if(width==1)c&#43;=length-1;
-else c&#43;&#43;;
-vector&lt;int&gt; ans(2);
-ans[0]=r,ans[1]=c;
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8262&amp;rd=10787 解き方 最大ケースの時は5000*5000なのでメモリが足りない。 そのため、なにかしら工夫する必要がある。 今回width,lengthと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-371-div1-easy---spiralroute-/" />
 

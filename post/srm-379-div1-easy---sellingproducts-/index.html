@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 379 DIV1 Easy - SellingProducts ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8440&amp;rd=10800
-解き方 
-一見すべての価格について調べる必要があり、10^6なのでそれでも解けそう。
-ただし少し考えると各顧客の最大購入価格が一番利益を得ることができる選び方なので
-すべての最大購入価格のうち、最も利益の出るものが答えになる。
-コード 
-class SellingProducts {
-public: int optimalPrice(vector&lt;int&gt; price, vector&lt;int&gt; cost) {
-int n=price.size();
-int profit=0,idx=0;
-FORE(i,0,n){
-int cur=0;
-FORE(j,0,n)if(price[i]&lt;=price[j] &amp;&amp; price[i]&gt;cost[j]){
-cur&#43;=price[i]-cost[j];
-}
-if(cur&gt;=0 &amp;&amp; (profit&lt;cur || (profit==cur &amp;&amp; price[idx]&gt;price[i]) )){
-profit=cur;
-idx=i;
-}
-}
-return profit==0 ? 0 : price[idx];
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8440&amp;rd=10800 解き方 一見すべての価格について調べる必要があり、10^6なのでそれでも解けそう。 ただし少し考えると各顧客の最大購入価格が一番利益を得る" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-379-div1-easy---sellingproducts-/" />
 

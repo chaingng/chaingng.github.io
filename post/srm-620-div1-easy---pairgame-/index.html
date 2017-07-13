@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 620 DIV1 Easy - PairGame (××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13142&amp;rd=15853
-・(x,y)のペアを考える。
-・このペアは(x&#43;y,y)もしくは（x,x&#43;y）のペアに変換することができる。
-・(a,b),(c,d)のペアが与えられたとき、どちらのペアも作ることのできるペア(x,y)のうち
-もっともx&#43;yが大きくなるときのx&#43;yの値を求める。
-解き方 
-・全探索は難しそう。
-・なにか法則を見つける必要がありそうだが。。
-・サンプルをみたとき、(15,4)→(11,4)→(7,4)となるのでなにかありそうだが
-&nbsp;うまく見つからなく断念。
-→他の人のコードをみてみる。
-・サンプルから、(a,b)でa&gt;=bのときは(a-b,b)から遷移しなく、
-a&lt;bのときは(a,b-a)からしか遷移しないことがわかる。
-・よって、答えである(a,b),(c,d)をそれぞれ遷移させ、共通するもののうち
-最大となるペアの和が答えになる。
-反省：問題文からもっといろいろ紙に整理してみるのが足りていないと実感。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i=(c).begin(); i!=(c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PairGame {
-public: int maxSum(int a, int b, int c, int d) {
-set&lt;pair&lt;int,int&gt; &gt; p1,p2;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13142&amp;rd=15853 ・(x,y)のペアを考える。 ・このペアは(x&#43;y,y)もしくは（x,x&#43;y）のペアに変換することができる。 ・(a,b),(c,d)のペ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-620-div1-easy---pairgame-/" />
 

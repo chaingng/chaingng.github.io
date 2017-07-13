@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 636 DIV1 Easy - ChocolateDividingEasy (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13497&amp;rd=16079
-１＊１のセルが組み合わされた長方形のチョコレートケーキがある。
-各セルごとにおいしさの値が与えられる。
-このケーキを横に２つ、縦に２つ切って９つにわける。
-このとき、分けたかけらのうちの最小のおいしさの値が最大となる値を求める。
-解き方 
-・計算量の見積もりを誤ってしまった。
-・縦に２つ、横に２つなので50C2*50C2＝1.5*10^6ぐらい。
-・分けたときの各かけらの値を累積和の差として求めれば間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int b[100][100];
-int f[100][100];
-class ChocolateDividingEasy {
-public: int findBest(vector&lt;string&gt; chocolate) {
-int n=chocolate.size();
-int m=chocolate[0].size();
-FORE(i,1,n&#43;1)FORE(j,1,m&#43;1)b[i][j]=chocolate[i-1][j-1]-&#39;0&#39;;
-FORE(i,0,n&#43;1)FORE(j,0,m&#43;1){
-if(i==0||j==0)f[i][j]=0;
-else{" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13497&amp;rd=16079 １＊１のセルが組み合わされた長方形のチョコレートケーキがある。 各セルごとにおいしさの値が与えられる。 このケーキを横に２つ、縦に２つ切っ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-636-div1-easy---chocolatedividingeasy-/" />
 

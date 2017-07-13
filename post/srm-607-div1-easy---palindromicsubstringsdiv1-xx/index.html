@@ -7,50 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 607 DIV1 Easy - PalindromicSubstringsDiv1 xx" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12964&amp;rd=15840
-ある文字列が与えられる。
-文字列はアルファベットと、？からなり、？には任意の文字を入れることができる。
-？に任意の文字が入れられたとき、
-その文字列中の回文であるサブ文字列の数の期待値を求める。
-解き方 
-文字列は最大５０００であるため、？の全ての場合に対して期待値を求めては間に合わない。
-ここで回文の判定については、その両端の２つの文字列だけを見ればよいことがわかる。
-ある文字列が回文であれば、その両端の文字の判定結果をかけていけば回文の判定は時間内に間に合う。
-データ構造としてdp[i][j]をi番目からj番目までの文字列、と定義することで
-計算量は最大で5000*5000/2になるので時間内に解くことができる。
-コード 
-double dp[5010][5010];
-string s;
-class PalindromicSubstringsDiv1 {
-public:
-double calc(int i,int j){
-if(s[i]!=&#39;?&#39;&amp;&amp;s[j]!=&#39;?&#39;) return s[i]==s[j] ? 1.0 : 0.0;
-return 1.0/26.0;
-}
-double expectedPalindromes(vector&lt;string&gt; S1, vector&lt;string&gt; S2) {
-double ret=0.0;
-memset(dp,0,sizeof(dp));
-s=&#34;&#34;;
-FORE(i,0,S1.size())s&#43;=S1[i];
-FORE(i,0,S2.size())s&#43;=S2[i];
-int n=s.size();
-FORE(i,0,n){
-dp[i][i]=1.0;
-ret&#43;=dp[i][i];
-}
-FORE(i,0,n-1){
-dp[i][i&#43;1]=calc(i,i&#43;1);
-ret&#43;=dp[i][i&#43;1];
-}
-FORE(len,3,n&#43;1){
-for(int i=0;i&#43;len-1&lt;n;i&#43;&#43;){
-int j=i&#43;len-1;
-dp[i][j]=dp[i&#43;1][j-1]*calc(i,j);
-ret&#43;=dp[i][j];
-}
-}
-return ret;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12964&amp;rd=15840 ある文字列が与えられる。 文字列はアルファベットと、？からなり、？には任意の文字を入れることができる。 ？に任意の文字が入れられたとき、 そ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-607-div1-easy---palindromicsubstringsdiv1-xx/" />
 

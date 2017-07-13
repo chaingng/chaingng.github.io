@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 518 DIV1 Easy - LargestSubsequence （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11471&amp;rd=14543
-ある文字列が与えられる。
-その文字からいくつかの文字を削除したものがそのサブ文字列と定義される。
-このとき、辞書順で最も降順となるサブ文字列を求める。
-解き方 
-現在の文字列で最も降順のアルファベットがサブ文字列の左側にくる。
-次に、選ばれたアルファベット以降の位置から上記の文字を探す。
-この操作を繰り返すことで答えが求められる。
-コード 
-class LargestSubsequence {
-public: string getLargest(string s) {
-string ret;
-int cur=0;
-while(cur!=s.size()&#43;1){
-int tmp=cur;
-FORE(i,cur&#43;1,s.size())if(s[i]&gt;s[tmp])tmp=i;
-ret&#43;=s[tmp];
-cur=tmp&#43;1;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11471&amp;rd=14543 ある文字列が与えられる。 その文字からいくつかの文字を削除したものがそのサブ文字列と定義される。 このとき、辞書順で最も降順となるサブ文字" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-518-div1-easy---largestsubsequence-%E5%BE%A9%E7%BF%92/" />
 

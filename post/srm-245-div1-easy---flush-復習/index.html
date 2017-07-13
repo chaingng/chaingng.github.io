@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 245 DIV1 Easy - Flush (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4487&amp;rd=7220
-４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。
-Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlushスコアになる。
-このとき、Flushスコアの期待値を求める。
-解き方 
-カードの種類は４種類、カード数は１３枚なので、
-あり得る全てのカードの取り方について全探索すればよい。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Flush {
-public:
-double f(int x,int y){
-double ret=1.0;
-for(int i=y;i&gt;y-x;i--)ret*=i;
-for(int i=x;i&gt;0;i--)ret/=i;
-return ret;
-}
-double size(vector&lt;int&gt; s, int number) {
-double ret=0.0;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4487&amp;rd=7220 ４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。 Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlus" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/" />
 

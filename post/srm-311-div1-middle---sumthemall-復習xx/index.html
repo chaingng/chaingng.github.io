@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 311 DIV1 Middle - SumThemAll （復習xx）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6430
-０以上の整数lowerBoundとupperBoundが与えられる。
-ここである数字xのスコアについては、xの各桁の数字の和で表わされる。
-このときlowerBoundからupperBoundまでの全ての数字のスコアの和求める。
-解き方 
-数字は2*10^9であるため全探索では解けない。
-例として、２けたの数字10*x&#43;yを考える。
-ここでyが9のとき、数字のスコアは以下の和であることがわかる。
-１桁目：45(0~9の和)*(x&#43;1)
-２桁目：(1~xの各数字*10の和）
-次に桁数がnのときは(1~xの各数字)について、上記の再帰関数で求めればよいことが分かる。
-またyが8以下のときは、例えば18のときは19のスコアから1&#43;9（各数字の和）を引けばよいので、yが9の場合に変換することができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SumThemAll {
-public:
-long long sum(long long x){
-if(x&lt;10)return x;
-return sum(x/10)&#43;x%10;
-}
-long long calc(long long x){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6430 ０以上の整数lowerBoundとupperBoundが与えられる。 ここである数字xのスコアについては、xの各桁の数字の和で表わされる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-311-div1-middle---sumthemall-%E5%BE%A9%E7%BF%92xx/" />
 

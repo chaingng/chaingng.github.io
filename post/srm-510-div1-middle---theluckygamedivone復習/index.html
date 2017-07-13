@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 510 DIV1 Middle - TheLuckyGameDivOne　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11463
-4と７からなる数字をluckynumberと呼ぶ。
-数字の範囲a&lt;=x&lt;=bであるa,bが最初に与えられ、JohnとBrusでゲームを行う。
-最初はJohnのターンであり、jLenの長さだけ連続した数字を選ぶ。Johnはできるだけ最終的にluckynumberが多く含むようにしたい。
-次はBrusのターンであり、Johnが選んだ数字からbLenの長さだけ連続した数字を選ぶ。Brusはできるだけluckynumberを少なく含むようにしたい。
-このとき、Johnが得ることのできるもっとも多いluckynumberの数を求める。
-解き方 
-数の範囲が10^10なので全探索では解けない。
-ここで、luckynumberに着目するとその数は2^11になるので、luckynumberをからめて考えることができれば解けるようになる。
-次に、luckynumberとからめてどうすればJohnができるだけ多くの数字を得られて、Brusができるだけ少ない選び方ができるかを考える。
-Johnについてはluckynumber-blen&#43;1から初めて数字を取り始めれば最も多く数字をとることができる。
-Brusはluckynumber&#43;1から初めて数字を取り始めれば最も少なく数字をとることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-long long blen;
-vector&lt;long long&gt; luckynum;
-int n;
-class TheLuckyGameDivOne {
-public:
-void getnum(long long a,long long b,long long x){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11463 4と７からなる数字をluckynumberと呼ぶ。 数字の範囲a&lt;=x&lt;=bであるa,bが最初に与えられ、JohnとBrus" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-510-div1-middle---theluckygamedivone%E5%BE%A9%E7%BF%92/" />
 

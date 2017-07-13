@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM567 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①２つの整数ＮとＭが与えられる。
-②１＜＝Ａ＜＝Ｎ、１＜＝Ｂ＜＝Ｍである、(sqrt(A)&#43;sqrt(B))^2が整数であるＸが存在するとき、ＡとＢの組み合わせの数を返す。
-＜解き方＞
-Ａが１のとき、Ｂ＝１，４，９，１６・・・
-Ａが２のとき、Ｂ＝２＊１、２＊９、２＊１６・・・であることがわかります。
-そのため、Ａを１からＮまでループさせ、
-ＢをＡ＊１＾２、Ａ＊２＾２・・・と繰り返して数を足してあげて
-最後にその和をかえしてあげればよいです。
-Ｏ（８００００＊９００＝７２００００００＝７＊１０＾７）なので微妙。
-もう少し計算量を削減するには、
-Ａが２で選ばれるＢの数と、
-Ａが２＊２＾２、２＊３＾２・・・で選ばれるＢの数は一緒であることが分かります。
-そこでＡもまとめて計算することで計算量が削減できます。
-おおまかですがＯ（９００＊９００＝８１００００＝８＊１０＾５）ぐらい。
-＜コード＞
-class TheSquareRootDilemma {
-public: int countPairs(int N, int M) {
-vector&lt;int&gt; check(77778,0);
-int ans=0;
-FORE(i,1,M&#43;1){
-if(check[i]==1)continue;
-int x=0;
-for(int j=1;j*j*i&lt;=M;j&#43;&#43;){
-if(check[i*j*j]==1)continue;
-check[i*j*j]=1;
-x&#43;&#43;;
-}
-int y=0;
-for(int j=1;j*j*i&lt;=N;j&#43;&#43;)y&#43;&#43;;
-ans&#43;=(x*y);
-}
-return ans;
-}
-};
- " />
+<meta property="og:description" content="＜問題＞ ①２つの整数ＮとＭが与えられる。 ②１＜＝Ａ＜＝Ｎ、１＜＝Ｂ＜＝Ｍである、(sqrt(A)&#43;sqrt(B))^2が整数であるＸが存在す" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm567-div2--level2/" />
 

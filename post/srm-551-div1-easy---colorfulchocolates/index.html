@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 551 DIV1 Easy - ColorfulChocolates" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12137&amp;rd=15173
-解き方 
-各アルファベットごとに最大の連続数を考え、最大のものを求める。
-あるアルファベットについて最大の連続数を考えるとき、
-どれか１つのアルファベットの位置は変わらないことを利用する。
-よって、すべての位置を起点にして同じアルファベット結合させ、
-そのスワップ回数がmaxswap数以下のときの連続数をそれぞれとっていけばよい。
-コード 
-class ColorfulChocolates {
-public: int maximumSpread(string chocolates, int maxSwaps) {
-int n=chocolates.size();
-int ret=0;
-for(char ch=&#39;A&#39;;ch&lt;=&#39;Z&#39;;ch&#43;&#43;){
-vector&lt;int&gt; vx;
-FORE(i,0,n)if(ch==chocolates[i])vx.push_back(i);
-FORE(i,0,vx.size()){
-vector&lt;int&gt; tmp;
-FORE(j,0,vx.size())tmp.push_back(abs(vx[i]-vx[j]-(i-j)));
-sort(all(tmp));
-int sum=0,num=0;
-FORE(j,0,vx.size()){
-if(sum&#43;tmp[j]&lt;=maxSwaps){
-num&#43;&#43;;
-sum&#43;=tmp[j];
-}
-}
-ret=max(ret,num);
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12137&amp;rd=15173 解き方 各アルファベットごとに最大の連続数を考え、最大のものを求める。 あるアルファベットについて最大の連続数を考えるとき、 どれか１つのア" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-551-div1-easy---colorfulchocolates/" />
 

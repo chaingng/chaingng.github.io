@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 432 DIV1 Easy - LampsGrid ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10154&amp;rd=13694
-１と０からなるランプが複数並べられている。
-各ランプは１行から成り、すべてのランプが一列に並べられている。
-ランプの値がすべて１となったとき、そのランプは点灯する。
-プレイヤーはK回、一つの列を選んでそのすべての値を反転させる。
-このとき、点灯するランプが最大となるときのそのランプ数を求める。
-解き方 
-０１の並びがまったく同じランプだけが、最終的に同時に点灯する可能性がある。
-すべての並びのランプについて、その０の値とKの値によってすべて点灯させられるか
-確かめればよい。
-コード 
-class LampsGrid {
-public: int mostLit(vector&lt;string&gt; initial, int K) {
-int n=initial.size(),m=initial[0].size();
-int ret=0;
-FORE(i,0,n){
-int cnt=0,num=0;
-FORE(j,0,n)if(initial[i]==initial[j])cnt&#43;&#43;;
-FORE(j,0,m)if(initial[i][j]==&#39;0&#39;)num&#43;&#43;;
-if(K&gt;=num &amp;&amp; (K-num)%2==0)ret=max(ret,cnt);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10154&amp;rd=13694 １と０からなるランプが複数並べられている。 各ランプは１行から成り、すべてのランプが一列に並べられている。 ランプの値がすべて１となったと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-432-div1-easy---lampsgrid-/" />
 

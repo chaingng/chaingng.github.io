@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 571 DIV1 Easy - FoxAndMp3 (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12436&amp;rd=15491
-１～Ｎまでの数字が付けられたN.mp3ファイルを昇順に並べる。
-Ｎが５０を超える場合は、最初の５０個の昇順に並べられたファイル数を返す。
-解き方 
-Ｎが１０＾９のため全てのファイルを出力してからソートしては求めることができない。
-そのため規則性を見つける必要がある。
-Ｎ＝１０１８のとき、
-最初は１から始め，
-１０，１００，１０００と「１０をかけ、Ｎ以下ならその数」になる。
-次は１００１、１００２、１００９、１０１と「１を足していき、１０で割ってＮ以下ならその数」となる。
-また、１０１０、、、１０１８、１０２とＮを超えた場合は「１０で割って１を足し、Ｎ以下ならその数」になる。
-最後に、１９１、、１９９、２、と１０で割りつづけられるなら割り続ける必要がある。
-つまり、
-①１０をかけ、Ｎ以下ならその数
-②Ｎより大きい場合、１を足して１０の倍数もしくはＮと等しいなら、１０で割れなくなるまで割り続けた数に１を足した数なる。
-これをmin(N,50)まで操作してあげたものが答えになる。
-コード 
-class FoxAndMp3 {
-public: vector&lt;string&gt; playList(int n) {
-long long cur=1,num=1;
-vector&lt;string&gt; ans(min(n,50));
-FORE(num,0,min(50,n)){
-stringstream out;
-out&lt;&lt;cur&lt;&lt;&#34;.mp3&#34;;
-ans[num]=out.str();
-if(cur*10&lt;=n)cur*=10;
-else{
-while(cur%10==9 || cur==n)cur/=10;
-cur&#43;&#43;;
-}
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12436&amp;rd=15491 １～Ｎまでの数字が付けられたN.mp3ファイルを昇順に並べる。 Ｎが５０を超える場合は、最初の５０個の昇順に並べられたファイル数を返す。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-571-div1-easy---foxandmp3-%E5%BE%A9%E7%BF%92/" />
 

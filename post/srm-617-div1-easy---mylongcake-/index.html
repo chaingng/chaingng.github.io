@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 617 DIV1 Easy - MyLongCake (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13137&amp;rd=15850
-・ある長さｎのケーキがある。
-・人が何人訪れるかわかっていないが、ｎの約数の人数だけ人が訪れる可能性がある。
-・１人人が現れた時、あらかじめ分けられたケーキのうち残りの最初から好きな数だけ
-分け与えることができる。
-・このとき、何人訪れた場合でもすべての人に同じ長さだけ均等にケーキをわけられるような
-ケーキの分割数を求める。
-解き方 
-・訪れる可能性のある人数全てに対し等分にケーキを切り、最後に残ったケーキの分割数が
-答えになりそう。
-・求め方として、すべての約数に対しケーキを分ける箇所すべてを答えに保存して
-最後に重複なしの数を返せばよい。
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class MyLongCake {
-public:
-int cut(int n) {
-set&lt;int&gt; ans;
-FORE(i,1,n)if(n%i==0){
-int d=n/i;
-for(int j=d;j&lt;=n;j&#43;=d)ans.insert(j);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13137&amp;rd=15850 ・ある長さｎのケーキがある。 ・人が何人訪れるかわかっていないが、ｎの約数の人数だけ人が訪れる可能性がある。 ・１人人が現れた時、あらかじ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-617-div1-easy---mylongcake-/" />
 

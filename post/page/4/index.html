@@ -77,26 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6125&amp;rd=11123
-解き方 
-問題分の通りに実装すればよい。
-ただし、c/tの計算はそれぞれc,tをかけてから割り算を行うとオーバーフローするので
-c/tを毎回掛けて計算する必要がある。
-コード 
-class ApproximateDivision {
-public: double quotient(int a, int b, int terms) {
-int t=1;
-while(t&lt;b)t*=2;
-int c=t-b;
-double ret=0,add=1/(double)t;
-FORE(i,0,terms){
-ret+=add;
-add*=c/(double)t;
-}
-return ret*a;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6125&amp;rd=11123 解き方 問題分の通りに実装すればよい。 ただし、c/tの計算はそれぞれc,tをかけてから割り算を行うとオーバーフローするので c/tを毎回掛
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-389-div1-easy---approximatedivision-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -113,34 +97,10 @@ return ret*a;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8589&amp;rd=11124
-解き方 
-そのままの整数でシミュレーションすると計算量が間に合わないが
-MODにして計算してあげるとシンプルになる。
-MOD後の数を保存しておき、すでに現れたMOD後の数が現れると
-ループしているので−１となる。
-コード 
-class ConcatenateNumber {
-public: int getSmallest(int number, int k) {
-long long p=1,tmp=number;
-while(tmp&gt;0){
-tmp/=10;
-p*=10;
-}
-p%=k;
-set&lt;int&gt; s;
-int cnt=1,cur=number%k,add=number%k;
-while(s.find(cur)==s.end()){
-if(cur==0)return cnt;
-s.insert(cur);
-add=(p*add)%k;
-cur=(cur+add)%k;
-cnt++;
-}
-return -1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8589&amp;rd=11124 解き方 そのままの整数でシミュレーションすると計算量が間に合わないが MODにして計算してあげるとシンプルになる。 MOD後の数を保存してお
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-390-div1-easy---concatenatenumber-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -157,42 +117,10 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8175&amp;rd=11125
-解き方 
-全ての文字について、可能な限り昇順になるように変換する。
-変換後、一致する文字列群について組み合わせを計算してあげればよい。
-コード 
-class IsomorphicWords {
-public: int countPairs(vector&lt;string&gt; words) {
-int n=words.size();
-FORE(i,0,n){
-char ch='a';
-FORE(j,0,words[i].size()){
-if(words[i][j]==ch)ch++;
-else if(words[i][j]&gt;ch){
-char prev=words[i][j];
-FORE(k,j,words[i].size()){
-if(words[i][k]==ch)words[i][k]=prev;
-else if(words[i][k]==prev)words[i][k]=ch;
-}
-ch++;
-}
-}
-}
-int ret=0;
-int used[n];
-memset(used,0,sizeof(used));
-FORE(i,0,n)if(used[i]==0){
-int cnt=0;
-FORE(j,i,n)if(used[j]==0 &amp;&amp; words[i]==words[j]){
-used[j]=1,cnt++;
-}
-ret+=cnt*(cnt-1)/2;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8175&amp;rd=11125 解き方 全ての文字について、可能な限り昇順になるように変換する。 変換後、一致する文字列群について組み合わせを計算してあげればよい。 コード
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-391-div1-easy---isomorphicwords-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -209,47 +137,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8706&amp;rd=11126
-解き方 
-仮の文字列を作る。
-＊にあたる共通の部分は？で埋めて、s1とs2について同じ長さの２つの文字列を作る。
-各文字について一致していればその文字列は有効になるのでそれが答えになる。
-そのような文字列が存在しなければimpossibleとなる。
-コード 
-class TwoStringMasks {
-public: string shortestCommon(string s1, string s2) {
-for(int l1=0;l1&lt;=200;l1++){
-int l2=s1.size()+l1-s2.size();
-if(l2&lt;0)continue;
-string p1="";
-FORE(i,0,s1.size()){
-if(s1[i]=='*')FORE(j,0,l1)p1+='?';
-else p1+=s1[i];
-}
-string p2="";
-FORE(i,0,s2.size()){
-if(s2[i]=='*')FORE(j,0,l2)p2+='?';
-else p2+=s2[i];
-}
-string ans="";
-int valid=1;
-FORE(i,0,p1.size()){
-char ch;
-if(p1[i]=='?')ch=p2[i];
-else if(p2[i]=='?')ch=p1[i];
-else if(p1[i]==p2[i])ch=p1[i];
-else{
-valid=0;
-break;
-}
-ans+=ch;
-}
-if(valid)return ans;
-}
-return "impossible";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8706&amp;rd=11126 解き方 仮の文字列を作る。 ＊にあたる共通の部分は？で埋めて、s1とs2について同じ長さの２つの文字列を作る。 各文字について一致していれば
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-392-div1-easy---twostringmasks-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -266,34 +157,7 @@ return "impossible";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8607&amp;rd=11127
-解き方 
-問題分の通り実装し、収束するまで繰り返せば良い。
-コード 
-class InstantRunoffVoting {
-public: int winner(vector&lt;string&gt; voters) {
-int n=voters.size(),m=voters[0].size();
-int used[10],v[10];
-memset(used,0,sizeof(used));
-while(1){
-memset(v,0,sizeof(v));
-int finish=1;
-FORE(i,0,m)if(used[i]==0)finish=0;
-if(finish)break;
-FORE(i,0,n){
-int idx=0;
-while(used[voters[i][idx]-'0']==1)idx++;
-v[voters[i][idx]-'0']++;
-}
-FORE(i,0,m)if(v[i]&gt;n*0.5)return i;
-int mx=100;
-FORE(i,0,m)if(used[i]==0)mx=min(mx,v[i]);
-FORE(i,0,m)if(v[i]==mx)used[i]=1;
-}
-return -1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8607&amp;rd=11127 解き方 問題分の通り実装し、収束するまで繰り返せば良い。 コード class InstantRunoffVoting { public: int winner(vector&lt;string&gt; voters) { int n=voters.size(),m=voters[0].size(); int used[10],v[10]; memset(used,0,sizeof(used)); while(1){ memset(v,0,sizeof(v)); int finish=1; FORE(i,0,m)if(used[i]==0)finish=0; if(finish)break; FORE(i,0,n){ int idx=0; while(used[voters[i][idx]-'0']==1)idx++; v[voters[i][idx]-'0']++; } FORE(i,0,m)if(v[i]&gt;n*0.5)return i; int mx=100; FORE(i,0,m)if(used[i]==0)mx=min(mx,v[i]); FORE(i,0,m)if(v[i]==mx)used[i]=1; } return -1; } };
 		</div>
 	</div>
 </article>
@@ -310,39 +174,10 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8594&amp;rd=11128
-解き方 
-文字を消す回数0〜ｎ回までそれぞれについて、
-最も少ない文字を消す回数と頻出する回数すべての場合について全探索する。
-O（50*50*50log50=1.25*10^6*log50）で間に合う。
-コード 
-class RoughStrings {
-public: int minRoughness(string s, int n) {
-int num[26]={};
-FORE(i,0,s.size())num[s[i]-'a']++;
-vector&lt;int&gt; vx;
-FORE(i,0,26)if(num[i]&gt;0)vx.push_back(num[i]);
-sort(all(vx));
-int ret=1e+9;
-for(int sum=0;sum&lt;=n;sum++)for(int right=0;right&lt;=sum;right++){
-vector&lt;int&gt; cur=vx;
-FORE(j,0,right){
-int pos=0;
-while(cur[pos]==0)pos++;
-cur[pos]--;
-}
-FORE(j,right,sum){
-cur[cur.size()-1]--;
-sort(all(cur));
-}
-int idx=0;
-while(cur[idx]==0)idx++;
-ret=min(ret,cur[cur.size()-1]-cur[idx]);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8594&amp;rd=11128 解き方 文字を消す回数0〜ｎ回までそれぞれについて、 最も少ない文字を消す回数と頻出する回数すべての場合について全探索する。 O（50*50
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-394-div1-easy---roughstrings-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -359,26 +194,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8464&amp;rd=11129
-解き方 
-以下の３通りのうち、最小のものが答えになる。
-１．すべて直線で移動（直線移動のコストが小さい時に有効）
-２．できるだけ斜めに移動して、残りを直線で移動（斜め移動のコストが小さいときに有効）
-３．最短距離で移動（どちらの移動のコストも同程度のときに有効）
-コード 
-class StreetWalking {
-public: long long minTime(int X, int Y, int walkTime, int sneakTime) {
-long long ret=(X+Y)*(long long)walkTime;
-long long wnum=max(X,Y)-min(X,Y);
-long long snum=min(X,Y);
-ret=min(ret,snum*sneakTime+wnum*walkTime);
-snum+=(wnum/2)*2;
-wnum%=2;
-ret=min(ret,snum*sneakTime+wnum*walkTime);
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8464&amp;rd=11129 解き方 以下の３通りのうち、最小のものが答えになる。 １．すべて直線で移動（直線移動のコストが小さい時に有効） ２．できるだけ斜めに移動して
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-395-div1-easy---streetwalking-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -395,35 +214,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8584&amp;rd=12168
-解き方 
-間隔が１からmaxPeriodについてそれぞれ最小の変換コストを検索し、
-そのうち最小のものが答えになる。
-コード 
-class DNAString {
-public: int minChanges(int maxPeriod, vector&lt;string&gt; dna) {
-string str=accumulate(all(dna),string());
-int n=str.size();
-int ret=1e+9;
-for(int p=1;p&lt;=maxPeriod;p++){
-int cost=0;
-for(int i=0;i&lt;p;i++){
-int a=0,t=0,g=0,c=0;
-for(int j=i;j&lt;n;j+=p){
-if(str[j]=='A')a++;
-else if(str[j]=='T')t++;
-else if(str[j]=='G')g++;
-else c++;
-}
-int mx=max(max(a,t),max(g,c));
-cost+=a+t+c+g-mx;
-}
-ret=min(ret,cost);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8584&amp;rd=12168 解き方 間隔が１からmaxPeriodについてそれぞれ最小の変換コストを検索し、 そのうち最小のものが答えになる。 コード class DNAString { public: int minChanges(int maxPeriod, vector&lt;string&gt; dna)
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-396-div1-easy---dnastring-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -440,33 +234,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8758&amp;rd=12171
-解き方 
-zの探索を枝刈りすることによって、ほぼx,yのすべての組み合わせだけ調べればよいので
-O(10^6)で全探索可能。
-調べる範囲として、NGの値の上限は1000のため取りうる値は1001まで
-調べる必要がある。上限値の設定によるエラーケースに注意。
-コード 
-class AvoidingProduct {
-public: vector&lt;int&gt; getTriple(vector&lt;int&gt; a, int n) {
-set&lt;int&gt; s;
-FORE(i,0,a.size())s.insert(a[i]);
-vector&lt;int&gt; ans(3,1001);
-for(int x=1;x&lt;=1001;x++)if(s.find(x)==s.end()){
-for(int y=x;y&lt;=1001;y++)if(s.find(y)==s.end()){
-for(int z=y;z&lt;=1001;z++)if(s.find(z)==s.end()){
-int cur=abs(ans[0]*ans[1]*ans[2]-n);
-if(cur&gt;abs(x*y*z-n)){
-ans[0]=x,ans[1]=y,ans[2]=z;
-}
-if(abs(x*y*z-n)&gt; abs(x*y*(z-1)-n))break;
-}
-}
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8758&amp;rd=12171 解き方 zの探索を枝刈りすることによって、ほぼx,yのすべての組み合わせだけ調べればよいので O(10^6)で全探索可能。 調べる範囲として
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-399-div1-easy---avoidingproduct-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -483,38 +254,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8157&amp;rd=12170
-解き方 
-O（4! * 3^3）なので全探索可能。
-ｘ２つ、ｙ２つの全ての並べ方、＋、ー、＊の全ての並び方に対して
-valと一致するものの数を数えれば良い。
-next_permutationを使えば重複しない。
-コード 
-class CountExpressions {
-public:
-int calc(int x,int y,int op){
-if(op==0)return x+y;
-if(op==1)return x-y;
-return x*y;
-}
-int calcExpressions(int x, int y, int val) {
-vector&lt;int&gt; num(4,0);
-num[0]=x,num[1]=x,num[2]=y,num[3]=y;
-sort(all(num));
-int ret=0;
-do{
-int cur=0;
-FORE(i,0,3)FORE(j,0,3)FORE(k,0,3){
-cur=calc(num[0],num[1],i);
-cur=calc(cur,num[2],j);
-cur=calc(cur,num[3],k);
-if(cur==val)ret++;
-}
-}while(next_permutation(all(num)));
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8157&amp;rd=12170 解き方 O（4! * 3^3）なので全探索可能。 ｘ２つ、ｙ２つの全ての並べ方、＋、ー、＊の全ての並び方に対して valと一致するものの数を数え
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-398-div1-easy---countexpressions-/">Read more…</a>
 		</div>
 	</div>
 </article>

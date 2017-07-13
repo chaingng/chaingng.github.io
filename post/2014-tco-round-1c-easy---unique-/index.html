@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Round 1C Easy - Unique (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13067&amp;rd=15958
-・ある文字列が与えられる。
-・そのうち、同じアルファベットは一度しか使わないようにしたい。
-・同じアルファベットが出現する場合、最初のアルファベットのみ残すようにしたときに
-最後に残る文字列を求める。
-解き方 
-単に実装するだけ。
-アルファベットの出現回数を保持する配列を持っておき、
-初めて出現するアルファベットのみ答えに足していけばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Unique {
-public: string removeDuplicates(string S) {
-string ret=&#34;&#34;;
-int n=S.size();
-int ch[26];
-memset(ch,0,sizeof(ch));
-FORE(i,0,n){
-if(ch[S[i]-&#39;a&#39;]==0){
-ret&#43;=S[i];
-ch[S[i]-&#39;a&#39;]&#43;&#43;;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13067&amp;rd=15958 ・ある文字列が与えられる。 ・そのうち、同じアルファベットは一度しか使わないようにしたい。 ・同じアルファベットが出現する場合、最初のアル" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-round-1c-easy---unique-/" />
 

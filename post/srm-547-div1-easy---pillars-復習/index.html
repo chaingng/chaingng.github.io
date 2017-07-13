@@ -7,38 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 547 DIV1 Easy - Pillars (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12055&amp;rd=14739
-柱が２つ与えられる。柱の間の距離はｗ。
-２つの柱の最大の長さｘ、ｙが与えられ、１～ｘ、１～ｙの間で好きに決めることができる。
-最後に、柱のてっぺんをロープで結び、その長さの平均値を求める。
-解き方 
-ｘ、ｙが１０＾５のため、全探索で解くことはできない。
-２つの柱の差の数は、２つの求め方がある。
-１）ｘ、ｙから計算式を求めて一意に決定
-２）ｘのみ１～ｘまで変化させ、それぞれに対しとりうる値を区間で求める。
-今回は２の方法でコーディングしました。
-１つエラーではまった原因としては、iをint型で計算したため数が大きい場合にエラーになってしまいました。
-「計算は全て型を一致させる」、という基本を忘れないようにします。
-ちなみに１の場合は、長さのとりうる値１－ｘからｙ－１までループさせ、
-i&lt;=０のときはmin(y,x&#43;i)
-i&gt;0のときはmin(x,y-i)分だけその長さが存在することになります。
-コード 
-class Pillars {
-public: double getExpectedLength(int w, int x, int y) {
-if(x&gt;y)swap(x,y);
-double ret=w*x;
-for(int len=1;len&lt;=y-1;len&#43;&#43;){
-int cnt=max(0,min(x,y-len))&#43;max(0,min(x-len,y));
-ret&#43;=cnt*sqrt((double)len*len&#43;w*w);
-}
-return ret/x/y;
-}
-};
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i !" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12055&amp;rd=14739 柱が２つ与えられる。柱の間の距離はｗ。 ２つの柱の最大の長さｘ、ｙが与えられ、１～ｘ、１～ｙの間で好きに決めることができる。 最後に、柱の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-547-div1-easy---pillars-%E5%BE%A9%E7%BF%92/" />
 

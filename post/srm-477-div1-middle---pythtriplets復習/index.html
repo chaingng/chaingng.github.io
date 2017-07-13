@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 477 DIV1 Middle - PythTriplets　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10766&amp;rd=14157
-以下の条件を満たす３角形を考える。
-・３辺a,b,cがすべて整数
-・a^2&#43;b^2=c^2
-・a,bの最大公約数が1
-また辺の集合が与えられ、この中からできるだけ多く(a,b)のペアを作りたい。
-このとき、(a,b)のペアの最大数を求める。
-解き方 
-a,bの最大公約数が1であるということは、片方が奇数で片方が偶数になる。
-仮に両方とも偶数であれば最大公約数は2以上になり、
-両方とも奇数であればa^2&#43;b^2=c^2が成り立たない。
-上記より奇数のグループと偶数のグループからペアの最大数を見つける問題になるので
-２部マッチングが適用できる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int edge[2600][2600],visited[2600],to[2600],ret,n;
-class PythTriplets {
-public:
-bool dfs(int x){
-if(x==-1)return true;
-if(visited[x])return false;
-visited[x]=true;
-FORE(i,0,n){
-if(edge[x][i]&amp;&amp;dfs(to[i])){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10766&amp;rd=14157 以下の条件を満たす３角形を考える。 ・３辺a,b,cがすべて整数 ・a^2&#43;b^2=c^2 ・a,bの最大公約数が1 また辺の集合が与えられ、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-477-div1-middle---pythtriplets%E5%BE%A9%E7%BF%92/" />
 

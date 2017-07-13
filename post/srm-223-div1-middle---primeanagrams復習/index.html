@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 223 DIV1 Middle - PrimeAnagrams　（復習×○）" />
-<meta property="og:description" content="問題 
-数字の文字列が与えられる。
-そこから全ての数字を好きに組み合わせて、３つの素数を作る。
-３つの素数が複数通り作れるのであれば、その積が最も小さいものを返す。
-解き方 
-数字の数は最大８つなので、全探索で解くことができる。
-すべての数字のpermutationに対し、全ての区切りで３つの数を作り、それが全て素数であるか判定すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PrimeAnagrams {
-public:
-bool isprime(int x){
-if(x==2)return true;
-if(x==1||x%2==0)return false;
-for(int i=3;i*i&lt;=x;i&#43;=2)if(x%i==0)return false;
-return true;
-}
-int calc(vector&lt;int&gt; num,int start,int end){
-int x=0,p=1;" />
+<meta property="og:description" content="問題 数字の文字列が与えられる。 そこから全ての数字を好きに組み合わせて、３つの素数を作る。 ３つの素数が複数通り作れるのであれば、その積が最も小" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-223-div1-middle---primeanagrams%E5%BE%A9%E7%BF%92/" />
 

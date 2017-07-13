@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 439 DIV1 Easy - PouringWater （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10408&amp;rd=13747
-N個のボトルがあり、最初は１Ｌだけ水が入っている。
-ここで同じ量だけ水が入っているボトルを選んで、一つのボトルに水をまとめることができる。
-このとき、水が入っているボトルをＫ個以下にしたい。
-ただし現在のボトル数ではＫ個以下にできない場合は、ボトルを追加で買うことができる。
-このとき、水が入っているボトルをＫ個以下にしたいときに、追加で必要なボトルの最小数を求める。
-解き方 
-ぱっと見た感じだと解法が思い浮かばないので、ボトル数の計算を式に落とせないか考えてみる。
-ここで、１個、２個、４個、８個・・・のボトルは一つにまとめられることから
-２＾Ｋ個のボトルは１つにまとめることができる。
-次に例をあげてみると、
-１５＝２＾３＋＋２＾２＋２＾１＋１のように変換することができる。
-上記の式を眺めてみると、ボトルの数は２進数に変換したときの１の数と等しい
-ことがわかる。
-次にボトルを減らしたいときに買うべきボトルの数を、先の例を使って考える。
-１５＝１１１１であり、ボトルを１つ買うと
-１００００、つまりボトルが１つになる。
-つまり、右から走査し１が存在した時はその数を足し、
-ボトル数がＫ個以下になるまで繰り返してあげればよい。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PouringWater {
-public:
-int calc(int x){
-int ret=0;
-while(x&gt;0){
-ret&#43;=x%2;
-x/=2;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10408&amp;rd=13747 N個のボトルがあり、最初は１Ｌだけ水が入っている。 ここで同じ量だけ水が入っているボトルを選んで、一つのボトルに水をまとめることができる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/" />
 

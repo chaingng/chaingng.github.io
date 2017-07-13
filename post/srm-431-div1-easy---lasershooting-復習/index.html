@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 431 DIV1 Easy - LaserShooting (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10258&amp;rd=13522
-（０，０）の位置からレーザーが発射される。
-レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、ｙ２の範囲は[-2/PI,2/PI]。
-このような（ｘ、ｙ１）（ｘ、ｙ２）が複数与えられるとき、ある点がレーザーに当たる確率を求める。
-解き方 
-全ての点について確率を求めていては間に合わない。
-そのため、各(x,y1)(x,y2)に対しレーザーの当たる範囲の確率を足していけばよい。
-arctanの使い方を忘れていたので、こちらのサイトを拝見させていただきました。
-http://78578203.at.webry.info/201101/article_2.html
-コード 
-class LaserShooting {
-public: double numberOfHits(vector&lt;int&gt; x, vector&lt;int&gt; y1, vector&lt;int&gt; y2) {
-double ret=0.0;
-int n=y1.size();
-FORE(i,0,n){
-double tmp1=atan((double)y1[i]/(double)x[i]);
-double tmp2=atan((double)y2[i]/(double)x[i]);
-ret&#43;=fabs(tmp1-tmp2)/M_PI;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10258&amp;rd=13522 （０，０）の位置からレーザーが発射される。 レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/" />
 

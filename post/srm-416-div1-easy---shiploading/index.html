@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 416 DIV1 Easy - ShipLoading" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9933&amp;rd=13506
-複数のクレーンがあり、それぞれが運ぶことのできる最大の重さがわかっている。
-また複数の積荷があり、これをすべて運びたい。
-クレーンは同時に複数種類を動かすことができる。
-このとき、すべての積荷を運ぶのに必要な最小時間を求める。
-解き方 
-要素数は５０なので全探索可能。
-vectorでeraseを使えばシンプルに実装できる。
-コード 
-class ShipLoading {
-public: int minimumTime(vector&lt;int&gt; cranes, vector&lt;string&gt; boxes) {
-int n=cranes.size();
-vector&lt;int&gt; box;
-string str=&#34;&#34;;
-FORE(i,0,boxes.size())str&#43;=boxes[i];
-stringstream out;
-out&lt;&lt;str;
-for(int num;out&gt;&gt;num;)box.push_back(num);
-sort(cranes.rbegin(),cranes.rend());
-sort(box.rbegin(),box.rend());
-if(box.empty() || cranes[0]&lt;box[0])return -1;
-int ret=0;
-while(!box.empty()){
-ret&#43;&#43;;
-FORE(i,0,n)FORE(j,0,box.size()){
-if(cranes[i]&gt;=box[j]){
-vector&lt;int&gt;:: iterator it=box.begin();
-box.erase(it&#43;j);
-break;
-}
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9933&amp;rd=13506 複数のクレーンがあり、それぞれが運ぶことのできる最大の重さがわかっている。 また複数の積荷があり、これをすべて運びたい。 クレーンは同時に" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-416-div1-easy---shiploading/" />
 

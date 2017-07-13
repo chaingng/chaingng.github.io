@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 294 DIV1 Middle -Palindromist　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1201
-あるテキストが与えられ、そのテキストは元の回文の前半を切り出したサブ文字列である。
-また、辞書に存在する文字列の集合が与えられる。
-このとき、元の文字列を辞書に存在する文字列に順に分割したい。
-ただし、分割の方法が複数ある場合は辞書順で最も先にくるものを返す。
-解き方 
-回文は元の文字列の最後の文字を繰り返すものと繰り返さないものの２通りあるため、
-この２通りについて分割できるか調べる。
-まずは元の文字列をsetに格納してどこからどこまで分割可能か判定する。
-次にｄｐを用いて、ｄｐ[n]を最後からn番目の文字まで分割可能であるかどうかを表してあげる。
-dp[0]まで漸化式的に走査し、dp[0]が1であれば答えは存在するので、今度は順に判定していき文字列の分割を行う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-set&lt;string&gt; w;
-class Palindromist {
-public:
-string solve(string text){
-int n=text.size();
-int can[n&#43;1][n&#43;1];
-memset(can,0,sizeof(can));
-FORE(i,0,n&#43;1)FORE(j,0,n&#43;1)if(i&lt;j &amp;&amp; w.find(text.substr(i,j-i))!=w.end())can[i][j]=1;
-int dp[n&#43;1];" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1201 あるテキストが与えられ、そのテキストは元の回文の前半を切り出したサブ文字列である。 また、辞書に存在する文字列の集合が与えられる。 このと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-294-div1-middle--palindromist%E5%BE%A9%E7%BF%92/" />
 

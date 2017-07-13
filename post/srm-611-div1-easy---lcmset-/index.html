@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 611 DIV1 Easy - LCMSet (××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12918&amp;rd=15844
-・数字のセットAとBが与えられる。
-・与えられた数字のセットXに対し、その任意の組み合わせのLCMで作られる集合をLCM（X)とする。
-・AとBについて、LCM(A)＝LCM(B)になるかどうか求める。
-解き方 
-・各セットすべてのLCMを求め、それが一致するかどうかでよいか
-・しかしサンプルを見ると計算するとオーバーフローしそう
-・片方のセットすべてのLCMを、もう片方のセットのすべてで割れたらよいか
-・通らないサンプルがある
-・片方のセットそれぞれの数について、もう片方のセットで作れたらよさそう
-・とりあえず各数について割れたら割っていって、最後に１になればよいか。
-・これも通らないサンプルがある。
-・たしかに、４について２で割って４で割ろうとすると割れないが１になる組み合わせがある
-・ここで行き詰ってしまう
-→他の人のサンプルをみる
-・片方のそれぞれの数について、もう片方のセットの任意のLCMで作れたらよかった
-・確かに求めるのはLCMなので、割るのではなかった
-・LCMで作れるかどうかは、どの数を選ぶかがキーとなる。
-・選び方としてその数についてもう片方の要素で割り切れるならばLCMの要素とすれば
-その要素は超えないのでOK
-・反省：惜しいところまではいっていたがもう一歩。LCMとGCDの使いこなし方をまた学んだ。
-(別解)
-各集合Xのうち、LCM(X)を作れる最小の要素のみを抽出して、それが一致するか確かめてもよい。
-ある集合の数aについてそれが必要な数かどうかは、その他の数yについて
-aをyで割りきることができればそのLCMをとっていき、最後に一致するかどうかで判定できる。
-（＝aを構成できる最大のLCM）
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class LCMSet {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12918&amp;rd=15844 ・数字のセットAとBが与えられる。 ・与えられた数字のセットXに対し、その任意の組み合わせのLCMで作られる集合をLCM（X)とする。 ・" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-611-div1-easy---lcmset-/" />
 

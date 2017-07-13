@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 586 DIV1 Middle - History　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12692&amp;rd=15698
-複数の王朝があり、各王朝ごとに皇帝ごとの在位期間がわかっている。
-ただし王朝ごとに年号の割り振り方が違うので、年数は必ずしも一致していない。
-ここで、王朝同士の戦いの記録がある。記録をもとに、王朝同士がどの年数に対応しているかわかるようになっている。
-このとき、王朝同士の戦いのクエリが与えられた時、そのクエリが整合性がとれるものであればＹ，そうでなければＮを返す。
-解き方 
-王朝ごとの年数の一致を全体でとる必要がある。
-今回グローバルの年号を仮に考えたとき、グローバルと各王朝の年数のずれをXと考える。
-つまり、王朝iのグローバルとの年数のずれはX[i]とする。
-次に、戦いがあったときにどの導き出される制約は以下の通り。
-王朝uにおけるa番目の皇帝の始まりの年数をp[u][a]とすると、
-王朝uのa番目の年号と王朝vのb番目の年号との戦いは
-x[u]&#43;p[u][a] ～p[u][a&#43;1]-1 &nbsp; 対 x[v]&#43;p[v][b] ～p[v][b&#43;1]-1
-x[u]&#43;p[u][a&#43;1]-1&gt;=x[v]&#43;p[v][b] かつ x[v]&#43;p[v][b&#43;1]-1&gt;=x[u]&#43;p[u][b]
-x[u]-x[v]&gt;=p[v][b]-p[u][a&#43;1]&#43;1 &nbsp;かつ x[v]-x[u]&gt;=p[u][a]-p[v][b&#43;1]&#43;1　x[v]-x[u]&gt;=p[u][a&#43;1]-p[v][b]-1 &nbsp;かつ x[u]-x[v]&gt;=p[v][b&#43;1]-p[u][a]-1　
-これをワーシャルフロイド法を用いて全体の整合性を取る。最後にクエリを加えたことで矛盾が生じる、つまり負の経路が発生した時はＮを返しそうでなければＹを返せばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12692&amp;rd=15698 複数の王朝があり、各王朝ごとに皇帝ごとの在位期間がわかっている。 ただし王朝ごとに年号の割り振り方が違うので、年数は必ずしも一致していな" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-586-div1-middle---history%E5%BE%A9%E7%BF%92/" />
 

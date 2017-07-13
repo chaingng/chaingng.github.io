@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Round 2B Easy - SwitchingGame (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996
-・ONとOFFができるスイッチが複数与えられる。
-・最初は全てOFFの状態。
-・複数スイッチの状態が与えられ、順番にその状態に変化させていく。
-・スイッチの状態はON,OFF,？の３つであり、？はON/OFFどちらでもよい。
-・スイッチの状態変化は、好きなだけ＋に変化させる動作が１動作、
-好きなだけ－に変化させる動作が１動作、
-状態を一緒に合わせたあとボタンを押すのに１動作かかる。
-・このとき、必要な動作回数の最小値を求める。
-解き方 
-・前のスイッチの状態を持っておき、毎回変化数を記録しておけばよさそう。
-・？については好きな状態でよい。
-・つまり、そのあとに出てくるのが＋でプラスの動作が行われるのであれば＋にしてしまい、
-逆に出てくるのが－でマイナスの動作が行われるのであれば－にしてしまうのが
-最適な動作になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SwitchingGame {
-public: int timeToWin(vector&lt;string&gt; states) {
-int m=states[0].size();
-int n=states.size();
-int ret=n;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996 ・ONとOFFができるスイッチが複数与えられる。 ・最初は全てOFFの状態。 ・複数スイッチの状態が与えられ、順番にその状態に変化させてい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/" />
 

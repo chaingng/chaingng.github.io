@@ -7,26 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 456 DIV1 Easy - SilverDistance x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10699&amp;rd=13909
-銀の動きをする駒がある。
-２次元のセル上でスタート位置とゴール位置が与えられた時、
-ゴールにたどりつくまでの最小のターン数を求める。
-解き方 
-☓の形で４つのエリアに分け、場合分けして求める方法があるが
-複雑になってしまうためシステムで落ちやすくなる。
-今回、セルをチェスのように白と黒で分けた時、
-同じエリアであればｘとｙの位置の差の最大の方が答えになる。
-エリアが異なる場合は、一つ上に移動することで同じエリアに移動することができる。
-コード 
-class SilverDistance {
-public: int minSteps(int sx, int sy, int gx, int gy) {
-int ret=0;
-if((abs(gx-sx)-abs(gy-sy))%2)ret&#43;&#43;,sy&#43;&#43;;
-ret&#43;=max(abs(gx-sx),abs(gy-sy));
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10699&amp;rd=13909 銀の動きをする駒がある。 ２次元のセル上でスタート位置とゴール位置が与えられた時、 ゴールにたどりつくまでの最小のターン数を求める。 解き方" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-456-div1-easy---silverdistance-x/" />
 

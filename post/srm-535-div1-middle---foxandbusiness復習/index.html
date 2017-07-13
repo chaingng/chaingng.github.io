@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 535 DIV1 Middle - FoxAndBusiness　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11454&amp;rd=15037
-ワーカーが複数存在し、それぞれのワーカーi について以下がわかっている。
-a[i]:１時間あたりにこなせる仕事の数
-p[i]:仕事あたりにかかるコスト
-今回、ワーカーから複数人選び、同じ時間働くように均等に仕事を割り当てる。
-こなしたい仕事の数がわかっているとき、必要な最小コストを求める。
-解き方 
-サンプル通りの計算だとワーカーiにタスクtを割り当てた時のコストは
-t[i]*3600/a[i]となる。
-ここで時間が均等になるようtを割り当てるのは計算が難しいので
-考え方を変える。
-ｘ時間を均等に割り当てたとき、
-コスト　&nbsp;：x*(a[i]*p[i] &#43; a[j]*p[j]...&#43;3600K)
-タスク数：x*(a[i]&#43;a[j]...)
-単純にするために１時間の場合を考えると
-コスト　&nbsp;：a[i]*p[i] &#43; a[j]*p[j]...&#43;3600K
-タスク数：a[i]&#43;a[j]...
-ここで、求めたい最小のコストansは
-ans/totalwork*(a[i]&#43;a[j]...)&gt;=a[i]*p[i] &#43; a[j]*p[j]...&#43;3600K
-を満たす最小のansとなる。
-ここで１タスクあたりの最小コストM=ans/totalworkとおくと、M*(a[i]&#43;a[j]...)&gt;=a[i]*p[i] &#43; a[j]*p[j]...&#43;3600K
-よって上記式を満たす最小のMを求め、totalWorkをかけてあげればよい。
-Mは２分探索で探すことができ、
-最適なワーカーはa[i]*(M-p[i])の昇順で選ぶことができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c)." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11454&amp;rd=15037 ワーカーが複数存在し、それぞれのワーカーi について以下がわかっている。 a[i]:１時間あたりにこなせる仕事の数 p[i]:仕事あたりにか" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-535-div1-middle---foxandbusiness%E5%BE%A9%E7%BF%92/" />
 

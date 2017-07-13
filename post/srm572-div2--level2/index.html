@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM572 DIV2 -Level2" />
-<meta property="og:description" content="&lt;問題&gt;
-①２つの文字列が与えられる。
-②それぞれの文字は、1回につきprevCostで前の文字に変えることができる。(aを除く)
-③それぞれの文字は、1回につきnextCostで次の文字に変えることができる。(zを除く)
-④このとき、最初の文字列から２つ目の文字列に変換するのにかかる最小のコストを返す。ただし、いつでも文字列中に同じ文字が存在してはならない。変えることができない場合はー１を返す。
-＜解き方＞
-シミュレーションを全探索で考えるのは難しいので効率のよい探索を考える。
-まず、同じ文字が存在するかしないかは、２つの文字を相対的に見ればよい。
-次に、どのケースのとき同じ文字列が存在するかを考える。
-①２つが同じ順番のとき
-（小さい文字から大きい文字に変換）
-startが比較対象のstartより大きいかつ、goalが比較対象のgoalより小さいとＮＧ
-（大きい文字から小さい文字に変換）
-startが比較対象のstartより小さいかつ、goalが比較対象のgoalより大きいとＮＧ
-②逆の順番のとき
-startが比較対象の文字より小さいかつ、goalが比較対象のgoalより大きいとＮＧ
-もしくは
-startが比較対象の文字より大きいかつ、goalが比較対象のgoalより小さいとＮＧ
-（より、と書きましたが＝も含みます）
-上記でもＯＫですが、
-２つの文字の比較は上下が変わっても相対的に見れば同じことがわかれば
-まとめることができます。
-つまり、(start[i]-start[j])*(goal[i]-goal[j])&lt;=0のときは-1を返してやればいいです。
-あとはコストは常に移動の最小となるので、同じ文字が存在するときはー１、そうでなければ移動の最小コストを返してあげればＯＫです。
-＜コード＞
-class NextOrPrev {
-public: int getMinimum(int nextCost, int prevCost, string start, string goal) {
-int ans=0;
-int n=start.size();
-FORE(i,0,n){
-if(start[i]==goal[i])continue;
-if(start[i]&lt;goal[i])ans&#43;=(abs(start[i]-goal[i])*nextCost);
-else ans&#43;=(abs(start[i]-goal[i])*prevCost);
-}
-FORE(i,0,n)FORE(j,i&#43;1,n)if((start[i]-start[j])*(goal[i]-goal[j])&lt;=0)return -1;
-return ans;
-}
-};
- " />
+<meta property="og:description" content="&lt;問題&gt; ①２つの文字列が与えられる。 ②それぞれの文字は、1回につきprevCostで前の文字に変えることができる。(aを除く) ③" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm572-div2--level2/" />
 

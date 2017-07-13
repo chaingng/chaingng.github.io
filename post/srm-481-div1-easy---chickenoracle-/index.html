@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 481 DIV1 Easy - ChickenOracle △" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11004&amp;rd=14234
-鶏が先か卵が先かという古典的な問題がある。
-オラクルはどちらが答えかわかっており、ｎ人にその答えを伝えた。
-ただし、liecount人には嘘の答えを教えている。
-また、ｎ人について鶏と答えた人数と卵と答えた人数がわかっている。
-ただし、liarcount人は教えられたものと違う答えを答えている。
-このとき、答えが卵か鶏のどちらかを求める。
-ただし、両方の場合が考えられる時はAmbiguousを、
-オラクルが嘘をついているのであればThe oracle is a lieを返す。
-解き方 
-答えが卵である場合と、鶏である場合それぞれについて
-最終的な数（卵が答えのときはｎ人ーliecount）はわかっている。
-ただし、嘘をついている人が何人どちらの答えを教えられているかは、
-様々な場合が考えられるため、
-この人数について全探索して一致するかどうかを調べればよい。
-コード 
-class ChickenOracle {
-public: string theTruth(int n, int e, int lieCount, int liarCount) {
-int c=n-e;
-int flagc=0,flage=0;
-int tmpc=n-lieCount,tmpe=n-tmpc;
-for(int move=0;move&lt;=liarCount;move&#43;&#43;){
-if(move&gt;tmpc || liarCount-move&gt;tmpe)continue;
-if(tmpc-move&#43;(liarCount-move)==c || tmpe-(liarCount-move)&#43;move==e){
-flagc=1;
-}
-}
-tmpe=n-lieCount,tmpc=n-tmpe;
-for(int move=0;move&lt;=liarCount;move&#43;&#43;){
-if(move&gt;tmpc || liarCount-move&gt;tmpe)continue;
-if(tmpc-move&#43;(liarCount-move)==c || tmpe-(liarCount-move)&#43;move==e){
-flage=1;
-}
-}
-if(flagc &amp;&amp; flage)return &#34;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11004&amp;rd=14234 鶏が先か卵が先かという古典的な問題がある。 オラクルはどちらが答えかわかっており、ｎ人にその答えを伝えた。 ただし、liecount人には" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-481-div1-easy---chickenoracle-/" />
 

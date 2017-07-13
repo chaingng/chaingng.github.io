@@ -7,38 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 528 DIV1 Easy - Cut （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11564&amp;rd=14553
-様々な長さのうなぎとカットできる数が与えられる。
-カットして、できるだけ多く１０の長さのうなぎをつくる。
-このとき、最大となる１０の長さのうなぎの数を求める。
-解き方 
-１０の倍数のとき、すべてカットできればカット数が１つ少なく済むことから、１０の倍数から検査していく必要がある。
-ソートして、１０の倍数のうなぎを検査し、その後それ以外のうなぎを順に検査していけばよい。
-最大の計算量はＯ（N^2*N*2=50*50*50*2=2.5*10^5）。
-コード 
-class Cut {
-public: int getMaximum(vector&lt;int&gt; eel, int maxCuts) {
-int ans=0;
-sort(eel.begin(),eel.end());
-FORE(i,0,eel.size()){
-if(eel[i]%10!=0)continue;
-int cut=min(maxCuts,eel[i]/10-1);
-if(maxCuts&gt;=eel[i]/10-1)ans&#43;&#43;;
-ans&#43;=cut;
-maxCuts-=cut;
-if(maxCuts==0)return ans;
-}
-FORE(i,0,eel.size()){
-if(eel[i]%10==0)continue;
-int cut=min(maxCuts,eel[i]/10);
-maxCuts-=cut;
-ans&#43;=cut;
-if(maxCuts==0)return ans;
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11564&amp;rd=14553 様々な長さのうなぎとカットできる数が与えられる。 カットして、できるだけ多く１０の長さのうなぎをつくる。 このとき、最大となる１０の長さの" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-528-div1-easy---cut-%E5%BE%A9%E7%BF%92/" />
 

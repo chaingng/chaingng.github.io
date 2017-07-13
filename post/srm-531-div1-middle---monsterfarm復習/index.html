@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 531 DIV1 Middle - MonsterFarm　（復習××○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11232&amp;rd=14724
-各ノードごとに、次に変換するノードが与えられる。
-次に変換するノードは１つ以上になる。
-ノード０からスタートするとき、最後に収束するノード数を求める。
-ただし、ノード数が発散するときはー１を返す。
-解き方 
-グラフを利用する。
-次に変換するノードが複数存在するので、
-単純に連結しているかのグラフと次につながるエッジ数を表わす２つのグラフを利用する。
-単純な連結グラフは発散するかの判定に用いワーシャルフロイドをかけて各ノード間の連結を確かめる。
-自分から出るノードが２個以上かつループが存在するときに発散する。
-次につながるエッジ数のグラフは答えを求めるのに用い、
-ノード数分のステップを最低繰り返してノード数を収束させる。
-答えは各ステップごとに各ノードの数を保存し、全回保存したノード数から足していき更新させればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class MonsterFarm {
-public: int numMonsters(vector&lt;string&gt; transforms) {
-int a[55][55]={},b[55][55]={};
-int n=transforms.size(),MOD=1000000007;
-FORE(i,0,n){
-int x;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11232&amp;rd=14724 各ノードごとに、次に変換するノードが与えられる。 次に変換するノードは１つ以上になる。 ノード０からスタートするとき、最後に収束するノード" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-531-div1-middle---monsterfarm%E5%BE%A9%E7%BF%92/" />
 

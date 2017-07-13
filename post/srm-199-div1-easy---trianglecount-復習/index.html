@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 199 DIV1 Easy - TriangleCount （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2889&amp;rd=5074
-１辺の長さが与えられる。
-各辺の長さが１の三角形を組み合わせて、１辺の長さが与えられた長さになるよう
-三角形を作る。
-このとき、１辺が１～与えられた長さである三角形の数の合計を求める。
-解き方 
-なにか法則がありそう。
-単純な三角形の数だけ見ても法則はないが、
-普通の三角形と逆にした三角形を別々に考えると以下の法則があることがわかる。
-１辺の長さがｘの三角形を考えると、その数は以下の通りになる。
-普通の三角形：長さがｘのとき１個、ｘ＋１のとき３個、３のとき６個・・・と等差数列の値だけ増加
-逆の三角形　：長さがｘ＊２のとき１個、ｘ＊２＋１のとき３個・・・と等差数列の値だけ増加
-あとはdpにて実装して、最後に全ての和を足すことで答えが求められる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TriangleCount {
-public: int count(int N) {
-int dp[N];
-memset(dp,0,sizeof(dp));
-FORE(i,0,N){
-int cnt=1;
-FORE(j,i,N){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2889&amp;rd=5074 １辺の長さが与えられる。 各辺の長さが１の三角形を組み合わせて、１辺の長さが与えられた長さになるよう 三角形を作る。 このとき、１辺が１～与" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/" />
 

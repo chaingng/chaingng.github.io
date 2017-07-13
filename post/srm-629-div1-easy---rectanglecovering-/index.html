@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 629 DIV1 Easy - RectangleCovering (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13344&amp;rd=16060
-長方形のホールがあり、縦と横の長さがわかっている。
-また複数の長方形のボードが与えられ、それぞれのボードの縦と横の長さもわかっている。
-ホールを覆うように複数のボードをつなげるとき、必要な最小のボードの数を求める。
-ただし、ボードは重ねるようにしてつなげてもよいが、ホールにボードの角が覆われないようにする。
-解き方 
-・普通に考えるとかなりの場合の数がありそう。
-・なにか制約がないか例をあげてみる。
-・あるボードが使えるかどうかは、そのうち小さい１辺がボードのどちらか１辺よりも大きくないといけない。
-・これで使えるボードが選別できそう。
-・ただ、それでも色々なつなげ方がありそう。
-・角が覆われないようにする条件を満たすためには、ボードは縦一列、横一列のどちらかしか並べられない。
-・これであとは上記を満たす長さのうち降順に並べればよさそう。
-・System Failed
-・ホールについて、縦に並べるか横に並べるか、両方の場合の検討が必要だった
-・さらにボードについて、例外条件を見落としていた。
-ボードの縦横両方が１辺よりも大きければ大きい方を取る。
-そうでないとき、小さい方の辺が1辺より小さければ大きい方ととる。
-そのうえでつなげる方の辺以上の長さになればよい。
-・System　Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class RectangleCovering {
-public:
-int minimumNumber(int holeH, int holeW, vector&lt;int&gt; boardH, vector&lt;int&gt; boardW) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13344&amp;rd=16060 長方形のホールがあり、縦と横の長さがわかっている。 また複数の長方形のボードが与えられ、それぞれのボードの縦と横の長さもわかっている。 ホ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-629-div1-easy---rectanglecovering-/" />
 

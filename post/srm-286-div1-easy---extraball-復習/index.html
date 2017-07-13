@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 286 DIV1 Easy - ExtraBall (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=5891&amp;rd=8083
-・ビンゴゲームを行う。
-・最初に紙には１～７５の数字が書いてあり、その数字がコールされるとその場所をくり抜くことができる。
-・ビンゴゲームが終わったときに、与えられたパターンと同じところがくりぬかれたらそのパターンにおけるスコアを得ることができる。
-・ここで、ゲームが終わった後にもう一つだけ数字をコールしてもらえることを考える。
-・このとき、もう一つ数字をコールしてもらったときに得られる期待値を返す。
-解き方 
-Exampleを読むことで問題のルールを把握することができるので、あとは実装するだけ。
-くり抜かれたパターンが一致するかの関数を作り、くり抜かれていない差が一つかどうかを判定すればあとは簡単。
-コード 
-class ExtraBall {
-public:
-bool match(string a,string b){
-int dif=0;
-FORE(i,0,a.size())if(a[i]==&#39;.&#39;&amp;&amp;b[i]==&#39;X&#39;)dif&#43;&#43;;
-return dif==1;
-}
-double expectedPayout(vector&lt;int&gt; card, vector&lt;int&gt; balls, vector&lt;string&gt; patterns, vector&lt;int&gt; prizes) {
-string org=&#34;&#34;;
-FORE(i,0,card.size())org&#43;=&#39;.&#39;;
-FORE(i,0,card.size())FORE(j,0,balls.size())if(card[i]==balls[j])org[i]=&#39;X&#39;;
-int cost=0;
-FORE(i,0,patterns.size())if(match(org,patterns[i]))cost&#43;=prizes[i];
-return (double)cost/(double)(75-balls.size());
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=5891&amp;rd=8083 ・ビンゴゲームを行う。 ・最初に紙には１～７５の数字が書いてあり、その数字がコールされるとその場所をくり抜くことができる。 ・ビンゴゲーム" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/" />
 

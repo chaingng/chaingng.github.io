@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 405 DIV1 Easy - RelativePath x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9760&amp;rd=12177
-解き方 
-システムテストで落ちないようコーナーケースでの検討が必要。
-可能であればそれぞれのパスについてディレクトリを取り出して
-比較するのが確実。
-コード 
-class RelativePath {
-public: string makeRelative(string path, string currentDir) {
-string str=&#34;&#34;;
-while(!path.empty() &amp;&amp; !currentDir.empty()){
-if(path[0]==&#39;/&#39;&amp;&amp;currentDir[0]==&#39;/&#39;){
-path=path.substr(1),currentDir=currentDir.substr(1);
-}
-string s1=&#34;&#34;,s2=&#34;&#34;;
-int cur=0;
-while(cur&lt;path.size() &amp;&amp; path[cur]!=&#39;/&#39;)s1&#43;=path[cur],cur&#43;&#43;;
-cur=0;
-while(cur&lt;currentDir.size() &amp;&amp; currentDir[cur]!=&#39;/&#39;)s2&#43;=currentDir[cur],cur&#43;&#43;;
-if(s1!=s2 || s1.empty() || s2.empty())break;
-path=path.substr(s1.size());
-currentDir=currentDir.substr(s1.size());
-}
-if(!currentDir.empty()){
-str&#43;=&#34;../&#34;;
-for(int i=0;i&lt;currentDir.size();i&#43;&#43;){
-if(currentDir[i]==&#39;/&#39;)str&#43;=&#34;../&#34;;
-}
-}
-if(!path.empty() &amp;&amp; path[0]==&#39;/&#39;)path=path.substr(1);
-str&#43;=path;
-return str;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9760&amp;rd=12177 解き方 システムテストで落ちないようコーナーケースでの検討が必要。 可能であればそれぞれのパスについてディレクトリを取り出して 比較するのが" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-405-div1-easy---relativepath-x/" />
 

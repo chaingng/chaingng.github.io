@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 375 DIV1 Middle - DateFieldCorrection　（復習○）" />
-<meta property="og:description" content="問題 
-キーボードで「”月”　”日”」を打ちたいが、タイプミスをしばしば起こしてしまう。
-タイプミスはキーボードの隣り合う文字についてはコスト１、スペースとの間は３のコストで定義される。
-タイプ後の文字が与えられるとき、最もコストの少ない、つまり打とうとしていた「”月”　”日”」を求める。ただし同じコストの場合は最も早い月日を返す。
-解き方 
-実装の問題なので、いかにシンプルに考えて、シンプルに実装するか。
-まず問題文にキーボード間のコストが図で載っているが、
-これを以下に簡単に定義できるかが課題。
-キーボードをみてみると、キーボードの行単位で考えることができそう。
-各行に対し、隣り合う文字とのコストは１となる。
-各行に対し、真下の行の文字とのコストは１となる。
-各行に対し、真下の行の左下の文字とのコストは１となる。
-一番下の行について、スペースとのコストは３となる。
-また英数字は８ビットで表わせるので、int型の配列d[256][256]を定義し
-配列番号はアルファベット、値は距離としてあげればコストをグラフで定義できる。
-最後にワーシャルフロイドを回せば各文字間の最短距離が求められる。
-最後にすべての月、日に対してアウトプット「”月”、”日”」の文字列を用意し
-与えられた文字inputと文字列長が同じであればコストを計算すればよい。
-最後に大文字と小文字の区別をなくすように、tolower関数を使うことに注意。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int d[256][256];
-class DateFieldCorrection {
-public:
-int rec(string str1,string str2){" />
+<meta property="og:description" content="問題 キーボードで「”月” ”日”」を打ちたいが、タイプミスをしばしば起こしてしまう。 タイプミスはキーボードの隣り合う文字についてはコスト１、ス" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-375-div1-middle---datefieldcorrection%E5%BE%A9%E7%BF%92/" />
 

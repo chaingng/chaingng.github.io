@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 350 DIV1 Middle -  StarsInGraphs　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1666
-有効グラフが存在する。
-ある一つのノードについて、starpathがC個以下であればそのノードはstarとみなされる。
-starpathは辺が５本のとき、5C3&#43;5C4&#43;5C5で表わされる。
-このとき、starのうちstarpathが小さいものから大きいものへのパスの最長の長さを求める。
-ただし、無限ループが存在する場合はー１を返す。
-解き方 
-問題文を読み解くのに一苦労。
-はじめにC個以下を満たす最大の辺の数を求め、３以上かつもとめた最大の辺以下のノードを抽出する。
-次に、今回はパスに閉路が存在しうるのでダイクストラ法ではなくベルマンフォード法を利用する。
-閉路がないか判定しつつ、最長の経路を求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class StarsInGraphs {
-public:
-int C(int n,int k){
-double ret=1;
-FORE(i,0,k)ret*=(double)(n-i)/(i&#43;1);
-return (int)ret;
-}
-int calc(int x){
-int ret=0;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1666 有効グラフが存在する。 ある一つのノードについて、starpathがC個以下であればそのノードはstarとみなされる。 starpathは" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-350-div1-middle----starsingraphs%E5%BE%A9%E7%BF%92/" />
 

@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 500 DIV1 Easy - MafiaGame x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11342&amp;rd=14429
-解き方 
-投票数が一番多い人が最後に残る候補となる。
-よってそれがX人だとすると、最後に１人残るのであれば
-確率は1/Xとなる。
-最後に一人残るかどうかの判定は、NをX人で割った余りを更新していき
-割り切れるのであれば全員消滅してしまうので答えは０になる。
-最後に１人残れば上記の確率を返す。
-コード 
-class MafiaGame {
-public: double probabilityToLose(int N, vector&lt;int&gt; decisions) {
-map&lt;int,int&gt; m;
-FORE(i,0,decisions.size())m[decisions[i]]&#43;&#43;;
-int mx=0,cnt=0;
-for(map&lt;int,int&gt;::iterator it=m.begin();it!=m.end();it&#43;&#43;){
-mx=max(mx,it-&gt;second);
-}
-for(map&lt;int,int&gt;::iterator it=m.begin();it!=m.end();it&#43;&#43;){
-if(mx==it-&gt;second)cnt&#43;&#43;;
-}
-if(mx==1)return 0.0;
-double ret=1.0/cnt;
-while(cnt&gt;1){
-if(N%cnt==0)return 0.0;
-cnt=N%cnt;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11342&amp;rd=14429 解き方 投票数が一番多い人が最後に残る候補となる。 よってそれがX人だとすると、最後に１人残るのであれば 確率は1/Xとなる。 最後に一人残る" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-500-div1-easy---mafiagame-x/" />
 

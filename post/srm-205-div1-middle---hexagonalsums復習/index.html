@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 205 DIV1 Middle - HexagonalSums　（復習××○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2921&amp;rd=5851
-６面体を左下が重なるように順に大きいものを重ねていく。
-そのときの点の数は１、６，１８，２５，４５，６６・・・となる。
-また、正の整数Ｎが与えられた時、これを上記の数の組み合わせで表現したい。
-どのＮであっても６個以下の組み合わせで表現することができ、
-Ｎ＝２６のときが６個の組み合わせの最大数、
-Ｎ＝１３０のときが５個の組み合わせの最大数、
-Ｎ＝１４６８５８のときが４個の組み合わせの最大数になる。
-Ｎが与えられた時、組み合わせる６面体の数の最小の個数を求める。
-解き方 
-Ｎが１３０以下のときはｄｐで全探索を用いる。
-それ以上のときは６面体全てのペアの組み合わせの値を求め、さらにその組み合わせでＮを表現することで、４個以下の組み合わせになるので答えが求まる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[1000001];
-class HexagonalSums {
-public:
-int minLength(int N) {
-vector&lt;int&gt; v;
-int prev=1;
-for(int x=2;prev&lt;=1000000;x&#43;&#43;){
-v.push_back(prev);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2921&amp;rd=5851 ６面体を左下が重なるように順に大きいものを重ねていく。 そのときの点の数は１、６，１８，２５，４５，６６・・・となる。 また、正の整数Ｎが" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-205-div1-middle---hexagonalsums%E5%BE%A9%E7%BF%92/" />
 

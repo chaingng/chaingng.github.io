@@ -7,47 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM574 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①数字が二つ与えられる。
-②プレイヤーは一つ目の数字を１０で割る、もしくは逆にすることができる。
-③上記の操作によって、２つ目の数字にするとき、最小の操作回数を求める。
-２つ目の数字にできないときはー１を返す。
-解き方 
-どのような法則があるか例を出して導く。
-289が求めたい数字のとき、
-元の数字：１２８９　→３回
-２８９１　→１回
-１２８９１　→４回
-つまり、
-・最初から含まれる　→文字数の差
-・途中から含まれる　→文字列の差＋２
-ひっくり返した場合もシミュレーションすると、
-ひっくり返した文字が含まれる　→文字数の差＋１回
-ただ求めたい数字の場合は両方一致するため、
-返す数が少ない方から判定していく。
-コード 
-class TheNumberGameDiv2 {
-public:
-string f(int n){
-string str;
-stringstream out;
-out&lt;&lt;n;
-out&gt;&gt;str;
-return str;
-}
-int minimumMoves(int A, int B) {
-string As=f(A);
-string Bs=f(B);
-int dis=As.size()-Bs.size();
-int flag=0;
-if(As.find(Bs)!=string::npos)flag=1;
-if(As.find(Bs)==0)return dis;
-reverse(Bs.begin(),Bs.end());
-if(As.find(Bs)!=string::npos)return dis&#43;1;
-if(flag==1)return dis&#43;2;
-return -1;
-}
-}; " />
+<meta property="og:description" content="問題 ①数字が二つ与えられる。 ②プレイヤーは一つ目の数字を１０で割る、もしくは逆にすることができる。 ③上記の操作によって、２つ目の数字にすると" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm574-div2--level2/" />
 

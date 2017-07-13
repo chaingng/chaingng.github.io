@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 548 DIV1 Middle - KingdomAndDice　（復習○）" />
-<meta property="og:description" content="問題 
-サイコロが２つあり、２人のプレイヤーがそれぞれ１つのサイコロを振って出た目が大きい方が勝つゲームを行う。
-ゲームはできるだけ公平にしたいので、勝つ確率は５０％になるのが望ましい。
-ここで、サイコロ２つに対して各面の目がいくつか与えられる。
-ただしそのうち一つのサイコロはいくつかの面がとれてしまい、代わりに０としている。
-この目をすでに使っていない数字かつ最大の数字Ｘ以下の数字を埋めることで、
-各確率を５０％に可能な限り近づけた際の確率を求める。
-ただし数字は必ずしも埋めずに０を使ってもよい。
-解き方 
-出る目の数字は１０＾９であるので単純に考えると計算量は間に合わない。
-ここで問題文に着目してみると、求めるのは勝つ確率だけであるので、相手の目に対して埋める目の勝つ数は５０個以下であることがわかる。
-つまり勝つ回数０～５０まで考えればよいことがわかる。
-次に、それぞれの勝つ回数について、何個まで使うことができるかを求める。
-今回はvector型のint変数を用意し、勝つ回数を配列に用意する。それぞれの勝つ回数は最大で埋めることのできる数、つまり最初のサイコロの０の数なのですべて用意してもオーバーフローしない。
-求めたvector配列を用いて、勝つことのできる回数を全て求める。
-単純に考えると組み合わせ５０Ｃ２５で間に合わないが、ｄｐを用いて
-状態を勝つ回数、値を利用する目の数とすることで求めることができる。
-ｄｐを回す際には、配列がオーバーフローしないように判定することに注意。
-最後に求めたｄｐの中からできるだけ答えが０．５に近くなるものを求める。
-この時にｎ＊ｎで割ると誤差が出てしまうので式を変形して、
-勝つ回数をxとすると
-x/(n*n)=0.5
-x=0.5*n*n
-2x=n*n
-2x-n*n=0
-つまり2x-n*nの絶対値が一番０に近いものが最終的な答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class KingdomAndDice {
-public: double newFairness(vector&lt;int&gt; firstDie, vector&lt;int&gt; secondDie, int X) {" />
+<meta property="og:description" content="問題 サイコロが２つあり、２人のプレイヤーがそれぞれ１つのサイコロを振って出た目が大きい方が勝つゲームを行う。 ゲームはできるだけ公平にしたいの" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-548-div1-middle---kingdomanddice%E5%BE%A9%E7%BF%92/" />
 

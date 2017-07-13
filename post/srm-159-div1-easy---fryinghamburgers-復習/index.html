@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 159 DIV1 Easy - FryingHamburgers （復習×○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1517&amp;rd=4600
-指定された数のハンバーガーを両面焼きたい。
-両面焼くのには、片面ずつ、各５分必要となる。
-また、フライパンが与えられ、一度に何枚のハンバーガーが焼けるかがわかっている。
-このとき、指定された数のハンバーガーを焼くのに必要な最小時間を求める。
-解き方 
-ハンバーガーの数は１０００なので全探索で解ける。
-シミュレーション問題なので、いかにシンプルに解くか。
-片面ずつの配列を作って埋めていってもよいが、それぞれを区別する必要はないので
-以下のように整理する。
-フライパン１回使用につき、
-①まずは両面とも焼いていないものを優先して載せる
-②あまったところで片面のみ焼いてあるものを載せる。
-③最後に両面とも焼けていないもの、片面のみ焼けているものの数を更新し、どちらも０になるまでループさせる。
-１回のターンにつき①と②で同じものを選ばないようにするのがSystemtestで落ちないためのポイント。
-コード 
-class FryingHamburgers {
-public: int howLong(int panSize, int hamburgers) {
-int ret=0,half=0;
-while(hamburgers&#43;half&gt;0){
-ret&#43;&#43;;
-int first=min(hamburgers,panSize);
-int both=min(panSize-first,half);
-hamburgers-=first;
-half&#43;=first;
-half-=both;
-}
-return ret*5;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c)." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1517&amp;rd=4600 指定された数のハンバーガーを両面焼きたい。 両面焼くのには、片面ずつ、各５分必要となる。 また、フライパンが与えられ、一度に何枚のハンバー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-159-div1-easy---fryinghamburgers-%E5%BE%A9%E7%BF%92/" />
 

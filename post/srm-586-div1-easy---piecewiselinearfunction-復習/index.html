@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 586 DIV1 Easy - PiecewiseLinearFunction （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12691&amp;rd=15698
-座標上の点が複数与えられて、それぞれ線で結ぶ。
-このとき、一番多く存在する線上のｙの値について、最大値を求める。
-解き方 すべてのｙに対して値を求めると計算量が間に合わない。
-そこで、「ｙが増えるのは与えられたｙ座標の近辺のみ」ということがわかれば、
-調べる点は少なくてもよいことがわかる。
-ここで与えられたｙ座標のみと最初に考えてしまうが、
-「折れ線のときはその前後の値の方がより多く存在」する。
-つまり、与えられたｙ座標の前後を全て調べて、最大の値を返せばよい。
-Challenge
-例外条件：隣り合う点が平行→全ての点が平行
-「＜」と「＜＝」がかぶらないようにして、同じ点について複数数えないようにする
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PiecewiseLinearFunction {
-public: int maximumSolutions(vector&lt;int&gt; Y) {
-int ret=0;
-int n=Y.size();
-FORE(i,0,n-1)if(Y[i]==Y[i&#43;1])return -1;
-vector&lt;double&gt; vx;
-FORE(i,0,n){
-vx.push_back(Y[i]-0.5);
-vx.push_back(Y[i]);
-vx.push_back(Y[i]&#43;0.5);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12691&amp;rd=15698 座標上の点が複数与えられて、それぞれ線で結ぶ。 このとき、一番多く存在する線上のｙの値について、最大値を求める。 解き方 すべてのｙに対して" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-586-div1-easy---piecewiselinearfunction-%E5%BE%A9%E7%BF%92/" />
 

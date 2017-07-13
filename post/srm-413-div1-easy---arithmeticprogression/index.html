@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 413 DIV1 Easy - ArithmeticProgression" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9839&amp;rd=13504
-整数の数列が与えられる。
-与えられた数列は、ある実数が公差である数列について小数点以下の数を
-切り捨てたものになる。
-このとき、公差がいくつであるか求める。
-解き方 
-公差について、２分探索を用いればよい。
-コード 
-int n;
-class ArithmeticProgression {
-public:
-int ispossible(double x,int a0,vector&lt;int&gt; seq){
-double cur=a0;
-FORE(i,0,n){
-cur&#43;=x;
-if(floor(cur)==seq[i])continue;
-if(floor(cur)&gt;seq[i])return 1;
-return -1;
-}
-return 0;
-}
-double minCommonDifference(int a0, vector&lt;int&gt; seq) {
-if(seq.empty())return 0.0;
-n=seq.size();
-double low=seq[0]-a0,high=low&#43;1.0;
-if(low&lt;0)return -1;
-FORE(i,0,100){
-double mid=(low&#43;high)/2;
-if(ispossible(mid,a0,seq)&gt;=0)high=mid;
-else low=mid;
-}
-return ispossible(high,a0,seq)==0 ? high : -1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9839&amp;rd=13504 整数の数列が与えられる。 与えられた数列は、ある実数が公差である数列について小数点以下の数を 切り捨てたものになる。 このとき、公差がいくつ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-413-div1-easy---arithmeticprogression/" />
 

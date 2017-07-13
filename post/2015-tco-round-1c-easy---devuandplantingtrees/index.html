@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2015 TCO Round 1C Easy - DevuAndPlantingTrees" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13743&amp;rd=16434
-解き方 
-２つ行があるが、追加する木については上下のどちらに追加しても変わらないので
-片方だけを考える。
-すでに存在する木によって追加できるスペースはいくつかに区切られるが、
-各区切りごとのセルの連続数によって、追加できる木の数が決まる。
-コード 
-class DevuAndPlantingTrees {
-public: int maximumTreesDevuCanGrow(vector&lt;string&gt; garden) {
-int n=garden[0].size();
-int used[n];
-int ret=0;
-memset(used,0,sizeof(used));
-FORE(i,0,2)FORE(j,0,n)if(garden[i][j]==&#39;*&#39;){
-if(j-1&gt;=0)used[j-1]=1;
-if(j&#43;1&lt;n)used[j&#43;1]=1;
-used[j]=1;
-ret&#43;&#43;;
-}
-int at=0;
-while(1){
-while(at&lt;n &amp;&amp; used[at])at&#43;&#43;;
-if(at&gt;=n)break;
-int l=at;
-at&#43;&#43;;
-while(at&lt;n &amp;&amp; !used[at&#43;1])at&#43;&#43;;
-ret&#43;=(at-l&#43;2)/2;
-at&#43;&#43;;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13743&amp;rd=16434 解き方 ２つ行があるが、追加する木については上下のどちらに追加しても変わらないので 片方だけを考える。 すでに存在する木によって追加できるス" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2015-tco-round-1c-easy---devuandplantingtrees/" />
 

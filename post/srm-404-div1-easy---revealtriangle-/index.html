@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 404 DIV1 Easy - RevealTriangle ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8215&amp;rd=12176
-逆三角形からなる数字の配列が与えられる。
-高さが４のとき、1行目は数字が４つ、2行めは３つ、、、４行めは数字が１つになる。
-また、各行について１つは数字がわかっているがその他の数字は？となりわかっていない。
-ある位置の数字は、その上にある数字と右上にある数字の和の一桁目の数になる。
-このとき、？の数字をすべて復元して求める。
-解き方
-一番下の行は１つ、つまりすべての数字が分かっているため、
-すべての数字を復元することができる。
-また、復元については下から上へ順に行っていけばよい。
-ある行について調べるとき、その下の行はすべてわかっていることから
-？２
-３
-のように上側の数字が？になる。
-このとき、（３＋１０ー２）％１０が？の数になるので
-このようにすべての？を求めてあげればよい。
-コード 
-class RevealTriangle {
-public: vector&lt;string&gt; calcTriangle(vector&lt;string&gt; q) {
-int n=q.size();
-for(int i=n-2;i&gt;=0;i--){
-while(1){
-if(q[i].find(&#39;?&#39;)==string::npos)break;
-for(int j=0;j&lt;n-i;j&#43;&#43;){
-int cnt= (q[i][j]==&#39;?&#39;) &#43; (q[i][j&#43;1]==&#39;?&#39;);
-if(cnt==1){
-int y=0;
-if(q[i][j]!=&#39;?&#39;)y=q[i][j]-&#39;0&#39;;
-else y=q[i][j&#43;1]-&#39;0&#39;;
-int x=(q[i&#43;1][j]-&#39;0&#39;&#43;10-y)%10;
-if(q[i][j]==&#39;?&#39;)q[i][j]=x&#43;&#39;0&#39;;
-else q[i][j&#43;1]=x&#43;&#39;0&#39;;
-}
-}
-}
-}
-return q;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8215&amp;rd=12176 逆三角形からなる数字の配列が与えられる。 高さが４のとき、1行目は数字が４つ、2行めは３つ、、、４行めは数字が１つになる。 また、各行につ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-404-div1-easy---revealtriangle-/" />
 

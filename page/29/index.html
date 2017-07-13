@@ -74,29 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-複数のデータをメモリに格納したい。
-格納したいデータごとに、置きたいメモリ番地とデータサイズが与えられる。
-このデータをパケットで伝送して届ける。
-パケットについては、パケットの最大サイズとヘッダのサイズが与えられ、この差が１つのパケットごとに実際に送ることのできるデータサイズとなる。
-送られたパケットは任意の番地からサイズ分メモリに書きこまれる。
-メモリ番地については、データに関係ない部分は空白にしても他のデータを埋めてもよい。
-このとき、すべてのデータを格納するために送らなければいけない合計パケットサイズを求める。
-解き方 
-dpで解けそうな問題。
-最初は直前のデータのみを考え、ぴったりのサイズ分送るか、送ることのできる最大分のパケットを送るかの２通りで考えたが、ベストな送り方は貪欲ではなく、どのデータからスタートするかに依存する。
-そのため、あるデータからあるデータまでのパケットを送るときの最小のパケットサイズを最初に求めてあげ、最後にｄｐで最小値を更新すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class DeviceProgramming {
-public: long long minBytes(vector&lt;int&gt; offset, vector&lt;int&gt; size, int maxPacketSize, int overhead) {
-int n=offset.size();
-long long payload=maxPacketSize-overhead;
+			問題 複数のデータをメモリに格納したい。 格納したいデータごとに、置きたいメモリ番地とデータサイズが与えられる。 このデータをパケットで伝送して届
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-367-div1-middle---deviceprogramming-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -116,34 +94,7 @@ long long payload=maxPacketSize-overhead;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 0～9、A～Zの36種類のアルファベットで表わされる36進数の数字を考える。
-最初に、複数の36進数の数字が与えられる。
-このうち、任意のk個のアルファベットをZに変換する。
-このとき、与えられた数字の和が最大となるように変換し、その最大の数字を36進数で求める。
-解き方 
-問題としては貪欲法で解けそう。
-ただし与えられる数字は50個、文字列長も50個であることから単純な変換ではオーバーフローしてしまう。
-そこで、36進数のままで足し算と大小比較を行うことにする。
-今回は元の数字を最初に足してしまってもよい。
-それから各アルファベットについての差分を計算し、その計算した差分を降順にソートして順にｋ個足して解いた。
-最初にオーバーフローまで踏まえてコーディングしないと後戻りは難しいので、
-最初にあらかじめオーバーフローと計算量を忘れずに見積もる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class HexatridecimalSum {
-public:
-int getint(char ch){
-if('0'&lt;=ch&amp;&amp;ch&lt;='9')return ch-'0';
-return ch-'A'+10;
-}
-char getch(int x){
-if(0&lt;=x&amp;&amp;x&lt;=9)return (char)('0'+x);
-return (char)(x-10)+'A';
+			問題 0～9、A～Zの36種類のアルファベットで表わされる36進数の数字を考える。 最初に、複数の36進数の数字が与えられる。 このうち、任意のk
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-434-div1-middle---hexatridecimalsum-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -163,31 +114,7 @@ return (char)(x-10)+'A';
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-最初にコインをinitSum個持っており、goalSum個まで増やしたい。
-rounds回のラウンドがあり、最初のラウンドはコインを１個かけ、勝ったら１個もらえる。
-負けるとそのコインは失い、次は２倍のコインをかけなければいけない。
-勝った場合は賭けた分のコインはもらえる。
-またあらかじめ、勝つ確率はprobになるとわかっている。
-goalSum個までコインが増えたら辞めてもよいが、賭ける分のコインが無くなったらゲームを終えなければならない。
-このとき、コインがgoalSum個になる確率を求める。
-解き方 
-ｄｐの問題。
-状態に「ラウンド数」、「連続で負けた数」、「現在のコインの数」を持ち、
-値に「確率」を持たせればよい。
-ｄｐの更新のさせ方が最大・最小をとるのか、加算していくのかで途中つまづいた。
-また問題文のスコアの条件を正しく読みとれなくつまずいてしまったので、
-きちんと問題文を読むことが大事。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-double dp[51][10][1001];
-class TestBettingStrategy {
-public: double winProbability(int initSum, int goalSum, int rounds, int prob) {
+			問題 最初にコインをinitSum個持っており、goalSum個まで増やしたい。 rounds回のラウンドがあり、最初のラウンドはコインを１個か
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-339-div1-middle---testbettingstrategy%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -207,33 +134,7 @@ public: double winProbability(int initSum, int goalSum, int rounds, int prob) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-数字の配列が与えられ、最初の配列からもう一つの配列へ変換したい。
-可能な操作は以下の３通り。
-・追加：最大で元の配列の分だけ、好きな数字を追加
-・削除：最大で元の配列の半分を超えないよう、好きな数字を削除
-・変更：最大で元の配列の半分を超えないよう、好きな数字を変換
-このとき、必要な最小操作回数を求める。
-解き方 
-数字を変換するのでコードで扱うのは大変そうだが、要は数字が何個一致しているか、何個一致していないかだけわかればよいので、数字自身は無視して良い。
-変換する法則を考えていかに分岐が少なくシンプルに実装するかを考えるが、この場合は場合分けが大変になってしまう。
-そのため、全探索で解けないかを考えてみる。
-状態として「現在までに一致している数字の数」、「異なる数字の数」、「追加で一致しなければならない数字の数」をもつｄｐを考え、ＤＦＳを用いれば全探索で解くことが可能。
-法則を考える方法もあるが、まずは確実でかつシンプルに解ける全探索で解けないかを考えてみるのが大事。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][51][51];
-class TheHomework {
-public:
-int rec(int sames,int diff,int missing){
-if(diff==0&amp;&amp;missing==0)return 0;
-if(dp[sames][diff][missing]!=-1)return dp[sames][diff][missing];
-int n=sames+diff;
+			問題 数字の配列が与えられ、最初の配列からもう一つの配列へ変換したい。 可能な操作は以下の３通り。 ・追加：最大で元の配列の分だけ、好きな数字を追
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-381-div1-middle---thehomework%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -253,41 +154,7 @@ int n=sames+diff;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-サイコロが２つあり、２人のプレイヤーがそれぞれ１つのサイコロを振って出た目が大きい方が勝つゲームを行う。
-ゲームはできるだけ公平にしたいので、勝つ確率は５０％になるのが望ましい。
-ここで、サイコロ２つに対して各面の目がいくつか与えられる。
-ただしそのうち一つのサイコロはいくつかの面がとれてしまい、代わりに０としている。
-この目をすでに使っていない数字かつ最大の数字Ｘ以下の数字を埋めることで、
-各確率を５０％に可能な限り近づけた際の確率を求める。
-ただし数字は必ずしも埋めずに０を使ってもよい。
-解き方 
-出る目の数字は１０＾９であるので単純に考えると計算量は間に合わない。
-ここで問題文に着目してみると、求めるのは勝つ確率だけであるので、相手の目に対して埋める目の勝つ数は５０個以下であることがわかる。
-つまり勝つ回数０～５０まで考えればよいことがわかる。
-次に、それぞれの勝つ回数について、何個まで使うことができるかを求める。
-今回はvector型のint変数を用意し、勝つ回数を配列に用意する。それぞれの勝つ回数は最大で埋めることのできる数、つまり最初のサイコロの０の数なのですべて用意してもオーバーフローしない。
-求めたvector配列を用いて、勝つことのできる回数を全て求める。
-単純に考えると組み合わせ５０Ｃ２５で間に合わないが、ｄｐを用いて
-状態を勝つ回数、値を利用する目の数とすることで求めることができる。
-ｄｐを回す際には、配列がオーバーフローしないように判定することに注意。
-最後に求めたｄｐの中からできるだけ答えが０．５に近くなるものを求める。
-この時にｎ＊ｎで割ると誤差が出てしまうので式を変形して、
-勝つ回数をxとすると
-x/(n*n)=0.5
-x=0.5*n*n
-2x=n*n
-2x-n*n=0
-つまり2x-n*nの絶対値が一番０に近いものが最終的な答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class KingdomAndDice {
-public: double newFairness(vector&lt;int&gt; firstDie, vector&lt;int&gt; secondDie, int X) {
+			問題 サイコロが２つあり、２人のプレイヤーがそれぞれ１つのサイコロを振って出た目が大きい方が勝つゲームを行う。 ゲームはできるだけ公平にしたいの
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-548-div1-middle---kingdomanddice%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -307,36 +174,7 @@ public: double newFairness(vector&lt;int&gt; firstDie, vector&lt;int&gt; secondD
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-キーボードで「”月”　”日”」を打ちたいが、タイプミスをしばしば起こしてしまう。
-タイプミスはキーボードの隣り合う文字についてはコスト１、スペースとの間は３のコストで定義される。
-タイプ後の文字が与えられるとき、最もコストの少ない、つまり打とうとしていた「”月”　”日”」を求める。ただし同じコストの場合は最も早い月日を返す。
-解き方 
-実装の問題なので、いかにシンプルに考えて、シンプルに実装するか。
-まず問題文にキーボード間のコストが図で載っているが、
-これを以下に簡単に定義できるかが課題。
-キーボードをみてみると、キーボードの行単位で考えることができそう。
-各行に対し、隣り合う文字とのコストは１となる。
-各行に対し、真下の行の文字とのコストは１となる。
-各行に対し、真下の行の左下の文字とのコストは１となる。
-一番下の行について、スペースとのコストは３となる。
-また英数字は８ビットで表わせるので、int型の配列d[256][256]を定義し
-配列番号はアルファベット、値は距離としてあげればコストをグラフで定義できる。
-最後にワーシャルフロイドを回せば各文字間の最短距離が求められる。
-最後にすべての月、日に対してアウトプット「”月”、”日”」の文字列を用意し
-与えられた文字inputと文字列長が同じであればコストを計算すればよい。
-最後に大文字と小文字の区別をなくすように、tolower関数を使うことに注意。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int d[256][256];
-class DateFieldCorrection {
-public:
-int rec(string str1,string str2){
+			問題 キーボードで「”月” ”日”」を打ちたいが、タイプミスをしばしば起こしてしまう。 タイプミスはキーボードの隣り合う文字についてはコスト１、ス
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-375-div1-middle---datefieldcorrection%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -356,37 +194,7 @@ int rec(string str1,string str2){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-複数のN[i]とM[i]の行列が与えられ、積の計算を行う。
-行列計算はAxB、CxDにおいてB=CであればAxDの値と等しくなる。
-また、計算結果の要素数はAxDの値となる。
-このとき、行列の計算順序を入れ替えることですべての積をひとつにまとめることができるのであれば、そのうち計算結果が最大の要素となる要素数を求める。
-まとめることができない場合はー１を返す。
-解き方 
-行列をひとつにまとめることができるか、ということなので
-つまり一筆書きができるか、オイラー路があるかと考えることができる。
-オイラー路があるかどうか、あるときにそのルートを求める方法は以下に解説されています。
-http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E3%82%B0%E3%83%A9%E3%83%95%2F%E5%B7%A1%E5%9B%9E%E8%B7%AF%2F%E6%9C%89%E5%90%91%E3%82%AA%E3%82%A4%E3%83%A9%E3%83%BC%E8%B7%AF
-今回は始点と終点を求められるようにコーディングする。
-まずは各数に対して出次数と入次数を計算し、その差の次数が２以上であれば一筆書きできない。
-また差の入次数１のノードが１つ、差の出次数１のノードが１つでなければ一筆書きできない。
-次に全てのノードをたどっていったとき、たどっていないノードがあれば一筆書きできない。
-最後に入次数１のノードが１つ、出次数１のノードが１つであればそのノードの積が答えになり、すべての次数が０であればどこからでもスタートできるので最大のＮ＊Ｎが答えになる。
-コーディングの際、配列の数は十分か注意する。
-（p[x][y]は実際の要素数を表わすので、p[60][60]ではなくp[1001][1001]）
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int p[1001][1001];
-int deg[1001],used[1001];
-class OrderDoesMatter {
-public:
-void f(int x){
-used[x]=1;
+			問題 複数のN[i]とM[i]の行列が与えられ、積の計算を行う。 行列計算はAxB、CxDにおいてB=CであればAxDの値と等しくなる。 また、計
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-298-div1-middle---orderdoesmatter%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -406,35 +214,7 @@ used[x]=1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-複数の区間が与えられ、始まりの数字start[i]と終わりの数字finish[i]がわかっている。
-この区間を、サブセット集合にまとめたい。
-以下の条件を満たしたときにサブセット集合と呼ぶ。
-・集合中の各区間に重複がないこと
-・その集合に他の要素を足すと重複が出てしまうこと
-このとき、サブセット集合が何通りあるか求める。
-解き方 
-ｄｐの問題そうなのは読みとれる。
-ｄｐの設計方法について考える。
-区間をできるだけくっつけていき、もうくっつけることができなければその集合を答えに加えるのがよさそう。
-区間をくっつけていくには、区間の初めから考えていくｄｐになりそう。
-なので区間をはじめの方から走査し、前の区間がなければ最初の区間なのでｄｐに加える方法にする。
-ｄｐの状態は「区間の終わりの数字」、値は「その区間の場合の数」とする。
-
-区間の始まりの数字を０から１００まで走査し、対象となる区間について、前の区間がなければ区間に加えていく。
-加えていくときにそれまでの区間が存在するかはすでに判定しているので、そのような区間が存在していれば場合の数の和になっていく。
-
-最後につなげるのに使われた途中の区間はカウントしてはいけないので、
-最大のstart区間より大きい数字のｄｐを足していく。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class IntervalSubsets {
-public: int numberOfSubsets(vector&lt;int&gt; start, vector&lt;int&gt; finish) {
+			問題 複数の区間が与えられ、始まりの数字start[i]と終わりの数字finish[i]がわかっている。 この区間を、サブセット集合にまとめたい
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-387-div1-middle---intervalsubsets%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -454,39 +234,7 @@ public: int numberOfSubsets(vector&lt;int&gt; start, vector&lt;int&gt; finish) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-車を運転しており、最初に持っている燃料Fが与えられる。
-また、複数の給油ポイントがあり、そこまでにいくのに必要な燃料durationと給油できる燃料refuelが与えられる。
-好きな給油ポイントを選んで行ってよいとき、たどりつくことのできる最大の給油ポイントの数を求める。
-解き方 
-給油ポイントの数が５０であるため、Ｏ（５０！）と全探索では解けない。
-そのため、順番を考慮しないとｄｐで解くことはできない。
-では、どのようにたどる順番があるかを考える。
-問題文より、必要な燃料の順では解けないことがわかる。
-証明として、refuelの降順にたどることができないかを反例を用いて考える。
-仮に、ある給油ポイントがduration[i]、refuel[i]、
-それよりもrefuelが少ない給油ポイントduration[j]、refuel[j]を考える。
-refuelが少ない給油ポイントから多いポイントに行けて、
-多い給油ポイントから少ない給油ポイントに行けないとすると、
-F-duration[j]+refuel[j]&gt;=duration[i]
-F-duration[i]+refuel[i]&lt;duration[j]
-式を変形すると、
-F+refuel[j]&gt;=duration[i]+duration[j]
-F+refuel[i]&lt;duration[i]+duration[j]
-refuel[i]&gt;refuel[j]より上記は成立しないので、
-少ない給油ポイントから多い給油ポイントに行けるときは、
-必ず多い給油ポイントから少ない給油ポイントに行けることがわかる。
-よって、refuelの降順にｄｐを適用していけばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][5001];
-class AlbertoTheAviator {
-public: int MaximumFlights(int F, vector&lt;int&gt; duration, vector&lt;int&gt; refuel) {
+			問題 車を運転しており、最初に持っている燃料Fが与えられる。 また、複数の給油ポイントがあり、そこまでにいくのに必要な燃料durationと給油
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-610-div1-middle---albertotheaviator%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -506,34 +254,7 @@ public: int MaximumFlights(int F, vector&lt;int&gt; duration, vector&lt;int&gt; 
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-２次元のセルで示される天井が存在し、すべてにすきまなく屋根を作りたい。
-屋根を作るのに必要な板は幅が１であり、高さは好きに決めてもよい。
-また、天井にはでこぼこが存在し、そこには板を置くことができない。
-このとき、屋根を作るのに必要な板の最小枚数を求める。
-解き方 
-他の方のコードを参考に復習しました。
-ｄｐの考え方として、
-一つ上の行のすべての棒が縦か横かわかっていれば、現在の行に棒を加えたらよいかどうかわかる。
-そのため、「現在の行番号」「現在列番号」「現在列の一つ前の行までの縦横の情報＆一つ上の行の縦横の情報」を状態にもち、「現在の行列番号のひとつ前までのコスト」を値に持つｄｐを考える。
-走査としては、現在の行列に「縦の棒を入れた時」と「横の棒を入れた時」のコストの変化を更新する。
-縦の棒にしたとき、横の棒にしたときそれぞれ縦横の情報が変わるので状態を変更してｄｐを更新する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[11][11][1&lt;&lt;10];
-class FloorBoards {
-public: int layout(vector&lt;string&gt; room) {
-int h=room.size(),w=room[0].size();
-FORE(i,0,h+1)FORE(j,0,w+1)FORE(k,0,(1&lt;&lt;w))dp[i][j][k]=1e+9;
-dp[0][0][0]=0;
-FORE(i,0,h){
-FORE(j,0,w)FORE(k,0,(1&lt;&lt;w))FORE(l,0,2){
-int cost=dp[i][j][k]+1;
+			問題 ２次元のセルで示される天井が存在し、すべてにすきまなく屋根を作りたい。 屋根を作るのに必要な板は幅が１であり、高さは好きに決めてもよい。 ま
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-383-div1-middle---floorboards%E5%BE%A9%E7%BF%92/">Read more…</a>

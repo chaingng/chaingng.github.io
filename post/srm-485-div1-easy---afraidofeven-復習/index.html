@@ -7,53 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 485 DIV1 Easy - AfraidOfEven (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11146&amp;rd=14238
-・ある数列が与えられる。
-・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。
-このとき、もとの等差数列を求める。
-解き方 
-等差数列の差と、初項が決まれば等差数列になるかどうかは容易に判定できる。
-問題文から数字はintの範囲なので、この範囲で全探索すれば答えが求まる。
-＃もしくは、初項が偶数・奇数、差が偶数、奇数の場合を考えると
-２項目から０項目の差/2、もしくは３項目から１項目の差/2が答えになることがわかる。
-コード 
-class AfraidOfEven {
-public:
-vector&lt;int&gt; calc(vector&lt;int&gt; org,int d){
-int invalid=0;
-FORE(i,1,org.size()){
-while(1){
-if(org[i]!=org[i-1]&#43;d)org[i]*=2;
-else break;
-if(org[i]&lt;1||org[i]&gt;org[i-1]&#43;d){
-invalid=1;
-break;
-}
-}
-if(invalid){
-org[0]=-1;
-return org;
-}
-}
-return org;
-}
-vector&lt;int&gt; restoreProgression(vector&lt;int&gt; seq) {
-vector&lt;int&gt; ans;
-FORE(d,-1000,1001){
-vector&lt;int&gt; cur=seq;
-while(cur[0]&lt;=1e&#43;9){
-vector&lt;int&gt; tmp=calc(cur,d);
-if(tmp[0]!=-1 &amp;&amp; (ans.empty()||ans&gt;tmp))ans=tmp;
-if(cur[0]&gt;1e&#43;8)break;
-cur[0]*=2;
-}
-}
-return ans;
-}
-};
-using namespace std;
-#define all(c) (c)." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11146&amp;rd=14238 ・ある数列が与えられる。 ・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。 このとき、もとの等差数列を求める。 解き方" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 371 DIV1 Middle - ChessMatchup　（復習○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1718
-それぞれN人で構成される2つのチームが、団体戦でチェスの試合を行う。
-試合はＮ回行われ、各試合は各チームのメンバ１対１で行われる。
-各メンバは１試合しか出場できない。
-試合については強い方のメンバのチームが２点加算され、同じ強さの場合は各チーム１点が加算される。
-ここで自分のチームについては全メンバーの強さがわかっており、また相手の全メンバーの強さもわかっている。
-このとき、自分のチームが得られる最も高いスコアを求める。
-解き方 
-まずは各チームの強さを昇順にソートする。
-自分のチームは弱い方から選んでいき、
-相手の最も強いメンバに勝てるとき→そのメンバと対戦してスコア＋２
-相手の最も弱いメンバに勝てるとき→そのメンバと対戦してスコア＋２
-がもっともよい戦術であることがわかる。
-ただし、上記のどれとも一致しない場合は
-相手の最も強いメンバと弱いメンバ、どちらと対戦して良いかはその場で判断できない。
-そのため、この２通りについてｄｐを回して高い方のスコアを採用すればよい。
-ｄｐは６０＾３であるため十分に間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int n,dp[60][60][60];
-vector&lt;int&gt; us,them;
-class ChessMatchup {
-public:
-int f(int pos,int left,int right){" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1718 それぞれN人で構成される2つのチームが、団体戦でチェスの試合を行う。 試合はＮ回行われ、各試合は各チームのメンバ１対１で行われる。 各メン" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-371-div1-middle---chessmatchup%E5%BE%A9%E7%BF%92/" />
 

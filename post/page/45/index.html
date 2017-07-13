@@ -77,27 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7504&amp;rd=10664
-・各問題について、その楽しさの値が与えられる。
-・最初は０番目の問題を解く。その後、次の問題かその次の問題を選んでいく。
-・選んだ問題の楽しさの値の最小と最大の差が、指定された値より大きくなればそこで終了。そうでなければ、全ての問題を解かなければいけない。
-このとき、解かなければならない問題の最小値を求める。
-解き方 
-問題数が最大５０なので、全探索で解けない。
-問題の条件より、ある２つを選んだときその差が指定値より大きければ終了になる。
-そのため全ての２つの組み合わせの中から、その差が指定値より大きくなるもの全てについて最小値を求めて更新していけばよい。
-コード 
-class ProblemsToSolve {
-public: int minNumber(vector&lt;int&gt; p, int variety) {
-int n=p.size();
-int ret=n;
-FORE(i,0,n)FORE(j,i+1,n){
-if(abs(p[j]-p[i])&gt;=variety)ret=min(ret,(i+3)/2+(j-i+1)/2);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7504&amp;rd=10664 ・各問題について、その楽しさの値が与えられる。 ・最初は０番目の問題を解く。その後、次の問題かその次の問題を選んでいく。 ・選んだ問題の楽
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-340-div1-easy---problemstosolve-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -114,32 +97,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2292&amp;rd=10709
-フィボナッチ数の計算が再帰プログラムで書かれている。
-このとき、ある整数ｎのフィボナッチ数を求めるときに再帰プログラムにて１と０が出力される回数を求める。
-解き方 
-ｎの最大が４０のため全探索では解くことができない。
-ここで、ある数xまでに出力される０と１の回数もフィボナッチ数と同様に、
-x-1とあるx-2の０と１の回数の和で求められることがわかる。
-これをｄｐで実装する。
-コード 
-class NumberofFiboCalls {
-public: vector&lt;int&gt; fiboCallsMade(int n) {
-vector&lt;int&gt; ans;
-int dp0[n+1],dp1[n+1];
-memset(dp0,0,sizeof(dp0));
-memset(dp1,0,sizeof(dp1));
-dp0[0]=1,dp1[1]=1;
-FORE(i,2,n+1){
-dp0[i]=dp0[i-1]+dp0[i-2];
-dp1[i]=dp1[i-1]+dp1[i-2];
-}
-ans.push_back(dp0[n]);
-ans.push_back(dp1[n]);
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2292&amp;rd=10709 フィボナッチ数の計算が再帰プログラムで書かれている。 このとき、ある整数ｎのフィボナッチ数を求めるときに再帰プログラムにて１と０が出力さ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-352-div1-easy---numberoffibocalls-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -156,46 +117,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10033&amp;rd=13513
-・チームＡとＢがサッカーゲームを行う。
-・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。
-・各セグメントごと、各チームはあらかじめ与えられた確率でゴールする。
-・各セグメントごとのゴール数は０か１となる。
-このとき、ゲームが終わったときＡもしくはＢのスコアが素数となる確率を求める。
-解き方 
-２＾３６となるので全探索では解くことができない。
-ここで、最大が１８なので素数の数は７個に限られる。
-次に、ゴール数をｎ、Ａのゴールする確率がＰのときの確率は
-P^n * (1-P)^(18-n)*18Cnとなる。
-最後に、Aの素数となる確率とＢの素数となる確率で重複が発生する。
-Aのゴール数が素数となる確率をPa、Ｂのゴール数が素数となる確率をPbとすると
-Pa+Pb-Pa*Pbが答えになる。
-コード 
-class PrimeSoccer {
-public:
-double calc(double x){
-int p[]={2,3,5,7,11,13,17};
-double ret=0.0;
-FORE(i,0,7){
-double tmp=1.0;
-for(double n=18.0;n&gt;(double)(18-p[i]);n--)tmp*=n;
-for(double n=1.0;n&lt;=(double)p[i];n++)tmp/=n;
-tmp=tmp*pow(x,p[i])*pow(1.0-x,18-p[i]);
-ret+=tmp;
-}
-return ret;
-}
-double getProbability(int skillOfTeamA, int skillOfTeamB) {
-double Pa=calc((double)skillOfTeamA/100.0);
-double Pb=calc((double)skillOfTeamB/100.0);
-return Pa+Pb-Pa*Pb;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i !
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10033&amp;rd=13513 ・チームＡとＢがサッカーゲームを行う。 ・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。 ・各セグメントごと、各チームはあ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -215,35 +137,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7973&amp;rd=10781
-・ある曲数分、その曲を再生する前に調整可能なボリュームが与えられる。
-・与えられたボリュームに対し、そのボリューム分音を大きくするか、小さくすることができる。ただし、０以上最大ボリューム以下にならなければいけない。
-・最初のボリュームが与えられた時、最後の曲を再生し終わった後に最大のボリューム数を求める。全て再生できなければー１を返す。
-解き方 
-2^50=10^15のため全探索することはできない。
-ただし、ボリューム数が０～１０００の間に収まり曲数が最大５０のため
-dpで解くことができる。
-コード 
-class ChangingSounds {
-public:
-int maxFinal(vector&lt;int&gt; C, int beginLevel, int maxLevel) {
-int ret=-1,n=C.size();
-int dp[n+1][maxLevel+1];
-memset(dp,0,sizeof(dp));
-dp[0][beginLevel]=1;
-FORE(i,0,n){
-FORE(j,0,maxLevel+1){
-if(dp[i][j]){
-if(j+C[i]&lt;=maxLevel)dp[i+1][j+C[i]]=1;
-if(j-C[i]&gt;=0)dp[i+1][j-C[i]]=1;
-}
-}
-}
-FORE(i,0,maxLevel+1)if(dp[n][i])ret=i;
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7973&amp;rd=10781 ・ある曲数分、その曲を再生する前に調整可能なボリュームが与えられる。 ・与えられたボリュームに対し、そのボリューム分音を大きくするか、小
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-366-div1-easy---changingsounds-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -260,47 +157,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8692&amp;rd=12183
-・ある文と、単語の一覧が与えられる。
-・ある文を、与えられた単語を使って変換したい。
-・与えられた単語の順番を変えることで、ある文の一部と一致すればその一部を変換することができる。
-・変換するコストは、順番を変えた数になる。
-このとき、変換するコストの最小値を求める。変換できなければー１を返す。
-解き方 
-ｄｐを使って解く。
-dp[n=与えられた文字数]をとり、dp[i]をi番目までの最小のコストと定義する。
-dp[i]はiまでの文字をまとめて変換できるか、
-j&lt;iとなるdp[j]が存在する場合j+1～iまでの文字が変換できるかを判定し
-最小値を更新していく。
-コード 
-class SentenceDecomposition {
-public:
-int rec(string s1,string s2){
-int cost=0;
-FORE(i,0,s1.size())if(s1[i]!=s2[i])cost++;
-sort(all(s1));
-sort(all(s2));
-return s1==s2 ? cost : 1e+9;
-}
-int decompose(string sentence, vector&lt;string&gt; validWords) {
-int n=sentence.size();
-int dp[n+1];
-FORE(i,0,n+1)dp[i]=1e+9;
-dp[0]=0;
-for(int i=0;i&lt;n;i++)if(dp[i]!=1e+9){
-FORE(j,0,validWords.size()){
-int len=validWords[j].size();
-if(i+len-1&lt;n){
-int cost=rec(sentence.substr(i,len),validWords[j]);
-dp[i+len]=min(dp[i+len],dp[i]+cost);
-}
-}
-}
-return dp[n]&gt;=1e+9 ? -1 : dp[n];
-}
-};
-using namespace std;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8692&amp;rd=12183 ・ある文と、単語の一覧が与えられる。 ・ある文を、与えられた単語を使って変換したい。 ・与えられた単語の順番を変えることで、ある文の一部と
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-411-div1-easy---sentencedecomposition-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -320,31 +177,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12804&amp;rd=15706
-・惑星がｎ個存在する。
-・惑星の相対サイズを測るシステムＡ，Ｂが存在する。
-・各システムは太陽からの距離が近い順からランダムな数を選び、そのシステムとの相対距離を計算する。
-このとき、存在しうる惑星の数の最小値を求める。
-解き方 
-相対距離の最大値は10^9のため全ての値について全探索はできない。
-そこで、要素数は最大５０であることから５０＊５０＝２５００分だけの組み合わせに対して調べればよい。
-このとき、掛け算で値を考えると小数になるため計算しにくい。
-そのため、最小公倍数の計算の仕方を用いて、A[i],B[j]のペアを選んだときＢの要素には全てA[i]をかけ、Aの要素には全てB[j]をかければよい。
-上記の処理後は、LCM（Longest Common Sequence）問題に帰着できる。
-dpはＡの要素数とＢの要素数の２次元配列を用いる。
-dp[i][j]はi,jに到達するまでの最大値と定義し、状態遷移にて答えを求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AstronomicalRecords {
-public:
-int gcd(int x,int y){
-return y ? gcd(y,x%y) : x;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12804&amp;rd=15706 ・惑星がｎ個存在する。 ・惑星の相対サイズを測るシステムＡ，Ｂが存在する。 ・各システムは太陽からの距離が近い順からランダムな数を選び、そ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-594-div1-easy---astronomicalrecords-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -364,44 +197,7 @@ return y ? gcd(y,x%y) : x;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12924&amp;rd=15820
-・現在のレートとコンテストごとの点数が与えられる。
-・そのコンテストに勝利した場合はその点数が足され、負けた場合は引かれる。ただし０　未満にはならない。
-・レートが２２００以上だとbrown、それ未満だとcielの称号になる。
-・２つのコンテスト連続でbrownの称号にならないようにする。
-このとき、brownとcielの称号が変化する最大の数を求める。
-解き方 
-要素数が５０なので全探索では2^50となり間に合わない。
-点数の最大が10^9と全てdpすると間に合わないが、連続してbrownにはならないことを考えると点数が2200までのdp[50][2200]を考えればよい。
-または、全状態数は50×2200なのでこちらでdpするとより簡単なコードになる。
-コード 
-map&lt; pair &lt; int, int &gt;, int &gt; p;
-vector&lt;int&gt; R;
-class TypoCoderDiv1 {
-public:
-int calc(int pos,int rate){
-if(p.count(make_pair(pos,rate)))return p[make_pair(pos,rate)];
-if(pos==R.size())return p[make_pair(pos,rate)]=0;
-int ret=0;
-if(rate&gt;=2200){
-int score=rate-min(R[pos],rate);
-if(score&gt;=2200)ret=-1000000;
-else ret=max(ret,1+calc(pos+1,score));
-}else{
-int score=rate+R[pos];
-if(score&gt;=2200)ret=max(ret,1+calc(pos+1,score));
-else ret=max(ret,calc(pos+1,score));
-score=rate-min(R[pos],rate);
-ret=max(ret,calc(pos+1,score));
-}
-return p[make_pair(pos,rate)]=ret;
-}
-int getmax(vector&lt;int&gt; D, int X) {
-p.clear();
-R=D;
-return calc(0,X);
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12924&amp;rd=15820 ・現在のレートとコンテストごとの点数が与えられる。 ・そのコンテストに勝利した場合はその点数が足され、負けた場合は引かれる。ただし０ 未満
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-602-div1-easy---typocoderdiv1-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -421,18 +217,10 @@ return calc(0,X);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			用事があって表参道に行ったところ、通りがかりに俺のフレンチがあったので行ってきました。
-俺のフレンチの中でも一番大きい店舗らしく、すぐに入ることができました。並んでいる間トイレに寄って、みんな集まらないと入店できないとのことで待ちましたがそれがなければもっと早かったかも。
-フレンチには珍しく立ち食い形式なんですね。でも料理ひとつひとつがびっくりするほど安く、おいしくてびっくり。
-食べたメニューは以下のとおり。
-
-
-
-
-
-TODAY’s　俺の泡富士ミネラル（360ml）バケットオマールエビのロースト　貴腐ワインソース牛フィレとフォワグラのロッシーニ　トリュフソースワタリガニのトマトクリームスパゲティ
-これで一人３５００円くらいなのでいい感じでした。
- 
+			用事があって表参道に行ったところ、通りがかりに俺のフレンチがあったので行ってきました。 俺のフレンチの中でも一番大きい店舗らしく、すぐに入るこ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E4%BF%BA%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%83%81/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -449,36 +237,10 @@ TODAY’s　俺の泡富士ミネラル（360ml）バケットオマールエビ
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11204&amp;rd=14432
-様々な種類のトーストがあり、ある焼き時間になるとポッピングシャワーとなるが
-その時間未満だと生焼け、その時間を過ぎると焼きすぎになる。
-ポッピングシャワーとなる焼き時間はトーストの種類により異なる。
-生焼けのトーストとその焼き時間の集合、
-焼きすぎのトーストとその焼き時間の集合が与えられた時、
-最低何種類のトーストが存在したかを求める。
-ただし、集合のうち生焼けと焼きすぎのペアは少なくとも１つは存在する。
-そのようなペアが存在しなければー１を返す。
-解き方 
-生焼けと焼きすぎの境界が１つしかなければ、生焼けのものを１つ、焼きすぎのものを１つにまとめることができるので１種類。
-一番生焼けのものが時間が一番早く、一番焦げすぎのものが一番遅ければ、
-一番生焼けのもの＆一番焦げすぎのもの以外をまとめて１種類、
-一番生焼け以外のもの＆一番焦げすぎのものをまとめて１種類なので
-合計２種類。
-一番生焼けのものが時間が一番早く、一番焦げすぎのものが一番遅くなければ
-ペアが存在しないのでー１。
-コード 
-class ToastXToast {
-public: int bake(vector&lt;int&gt; under, vector&lt;int&gt; over) {
-int n=under.size();
-int m=over.size();
-sort(all(under));
-sort(all(over));
-if(under[0]&gt;over[0]||over[m-1]&lt;under[n-1])return -1;
-if(under[n-1]&lt;over[0])return 1;
-return 2;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11204&amp;rd=14432 様々な種類のトーストがあり、ある焼き時間になるとポッピングシャワーとなるが その時間未満だと生焼け、その時間を過ぎると焼きすぎになる。 ポ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -495,29 +257,10 @@ return 2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10258&amp;rd=13522
-（０，０）の位置からレーザーが発射される。
-レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、ｙ２の範囲は[-2/PI,2/PI]。
-このような（ｘ、ｙ１）（ｘ、ｙ２）が複数与えられるとき、ある点がレーザーに当たる確率を求める。
-解き方 
-全ての点について確率を求めていては間に合わない。
-そのため、各(x,y1)(x,y2)に対しレーザーの当たる範囲の確率を足していけばよい。
-arctanの使い方を忘れていたので、こちらのサイトを拝見させていただきました。
-http://78578203.at.webry.info/201101/article_2.html
-コード 
-class LaserShooting {
-public: double numberOfHits(vector&lt;int&gt; x, vector&lt;int&gt; y1, vector&lt;int&gt; y2) {
-double ret=0.0;
-int n=y1.size();
-FORE(i,0,n){
-double tmp1=atan((double)y1[i]/(double)x[i]);
-double tmp2=atan((double)y2[i]/(double)x[i]);
-ret+=fabs(tmp1-tmp2)/M_PI;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10258&amp;rd=13522 （０，０）の位置からレーザーが発射される。 レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>

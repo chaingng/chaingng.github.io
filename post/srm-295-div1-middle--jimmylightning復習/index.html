@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 295 DIV1 Middle -JimmyLightning　（復習×○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1193
-銀行強盗がおり、できるだけ多くのダイヤを持って帰りたい。
-各部屋は隣り合った扉があり、最初の部屋のみ入り口の扉がある。
-また、部屋番号と宝の価値、宝を盗むのに必要な時間が与えられる。
-合わせて、各部屋ごとに滞在できる時間も与えられる。
-このとき、できるだけ多くの宝を持って部屋をでることのできたときの最大の宝の価値の和を求める。
-解き方 
-各部屋はつながっており、最後には部屋を出ないといけない。
-この条件より、各部屋については前の部屋のうち一番短い滞在時間しか、滞在することはできない。
-また問題文より、各部屋には一つの宝ではなく、複数種類の宝が存在しているところに注意。
-各時刻においてｄｐで走査し、最後に一番高い価値の値を返す。
-ここも最後の時間が一番高い価値ではないことに注意。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class JimmyLightning {
-public:
-int robTheBank(vector&lt;int&gt; doors, vector&lt;string&gt; diamonds) {
-int n=doors.size();
-FORE(i,1,n)doors[i]=min(doors[i],doors[i-1]);
-vector&lt;pair&lt;int,pair&lt;int,int&gt; &gt; &gt; &nbsp;p;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1193 銀行強盗がおり、できるだけ多くのダイヤを持って帰りたい。 各部屋は隣り合った扉があり、最初の部屋のみ入り口の扉がある。 また、部屋番号と宝" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-295-div1-middle--jimmylightning%E5%BE%A9%E7%BF%92/" />
 

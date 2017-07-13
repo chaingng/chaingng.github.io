@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 634 DIV1 Easy - ShoppingSurveyDiv1 (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13455&amp;rd=16077
-・N人の客がいて、各商品を多くて１つ買うことができる。
-・また、K種類以上の商品を買うBig Shopperがいる。
-・商品iを買った人数s[i]がわかっているとき、Big Shopperは最低何人いるか求める。
-解き方 
-・問題文をミスリードしてしまった。
-・貪欲法で、Big Shopperが０人から増やしていきその場合に条件が成立するか
-確かめればよい。
-・確かめ方は、Big Shopperが存在するとき
-買う種類はK以上であればよいので全部の商品を買うことにする。
-このとき、残った値が（N-Big Shopperの数）×（K-1）以下であればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class ShoppingSurveyDiv1 {
-public: int minValue(int N, int K, vector&lt;int&gt; s) {
-int n=s." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13455&amp;rd=16077 ・N人の客がいて、各商品を多くて１つ買うことができる。 ・また、K種類以上の商品を買うBig Shopperがいる。 ・商品iを買った人数s" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-634-div1-easy---shoppingsurveydiv1-/" />
 

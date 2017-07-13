@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 433 DIV1 Easy - MagicWords xx" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10195&amp;rd=13695
-解き方 
-ある文字列がずらすことで何通り同じ文字列が現れるかは、
-その文字列で割りきれるサブ文字列がいくつつながっているかでわかる。
-例えば長さ１２の文字列中、長さ３のサブ文字列が４つ連なっている場合、
-１２／３で４通り存在する。
-上記のように判定することで計算量がO(８！×１６０×sqrt(160)）で
-時間内に収めることができる。
-コード 
-class MagicWords {
-public:
-int calc(string str){
-int n=str.size();
-for(int i=1;i&lt;n;i&#43;&#43;)if(n%i==0){
-int valid=1;
-for(int j=0;j&lt;n;j&#43;&#43;)if(str[j]!=str[(j&#43;i)%n])valid=0;
-if(valid)return n/i;
-}
-return 1;
-}
-int count(vector&lt;string&gt; S, int K) {
-int m=S.size();
-vector&lt;int&gt; idx(m);
-FORE(i,0,m)idx[i]=i;
-sort(all(idx));
-int ret=0;
-do{
-string str=&#34;&#34;;
-FORE(i,0,m)str&#43;=S[idx[i]];
-if(calc(str)==K)ret&#43;&#43;;
-}while(next_permutation(all(idx)));
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10195&amp;rd=13695 解き方 ある文字列がずらすことで何通り同じ文字列が現れるかは、 その文字列で割りきれるサブ文字列がいくつつながっているかでわかる。 例えば長" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-433-div1-easy---magicwords-xx/" />
 

@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 642 DIV1 Easy - WaitingForBus x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13540&amp;rd=16085
-・バスが複数あり、各バスごとに１周にかかる時間と、そのバスが選ばれる確率が与えられる。
-・スタート時にひとつのバスが与えられた確率で選ばれ、そのバスが戻ってきたときに
-また、そのバスを含むすべてのバスからひとつ選ばれ出発する。
-・あなたが到着する時間が与えられるとき、待ち時間の期待値を求める。
-解き方 
-期待値を求めるのでｄｐが使えそう。
-dp[現在の時刻]と定義する。
-各dp[i]について、すべてのバスjに対してdp[i&#43;time[j]]を更新する。
-このとき、i&#43;time[j]が自分が到着する時間よりも大きければその待ち時間を
-答えの期待値に加えていけば良い。
-コード 
-double dp[100001];
-class WaitingForBus {
-public: double whenWillBusArrive(vector&lt;int&gt; time, vector&lt;int&gt; prob, int s) {
-if(s==0)return 0.0;
-int n=time.size();
-double ret=0.0;
-memset(dp,0,sizeof(dp));
-dp[0]=1.0;
-for(int i=0;i&lt;s;i&#43;&#43;){
-FORE(j,0,n){
-if(s&lt;=i&#43;time[j])ret&#43;=(i&#43;time[j]-s)*dp[i]*prob[j]/100.0;
-else dp[i&#43;time[j]]&#43;=dp[i]*prob[j]/100.0;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13540&amp;rd=16085 ・バスが複数あり、各バスごとに１周にかかる時間と、そのバスが選ばれる確率が与えられる。 ・スタート時にひとつのバスが与えられた確率で選ば" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-642-div1-easy---waitingforbus-x/" />
 

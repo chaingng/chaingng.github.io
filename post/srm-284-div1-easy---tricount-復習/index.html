@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 284 DIV1 Easy - TriCount (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4811&amp;rd=8081
-１辺の最小の長さと、最大の長さが与えられる。
-このとき、とりうる三角形の数を求める。
-ただし、回転して同じ三角形になる場合は同じものとみなす。
-答えが10^9を超える場合は-1を返す。
-解き方 
-２重ループでは計算量として間に合わない、はずなのですが
-10^9以上は-1を返すので２重ループで収まります。
-コード 
-class TriCount {
-public: int count(int minLength, int maxLength) {
-long long ret=0LL;
-FORE(i,minLength,maxLength&#43;1){
-FORE(j,i,maxLength&#43;1){
-ret&#43;=min(maxLength,i&#43;j-1)-j&#43;1;
-if(ret&gt;1000000000)return -1;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4811&amp;rd=8081 １辺の最小の長さと、最大の長さが与えられる。 このとき、とりうる三角形の数を求める。 ただし、回転して同じ三角形になる場合は同じものとみな" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-284-div1-easy---tricount-%E5%BE%A9%E7%BF%92/" />
 

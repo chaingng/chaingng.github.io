@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="TCO 2015 1A Middle - Autogame" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433
-ノード数Nの有向グラフが与えられる。
-エッジの数は最大Nであり、各ノードから出るエッジはひとつだけになる。
-このグラフで最初に任意のノードを選んでトークンを置き、Kステップ遷移させる。
-Kステップ経過後、どのトークンも重ならないような置き方の総数を求める。
-解き方 
-法則を考えようとして複雑なコードになってしまった。
-ステップ数Kは10^9であるがノード数が５０なので、シミュレーションさせて
-最後の位置の重なり具合で場合の数を求めればシンプルに求められる。
-コード 
-class Autogame {
-public: int wayscnt(vector&lt;int&gt; a, int K) {
-int n=a.size();
-int p[n];
-int MOD=1000000007;
-FORE(i,0,n)p[i]=i;
-for(int i=0;i&lt;K &amp;&amp; i&lt;100;i&#43;&#43;){
-for(int j=0;j&lt;n;j&#43;&#43;)p[j]=a[p[j]]-1;
-}
-int ret=1;
-FORE(i,0,n){
-int cnt=0;
-FORE(j,0,n)if(p[j]==i)cnt&#43;&#43;;
-if(cnt&gt;0)ret=(ret*1LL*(cnt&#43;1))%MOD;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433 ノード数Nの有向グラフが与えられる。 エッジの数は最大Nであり、各ノードから出るエッジはひとつだけになる。 このグラフで最初に任意のノード" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/tco-2015-1a-middle---autogame/" />
 

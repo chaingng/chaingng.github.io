@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 463 DIV1 Easy - RabbitNumbering ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10697&amp;rd=14148
-複数のうさぎが存在し、すべてのうさぎに番号をつけたい。
-それぞれのうさぎは違う番号をつける。
-各うさぎはつけて欲しい番号の最大数を持っており、１～その最大数までの
-いずれかの数字をつける。
-このとき、うさぎの番号の付け方の総数を求める。
-解き方 
-普通に考えると計算量がオーバーしてしまう。
-各うさぎのmaxnumberでソートし、小さい数から順番に見ていくことで
-総数を簡単に数えることができる。
-コード 
-class RabbitNumbering {
-public: int theCount(vector&lt;int&gt; maxNumber) {
-int MOD=1000000007;
-int n=maxNumber.size();
-int ret=1;
-sort(all(maxNumber));
-FORE(i,0,n){
-ret=(ret*1LL*(maxNumber[i]-i))%MOD;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10697&amp;rd=14148 複数のうさぎが存在し、すべてのうさぎに番号をつけたい。 それぞれのうさぎは違う番号をつける。 各うさぎはつけて欲しい番号の最大数を持ってお" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-463-div1-easy---rabbitnumbering-/" />
 

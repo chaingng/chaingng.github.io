@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 537 DIV1 Easy - KingXNewCurrency" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11817&amp;rd=14730
-解き方 
-A，B自身をXとYで表せられるような整数を求めれば良い。
-どちらもXで割り切れるならばYが不要になるので−１となる。
-コード 
-class KingXNewCurrency {
-public: int howMany(int A, int B, int X) {
-if(A%X==0 &amp;&amp; B%X==0)return -1;
-set&lt;int&gt; s1,s2;
-for(int i=0;i&lt;A;i&#43;=X)for(int j=1;j&lt;=A-i;j&#43;&#43;){
-if((A-i)%j==0)s1.insert(j);
-}
-for(int i=0;i&lt;B;i&#43;=X)for(int j=1;j&lt;=B-i;j&#43;&#43;){
-if((B-i)%j==0)s2.insert(j);
-}
-if(A%X==0)return s2.size();
-if(B%X==0)return s1.size();
-int ret=0;
-for(set&lt;int&gt;::iterator it=s1.begin();it!=s1.end();it&#43;&#43;){
-if(s2.find(*it)!=s2.end())ret&#43;&#43;;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11817&amp;rd=14730 解き方 A，B自身をXとYで表せられるような整数を求めれば良い。 どちらもXで割り切れるならばYが不要になるので−１となる。 コード class KingXNewCurrency { public:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-537-div1-easy---kingxnewcurrency/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 469 DIV1 Middle - TheMoviesLevelTwoDivOne　（復習×）" />
-<meta property="og:description" content="問題 
-プレイヤーは複数存在するホラー映画を観る。
-各ホラー映画について、映画の長さlengthと恐いシーンが出現するときの映画開始からの長さscaryが与えられる。
-長さscaryまで起きて入れば恐さの値が47加算される。
-プレイヤーは最初に恐さの値を74持つ。
-１分ごとに恐さの値が１ずつ減っていき、－１になると寝てしまい他の映画は見れなくなる。
-
-このとき、できるだけ多くの映画を観ることができる順番を求める。
-複数存在するときは辞書順に小さいものを返す。
-解き方 
-映画の数は20なので、ビット列ｄｐがなんとなく使えそう。
-ただし順番を求めるため、ｄｐの値に配列を持つとメモリが足りなくなってしまう。
-そこで、「映画を観た本数」の配列と「そのうち辞書順で最小の映画の順番」の配列を用意し、状態として「これまでに観た映画のビット列」を持たせる。
-最後に逆順にたどることで、順番を復元することができる。
-ｄｐで求めたい値が２つある場合は、今回のように最小の「映画の順番」、「映画を観た本数」の２つのｄｐを用意して解く。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int c[(1&lt;&lt;20)&#43;1],first[(1&lt;&lt;20)&#43;1];
-class TheMoviesLevelTwoDivOne {
-public:
-vector&lt;int&gt; find(vector&lt;int&gt; length, vector&lt;int&gt; scary) {
-int n=length.size();
-memset(c,0,sizeof(c));" />
+<meta property="og:description" content="問題 プレイヤーは複数存在するホラー映画を観る。 各ホラー映画について、映画の長さlengthと恐いシーンが出現するときの映画開始からの長さsc" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-469-div1-middle---themoviesleveltwodivone%E5%BE%A9%E7%BF%92/" />
 

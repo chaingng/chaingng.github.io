@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 420 DIV1 Easy - SolitaireSimulation ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9917&amp;rd=13511
-カードが数枚ずつ山になって積まれている。
-各ターン、すべての山から１枚ずつカードをとって、そのカードで
-一つ山を追加する操作を繰り返す。
-この操作を繰り返したとき必ずもとの配列にもどる周期が必ず存在し、
-そのような周期はいくつであるか求める。
-解き方 
-問題の通り実装する。
-各操作ごとにカードの配列を保存し、最初に同じ配列が
-改めて出現した時にそのターン数の差分を飼えしてあげればよい。
-コード 
-class SolitaireSimulation {
-public: int periodLength(vector&lt;int&gt; heaps) {
-map&lt;vector&lt;int&gt;,int&gt; m;
-sort(all(heaps));
-m[heaps]=0;
-int turn=0;
-while(1){
-turn&#43;&#43;;
-vector&lt;int&gt; tmp;
-for(int i=0;i&lt;heaps.size();i&#43;&#43;){
-if(heaps[i]-1&gt;0)tmp.push_back(heaps[i]-1);
-}
-tmp.push_back(heaps.size());
-sort(all(tmp));
-heaps=tmp;
-if(m.find(heaps)==m.end())m[heaps]=turn;
-else return turn-m[heaps];
-}
-return -1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9917&amp;rd=13511 カードが数枚ずつ山になって積まれている。 各ターン、すべての山から１枚ずつカードをとって、そのカードで 一つ山を追加する操作を繰り返す。 こ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-420-div1-easy---solitairesimulation-/" />
 

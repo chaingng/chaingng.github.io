@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 391 DIV1 Easy - IsomorphicWords ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8175&amp;rd=11125
-解き方 
-全ての文字について、可能な限り昇順になるように変換する。
-変換後、一致する文字列群について組み合わせを計算してあげればよい。
-コード 
-class IsomorphicWords {
-public: int countPairs(vector&lt;string&gt; words) {
-int n=words.size();
-FORE(i,0,n){
-char ch=&#39;a&#39;;
-FORE(j,0,words[i].size()){
-if(words[i][j]==ch)ch&#43;&#43;;
-else if(words[i][j]&gt;ch){
-char prev=words[i][j];
-FORE(k,j,words[i].size()){
-if(words[i][k]==ch)words[i][k]=prev;
-else if(words[i][k]==prev)words[i][k]=ch;
-}
-ch&#43;&#43;;
-}
-}
-}
-int ret=0;
-int used[n];
-memset(used,0,sizeof(used));
-FORE(i,0,n)if(used[i]==0){
-int cnt=0;
-FORE(j,i,n)if(used[j]==0 &amp;&amp; words[i]==words[j]){
-used[j]=1,cnt&#43;&#43;;
-}
-ret&#43;=cnt*(cnt-1)/2;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8175&amp;rd=11125 解き方 全ての文字について、可能な限り昇順になるように変換する。 変換後、一致する文字列群について組み合わせを計算してあげればよい。 コード" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-391-div1-easy---isomorphicwords-/" />
 

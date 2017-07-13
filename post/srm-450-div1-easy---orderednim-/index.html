@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 450 DIV1 Easy - OrderedNim ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10190&amp;rd=13904
-Nimを少し変化させたゲームがあり、
-ある山についてそれよりも左の山が存在する時は選ぶことができない。
-山が与えられたとき、２人のうちどちらが勝つか求める。
-解き方 
-左側からしか山を選ぶことができないので、
-その中で法則がないか考察する。
-まず、すべて１のときは選び方が一様なので
-配列数が偶数のときはBob,そうでないときはAliceが勝つ。
-次に、すべて１でないときは最初に２以上の山が当たられた方が
-その後の順番をコントロールできるので、その選択権を持った方が勝ちとなる。
-コード 
-class OrderedNim {
-public: string winner(vector&lt;int&gt; layout) {
-int n=layout.size();
-FORE(i,0,n)if(layout[i]!=1){
-return i%2 ? &#34;Bob&#34; : &#34;Alice&#34;;
-}
-return n%2 ? &#34;Alice&#34; : &#34;Bob&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10190&amp;rd=13904 Nimを少し変化させたゲームがあり、 ある山についてそれよりも左の山が存在する時は選ぶことができない。 山が与えられたとき、２人のうちどち" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-450-div1-easy---orderednim-/" />
 

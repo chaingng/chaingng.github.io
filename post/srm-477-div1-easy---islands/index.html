@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 477 DIV1 Easy - Islands" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10874&amp;rd=14157
-六角形で表されるlandとwaterのエリアがあり、
-その接点がビーチとなる。
-地形が与えられたとき、存在するビーチの数を求める。
-解き方 
-ビーチとなる条件を判定文に落とし込んで実装するだけ。
-まず、ビーチはlandとwaterひとつずつに接する場合なので
-landについて調べることで重複なく調べられる。
-あとは、高さのMOD2が０のときと１のときの条件を落としこんで
-実装してあげれば良い。
-コード 
-class Islands {
-public: int beachLength(vector&lt;string&gt; kingdom) {
-int h=kingdom.size(),w=kingdom[0].size();
-int ret=0;
-FORE(i,0,h)FORE(j,0,w)if(kingdom[i][j]==&#39;#&#39;){
-if(j-1&gt;=0 &amp;&amp; kingdom[i][j-1]==&#39;.&#39;)ret&#43;&#43;;
-if(j&#43;1&lt;w &amp;&amp; kingdom[i][j&#43;1]==&#39;.&#39;)ret&#43;&#43;;
-if(i-1&gt;=0 &amp;&amp; kingdom[i-1][j]==&#39;.&#39;)ret&#43;&#43;;
-if(i&#43;1&lt;h &amp;&amp; kingdom[i&#43;1][j]==&#39;.&#39;)ret&#43;&#43;;
-if(i%2==0 &amp;&amp; j-1&gt;=0 &amp;&amp; i&#43;1&lt;h &amp;&amp; kingdom[i&#43;1][j-1]==&#39;.&#39;)ret&#43;&#43;;
-if(i%2==0 &amp;&amp; j-1&gt;=0 &amp;&amp; i-1&gt;=0 &amp;&amp; kingdom[i-1][j-1]==&#39;.&#39;)ret&#43;&#43;;
-if(i%2 &amp;&amp; j&#43;1&lt;w &amp;&amp; i&#43;1&lt;h &amp;&amp; kingdom[i&#43;1][j&#43;1]==&#39;.&#39;)ret&#43;&#43;;
-if(i%2 &amp;&amp; j&#43;1&lt;w &amp;&amp; i-1&gt;=0 &amp;&amp; kingdom[i-1][j&#43;1]==&#39;.&#39;)ret&#43;&#43;;
-}
-return ret;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10874&amp;rd=14157 六角形で表されるlandとwaterのエリアがあり、 その接点がビーチとなる。 地形が与えられたとき、存在するビーチの数を求める。 解き方 ビ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-477-div1-easy---islands/" />
 

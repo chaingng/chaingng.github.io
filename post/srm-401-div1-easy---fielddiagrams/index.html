@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 401 DIV1 Easy - FIELDDiagrams" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8776&amp;rd=12173
-整数fieldDiagramが与えられて、fieldDiagram行からなるBOXを作る。
-各行0,1,2,...において、長さはそれぞれfieldDiagram,fieldDiagram-1,fieldDiagram-2以下で
-なければならない。
-また、各行において上の行以下の長さでなければならない。
-このような条件を満たすようなBOXの作り方の総数を求める。
-解き方 
-上の行における長さがわかっていれば、上から順にたどっていくことで総数が
-計算できるのでｄｐで解ける。
-すべて０の場合は空になるので、最後にそのケース１通りを引いてあげれば良い。
-コード 
-class FIELDDiagrams {
-public: long long countDiagrams(int f) {
-long long dp[f&#43;1][f&#43;1];
-memset(dp,0,sizeof(dp));
-dp[0][f]=1LL;
-FORE(i,0,f)FORE(j,0,f&#43;1){
-for(int k=min(j,f-i);k&gt;=0;k--)dp[i&#43;1][k]&#43;=dp[i][j];
-}
-long long ret=0;
-FORE(i,0,f&#43;1)ret&#43;=dp[f][i];
-return ret-1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8776&amp;rd=12173 整数fieldDiagramが与えられて、fieldDiagram行からなるBOXを作る。 各行0,1,2,...において、長さはそれぞ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-401-div1-easy---fielddiagrams/" />
 

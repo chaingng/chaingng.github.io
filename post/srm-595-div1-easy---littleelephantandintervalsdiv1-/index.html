@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 595 DIV1 Easy - LittleElephantAndIntervalsDiv1 (×○)" />
-<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12822&amp;rd=15707
-M個のボールがあり、１からMまで順番に番号がついている。
-ボールの色は最初は白。
-複数のステージが与えられ、各ステージiについてL[i]番目からR[i]番目までの色を
-白か黒の好きな色どちらか一色に塗る。
-このとき、色の塗り方は何通りあるか求める。
-解き方 
-・色の塗り方なので、ボールの区切りの数を求め、その２＾（区切り数）が
-答えになりそう？
-・サンプルを見るとこれでは失敗。
-→他の人のコードをみる。
-・順番に色を塗っていく、という問題文の条件を見落としていた。
-・各ボールについて順番に色をぬっていくときのステージ数を上書きしていく。
-・最後に残った、各ボールのステージ数の場合の数について２の累乗をとってあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class LittleElephantAndIntervalsDiv1 {
-public: long long getNumber(int M, vector&lt;int&gt; L, vector&lt;int&gt; R) {
-int n=L.size();
-int p[M&#43;1];" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12822&amp;rd=15707 M個のボールがあり、１からMまで順番に番号がついている。 ボールの色は最初は白。 複数のステージが与えられ、各ステージiについてL[i]番" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-595-div1-easy---littleelephantandintervalsdiv1-/" />
 

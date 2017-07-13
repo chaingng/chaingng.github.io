@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 417 DIV1 Easy - TemplateMatching （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9943&amp;rd=13508
-ある文字列と、接頭辞と接尾辞が与えられる。
-ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。
-ただし、接頭辞と接尾辞のマッチ数が同じときは接頭辞のマッチ数が大きいものにする。
-また、上記も同じであれば文字の昇順のものにする。
-解き方 
-シミュレーション問題なので、いかにシンプルに実装するか。
-接頭辞の一致に時間がかかってしまったので、例とＦＯＲを回してみて正しく実装してみるか机上で検証してみるのがやはり大事。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-string P,S;
-class TemplateMatching {
-public:
-int prefixes(string str){
-int score=0;
-int n1=str.size(),n2=P.size();
-FOR(i,0,min(n1,n2)){
-string s1=str.substr(0,i&#43;1);
-string s2=P.substr(n2-1-i,i&#43;1);
-if(s1==s2)score=max(score,i&#43;1);
-}
-return score;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9943&amp;rd=13508 ある文字列と、接頭辞と接尾辞が与えられる。 ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。 ただし、接" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 482 DIV1 Easy - LockersDivOne （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11110&amp;rd=14235
-N個のドアがある。
-最初は一つおきにドアを開けていく。
-次は空いているドアはないとみなして、２つおきにドアをあけていく。
-次は３つおき・・・としたときに、最後に空けるドアを求める。
-解き方 
-Ｎ＝１０＾６。
-全探索だとN&#43;N/2&#43;N/(2*3)&#43;N/(2*3*4)・・・
-=N(1/2&#43;1/6&#43;1/24...)
-最大ケースを試しても240msほどなのでこれで解けます。
-こちらを拝見させていただくと、法則を出しても解けるそうです。
-http://be.nucl.ap.titech.ac.jp/~kawada/indigo/view/memo341.html
-http://d.hatena.ne.jp/kusano_prog/20100915/1284572746
-コード 
-class LockersDivOne {
-public:
-int lastOpened(int N) {
-vector&lt;int&gt; a;
-FORE(i,0,N)a.push_back(i&#43;1);
-for(int d=2;;d&#43;&#43;){
-if(a.size()==1)return a[0];
-vector&lt;int&gt; b;
-FORE(i,0,a.size())if(i%d!=0)b.push_back(a[i]);
-a.swap(b);
-}
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11110&amp;rd=14235 N個のドアがある。 最初は一つおきにドアを開けていく。 次は空いているドアはないとみなして、２つおきにドアをあけていく。 次は３つおき・・・" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-482-div1-easy---lockersdivone-%E5%BE%A9%E7%BF%92/" />
 

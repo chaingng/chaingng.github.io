@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 545 DIV1 Easy - StrIIRec" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12025&amp;rd=14737
-解き方 
-貪欲法で、左のアルファベットから決めていけば良い。
-決めていく材料として、
-あるアルファベットを固定した時に最大のminInvが指定した値以上になり、
-かつつくることのできる最も降順の文字列が与えられた文字列よりも大きければ良い。
-コード 
-class StrIIRec {
-public: string recovstr(int n, int minInv, string minStr) {
-int used[n];
-memset(used,0,sizeof(used));
-string ret=&#34;&#34;;
-int cnt=0;
-for(int i=0;i&lt;n;i&#43;&#43;){
-for(int j=0;j&lt;n;j&#43;&#43;)if(used[j]==0){
-string tmp=ret;
-tmp&#43;=&#39;a&#39;&#43;j;
-for(int k=n-1;k&gt;=0;k--)if(!used[k] &amp;&amp; k!=j)tmp&#43;=&#39;a&#39;&#43;k;
-if(tmp&lt;minStr)continue;
-int cost=cnt;
-for(int k=0;k&lt;j;k&#43;&#43;)if(!used[k])cost&#43;&#43;;
-used[j]=1;
-for(int k=n-1;k&gt;=0;k--)if(!used[k]){
-for(int l=k-1;l&gt;=0;l--)if(!used[l])cost&#43;&#43;;
-}
-if(cost&lt;minInv){
-used[j]=0;
-continue;
-}
-ret&#43;=&#39;a&#39;&#43;j;
-for(int k=0;k&lt;j;k&#43;&#43;)if(!used[k])cnt&#43;&#43;;
-break;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12025&amp;rd=14737 解き方 貪欲法で、左のアルファベットから決めていけば良い。 決めていく材料として、 あるアルファベットを固定した時に最大のminInvが指定" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-545-div1-easy---striirec/" />
 

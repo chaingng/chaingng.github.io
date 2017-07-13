@@ -7,48 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 495 DIV1 Easy - ColorfulCards xx" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11302&amp;rd=14424
-解き方 
-すべての状態について、満たすすべての整数を調べていっては
-コード量が大変になってしまう。
-そこで各状態について、とりうる最小の整数と最大の整数を調べ、
-一致していればその整数、一致していない、つまり複数通り存在するならば
-−１を返す。
-コード 
-class ColorfulCards {
-public: vector&lt;int&gt; theCards(int N, string colors) {
-int prime[N&#43;1];
-FORE(i,1,N&#43;1)prime[i]=1;
-prime[1]=0;
-for(int i=2;i&lt;=N;i&#43;&#43;)if(prime[i]){
-for(int j=i*2;j&lt;=N;j&#43;=i)prime[j]=0;
-}
-int m=colors.size();
-int minx[m],maxx[m];
-int at=0;
-for(int i=1;i&lt;=N;i&#43;&#43;){
-if(at&gt;=m)break;
-if((colors[at]==&#39;R&#39;)==prime[i]){
-minx[at&#43;&#43;]=i;
-}
-}
-at=m-1;
-for(int i=N;i&gt;=1;i--){
-if(at&lt;0)break;
-if((colors[at]==&#39;R&#39;)==prime[i]){
-maxx[at--]=i;
-}
-}
-vector&lt;int&gt; ans;
-ans.clear();
-FORE(i,0,m){
-if(minx[i]==maxx[i])ans.push_back(minx[i]);
-else ans.push_back(-1);
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11302&amp;rd=14424 解き方 すべての状態について、満たすすべての整数を調べていっては コード量が大変になってしまう。 そこで各状態について、とりうる最小の整数と" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-495-div1-easy---colorfulcards-xx/" />
 

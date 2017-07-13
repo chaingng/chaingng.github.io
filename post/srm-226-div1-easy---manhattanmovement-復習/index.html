@@ -7,24 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 226 DIV1 Easy - ManhattanMovement (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=3498&amp;rd=6515
-・直線ax&#43;by=1、スタート位置（x0,y0）が与えられる。
-・スタート位置から直線上の点まで移動する。
-・ただし、ｘ軸に平行、もしくはｙ軸に平行のどちらか１回しか移動できない。
-このとき、スタート位置から直線上の点まで移動するための最小の距離を求める。
-解き方 
-問題文のｘ軸に平行もしくはｙ軸に平行の部分について、どちらも利用できると判断してしまった。
-計算式を変換して、ｘ軸に対する平行移動とｙ軸に対する平行移動のうちどちらか最小を返してあげればよい。
-コード 
-class ManhattanMovement {
-public: double getDistance(int a, int b, int x0, int y0) {
-double ans=1e&#43;18;
-if(a!=0)ans=min(ans,fabs( (1.0-(double)b*(double)y0)/(double)a -(double)x0 ));
-if(b!=0)ans=min(ans,fabs( (1.0-(double)a*(double)x0)/(double)b -(double)y0 ));
-return &nbsp;ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=3498&amp;rd=6515 ・直線ax&#43;by=1、スタート位置（x0,y0）が与えられる。 ・スタート位置から直線上の点まで移動する。 ・ただし、ｘ軸に平行、もしくは" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-226-div1-easy---manhattanmovement-%E5%BE%A9%E7%BF%92/" />
 

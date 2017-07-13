@@ -74,33 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8817&amp;rd=12182
-ノードが複数存在し、任意のノード同士がつながっている。
-また、任意のノードが電力源につながっている。ただし、複数の電力源につながってはいけない。
-このとき、接続可能なエッジの数を求める。
-解き方 
-各電力源につながっているノードの集合ごとに、残りでつなぐことのできるエッジ数を求める。
-また、そのうち最大の集合と、電力源につながっていないノードの積も答えに加わる。
-あるノードの集合におけるエッジ数は、残りのエッジ数ではなく最大エッジ数を求めた後で、最後に最初に存在するエッジ数を引いてあげればコーディングが簡単になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int cnt,p[50],n;
-vector&lt;string&gt; W;
-class AddElectricalWires {
-public:
-void dfs(int x){
-if(p[x])return;
-p[x]=1;
-cnt++;
-FORE(i,0,n)if(W[x][i]=='1'&amp;&amp;p[i]==0)dfs(i);
-}
-int maxNewWires(vector&lt;string&gt; wires, vector&lt;int&gt; grid) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8817&amp;rd=12182 ノードが複数存在し、任意のノード同士がつながっている。 また、任意のノードが電力源につながっている。ただし、複数の電力源につながってはい
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -120,32 +94,7 @@ int maxNewWires(vector&lt;string&gt; wires, vector&lt;int&gt; grid) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7280&amp;rd=10011
-一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。
-このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。
-解き方 
-歌詞の長さは１０なので、全探索可能。
-ビットマスクを利用して全探索する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class CarolsSinging {
-public:
-int choose(vector&lt;string&gt; lyrics) {
-int n=lyrics[0].size();
-int ret=1e+9;
-for(int i=0;i&lt;(1&lt;&lt;n);i++){
-int cnt=0;
-vector&lt;int&gt; p(n,0);
-for(int j=0;j&lt;n;j++){
-if(i&amp;(1&lt;&lt;j)){
-cnt++;
-p[n-j-1]=1;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7280&amp;rd=10011 一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。 このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。 解
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -165,36 +114,7 @@ p[n-j-1]=1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8245&amp;rd=10936
-あるボードが存在し、その中には１～９までの数字かＨで表わされる穴が存在する。
-まずは一番左上のセルからスタートし、そのセルに書いてある数だけ上下左右に移動する。ボードの外に出たらそこで終了する。
-このとき、ボードの外に出るまでの最大のターン数を求める。
-ただし、ループが可能でボードの外に出なくてもよい場合はー１を返す。
-解き方 
-ＢＦＳに最初見えたがＤＦＳにて全てのルートを探索する必要がある。
-ただし、一度通ったルートはメモ化が可能なのでｄｐが適用できる。
-注意する点はループが発生した場合はー１を返さなければならないので、
-現在探索中のルートはフラグを立てて判定しなければならない。
-今回は以下のように値を割り振ることでコーディング可能。
-セルを超えた時　：０で終了
-すでに探索したルート：０以上で終了（うち、ホールにあたったときは０で終了）
-現在探索中のルート　：ー２で例外値を返し終了
-それ以外　：－１で次のループに進む
-他の方のコードをみましたが、throw&amp;catchしてもよさそうでした。
-http://community.topcoder.com/stat?c=problem_solution&amp;rd=10936&amp;pm=8245&amp;cr=251074
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[60][60];
-int w,h;
-int dx[]={0,1,0,-1},dy[]={1,0,-1,0};
-vector&lt;string&gt; B;
-class JumpingBoard {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8245&amp;rd=10936 あるボードが存在し、その中には１～９までの数字かＨで表わされる穴が存在する。 まずは一番左上のセルからスタートし、そのセルに書いてある数
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-368-div1-easy---jumpingboard-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -214,32 +134,7 @@ class JumpingBoard {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10275&amp;rd=13697
-有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。
-ただし、根のノードはー１が入っている。
-この有向グラフに、ある指定されたノードが削除され、その子となっているノードも削除される。
-このとき、元のノードの葉であり削除されていない葉の数を求める。
-解き方 
-元のグラフの葉のノードは、どのノードからも参照されていないノードになる。
-また、あるノードが削除されたときに、その子であるノードはＢＦＳで探索できる。
-上記の２つの処理を行うことで答えを求めることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class CellRemoval {
-public: int cellsLeft(vector&lt;int&gt; parent, int deletedCell) {
-int n=parent.size();
-int p[n+1];
-memset(p,1,sizeof(p));
-FORE(i,0,n)p[parent[i]]=0;
-queue&lt;int&gt; q;
-q.push(deletedCell);
-while(!q.empty()){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10275&amp;rd=13697 有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。 ただし、根のノードはー１が入っている。 この有向グラフに、あ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -259,32 +154,7 @@ while(!q.empty()){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8319&amp;rd=10805
-通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、
-ボード上に配置されている。ボード上の数がＫにあたる。
-このとき、すべてのボード上のナイトが同じセルに到達するまでに必要な最小移動回数の合計を求める。
-そのようなセルが存在しない場合はー１を返す。
-解き方 
-ボードが１０＊１０なので、全探索で解くことができる。
-計算量はＯ（１００００）。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class CollectingRiders {
-public: int minimalMoves(vector&lt;string&gt; board) {
-int w=board[0].size(),h=board.size();
-int dx[]={2,2,1,1,-1,-1,-2,-2};
-int dy[]={1,-1,2,-2,2,-2,1,-1};
-int ret=10000;
-FORE(x,0,h){
-FORE(y,0,w){
-int p[h][w];
-FORE(i,0,h)FORE(j,0,w)p[i][j]=10000;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8319&amp;rd=10805 通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、 ボード上に配置されている。ボード上の数がＫにあたる。 こ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -304,32 +174,7 @@ FORE(i,0,h)FORE(j,0,w)p[i][j]=10000;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8745&amp;rd=12169
-１～ｎまでの数字からなる配列が与えられる。
-また、ｋ個の連続した数字を逆順に並び変えることができる。
-このとき、元の配列を昇順にソートするのに必要な操作回数を求める。
-ただし、昇順にソートできない場合はー１を返す。
-解き方 
-メモ化を利用した全探索を行う。
-今回はｄｆｓよりキューを利用したｂｆｓの方が効率よく書くことができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-map&lt;vector&lt;int&gt;,int&gt; m;
-queue&lt;vector&lt;int&gt; &gt; q;
-class SortingGame {
-public:
-int fewestMoves(vector&lt;int&gt; board, int k) {
-int n=board.size();
-m.clear();
-m[board]=1;
-q.push(board);
-while(!q.empty()){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8745&amp;rd=12169 １～ｎまでの数字からなる配列が与えられる。 また、ｋ個の連続した数字を逆順に並び変えることができる。 このとき、元の配列を昇順にソートする
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -349,34 +194,7 @@ while(!q.empty()){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12746&amp;rd=15703
-グラフの各深さに対する頂点数が与えられる。
-このとき、そのグラフの直径を求める。
-解き方 
-グラフを最大のケースで作ってもよいが、場合分けをすれば簡単に求められる。
-まず、答えの最小は各深さの頂点が１のとき、つまり深さ＋１（要素数）となる。
-次に、直径の長さはその深さにおける頂点数が１もしくは２以上の場合しか影響されない。
-②頂点数が２以上の場合
-折り返し分の直径が増えるので、その値と比較して最大値を更新
-①頂点数が１の場合
-折り返し分はリセットされる。
-リセットされた際の最大値の更新は①で比較済み。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheTree {
-public: int maximumDiameter(vector&lt;int&gt; cnt) {
-int n=cnt.size();
-int ret=n;
-int last=-1,len=0;
-FORE(i,0,n){
-if(cnt[i]==1){
-last=i,len=0;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12746&amp;rd=15703 グラフの各深さに対する頂点数が与えられる。 このとき、そのグラフの直径を求める。 解き方 グラフを最大のケースで作ってもよいが、場合分けをす
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-591-div1-easy---thetree-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -396,32 +214,7 @@ last=i,len=0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9824&amp;rd=12179
-部下とマネージャーからなるサラリーマンの会社がある。
-配列が与えられ、ある人に対してその部下が誰かがわかっている。
-また、ある人の部下の部下は、ある人の部下でもあり、
-あるひとのマネージャーのマネージャーは、ある人のマネージャーでもある。
-ここで、ある人の給料は、その人の部下の給料の合計になる。
-部下がいないひとの給料は１になる。
-このとき、その会社のサラリーマン全員の給料の合計を求める。
-解き方 
-ある人の給料はその人の部下全員の給料の合計であるので、ＤＦＳにて答えを求めてあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-long long dp[60];
-vector&lt;string&gt; R;
-class CorporationSalary {
-public:
-long long f(int x){
-if(dp[x]!=-1)return dp[x];
-long long ret=0;
-FORE(i,0,R.size())if(R[x][i]=='Y')ret+=f(i);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9824&amp;rd=12179 部下とマネージャーからなるサラリーマンの会社がある。 配列が与えられ、ある人に対してその部下が誰かがわかっている。 また、ある人の部下の部
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -441,33 +234,7 @@ FORE(i,0,R.size())if(R[x][i]=='Y')ret+=f(i);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6186&amp;rd=9823
-ある整数から、ある整数へ変換したい。
-ある整数からの変換は、１とその数以外の、その整数で割りきれる数を足すことができる。
-このとき、最小の変換回数を求める。
-解き方 
-ぱっと見てdpで解く問題。
-ただし、整数Ｎ割り切れる数を探すのにＮ/2まで探索しては間に合わない。
-そこで、sqrt(Ｎ）まで探索してその数iとN/iの両方で検査する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class DivisorInc {
-public: int countOperations(int N, int M) {
-int dp[M+1];
-FORE(i,N,M+1)dp[i]=1e+9;
-dp[N]=0;
-FORE(i,N,M+1){
-if(dp[i]==1e+9)continue;
-for(int j=2;j*j&lt;=i;j++){
-if(i%j!=0)continue;
-if(i+j&lt;=M)dp[i+j]=min(dp[i+j],dp[i]+1);
-if(i+i/j&lt;=M)dp[i+i/j]=min(dp[i+i/j],dp[i]+1);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6186&amp;rd=9823 ある整数から、ある整数へ変換したい。 ある整数からの変換は、１とその数以外の、その整数で割りきれる数を足すことができる。 このとき、最小の
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -487,31 +254,7 @@ if(i+i/j&lt;=M)dp[i+i/j]=min(dp[i+i/j],dp[i]+1);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6093&amp;rd=9824
-座標上に１から始まり、らせん上に数が増えていく。
-この座標の１の場所を（０，０）として右側を正のｘ座標、下側を正のｙ座標としたときに与えられた数字の座標の位置を求める。
-解き方 
-数字の最大が1e+9なので全探索では解くことができない。
-ここで、各四角形を考えると右上の座標の数は１，９，２５と(i+2)^2ずつ増えていることがわかる。また、その座標は（１、－１）、（２、－２）とこちらも１ずつ増減していることがわかる。
-この法則に従ってどの四角形に与えられた数字があるかを判定し、逆にらせんを描くことで答えを求めることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SpiralNumbers {
-public: string getPosition(int N) {
-int dx[]={-1,0,1,0};
-int dy[]={0,1,0,-1};
-int x=0,y=0,len=0;
-if(N==1)return "(0,0)";
-for(long long i=1;i*i&lt;=1e+18;i+=2){
-len++;
-if(i*i&lt;N)continue;
-x=len-1,y=-(len-1);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6093&amp;rd=9824 座標上に１から始まり、らせん上に数が増えていく。 この座標の１の場所を（０，０）として右側を正のｘ座標、下側を正のｙ座標としたときに与え
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-303-div1-easy---spiralnumbers-%E5%BE%A9%E7%BF%92/">Read more…</a>

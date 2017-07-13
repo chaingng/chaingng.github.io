@@ -17,33 +17,7 @@
       <pubDate>Sun, 12 Apr 2015 20:54:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-647-div1-easy---buildingtowerseasy-x/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13634&amp;amp;rd=16279
-・N個の建物を建てたい。
-・建物は１からNまですべて連続していなければならなく、隣合う建物の高さの差は
-１以内でなければならない。
-・また、最初の建物の高さは０になる。
-・加えて、x[i]番目の建物の高さはt[i]以下でなければならない。
-・このとき、建物の中で最も高い建物の高さを求める。
-解き方 
-2013 1cEasyと類似した、山の問題。
-条件は以下の２つ。
-・建物１は高さ０から始まって、そこからの差は１以内ずつとなる。
-・各位置pについて、すべてのx[i]と比較して最大の高さはt[i]＋abs(p-x[i])以内にならなければいけない。
-最後に２つの条件を満たすもっとも高い建物の高さが答えになる。
-コード 
-class BuildingTowersEasy {
-public: int maxHeight(int N, vector&amp;lt;int&amp;gt; x, vector&amp;lt;int&amp;gt; t) {
-int d[N+1];
-for(int i=1;i&amp;lt;=N;i++)d[i]=i-1;
-for(int i=1;i&amp;lt;=N;i++){
-FORE(j,0,x.size()){
-d[i]=min(d[i],t[j]+abs(i-x[j]));
-}
-}
-return *max_element(d+1,d+1+N);
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13634&amp;amp;rd=16279 ・N個の建物を建てたい。 ・建物は１からNまですべて連続していなければならなく、隣合う建物の高さの差は １以内でなければならない。 ・また、</description>
     </item>
     
     <item>
@@ -52,29 +26,7 @@ return *max_element(d+1,d+1+N);
       <pubDate>Sat, 08 Nov 2014 11:57:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2013-tco-round-1c-easy---thearray-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12455&amp;amp;rd=15585
-・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。
-・スタート位置からn回移動し、最後に最後の位置に到達している必要があるとき、
-途中で到達しうる最大の高さを求める。
-解き方 
-・問題として２分探索が使えそう。
-・ある位置を考えた時、スタート位置から到達するために必要なターン数と、そこから最後の位置に到達するためのターン数の和がｎ以下であればよさそう。
-・２分探索の最小値はスタート位置もしくは最後の位置のうち小さいもの、最後に得られた値と小喜一のうち最大のものが答えになる。
-→System Passed
-・他の解き方、というか一番わかりやすい解き方として、nは10^6で全探索できるので
-各ターンにおいて最初の位置から到達しうる高さ、最後の位置から到達しうる高さのうち最小の　ものを取り、そのうち最大のものを求めれば簡単。
-・反省：全探索できる変数、探索を考えてみる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheArray {
-public: int find(int n, int d, int first, int last) {
-if(d==0)return max(first,last);</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12455&amp;amp;rd=15585 ・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。 ・スタート位置からn回移動</description>
     </item>
     
   </channel>

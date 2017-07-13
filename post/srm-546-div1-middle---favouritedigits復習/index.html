@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 546 DIV1 Middle - FavouriteDigits　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12045&amp;rd=14738
-ある数字が与えられる。
-プレイヤーは好きな数字を２つもっており、それぞれ決められた個数だけ含んでいる数にしたい。
-ある数字以上であり、かつ上記の条件を満たす最小の数字を求める。
-解き方 
-全探索は１０＾１５のためできない。
-まず必要な桁数は、もとの数字の桁数、もしくは好きな数字の数の合計、のいずれか大きい方になる。
-次に例として、好きな数字が９が２つ、７が１つであるときを考える。
-最初の数字を１２３４５６７８とすると、
-４の桁の数字を一つ足すことで１２３５？？？？
-？には好きな数字を入れることができるので、最適な数字を入れることで探索範囲を狭めることができる。
-ここでいう最適な数字とは、以下になることがわかる。
-（０＊？の残りの桁）＋（小さい数字＊必要数）＋（大きい数字＊必要数）
-上記の例では「１２３５０７９９」となる。
-つまり、少ない数字から足していく方法が最初に思い浮かぶが、
-大きい数字から考えるとシンプルに実装することができる。
-あとは元の数字から１を引き、それより大きい数字を左から全て探索する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class FavouriteDigits {
-public:
-string tostring(long long x){
-string str;
-stringstream out;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12045&amp;rd=14738 ある数字が与えられる。 プレイヤーは好きな数字を２つもっており、それぞれ決められた個数だけ含んでいる数にしたい。 ある数字以上であり、かつ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-546-div1-middle---favouritedigits%E5%BE%A9%E7%BF%92/" />
 

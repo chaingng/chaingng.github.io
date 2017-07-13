@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM577 DIV2 -500points" />
-<meta property="og:description" content="＜問題＞
-①Ｎ個の数字が与えられる。
-例）42 911 666 17 13 1 1155 1094 815 5 1000 540
-②一番最初の数字が自分の値。
-③大きい数字の順から２０個取り出され、Ｒ個の部屋にそれぞれランダムに割り当てられる。
-④１個の部屋には２０人まで収容できる。
-⑤部屋の数はＮ／２０、またＮが２０の倍数ならＮ／２０＋１。
-⑤このとき、一番最大の数字と自分の数字が同じ部屋に割り当てられる確率を返す。
-＜関数＞
-数字がintではなくstringにて、空白区切りで与えられ、しかも複数のstringで与えられるのでvector&lt;int&gt;に戻す処理が必要。
-FORE(i,0,ratings.size())strg&#43;=ratings[i];
-にて複数のstring配列を一つにし、
-stringstream out(strg);
-にて読み込み、
-while(out &gt;&gt; tmp)vx.push_back(tmp);
-にてvector&lt;int&gt;に挿入してます。
-＜考え方＞
-以下の場合に分けられる。
-①数字が２０個以内であれば、必ず同じ部屋になる。　→１
-②自分の数字の順位が降順で部屋の数以内であれば、同じ部屋にならない。→０
-③それ以外の場合、１／Ｒ。
-また、Ｎの数字によってＲの場合分けをする。
-Ｎ＝１９　→　（１９＋１９）／２０＝１
-Ｎ＝２０　→　（２０＋１９）／２０＝１
-Ｎ＝２１　→　（２１＋１９）／２０＝２
-となるので、Ｒ＝（Ｎ＋１９）／２０となり、
-確率は１／（（Ｎ＋１９）／２０）。
-double getProbability(vector&lt;string&gt; ratings) {
-int n,tmp,rank=1,r;
-vector &lt;int&gt; vx;
-string strg=&#34;&#34;;
-FORE(i,0,ratings.size())strg&#43;=ratings[i];
-stringstream out(strg);
-while(out &gt;&gt; tmp)vx.push_back(tmp);
-n=vx.size();
-r=(n&#43;19)/20;
-FORE(i,0,n)if(vx[i]&gt;vx[0])rank&#43;&#43;;
-if(n&lt;=20)return 1;" />
+<meta property="og:description" content="＜問題＞ ①Ｎ個の数字が与えられる。 例）42 911 666 17 13 1 1155 1094 815 5 1000 540 ②一番最初の数字が自分の値。 ③大きい数字の順から２０個取り出され、Ｒ個の部屋" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm577-div2--500points/" />
 

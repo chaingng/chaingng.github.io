@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 554 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①高さを示す配列が与えられる。
-②隣り合う高さについては、倒れた時もぶつからないよう２つのうち最大の高さ分の距離をとらなければならない。
-③このとき、最小の距離となるよう高さを並べ替えるとき、
-並べ替え後の要素の番号の配列を求める。
-解き方 
-高さの要素数が７なので、全探索すればよいです。
-最初は高さに応じてnext_permutationと考えてしまったが、
-このとき同じ距離の配列が存在するときに要素の昇順によってはエラーとなってしまいます。
-ここでもう一つ考えられるかなのですが、
-それでは「高さ」でソートするのではなく、「要素番号」でソートすれば
-昇順で判定するため、上記の問題を解決することができます。
-コード 
-class TheBrickTowerMediumDivTwo {
-public: vector&lt;int&gt; find(vector&lt;int&gt; heights) {
-int ans=500;
-int n=heights.size();
-vector&lt;int&gt; tmp(n,0),tmp2(n,0);
-FORE(i,0,n)tmp[i]=i;
-sort(tmp.begin(),tmp.end());
-do{
-int cost=0;
-FORE(i,0,n-1)cost&#43;=max(heights[tmp[i]],heights[tmp[i&#43;1]]);
-if(cost&lt;ans){
-FORE(i,0,n)tmp2[i]=tmp[i];
-ans=cost;
-}
-}while(next_permutation(tmp.begin(),tmp.end()));
-return tmp2;
-}
-}; " />
+<meta property="og:description" content="問題 ①高さを示す配列が与えられる。 ②隣り合う高さについては、倒れた時もぶつからないよう２つのうち最大の高さ分の距離をとらなければならない。 ③" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-554-div2--level2/" />
 

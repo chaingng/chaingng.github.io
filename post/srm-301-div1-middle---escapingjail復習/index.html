@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 301 DIV1 Middle - EscapingJail　（復習×○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1248
-各囚人がペアで鎖でつながれている。
-ただし、囚人のペアによっては鎖でつながれていない。
-ここで、つながれている鎖それぞれの長さがわかっている。
-このとき、２人の囚人が最も離れることのできる距離を求める。
-ただし、つながれていない場合はー１を返す。
-解き方 
-囚人aと bの距離は、その他の囚人xに対してa-b &lt;=a-x&#43;x-bでなければいけない。
-この距離は小さい方から決まっていくので、鎖の長さ０から最大の長さそれぞれに対して
-上記の式を満たすよう長さを更新していき、最後に残った最も長い距離を返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int p[60][60];
-class EscapingJail {
-public:
-int calc(char ch){
-if(ch==&#39; &#39;)return 1e&#43;9;
-if(&#39;0&#39;&lt;=ch &amp;&amp; ch&lt;=&#39;9&#39;)return (int)(ch-&#39;0&#39;);
-if(&#39;a&#39;&lt;=ch &amp;&amp; ch&lt;=&#39;z&#39;)return (int)(ch-&#39;a&#39;)&#43;10;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1248 各囚人がペアで鎖でつながれている。 ただし、囚人のペアによっては鎖でつながれていない。 ここで、つながれている鎖それぞれの長さがわかってい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-301-div1-middle---escapingjail%E5%BE%A9%E7%BF%92/" />
 

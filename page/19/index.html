@@ -74,30 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13146
-・N人が円になって並んでいる。
-・そこから各ターンｔごとにｔ＾３番目にいる人を消し、その次の人へ移動する。
-・このとき、最後に残る人の番号を求める。
-解き方 ・各ターンごとに移動する数は、そのターンで残っている人でMODを取れば
-計算量が間に合うので、あとはメモ化すれば解くことができる。
-・MOD関連でシステムで一度落ちてしまったので、できるだけ実装はシンプルに。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ChooseTheBestOne {
-public: int countNumber(int N) {
-int dp[N];
-memset(dp,0,sizeof(dp));
-int s=0;
-for(long long t=1;t&lt;N;t++){
-while(dp[s])s=(s+1)%N;
-long long num=N-t+1;
-int move=(((t*t*t)%num)+num-1)%num;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13146 ・N人が円になって並んでいる。 ・そこから各ターンｔごとにｔ＾３番目にいる人を消し、その次の人へ移動する。 ・このとき、最後に残る人の番号
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-619-div2-middle---choosethebestone-/">Read more…</a>
@@ -117,34 +94,7 @@ int move=(((t*t*t)%num)+num-1)%num;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12837
-複数のタイルからなる１列の道路があり、各タイルは赤、緑、青のいずれかの色が塗られている。
-また、最初のタイルは赤色である。
-このタイルからスタートし、赤→緑→青→赤・・・の順で右側にあるタイルにジャンプできる。
-ただし、ジャンプしたときにその距離の２乗のコストがかかる。
-このとき、ゴールまで到達するのに最小のコストを求める。
-ゴールまでたどり着けない場合は－1を返す。
-解き方 
-単純なｄｐで解ける。
-道路の配列を文字列から０～２で現すようにしてあげれば
-場合分けも簡単になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ColorfulRoad {
-public: int getMin(string road) {
-int n=road.size();
-int R[n];
-memset(R,0,sizeof(R));
-FORE(i,0,n){
-if(road[i]=='G')R[i]=1;
-else if(road[i]=='B')R[i]=2;
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12837 複数のタイルからなる１列の道路があり、各タイルは赤、緑、青のいずれかの色が塗られている。 また、最初のタイルは赤色である。 このタイルから
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-596-div2-middle---colorfulroad-/">Read more…</a>
@@ -164,31 +114,10 @@ else if(road[i]=='B')R[i]=2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13166
-・整数の集合Sが与えられる。
-・この整数の組み合わせで表わせないような、最小の正の整数を求める。
-解き方 
-・Sの数が２０、各要素が10^5から
-計算量O（20*10^5=2*10^6）でメモリ、速度とも足りそうなのでｄｐで解ける。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[2000001];
-class NumbersChallenge {
-public: int MinNumber(vector&lt;int&gt; S) {
-int n=S.size();
-memset(dp,0,sizeof(dp));
-dp[0]=1;
-FORE(i,0,n)for(int j=2000000-S[i];j&gt;=0;j--)dp[S[i]+j]+=dp[j];
-FORE(i,1,2000001)if(dp[i]==0)return i;
-return 2000001;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13166 ・整数の集合Sが与えられる。 ・この整数の組み合わせで表わせないような、最小の正の整数を求める。 解き方 ・Sの数が２０、各要素が10^5か
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-621-div2-middle---numberschallenge-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -205,32 +134,7 @@ return 2000001;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13648&amp;rd=16312
-
-・無向グラフの隣接行列のリストが与えられる。
-・このうち２つの頂点を選び、グラフから消した時に木の集合が増える
-頂点の選び方を全て求める。
-解き方 
-・頂点数は２０なので、頂点の選び方は２０C2となり全探索で解ける。
-・２つの頂点を選んだときにできる木の集合の数を求め、頂点を消さないときよりも
-集合の数が増えるかどうか判定すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int used[30],n;
-vector&lt;string&gt; g;
-class Fragile2 {
-public:
-void dfs(int x){
-used[x]=1;
-FORE(i,0,n)if(!used[i] &amp;&amp; g[x][i]=='Y')dfs(i);
-}
-int countPairs(vector&lt;string&gt; graph) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13648&amp;rd=16312 ・無向グラフの隣接行列のリストが与えられる。 ・このうち２つの頂点を選び、グラフから消した時に木の集合が増える 頂点の選び方を全て求める。
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-648-div2-middle---fragile2-/">Read more…</a>
@@ -250,32 +154,7 @@ int countPairs(vector&lt;string&gt; graph) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13669&amp;rd=16314
-・AとBから成る文字列を作りたい。
-・ただし、i番目の文字はAかBか決まっており、最初にその情報が与えられる。
-・また、できるだけAとBが連続しているようにはしたくない。
-・上記の情報が与えられるとき、できるだけAとBが連続しないような文字列の場合の数を
-求める。
-解き方 
-・まず、できるだけAとBが連続しないような文字列を求める。
-与えられた情報の位置でソートし、それぞれの間について考える。
-このとき、それぞれのスペースの数＋両端のAかBの一致か不一致かによって
-AとBがひとつも連続しないか、そうでないかがわかる。
-・次に、そのような場合の数を求める。
-・AとBが連続しないようなケースの場合は1通りしか置き方はない。
-・AとBが連続するようなケースは、スペースの数だけ場合の数が存在する。
-・最後にそれぞれのスペースについての積をとってあげれば答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int MOD=1000000007;
-class TaroFillingAStringDiv1 {
-public: int getNumber(int N, vector&lt;int&gt; position, string value) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13669&amp;rd=16314 ・AとBから成る文字列を作りたい。 ・ただし、i番目の文字はAかBか決まっており、最初にその情報が与えられる。 ・また、できるだけAとBが
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-650-div1-easy---tarofillingastringdiv1-/">Read more…</a>
@@ -295,29 +174,7 @@ public: int getNumber(int N, vector&lt;int&gt; position, string value) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-・文字の長さがNであり、’A’か’B’から成る文字列を作りたい。
-・ただし、Aより後ろのどこかにBがあるペアをK個作りたい。
-・そのような文字列を作れない場合は-1を、作れる場合はそのような文字列のうち一つを出力する。
-解き方 
-・最大のペア数はN/2 * (N-N/2)であるので、これよりもKが大きければそのような文字列を
-作れない。
-・作れる場合は実装するだけ。Aを出力するときに、それより右にあるべきBの数を保存してあげるように解いた。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AB {
-public: string createString(int N, int K) {
-string ret="";
-for(int a=0;a&lt;=N/2;a++){
-int b=N-a;
-if(a*b&lt;K)continue;
-vector&lt;int&gt; v;
-FORE(i,0,a){
+			問題 ・文字の長さがNであり、’A’か’B’から成る文字列を作りたい。 ・ただし、Aより後ろのどこかにBがあるペアをK個作りたい。 ・そのような文
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-648-div1-easy---ab-/">Read more…</a>
@@ -337,30 +194,7 @@ FORE(i,0,a){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-・整数ｘとｙが与えられる。
-・ｘ＝０、ｙ＝０からスタートし、１から順に数を増やしていき毎回ｘとｙのどちらかにその数を足す。
-・与えられたｘとｙにすることができるなら、そのうちｘに数を足す最小の回数を求める。
-・そのような足し方がない場合は-1を返す。
-解き方 
-・１から順番に和をとっていき、ｘ＋ｙ以上となったときちょうどｘ＋ｙとなればそのような
-足し方は存在し、そうでなければ存在しない。
-ｘ＋ｙ=2*10^12で、n*(n+1)/2がnまでの和なので最大でn=10^6なので間に合う。
-・そのような足し方が存在した場合、今度は上で求めた最大のnから1ずつ引いていく。
-そして毎回x以下であればxを引いていき、0になるまでの引いた数が
-最終的な答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AliceGameEasy {
-public: long long findMinimumValue(long long x, long long y) {
-long long sum=0,n=0;
-while(sum&lt;x+y){
-n++;
+			問題 ・整数ｘとｙが与えられる。 ・ｘ＝０、ｙ＝０からスタートし、１から順に数を増やしていき毎回ｘとｙのどちらかにその数を足す。 ・与えられたｘと
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-639-div2-middle---alicegameeasy-/">Read more…</a>
@@ -380,29 +214,7 @@ n++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-・一列の道路に車が複数あり、その車の先頭位置とその長さが与えられる。
-・全ての車を連結したいとき、必要となる最小の移動距離を求める。
-解き方 
-・車を連結させるとき、そのうち一つの車の位置は固定となることがわかれば解ける。
-・あとは実装の問題。
-ある車を固定した時の移動距離を、左側にあるものの計算と右側にあるものの計算を分けて、
-近い順に行っていけばシンプルに実装できる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ConnectingCars {
-public: long long minimizeCost(vector&lt;int&gt; positions, vector&lt;int&gt; lengths) {
-int n=positions.size();
-vector&lt;pair&lt;int,int&gt; &gt; p;
-FORE(i,0,n)p.push_back(make_pair(positions[i],lengths[i]));
-sort(all(p));
-long long ret=1e+18;
-FORE(i,0,n){
+			問題 ・一列の道路に車が複数あり、その車の先頭位置とその長さが与えられる。 ・全ての車を連結したいとき、必要となる最小の移動距離を求める。 解き方
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-645-div2-middle---connectingcars-/">Read more…</a>
@@ -422,30 +234,7 @@ FORE(i,0,n){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-・複数の数字が与えられる。
-・ｋ個の数字が連続して並ぶようにしたい。
-・数字を１つ動かすのにコストが１かかるとき、最小のコストを求める。
-解き方 
-・数字を連結させるための最小コストを求めるとき、
-少なくともひとつの数字の場所は固定されていることがわかれば解ける。
-・あとはｋ個の連続する数字の範囲全てについて、そのうち全ての数字を固定した場合の
-最小コストを求めればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheConsecutiveIntegersDivOne {
-public: int find(vector&lt;int&gt; numbers, int k) {
-int n=numbers.size();
-sort(all(numbers));
-int ret=1e+9;
-for(int i=0;i+k-1&lt;n;i++){
-for(int j=i;j&lt;=i+k-1;j++){
-int cost=0;
+			問題 ・複数の数字が与えられる。 ・ｋ個の数字が連続して並ぶようにしたい。 ・数字を１つ動かすのにコストが１かかるとき、最小のコストを求める。 解き
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-646-div1-easy---theconsecutiveintegersdivone-x/">Read more…</a>
@@ -465,28 +254,7 @@ int cost=0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13631&amp;rd=16279
-・M個の都市があり、その訪問順が決まっている。
-・複数のアイテムについて、そのアイテムを売った時の利益と、そのアイテムを売ることができる都市のペアが与えられる。
-・アイテムについて、その都市を訪問するごとにひとつ売ることができる。
-・このとき、得られる最大の利益を求める。
-解き方 
-・訪問順が決まっており、かつ一つのアイテムについて売ることのできる都市は１つであるので、
-貪欲法で解くことができる。
-計算量はO(１００＊２５００＝２．５＊１０＾５)なので間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TravellingSalesmanEasy {
-public: int getMaxProfit(int M, vector&lt;int&gt; profit, vector&lt;int&gt; city, vector&lt;int&gt; visit) {
-int ret=0;
-int n=profit.size();
-int used[n];
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13631&amp;rd=16279 ・M個の都市があり、その訪問順が決まっている。 ・複数のアイテムについて、そのアイテムを売った時の利益と、そのアイテムを売ることができる
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-647-div2-middle---travellingsalesmaneasy-/">Read more…</a>

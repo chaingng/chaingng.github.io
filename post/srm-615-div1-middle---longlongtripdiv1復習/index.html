@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 615 DIV1 Middle - LongLongTripDiv1　（復習×）" />
-<meta property="og:description" content="問題 
-Ｎ個の都市が存在する。
-ある都市A[i]とB[i]を結ぶコストD[i]があらかじめわかっている。
-このとき、都市0から都市N-1までちょうどコストTで移動できれば&#34;Possible&#34;、移動できなければ&#34;Impossible&#34;を返す。
-解き方 
-D[i]は最大10000、Tは10^18のため単純な全探索はできない。
-都市0からN-1まではどの経路を重複してもよいので、それぞれの場合を求めなければいけない。
-このあたりで引っかかってしまったのでEditorialを読む。
-ｄｐとしてTはそのまま扱えないが、０から直接つながる経路は最初に何回往復してもよいので、
-その経路の往復分の距離ｄを考える。
-ここで各都市について「都市番号」、「現在までのコスト%d」の状態を持つｄｐを考えることができる。
-ここでｄｐの値はトータルのコストとなる。
-最後に、dp[n-1][T%d]の値がＴ以下であれば、
-都市Ｎ－１にＴ％ｄのコストで到達できることがわかるので、
-ｄを足りない分だけ最初に往復すればちょうどＴで到達できるかを判定できる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-long long dist[60][20001];
-class LongLongTripDiv1 {
-public: string isAble(int N, vector&lt;int&gt; A, vector&lt;int&gt; B, vector&lt;int&gt; D, long long T) {" />
+<meta property="og:description" content="問題 Ｎ個の都市が存在する。 ある都市A[i]とB[i]を結ぶコストD[i]があらかじめわかっている。 このとき、都市0から都市N-1までちょうど" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-615-div1-middle---longlongtripdiv1%E5%BE%A9%E7%BF%92/" />
 

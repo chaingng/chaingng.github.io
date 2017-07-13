@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 517 DIV1 Easy - CompositeSmash （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11535&amp;rd=14542
-正の整数Ｎとtargetが与えられる。
-Ｎはスマッシュするとx*y=N（x,yは整数）となるｘとｙに分割することができる。
-このとき、どうスマッシュしてもtargetが得られるならYes,得られないならNoを返す。
-解き方 
-ＤＦＳで全探索。
-１つの判定関数の中で全ての割り切れる数に対してtrueとなり、
-かつ割り切れる数で得られるx,yのいずれかが判定関数でtrueとなるか判定する。
-dp化しなければ計算量が超えそうかと思ったけど超えなかった。
-こちらのソリューションでメモ化した方がよいかも。
-http://community.topcoder.com/stat?c=problem_solution&amp;cr=22263204&amp;rd=14542&amp;pm=11535
-コード 
-int T;
-class CompositeSmash {
-public:
-bool f(int N){
-if(N==T)return true;
-bool allfound=true,flag=false;
-for(int i=2;i*i&lt;=N;i&#43;&#43;){
-if(N%i==0){
-flag=true;
-allfound&amp;=f(i)|f(N/i);
-}
-}
-return flag ? allfound : false;
-}
-string thePossible(int N, int target) {
-T=target;
-return f(N) ?&#34;Yes&#34; : &#34;No&#34; ;
-}
-};
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i !" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11535&amp;rd=14542 正の整数Ｎとtargetが与えられる。 Ｎはスマッシュするとx*y=N（x,yは整数）となるｘとｙに分割することができる。 このとき、どう" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/" />
 

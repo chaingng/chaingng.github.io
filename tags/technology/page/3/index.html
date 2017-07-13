@@ -77,25 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。
-BootLoaderとは
-起動直後のコンピュータはハードディスクからＯＳを読み込むことができない。
-そのため、ＯＳを起動させるためにＢＩＯＳが読み込む小さなプログラムがブートローダーになる。
-ただ、ブートローダーは通常はハードディスク等の先頭部分に５１２バイト分しか存在しないため、ＯＳを呼び出すことができない。
-そこで、ブートローダーは各パーティションの先頭にあるブートマネージャー（２次ブートローダー）を起動させる。
-ブートマネージャーは設定された内容に従って、指定されたパーティションにあるＯＳを起動する。
-ここでブートマネージャーの設定ファイルに複数のＯＳ情報を記載することによって、
-複数のＯＳの起動を選択することができる。
-Bootloaderのアンロック
-ブートローダーにはシステムのアップデート機能もあり、特定の場所にイメージを置いておくとアップデートすることができる。
-ただし、電子署名された特定のイメージしかアップデートできないようにメーカーが設定している場合もある。
-このとき独自のイメージを焼きたいときに、ブートローダーのアンロックが必要になる。
-リカバリーにBootloaderのアンロックが必要
-Androidにはboot,system,recoveryの３つのパーティションがある。
-通常はsystemが起動するが、アップデートの際は起動できないのでrecoveryを起動してアップデートする必要がある。また、boot領域はシステムが壊れても最低限の起動をするのに必要なもの。
-Bootloaderのアンロックをすることで、recovery領域のアップデート（カスタムリカバリー）も可能になる。
-
- 
+			最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。 BootLoaderとは 起動直後のコンピュータはハー
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -112,37 +97,10 @@ Bootloaderのアンロックをすることで、recovery領域のアップデ�
 			</div>
 		</header>
 		<div class="list__excerpt">
-			クローラーで取ってきたHTMLを解析するのにBeautifulSoupが使いやすそうだったので使ってみました。以下は簡単な使い方のメモ。
-バージョン
-BeautifulSoupは３と４がありますが
-現在はBeautiful Soup３は終了していてBeautiful Soup４が主流とのこと。
-Webをみていると３の使い方が多いので注意。
-そしてPython3はBS3が使えないです。
-インポート
-まずはインポート。
-BeautifulSoup4は以下の書き方になります。
-from bs4 import BeautifulSoup
-まずは全文抽出
-まずは、以下のように書くことでhtmlの全文が保存されます。
-datas = BeautifulSoup(datas)
-
-findで指定のタグを抽出
-次にfind文で指定のタグを抽出できます。
-今回はfindAll文を使うことで、html中の指定のタグを抽出しました。
-以下ではdivタグのresult classを抽出。
-datas2 = datas.findAll("div", attrs={"class": "result"})
-
-さらに下層の情報取得とテキスト抽出
-ここで抽出された情報は配列となっているので、
-さらにそこから抽出したい情報があれば配列番号でアクセス。
-result_name=datas2[1].find("h5").get_text().replace(' ','')
-score=datas2[2].find("h5").get_text()
-ここでは1番目と2番目にあるh5タグを抽出しています。
-これまでだとタグと本文を含めてまとめて抽出されるので、
-本文だけを取りだしたい場合はget_text()を利用。
-また、タグ内の属性情報を取り出したいときはget('href')など指定することで可能です。
-タグ名を取りだしたいときは .nameで取れます。
- 
+			クローラーで取ってきたHTMLを解析するのにBeautifulSoupが使いやすそうだったので使ってみました。以下は簡単な使い方のメモ。 バー
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/beautifulsoup%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -159,25 +117,10 @@ score=datas2[2].find("h5").get_text()
 			</div>
 		</header>
 		<div class="list__excerpt">
-			ハードウェアクロックとシステムクロック
-Linuxには「ハードウェアクロック」と「システムクロックの」２つが存在します。
-「システムクロック」がＯＳで使われている通常の時計であり、ＰＣを立ち上がっているときのみ有効です。メモリ上で管理するためＰＣをシャットダウンすると消えてしまいます。
-上記のシステムクロックの仕組みですと、ＰＣを起動するたびに毎回時刻を設定しなければいけません。
-初期のＰＣは毎回時刻を設定していました。
-ただ現在では、電源が落ちていても内部バッテリーで動くハードウェアクロックが存在します。
-ＰＣを立ち上げると、ハードウェアクロックを１度だけ参照してシステムクロックが設定される仕組みになっています。
-コマンドでの時刻合わせ
-ハードウェアクロックは内部バッテリーで動いているためバッテリーがなくなれば止まってしまい、また時刻のズレも発生してしまいます。時刻合わせにはＮＴＰの設定など色々と方法はありますが、以前手動で設定する必要があったためその方法をメモしておきます。
-
-手動での設定時の注意ですが、
-システムクロックはハードウェアクロックを参照して設定されるため、システムクロックだけ直しても再起動すると無効になってしまいます。
-そのため、ハードウェアクロックの書き換えが必要になります。
-
-最初に、システムクロックを変更# date --set="2014/1/26 19:32"
-次に、システムクロックをハードウェアクロックに書き込み
-# clock -w
-これで、ＰＣを再起動しても変更後の時刻が有効になります。
- 
+			ハードウェアクロックとシステムクロック Linuxには「ハードウェアクロック」と「システムクロックの」２つが存在します。 「システムクロック」が
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/linux%E3%81%AE%E3%82%AF%E3%83%AD%E3%83%83%E3%82%AF/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -194,28 +137,10 @@ Linuxには「ハードウェアクロック」と「システムクロックの
 			</div>
 		</header>
 		<div class="list__excerpt">
-			クローラーを作るのにPythonが使いやすかったので利用したのですが、
-そのときにimportでひっかかってしまったのでメモ。
-importの書き方
-importには２通りの書き方があります。
-１つ目は、importにパッケージ名.モジュール名と書く方法。
-import urllib.request
-こちらの場合はモジュールを使うのにフルパスを書かなければいけないです。
-html = urllib.request.urlopen(x)
-２つ目は、from　パッケージ名　import モジュール名と書く方法。
-from bs4 import BeautifulSoup
-こちらはモジュール名だけ書くだけで使用できるので、こちらの方がすっきりします。
-datas2 = BeautifulSoup(datas).findAll("td", attrs={"class": "tdSearchResultListKanji"})
-import時の注意点
-モジュールを利用するには、その上階層にある全てのパッケージ、サブパッケージ名を指定しなければいけないということ。
-＃エラー
-import urllib
-＃正しい
-import urllib.request
-Ｃに慣れていたので、この書き方にひっかかってしまいました。
-どうやら、サブパッケージを設けることでお互いがお互いの使用モジュールについて気にしなくてもよいからこの書き方をしているとのことです。
-http://docs.python.jp/2.5/tut/node8.html
- 
+			クローラーを作るのにPythonが使いやすかったので利用したのですが、 そのときにimportでひっかかってしまったのでメモ。 importの書
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/python%E3%81%A7%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E6%99%82%E3%81%AE%E6%B3%A8%E6%84%8F/">Read more…</a>
 		</div>
 	</div>
 </article>

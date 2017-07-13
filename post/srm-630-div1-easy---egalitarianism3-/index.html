@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 630 DIV1 Easy - Egalitarianism3 (××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13284&amp;rd=16061
-エッジのコストがわかっている、無向グラフが与えられる。
-このとき、ノード間のコストが全て等しいサブグラフのうち、最も多いノード数を求める。
-解き方 
-・エッジの数＝ノード数N-1
-・ノードA－ノードB－ノードCを考えた時、ノードA-ノードCとなるペアは存在しない。
-・同じ距離の集合を考えた時、必ずハブとなるノードBが存在する。
-・全てのノードをハブと考えた時、ノードA-ノードBの距離をｄとすると
-ノードA-ノードCの距離が２ｄとなる集合のうち最大のものを求めればよい
-・ｎ＝１のときの答えは１
-・ｎ＝２のときの答えは２
-・ｎ＞＝２のとき答えは必ず２以上となる
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Egalitarianism3 {
-public: int maxCities(int n, vector&lt;int&gt; a, vector&lt;int&gt; b, vector&lt;int&gt; len) {
-if(n&lt;=2)return n;
-int g[n][n];" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13284&amp;rd=16061 エッジのコストがわかっている、無向グラフが与えられる。 このとき、ノード間のコストが全て等しいサブグラフのうち、最も多いノード数を求める" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-630-div1-easy---egalitarianism3-/" />
 

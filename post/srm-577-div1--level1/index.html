@@ -7,55 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 577 DIV1 -Level1" />
-<meta property="og:description" content="問題 
-プログラミングコンテストを実施するにあたり、プレイヤーを部屋に割り当てる。
-部屋は２０人単位。プレイヤーはレートをもっている。
-部屋の割り当てはレートの高い順に最初の部屋数分を、ランダムにそれぞれの部屋に割り当てる。部屋数で割り切れない場合は、部屋にいる人数は必ずしも一緒にならない。
-配列の最初のプレイヤーが自分であるとき、
-自分が割り当てられた部屋の平均レートを求める。
-解き方 
-シミュレーション問題であるが、自分のレートによって色々な場合が存在するので全て洗い出す。また、コーディングをいかに単純にするかもポイント。
-コーディングを単純にするには、
-まずは計算しやすい各割り当てグループごとにメンバーの平均値を求める。
-そのグループに自分が入っている場合は、自分の値＝平均値となる。
-最後のグループも同じように計算する。
-次にとりうる全てのケースを考える。
-１）メンバーが部屋の数で割り切れるとき
-すべてのメンバーの平均値／部屋のメンバー数が答え。
-２）メンバーが部屋の数で割り切れないとき
-２－１）自分が最後の割り当てメンバーのとき
-メンバー数が全メンバー／部屋数に１を足したものになるので、
-全てのメンバーの平均値／上記のメンバー数が答え。
-２－２）自分が最後の割り当てメンバーではないとき
-自分がメンバーの多い部屋になるときとならないときの確率を求めて
-その２つの和が答えとなる。
-Challenge
-int／intはint型の結果が代入される。
-一方でdouble/int もしくはint/doubleはdoubleに変換されて計算される。
-いずれにしても計算の場合は型を一致させてから行うのが基本。
-コード 
-class EllysRoomAssignmentsDiv1 {
-public: double getAverage(vector&lt;string&gt; ratings) {
-string tmp=&#34;&#34;;
-vector&lt;int&gt; v;
-vector&lt;double&gt; ave;
-ave.clear(),v.clear();
-FORE(i,0,ratings.size())tmp&#43;=ratings[i];
-stringstream str(tmp);
-while(1){
-int out=-1;
-str&gt;&gt;out;
-if(out==-1)break;
-v.push_back(out);
-}
-int N=v.size();
-int R=(N&#43;19)/20;
-int myrate=v[0],my=0;
-int member=N/R;
-sort(v.rbegin(),v.rend());
-FORE(i,0,v.size())if(v[i]==myrate)my=i;
-for(int i=0;i&lt;N;i&#43;=R){
-int j=min(i&#43;R,N);" />
+<meta property="og:description" content="問題 プログラミングコンテストを実施するにあたり、プレイヤーを部屋に割り当てる。 部屋は２０人単位。プレイヤーはレートをもっている。 部屋の割り当" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-577-div1--level1/" />
 

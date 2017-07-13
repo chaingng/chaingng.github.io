@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 325 DIV1 Easy - FenceRepairing （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6827&amp;rd=10005
-・穴のあいたフェンスがある。
-・フェンスを修理するには、sqrt(選んだ長さ)のコストが必要になる。
-このとき、フェンスを修理するのに最小のコストを求める。
-解き方 
-必ずしも、部分的に修理するのが最適解ではないと問題文にあるように、修理方法をパターン化するのは難しい。
-そこで、ｄｐを使って解く。
-現在のフェンスの箇所が穴が開いていなければ前のｄｐと同じ答えになることから、
-dp[n&#43;1]にてdp[i]はi-1番目までのフェンスの修理コストの最小と定義する。
-i番目からn番目まで走査し、0のときは前の値がないのでdp[0]=0として解いてあげればよい。
-コード 
-class FenceRepairing {
-public:
-double calculateCost(vector&lt;string&gt; boards) {
-string str=&#34;&#34;;
-double INF=10000.0;
-FORE(i,0,boards.size())str&#43;=boards[i];
-int n=str.size();
-double dp[n&#43;1];
-FORE(i,1,n&#43;1)dp[i]=INF;
-dp[0]=0.0;
-FORE(i,1,n&#43;1){
-if(str[i-1]==&#39;.&#39;)dp[i]=dp[i-1];
-else FORE(j,0,i)dp[i]=min(dp[i],dp[j]&#43;sqrt(i-j));
-}
-return dp[n];
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6827&amp;rd=10005 ・穴のあいたフェンスがある。 ・フェンスを修理するには、sqrt(選んだ長さ)のコストが必要になる。 このとき、フェンスを修理するのに最小" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/" />
 

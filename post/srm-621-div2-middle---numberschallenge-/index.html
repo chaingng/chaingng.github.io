@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 621 DIV2 Middle - NumbersChallenge (○○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13166
-・整数の集合Sが与えられる。
-・この整数の組み合わせで表わせないような、最小の正の整数を求める。
-解き方 
-・Sの数が２０、各要素が10^5から
-計算量O（20*10^5=2*10^6）でメモリ、速度とも足りそうなのでｄｐで解ける。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[2000001];
-class NumbersChallenge {
-public: int MinNumber(vector&lt;int&gt; S) {
-int n=S.size();
-memset(dp,0,sizeof(dp));
-dp[0]=1;
-FORE(i,0,n)for(int j=2000000-S[i];j&gt;=0;j--)dp[S[i]&#43;j]&#43;=dp[j];
-FORE(i,1,2000001)if(dp[i]==0)return i;
-return 2000001;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13166 ・整数の集合Sが与えられる。 ・この整数の組み合わせで表わせないような、最小の正の整数を求める。 解き方 ・Sの数が２０、各要素が10^5か" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-621-div2-middle---numberschallenge-/" />
 

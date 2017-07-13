@@ -77,37 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①０と１で構成される2次元配列が与えられる。
-②各ビット列の任意の２つに対し、それぞれＯＲかＸＯＲかＡＮＤ演算をするデバイスがビット列分存在する。
-③各ビット列に対しどの操作をするか決まっているが、それがどれかはわかっていない。
-④このとき、各デバイスがどの操作をするか確かめることができれば”ＹＥＳ”、できなければ”ＮＯ”を返す。
-＜解き方＞
-各ビット列に対し、特定の数字が含まれていればデバイスの操作を確かめることができる。
-ＯＲとＡＮＤの場合
-０，１→ＯＲだと１、ＡＮＤだと０
-ＯＲとＸＯＲの場合
-１，１→ＯＲだと１、ＸＯＲだと０
-ＡＮＤとＸＯＲの場合
-０，１→ＡＮＤだと０、ＸＯＲだと１
-１，１→ＡＮＤだと１、ＸＯＲだと０
-この３つを判定するには、１が２つ、０が１つ最低あればよいことになる。
-各ビット列に対し１が２つ、０が１つ以上あるか判定し、
-なければＮＯ，あればＹＥＳを返す。
-＜コード＞
-class TheDeviceDiv2 {
-public: string identify(vector&lt;string&gt; plates) {
-FORE(j,0,(int)plates[0].size()){
-int one=0,zero=0;
-FORE(i,0,(int)plates.size()){
-if(plates[i][j]=='1')one++;
-else zero++;
-}
-if(!(one&gt;=2 &amp;&amp; zero&gt;=1))return "NO";
-}
-return "YES";
-}
-}; 
+			＜問題＞ ①０と１で構成される2次元配列が与えられる。 ②各ビット列の任意の２つに対し、それぞれＯＲかＸＯＲかＡＮＤ演算をするデバイスがビット列
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm569-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -124,54 +97,10 @@ return "YES";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①求めたい長さ(desiredL)と、求めたい長さ(desiredN)の本数と、実際の長さ(actualL)が与えられる。
-②実際の長さは好きなだけ本数が与えられる。
-③実際の長さを切ることで、求めたい長さを、求めたい本数だけ求める。
-④このとき、切る数の最小値を求める。
-＜解き方＞
-実際の長さは何本でも与えられて本数は答えに影響しないため、
-求めたい長さから実際の長さで割った余りを求める。
-そうすることで、余りの長さに対してだけ考えればよくなる。
-このとき、余りが０であれば切らなくても答えが求められるので０を返す。
-次に、単純に実際の長さから余りの長さ分切って求めると、求めたい長さの本数が求めたい長さになる。
-こう考えると数学的解放で解けそうですが、以下の例外があるため
-シミュレーションに切り替えます。
-①余りの長さ分切ったときに割り切れることができる場合
-最後に求めたい長さのものがもう１本できる。
-②余りが発生かつ、その余りが何度か出た時に足すことで余りの長さに達するとき
-もう１本分作ることができる。
-Ｃｈａｌｌｅｎｇｅポイント
-上記だと、「余りの長さがぴったりではない場合」に判定がスルーされてしまいます。
-例えば１０の長さが欲しいが余りが４のとき、
-４＋４＋４＋４＋４＝２０でずっと判定されないのですが
-実は（４＋４＋２）＋（４＋４＋２）で１回割ると２本できてしまいます。
-これを避けるためには、１０を超えた時は１０に分割することで
-この部分も判定に含めることができます。
-かなり見落としがちです。
-＜コード＞
-class BoardSplitting {
-public: int minimumCuts(int desiredL, int desiredC, int actualL) {
-int L=desiredL%actualL;
-int tmpL=actualL,remain=0,cut=0;
-if(L==0)return 0;
-while(desiredC&gt;0){
-tmpL-=L;
-cut++;
-desiredC--;
-if(tmpL&gt;L)continue;
-if(desiredC==0)break;
-remain+=tmpL;
-tmpL=actualL;
-if(remain&gt;=L){
-if(remain!=L)cut++;
-desiredC--;
-remain-=L;
-}
-}
-return cut;
-}
-}; 
+			＜問題＞ ①求めたい長さ(desiredL)と、求めたい長さ(desiredN)の本数と、実際の長さ(actualL)が与えられる。 ②実際の長
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm544-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>

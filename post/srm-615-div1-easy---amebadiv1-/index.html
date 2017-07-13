@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 615 DIV1 Easy - AmebaDiv1 (×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13088&amp;rd=15848
-・アメーバがいて、同じ大きさのジェルがあればそれを吸収して２倍の大きさになる。
-・アメーバの最初の大きさはわかっていない。
-・アメーバがある道を通り、通る順番に置かれているそれぞれのジェルの大きさがわかっている。
-・このとき、最終的にアメーバがどうしても取ることのできない大きさの場合の数を求める。
-解き方 
-・ジェルの大きさは10^9なので、すべての大きさに対して全探索はできなさそう
-・大きさの場合の数を求めるので、重複するもの、
-つまりある大きさに対してそれよりも後に同じ大きさが現れた際はノーカウントにする
-・次にどのような大きさのものが取ることができないかチェックする
-・取りうるジェルの大きさとして、最初に与えられているジェルの大きさ以外のものは必ず取ることができるので答えにならない。
-・つまり、最初に与えられているジェルの大きさが解の候補となる。
-・あとは変化によってその大きさにならないかをチェックする。　・つまり各大きさについて、最初に与えられているすべてのジェルの大きさについてシミュレーションし、その大きさにならなければよさそう
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class AmebaDiv1 {
-public: int count(vector&lt;int&gt; X) {
-int ret=0;
-int n=X.size();
-FORE(i,0,n){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13088&amp;rd=15848 ・アメーバがいて、同じ大きさのジェルがあればそれを吸収して２倍の大きさになる。 ・アメーバの最初の大きさはわかっていない。 ・アメーバがあ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-615-div1-easy---amebadiv1-/" />
 

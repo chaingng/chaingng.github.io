@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 407 DIV1 Middle -PointsGame　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=2209
-(x,y)座標の点が複数存在し、２人のプレイヤーが交互に選んでいく。
-最初は自分からスタートし、選んだ点を赤に塗る。次は相手の番に移り、選んだ点を青に塗る。塗る点がなくなったら終了。
-スコアは自分の選んだ点と相手の選んだ点全てに対する距離の差になる。
-自分はスコアをできるだけ大きくし、相手はできるだけ少なくする。
-このとき、自分が得られる最大のスコアを求める。
-解き方 
-点は１２個と少ないが、自分と相手で戦略が異なるため単純な全探索ではとけない。
-そこでｄｐを使い、自分がいままで選んだ点、相手がいままで選んだ点、どちらのターンかを状態に持つ。
-自分のターンであればスコアを大きくなる方にＤＦＳを回し、相手のターンであればスコアを小さくなる方にＤＦＳを回せばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-double p[13][13];
-int n;
-vector&lt;int&gt; px,py;
-map&lt;pair&lt;int,int&gt;,double&gt; m;
-class PointsGame {
-public:
-double f(double x1,double y1,double x2,double y2){
-return sqrt((x1-x2)*(x1-x2)&#43;(y1-y2)*(y1-y2));" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=2209 (x,y)座標の点が複数存在し、２人のプレイヤーが交互に選んでいく。 最初は自分からスタートし、選んだ点を赤に塗る。次は相手の番に移り、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-407-div1-middle--pointsgame%E5%BE%A9%E7%BF%92/" />
 

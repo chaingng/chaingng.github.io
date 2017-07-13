@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 273 DIV1 Middle - SnakeTurbo　（復習○）" />
-<meta property="og:description" content="問題 
-１次元の座標をヘビが歩く。
-startLocationからスタートし、左か右に移動することができる。
-endLocationまでたどり着けばゴールになる。
-途中に複数のorbsで示される座標が与えられ、そこにたどり着くと速度が２倍になる。
-このとき、ゴールにたどり着くまでの最小の時間を求める。
-解き方 
-制約は座標数＝５０。
-これまでにたどり着いた一番左の座標と右の座標、現在左と右のどちらにいるかの状態を持ち、コストを値に持つｄｐを考えればよい。
-上記の状態だけあれば、その時のスピードは簡単に計算できるのでスピードの状態を持つ必要はない。
-座標にスタートとゴールの位置を足すので、それを踏まえた配列の確保が必要。
-グローバル変数の更新に、ローカルでも間違って宣言すると更新されないので注意。
-(global int n; local int n=orbs.size() → n=orbs.size();)
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int e,n;
-double dp[53][53][2];
-vector&lt;int&gt; orb;
-class SnakeTurbo {
-public:" />
+<meta property="og:description" content="問題 １次元の座標をヘビが歩く。 startLocationからスタートし、左か右に移動することができる。 endLocationまでたどり着けば" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-273-div1-middle---snaketurbo%E5%BE%A9%E7%BF%92/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 502 DIV1 Middle - TheProgrammingContestDivOne （復習xx）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11357
-プログラミングコンテストが開催され、複数与えられる問題を時間Ｔ以内に解く。
-各問題について、得られるmaxPointsと1分あたりに引かれるポイント数pointsPerMinute、解くのに必要な時間requiredTimeが与えられる。
-このとき、得られる最大のポイント数を求める。
-解き方 
-問題を解く順番によりポイントが変わるのが問題文から読みとれる。
-問題数は最大５０なので、50!とすると計算量が間に合わない。
-ここで、各問題に与えられる情報からどの順番で問題を解けばよいかがわかる。
-問題jを問題iより先に解いた方がスコアが高いのであれば、
-maxp[i]-pm[i]*rtime[i]&#43;maxp[j]-pm[j]*(rtime[i]&#43;rtime[j])&lt;
-maxp[j]-pm[j]*rtime[j]&#43;maxp[i]-pm[i]*(rtime[i]&#43;rtime[j])
--pm[i]*rtime[i]-pm[j]*(rtime[i]&#43;rtime[j])&lt;-pm[j]*rtime[j]-pm[i]*(rtime[i]&#43;rtime[j])
--pm[i]*rtime[i]-pm[j]*rtime[i]-pm[j]*rtime[j]&lt;-pm[j]*rtime[j]-pm[i]*rtime[i]-pm[i]*rtime[i]
--pm[j]*rtime[i]&lt;-pm[i]*rtime[i]
-pm[j]*rtime[i]&gt;pm[i]*rtime[i]
-よってrequiredTime/pointsPerMinuteが大きい順に並び替え、
-順にdpを適用していき最大のスコアを求めればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheProgrammingContestDivOne {
-public:
-int find(int T, vector&lt;int&gt; maxp, vector&lt;int&gt; pm, vector&lt;int&gt; rtime) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11357 プログラミングコンテストが開催され、複数与えられる問題を時間Ｔ以内に解く。 各問題について、得られるmaxPointsと1分あたりに引か" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-502-div1-middle---theprogrammingcontestdivone-%E5%BE%A9%E7%BF%92xx/" />
 

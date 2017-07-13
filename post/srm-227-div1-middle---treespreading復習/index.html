@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 227 DIV1 Middle - TreeSpreading　（復習×○）" />
-<meta property="og:description" content="問題 
-a,b,c,dの４種類の木を並べて植えたい。
-ただし、隣り合う木は必ず別の種類にしたい。
-それぞれの植えられる木の本数が与えられるとき、木の植え方が全部で何通りあるか求める。
-解き方 
-ｄｐで解けそうな問題。
-状態は前に植えた木、各種類の木についてあと何本植えられるかがわかればよい。
-メモ化を使って全ての状態を洗い出し、最後に問題文で与えられた本数についての答えを返してあげる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TreeSpreading {
-public:
-long long countArrangements(int a, int b, int c, int d) {
-if(a&#43;b&#43;c&#43;d==0)return 1;
-long long dp[4][11][11][11][11]={};
-dp[0][1][0][0][0]=1;
-dp[1][0][1][0][0]=1;" />
+<meta property="og:description" content="問題 a,b,c,dの４種類の木を並べて植えたい。 ただし、隣り合う木は必ず別の種類にしたい。 それぞれの植えられる木の本数が与えられるとき、木の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-227-div1-middle---treespreading%E5%BE%A9%E7%BF%92/" />
 

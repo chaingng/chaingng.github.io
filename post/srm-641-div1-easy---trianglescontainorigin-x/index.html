@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 641 DIV1 Easy - TrianglesContainOrigin x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13309&amp;rd=16084
-・２次元の座標上の点が複数与えられる。
-・このうち選んだ３点がなす三角形が原点を含む場合の数を求める。
-解き方 
-まず３点を選んだ時に、その三角形が原点を含むかの判定をする必要がある。
-これはatan2を使い、２点i,jを選んだときiのatan2&#43;πとjのatan2＋πの間に
-もうひとつの点があれば原点を含む三角形となる。
-次にこのような三角形の選び方は、N=2500のため
-O(2500*2500*2500）では前探索できない。
-ここで2点を選んだ時に残りの１点について２分探索を使うことで、
-O(2500*2500*log2500）で計算量を間に合わせることができる。
-コード 
-class TrianglesContainOrigin {
-public: long long count(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-int n=x.size();
-long long ret=0LL;
-vector&lt;double&gt; p(n);
-FORE(i,0,n)p[i]=atan2((double)x[i],(double)y[i]);
-sort(all(p));
-FORE(i,0,n)FORE(j,i&#43;1,n)if(p[j]-p[i]&lt;PI){
-int e=lower_bound(p.begin(),p.end(),p[j]&#43;PI)-p.begin();
-int s=lower_bound(p.begin(),p.end(),p[i]&#43;PI)-p.begin();
-ret&#43;=e-s;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13309&amp;rd=16084 ・２次元の座標上の点が複数与えられる。 ・このうち選んだ３点がなす三角形が原点を含む場合の数を求める。 解き方 まず３点を選んだ時に、その三" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-641-div1-easy---trianglescontainorigin-x/" />
 

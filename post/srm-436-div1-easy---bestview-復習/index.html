@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 436 DIV1 Easy - BestView （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10341&amp;rd=13698
-間隔１で一列に高層ビルが並んでいる。
-高層ビルの上から他のビルをできるだけ多く見渡したい。
-他のビルを見渡すには、そのビルと他のビルの屋上を結んだときに間に他のビルがなければよい。
-このとき、一番多く見渡せるビルの数を求める。
-解き方 
-各ビルにおいて見渡せるビルの数を全探索する。
-最初は三平方の定理を使ってしまったが、座標の傾きを使えば簡単に他のビルがさえぎっているかどうかを判定することができる。
-aからbを見渡す時、uがさえぎっていないかを判定するには
-(h(u)-h(a))/(b-a) *x &#43;h(a) &lt;= h(u) ここでx=(u-a)のときにビルuがさえぎってしまうので
-(h(u)-h(a))/(b-a) *(u-a) &#43;h(a) &lt;= h(u) (h(u)-h(a))/(b-a) *(u-a) &lt;= h(u) -h(a)
-(h(u)-h(a)) *(u-a) &lt;= (h(u) -h(a)) *(b-a)
-この式で判定できる。
-見渡すビルを固定した時に他のビルを見渡せるかの判定については、
-最初順序を決めて左と右の走査と分けてしまったが
-間のビルがさえぎっていないかどうかだけを判定すればよいので
-それがわかればよりシンプルに実装することができる。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10341&amp;rd=13698 間隔１で一列に高層ビルが並んでいる。 高層ビルの上から他のビルをできるだけ多く見渡したい。 他のビルを見渡すには、そのビルと他のビルの屋上" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-436-div1-easy---bestview-%E5%BE%A9%E7%BF%92/" />
 

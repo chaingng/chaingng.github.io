@@ -7,47 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 392 DIV1 Easy - TwoStringMasks x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8706&amp;rd=11126
-解き方 
-仮の文字列を作る。
-＊にあたる共通の部分は？で埋めて、s1とs2について同じ長さの２つの文字列を作る。
-各文字について一致していればその文字列は有効になるのでそれが答えになる。
-そのような文字列が存在しなければimpossibleとなる。
-コード 
-class TwoStringMasks {
-public: string shortestCommon(string s1, string s2) {
-for(int l1=0;l1&lt;=200;l1&#43;&#43;){
-int l2=s1.size()&#43;l1-s2.size();
-if(l2&lt;0)continue;
-string p1=&#34;&#34;;
-FORE(i,0,s1.size()){
-if(s1[i]==&#39;*&#39;)FORE(j,0,l1)p1&#43;=&#39;?&#39;;
-else p1&#43;=s1[i];
-}
-string p2=&#34;&#34;;
-FORE(i,0,s2.size()){
-if(s2[i]==&#39;*&#39;)FORE(j,0,l2)p2&#43;=&#39;?&#39;;
-else p2&#43;=s2[i];
-}
-string ans=&#34;&#34;;
-int valid=1;
-FORE(i,0,p1.size()){
-char ch;
-if(p1[i]==&#39;?&#39;)ch=p2[i];
-else if(p2[i]==&#39;?&#39;)ch=p1[i];
-else if(p1[i]==p2[i])ch=p1[i];
-else{
-valid=0;
-break;
-}
-ans&#43;=ch;
-}
-if(valid)return ans;
-}
-return &#34;impossible&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8706&amp;rd=11126 解き方 仮の文字列を作る。 ＊にあたる共通の部分は？で埋めて、s1とs2について同じ長さの２つの文字列を作る。 各文字について一致していれば" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-392-div1-easy---twostringmasks-x/" />
 

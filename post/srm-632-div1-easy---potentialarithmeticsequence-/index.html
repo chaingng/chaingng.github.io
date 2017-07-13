@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 632 DIV1 Easy - PotentialArithmeticSequence (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13389&amp;rd=16075
-数字の数列があり、その数字を２進数にしたときの末尾の０の数のリストが与えられる。
-このとき、与えられた数列のうち１ずつ増加するサブ数列の数を求める。
-解き方 
-数列に法則がないか列挙してみる。
-すると、以下のように再帰の法則があるとわかる。
-１が現れるとき：０１０
-２が現れるとき：０１０２０１０
-３が現れるとき：０１０２０１０３０１０２０１０
-よって、与えられた数列の全てのサブ数列に対し、以下の法則が成り立つか
-再帰を用いてチェックすればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PotentialArithmeticSequence {
-public:
-bool can(vector&lt;int&gt; d){
-if(d.size()==1)return true;
-int p= d[0]==0 ? 0 : 1;
-int n=d.size();" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13389&amp;rd=16075 数字の数列があり、その数字を２進数にしたときの末尾の０の数のリストが与えられる。 このとき、与えられた数列のうち１ずつ増加するサブ数列の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-632-div1-easy---potentialarithmeticsequence-/" />
 

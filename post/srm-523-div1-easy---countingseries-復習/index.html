@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 523 DIV1 Easy - CountingSeries (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10957&amp;rd=14548
-１からupperBoundまでの数が与えられる。
-また、a,b,c,dの正の整数が与えられる。
-このとき、a&#43;b*x または c*d^y（x,yは任意の整数）を満たす数がいくつあるか求める。
-解き方 
-「a&#43;b*x」、「c*d^y」は重複する場合があるので、
-重複した場合は１度しか計算しない処理が必要。
-「a&#43;b*x」では、各整数は10^12のため全探索では不可。
-upperBoundがa以上であれば、 (upperBound-a)/b &#43;1が満たす全ての数になる。
-「c*d^y」は全探索が可能。
-各数に対して「a&#43;b*x」でも表わせないか判定し重複を調べる。
-（同じようにa以上かどうかを調べる）
-ただしd=1のときは無限ループになるのでbreak処理が必要。
-Challengeポイント
-階乗が出てくる場合は1の階乗のbreak処理が入っているか？
-数の判定の際は正負の判定が入っているか？
-コード 
-class CountingSeries {
-public: long long countThem(long long a, long long b, long long c, long long d, long long upperBound) {
-long long ans=upperBound&gt;=a ? (upperBound-a)/b&#43;1 :0;
-for(long long x=c;x&lt;=upperBound;x*=d){
-if((x-a)&lt;0||(x-a)%b!=0)ans&#43;&#43;;
-if(d&lt;=1)break;
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10957&amp;rd=14548 １からupperBoundまでの数が与えられる。 また、a,b,c,dの正の整数が与えられる。 このとき、a&#43;b*x または c*d^y（x," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/" />
 

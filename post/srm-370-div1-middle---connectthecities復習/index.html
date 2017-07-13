@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 370 DIV1 Middle - ConnectTheCities　（復習××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8185
-都市ＡとＢがあり、その間の距離があらかじめ与えられる。
-またその都市の直線状にならぶ複数のノードがあり、都市Ａを０としたときの距離がが与えられる。
-このとき、ノードを全て等間隔にし、ＡとＢをつなぎたい。
-ノードを１移動するとコストが１かかり、最大でfunds以内に抑えたい。
-このときに必要なノードの間隔の最小値を求める。
-解き方 
-ｄｐを利用する。
-ｄｐは現在のノードと現在の距離を状態に持つ、コストの大きさとする。
-それぞれの間隔についてコストを計算し、funds以下であるものについて最小のものを求める。
-間隔の求め方は昇順に調べてもよいが、2分探索を使って計算量を削減する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dist,funds,n,dp[110][110];
-vector&lt;int&gt; position;
-class ConnectTheCities {
-public:
-int dfs(int v,int len,int width){
-if(v==n)return abs(len-dist)&lt;=width ? 0 : 100000;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8185 都市ＡとＢがあり、その間の距離があらかじめ与えられる。 またその都市の直線状にならぶ複数のノードがあり、都市Ａを０としたときの距離がが与" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-370-div1-middle---connectthecities%E5%BE%A9%E7%BF%92/" />
 

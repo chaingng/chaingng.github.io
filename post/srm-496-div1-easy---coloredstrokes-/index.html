@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 496 DIV1 Easy - ColoredStrokes ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11306&amp;rd=14425
-青を縦に塗ることができるブラシと、赤を横に塗ることができるブラシが
-与えられる。
-また青と赤が交わったセルは緑色になる。
-最初は真っ白なボードからブラシを塗って、最終的に与えられた
-形に絵を塗りたいとき、最小の塗る回数を求める。
-解き方 
-緑の色は赤を最初に塗っても、青を最初に塗ってもよく順番は関係ないので、
-青の塗る回数と赤を塗る回数を独立で考え、最後に和をとればよい。
-コード 
-class ColoredStrokes {
-public: int getLeast(vector&lt;string&gt; picture) {
-int h=picture.size(),w=picture[0].size();
-int ret=0;
-for(int j=0;j&lt;w;j&#43;&#43;){
-int at=0;
-while(at&lt;h){
-while(at&lt;h &amp;&amp; (picture[at][j]==&#39;.&#39;||picture[at][j]==&#39;R&#39;))at&#43;&#43;;
-if(at&gt;=h)break;
-ret&#43;&#43;;
-while(at&lt;h &amp;&amp; (picture[at][j]==&#39;G&#39;||picture[at][j]==&#39;B&#39;))at&#43;&#43;;
-}
-}
-for(int i=0;i&lt;h;i&#43;&#43;){
-int at=0;
-while(at&lt;w){
-while(at&lt;w &amp;&amp; (picture[i][at]==&#39;.&#39;||picture[i][at]==&#39;B&#39;))at&#43;&#43;;
-if(at&gt;=w)break;
-ret&#43;&#43;;
-while(at&lt;w &amp;&amp; (picture[i][at]==&#39;G&#39;||picture[i][at]==&#39;R&#39;))at&#43;&#43;;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11306&amp;rd=14425 青を縦に塗ることができるブラシと、赤を横に塗ることができるブラシが 与えられる。 また青と赤が交わったセルは緑色になる。 最初は真っ白なボー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-496-div1-easy---coloredstrokes-/" />
 

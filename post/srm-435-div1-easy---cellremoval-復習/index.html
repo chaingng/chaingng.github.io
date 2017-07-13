@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 435 DIV1 Easy - CellRemoval （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10275&amp;rd=13697
-有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。
-ただし、根のノードはー１が入っている。
-この有向グラフに、ある指定されたノードが削除され、その子となっているノードも削除される。
-このとき、元のノードの葉であり削除されていない葉の数を求める。
-解き方 
-元のグラフの葉のノードは、どのノードからも参照されていないノードになる。
-また、あるノードが削除されたときに、その子であるノードはＢＦＳで探索できる。
-上記の２つの処理を行うことで答えを求めることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class CellRemoval {
-public: int cellsLeft(vector&lt;int&gt; parent, int deletedCell) {
-int n=parent.size();
-int p[n&#43;1];
-memset(p,1,sizeof(p));
-FORE(i,0,n)p[parent[i]]=0;
-queue&lt;int&gt; q;
-q.push(deletedCell);
-while(!q.empty()){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10275&amp;rd=13697 有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。 ただし、根のノードはー１が入っている。 この有向グラフに、あ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM576 DIV2 -250points" />
-<meta property="og:description" content="＜問題＞
-①蛇口の数と、蛇口ごとにそこから出る水滴の数が与えられる。
-例）３，４，１，１，５，６
-②スポンジの長さＬが与えられる。
-例）Ｌ＝３
-③それぞれのスポンジについて、上から降順に配列が与えられる。
-配列の値は、スポンジの左側の位置。
-例）３，１，０
-④蛇口の水滴は、一番最初に当たった水滴に吸収される。
-⑤このとき、各スポンジが吸収した水滴の値を配列で返す。
-＜ポイント＞
-・上にあるスポンジ、すなわちスポンジの配列の右側から
-その位置に相当する水滴の数を足してあげて、
-スポンジごとの合計を配列に格納する。
-「いったん吸収された水滴は０にクリアにする」ことで重複がなくなるのがポイント。
-vector&lt;int&gt; determineHumidity(vector&lt;int&gt; intensity, int L, vector&lt;int&gt; leftEnd) {
-vector &lt;int&gt; ans;
-FORE(i,0,leftEnd.size()){
-int tmp=0;
-FOR(j,0,L){
-tmp&#43;=intensity[leftEnd[i]&#43;j];
-intensity[leftEnd[i]&#43;j]=0;
-}
-ans.push_back(tmp);
-}
-return ans;
- " />
+<meta property="og:description" content="＜問題＞ ①蛇口の数と、蛇口ごとにそこから出る水滴の数が与えられる。 例）３，４，１，１，５，６ ②スポンジの長さＬが与えられる。 例）Ｌ＝３ ③それ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm576-div2--250points/" />
 

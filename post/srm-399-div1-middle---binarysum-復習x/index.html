@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 399 DIV1 Middle - BinarySum （復習x）" />
-<meta property="og:description" content="問題 
-整数a,b,cが与えられる。
-a,b,cを２進数に変換し、a&#43;b=cとなるように２進数の1の位置を変化させる。
-このとき、式が成立する最小のcの値を求める。
-そのような値が存在しない場合は-1を返す。
-解き方 
-他の方のコードを読ませていただきました。
-前の状態がわかれば現在の状態は簡単に求められるので、ｄｐが適用可能。
-では、どのようにｄｐを適用したらよいかを考える。
-まず、前の桁からの桁上がりと、ｘ、ｙの増分がわかれば
-その桁においてｃの１の数がいくらまで可能か求められる。
-よって、「aの１の数」「bの1の数」「cの1の数」「桁上がりがあるかどうか」「桁数」を引数にもち、「結果のｃの値」を値に持つｄｐを用いればよい。
-計算量はO(2*30^4)となる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[32][32][32][32][2];
-class BinarySum {
-public: int rearrange(int a, int b, int c) {
-int x=0,y=0,z=0,n=0;
-for(;a||b||c;n&#43;&#43;){" />
+<meta property="og:description" content="問題 整数a,b,cが与えられる。 a,b,cを２進数に変換し、a&#43;b=cとなるように２進数の1の位置を変化させる。 このとき、式が成立する最小の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-399-div1-middle---binarysum-%E5%BE%A9%E7%BF%92x/" />
 

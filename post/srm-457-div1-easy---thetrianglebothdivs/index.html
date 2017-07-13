@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 457 DIV1 Easy - TheTriangleBothDivs" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10696&amp;rd=14144
-”17:45 GMT-4”と時刻を表す時計がある。
-ただし時計の一部が壊れており、その箇所は？になっている。
-このとき、考えられる昇順で一番早い時間を求める。
-解き方 
-法則を考えると大変なため、全探索を用いる必要があるのがわかる。
-ここでのコツは、すべての数字を前端さ区しようとするのではなくて
-すべての文字列を発生させて全探索する。
-コード 
-string ret;
-class TheTriangleBothDivs {
-public:
-void rec(string time, int pos){
-if(pos&gt;=time.size()){
-int h=(time[0]-&#39;0&#39;)*10&#43;(time[1]-&#39;0&#39;);
-int m=(time[3]-&#39;0&#39;)*10&#43;(time[4]-&#39;0&#39;);
-int d=time[10]-&#39;0&#39;;
-if(time[9]==&#39;-&#39; &amp;&amp; d==0)return;
-if(h&gt;=24 || m&gt;=60)return;
-if(time[9]==&#39;-&#39;)d=-d;
-char ch[50];
-sprintf(ch,&#34;%02d:%02d&#34;,((h-d)&#43;24)%24,m);
-if(ch&lt;ret)ret=ch;
-}else if(time[pos]==&#39;?&#39;){
-string str=&#34;0123456789&#34;;
-if(pos==9)str=&#34;-&#43;&#34;;
-FORE(i,0,str.size()){
-time[pos]=str[i];
-rec(time,pos&#43;1);
-time[pos]=&#39;?&#39;;
-}
-}else rec(time,pos&#43;1);
-}
-string fix(string time) {
-ret=&#34;99:99&#34;;
-rec(time,0);
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10696&amp;rd=14144 ”17:45 GMT-4”と時刻を表す時計がある。 ただし時計の一部が壊れており、その箇所は？になっている。 このとき、考えられる昇順で一番" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-457-div1-easy---thetrianglebothdivs/" />
 

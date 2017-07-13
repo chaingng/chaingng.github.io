@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 599 DIV1 Middle - FindPolygons　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12842&amp;rd=15711
-多角形の外周の長さである、整数Ｌが与えられる。
-多角形の各点はｘ、ｙ座標上になければいけない。
-このとき、考えられる多角形のうち、辺の数が最も少ないものについて
-一番長い辺と一番短い辺の差を求める。
-解き方 
-問題文のままだと全探索を考えるのも難しいので、法則がないか一つ一つ考える。
-１つ目は四角形のとき、Ｌは偶数でなければいけない。
-２つ目に辺の長さが√xのとき、辺の長さの合計であるLは整数にならない。
-よって、辺の長さは整数となる。
-３つ目として三角形のとき、a^2&#43;b^2=c^2を考えると
-a,b,cの組み合わせは(偶、奇、奇)、（偶、偶、偶）、（奇、奇、偶）。
-よって、a&#43;b&#43;cは必ず偶数になるので、Ｌは偶数である。
-これより、答えは四角形以下となる。
-また、Ｌが３未満のときは答えが存在しないので４以上でなければいけない。
-次に解き方として、三角形のときを考える。
-問題を簡単にするために、１点は原点にあると考える。
-各点はｘｙ座標上になければいけないので、原点との距離ｄである（ｘ、ｙ）を考えると
-ｘ＾２＋ｙ＾２＝ｄ＾２かつｘ、ｙ、ｄは整数でなければいけない。
-これを満たす全ての点に対し合計の長さがＬとなるものを求める。
-そのような三角形がなければ、四角形のときを考える。
-Ｌが４で割り切れれば正方形なので答えは０、そうでなければ長い辺が短い辺＋１である長方形が存在するので答えは１になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-static const int maxc=2501*2501;
-int A[20000],B[20000],square[maxc&#43;1];
-class FindPolygons {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12842&amp;rd=15711 多角形の外周の長さである、整数Ｌが与えられる。 多角形の各点はｘ、ｙ座標上になければいけない。 このとき、考えられる多角形のうち、辺の数が" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-599-div1-middle---findpolygons%E5%BE%A9%E7%BF%92/" />
 

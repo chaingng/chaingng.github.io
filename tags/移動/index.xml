@@ -17,36 +17,7 @@
       <pubDate>Fri, 21 Feb 2014 00:19:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-368-div1-easy---jumpingboard-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8245&amp;amp;rd=10936
-あるボードが存在し、その中には１～９までの数字かＨで表わされる穴が存在する。
-まずは一番左上のセルからスタートし、そのセルに書いてある数だけ上下左右に移動する。ボードの外に出たらそこで終了する。
-このとき、ボードの外に出るまでの最大のターン数を求める。
-ただし、ループが可能でボードの外に出なくてもよい場合はー１を返す。
-解き方 
-ＢＦＳに最初見えたがＤＦＳにて全てのルートを探索する必要がある。
-ただし、一度通ったルートはメモ化が可能なのでｄｐが適用できる。
-注意する点はループが発生した場合はー１を返さなければならないので、
-現在探索中のルートはフラグを立てて判定しなければならない。
-今回は以下のように値を割り振ることでコーディング可能。
-セルを超えた時　：０で終了
-すでに探索したルート：０以上で終了（うち、ホールにあたったときは０で終了）
-現在探索中のルート　：ー２で例外値を返し終了
-それ以外　：－１で次のループに進む
-他の方のコードをみましたが、throw&amp;amp;catchしてもよさそうでした。
-http://community.topcoder.com/stat?c=problem_solution&amp;amp;rd=10936&amp;amp;pm=8245&amp;amp;cr=251074
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[60][60];
-int w,h;
-int dx[]={0,1,0,-1},dy[]={1,0,-1,0};
-vector&amp;lt;string&amp;gt; B;
-class JumpingBoard {</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8245&amp;amp;rd=10936 あるボードが存在し、その中には１～９までの数字かＨで表わされる穴が存在する。 まずは一番左上のセルからスタートし、そのセルに書いてある数</description>
     </item>
     
     <item>
@@ -55,31 +26,7 @@ class JumpingBoard {</description>
       <pubDate>Tue, 11 Feb 2014 16:51:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-303-div1-easy---spiralnumbers-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6093&amp;amp;rd=9824
-座標上に１から始まり、らせん上に数が増えていく。
-この座標の１の場所を（０，０）として右側を正のｘ座標、下側を正のｙ座標としたときに与えられた数字の座標の位置を求める。
-解き方 
-数字の最大が1e+9なので全探索では解くことができない。
-ここで、各四角形を考えると右上の座標の数は１，９，２５と(i+2)^2ずつ増えていることがわかる。また、その座標は（１、－１）、（２、－２）とこちらも１ずつ増減していることがわかる。
-この法則に従ってどの四角形に与えられた数字があるかを判定し、逆にらせんを描くことで答えを求めることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SpiralNumbers {
-public: string getPosition(int N) {
-int dx[]={-1,0,1,0};
-int dy[]={0,1,0,-1};
-int x=0,y=0,len=0;
-if(N==1)return &#34;(0,0)&#34;;
-for(long long i=1;i*i&amp;lt;=1e+18;i+=2){
-len++;
-if(i*i&amp;lt;N)continue;
-x=len-1,y=-(len-1);</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6093&amp;amp;rd=9824 座標上に１から始まり、らせん上に数が増えていく。 この座標の１の場所を（０，０）として右側を正のｘ座標、下側を正のｙ座標としたときに与え</description>
     </item>
     
     <item>
@@ -88,41 +35,7 @@ x=len-1,y=-(len-1);</description>
       <pubDate>Sun, 02 Feb 2014 10:03:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-604-div1-easy---powerofthree-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12917&amp;amp;rd=15837
-ロボットが座標（０，０）からスタートし、４方向に移動する。
-ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。
-移動したい座標（ｘ、ｙ）が与えられた時、その座標に移動できるなら”Possible”、移動できないなら&#34;Impossible&#34;を返す。
-解き方 
-足し引きできる数は３の階乗なので、
-ビット計算に落とし込むことで解くことができる。
-座標の正負は関係ないので正の座標に変換し、
-例としてサンプルの一つを３進数で考えると以下のように変換できる。
-ｘ座標：１＝００１
-ｙ座標：９＝１００
-ここで３の階乗を足していくステップは、
-３進数の右から考えていくと毎回ｘ、ｙのどちらかの数を引くことと同じになる。
-ここでどちらかが１であればよいが、
-どちらも０、もしくはどちらも１であれば”Impossible”になる。
-途中でｘ＝０、ｙ＝０になれば&#34;Possible&#34;で終了になる。
-コード 
-class PowerOfThree {
-public:
-string ableToGet(int x, int y) {
-x=abs(x);
-y=abs(y);
-while(!(x==0&amp;amp;&amp;amp;y==0)){
-if(x%3==0&amp;amp;&amp;amp;y%3==0)return &#34;Impossible&#34;;
-if(x%3!=0&amp;amp;&amp;amp;y%3!=0)return &#34;Impossible&#34;;
-if(x%3==1)x--;
-if(x%3==2)x++;
-if(y%3==1)y--;
-if(y%3==2)y++;
-x/=3,y/=3;
-}
-return &#34;Possible&#34;;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12917&amp;amp;rd=15837 ロボットが座標（０，０）からスタートし、４方向に移動する。 ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。 移動し</description>
     </item>
     
     <item>
@@ -131,37 +44,7 @@ return &#34;Possible&#34;;
       <pubDate>Sat, 12 Oct 2013 14:19:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11665&amp;amp;rd=14550
-四角形のセルに複数コインがある。
-１回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。
-コインの数Ｋが与えられた時、コインを落としてＫ個にできるとき最小の操作回数を返す。できないときはー１を返す。
-解き方 
-全探索で上下左右に動いた時のコインのマスを保存して重複しないようにすればよいと思いつくが、少し複雑。
-「最後に残るコインのマスはかならず四角形になる」ことがわかれば、
-四角形からすべてのサブ四角形を求め、その四角形にあるコインの数がＫに一致したものが答えの候補になる。
-そのときの移動回数は縦横それぞれに対し、角の位置＋戻るために２つのうち最小の角の位置を足してあげればよい。
-コード 
-class DropCoins {
-public: int getMinimum(vector&amp;lt;string&amp;gt; board, int K) {
-int INF=1e+8, ret=INF;
-int h=board.size(),w=board[0].size();
-for(int x0=0;x0&amp;lt;h;x0++){
-for(int y0=0;y0&amp;lt;w;y0++){
-for(int x1=x0+1;x1&amp;lt;=h;x1++){
-for(int y1=y0;y1&amp;lt;=w;y1++){
-int coin=0;
-FORE(a,x0,x1)FORE(b,y0,y1)if(board[a][b]==&#39;o&#39;)coin++;
-if(coin!=K)continue;
-int a=x0,b=h-x1,c=y0,d=w-y1;
-ret=min(ret,a+b+c+d+min(a,b)+min(c,d));
-}
-}
-}
-}
-return ret==INF ? -1 : ret;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11665&amp;amp;rd=14550 四角形のセルに複数コインがある。 １回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。 コインの数Ｋ</description>
     </item>
     
     <item>
@@ -170,53 +53,7 @@ return ret==INF ? -1 : ret;
       <pubDate>Sat, 12 Oct 2013 14:08:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11667&amp;amp;rd=14551
-四角形のマスにダチョウが複数存在する。
-ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。
-解き方 
-縦に並べるときと横に並べるときの２通りを試し小さい方を返す。
-縦と横それぞれに対して、並べる列／行と詰めるときの移動数を求めてあげればよい。
-コード 
-class DucksAlignment {
-public: int minimumTime(vector&amp;lt;string&amp;gt; grid) {
-int h=grid.size(),w=grid[0].size();
-vector&amp;lt;int&amp;gt; tate,yoko;
-FORE(i,0,h){
-FORE(j,0,w){
-if(grid[i][j]==&#39;o&#39;){
-tate.push_back(i);
-yoko.push_back(j);
-}
-}
-}
-sort(tate.begin(),tate.end());
-sort(yoko.begin(),yoko.end());
-//move to one column
-int tate1=1e+8,yoko1=1e+8;
-FORE(i,0,h){
-int tmp=0;
-FORE(k,0,tate.size())tmp+=abs(i-tate[k]);
-tate1=min(tate1,tmp);
-}
-FORE(i,0,w-yoko.size()+1){
-int tmp=0,cur=i;
-FORE(j,0,yoko.size()){
-tmp+=abs(yoko[j]-cur);
-cur++;
-}
-yoko1=min(yoko1,tmp);
-}
-int ans1=tate1+yoko1;
-//move to one row
-int tate2=1e+8,yoko2=1e+8;
-FORE(i,0,w){
-int tmp=0;
-FORE(k,0,yoko.size())tmp+=abs(i-yoko[k]);
-yoko2=min(yoko2,tmp);
-}
-FORE(i,0,h-tate.size()+1){
-int tmp=0,cur=i;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11667&amp;amp;rd=14551 四角形のマスにダチョウが複数存在する。 ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。 解き方 縦に並べるときと横に並べると</description>
     </item>
     
     <item>
@@ -225,33 +62,7 @@ int tmp=0,cur=i;</description>
       <pubDate>Sun, 18 Aug 2013 16:36:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-564-div1-easy---knightcircuit2-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10968&amp;amp;rd=15186
-ボードの長さと高さが与えられる。
-このとき、ナイトが動けるマスを返す。
-解き方 
-１辺の最大の長さは４５０００のため、Ｏ（１０＾８）となり全探索では求められない。
-そこで法則を探すことにする。
-１）マスの１辺が１のとき
-動くことができないので、答えは１
-２）マスの１辺が２のとき
-もう一つの辺の長さによって答えが変わる。
-１マスのときは＋１、２マスの時は＋１、３マスのときは＋２、４マスのときは＋２
-これが繰り返される。
-３）マスが３*３のとき
-３＊３のときは真ん中だけいけないので８．
-４）それ以外
-全てのマスに行くことができるので全てのマスの数が答え。
-コード 
-class KnightCircuit2 {
-public: int maxSize(int w, int h) {
-if(w&amp;gt;h)swap(w,h);
-if(w==1)return 1;
-if(w==2)return (h+1)/2;
-if(w==3 &amp;amp;&amp;amp; h==3)return 8;
-return w*h;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10968&amp;amp;rd=15186 ボードの長さと高さが与えられる。 このとき、ナイトが動けるマスを返す。 解き方 １辺の最大の長さは４５０００のため、Ｏ（１０＾８）となり全探</description>
     </item>
     
     <item>
@@ -260,40 +71,7 @@ return w*h;
       <pubDate>Sun, 18 Aug 2013 09:35:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-570-div1-easy---robotherb-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12427&amp;amp;rd=15490
-ロボットが与えられた数の配列の通りに動作する。
-最初は任意の方向を向いており、配列の最初の数だけまっすぐ移動する。
-その後、移動した分だけ左を向く。
-次の配列に移り、同じ動作をする。最後の配列まで終わったら一度の操作が終了。
-この動作をＴ回実施する。
-最後に、最初の位置とのマンハッタン距離を返す。
-解き方 
-最小・最大を求めるわけではないシミュレーション問題。
-今回はＴが10^9と大きいので単純なシミュレーションでは解けない。
-一度の動作後に動いた座標と向きは常に一緒なので、
-そのＴ回の繰り返しで解ける。
-４回動くと向きは戻るので、４の倍数のときは×Ｔ、
-余りが出た場合は４の倍数から１回、２回、３回いずれかの値を足す。
-コード 
-class RobotHerb {
-public: long long getdist(int T, vector&amp;lt;int&amp;gt; a) {
-int x[]={0,1,0,-1},y[]={1,0,-1,0};
-int d=0,curx=0,cury=0;
-long long ans=0,move[4]={};
-FORE(n,1,5){
-FORE(i,0,a.size()){
-curx+=a[i]*x[d];
-cury+=a[i]*y[d];
-d=(d+a[i])%4;
-}
-move[n%4]=abs(curx)+abs(cury);
-}
-ans=move[0]*(T/4);
-if(T%4)ans+=move[T%4];
-return ans;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12427&amp;amp;rd=15490 ロボットが与えられた数の配列の通りに動作する。 最初は任意の方向を向いており、配列の最初の数だけまっすぐ移動する。 その後、移動した分だけ</description>
     </item>
     
     <item>
@@ -302,51 +80,7 @@ return ans;
       <pubDate>Sat, 13 Jul 2013 10:04:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm550-div2--level2/</guid>
-      <description>問題 
-①大きさがわからない、２次元のセルを飛行機が移動する。
-②また、移動セル数を示す数字の配列が与えられる。
-③最初は右を向いており、最初の移動セル数分だけ右に移動する。
-壁にぶつかるかすでに移動したセルにぶつかると、９０度左を向く。
-そして次の移動セル分だけ移動する。
-④このとき、セルの大きさを求める。
-ただし、②の移動に従わない動きであればー１を返す。
-解き方 
-シミュレーションの問題。
-いかに間違いが少なくなるようにかけるか、できるだけ単純にコーディングする。
-今回は、セルの大きさを求めるシミュレーションと、例外を求めるシミュレーションを分けて実装する。
-まず、セルの大きさは最初の移動をシミュレーションして
-ｘ座標とｙ座標それぞれ最小と最大を求めれば簡単に算出できる。
-次に、求めたｘ座標とｙ座標の最小値と最大値を利用して
-例外ケースではないか判定のシミュレーションを行う。
-コード 
-int cell[110][110];
-class RotatingBot {
-public: int minArea(vector&amp;lt;int&amp;gt; moves) {
-int maxX=55,minX=55,maxY=55,minY=55;
-int dx[]={1,0,-1,0};
-int dy[]={0,1,0,-1};
-int x=55,y=55,dir=0;
-FORE(i,0,moves.size()){
-x+=moves[i]*dx[dir%4];
-y+=moves[i]*dy[dir%4];
-minX=min(minX,x);
-minY=min(minY,y);
-maxX=max(maxX,x);
-maxY=max(maxY,y);
-dir++;
-}
-FORE(i,0,110)FORE(j,0,110)cell[i][j]=0;
-x=55,y=55,dir=0,cell[y][x]=1;
-FORE(i,0,moves.size()){
-int num=0;
-while(1){
-int tmpx=x+dx[dir%4];
-int tmpy=y+dy[dir%4];
-num++;
-if(num&amp;gt;moves[i]){
-if(i==moves.size()-1)break;
-if(cell[tmpy][tmpx]==1 || tmpx&amp;gt;maxX || tmpx&amp;lt;minX || tmpy&amp;lt;minY || tmpy&amp;gt;maxY){
-dir++;</description>
+      <description>問題 ①大きさがわからない、２次元のセルを飛行機が移動する。 ②また、移動セル数を示す数字の配列が与えられる。 ③最初は右を向いており、最初の移動</description>
     </item>
     
     <item>
@@ -355,43 +89,7 @@ dir++;</description>
       <pubDate>Wed, 03 Jul 2013 23:29:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm563-div2--level2/</guid>
-      <description>＜問題＞
-①２次元のフィールドが与えられる。
-②フィールドにはランダムな数の障害物と、２つのコインが置かれている。
-③プレイヤーは上下左右の操作をすることができ、１度の操作で選んだ方向に１マスだけ２つのコインを動かせる。動く先に障害物がある場合は動かない。
-④コインが動いた時、フィールドから外れた場合はコインが落ちる。
-⑤このとき、コインを１つだけ落としたいときの最小の操作回数を返す。
-ただし、操作回数が１０回を超えた時はー１を返す。
-＜解き方＞
-動的計画法で最小の操作回数を求める。
-単純なシミュレーションですが、いかに簡単に書いて間違いを少なくするかが
-ポイントだと思います。
--1となる例外の処理を再帰関数で書いた時には処理がうまくいかなかったので、
-例外の処理はメイン関数で行う方がよさそう。
-また、vectorを渡す時には &amp;amp;bのようにしてあげないと
-処理がおかしくなるので注意。
-＜コード＞
-class CoinsGameEasy {
-public:
-int f(int turn,int x1,int y1,int x2,int y2,vector&amp;lt;string&amp;gt;&amp;amp; b){
-if(turn&amp;gt;10)return turn;
-int ret=11,w=b[0].size(),h=b.size();
-int dx[]={1,-1,0,0};
-int dy[]={0,0,-1,1};
-FORE(i,0,4){
-int flag=0;
-int tx1=x1+dx[i],ty1=y1+dy[i],tx2=x2+dx[i],ty2=y2+dy[i];
-if(tx1&amp;lt;0 || tx1&amp;gt;=w || ty1&amp;lt;0 || ty1&amp;gt;=h)flag++;
-if(tx2&amp;lt;0 || tx2&amp;gt;=w || ty2&amp;lt;0 || ty2&amp;gt;=h)flag++;
-if(flag==1)return turn+1;
-if(flag==2)continue;
-if(b[ty1][tx1]==&#39;#&#39;)tx1=x1,ty1=y1;
-if(b[ty2][tx2]==&#39;#&#39;)tx2=x2,ty2=y2;
-ret=min(ret,f(turn+1,tx1,ty1,tx2,ty2,b));
-}
-return ret;
-}
-int minimalSteps(vector&amp;lt;string&amp;gt; board) {</description>
+      <description>＜問題＞ ①２次元のフィールドが与えられる。 ②フィールドにはランダムな数の障害物と、２つのコインが置かれている。 ③プレイヤーは上下左右の操作を</description>
     </item>
     
   </channel>

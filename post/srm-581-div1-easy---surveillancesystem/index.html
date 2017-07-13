@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 581 DIV1 Easy - SurveillanceSystem" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12588&amp;rd=15501
-解き方 
-監視してる数ごとに、どのような場合が成り立つか考える。
-その監視している数について、成り立つすべての場合をall、カメラの数をcntとすると
-all-cnt以上その場合の数が存在した時は必ず＋となり、１位上であれば？となる。
-コード 
-class SurveillanceSystem {
-public: string getContainerInfo(string containers, vector&lt;int&gt; reports, int L) {
-int n=containers.size();
-string ret=&#34;&#34;;
-FORE(i,0,n)ret&#43;=&#39;-&#39;;
-int p[n];
-for(int i=0;i&lt;=n;i&#43;&#43;){
-int cnt=0;
-FORE(j,0,reports.size())if(reports[j]==i)cnt&#43;&#43;;
-if(cnt==0)continue;
-int all=0;
-memset(p,0,sizeof(p));
-for(int j=0;j&#43;L-1&lt;n;j&#43;&#43;){
-int tmp=0;
-FORE(k,0,L)if(containers[j&#43;k]==&#39;X&#39;)tmp&#43;&#43;;
-if(tmp==i){
-all&#43;&#43;;
-FORE(k,0,L)p[j&#43;k]&#43;&#43;;
-}
-}
-FORE(j,0,n){
-if(p[j]==0)continue;
-if(cnt&gt;all-p[j])ret[j]=&#39;&#43;&#39;;
-else if(ret[j]==&#39;-&#39;)ret[j]=&#39;?&#39;;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12588&amp;rd=15501 解き方 監視してる数ごとに、どのような場合が成り立つか考える。 その監視している数について、成り立つすべての場合をall、カメラの数をcn" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-581-div1-easy---surveillancesystem/" />
 

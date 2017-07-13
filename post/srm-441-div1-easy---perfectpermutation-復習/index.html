@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 441 DIV1 Easy - PerfectPermutation (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10463&amp;rd=13749
-ある０～n-1の数がランダムに並べられた、長さｎの配列が与えられる。
-このとき、childpermutation Bは、
-B[0]=0, B[i]=B[A[B[i-1]]で現した時
-もとの配列と同様に0~n-1の数が存在するものと定義する。
-最初に与えられた数列がchildpermutationを含む時は０を、
-配列の数字の入れ替えが発生する場合は元の数列と異なる要素数のうち
-最小の差のものを求める。
-解き方 
-すべてpermutationしていては要素数が５０のため間に合わない。
-ここで、全ての数が現れる場合というのはＢがループしている場合ということがわかる。
-ループが１つの場合はそのまま答えになるが、
-ループが複数存在する場合はお互いの数字を入れ替えることで一つのループにすることができる。
-よって、ループの数を計算し１つであれば０、複数存在するのであればループ数を返す。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PerfectPermutation {
-public: int reorder(vector&lt;int&gt; P) {
-int n=P.size();
-int ans=0;
-int used[n];
-memset(used,0,sizeof(used));
-FORE(i,0,n){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10463&amp;rd=13749 ある０～n-1の数がランダムに並べられた、長さｎの配列が与えられる。 このとき、childpermutation Bは、 B[0]=0, B[i]=B[A" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/" />
 

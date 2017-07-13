@@ -7,54 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM544 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①求めたい長さ(desiredL)と、求めたい長さ(desiredN)の本数と、実際の長さ(actualL)が与えられる。
-②実際の長さは好きなだけ本数が与えられる。
-③実際の長さを切ることで、求めたい長さを、求めたい本数だけ求める。
-④このとき、切る数の最小値を求める。
-＜解き方＞
-実際の長さは何本でも与えられて本数は答えに影響しないため、
-求めたい長さから実際の長さで割った余りを求める。
-そうすることで、余りの長さに対してだけ考えればよくなる。
-このとき、余りが０であれば切らなくても答えが求められるので０を返す。
-次に、単純に実際の長さから余りの長さ分切って求めると、求めたい長さの本数が求めたい長さになる。
-こう考えると数学的解放で解けそうですが、以下の例外があるため
-シミュレーションに切り替えます。
-①余りの長さ分切ったときに割り切れることができる場合
-最後に求めたい長さのものがもう１本できる。
-②余りが発生かつ、その余りが何度か出た時に足すことで余りの長さに達するとき
-もう１本分作ることができる。
-Ｃｈａｌｌｅｎｇｅポイント
-上記だと、「余りの長さがぴったりではない場合」に判定がスルーされてしまいます。
-例えば１０の長さが欲しいが余りが４のとき、
-４＋４＋４＋４＋４＝２０でずっと判定されないのですが
-実は（４＋４＋２）＋（４＋４＋２）で１回割ると２本できてしまいます。
-これを避けるためには、１０を超えた時は１０に分割することで
-この部分も判定に含めることができます。
-かなり見落としがちです。
-＜コード＞
-class BoardSplitting {
-public: int minimumCuts(int desiredL, int desiredC, int actualL) {
-int L=desiredL%actualL;
-int tmpL=actualL,remain=0,cut=0;
-if(L==0)return 0;
-while(desiredC&gt;0){
-tmpL-=L;
-cut&#43;&#43;;
-desiredC--;
-if(tmpL&gt;L)continue;
-if(desiredC==0)break;
-remain&#43;=tmpL;
-tmpL=actualL;
-if(remain&gt;=L){
-if(remain!=L)cut&#43;&#43;;
-desiredC--;
-remain-=L;
-}
-}
-return cut;
-}
-}; " />
+<meta property="og:description" content="＜問題＞ ①求めたい長さ(desiredL)と、求めたい長さ(desiredN)の本数と、実際の長さ(actualL)が与えられる。 ②実際の長" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm544-div2--level2/" />
 

@@ -7,49 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM568 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①Ｎ個の箱が与えられる。
-②それぞれの箱には、赤と緑と青のボールが複数個入っている。
-③このとき、それぞれの箱に１色のボールしか入らないようにしたいとき、最小のボールの移動回数を求めよ。
-＜解き方＞
-ひとつの箱に着目した時、一番多く入っている色をそのまま残して、
-他の色を移動したらよいことがわかる。
-ただしこのとき、ひとつの色がどの箱にも少ない個数であるときに
-その色に移動させる箱が存在しなくなるため、例外のケースも存在する。
-このままではＮＧ．
-では全探索で考えるとすると、最大で箱が５０個のためＯ（３＾５０）でＮＧ．
-では上の考え方を少し応用させると、それぞれの色は少なくとも１回は選ばれることとなる。
-これがわかると、各色が１回ずつ選ばれる場合の数は最大でも５０＾３でＯＫ．
-つまり答えは、それぞれの色が１回選ばれる場合でループを回して、それ以外の箱は貪欲方で最大の個数の色を残してあげればよい。
-（例外処理）
-最後に例外として、今回は個数が最小で１個なのでこのままでＯＫ．
-最小で0個だと、選ばれない場合の数は削除しないといけないので注意。
-最大の数も今回は５０×１０＾６＝５×１０＾７なのでint型でＯＫ．
-＜コード＞
-class BallsSeparating {
-public: int minOperations(vector&lt;int&gt; red, vector&lt;int&gt; green, vector&lt;int&gt; blue) {
-int ans=1000000000;
-int n=red.size();
-FORE(i,0,n){
-FORE(j,0,n){
-if(i==j)continue;
-FORE(k,0,n){
-if(j==k || k==i)continue;
-int cost=0;
-FORE(x,0,n){
-if(x==i)cost&#43;=(green[x]&#43;blue[x]);
-else if(x==j)cost&#43;=(red[x]&#43;blue[x]);
-else if(x==k)cost&#43;=(red[x]&#43;green[x]);
-else cost&#43;=(red[x]&#43;green[x]&#43;blue[x]-max(red[x],max(green[x],blue[x])));
-}
-ans=min(ans,cost);
-}
-}
-}
-return ans==1000000000? -1:ans ;
-}
-};
- " />
+<meta property="og:description" content="＜問題＞ ①Ｎ個の箱が与えられる。 ②それぞれの箱には、赤と緑と青のボールが複数個入っている。 ③このとき、それぞれの箱に１色のボールしか入らない" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm568-div2--level2/" />
 

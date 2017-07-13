@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="TCO 2015 1C Middle - UnrelatedPaths" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13746&amp;rd=16434
-解き方 
-木のルートからDFSでたどっていってパスの数を足していけば良い。
-ルート０に直接つながっているノードについて、
-さらにその下にノードがつながっていればそのパスの和、
-つながっていなければ１を返す。
-コード 
-vector&lt;int&gt; p;
-int n;
-class UnrelatedPaths {
-public:
-int dfs(int x){
-int ret=0;
-FORE(i,0,n)if(p[i]==x){
-ret&#43;=dfs(i&#43;1);
-}
-return ret==0 ? 1 : ret;
-}
-int maxUnrelatedPaths(vector&lt;int&gt; parent) {
-p=parent;
-n=p.size();
-return dfs(0);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13746&amp;rd=16434 解き方 木のルートからDFSでたどっていってパスの数を足していけば良い。 ルート０に直接つながっているノードについて、 さらにその下にノード" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/" />
 

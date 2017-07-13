@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 387 DIV1 Middle - IntervalSubsets　（復習×）" />
-<meta property="og:description" content="問題 
-複数の区間が与えられ、始まりの数字start[i]と終わりの数字finish[i]がわかっている。
-この区間を、サブセット集合にまとめたい。
-以下の条件を満たしたときにサブセット集合と呼ぶ。
-・集合中の各区間に重複がないこと
-・その集合に他の要素を足すと重複が出てしまうこと
-このとき、サブセット集合が何通りあるか求める。
-解き方 
-ｄｐの問題そうなのは読みとれる。
-ｄｐの設計方法について考える。
-区間をできるだけくっつけていき、もうくっつけることができなければその集合を答えに加えるのがよさそう。
-区間をくっつけていくには、区間の初めから考えていくｄｐになりそう。
-なので区間をはじめの方から走査し、前の区間がなければ最初の区間なのでｄｐに加える方法にする。
-ｄｐの状態は「区間の終わりの数字」、値は「その区間の場合の数」とする。
-
-区間の始まりの数字を０から１００まで走査し、対象となる区間について、前の区間がなければ区間に加えていく。
-加えていくときにそれまでの区間が存在するかはすでに判定しているので、そのような区間が存在していれば場合の数の和になっていく。
-
-最後につなげるのに使われた途中の区間はカウントしてはいけないので、
-最大のstart区間より大きい数字のｄｐを足していく。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class IntervalSubsets {
-public: int numberOfSubsets(vector&lt;int&gt; start, vector&lt;int&gt; finish) {" />
+<meta property="og:description" content="問題 複数の区間が与えられ、始まりの数字start[i]と終わりの数字finish[i]がわかっている。 この区間を、サブセット集合にまとめたい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-387-div1-middle---intervalsubsets%E5%BE%A9%E7%BF%92/" />
 

@@ -7,51 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 288 DIV1 Easy - FindTriangle" />
-<meta property="og:description" content="問題 
-・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。
-・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作ることができる。
-・このとき、作ることのできる三角形の最大の面積を求める。
-解き方 
-三角形の求め方がポイント。
-ヘロンの法則を使って求めると、誤差が生じてしまう。
-そのため、２つのベクトルの外積が平行四角形の面積になることを利用して解く。
-コード 
-class FindTriangle {
-public:
-double largestArea(vector&lt;string&gt; points) {
-int n=points.size();
-int c[n],x[n],y[n],z[n];
-FORE(i,0,n){
-stringstream out(points[i]);
-char ch;
-out&gt;&gt;ch&gt;&gt;x[i]&gt;&gt;y[i]&gt;&gt;z[i];
-if(ch==&#39;R&#39;)c[i]=1;
-else if(ch==&#39;G&#39;)c[i]=2;
-else c[i]=4;
-}
-double ret=0.0;
-FORE(i,0,n){
-FORE(j,i&#43;1,n){
-FORE(k,j&#43;1,n){
-int flag=c[i]|c[j]|c[k];
-if(flag==1||flag==2||flag==4||flag==7){
-double dx1=x[j]-x[i];
-double dy1=y[j]-y[i];
-double dz1=z[j]-z[i];
-double dx2=x[k]-x[i];
-double dy2=y[k]-y[i];
-double dz2=z[k]-z[i];
-double len=(dy1*dz2-dz1*dy2)*(dy1*dz2-dz1*dy2);
-len&#43;=(dz1*dx2-dx1*dz2)*(dz1*dx2-dx1*dz2);
-len&#43;=(dx1*dy2-dy1*dx2)*(dx1*dy2-dy1*dx2);
-ret=max(ret,len);
-}
-}
-}
-}
-return sqrt(ret)/2.0;
-}
-}; " />
+<meta property="og:description" content="問題 ・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。 ・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作る" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-288-div1-easy---findtriangle/" />
 

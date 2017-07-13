@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 349 DIV1 Middle -DiceGames　（復習×○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1669
-サイコロが複数与えられる。
-各サイコロは、いくつまでの目をもっているかあらかじめわかっている。
-このとき、すべてのサイコロの目の出方の組み合わせは何通りあるか求める。
-ただし、サイコロの区別はしない。
-解き方 
-サイコロを、もつ目の数の昇順にソートする。
-左から、１から始まりそれ以降の組み合わせをその数以上、としてｄｐで回せば重複なく答えが求められる。
-メモ化が必要なので、現在のサイコロの場所と前のサイコロの目を状態としてもてば計算量は間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int n;
-vector&lt;int&gt; sides;
-long long dp[40][40];
-class DiceGames {
-public:
-long long rec(int pos,int cnt){
-if(pos==n)return 1;
-if(dp[pos][cnt]!=-1)return dp[pos][cnt];" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1669 サイコロが複数与えられる。 各サイコロは、いくつまでの目をもっているかあらかじめわかっている。 このとき、すべてのサイコロの目の出方の組み" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-349-div1-middle--dicegames%E5%BE%A9%E7%BF%92/" />
 

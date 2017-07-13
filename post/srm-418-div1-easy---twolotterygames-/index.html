@@ -7,27 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 418 DIV1 Easy - TwoLotteryGames ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10071&amp;rd=13509
-ｎ個のくじからm個選ぶ。
-相手も同様にm個選ぶ。
-選んだくじのうち、相手がえらんだくじとk個一致していれば勝ちとなる。
-このとき、勝ちとなる確率を求める。
-解き方 
-ｎが８と小さいので、全探索すればよいだけ。
-コード 
-class TwoLotteryGames {
-public: double getHigherChanceGame(int n, int m, int k) {
-double ret=0.0,sum=0.0;
-for(int i=1;i&lt;1&lt;&lt;n;i&#43;&#43;)if(__builtin_popcount(i)==m){
-for(int j=1;j&lt;1&lt;&lt;n;j&#43;&#43;)if(__builtin_popcount(j)==m){
-sum&#43;&#43;;
-if(__builtin_popcount(i&amp;j)&gt;=k)ret&#43;&#43;;
-}
-}
-return ret/sum;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10071&amp;rd=13509 ｎ個のくじからm個選ぶ。 相手も同様にm個選ぶ。 選んだくじのうち、相手がえらんだくじとk個一致していれば勝ちとなる。 このとき、勝ちとなる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-418-div1-easy---twolotterygames-/" />
 

@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 403 DIV1 Easy - TheLuckyNumbers ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8568&amp;rd=12175
-整数aとbが与えられる。
-a以上かつb以下の整数のうち、4と7からなる整数の総数を求める。
-解き方 
-a,bは10^9でありすべて全探索しては間に合わないが、
-４と７からなる数字は2^9のため、
-DFSにて４と７からなるすべての数字について調べればよい。
-コード 
-int ret,a,b;
-class TheLuckyNumbers {
-public:
-void dfs(long long x){
-if(x&lt;=b){
-dfs(x*10&#43;4);
-dfs(x*10&#43;7);
-if(a&lt;=x)ret&#43;&#43;;
-}
-}
-int count(int a_, int b_) {
-a=a_,b=b_;
-ret=0;
-dfs(0);
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8568&amp;rd=12175 整数aとbが与えられる。 a以上かつb以下の整数のうち、4と7からなる整数の総数を求める。 解き方 a,bは10^9でありすべて全探索しては" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-403-div1-easy---theluckynumbers-/" />
 

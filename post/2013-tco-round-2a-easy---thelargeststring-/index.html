@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2013 TCO Round 2A Easy - TheLargestString (××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12494&amp;rd=15594
-・文字列sと、文字列tが与えられる。
-・sとtは同じ長さ。
-・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合する。
-・このとき、最も辞書順に大きくなるような結合後の文字列を求める。
-解き方 
-・一見、貪欲法で解けそう
-・まずはsの大きくなる選び方で試してみる
-・最後のサンプルがエラー。sの選び方に加え、選ばずにs&#43;tの方が辞書順に大きくなる可能性が　あるため貪欲法では解けない。
-・よってｄｐで解く必要がある。
-・最初からｄｐを適用していくと、選び方を全探索しないといけないが、
-後ろから適用していけば、現在の文字列をつなげるかどうかを判断すればよいので
-計算量も間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheLargestString {
-public: string find(string s, string t) {
-int n=s.size();
-pair&lt;string,string&gt; dp[60][60];
-FORE(i,0,60)FORE(j,0,60)dp[i][j]=make_pair(&#34;&#34;,&#34;&#34;);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12494&amp;rd=15594 ・文字列sと、文字列tが与えられる。 ・sとtは同じ長さ。 ・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2013-tco-round-2a-easy---thelargeststring-/" />
 

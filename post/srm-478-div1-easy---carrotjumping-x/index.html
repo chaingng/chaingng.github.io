@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 478 DIV1 Easy - CarrotJumping x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11022&amp;rd=14187
-解き方 
-４x＊３を３回繰り返したときに８x＋７の２回繰り替えしたものと一致するため
-探索回数は最大３０００００回となる。
-この回数であれば全探索可能であるので、すべての点を調べればよい。
-BFSを使えばキューのため更新箇所はつねに最短となるため、
-各位置での値の更新は不要となる。
-コード 
-map&lt;long long,int&gt; m;
-class CarrotJumping {
-public: int theJump(int init) {
-int MOD=1000000007;
-m.clear();
-m[init]=0;
-queue&lt;long long&gt; q;
-q.push(init);
-while(!q.empty()){
-long long x=q.front();
-q.pop();
-if(m[x]&gt;100000||x==0)break;
-if(m.find((x*4&#43;3)%MOD)==m.end()){
-q.push((x*4&#43;3)%MOD);
-m[(x*4&#43;3)%MOD]=m[x]&#43;1;
-}
-if(m.find((x*8&#43;7)%MOD)==m.end()){
-q.push((x*8&#43;7)%MOD);
-m[(x*8&#43;7)%MOD]=m[x]&#43;1;
-}
-}
-return m[0]&gt;100000||m[0]==0 ? -1 : m[0];
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11022&amp;rd=14187 解き方 ４x＊３を３回繰り返したときに８x＋７の２回繰り替えしたものと一致するため 探索回数は最大３０００００回となる。 この回数であれば全" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-478-div1-easy---carrotjumping-x/" />
 

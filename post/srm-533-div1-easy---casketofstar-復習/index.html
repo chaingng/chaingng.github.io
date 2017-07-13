@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 533 DIV1 Easy - CasketOfStar (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11781&amp;rd=14726
-数字の文字列が与えられる。
-ひとつずつ文字を選び、その両端の値をかけたものがスコアになる。
-選んだあとはその文字は消滅する。
-最初と最後の値になるまでこの処理を繰り返した時、最大となるスコアを求める。
-解き方 
-単純に深さ優先探索を行おうとすると、最大でＯ（４８！）のため
-解くことができない。
-そこで、処理を逆にできないか考えてみる。
-ここで、ある数字を選んで挿入することを考えると
-そのときのスコアは一意に定まる。
-また、そこから挿入するときの最大のスコアは最初～挿入した場所＋挿入した場所～最後
-のスコアになる。
-この場合は区間ごとの最大値の判定となり葉の判定が増えるのでｄｐが活用でき、
-さらに判定回数も減るのでＯ（５０×５０）ほどになる。
-コード 
-int dp[60][60];
-vector&lt;int&gt; w;
-class CasketOfStar {
-public:
-int solve(int l,int r){
-if(dp[l][r]!=-1)return dp[l][r];
-if(l&#43;1==r)return 0;
-FORE(i,l&#43;1,r)dp[l][r]=max(dp[l][r],solve(l,i)&#43;solve(i,r)&#43;w[l]*w[r]);
-return dp[l][r];
-}
-int maxEnergy(vector&lt;int&gt; weight) {
-w=weight;
-FORE(i,0,60)FORE(j,0,60)dp[i][j]=-1;
-return solve(0,weight.size()-1);
-}
-};
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c)." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11781&amp;rd=14726 数字の文字列が与えられる。 ひとつずつ文字を選び、その両端の値をかけたものがスコアになる。 選んだあとはその文字は消滅する。 最初と最後の値" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-533-div1-easy---casketofstar-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 671 DIV1 Easy - BearCries x" />
-<meta property="og:description" content="問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=14010&amp;rd=16551
-解き方 
-固定できる条件はなさそう。
-ある値でソーティングして貪欲にも解けなさそうなのでｄｐを考える。
-dp[現在の位置][;があって_がない絵文字][;があって_がある絵文字]=現在の位置の一つ前までの状態数と考えると、200*200*200=8*10^6で間に合う。
-dp[n][0][0]が最終的な答えになる。
-コード 
-long long dp[202][202][202];
-class BearCries {
-public: int count(string message) {
-int n=message.size();
-int MOD=1000000007;
-memset(dp,0,sizeof(dp));
-dp[0][0][0]=1;
-FORE(i,0,n){
-FORE(j,0,201)FORE(k,0,201){
-if(message[i]==&#39;_&#39;){
-if(j)dp[i&#43;1][j-1][k&#43;1]=(dp[i&#43;1][j-1][k&#43;1]&#43;dp[i][j][k]*j)%MOD;
-dp[i&#43;1][j][k]=(dp[i&#43;1][j][k]&#43;dp[i][j][k]*k)%MOD;
-}else{
-if(k)dp[i&#43;1][j][k-1]=(dp[i&#43;1][j][k-1]&#43;dp[i][j][k]*k)%MOD;
-dp[i&#43;1][j&#43;1][k]=(dp[i&#43;1][j&#43;1][k]&#43;dp[i][j][k])%MOD;
-}
-}
-}
-return dp[n][0][0];
-}
-}; " />
+<meta property="og:description" content="問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=14010&amp;rd=16551 解き方 固定できる条件はなさそう。 ある値でソーティングして貪欲にも解けなさそうなのでｄｐを考える。 dp[現在の位置][;があって_がない" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-671-div1-easy---bearcries-x/" />
 

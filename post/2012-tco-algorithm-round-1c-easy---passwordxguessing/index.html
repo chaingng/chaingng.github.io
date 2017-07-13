@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2012 TCO Algorithm Round 1C Easy - PasswordXGuessing　(×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11867&amp;rd=15092
-・数字で表わされるあるパスワードがある。
-・そのパスワードを忘れてしまったが、複数の人がどのパスワードであったか答えてくれる。
-・ただし、そのパスワードは思い出したものであるため１文字だけ間違っている。
-・このとき、元のパスワードとして考えられるものの数を求める。
-解き方 
-・ｄｐを利用する？
-・各桁についてあっているか、間違っているか、どちらでもよいかの情報をもつ
-・でもこれだと計算量が間に合わない・・・
-→他の人のコードをみる
-・パスワードは５０ケタであるので、最悪５０＊１０＝５００個しか存在しない
-・よって全探索可能
-・反省：全探索の検討が足りなかった。ぱっとｄｐ？と思ってしまったが解の候補、探索の候補どちらも全探索を検討するのが基本。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PasswordXGuessing {
-public: long long howMany(vector&lt;string&gt; guesses) {
-int n=guesses.size(),m=guesses[0].size();
-set&lt;string&gt; s;
-FORE(i,0,n){
-set&lt;string&gt; tmp;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11867&amp;rd=15092 ・数字で表わされるあるパスワードがある。 ・そのパスワードを忘れてしまったが、複数の人がどのパスワードであったか答えてくれる。 ・ただし、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2012-tco-algorithm-round-1c-easy---passwordxguessing/" />
 

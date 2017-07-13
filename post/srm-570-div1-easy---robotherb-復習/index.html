@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 570 DIV1 Easy - RobotHerb (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12427&amp;rd=15490
-ロボットが与えられた数の配列の通りに動作する。
-最初は任意の方向を向いており、配列の最初の数だけまっすぐ移動する。
-その後、移動した分だけ左を向く。
-次の配列に移り、同じ動作をする。最後の配列まで終わったら一度の操作が終了。
-この動作をＴ回実施する。
-最後に、最初の位置とのマンハッタン距離を返す。
-解き方 
-最小・最大を求めるわけではないシミュレーション問題。
-今回はＴが10^9と大きいので単純なシミュレーションでは解けない。
-一度の動作後に動いた座標と向きは常に一緒なので、
-そのＴ回の繰り返しで解ける。
-４回動くと向きは戻るので、４の倍数のときは×Ｔ、
-余りが出た場合は４の倍数から１回、２回、３回いずれかの値を足す。
-コード 
-class RobotHerb {
-public: long long getdist(int T, vector&lt;int&gt; a) {
-int x[]={0,1,0,-1},y[]={1,0,-1,0};
-int d=0,curx=0,cury=0;
-long long ans=0,move[4]={};
-FORE(n,1,5){
-FORE(i,0,a.size()){
-curx&#43;=a[i]*x[d];
-cury&#43;=a[i]*y[d];
-d=(d&#43;a[i])%4;
-}
-move[n%4]=abs(curx)&#43;abs(cury);
-}
-ans=move[0]*(T/4);
-if(T%4)ans&#43;=move[T%4];
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12427&amp;rd=15490 ロボットが与えられた数の配列の通りに動作する。 最初は任意の方向を向いており、配列の最初の数だけまっすぐ移動する。 その後、移動した分だけ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-570-div1-easy---robotherb-%E5%BE%A9%E7%BF%92/" />
 

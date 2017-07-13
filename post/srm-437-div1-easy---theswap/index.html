@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 437 DIV1 Easy - TheSwap" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10369&amp;rd=13699
-解き方 
-全探索可能な問題。
-setとvectorを利用して、各繰り返し回数で生成される数を更新していく。
-コード 
-class TheSwap {
-public: int findMax(int n, int k) {
-set&lt;int&gt; cur,next;
-cur.insert(n);
-FORE(i,0,k){
-for(set&lt;int&gt;::iterator it=cur.begin();it!=cur.end();it&#43;&#43;){
-int x=*it;
-vector&lt;int&gt; vx;
-while(x&gt;0){
-vx.push_back(x%10);
-x/=10;
-}
-FORE(a,0,vx.size())FORE(b,a&#43;1,vx.size()){
-if(!(b==vx.size()-1 &amp;&amp; vx[a]==0)){
-swap(vx[a],vx[b]);
-int tmp=0;
-for(int c=vx.size()-1;c&gt;=0;c--)tmp=tmp*10&#43;vx[c];
-next.insert(tmp);
-swap(vx[a],vx[b]);
-}
-}
-}
-cur=next;
-next.clear();
-}
-int ret=0;
-if(cur.empty())return -1;
-for(set&lt;int&gt;::iterator it=cur.begin();it!=cur.end();it&#43;&#43;){
-ret=max(ret,*it);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10369&amp;rd=13699 解き方 全探索可能な問題。 setとvectorを利用して、各繰り返し回数で生成される数を更新していく。 コード class TheSwap { public: int findMax(int n, int k) { set&lt;int&gt; cur,next; cur.insert(n); FORE(i,0,k){" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-437-div1-easy---theswap/" />
 

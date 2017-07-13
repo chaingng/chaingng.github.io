@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 229 DIV1 Middle -BusinessPlan　（復習○）" />
-<meta property="og:description" content="問題 
-様々な商品が存在し、各商品についてexpenseの金額を投資するとptime後にrevenueの収入が得られることがわかっている。
-最初にＣ円持っており、これをＤ円にしたいとき、最短でかかる時間を求める。
-ただし、そのような場合がないときはー１を返す。
-解き方 
-ｄｐを漸化的に更新していく問題。
-ptimeは最大10であり、Dは最大10^5であるため、
-dpのサイズを10^6確保して各時間における最大の所持金額を逐次更新していく。
-最後に、最初にDを超える時間を返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BusinessPlan {
-public:
-int howLong(vector&lt;int&gt; expense, vector&lt;int&gt; revenue, vector&lt;int&gt; ptime, int C, int D) {
-int n=expense.size();
-if(C&gt;=D)return 0;
-int dp[100001];" />
+<meta property="og:description" content="問題 様々な商品が存在し、各商品についてexpenseの金額を投資するとptime後にrevenueの収入が得られることがわかっている。 最初に" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-229-div1-middle--businessplan%E5%BE%A9%E7%BF%92/" />
 

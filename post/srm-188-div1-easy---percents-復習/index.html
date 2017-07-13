@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 188 DIV1 Easy - Percents (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2386&amp;rd=4760
-あるアンケートに対して、yesと答えた人の割合が％で与えられる。
-このとき、その割合になるときに必要なアンケート人数の母数を求める。
-ただし、小数点３位以下は四捨五入される。
-解き方 
-最初に文字列からｐを取りだすのにそのままの小数点を取りだすと、整数にしようと掛け算をした時に誤差が出てしまうので、文字から直接取りだした。
-母数を１～１００００まで順に操作し、
-そのときのyesと答えた人の割合は切り捨てとなる場合と切り上げになる場合の
-両方を検査する。
-ｎで割ったときの判定については、ｎの半分を足すことで四捨五入の値を求めることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Percents {
-public: int minSamples(string percent) {
-int p=(percent[0]-&#39;0&#39;)*1000&#43;(percent[1]-&#39;0&#39;)*100&#43;(percent[3]-&#39;0&#39;)*10&#43;(percent[4]-&#39;0&#39;);
-FORE(n,1,10000){
-int cost=n*p/10000;
-if((cost*10000&#43;n/2)/n==p)return n;
-if(((cost&#43;1)*10000&#43;n/2)/n==p)return n;
-}
-return 10000;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2386&amp;rd=4760 あるアンケートに対して、yesと答えた人の割合が％で与えられる。 このとき、その割合になるときに必要なアンケート人数の母数を求める。 ただ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/" />
 

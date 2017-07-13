@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 331 DIV1 Easy - CarolsSinging (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7280&amp;rd=10011
-一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。
-このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。
-解き方 
-歌詞の長さは１０なので、全探索可能。
-ビットマスクを利用して全探索する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class CarolsSinging {
-public:
-int choose(vector&lt;string&gt; lyrics) {
-int n=lyrics[0].size();
-int ret=1e&#43;9;
-for(int i=0;i&lt;(1&lt;&lt;n);i&#43;&#43;){
-int cnt=0;
-vector&lt;int&gt; p(n,0);
-for(int j=0;j&lt;n;j&#43;&#43;){
-if(i&amp;(1&lt;&lt;j)){
-cnt&#43;&#43;;
-p[n-j-1]=1;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7280&amp;rd=10011 一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。 このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。 解" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/" />
 

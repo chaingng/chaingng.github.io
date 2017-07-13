@@ -77,42 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10577&amp;rd=13901
-解き方 
-問題文の条件をすべて洗い出すのが大事。
-洗い出すことができれば、あとは正確に実装すればよい。
-コード 
-int used[10][10];
-int dr[]={1,1,2,2,-1,-1,-2,-2},dc[]={2,-2,1,-1,2,-2,1,-1};
-int h,w;
-class KnightsTour {
-public:
-int calc(vector&lt;string&gt; board,int r,int c){
-int cnt=0;
-FORE(i,0,8){
-int nr=r+dr[i],nc=c+dc[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; used[nr][nc]==0 &amp;&amp; board[nr][nc]!='*'){
-cnt++;
-}
-}
-return cnt;
-}
-int visitedPositions(vector&lt;string&gt; board) {
-h=board.size(),w=board[0].size();
-memset(used,0,sizeof(used));
-queue&lt;pair&lt;int,int&gt; &gt; q;
-FORE(i,0,h)FORE(j,0,w)if(board[i][j]=='K'){
-q.push(make_pair(i,j));
-used[i][j]=1;
-}
-int ret=0;
-while(!q.empty()){
-int r=q.front().first;
-int c=q.front().second;
-q.pop();
-ret=max(ret,used[r][c]);
-int nextr=1e+9,nextc=1e+9,cost=1e+9;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10577&amp;rd=13901 解き方 問題文の条件をすべて洗い出すのが大事。 洗い出すことができれば、あとは正確に実装すればよい。 コード int used[10][10]; int dr[]={1,1,2,2,-1,-1,-2,-2},dc[]={2,-2,1,-1,2,-2,1,-1}; int h,w; class KnightsTour { public: int calc(vector&lt;string&gt; board,int r,int c){ int
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-447-div1-easy---knightstour/">Read more…</a>
@@ -132,26 +97,10 @@ int nextr=1e+9,nextc=1e+9,cost=1e+9;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11234&amp;rd=14244
-解き方 
-Kを固定することで、そのKを作ることのできる組み合わせの数を
-求めることができる。
-よって、すべてのKについて作ることのできるサイコロの数を足していけばよい。
-コード 
-class FoxMakingDice {
-public: long long theCount(int N, int K) {
-long long ret=0;
-for(int sum=K;sum&lt;=2*N;sum++){
-long long cnt=0;
-for(int j=1;j&lt;sum-j;j++){
-if(j&lt;=N &amp;&amp; sum-j&lt;=N)cnt++;
-}
-if(cnt&gt;=3)ret+=2*cnt*(cnt-1)*(cnt-2)/6;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11234&amp;rd=14244 解き方 Kを固定することで、そのKを作ることのできる組み合わせの数を 求めることができる。 よって、すべてのKについて作ることのできるサイコ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-491-div1-easy---foxmakingdice/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -168,42 +117,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11115&amp;rd=14426
-解き方 
-配列の数が５０個なのですべての組み合わせは求められないので
-順番が決まるか、貪欲法で求められるはず。
-左から数を調べていくとすると、その数は昇順である方がよいので、
-その点から連続するDの数だけ確保しておけば、そのうち最小の数を
-とってもよいことがわかる。
-よって、そのようにして左側から数を決定していく。l
-コード 
-class PermutationSignature {
-public:
-vector&lt;int&gt; reconstruct(string signature) {
-int n=signature.size()+1;
-int used[n+1];
-memset(used,0,sizeof(used));
-vector&lt;int&gt; ans;
-FORE(i,0,n){
-int cnt=0;
-FORE(j,i,signature.size()){
-if(signature[j]!='D')break;
-cnt++;
-}
-int x=1;
-while(used[x])x++;
-while(cnt&gt;0){
-x++;
-if(used[x])continue;
-cnt--;
-}
-ans.push_back(x);
-used[x]=1;
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11115&amp;rd=14426 解き方 配列の数が５０個なのですべての組み合わせは求められないので 順番が決まるか、貪欲法で求められるはず。 左から数を調べていくとすると、
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-497-div1-easy---permutationsignature-xx/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -220,37 +137,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11219&amp;rd=14427
-解き方 
-システムテストで落ちないような実装の正確性が求められる問題。
-共通処理は関数化し、各区間について点の不等号がどうであるか
-正しく実装する。
-コード 
-class FoxSequence {
-public:
-bool ispossible(vector&lt;int&gt; seq,int s,int e,int d){
-for(int i=s;i&lt;=e;i++)if(seq[s]+(i-s)*d!=seq[i])return false;
-return true;
-}
-string isValid(vector&lt;int&gt; seq) {
-int n=seq.size();
-int at=0,next=0;
-while(next+1&lt;n &amp;&amp; seq[next]&lt;seq[next+1])next++;
-if(at==next || next&gt;=n)return "NO";
-if(!ispossible(seq,at,next,seq[at+1]-seq[at]))return "NO";
-at=next;
-while(next+1&lt;n &amp;&amp; seq[next]&gt;seq[next+1])next++;
-if(at==next || next&gt;=n)return "NO";
-if(!ispossible(seq,at,next,seq[at+1]-seq[at]))return "NO";
-while(next+1&lt;n &amp;&amp; seq[next]==seq[next+1])next++;
-if(next&gt;=n)return "NO";
-at=next;
-while(next+1&lt;n &amp;&amp; seq[next]&lt;seq[next+1])next++;
-if(at==next || next&gt;=n)return "NO";
-if(!ispossible(seq,at,next,seq[at+1]-seq[at]))return "NO";
-at=next;
-while(next+1&lt;n &amp;&amp; seq[next]&gt;seq[next+1])next++;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11219&amp;rd=14427 解き方 システムテストで落ちないような実装の正確性が求められる問題。 共通処理は関数化し、各区間について点の不等号がどうであるか 正しく実装
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-498-div1-easy---foxsequence/">Read more…</a>
@@ -270,35 +157,10 @@ while(next+1&lt;n &amp;&amp; seq[next]&gt;seq[next+1])next++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11327&amp;rd=14428
-様々な種類のうさぎがいる。
-そのうちいくつかのうさぎに質問し、自分以外に同じ種類のうさぎが何匹いるか
-答えている。
-このとき、うさぎの総数について、矛盾しないような最小の数を求める。
-解き方 
-同じ数xを答えたうさぎについて、x＋１匹まで同じ種類二まとめられる。
-答えたすべての数xについて、上記から計算できる最小のうさぎの総数を
-求める。
-コード 
-class ColorfulRabbits {
-public: int getMinimum(vector&lt;int&gt; replies) {
-int n=replies.size();
-int used[n];
-memset(used,0,sizeof(used));
-long long ret=0;
-FORE(i,0,n)if(!used[i]){
-int cnt=0;
-FORE(j,0,n)if(replies[i]==replies[j]){
-cnt++;
-used[j]=1;
-}
-long long x=replies[i]+1;
-ret+=x*((cnt+x-1)/x);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11327&amp;rd=14428 様々な種類のうさぎがいる。 そのうちいくつかのうさぎに質問し、自分以外に同じ種類のうさぎが何匹いるか 答えている。 このとき、うさぎの総数に
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-499-div1-easy---colorfulrabbits-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -315,42 +177,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11306&amp;rd=14425
-青を縦に塗ることができるブラシと、赤を横に塗ることができるブラシが
-与えられる。
-また青と赤が交わったセルは緑色になる。
-最初は真っ白なボードからブラシを塗って、最終的に与えられた
-形に絵を塗りたいとき、最小の塗る回数を求める。
-解き方 
-緑の色は赤を最初に塗っても、青を最初に塗ってもよく順番は関係ないので、
-青の塗る回数と赤を塗る回数を独立で考え、最後に和をとればよい。
-コード 
-class ColoredStrokes {
-public: int getLeast(vector&lt;string&gt; picture) {
-int h=picture.size(),w=picture[0].size();
-int ret=0;
-for(int j=0;j&lt;w;j++){
-int at=0;
-while(at&lt;h){
-while(at&lt;h &amp;&amp; (picture[at][j]=='.'||picture[at][j]=='R'))at++;
-if(at&gt;=h)break;
-ret++;
-while(at&lt;h &amp;&amp; (picture[at][j]=='G'||picture[at][j]=='B'))at++;
-}
-}
-for(int i=0;i&lt;h;i++){
-int at=0;
-while(at&lt;w){
-while(at&lt;w &amp;&amp; (picture[i][at]=='.'||picture[i][at]=='B'))at++;
-if(at&gt;=w)break;
-ret++;
-while(at&lt;w &amp;&amp; (picture[i][at]=='G'||picture[i][at]=='R'))at++;
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11306&amp;rd=14425 青を縦に塗ることができるブラシと、赤を横に塗ることができるブラシが 与えられる。 また青と赤が交わったセルは緑色になる。 最初は真っ白なボー
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-496-div1-easy---coloredstrokes-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -367,46 +197,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11310&amp;rd=14423
-白いボードが与えられる。
-これをN＊Nの黒いスタンプによって、与えられた絵を作りたい。
-できるだけ大きいスタンプで与えられた絵を作りたいとき、
-その最大の大きさを求める。
-解き方 
-スタンプを押す順番は関係ないので、各スタンプの大きさについて
-スタンプが押せる位置のとき、スタンプを押してしまう。
-押したスタンプのセルを？とし、最後にWと？だけが残れば
-その大きさのスタンプで絵を作ることができる。
-コード 
-class Painting {
-public: int largestBrush(vector&lt;string&gt; picture) {
-int h=picture.size(),w=picture[0].size();
-for(int len=min(w,h);len&gt;=2;len--){
-vector&lt;string&gt; p=picture;
-while(1){
-int finish=1;
-for(int i=0;i+len-1&lt;h;i++)for(int j=0;j+len-1&lt;w;j++){
-int valid=1;
-for(int k=i;k&lt;i+len;k++)for(int l=j;l&lt;j+len;l++){
-if(p[k][l]=='W')valid=0;
-}
-if(valid){
-for(int k=i;k&lt;i+len;k++)for(int l=j;l&lt;j+len;l++){
-if(p[k][l]=='B')finish=0;
-p[k][l]='?';
-}
-}
-}
-if(finish)break;
-}
-int flag=1;
-FORE(i,0,h)FORE(j,0,w)if(p[i][j]=='B')flag=0;
-if(flag)return len;
-}
-return 1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11310&amp;rd=14423 白いボードが与えられる。 これをN＊Nの黒いスタンプによって、与えられた絵を作りたい。 できるだけ大きいスタンプで与えられた絵を作りたいと
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-494-div1-easy---painting-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -423,42 +217,10 @@ return 1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11096&amp;rd=14514
-下１桁が４または７である数はラッキーナンバーとなる。
-ある整数Nが与えられたとき、その数をラッキーナンバーの和で表したい。
-ラッキーナンバーの数で表すことができれば必要な最小のラッキーナンバーの
-数を返す。
-表すことができなければー１を返す。
-解き方 
-チャレンジされやすそうな問題。
-小さい数で試してみると、２１以上の数はすべてラッキーナンバーの和で
-表すことができることがわかる。
-またラッキーナンバーの和で表すことができる場合、下２桁以外の数は
-いくらであっても必要な数は変わらない。
-よって作ることのできるすべての下３桁の数について試し、
-その最小のものが答えになる。
-単純に下２桁をMOD１００でとると１０２０のような場合にー１となってしまうので
-２桁の数で下１桁が４と７の数を引いたときの下２桁を求めれば
-すべての場合で確かめることができる。
-条件分岐のIF文をできるだけ少なくすることがシステムテストで落ちないためのコツ。
-コード 
-class TheNumbersWithLuckyLastDigit {
-public: int find(int n) {
-int dp[100];
-FORE(i,0,100)dp[i]=1e+9;
-FORE(i,1,100){
-if(i%10==4||i%10==7)dp[i]=1;
-for(int j=4;i+j&lt;100;j+=10)dp[i+j]=min(dp[i+j],dp[i]+1);
-for(int j=7;i+j&lt;100;j+=10)dp[i+j]=min(dp[i+j],dp[i]+1);
-}
-int ret=1e+9;
-ret=min(ret,dp[n%100]);
-for(int i=4;i&lt;100&amp;&amp;n-i&gt;=0;i+=10)ret=min(ret,dp[(n-i)%100]+1);
-for(int i=7;i&lt;100&amp;&amp;n-i&gt;=0;i+=10)ret=min(ret,dp[(n-i)%100]+1);
-return ret==1e+9 ? -1 : ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11096&amp;rd=14514 下１桁が４または７である数はラッキーナンバーとなる。 ある整数Nが与えられたとき、その数をラッキーナンバーの和で表したい。 ラッキーナンバ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-504.5-div1-easy---thenumberswithluckylastdigit/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -475,41 +237,10 @@ return ret==1e+9 ? -1 : ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11154&amp;rd=14435
-スライムの島が複数あり、各島ごとに何匹スライムがいるかわかっている。
-各島を１つに統合したい。
-２つの島を統合するとき、もう一つの島にいるスライムの数以上であれば
-その島の名前をつけることができる。
-このとき、最大で何通りの島の数が存在しうるか求める。
-解き方 
-配列をソートし、初期値をその名前を残したい島のスライムの数とする。
-小さい方から統合していき、すべての島を統合できればその名前は残り、
-そうでなければその名前は残らなくなる。
-コード 
-class SlimeXSlimesCity {
-public: int merge(vector&lt;int&gt; population) {
-int n=population.size();
-int ret=0;
-sort(all(population));
-FORE(i,0,n){
-long long sum=population[i];
-int at=0;
-while(at&lt;n){
-if(at==i){
-at++;
-}
-else if(sum&gt;=population[at]){
-sum+=population[at];
-at++;
-}
-else break;
-}
-if(at&gt;=n)ret++;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11154&amp;rd=14435 スライムの島が複数あり、各島ごとに何匹スライムがいるかわかっている。 各島を１つに統合したい。 ２つの島を統合するとき、もう一つの島にいる
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-506-div1-easy---slimexslimescity/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -526,29 +257,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11315&amp;rd=14436
-６面体を与えられた色を使って塗りたい。
-ただし、隣り合う面は違う色で塗らなくてはいけない。
-使える色の集合が与えられたとき、６面体を塗ることができれば”Yes”、塗れなければ
-”No”を返す。
-解き方 
-各色について、２色までであれば反対側の面で使うことができる。
-よって各色についてその色の数もしくは２のうちの最小のものを足していき
-最後にその数の和が６以上であれば６面体を塗ることができる。
-コード 
-class CubeStickers {
-public: string isPossible(vector&lt;string&gt; sticker) {
-int n=sticker.size();
-map&lt;string,int&gt; m;
-FORE(i,0,n)m[sticker[i]]++;
-int sum=0;
-for(map&lt;string,int&gt;::iterator it=m.begin();it!=m.end();it++){
-sum+=min(2,it-&gt;second);
-}
-return sum&gt;=6 ? "YES" : "NO";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11315&amp;rd=14436 ６面体を与えられた色を使って塗りたい。 ただし、隣り合う面は違う色で塗らなくてはいけない。 使える色の集合が与えられたとき、６面体を塗るこ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-507-div1-easy---cubestickers/">Read more…</a>
 		</div>
 	</div>
 </article>

@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Round 2A Easy - SixteenBricks (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996
-・正方形に並べられた１６個のマスがある。
-・各マスに、高さheightが分かっているタワーを置く。
-・このとき、見えている表面積が最も高くなるようにタワーを置く時の面積を求める。
-解き方 
-・下側は見えないので無視してよさそう。
-・上側は常に１６となる。
-・あとはどう横に置くか。
-→思いつかなかったため、他の人のコードをみてみる。
-・サンプルの一つにあるように、互い違いに置くことで（#の場所）８つ分はheight×４を足す。
-*#*#
-&nbsp; #*#*
-&nbsp; *#*#
-&nbsp; #*#*
-・残りのうち、置く場所によって見えなくなる面の数が異なる。
-0#2#
-&nbsp; #4#2
-&nbsp; 2#4#
-&nbsp; #2#0
-・よってheightでソートし、大きいうちから8つはheight×4を足し、
-小さい方から2つはheight×4を引き、次の4つはheight×2を引けばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SixteenBricks {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996 ・正方形に並べられた１６個のマスがある。 ・各マスに、高さheightが分かっているタワーを置く。 ・このとき、見えている表面積が最も高く" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/" />
 

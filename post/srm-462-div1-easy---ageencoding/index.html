@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 462 DIV1 Easy - AgeEncoding" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10589&amp;rd=14147
-１と０からなる数が与えられ、これをｘ進数にすることでｎを表したい。
-ｘは整数でなくても良いとき、ｘを求める。
-ただしそのようなｘが存在しない場合は−１を、
-複数存在する場合は−２を返す。
-解き方 
-２分探索の問題。
-あとは例外判定が重要になる。
-①N＝１のときは１のとき複数の場合があるので−２、
-また一番下の桁が１で、その他の桁がすべて０でない場合は−１になる。
-②ｎは１以上のため、すべて０のときは−１となる。
-③N=1でなくすべて１のときは表すことができないので−１となる。
-コード 
-class AgeEncoding {
-public:
-double calc(double b,string s){
-int n=s.size();
-double sum=0.0;
-double p=1;
-for(int i=n-1;i&gt;=0;i--){
-if(s[i]==&#39;1&#39;)sum&#43;=p;
-p*=b;
-if(sum&gt;100)return sum;
-}
-return sum;
-}
-double getRadix(int age, string candles) {
-int n=candles.size();
-int valid=1;
-FORE(i,0,n-1)if(candles[i]!=&#39;0&#39;)valid=0;
-if(age==1){
-if(!valid &amp;&amp; candles[n-1]==&#39;1&#39;)return -1;
-if(valid &amp;&amp; candles[n-1]==&#39;1&#39;)return -2;
-}
-if(valid &amp;&amp; candles[n-1]==&#39;1&#39;)return -1;
-if(valid &amp;&amp; candles[n-1]==&#39;0&#39;)return -1;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10589&amp;rd=14147 １と０からなる数が与えられ、これをｘ進数にすることでｎを表したい。 ｘは整数でなくても良いとき、ｘを求める。 ただしそのようなｘが存在しな" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-462-div1-easy---ageencoding/" />
 

@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 515 DIV1 Middle - NewItemShop　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11508&amp;rd=14540
-売り物である剣を任意の数持っており、複数の顧客が訪れる。
-各顧客について、&#34;時間、買う値段、来る確率&#34;で表わされる情報が複数個与えられる。
-ただし、一人の顧客について１つの剣しか売ることができない。
-このとき、得られる収益の最大値を求める。
-解き方 
-ぱっと見てｄｐで解けそう。
-どうｄｐを適用するかが問題。
-問題文から読みとると時系列の処理が必要なので、時間ごとに処理を行っていく。
-次に、各顧客について訪れたか訪れていないかの情報を保存しようとすると２＾２４で発散するため難しい。
-ただし、どの顧客を選ぶかの情報であれば２４Ｃ１２のため２＊１０＾６程度になる。
-さらに、一度しか訪れない顧客は２度現れないことから情報を保存しなくてもよいので計算量が削減できる。よって、２度以上現れる顧客のみINDEXを順につけてあげる。
-上記より、「時間、現在の剣の在庫、すでに選んだ顧客の情報」を元にｄｐを回せばよい。
-訪れる顧客は最大で２４人、うち複数回訪れる顧客は最大１２人のため、２＾１２分のビットマスクで足りる。
-ｄｐでは、
-①その時間に既に現れた顧客であれば時間のみ進め、
-②まだ現れていない顧客でありその時間にも現れなければ、現れない確立をかけて進め、
-③現れた場合であれば、その顧客に売ったときもしくは売らないときの最大の値をとってあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int N[24],M[24];
-double P[24],dp[26][24][5000];
-class NewItemShop {
-public:
-double f(int swords,int hour,int mask){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11508&amp;rd=14540 売り物である剣を任意の数持っており、複数の顧客が訪れる。 各顧客について、&#34;時間、買う値段、来る確率&#34;で表わされる情報が複数個与えられる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-515-div1-middle---newitemshop%E5%BE%A9%E7%BF%92/" />
 

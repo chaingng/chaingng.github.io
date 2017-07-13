@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2013 TCO Round 2B Easy - FruitTrees (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12520&amp;rd=15633
-・appleとkiwi、grapeがあり、それぞれ与えられた間隔で一定に置いていく。
-・このとき、２つの果物間の最短距離が最も大きくなるような並べ方のときの
-&nbsp;最短距離を求める。
-解き方 
-・３つ果実があると複雑そう。
-・appleの距離が４、kiwiの距離が３のとき、と考えるとどう置いても重なる・・うまく見つからない。
-→他の人のコードをみてみる
-・もう少し洞察してみると、２つの果実の距離のgcdのMODが最短距離となる。
-・よって、appleを固定し、kiwiとgrapeを変化させそのときの最短距離を求めればよい。
-・反省：紙に書いてもっと検討・試行錯誤してみることが必要。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class FruitTrees {
-public:
-int gcd(int x,int y){
-return y ? gcd(y,x%y) : x;
-}
-int maxDist(int apple, int kiwi, int grape) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12520&amp;rd=15633 ・appleとkiwi、grapeがあり、それぞれ与えられた間隔で一定に置いていく。 ・このとき、２つの果物間の最短距離が最も大きくなる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2013-tco-round-2b-easy---fruittrees-/" />
 

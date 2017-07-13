@@ -7,24 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 380 DIV1 Easy - LameKnight ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8183&amp;rd=10802
-解き方 
-条件より、すべての４方向にいける場合とそれ以外を場合分けする。
-次に高さの値によって場合分けできることがわかる。
-高さが３以上ある場合は上に２、右に１行き、次に下に２、右に１行くのが
-最適になる。
-高さ２のときは上に１、右に２，下に１，右に２しかいけなく、
-高さ１のときは動くことができない。
-コード 
-class LameKnight {
-public: int maxCells(int height, int width) {
-if(height&gt;=3 &amp;&amp; width&gt;=7)return width-2;
-if(height&gt;=3)return min(4,width);
-if(height==2)return min(4,(width&#43;1)/2);
-return 1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8183&amp;rd=10802 解き方 条件より、すべての４方向にいける場合とそれ以外を場合分けする。 次に高さの値によって場合分けできることがわかる。 高さが３以上ある場" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-380-div1-easy---lameknight-/" />
 

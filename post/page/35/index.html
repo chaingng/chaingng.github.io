@@ -77,33 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6501&amp;rd=9992
-都市Antarcticaにポリスステーションを建てたい。
-Antarcticaには複数の町があり、それぞれの町にポリスステーションを建てた時のコストがあらかじめわかっている。
-ただし全ての町にポリスステーションを建てる必要はなく、その他のポリスステーションからその町に行くことができれば必要ない。
-また、各町について一方通行でつながっているかどうかの情報も与えられる。
-このとき、１つのポリスステーションを建てた時の平均コストが最小になるときの値を求める。
-解き方 
-無向グラフではなく有向グラフの問題。
-強連結である部分集合を求め、その他の集合からたどりつけない集合であればその部分集合から最小のコストを足す必要がある。
-最後に、選ばれていない町のコストについて、平均が低くなるものについてのみコストを足してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AntarcticaPolice {
-public:
-double minAverageCost(vector&lt;int&gt; costs, vector&lt;string&gt; roads) {
-int n=costs.size();
-bool p[n][n];
-FORE(i,0,n)FORE(j,0,n)p[i][j]=(roads[i][j]=='Y');
-FORE(i,0,n)p[i][i]=1;
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)p[i][j]|=(p[i][k]&amp;&amp;p[k][j]);
-int G=0,root[n];
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6501&amp;rd=9992 都市Antarcticaにポリスステーションを建てたい。 Antarcticaには複数の町があり、それぞれの町にポリスステーションを建て
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-312-div1-middle---antarcticapolice%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -123,30 +97,7 @@ int G=0,root[n];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-数字の文字列が与えられる。
-そこから全ての数字を好きに組み合わせて、３つの素数を作る。
-３つの素数が複数通り作れるのであれば、その積が最も小さいものを返す。
-解き方 
-数字の数は最大８つなので、全探索で解くことができる。
-すべての数字のpermutationに対し、全ての区切りで３つの数を作り、それが全て素数であるか判定すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PrimeAnagrams {
-public:
-bool isprime(int x){
-if(x==2)return true;
-if(x==1||x%2==0)return false;
-for(int i=3;i*i&lt;=x;i+=2)if(x%i==0)return false;
-return true;
-}
-int calc(vector&lt;int&gt; num,int start,int end){
-int x=0,p=1;
+			問題 数字の文字列が与えられる。 そこから全ての数字を好きに組み合わせて、３つの素数を作る。 ３つの素数が複数通り作れるのであれば、その積が最も小
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-223-div1-middle---primeanagrams%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -166,28 +117,7 @@ int x=0,p=1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-a,b,c,dの４種類の木を並べて植えたい。
-ただし、隣り合う木は必ず別の種類にしたい。
-それぞれの植えられる木の本数が与えられるとき、木の植え方が全部で何通りあるか求める。
-解き方 
-ｄｐで解けそうな問題。
-状態は前に植えた木、各種類の木についてあと何本植えられるかがわかればよい。
-メモ化を使って全ての状態を洗い出し、最後に問題文で与えられた本数についての答えを返してあげる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TreeSpreading {
-public:
-long long countArrangements(int a, int b, int c, int d) {
-if(a+b+c+d==0)return 1;
-long long dp[4][11][11][11][11]={};
-dp[0][1][0][0][0]=1;
-dp[1][0][1][0][0]=1;
+			問題 a,b,c,dの４種類の木を並べて植えたい。 ただし、隣り合う木は必ず別の種類にしたい。 それぞれの植えられる木の本数が与えられるとき、木の
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-227-div1-middle---treespreading%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -207,36 +137,7 @@ dp[1][0][1][0][0]=1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=1718
-それぞれN人で構成される2つのチームが、団体戦でチェスの試合を行う。
-試合はＮ回行われ、各試合は各チームのメンバ１対１で行われる。
-各メンバは１試合しか出場できない。
-試合については強い方のメンバのチームが２点加算され、同じ強さの場合は各チーム１点が加算される。
-ここで自分のチームについては全メンバーの強さがわかっており、また相手の全メンバーの強さもわかっている。
-このとき、自分のチームが得られる最も高いスコアを求める。
-解き方 
-まずは各チームの強さを昇順にソートする。
-自分のチームは弱い方から選んでいき、
-相手の最も強いメンバに勝てるとき→そのメンバと対戦してスコア＋２
-相手の最も弱いメンバに勝てるとき→そのメンバと対戦してスコア＋２
-がもっともよい戦術であることがわかる。
-ただし、上記のどれとも一致しない場合は
-相手の最も強いメンバと弱いメンバ、どちらと対戦して良いかはその場で判断できない。
-そのため、この２通りについてｄｐを回して高い方のスコアを採用すればよい。
-ｄｐは６０＾３であるため十分に間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int n,dp[60][60][60];
-vector&lt;int&gt; us,them;
-class ChessMatchup {
-public:
-int f(int pos,int left,int right){
+			問題 http://topcoder.bgcoder.com/print.php?id=1718 それぞれN人で構成される2つのチームが、団体戦でチェスの試合を行う。 試合はＮ回行われ、各試合は各チームのメンバ１対１で行われる。 各メン
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-371-div1-middle---chessmatchup%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -256,33 +157,7 @@ int f(int pos,int left,int right){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9752&amp;rd=12183
-座標(0,0)を中心として、１辺の長さがcakeLength*2であり、中心の穴がholeLength*2であるケーキが存在する。
-このケーキを、あらかじめ与えられたy軸に平行なカットとx軸に平行なカットを行ったときに最終的に残るカットされたケーキの数を求める。
-解き方 
-(0,0)が中心というのを最初見落としてしまい、時間がかかってしまった。
-(0,0)→(cakeLength,cakeLength)となるように座標変換して
-左上が(0,0)にくるようにして、各カットのまとまりごとにdfsを回して答えを求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int used[200][200],vcut[200],hcut[200],n;
-class HoleCakeCuts {
-public:
-void dfs(int i,int j){
-if(used[i][j])return;
-used[i][j]=1;
-if(i&gt;0&amp;&amp;!vcut[i-1])dfs(i-1,j);
-if(i&lt;n-1&amp;&amp;!vcut[i])dfs(i+1,j);
-if(j&gt;0&amp;&amp;!hcut[j-1])dfs(i,j-1);
-if(j&lt;n-1&amp;&amp;!hcut[j])dfs(i,j+1);
-}
-int cutTheCake(int cake, int hole, vector&lt;int&gt; h, vector&lt;int&gt; v) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9752&amp;rd=12183 座標(0,0)を中心として、１辺の長さがcakeLength*2であり、中心の穴がholeLength*2であるケーキが存在する。 この
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-411-div1-middle---holecakecuts%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -302,34 +177,7 @@ int cutTheCake(int cake, int hole, vector&lt;int&gt; h, vector&lt;int&gt; v) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=1036
-一辺が2^Nからなるセルの集合が与えられる。
-セルの値は左上の0から始まり、ｚを描くように１ずつ増えていく。
-N=1 のとき
-0 1
-2 3
-N=2のとき
-&nbsp;0 &nbsp;1 &nbsp; &nbsp; 4 &nbsp;5
-&nbsp;2 &nbsp;3 &nbsp; &nbsp; 6 &nbsp;7
-&nbsp;8 &nbsp;9 &nbsp; 12 13
-10 11 14 15
-Nと行番号、列番号(r,c)が与えられた時、
-その(r,c)にある数字を求める。
-解き方 
-Nから1までセルを４等分していって、どの位置にあるかを特定していけばよい。
-N=2の例を場合に考える。
-move=2^(N-1)=2とすると、
-rもcもmove未満のときは左上、cのみmove以上のときは右上、
-rのみmove以上のときは左下、そうでなければ右下の位置になる。
-また、score=4^(N-1)=4とすると、
-右上のときは＋score、左下のときは+score*2、右下のときは+score*3してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).
+			問題 http://topcoder.bgcoder.com/print.php?id=1036 一辺が2^Nからなるセルの集合が与えられる。 セルの値は左上の0から始まり、ｚを描くように１ずつ増えていく。 N=1 のとき 0 1 2 3 N=2のとき
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-266-div1-middle---zcurve%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -349,32 +197,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7847&amp;rd=10710
-x,y座標上に複数のプラットフォームがあり、各プラットフォームには任意の数のコインが存在する。
-また、走る速さvと重力加速度gが与えられ、時間tあたりt*t*g/2の速さで落下していく。
-プレイヤーは、走る速さvが足りていれば高いプラットフォームから低いプラットフォームへ移動することができる。
-任意のプラットフォームからスタートできるとき、得られる最大のコインを求める。
-解き方 
-ｄｐで解ける問題。
-あるプラットフォームiに対して、そこから到達できる全てのプラットフォームのdp[j]のうち最大の値とプラットフォームiにあるコインの数の和がdp[i]になる。
-届くか届かないかの判定の関数は、式を変形することでできるだけ割り算を少なくすることが誤差を小さくするポイント。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[60],n,v,g;
-vector&lt;pair&lt;pair&lt;int,int&gt;,int&gt; &gt; p;
-class PlatformJumper {
-public:
-int f(int pos){
-if(dp[pos]!=-1)return dp[pos];
-if(pos==n)return 0;
-int x=p[pos].first.second,y=p[pos].first.first,score=p[pos].second;
-int ret=score;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7847&amp;rd=10710 x,y座標上に複数のプラットフォームがあり、各プラットフォームには任意の数のコインが存在する。 また、走る速さvと重力加速度gが与えられ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-353-div1-middle---platformjumper%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -394,32 +217,7 @@ int ret=score;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11463
-4と７からなる数字をluckynumberと呼ぶ。
-数字の範囲a&lt;=x&lt;=bであるa,bが最初に与えられ、JohnとBrusでゲームを行う。
-最初はJohnのターンであり、jLenの長さだけ連続した数字を選ぶ。Johnはできるだけ最終的にluckynumberが多く含むようにしたい。
-次はBrusのターンであり、Johnが選んだ数字からbLenの長さだけ連続した数字を選ぶ。Brusはできるだけluckynumberを少なく含むようにしたい。
-このとき、Johnが得ることのできるもっとも多いluckynumberの数を求める。
-解き方 
-数の範囲が10^10なので全探索では解けない。
-ここで、luckynumberに着目するとその数は2^11になるので、luckynumberをからめて考えることができれば解けるようになる。
-次に、luckynumberとからめてどうすればJohnができるだけ多くの数字を得られて、Brusができるだけ少ない選び方ができるかを考える。
-Johnについてはluckynumber-blen+1から初めて数字を取り始めれば最も多く数字をとることができる。
-Brusはluckynumber+1から初めて数字を取り始めれば最も少なく数字をとることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-long long blen;
-vector&lt;long long&gt; luckynum;
-int n;
-class TheLuckyGameDivOne {
-public:
-void getnum(long long a,long long b,long long x){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11463 4と７からなる数字をluckynumberと呼ぶ。 数字の範囲a&lt;=x&lt;=bであるa,bが最初に与えられ、JohnとBrus
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-510-div1-middle---theluckygamedivone%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -439,37 +237,7 @@ void getnum(long long a,long long b,long long x){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11508&amp;rd=14540
-売り物である剣を任意の数持っており、複数の顧客が訪れる。
-各顧客について、"時間、買う値段、来る確率"で表わされる情報が複数個与えられる。
-ただし、一人の顧客について１つの剣しか売ることができない。
-このとき、得られる収益の最大値を求める。
-解き方 
-ぱっと見てｄｐで解けそう。
-どうｄｐを適用するかが問題。
-問題文から読みとると時系列の処理が必要なので、時間ごとに処理を行っていく。
-次に、各顧客について訪れたか訪れていないかの情報を保存しようとすると２＾２４で発散するため難しい。
-ただし、どの顧客を選ぶかの情報であれば２４Ｃ１２のため２＊１０＾６程度になる。
-さらに、一度しか訪れない顧客は２度現れないことから情報を保存しなくてもよいので計算量が削減できる。よって、２度以上現れる顧客のみINDEXを順につけてあげる。
-上記より、「時間、現在の剣の在庫、すでに選んだ顧客の情報」を元にｄｐを回せばよい。
-訪れる顧客は最大で２４人、うち複数回訪れる顧客は最大１２人のため、２＾１２分のビットマスクで足りる。
-ｄｐでは、
-①その時間に既に現れた顧客であれば時間のみ進め、
-②まだ現れていない顧客でありその時間にも現れなければ、現れない確立をかけて進め、
-③現れた場合であれば、その顧客に売ったときもしくは売らないときの最大の値をとってあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int N[24],M[24];
-double P[24],dp[26][24][5000];
-class NewItemShop {
-public:
-double f(int swords,int hour,int mask){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11508&amp;rd=14540 売り物である剣を任意の数持っており、複数の顧客が訪れる。 各顧客について、"時間、買う値段、来る確率"で表わされる情報が複数個与えられる
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-515-div1-middle---newitemshop%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -489,33 +257,7 @@ double f(int swords,int hour,int mask){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11787&amp;rd=14727
-エリーが好きな数であるｎが存在する。
-ここで、複数の数が与えられ、その中から任意の数選んだ数字の積がｎになるようにしたい。
-ただし、選んだ数字それぞれは約数を持たない数でなければいけない。
-このとき、選んだ数字の積がｎとなる選び方の場合の数を求める。
-解き方 
-問題文で最初見落としたが重要なところは、選んだ数字それぞれは約数を持たない数であるということ。
-つまり、N=x^i * y^j *z^k　で表わせるとき、
-x,y,zではなく、x^i , y^j , z^kを最小単位の固まりとして考えることができる。
-記を最小単位の固まりとして考えるとき、
-与えられた数字xはnで割り切れ、かつn/xはxとの最大公約数が１でなければならない。
-これに従って、まずは候補の数字を洗い出す。
-次に、洗い出した候補の数字に対して最大公約数で割っていき、１にならなければ答えが存在しないので０を返す。
-ここで洗い出した候補の数字に対して、その素因数がｎの素因数でもあるので
-どの素因数からなるかのビットマスクを作成する。
-ビットマスクを作成後、ｄｐを回してすべてのビットマスクが１となるものが答えとなる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysNumbers {
-public:
-long long gcd(long long x,long long y){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11787&amp;rd=14727 エリーが好きな数であるｎが存在する。 ここで、複数の数が与えられ、その中から任意の数選んだ数字の積がｎになるようにしたい。 ただし、選んだ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-534-div1-middle---ellysnumbers%E5%BE%A9%E7%BF%92/">Read more…</a>

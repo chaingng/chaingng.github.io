@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Semifinal2 DIV1 Easy - PlankTiling" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13437&amp;rd=16188
-・１＊Hの棒が与えられる。
-・この棒を、（２H-1）＊Wのセルに敷き詰める場合の数を求める。
-・WはHの倍数となる。
-解き方 
-WがHの倍数のときにすべて敷き詰めることができる。
-敷き詰め方としては、W＝３、H＝３のとき
----
----
----
----
----
-が必ず１通り存在し、さらに
-||
-||
-||
-と縦に並べる並べ方がH通りあるので合計H＋１通り。
-さらにWが３増えると（H&#43;1）＊H通り＋（H&#43;1）通りになる。
-加えて、WがH&#43;1以上のときは
-上記のようにWをH個のブロック区切りで考える他に、
-区切りの間に敷き詰める方法がある。
-上記の３つについてｄｐを適用させていけば良い。
-コード 
-class PlankTiling {
-public: int sumup(int H, int W) {
-int dp[W&#43;1];
-int MOD=1000000007;
-memset(dp,0,sizeof(dp));
-dp[0]=1;
-for(int i=0;i&lt;W;i&#43;&#43;){
-if(i&#43;H&lt;=W)dp[i&#43;H]=(dp[i&#43;H]&#43;dp[i])%MOD;
-if(i%H==0)dp[i&#43;1]=(dp[i&#43;1]&#43;dp[i]*1LL*H)%MOD;
-else dp[i&#43;1]=(dp[i&#43;1]&#43;dp[i])%MOD;
-}
-return dp[W];
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13437&amp;rd=16188 ・１＊Hの棒が与えられる。 ・この棒を、（２H-1）＊Wのセルに敷き詰める場合の数を求める。 ・WはHの倍数となる。 解き方 WがHの倍数のと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-semifinal2-div1-easy---planktiling/" />
 

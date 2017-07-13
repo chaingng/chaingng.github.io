@@ -7,48 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 577 DIV1 Easy - EllysRoomAssignmentsDiv1 x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12514&amp;rd=15497
-解き方 
-部屋の数Rから、部屋への割り当てが行われる回数Kが決まる。
-K回の割り当てのうち、
-自分が割り当てられる場合はその他のメンバーは関係なく、
-また最後の割り当てのときはすべての部屋ではなく、ランダムに部屋へ割り当てられるので別に値を保持しておく。
-最後に、自分が最後の割り当てであれば部屋の人数はK人だけを考えればよく、
-そうでなければK-1人となる確率pの期待値とK人である1-pの期待値の和が答えとなる。
-コード 
-class EllysRoomAssignmentsDiv1 {
-public: double getAverage(vector&lt;string&gt; ratings) {
-int rates[1010],N=0;
-string input=accumulate(all(ratings),string());
-stringstream out(input);
-for(;out&gt;&gt;rates[N];)N&#43;&#43;;
-int my=rates[0];
-sort(rates,rates&#43;N,greater&lt;int&gt;());
-int me=lower_bound(rates,rates&#43;N,my,greater&lt;int&gt;())-rates;
-int R=(N&#43;19)/20;
-int K=(N&#43;R-1)/R;
-double sum=0,add=0;
-for(int i=0;i&lt;K;i&#43;&#43;){
-if(R*i&lt;=me &amp;&amp; me&lt;R*(i&#43;1)){
-sum&#43;=rates[me];
-}else if(i==K-1){
-double tmp=0.0;
-for(int j=R*i;j&lt;N;j&#43;&#43;)tmp&#43;=rates[j];
-add&#43;=tmp/(N-R*i);
-}else{
-double tmp=0.0;
-for(int j=R*i;j&lt;R*(i&#43;1);j&#43;&#43;)tmp&#43;=rates[j];
-sum&#43;=tmp/R;
-}
-}
-double p=(R*K-N)/(double)R;
-if(R*(K-1)&lt;=me)p=0;
-double ret=0;
-if(p&gt;0)ret&#43;=p*(sum/(K-1));
-ret&#43;=(1-p)*((sum&#43;add)/K);
-return ret;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12514&amp;rd=15497 解き方 部屋の数Rから、部屋への割り当てが行われる回数Kが決まる。 K回の割り当てのうち、 自分が割り当てられる場合はその他のメンバーは関係" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-577-div1-easy---ellysroomassignmentsdiv1-x/" />
 

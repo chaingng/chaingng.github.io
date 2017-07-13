@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Semifinal1 DIV1 Easy - ZooExchangeProgram" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13268&amp;rd=16187
-・複数の動物がおりラベルが付けられている。
-・そのうち番号がlowerからupperまでのラベルの動物を各種類最低１匹ずつ選びたい。
-その他の動物については１匹も選ばないようにしたい。
-・動物の選び方としては隣り合う動物については一つの集合とすることができる。
-・このとき、そのような動物の選び方のうち一番少なくなる集合数を求める。
-そのような選び方がない場合は−１を返す。
-解き方 
-たとえばサンプルから選ぶラベルが２〜６のとき、
-{[3, 4, 3], 1, [6, 2, 5, 7, 5, 2]}が選ぶ集合となる。
-同じラベルの動物は１種類以上であれば問題ないので、
-選ぶだけ選んだ方が集合が少なくなるので存在するものはすべて貪欲に選ぶ。
-このとき、要素数は最大４４なので集合数は最大２２個となる。
-このとき集合の選び方は2^22となり全探索が可能なので、
-すべての選び方に対し、すべてのラベルの動物が含まれているか判定すればよい。
-コード 
-long long dp[2000000];
-class ZooExchangeProgram {
-public: int getNumber(vector&lt;int&gt; label, int lower, int upper) {
-int n=label.size();
-int count=0;
-for(int pos=0;pos&lt;n;pos&#43;&#43;){
-while(pos&lt;n &amp;&amp; !(lower&lt;=label[pos] &amp;&amp; label[pos]&lt;=upper))pos&#43;&#43;;
-if(pos&gt;=n)break;
-long long mask=0;
-while(pos&lt;n){
-if(lower&lt;=label[pos] &amp;&amp; label[pos]&lt;=upper){
-mask|=(1LL&lt;&lt;label[pos]);
-pos&#43;&#43;;
-}
-else break;
-}
-dp[count&#43;&#43;]=mask;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13268&amp;rd=16187 ・複数の動物がおりラベルが付けられている。 ・そのうち番号がlowerからupperまでのラベルの動物を各種類最低１匹ずつ選びたい。 その" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-semifinal1-div1-easy---zooexchangeprogram/" />
 

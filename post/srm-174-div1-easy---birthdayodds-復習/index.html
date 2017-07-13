@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 174 DIV1 Easy - BirthdayOdds (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1848&amp;rd=4675
-何人かのグループを考えた時、ある割合で同じ誕生日の人が存在する。
-同じ誕生日の人がいる確率が与えられ、また誕生日となりうる日数が与えられた時、
-何人の人がいれば与えられた確率以上で同じ誕生日の人が存在するかを求める。
-解き方 
-日数をＤとすると、Ｄ／Ｄ＊（Ｄ－１）／Ｄ・・・と計算していき
-この値が１００－与えられた確率以下になるときの人数を答えればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BirthdayOdds {
-public: int minPeople(int minOdds, int daysInYear) {
-double p=1.0;
-FORE(i,1,daysInYear){
-p*=(double)(daysInYear-i)/daysInYear;
-if(p*100&lt;=100-minOdds)return i&#43;1;
-}
-return daysInYear&#43;1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1848&amp;rd=4675 何人かのグループを考えた時、ある割合で同じ誕生日の人が存在する。 同じ誕生日の人がいる確率が与えられ、また誕生日となりうる日数が与えられ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/" />
 

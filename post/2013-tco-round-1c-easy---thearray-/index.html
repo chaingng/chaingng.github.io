@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2013 TCO Round 1C Easy - TheArray (×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12455&amp;rd=15585
-・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。
-・スタート位置からn回移動し、最後に最後の位置に到達している必要があるとき、
-途中で到達しうる最大の高さを求める。
-解き方 
-・問題として２分探索が使えそう。
-・ある位置を考えた時、スタート位置から到達するために必要なターン数と、そこから最後の位置に到達するためのターン数の和がｎ以下であればよさそう。
-・２分探索の最小値はスタート位置もしくは最後の位置のうち小さいもの、最後に得られた値と小喜一のうち最大のものが答えになる。
-→System Passed
-・他の解き方、というか一番わかりやすい解き方として、nは10^6で全探索できるので
-各ターンにおいて最初の位置から到達しうる高さ、最後の位置から到達しうる高さのうち最小の　ものを取り、そのうち最大のものを求めれば簡単。
-・反省：全探索できる変数、探索を考えてみる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheArray {
-public: int find(int n, int d, int first, int last) {
-if(d==0)return max(first,last);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12455&amp;rd=15585 ・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。 ・スタート位置からn回移動" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2013-tco-round-1c-easy---thearray-/" />
 

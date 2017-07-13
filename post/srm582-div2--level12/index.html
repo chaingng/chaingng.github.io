@@ -7,49 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM582 DIV2 -Level1,2" />
-<meta property="og:description" content="やっと緑コーダーになれました。
-SYSTEMテストで２回連続で落ちていて、３度目の正直。
-Challengeを今までまったくしておらず、ちゃんとコード書けることが大事だからいらないかなと思っていました。
-ただ、撃墜できること＝自分のコードの抜け漏れがチェックできる、ということにもつながるのでこれからはちょっと力を入れていきたいです。
-Ｌｅｖｅｌ１
-＜問題＞
-①２以上のある整数Ｎが与えられる。
-②a&gt;=1,b&gt;1,a&lt;b, a*b*b=Nとなる数字が存在する場合はYes、
-そうでない場合はNoを返す。
-＜解き方＞
-単純に実装するだけです。
-全探索でもよいのですが、Yesならb*bは必ず存在するので
-bを1からb*b&lt;=Nまでまわして判定しました。
-＜コード＞
-class SemiPerfectSquare {
-public: string check(int N) {
-for(int i=1;i*i&lt;=N;i&#43;&#43;){
-if(N%(i*i)==0 &amp;&amp; N/(i*i)&lt;i)return &#34;Yes&#34;;
-}
-return &#34;No&#34;;
-}
-};
-Ｌｅｖｅｌ２
-＜問題＞
-①魔法少女の強さの順列、敵の強さの順列と各敵の数が与えられる。
-②魔法少女は１匹敵を倒すたびに疲れが１増える。最初は０。
-③このとき、全ての敵を倒した時に魔法少女の中で最も大きい疲れが最小となるものを返す。全ての敵を倒せない場合はー１を返す。
-＜解き方＞
-全ての魔法少女が全ての敵を倒すことができる理想の状態を考えると、
-各魔法少女は「Ｎ＝全ての敵の数／全ての魔法少女の数」の敵を倒せばよい。
-ただそうでないケースも存在するので、その場合をシミュレーションで実装する。
-まずは魔法少女と敵を強さの昇順にソートして例外処理を行う。
-一番強い魔法少女の強さより、最も強い敵の強さが高ければ
-全ての敵を倒せないのでー１を返す。
-次に、魔法少女が倒すことができない敵が出た時は次の魔法少女に移り、
-「Ｎ＝残りの敵の数／残りの魔法少女の数」を再計算してあげる。
-すべてシミュレーションが終了した時、最も高い疲れの値を返してあげればよい。
-＜関数＞
-２つの配列について、一つの配列の値に対してソートできれば簡単になる。
-＜コード＞
-class SpaceWarDiv2 {
-public: int minimalFatigue(vector&lt;int&gt; mS, vector&lt;int&gt; eS, vector&lt;int&gt; eC) {
-vector &lt;pair &lt;int, int&gt; &gt; enemy;" />
+<meta property="og:description" content="やっと緑コーダーになれました。 SYSTEMテストで２回連続で落ちていて、３度目の正直。 Challengeを今までまったくしておらず、ちゃんと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm582-div2--level12/" />
 

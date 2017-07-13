@@ -7,22 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 509 DIV1 Easy - LuckyRemainder" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11138&amp;rd=14438
-解き方 
-各桁の数は与えられた整数の桁数をNとすると、それぞれ2^(N-1)回
-足されることになる。
-この数を９で割った余りが答えになる。
-コード 
-class LuckyRemainder {
-public:
-int getLuckyRemainder(string X) {
-long long ret=0;
-FORE(i,0,X.size())ret=(ret&#43;X[i]-&#39;0&#39;)%9;
-ret*=pow(2,X.size()-1);
-return ret%9;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11138&amp;rd=14438 解き方 各桁の数は与えられた整数の桁数をNとすると、それぞれ2^(N-1)回 足されることになる。 この数を９で割った余りが答えになる。 コー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-509-div1-easy---luckyremainder/" />
 

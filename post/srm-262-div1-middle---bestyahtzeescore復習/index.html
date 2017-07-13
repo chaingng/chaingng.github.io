@@ -7,54 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 262 DIV1 Middle - BestYahtzeeScore　（復習××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4797&amp;rd=7996
-サイコロが５個あり、出る数字があらかじめ与えられている。与えられた数字が&#34;354621111111111&#34;であれば、１回目に振った数字は
-&#34;35462&#34;である。次に5を選んでもう一回振りなおせば、&#34;1&#34;が出る。
-１度に同時で５つのサイコロを振り直せるが、同時に振り直せる回数は３回までになる。
-最後に出た数字が全て同じ数字なら５０点、すべて連続していれば４０点、４つ連続していれば３０点、３つ同じ数字かつ２つが同じ数字なら２５点、４つ同じ数字があればすべてのサイコロの目を足した数がスコアになる。
-出る数字があらかじめ与えられた時、とりうる最大のスコアを求める。
-解き方 
-ｄｐで解く問題。どうｄｐを構成するか。
-まず、何回サイコロを振ったかの状態は持たなければいけない。
-次に、同時にサイコロを振り直す時にどのサイコロを選ぶかを決めなければならない。
-また、サイコロを振り直す時にどこまで振ったかをわからなければならない。
-これより、上記の３つの状態をもつｄｐを作り、現在の状態から現在のすべてのサイコロの振り方を選んであげればよい。
-コード 
-string rolls;
-class BestYahtzeeScore {
-public:
-int score(vector&lt;int&gt; cur){
-int ret=0;
-int num[7]={};
-FORE(i,0,5)num[cur[i]]&#43;&#43;;
-FORE(i,1,7){
-if(num[i]&gt;=5)ret=max(ret,50);
-if(num[i]&gt;=4)ret=max(ret,cur[0]&#43;cur[1]&#43;cur[2]&#43;cur[3]&#43;cur[4]);
-if(num[i]&gt;=3)FORE(j,1,7)if(i!=j&amp;&amp;num[j]&gt;=2)ret=max(ret,25);
-}
-if(num[1]&amp;&amp;num[2]&amp;&amp;num[3]&amp;&amp;num[4]&amp;&amp;num[5])ret=max(ret,40);
-if(num[2]&amp;&amp;num[3]&amp;&amp;num[4]&amp;&amp;num[5]&amp;&amp;num[6])ret=max(ret,40);
-if(num[1]&amp;&amp;num[2]&amp;&amp;num[3]&amp;&amp;num[4])ret=max(ret,30);
-if(num[2]&amp;&amp;num[3]&amp;&amp;num[4]&amp;&amp;num[5])ret=max(ret,30);
-if(num[3]&amp;&amp;num[4]&amp;&amp;num[5]&amp;&amp;num[6])ret=max(ret,30);
-return ret;
-}
-int dfs(int pos,vector&lt;int&gt; cur,int cnt){
-if(cnt==0)return score(cur);
-int ret=0;
-for(int i=0;i&lt;(1&lt;&lt;5);i&#43;&#43;){
-vector&lt;int&gt; b=cur;
-int p=pos;
-for(int j=0;j&lt;5;j&#43;&#43;){
-if(i&amp;(1&lt;&lt;j)){
-b[j]=rolls[p&#43;&#43;]-&#39;0&#39;;
-}
-}
-ret=max(ret,dfs(p,b,cnt-1));
-}
-return ret;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4797&amp;rd=7996 サイコロが５個あり、出る数字があらかじめ与えられている。与えられた数字が&#34;354621111111111&#34;であれば、１回目に振った数字" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-262-div1-middle---bestyahtzeescore%E5%BE%A9%E7%BF%92/" />
 

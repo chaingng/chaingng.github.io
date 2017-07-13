@@ -77,56 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①コンテナが入っているか（ｘ）、入っていないか（ー）を現す部屋の順列が与えられる。
-（例）ーーｘｘｘ－－－
-②各監視カメラが監視しているコンテナの数が与えられる。
-（例）｛0、１，２，１｝
-③監視カメラが監視できる部屋の数が与えられる。監視できる部屋は連続したＬになる。
-また、各監視カメラは全く同じ範囲を監視することはできない。
-（例）　Ｌ＝３
-④このとき、各部屋が監視されていれば＋、監視されていなければー、どちらかわからなければ？で現される順列を返す。
-＜解き方＞
-・各監視カメラが監視しているコンテナの順列をsortし、同じコンテナの数を数える。
-（仮に、１が２つあればreportnum＝２とする）
-・同じ数のコンテナを監視している中で、各部屋を監視しているパターンの和と順列を求める。
-（仮に、１個のコンテナを監視できるパターンが１０通りあればtotalnum=10とする）
-（１１２２３２１１のように、その１０通りのパターンで監視できる部屋の数の和を求める）
-そのとき、その順列中の数がtotalnum-reportnumより大きければ＋、それ以下でかつ０以上であれば？となる。
-当日は問題のexampleを２つぐらいしか見ずに解いてしまったので、上のパターンを見逃してしまいました。
-コーディングにとりかかる前に、exampleは全て確認するか自分で網羅性のある例を出してイメージを膨らませることが大事だと思いました。
-あと、なぜかstringの初期化コード
-string ans;
-FOR(i,0,n)ans+='-';
-を最初書いたらエラーになるexampleがあったのに、
-同じ内容を書き直してみると通ったのは不思議でした。
-＜ソース＞
-string getContainerInfo(string containers, vector&lt;int&gt; reports, int L) {
-int n=containers.size(),reportnum=1;
-string ans;
-FOR(i,0,n)ans+='-';
-sort(reports.begin(),reports.end());
-FORE(i,0,(int)reports.size()){
-if(i!=(int)reports.size()-1 &amp;&amp; reports[i]==reports[i+1]){
-reportnum++;
-continue;
-}
-vector&lt;int&gt; tmp(n,0);
-int totalnum=0;
-FORE(j,0,n-L+1){
-int count=0;
-FORE(k,j,j+L)if(containers[k]=='X')count++;
-if(count!=reports[i])continue;
-FORE(k,j,j+L)tmp[k]++;
-totalnum++;
-}
-FORE(j,0,n){
-if(tmp[j]&gt;totalnum-reportnum)ans[j]='+';
-else if(tmp[j]&gt;0 &amp;&amp; ans[j]!='+')ans[j]='?';
-}
-reportnum=1;
-}
-return ans;
+			＜問題＞ ①コンテナが入っているか（ｘ）、入っていないか（ー）を現す部屋の順列が与えられる。 （例）ーーｘｘｘ－－－ ②各監視カメラが監視している
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm581-div2--500points/">Read more…</a>
@@ -146,13 +97,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			以前本でも読んだことがあった気がするのですが、
-ある程度歳を重ねると、年齢の下の人が相対的に多くなることと、
-合わせて色々な経験も重ねていることからか周りのミスに対して怒りがちになる傾向があるそうです。
-でもよくよく考えてみると、相手が原因に見えるミスが起こったとしても自分にまったく原因がないか？自分がどうやっても起こったミスか？と考えると、そうではないことのほうが多いと思います。
-そう考えて、なにか失敗が起こったときも相手を責めるのではなく、自分を省みて次からこうしようと思えば自分の成長にもなるし、相手ともいい関係を築けると思います。
-常にその心がけを持ち続けたいです。
- 
+			以前本でも読んだことがあった気がするのですが、 ある程度歳を重ねると、年齢の下の人が相対的に多くなることと、 合わせて色々な経験も重ねていること
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E8%87%AA%E5%88%86%E3%81%AB%E5%8E%9F%E5%9B%A0%E3%81%8C%E3%81%82%E3%82%8B%E3%81%A8%E8%80%83%E3%81%88%E3%82%8B/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -169,43 +117,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①ある正の整数が与えられる。
-例）１５
-②整数は１かその数自身を除いた約数で除算ができる。
-例）１５－３＝１２
-③ＪｏｈｎとＢｒｕｓの２人でゲームをし、除算ができなくなった方が負け。
-最初のターンはＪｏｈｎ。
-④このとき、与えられた整数に対して勝つ方のプレイヤー名を返す。
-＜関数＞
-memset(f,0,sizeof(f));
-数字を０で初期化する関数。
-これも使えますが、単純に宣言での初期化をしました。
-return f[n] ? "John" : "Brus";
-f[n]が正の時は"John"、偽の時は"Brus"を返す。
-これでもＯＫですが、if文でも。
-Challengeポイント
-最初はjをj&lt;i/2としましたが、i/2は含めないといけなかったので
-システムテストでfail。
-安全にj&lt;iまで最後までまわした方がよいですね。
-＜考え方＞
-特定の整数が与えられた際、勝ちか負けかが一意に決まる。
-これを利用し１から初めて、
-与えられた整数まで全ての数に対して勝ち負けの状態遷移を保存する。
-1,2,3～6ぐらいまでシミュレーションしてみると、
-ある整数に対し、それ未満の割り切れる整数に対し
-check[i-j]が0になれば勝ちなので1とする。それ以外は0のまま。
-＜コード＞
-class TheNumberGameDivTwo {
-public: string find(int n) {
-vector&lt;int&gt; check(n+1,0);
-FORE(i,1,n+1){
-FORE(j,2,i)if(i%j==0 &amp;&amp; check[i-j]==0)check[i]=1;
-}
-if(check[n]==1)return "John";
-return "Brus";
-}
-}; 
+			＜問題＞ ①ある正の整数が与えられる。 例）１５ ②整数は１かその数自身を除いた約数で除算ができる。 例）１５－３＝１２ ③ＪｏｈｎとＢｒｕｓの２人で
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm575-div2--500points/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -222,41 +137,10 @@ return "Brus";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①複数の単語が与えられる。
-②ディスプレイ・入力画面、ＵＮＤＯ領域の３つが与えられる。
-③キー入力は入力画面に現れ、ＥＮＴＥＲボタンを１回クリックでディスプレイに表示。
-④一度入力した文字は２回の操作でＵＮＤOから呼び出せる。
-⑤与えられた単語を順にディスプレイに表示するとき、最小の操作回数を返す。
-＜関数＞
-line[i].substr(0,line[i-1])
-単語の一致判定に部分文字列を利用
-for(k=0;k&lt;min((int)lines[i].size(), (int)lines[j].size());k++)
-単語の判定でループを回す際は、終了条件に単語の長さを考慮
-＜考え方＞
-①単語ごとにＥＮＴＥＲボタン１回は必ず必要。
-②次の単語を入力する際の方法は３通り。
-１．ＵＮＤＯで””を呼び出してから、新しい単語を１から入力
-２．ＵＮＤＯで”ｔｐ”など次の単語の一部を呼び出してから残りの文字を入力
-３．前の単語から文字を足すだけで次の単語になる場合は、そのまま続けて入力
-この操作をそのままプログラムにします。
-int minPresses(vector&lt;string&gt; lines) {
-int n=lines.size();
-int ans=lines[0].size()+1;
-FORE(i,1,n){
-int cost=lines[i].size()+1+2;
-FORE(j,0,i){
-int k;
-for(k=0;k&lt;min((int)lines[i].size(), (int)lines[j].size());k++)
-if(lines[i][k]!=lines[j][k])break;
-cost=min(cost, (int)lines[i].size()-k+1+2);
-}
-if(lines[i].substr(0,lines[i-1].size())==lines[i-1])
-cost=min(cost,(int)lines[i].size()-(int)lines[i-1].size()+1);
-ans+=cost;
-}
-return ans;
- 
+			＜問題＞ ①複数の単語が与えられる。 ②ディスプレイ・入力画面、ＵＮＤＯ領域の３つが与えられる。 ③キー入力は入力画面に現れ、ＥＮＴＥＲボタンを１
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm579-div2--550points/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -273,33 +157,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①蛇口の数と、蛇口ごとにそこから出る水滴の数が与えられる。
-例）３，４，１，１，５，６
-②スポンジの長さＬが与えられる。
-例）Ｌ＝３
-③それぞれのスポンジについて、上から降順に配列が与えられる。
-配列の値は、スポンジの左側の位置。
-例）３，１，０
-④蛇口の水滴は、一番最初に当たった水滴に吸収される。
-⑤このとき、各スポンジが吸収した水滴の値を配列で返す。
-＜ポイント＞
-・上にあるスポンジ、すなわちスポンジの配列の右側から
-その位置に相当する水滴の数を足してあげて、
-スポンジごとの合計を配列に格納する。
-「いったん吸収された水滴は０にクリアにする」ことで重複がなくなるのがポイント。
-vector&lt;int&gt; determineHumidity(vector&lt;int&gt; intensity, int L, vector&lt;int&gt; leftEnd) {
-vector &lt;int&gt; ans;
-FORE(i,0,leftEnd.size()){
-int tmp=0;
-FOR(j,0,L){
-tmp+=intensity[leftEnd[i]+j];
-intensity[leftEnd[i]+j]=0;
-}
-ans.push_back(tmp);
-}
-return ans;
- 
+			＜問題＞ ①蛇口の数と、蛇口ごとにそこから出る水滴の数が与えられる。 例）３，４，１，１，５，６ ②スポンジの長さＬが与えられる。 例）Ｌ＝３ ③それ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm576-div2--250points/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -340,44 +201,7 @@ SRM579 250points&nbsp;550points
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①Ｎ個の数字が与えられる。
-例）42 911 666 17 13 1 1155 1094 815 5 1000 540
-②一番最初の数字が自分の値。
-③大きい数字の順から２０個取り出され、Ｒ個の部屋にそれぞれランダムに割り当てられる。
-④１個の部屋には２０人まで収容できる。
-⑤部屋の数はＮ／２０、またＮが２０の倍数ならＮ／２０＋１。
-⑤このとき、一番最大の数字と自分の数字が同じ部屋に割り当てられる確率を返す。
-＜関数＞
-数字がintではなくstringにて、空白区切りで与えられ、しかも複数のstringで与えられるのでvector&lt;int&gt;に戻す処理が必要。
-FORE(i,0,ratings.size())strg+=ratings[i];
-にて複数のstring配列を一つにし、
-stringstream out(strg);
-にて読み込み、
-while(out &gt;&gt; tmp)vx.push_back(tmp);
-にてvector&lt;int&gt;に挿入してます。
-＜考え方＞
-以下の場合に分けられる。
-①数字が２０個以内であれば、必ず同じ部屋になる。　→１
-②自分の数字の順位が降順で部屋の数以内であれば、同じ部屋にならない。→０
-③それ以外の場合、１／Ｒ。
-また、Ｎの数字によってＲの場合分けをする。
-Ｎ＝１９　→　（１９＋１９）／２０＝１
-Ｎ＝２０　→　（２０＋１９）／２０＝１
-Ｎ＝２１　→　（２１＋１９）／２０＝２
-となるので、Ｒ＝（Ｎ＋１９）／２０となり、
-確率は１／（（Ｎ＋１９）／２０）。
-double getProbability(vector&lt;string&gt; ratings) {
-int n,tmp,rank=1,r;
-vector &lt;int&gt; vx;
-string strg="";
-FORE(i,0,ratings.size())strg+=ratings[i];
-stringstream out(strg);
-while(out &gt;&gt; tmp)vx.push_back(tmp);
-n=vx.size();
-r=(n+19)/20;
-FORE(i,0,n)if(vx[i]&gt;vx[0])rank++;
-if(n&lt;=20)return 1;
+			＜問題＞ ①Ｎ個の数字が与えられる。 例）42 911 666 17 13 1 1155 1094 815 5 1000 540 ②一番最初の数字が自分の値。 ③大きい数字の順から２０個取り出され、Ｒ個の部屋
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm577-div2--500points/">Read more…</a>
@@ -397,48 +221,7 @@ if(n&lt;=20)return 1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①四角形のフィールドとマンハッタン距離が与えられる。
-各セルに鳥が入れば「v」、いなければ「.」で表わされる。
-②鳥はガチョウかアヒルだがフィールドだけ見てもわからない。
-③ガチョウは少なくとも１匹存在する。
-④ガチョウとマンハッタン距離以内にある鳥は必ずガチョウになる。
-⑤このとき、ガチョウとアヒルの位置について場合の数を返す。
-＜関数＞
-座標を保管するテンプレート。
-queue &lt;pair &lt;int,int &gt; &gt; q;
-q.push(make_pair(x,y)); で(x,y)の座標を保管できます。
-i=q.front().first; でxを取り出し、
-j=q.front().second;　でyを取り出せます。
-＜考え方＞
-あるガチョウとマンハッタン距離以内にある鳥は全てガチョウということは
-逆を返すと、あるアヒルとマンハッタン距離以内にある鳥は全てアヒルになる。
-つまり、マンハッタン距離にある鳥同士は全てガチョウ、もしくは全てアヒルになるということがわかる。
-これがわかれば、
-「マンハッタン距離にある鳥の集合の数＊２」が場合の数にあることが導ける。
-ただし、それだとガチョウがいない場合が存在するので、最後に１を引く必要がある。
-int count(vector&lt;string&gt; field, int dist) {
-int h=field.size(),w=field[0].size();
-int ans=1,MOD=1000000007;
-queue &lt;pair &lt;int, int&gt; &gt; q;
-for(int i=0;i&lt;h;i++){
-for(int j=0;j&lt;w;j++){
-if(field[i][j]!='v')continue;
-q.push(make_pair(i,j));
-field[i][j]='.';
-while(!q.empty()){
-int x=q.front().first;
-int y=q.front().second;
-q.pop();
-for(int k=0;k&lt;h;k++)
-for(int l=0;l&lt;w;l++)
-if(field[k][l]=='v' &amp;&amp; (abs(k-x)+abs(l-y))&lt;=dist){
-q.push(make_pair(k,l));
-field[k][l]='.';
-}
-}
-ans*=2;
-ans%=MOD;
+			＜問題＞ ①四角形のフィールドとマンハッタン距離が与えられる。 各セルに鳥が入れば「v」、いなければ「.」で表わされる。 ②鳥はガチョウかアヒルだ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm578-div2--500points/">Read more…</a>
@@ -458,35 +241,10 @@ ans%=MOD;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題
-①鹿の数と、落ちている角の数が与えられる。
-例）　鹿３匹、角２本
-②鹿は角が０～２本である。
-③このとき、角が２本ある鹿の数の最小値と最大値を求める。
-関数
-vector&lt;int &gt;が返り値なのでこれが使えれば。
-vector &lt;int&gt; a;
-a.push_back(b);でbを挿入できます。
-考え方
-最小値
-鹿１匹につき角が１本落ちている場合なので
-「鹿の数ー角の数」。
-最大値
-鹿１匹につき角が２本落ちている場合。
-「鹿の数ー角の数／２」だが、
-整数の計算なので奇数の場合と偶数の場合で結果が異なってしまうので整理。
-鹿３匹、角１本　～　３－（１＋１）／２＝２匹
-鹿３匹、角２本　～　３－（２＋１）／２＝２匹
-鹿３匹、角３本　～　３－（３＋１）／２＝１匹
-となるので、
-「鹿の数ー（角の数＋１）／２」が最大値。
-vector&lt;int&gt; getminmax(int N, int K) {
-vector&lt;int&gt; ans(2);
-ans.push_back(N-K);
-ans.push_back(N-(K+1)/2);
-return ans;
-}
- 
+			問題 ①鹿の数と、落ちている角の数が与えられる。 例） 鹿３匹、角２本 ②鹿は角が０～２本である。 ③このとき、角が２本ある鹿の数の最小値と最大値を求
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm578-div2--250points/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -503,16 +261,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			今日は家さがしでいろいろな不動産屋をまわって
-内見したりしてきました。
-相手と要望が違うので簡単に決まらなかったり
-いろいろ考えるのも頭を使って疲れたりするのですが、
-こういううまくいかないことも全て含めて楽しみたいなと、
-逆に楽しまないと損だなと思います。
-とは言っても、その瞬間瞬間はいろいろな波があるので
-その時はそうは思えなかったりするものなのですが。
-波音立たずすべてうまく行くのが理想とも思いつつ、
-反対に波がありつつも、その状況を楽しむ、その考えを心の片隅に置いておきたいです。 
+			今日は家さがしでいろいろな不動産屋をまわって 内見したりしてきました。 相手と要望が違うので簡単に決まらなかったり いろいろ考えるのも頭を使って疲
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E4%B8%80%E7%9E%AC%E4%B8%80%E7%9E%AC%E3%82%92%E6%A5%BD%E3%81%97%E3%82%80/">Read more…</a>
 		</div>
 	</div>
 </article>

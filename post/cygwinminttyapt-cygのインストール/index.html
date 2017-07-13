@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="cygwin&#43;mintty&#43;apt-cygのインストール" />
-<meta property="og:description" content="windowsでlinuxコマンド等を使うためのcygwin&#43;minttyのインストールメモ。
-Cygwinのインストールまで
-Cygwinのインストールのために以下からsetup.exeをダウンロードして実行。
-https://www.cygwin.com/
-ダウンロードサイトは「ftp://～.jp」のサイトを指定しないとものすごくインストールが遅くなるので
-注意。
-必要なパッケージとして、後述するapt-cygのインストールのために以下は追加しておく。
-Search欄でパッケージ名を入力してチェックすればOK。
-・wget
-・bzip2
-・git
-・gawk
-・tar
-Cygwin&#43;minttyのセットアップ
-インストールが終わったらc\://binの下にmintty.exeが存在するので
-Cygwinの起動は今後こちらから行う。
-ショートカットを作成して、右クリック＞プロパティから以下の設定を行う。
-・管理者で実行するにチェック
-これを行わないと、bin以下のファイルのwrite権限がないなど困ってしまう。
-・ショートカットのリンク先に以下を追加
-これでPATHが通ったりhomeが/usr/binではなくwindowsのhomeとなる。
--i /Cygwin-Terminal.ico -
-・minttyを起動し、Option&gt;TransparencyをHighにすると見やすい
-・minttyを起動し、Option&gt;TextからLocaleja_JP、文字コードをUTF-8に設定
-apt-cygのインストール
-Cygwinで追加でパッケージをインストールしたい場合には、
-インストール時に使ったsetup.exeを使うことになる。
-これをlinuxのyumのようにCLIでパッケージの追加を行うことができるのがapt-cyg。
-以下のコマンドを実行することでインスール完了。
-$ wget&nbsp;https://raw.githubusercontent.com/kou1okada/apt-cyg/master/apt-cyg
-$ chmod &#43;x apt-cyg
-$ mv apt-cyg /usr/bin/$ apt-cyg -X install gnupg
-毎回の更新確認を不要にするために、以下のエイリアスを設定すると使いやすくなる。
-$ alias apt-cyg=&#39;apt-cyg -u &#39;
-ちなみに、apt-cygはwgetを利用しているので
-プロキシ設定されたネットワークでの利用するときはwgetのプロキシ設定が必要なことに注意。
- " />
+<meta property="og:description" content="windowsでlinuxコマンド等を使うためのcygwin&#43;minttyのインストールメモ。 Cygwinのインストールまで Cygwinのイ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/cygwinminttyapt-cyg%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/" />
 

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 388 DIV1 Middle - InformFriends　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=2031
-無向グラフが与えられる。
-入力となるノード（人）を選んで噂を流したとき、そこからつながるノードへ噂を伝搬することができる。
-このとき、全てのノードにいきわたったらそのうわさが全員に伝わったことになる。
-一人に伝えられる噂はひとつであるとき、全員に伝えられる噂は最大何種類あるか求める。
-解き方 
-入力となるノードの全ての選び方に対して、全員に伝わるかを判定する。
-次に、ｄｐを用いて選んだノードを状態として持たせ、そこからＸＯＲにて部分集合の最大を求める。
-ＸＯＲを求めるときはＸ＾Ｙが必ず部分集合となるように全ての値を検索するのがポイント。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class InformFriends {
-public: int maximumGroups(vector&lt;string&gt; friends) {
-int n=friends.size();
-int ok[1&lt;&lt;16]={};
-for(int i=0;i&lt;(1&lt;&lt;n);i&#43;&#43;){
-int mask=i;
-FORE(j,0,n)FORE(k,0,n)if((i&amp;(1&lt;&lt;j))&amp;&amp;friends[j][k]==&#39;Y&#39;)mask|=(1&lt;&lt;k);
-ok[i]=(mask==(1&lt;&lt;n)-1);
-}
-int dp[1&lt;&lt;16]={};" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=2031 無向グラフが与えられる。 入力となるノード（人）を選んで噂を流したとき、そこからつながるノードへ噂を伝搬することができる。 このとき、全て" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-388-div1-middle---informfriends%E5%BE%A9%E7%BF%92/" />
 

@@ -7,50 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM566 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①青が好きなペンギンと、赤が好きなペンギンが輪になって並ぶ。
-②同じ色が好きなペンギン同士は線を結んでペアを作る。
-③ただし、線は交差してはいけない。
-④それぞれ好きな色を持つペンギンの集合が与えられた時、
-ペアの最大数を返す。
-＜解き方＞
-隣同士のペンギンで線を結んでも交差に影響することはないので、
-まずは隣同士で同じ色のペアを作って集合から削除していく。
-このとき、輪になっていることから最初と最後の判定を先に行い、
-その後「赤・赤」「青・青」のペアとなっているところを判定していく。
-そのあとは赤と青が交互になった順列ができるので、
-残りのペア数は残った集合の半分－１となる。
-＜関数＞
-stringに対しての処理なので、うまくsubstrとeraseを使ってあげることで
-集合から削除すれば処理が簡単になる。
-＜コード＞
-class PenguinPals {
-public:
-int findMaximumMatching(string colors) {
-int ans=0,flag=1;
-while(flag){
-flag=0;
-if(colors.size()&lt;2)break;
-if(colors[0]==colors[colors.size()-1]){
-ans&#43;&#43;;
-colors=colors.substr(1,colors.size()-2);
-flag=1;
-}
-else if(colors.find(&#34;RR&#34;)!=-1){
-ans&#43;&#43;;
-colors.erase(colors.find(&#34;RR&#34;),2);
-flag=1;
-}
-else if(colors.find(&#34;BB&#34;)!=-1){
-ans&#43;&#43;;
-colors.erase(colors.find(&#34;BB&#34;),2);
-flag=1;
-}
-}
-if(colors.size()&gt;2)ans&#43;=(colors.size()/2-1);
-return ans;
-}
-}; " />
+<meta property="og:description" content="＜問題＞ ①青が好きなペンギンと、赤が好きなペンギンが輪になって並ぶ。 ②同じ色が好きなペンギン同士は線を結んでペアを作る。 ③ただし、線は交差し" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm566-div2--level2/" />
 

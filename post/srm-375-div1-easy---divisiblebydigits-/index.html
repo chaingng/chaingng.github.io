@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 375 DIV1 Easy - DivisibleByDigits ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8318&amp;rd=10794
-解き方 
-2~9すべての最大公約数は2520なので
-答えは最大でもn&#43;5桁程度であり、全探索が可能。
-コード 
-class DivisibleByDigits {
-public:
-bool ispossible(long long x,vector&lt;int&gt; vx){
-FORE(i,0,vx.size())if(x%vx[i]!=0)return false;
-return true;
-}
-long long getContinuation(int n) {
-set&lt;int&gt; s;
-int x=n;
-while(x&gt;0){
-s.insert(x%10);
-x/=10;
-}
-vector&lt;int&gt; vx;
-FORE(i,1,10)if(s.find(i)!=s.end())vx.push_back(i);
-string str;
-stringstream out;
-out &lt;&lt; n;
-out &gt;&gt; str;
-queue&lt;string&gt; q;
-q.push(str);
-while(!q.empty()){
-string cur=q.front();
-q.pop();
-stringstream out2(cur);
-long long p;
-out2 &gt;&gt; p;
-if(ispossible(p,vx))return p;
-for(char ch=&#39;0&#39;;ch&lt;=&#39;9&#39;;ch&#43;&#43;){
-q.push(cur&#43;ch);
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8318&amp;rd=10794 解き方 2~9すべての最大公約数は2520なので 答えは最大でもn&#43;5桁程度であり、全探索が可能。 コード class DivisibleByDigits { public: bool ispossible(long long x,vector&lt;int&gt; vx){ FORE(i,0,vx.size())if(x%vx[i]!=0)return false; return true; } long long getContinuation(int" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-375-div1-easy---divisiblebydigits-/" />
 

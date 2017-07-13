@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 596 DIV1 Easy - IncrementAndDoubling (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12790&amp;rd=15708
-・求める整数の集合が与えられる。
-・オペレーションはひとつの整数を１足すか全ての整数を２かけるかの２種類。
-・各整数は０からスタートし、オペレーションを繰り返して求める整数の集合にする。
-・このとき、必要な最小オペレーション回数を求める。
-解き方 
-全体の積の回数を正しく求められるかがポイント。
-０にかけても０になることを利用できることがわかれば、
-各整数の中で最大の積の回数が配列全体の積の回数と等しいことが導ける。
-各整数の積と和の回数は２進数で考えることで求められる。
-積の回数は２進数にしたときの桁数ー１であり、
-和の回数は２進数にしたときの１の個数になる。
-コード 
-class IncrementAndDoubling {
-public: int getMin(vector&lt;int&gt; desiredArray) {
-int m=1;
-int add=0;
-FORE(i,0,desiredArray.size()){
-int tmp=0;
-while(desiredArray[i]&gt;0){
-tmp&#43;&#43;;
-add&#43;=desiredArray[i]%2;
-desiredArray[i]/=2;
-}
-m=max(m,tmp);
-}
-return m-1&#43;add;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c)." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12790&amp;rd=15708 ・求める整数の集合が与えられる。 ・オペレーションはひとつの整数を１足すか全ての整数を２かけるかの２種類。 ・各整数は０からスタートし、オ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-596-div1-easy---incrementanddoubling-%E5%BE%A9%E7%BF%92/" />
 

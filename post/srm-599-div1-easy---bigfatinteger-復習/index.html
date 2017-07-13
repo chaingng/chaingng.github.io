@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 599 DIV1 Easy - BigFatInteger (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12867&amp;rd=15711
-・最初は１から始まり、Ａ＾Ｂとなる数にしたい。
-・操作方法は、素数をかけるか、現在の数の約数をかけるかの２通り。
-このとき、最小の操作回数を求める。
-解き方 
-サンプルを例に素因数分解してみる。
-Ａ＝360、Ｂ＝8のとき、
-Ａ＝2＾3＋3＾2＋5
-Ａ＾Ｂ＝2＾24＋3^16＋5＾8
-ここで、最も大きい階乗２４に対して2^K&gt;=24となるＫを考えた時
-素因数の数＋Ｋが答えになることがわかる。
-コード 
-class BigFatInteger {
-public: int minOperations(int A, int B) {
-int x0=0;
-int x1=0;
-for(int i=2;i&lt;=A;i&#43;&#43;){
-int cnt=0;
-while(A%i==0){
-A/=i;
-cnt&#43;&#43;;
-}
-if(cnt==0)continue;
-x0&#43;&#43;;
-cnt*=B;
-int p=1,tmp=0;
-while(p&lt;cnt){
-p*=2;
-tmp&#43;&#43;;
-}
-x1=max(x1,tmp);
-}
-return x0&#43;x1;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i !" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12867&amp;rd=15711 ・最初は１から始まり、Ａ＾Ｂとなる数にしたい。 ・操作方法は、素数をかけるか、現在の数の約数をかけるかの２通り。 このとき、最小の操作回数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-599-div1-easy---bigfatinteger-%E5%BE%A9%E7%BF%92/" />
 

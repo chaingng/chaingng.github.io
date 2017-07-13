@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2011 TCO Qualification Round 2 - BlackWhiteMagic" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11418&amp;rd=14530
-・黒と白の石が並べられている配列が与えられる。
-・その石をswapすることで、白白・・白黒黒・・黒としたい。
-・ただし、swapできる距離１つごとに１回のswapしかできない。
-・このとき、必要な最小の操作回数を求める。
-解き方 
-・swapの距離によらず、各１回の操作で白と黒を入れ替えることができそう。
-・白と黒が分かれるようにswapする。
-→system failed
-・問題文を見落としてしまった。
-・まず問題文は白→黒の順と決まっていることと、白と黒の数は任意であること。
-・問題文をきちんと読んで条件を整理する基本を徹底せねば。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BlackWhiteMagic {
-public: int count(string creatures) {
-int n=creatures.size();
-int w=0,ret=0;
-FORE(i,0,n)if(creatures[i]==&#39;W&#39;)w&#43;&#43;;
-FORE(i,0,w)if(creatures[i]==&#39;B&#39;)ret&#43;&#43;;
-return ret;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11418&amp;rd=14530 ・黒と白の石が並べられている配列が与えられる。 ・その石をswapすることで、白白・・白黒黒・・黒としたい。 ・ただし、swapできる距離" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2011-tco-qualification-round-2---blackwhitemagic/" />
 

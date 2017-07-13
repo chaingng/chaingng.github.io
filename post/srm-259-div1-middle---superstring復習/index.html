@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 259 DIV1 Middle - SuperString　（復習×○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1005
-文字列が与えられたとき、その文字列中１回しか出現しないアルファベットの和がその文字列のスコアになる。
-ある文字列が与えられた時、スコアが最も大きくなるサブ文字列を求める。
-ただし同じスコアの場合は、アルファベットの昇順のものを返す。
-解き方 
-コーディングは単純だが、単純に実装するとO（2500^3）計算量が間に合わない。
-そこで、最初に最も高いスコアがいくつであるか走査する。
-スコアがわかった後にもう一度走査させて、最大のスコアのもののみ文字列が昇順であるかの判定を行う。
-これにより計算量がＯ（2*2500^2）とオーダーが一つ下がるので時間内に解くことができる。
-オーダーを線形に変換できるかがポイント。
-実装するときに細かく計算量を見積もらないと、システムテストで失敗してしまう。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SuperString {
-public:
-string goodnessSubstring(vector&lt;string&gt; superstring) {
-string str=&#34;&#34;;
-FORE(i,0,superstring.size())str&#43;=superstring[i];
-int best=0;
-FORE(i,0,str.size()){
-int check[26]={},cnt=0;
-FORE(j,i,str.size()){
-if(check[str[j]-&#39;A&#39;]==0)cnt&#43;&#43;;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1005 文字列が与えられたとき、その文字列中１回しか出現しないアルファベットの和がその文字列のスコアになる。 ある文字列が与えられた時、スコアが" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-259-div1-middle---superstring%E5%BE%A9%E7%BF%92/" />
 

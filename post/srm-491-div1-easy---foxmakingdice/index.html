@@ -7,26 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 491 DIV1 Easy - FoxMakingDice" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11234&amp;rd=14244
-解き方 
-Kを固定することで、そのKを作ることのできる組み合わせの数を
-求めることができる。
-よって、すべてのKについて作ることのできるサイコロの数を足していけばよい。
-コード 
-class FoxMakingDice {
-public: long long theCount(int N, int K) {
-long long ret=0;
-for(int sum=K;sum&lt;=2*N;sum&#43;&#43;){
-long long cnt=0;
-for(int j=1;j&lt;sum-j;j&#43;&#43;){
-if(j&lt;=N &amp;&amp; sum-j&lt;=N)cnt&#43;&#43;;
-}
-if(cnt&gt;=3)ret&#43;=2*cnt*(cnt-1)*(cnt-2)/6;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11234&amp;rd=14244 解き方 Kを固定することで、そのKを作ることのできる組み合わせの数を 求めることができる。 よって、すべてのKについて作ることのできるサイコ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-491-div1-easy---foxmakingdice/" />
 

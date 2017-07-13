@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 168 DIV1 Easy - NumberGuesser (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1869&amp;rd=4645
-１～９９９８までの数字を考える。
-（例）４３２１
-各桁の数を入れ替えて、元の数字より小さければ入れ替えた数を引く。
-（例）４３２１－１２３４＝３０８７
-引いた後の数に、０ではない桁の数字を引き、３ケタ未満であれば０を最初につける。
-（例）０８７
-この操作をしたあとにできる数があらかじめ与えられた時、
-引かれた桁の数字が何であるかを求める。
-解き方 
-数字が10^4、かつ数の入れ替えが4!=24通りであるため、
-全探索可能。
-あとはシミュレーションなので、シンプルに間違いのないよう実装する。
-別解として、元の数を1000a&#43;100b&#43;10c&#43;dとすると引く数は1000d&#43;100c&#43;10b&#43;aとなる。
-この数を引くと、999a&#43;99b-90c-999d、つまり9の倍数となる。
-9の倍数は各桁の数の和も9の倍数となるから、これを利用して簡単に解くことができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class NumberGuesser {
-public:
-int f(vector&lt;int&gt; a,vector&lt;int&gt; b){
-int num=0,idx=-1;
-FORE(i,1,10){
-if(b[i]-a[i]==1)num&#43;&#43;,idx=i;
-else if(b[i]-a[i]&gt;0||b[i]-a[i]&lt;0)return -1;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1869&amp;rd=4645 １～９９９８までの数字を考える。 （例）４３２１ 各桁の数を入れ替えて、元の数字より小さければ入れ替えた数を引く。 （例）４３２１－１２３４" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-168-div1-easy---numberguesser-%E5%BE%A9%E7%BF%92/" />
 

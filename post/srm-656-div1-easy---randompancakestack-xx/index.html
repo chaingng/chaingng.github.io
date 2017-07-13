@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 656 DIV1 Easy - RandomPancakeStack xx" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13747&amp;rd=16416
-・N個のパンケーキが与えられ、i番目のパンケーキの幅はi&#43;1になる。
-また、各パンケーキのおいしさの値が与えられる。
-・ここからパンケーキをひとつづつ選び、上に重ねていく。
-ただし、現在積み重ねられている一番上のパンケーキより幅が大きいパンケーキを選んだらそこで終了となる。
-・ランダムにパンケーキが重ねられるとき、パンケーキおおいしさの値の期待値を求める。
-解き方 
-期待値の問題なのでｄｐが使えそう。（SRM607）
-現在積み重ねられているパンケーキについて、
-dp[現在の幅の広さ][現在のパンケーキの数]と定義する。
-このとき、各dp[i][j]についてdp[0〜i][j&#43;1]を更新してあげればよい。
-コード 
-double dp[310][310];
-class RandomPancakeStack {
-public: double expectedDeliciousness(vector&lt;int&gt; d) {
-memset(dp,0,sizeof(dp));
-int n=d.size();
-FORE(i,0,n&#43;1)dp[n][0]=1.0;
-//recurrence
-for(int i=n-1;i&gt;=0;i--){
-for(int j=1;j&lt;=n;j&#43;&#43;){
-for(int k=i&#43;1;k&lt;=n;k&#43;&#43;)dp[i][j]&#43;=dp[k][j-1]/(n-(j-1));
-}
-}
-//transition
-/*for(int i=n;i&gt;=0;i--){
-for(int j=0;j&lt;n;j&#43;&#43;){
-for(int k=0;k&lt;i;k&#43;&#43;)dp[k][j&#43;1]&#43;=dp[i][j]/(n-j);
-}
-}*/
-double ret=0.0;
-FORE(i,0,n)FORE(j,0,n&#43;1)ret&#43;=d[i]*dp[i][j];
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13747&amp;rd=16416 ・N個のパンケーキが与えられ、i番目のパンケーキの幅はi&#43;1になる。 また、各パンケーキのおいしさの値が与えられる。 ・ここからパンケーキ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-656-div1-easy---randompancakestack-xx/" />
 

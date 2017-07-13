@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 549 DIV1 Easy - PointyWizardHats xx" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11965&amp;rd=15171
-解き方 
-上に載せるハットと下に載せるハットの組み合わせに分かれるので、
-二部マッチングの問題に帰着できる。
-最大フローアルゴリズムを用いれば良い。
-コード 
-int d[60][60];
-int a[60],b[60],used[60];
-int n,m;
-class PointyWizardHats {
-public:
-bool ispossible(int th,int tr,int bh,int br){
-return tr&lt;br &amp;&amp; th*br&gt;bh*tr;
-}
-bool dfs(int x){
-if(x==-1)return true;
-if(used[x])return false;
-used[x]=1;
-FORE(i,0,m){
-if(d[x][i]){
-if(dfs(b[i])){
-a[x]=i;
-b[i]=x;
-return true;
-}
-}
-}
-return false;
-}
-int getNumHats(vector&lt;int&gt; topHeight, vector&lt;int&gt; topRadius, vector&lt;int&gt; bottomHeight, vector&lt;int&gt; bottomRadius) {
-n=topHeight.size(),m=bottomHeight.size();
-memset(d,0,sizeof(d));
-FORE(i,0,n)FORE(j,0,m){
-d[i][j]=ispossible(topHeight[i],topRadius[i],bottomHeight[j],bottomRadius[j]);
-}
-memset(a,-1,sizeof(a));
-memset(b,-1,sizeof(b));
-int ret=0;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11965&amp;rd=15171 解き方 上に載せるハットと下に載せるハットの組み合わせに分かれるので、 二部マッチングの問題に帰着できる。 最大フローアルゴリズムを用いれば" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-549-div1-easy---pointywizardhats-xx/" />
 

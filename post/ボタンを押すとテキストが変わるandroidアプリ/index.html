@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="ボタンを押すとテキストが変わるandroidアプリ" />
-<meta property="og:description" content="ドットインストールで学んだ、ボタンを押すとテキストが変わるサンプルアプリの
-作り方を整理。
-http://dotinstall.com/lessons/basic_android
-部品にIDをつける
-レイアウト画面から、ボタンをドラッグ＆ドロップして設置。
-次に、テキストとボタンをダブルクリックして、IDをつける。
-ここではテキストのIDはmyLabel、ボタンのIDはmyButtonとする。
-部品のプロパティにメソッド名を紐づけ
-今回はボタンを押したときの動作なので
-右下のプロパティからonClickを選択し、クリックしたときに起動するメソッド名を入力。
-ここではchangeLabelとする。
-MyActivity.javaにメソッドを書く
-先ほど名前をつけたchangeLabelメソッドをMyActivity.javaの中に書く。
-今回は引数にViewクラスを設定。
-ここでのLog.vはlogcatに出力されるメッセージ。
-第一引数はタグ、第二引数が出力したいメッセージになる。
-今回はテキストのビューを変更したいので、Viewクラスの拡張である
-TextViewクラスを用い、
-変えたいテキストのIDを持つビューを探す。
-そしてそのビューに対し、クリック後のテキストをセットすればよい。
-public class MyActivity extends Activity {
-&nbsp; &nbsp; @Override
-&nbsp; &nbsp; protected void onCreate(Bundle savedInstanceState) {
-&nbsp; &nbsp; &nbsp; &nbsp; super.onCreate(savedInstanceState);
-&nbsp; &nbsp; &nbsp; &nbsp; setContentView(R.layout.activity_my);
-&nbsp; &nbsp; }
-&nbsp; &nbsp; public void changeLabel(View view){
-&nbsp; &nbsp; &nbsp; &nbsp; Log.v(&#34;TEST&#34;,&#34;Clicked&#34;);
-&nbsp; &nbsp; &nbsp; &nbsp; TextView tv = (TextView)findViewById(R.id.myLabel);
-&nbsp; &nbsp; &nbsp; &nbsp; tv." />
+<meta property="og:description" content="ドットインストールで学んだ、ボタンを押すとテキストが変わるサンプルアプリの 作り方を整理。 http://dotinstall.com/lessons/basic_android 部品にIDをつける レイアウト画面から、ボタンをドラ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E6%8A%BC%E3%81%99%E3%81%A8%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%81%8C%E5%A4%89%E3%82%8F%E3%82%8Bandroid%E3%82%A2%E3%83%97%E3%83%AA/" />
 

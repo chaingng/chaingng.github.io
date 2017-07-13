@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 156 DIV1 Easy - BombSweeper （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1778&amp;rd=4585
-マリンスイーパーを解く。
-最初に好きな場所を選ぶ。
-①そこにボムがあれば負け
-②ボムがなくても周りにボムがあれば違うセルを選ぶ
-③ボムがなくて、かつ周りにボムがなければ勝ち
-このとき、勝率を求める。
-解き方 
-ボムがなくて周りにボムがある場合は違うセルを選ぶ、つまりノーカウントとなるので、
-①と③の数のみ調べて100*③／（①＋③）が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BombSweeper {
-public: double winPercentage(vector&lt;string&gt; board) {
-int w=board[0].size(),h=board.size();
-int ret=0,bomb=0;
-FORE(i,0,h){
-FORE(j,0,w){
-int valid=1;
-FORE(x,max(i-1,0),min(i&#43;2,h))FORE(y,max(j-1,0),min(j&#43;2,w))if(board[x][y]==&#39;B&#39;)valid=0;
-if(valid)ret&#43;&#43;;
-if(board[i][j]==&#39;B&#39;)bomb&#43;&#43;;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1778&amp;rd=4585 マリンスイーパーを解く。 最初に好きな場所を選ぶ。 ①そこにボムがあれば負け ②ボムがなくても周りにボムがあれば違うセルを選ぶ ③ボムがなくて" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-156-div1-easy---bombsweeper-%E5%BE%A9%E7%BF%92/" />
 

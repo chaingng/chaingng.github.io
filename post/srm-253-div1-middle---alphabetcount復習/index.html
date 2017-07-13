@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 253 DIV1 Middle - AlphabetCount　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=975
-アルファベットＡ～Ｚからなる配列が与えられる。
-長さlengthが与えられ、このときAを長さ1とし、B,C,,,と長さ分の連続したアルファベットを作りたい。
-連続したアルファベットを作る際には、配列の任意の文字からスタートして、縦横斜めに一つずつ移動することができる。
-このとき、作ることのできる連続したアルファベットは何通りあるか求める。
-ただし、１０＾９通り以上ある場合は１０＾９を返す。
-解き方 
-ｄｐで解く問題。ただし、１０＾９を超えているかチェックし超えていればそこで打ち切る処理が必要。
-ｄｐ＝０で初期化すると実装はより簡単だが、探索して何もなかったときの判定ができないので計算量が間に合わない場合がある。
-そのため、ｄｐ＝ー１で初期化して探索済みの場合は０以上になるようにした。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int length,w,h;
-int p[60][60];
-long long dp[60][60];
-class AlphabetCount {
-public:
-int rec(int r,int c,int len){
-if(dp[r][c]!=-1)return dp[r][c];
-if(len==length-1)return dp[r][c]=1;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=975 アルファベットＡ～Ｚからなる配列が与えられる。 長さlengthが与えられ、このときAを長さ1とし、B,C,,,と長さ分の連続したアルフ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-253-div1-middle---alphabetcount%E5%BE%A9%E7%BF%92/" />
 

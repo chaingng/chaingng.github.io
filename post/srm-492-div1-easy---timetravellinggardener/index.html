@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 492 DIV1 Easy - TimeTravellingGardener" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11060&amp;rd=14245
-解き方 
-２つの木のペアのいずれかの傾きが、最適な傾きになることがわかる。
-このうち、切らなくてもよい木が一番少なく、かつ地面より下に木がいかなく、
-かつ現在存在する木よりも大きい位置にならないようなものを
-すべて調べればよい。
-コード 
-class TimeTravellingGardener {
-public: int determineUsage(vector&lt;int&gt; distance, vector&lt;int&gt; h) {
-int n=h.size();
-int sum[n];
-sum[0]=0;
-FORE(i,0,n-1)sum[i&#43;1]=sum[i]&#43;distance[i];
-int ret=n-1;
-FORE(i,0,n)FORE(j,i&#43;1,n){
-int cnt=0;
-if((sum[n-1]-sum[i])*(h[j]-h[i])&lt;-h[i]*(sum[j]-sum[i]))continue;
-if((sum[0]-sum[i])*(h[j]-h[i])&lt;-h[i]*(sum[j]-sum[i]))continue;
-int valid=1;
-for(int k=0;k&lt;n;k&#43;&#43;){
-if((sum[k]-sum[i])*(h[j]-h[i])&gt;(h[k]-h[i])*(sum[j]-sum[i])){
-valid=0;
-break;
-}
-if((sum[k]-sum[i])*(h[j]-h[i])!=(h[k]-h[i])*(sum[j]-sum[i])){
-cnt&#43;&#43;;
-}
-}
-if(valid)ret=min(ret,cnt);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11060&amp;rd=14245 解き方 ２つの木のペアのいずれかの傾きが、最適な傾きになることがわかる。 このうち、切らなくてもよい木が一番少なく、かつ地面より下に木がい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/" />
 

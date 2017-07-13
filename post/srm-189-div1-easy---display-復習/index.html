@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 189 DIV1 Easy - Display (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2295&amp;rd=4765
-縦横が-10^6～10^6の間にあるｘ、ｙ座標上の点を、
-0～10^3の座標上に変換したい。
-このとき、変換後の座標を求める。
-解き方 
-Exampleを見るとx,ｙ座標それぞれに対して
-最小の数を０になるよう足し引きして、その後最大の座標が１０００になるよう縮尺してあげればよい。
-システムテストで落ちないように以下の四則演算には注意。
-・最後に０．５単位の数を繰り上げる際には、掛け算をしてから割り算をする。
-・０になるよう足し引きする際は、最小が＋－のときどのような操作になるかを
-手書きで確かめてから実装する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Display {
-public: vector&lt;string&gt; transform(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-int n=x.size();
-int minx=1e&#43;9,miny=1e&#43;9;
-FORE(i,0,n){
-minx=min(minx,x[i]);
-miny=min(miny,y[i]);
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2295&amp;rd=4765 縦横が-10^6～10^6の間にあるｘ、ｙ座標上の点を、 0～10^3の座標上に変換したい。 このとき、変換後の座標を求める。 解き方 Exa" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 427 DIV1 Easy - DesignCalendar （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10155&amp;rd=13518
-１日あたりの日数Ｄと１年あたりの日数Ｙが与えられる。
-１年あたりの日数が１日あたりの日数で割り切れるのに必要な年数を求める。
-解き方 
-問題文がとにかく難しい。
-要は、必要な年数をＸとすると
-（Ｙ＊Ｘ）％Ｄ＝＝０となる最小のＸを求めればよい。
-ここでＹ％Ｄ＝aとすると、求めるxは
-（例）
-a=4,D=6のとき lcd=12 gcd=2となりx=3
-a=4,D=14のとき lcd=28 gcd=2となりx=7
-
-つまり、x=D/gcd(a,D)となる。
-例外処理として、aが割り切れる場合は答えは１となるのに注意。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class DesignCalendar {
-public:
-int gcd(int a,int b){
-if(a%b==0)return b;
-return gcd(b,a%b);
-}
-int shortestPeriod(int dayLength, int yearLength) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10155&amp;rd=13518 １日あたりの日数Ｄと１年あたりの日数Ｙが与えられる。 １年あたりの日数が１日あたりの日数で割り切れるのに必要な年数を求める。 解き方 問題文" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/" />
 

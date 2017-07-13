@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 177 DIV1 Easy - TickTick (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1609&amp;rd=4690
-ＰＣのクロックが１ｍｓごとに時間を刻む。
-また、ＰＣの中では複数のプログラムが順に動いており、一つのプログラムが終わったらすぐに次のプログラムが動く。
-このときプログラムの起動タイミングによっては起動する前と終了した後に時刻が変わっていることがある。
-このとき、各プログラムごとに時刻が変わっている／変わっていない２つ状態があるとしたとき、時刻の刻み方による全ての場合の数を求める。
-解き方 
-時刻の取り方は小数点以下10^6あり、全探索していては間に合わない。
-このケースの問題は、調べる箇所は絞らなければいけなく、その箇所は決めることができる場合が多い。
-この問題の場合は各時刻に対して最小数分のみ足した場合を足すことで、
-各プログラムにおいて時刻が変わるときの最小値、時刻が変わらないときの最小値をピックアップすることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TickTick {
-public: int count(vector&lt;string&gt; events) {
-set&lt;string&gt; ans;
-vector&lt;double&gt; p(events.size()&#43;1,0.0);
-FORE(i,0,events.size())sscanf(events[i].c_str(),&#34;%lf&#34;,&amp;p[i&#43;1]);
-FORE(i,0,p.size()){
-double tick=p[i]&#43;1e-7;
-tick=tick-(double)((int)tick);
-int prev=-1;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1609&amp;rd=4690 ＰＣのクロックが１ｍｓごとに時間を刻む。 また、ＰＣの中では複数のプログラムが順に動いており、一つのプログラムが終わったらすぐに次のプロ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-177-div1-easy---ticktick-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 254 DIV1 Middle - Piglets　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=466
-豚小屋があり、すでに豚が入っていない小屋に入っていく。
-両端を豚にはさまれるのを嫌がるので、できるだけ避けて入りたい。
-左端か右端が空いていれば挟まれないので、そこに入る。
-どちらに入っても後に挟まれる確率が同じであれば、左側に入るのを優先する。
-豚小屋が与えられた時、次にどの小屋に入ったらよいか答える。
-解き方 
-問題文より、入る場所をどの優先順位で入ったらよいかがわかる。
-①左端が空いていれば左端に入る
-②右端が空いていれば右端に入る
-③”－－”が続くところがあれば、最も右端に存在するところに入る
-④どこに入っても挟まれるので、”ー”が存在する最も左に入る
-⑤入るところがないのでー１を返す
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Piglets {
-public: int choose(string trough) {
-int n=trough.size();
-if(trough[0]==&#39;-&#39;)return 0;
-if(trough[n-1]==&#39;-&#39;)return n-1;
-int ret=0;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=466 豚小屋があり、すでに豚が入っていない小屋に入っていく。 両端を豚にはさまれるのを嫌がるので、できるだけ避けて入りたい。 左端か右端が空いて" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-254-div1-middle---piglets%E5%BE%A9%E7%BF%92/" />
 

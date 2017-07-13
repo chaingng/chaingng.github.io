@@ -77,46 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10696&amp;rd=14144
-”17:45 GMT-4”と時刻を表す時計がある。
-ただし時計の一部が壊れており、その箇所は？になっている。
-このとき、考えられる昇順で一番早い時間を求める。
-解き方 
-法則を考えると大変なため、全探索を用いる必要があるのがわかる。
-ここでのコツは、すべての数字を前端さ区しようとするのではなくて
-すべての文字列を発生させて全探索する。
-コード 
-string ret;
-class TheTriangleBothDivs {
-public:
-void rec(string time, int pos){
-if(pos&gt;=time.size()){
-int h=(time[0]-'0')*10+(time[1]-'0');
-int m=(time[3]-'0')*10+(time[4]-'0');
-int d=time[10]-'0';
-if(time[9]=='-' &amp;&amp; d==0)return;
-if(h&gt;=24 || m&gt;=60)return;
-if(time[9]=='-')d=-d;
-char ch[50];
-sprintf(ch,"%02d:%02d",((h-d)+24)%24,m);
-if(ch&lt;ret)ret=ch;
-}else if(time[pos]=='?'){
-string str="0123456789";
-if(pos==9)str="-+";
-FORE(i,0,str.size()){
-time[pos]=str[i];
-rec(time,pos+1);
-time[pos]='?';
-}
-}else rec(time,pos+1);
-}
-string fix(string time) {
-ret="99:99";
-rec(time,0);
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10696&amp;rd=14144 ”17:45 GMT-4”と時刻を表す時計がある。 ただし時計の一部が壊れており、その箇所は？になっている。 このとき、考えられる昇順で一番
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-457-div1-easy---thetrianglebothdivs/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -133,50 +97,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10915&amp;rd=14153
-AからPまでの16色のいずれかの色がついたドアがある。
-Johnは最初左端におり、Brusは最初右端にいる。
-Johnからスタートし、交互に好きな色を選んでいく。
-選ばれた色のドアはすべてオープンする。
-また、トロフィーが置かれている場所もわかっている。
-このとき、Johnが勝つときはそのターン数を、
-Brusが勝つときはそのターン数にー１をかけたものを、
-引き分けのときは０を返す。
-解き方 
-色の選び方は最大１６！となり単純な全探索では解くことができない。
-今回、JohnとBrusがドアを開けていくのに必要な情報は、
-「john側だけにある色数」「Brus側だけにある色数」「両方にある色のドアの色数」
-だけであり、各ドアの色の種類や数は関係ない。
-上記の集合に変換することができれば、
-あとは各プレイヤーが最適な戦略をとるようにして全探索で解くことができる。
-コード 
-class DoorsGame {
-public: int determineOutcome(string doors, int trophy) {
-int n=doors.size();
-int a=0,b=0,common=0;
-for(char ch='A';ch&lt;='P';ch++){
-int flaga=0,flagb=0;
-for(int j=0;j&lt;trophy;j++)if(doors[j]==ch)flaga=1;
-for(int j=n-1;j&gt;=trophy;j--)if(doors[j]==ch)flagb=1;
-if(flaga &amp;&amp; flagb)common++;
-else if(flaga)a++;
-else if(flagb)b++;
-}
-int turn=0;
-while(a+b+common&gt;0){
-turn++;
-if(turn%2){
-if(a&gt;0)a--;
-else if(common&gt;0)common--;
-else b--;
-}
-else{
-if(b&gt;0)b--;
-else if(common&gt;0)common--;
-else a--;
-}
-if(a+b+common==0)return 0;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10915&amp;rd=14153 AからPまでの16色のいずれかの色がついたドアがある。 Johnは最初左端におり、Brusは最初右端にいる。 Johnからスタートし、交互
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-470-div1-easy---doorsgame-/">Read more…</a>
@@ -196,36 +117,10 @@ if(a+b+common==0)return 0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10804&amp;rd=14185
-N個の次元があり、最初はすべての次元について位置０からスタートする。
-各ステップについて、どの次元の座標を＋ーするか与えられる。
-このとき、ステップ中にすでに通った道に戻るときはInvalidを、
-そうでないときはvalidを返す。
-解き方 
-Nが大きく配列に保存できないため、必要な配列だけを保存する。
-同じ場所にもどってくるかどうかは、ある地点を基準にして
-各エリアの＋ーがすべて０になったときとなる。
-上記ついてすべての地点で判定してあげれば良い。
-コード 
-class RouteIntersection {
-public: string isValid(int N, vector&lt;int&gt; coords, string moves) {
-int len=coords.size();
-FORE(i,0,len){
-map&lt;int,int&gt; m;
-FORE(j,i,len){
-if(moves[j]=='+')m[coords[j]]++;
-else m[coords[j]]--;
-int invalid=1;
-for(map&lt;int,int&gt;::iterator it=m.begin();it!=m.end();it++){
-if(it-&gt;second!=0)invalid=0;
-}
-if(invalid)return "NOT VALID";
-}
-}
-return "VALID";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10804&amp;rd=14185 N個の次元があり、最初はすべての次元について位置０からスタートする。 各ステップについて、どの次元の座標を＋ーするか与えられる。 このとき
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-474-div1-easy---routeintersection/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -242,33 +137,7 @@ return "VALID";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10874&amp;rd=14157
-六角形で表されるlandとwaterのエリアがあり、
-その接点がビーチとなる。
-地形が与えられたとき、存在するビーチの数を求める。
-解き方 
-ビーチとなる条件を判定文に落とし込んで実装するだけ。
-まず、ビーチはlandとwaterひとつずつに接する場合なので
-landについて調べることで重複なく調べられる。
-あとは、高さのMOD2が０のときと１のときの条件を落としこんで
-実装してあげれば良い。
-コード 
-class Islands {
-public: int beachLength(vector&lt;string&gt; kingdom) {
-int h=kingdom.size(),w=kingdom[0].size();
-int ret=0;
-FORE(i,0,h)FORE(j,0,w)if(kingdom[i][j]=='#'){
-if(j-1&gt;=0 &amp;&amp; kingdom[i][j-1]=='.')ret++;
-if(j+1&lt;w &amp;&amp; kingdom[i][j+1]=='.')ret++;
-if(i-1&gt;=0 &amp;&amp; kingdom[i-1][j]=='.')ret++;
-if(i+1&lt;h &amp;&amp; kingdom[i+1][j]=='.')ret++;
-if(i%2==0 &amp;&amp; j-1&gt;=0 &amp;&amp; i+1&lt;h &amp;&amp; kingdom[i+1][j-1]=='.')ret++;
-if(i%2==0 &amp;&amp; j-1&gt;=0 &amp;&amp; i-1&gt;=0 &amp;&amp; kingdom[i-1][j-1]=='.')ret++;
-if(i%2 &amp;&amp; j+1&lt;w &amp;&amp; i+1&lt;h &amp;&amp; kingdom[i+1][j+1]=='.')ret++;
-if(i%2 &amp;&amp; j+1&lt;w &amp;&amp; i-1&gt;=0 &amp;&amp; kingdom[i-1][j+1]=='.')ret++;
-}
-return ret;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10874&amp;rd=14157 六角形で表されるlandとwaterのエリアがあり、 その接点がビーチとなる。 地形が与えられたとき、存在するビーチの数を求める。 解き方 ビ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-477-div1-easy---islands/">Read more…</a>
@@ -288,41 +157,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10797&amp;rd=14186
-動物BadgersがN匹おり、できるだけ多く飼いたい。
-ただし１日に与えられる餌がtotalFoodしかないため、この餌の中で
-できるだけ多くの動物を飼うようにしたい。
-各Badgersは一人でいるときに必要な餌の数hungerと、複数匹飼われたときに
-追加で必要な餌greedが与えられる。
-例えば４匹飼われた際はhunger+greed*3の餌が必要になる。
-このとき、最大で何匹のBadgersが飼えるか求める。
-解き方 
-Nは50のため、すべての組み合わせは確かめられない。
-ここで、何匹買うかの情報を固定すると、そのときに必要な餌の量は
-固定値となるため、貪欲法で求めることができる。
-よって、飼う匹数を１〜Nまで固定して、
-それぞれについて貪欲法で選んだ時にtotalFoodに収まる
-最大の匹数を求めればよい。
-コード 
-class Badgers {
-public: int feedMost(vector&lt;int&gt; hunger, vector&lt;int&gt; greed, int totalFood) {
-int n=hunger.size();
-int ret=0;
-for(int num=1;num&lt;=n;num++){
-vector&lt;int&gt; vx;
-FORE(i,0,n){
-int cost=hunger[i]+greed[i]*(num-1);
-vx.push_back(cost);
-}
-sort(all(vx));
-int sum=0;
-FORE(i,0,num)sum+=vx[i];
-if(totalFood&gt;=sum)ret=max(ret,num);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10797&amp;rd=14186 動物BadgersがN匹おり、できるだけ多く飼いたい。 ただし１日に与えられる餌がtotalFoodしかないため、この餌の中で できるだけ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-476-div1-easy---badgers-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -339,42 +177,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11004&amp;rd=14234
-鶏が先か卵が先かという古典的な問題がある。
-オラクルはどちらが答えかわかっており、ｎ人にその答えを伝えた。
-ただし、liecount人には嘘の答えを教えている。
-また、ｎ人について鶏と答えた人数と卵と答えた人数がわかっている。
-ただし、liarcount人は教えられたものと違う答えを答えている。
-このとき、答えが卵か鶏のどちらかを求める。
-ただし、両方の場合が考えられる時はAmbiguousを、
-オラクルが嘘をついているのであればThe oracle is a lieを返す。
-解き方 
-答えが卵である場合と、鶏である場合それぞれについて
-最終的な数（卵が答えのときはｎ人ーliecount）はわかっている。
-ただし、嘘をついている人が何人どちらの答えを教えられているかは、
-様々な場合が考えられるため、
-この人数について全探索して一致するかどうかを調べればよい。
-コード 
-class ChickenOracle {
-public: string theTruth(int n, int e, int lieCount, int liarCount) {
-int c=n-e;
-int flagc=0,flage=0;
-int tmpc=n-lieCount,tmpe=n-tmpc;
-for(int move=0;move&lt;=liarCount;move++){
-if(move&gt;tmpc || liarCount-move&gt;tmpe)continue;
-if(tmpc-move+(liarCount-move)==c || tmpe-(liarCount-move)+move==e){
-flagc=1;
-}
-}
-tmpe=n-lieCount,tmpc=n-tmpe;
-for(int move=0;move&lt;=liarCount;move++){
-if(move&gt;tmpc || liarCount-move&gt;tmpe)continue;
-if(tmpc-move+(liarCount-move)==c || tmpe-(liarCount-move)+move==e){
-flage=1;
-}
-}
-if(flagc &amp;&amp; flage)return "
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11004&amp;rd=14234 鶏が先か卵が先かという古典的な問題がある。 オラクルはどちらが答えかわかっており、ｎ人にその答えを伝えた。 ただし、liecount人には
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-481-div1-easy---chickenoracle-/">Read more…</a>
@@ -394,50 +197,7 @@ if(flagc &amp;&amp; flage)return "
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11064&amp;rd=14159
-N個のWebサイトがあり、その危険性を検証したい。
-各Webサイトについて、サイトのアドレスと関連するキーワードが
-わかっている。
-また、危険なキーワードが複数与えられ、あるWebサイト中に
-危険なキーワードがthreshold以上存在するとそのWebサイトは危険になる。
-また、Webサイトが危険になると、そのサイトに関連する
-すべてのキーワードも危険になる。
-このとき、危険なWebサイトのアドレスすべてを昇順に並べたものを求める。
-解き方 
-実装問題なので、正確にかつシンプルなデータ構造で実装するだけ。
-コード 
-class InternetSecurity {
-public: vector&lt;string&gt; determineWebsite(vector&lt;string&gt; address, vector&lt;string&gt; keyword, vector&lt;string&gt; dangerous, int threshold) {
-int n=address.size();
-int p[n];
-memset(p,-1,sizeof(p));
-set&lt;string&gt; d;
-FORE(i,0,dangerous.size())d.insert(dangerous[i]);
-string key[51][51];
-FORE(i,0,51)FORE(j,0,51)key[i][j]="";
-FORE(i,0,n){
-stringstream out(keyword[i]);
-int at=0;
-while(out&gt;&gt;key[i][at++]);
-}
-int next=1;
-while(next){
-next=0;
-FORE(i,0,n){
-int cnt=0,at=0;
-while(!key[i][at].empty()){
-if(d.find(key[i][at])!=d.end())cnt++;
-at++;
-}
-if(p[i]==-1 &amp;&amp; cnt&gt;=threshold){
-p[i]=cnt;
-next=1;
-int att=0;
-while(!key[i][att].empty()){
-d.insert(key[i][att++]);
-}
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11064&amp;rd=14159 N個のWebサイトがあり、その危険性を検証したい。 各Webサイトについて、サイトのアドレスと関連するキーワードが わかっている。 また、危
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-480-div1-easy---internetsecurity-/">Read more…</a>
@@ -457,40 +217,10 @@ d.insert(key[i][att++]);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11028&amp;rd=14158
-1列の席に座っている客にコーヒーか紅茶を提供したい。
-１番めの席の横にサーブマシンがあり、そこで紅茶かコーヒーを７人分
-入れることができる。入れるのには４７秒かかる。
-また、お客に飲み物を提供するのに４秒かかる。
-お客はコーヒーか紅茶どちらを要望しているかあらかじめわかっている。
-このとき、すべてのお客に要望する飲み物を提供するのにかかる時間を求める。
-解き方 
-nは4*10^7。
-配列を作るのにメモリは足りないが、全探索可能なので必要な配列だけを
-作るように全探索すればよい。
-コード 
-class TheCoffeeTimeDivOne {
-public: long long find(int n, vector&lt;int&gt; tea) {
-int tn=tea.size();
-long long ret=n*4LL;
-ret+=47*((tn+6)/7)+47*((n-tn+6)/7);
-sort(all(tea));
-for(int i=tn-1;i&gt;=0;i-=7)ret+=tea[i]*2;
-set&lt;int&gt; s;
-FORE(i,0,tn)s.insert(tea[i]);
-int cnt=0;
-for(int i=n;i&gt;=1;i--){
-if(s.find(i)!=s.end())continue;
-if(cnt==0){
-ret+=i*2LL;
-cnt=7;
-}
-cnt--;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11028&amp;rd=14158 1列の席に座っている客にコーヒーか紅茶を提供したい。 １番めの席の横にサーブマシンがあり、そこで紅茶かコーヒーを７人分 入れることができる
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-479-div1-easy---thecoffeetimedivone/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -507,34 +237,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10706&amp;rd=13908
-＾＾で表される演算がある。
-これは１０進数で表される各桁のXORをとった後にその１０の余りが
-各桁の数になる。
-整数Nが与えられた時、N＾＾（N-1)＾＾（N-2)…^^1の値を求める。
-解き方 
-１からたどっていくと法則のようなものが見つかるが、
-実際は(N^^(N^1))^^(N-1) とN^^((N^1)^^(N-1))は異なるためこの方法では解けない。
-計算量は間に合うので、題意の通り実装して解く。
-コード 
-class DoubleXor {
-public:
-int calc(int x,int y){
-int ret=0;
-for(int p=1;x&gt;0||y&gt;0;x/=10,y/=10,p*=10){
-ret+=(((x%10)^(y%10))%10)*p;
-}
-return ret;
-}
-int calculate(int N) {
-int ret=N;
-for(int i=N-1;i&gt;=1;i--){
-ret=calc(ret,i);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10706&amp;rd=13908 ＾＾で表される演算がある。 これは１０進数で表される各桁のXORをとった後にその１０の余りが 各桁の数になる。 整数Nが与えられた時、N＾＾
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-454-div1-easy---doublexor-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -551,26 +257,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10699&amp;rd=13909
-銀の動きをする駒がある。
-２次元のセル上でスタート位置とゴール位置が与えられた時、
-ゴールにたどりつくまでの最小のターン数を求める。
-解き方 
-☓の形で４つのエリアに分け、場合分けして求める方法があるが
-複雑になってしまうためシステムで落ちやすくなる。
-今回、セルをチェスのように白と黒で分けた時、
-同じエリアであればｘとｙの位置の差の最大の方が答えになる。
-エリアが異なる場合は、一つ上に移動することで同じエリアに移動することができる。
-コード 
-class SilverDistance {
-public: int minSteps(int sx, int sy, int gx, int gy) {
-int ret=0;
-if((abs(gx-sx)-abs(gy-sy))%2)ret++,sy++;
-ret+=max(abs(gx-sx),abs(gy-sy));
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10699&amp;rd=13909 銀の動きをする駒がある。 ２次元のセル上でスタート位置とゴール位置が与えられた時、 ゴールにたどりつくまでの最小のターン数を求める。 解き方
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-456-div1-easy---silverdistance-x/">Read more…</a>
 		</div>
 	</div>
 </article>

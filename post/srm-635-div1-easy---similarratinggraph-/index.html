@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 635 DIV1 Easy - SimilarRatingGraph (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13485&amp;rd=16078
-日付とその日付に行われたコンテストの後のレーティングが時系列で与えられる。
-そのグラフのうち２つの似通ったサブグラフを探し、最大の長さのサブグラフを求める。
-サブグラフは各点が連続していなければならない。
-似通ったサブグラフ同士は、同じ長さで片方に係数をかけるもしくはスライドすると同一になるものを言う。
-解き方 
-問題文を正確に読めてなかったのが反省点。
-・サンプルを見ると、同じ傾きのサブグラフを求めることになりそう。
-・同じ傾きのサブグラフのうち、切片が異なるサブグラフの集合の有無で答えが異なりそう。
-・上記の条件ではコードに落とし込むのが複雑そう
-ここで解き方に困ってしまい、他の人のコードをみる。
-コードをみてから問題文を改めてみると、似通ったグラフとは同じ長さでなければならないこと、さらに連続するという条件がわかれば簡単に求められる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SimilarRatingGraph {
-public: double maxLength(vector&lt;int&gt; date, vector&lt;int&gt; rating) {
-double ans=0;
-int n=date.size();
-FORE(a,0,n-1)FORE(b,0,n-1)if(a!=b){
-double l=0;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13485&amp;rd=16078 日付とその日付に行われたコンテストの後のレーティングが時系列で与えられる。 そのグラフのうち２つの似通ったサブグラフを探し、最大の長さの" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-635-div1-easy---similarratinggraph-/" />
 

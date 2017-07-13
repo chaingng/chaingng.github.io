@@ -7,52 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 578 DIV1 Easy - GooseInZooDivOne (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12539&amp;rd=15498
-2次元のセルが与えられ、それぞれのセルは鳥がいるかいないかで表わされる。
-鳥はガチョウとアヒルの２種類存在する。
-その鳥がどちらかはわからないが、あるガチョウとマンハッタン距離にある鳥はすべて
-ガチョウとなる。
-このとき、ガチョウの鳥の数が偶数となる場合の数を求める。
-解き方 
-あるガチョウとマンハッタン距離にある鳥は全てガチョウということは、
-マンハッタン距離にある鳥の集合それぞれは、ガチョウかアヒルになるということがわかる。
-つぎにそれぞれの集合に対して、鳥の数が偶数か奇数かに分類する。
-偶数の集合Ｎについては２＾Ｎとなる。
-奇数の集合については、ｎＣ０×ｎＣ２ｘ・・・ｎＣｎ－１となる。
-ここで二項定理により(1&#43;x)^n=(n,0)*x^0&#43;(n,1)*x^1...&#43;(n,n)*x^n
-x=1,-1のとき、
-2^n=(n,0)&#43;(n,1)&#43;...&#43;(n,n)
-0=(n,0)-(n,1)&#43;(n,2)...-(n,n)
-2^n=2(n,0)&#43;2(n,2)...&#43;2(n,n-1)
-2^(n-1)=(n,0)&#43;(n,2)...&#43;(n,n-1)
-よって奇数の集合は2^(n-1)となるので、2^(n-1&#43;N)が答えになる。
-コード 
-int H,W,D;
-int cell[55][55];
-class GooseInZooDivOne {
-public:
-int DFS(int i,int j){
-int ans=1;
-queue&lt;pair&lt;int,int&gt; &gt; q;
-q.push(make_pair(i,j));
-cell[i][j]=1;
-while(!q.empty()){
-int x=q.front().first;
-int y=q.front().second;
-q.pop();
-FORE(i,0,H)FORE(j,0,W)if(cell[i][j]==0&amp;&amp;abs(x-i)&#43;abs(y-j)&lt;=D){
-cell[i][j]=1;
-q.push(make_pair(i,j));
-ans&#43;&#43;;
-}
-}
-return ans;
-}
-int count(vector&lt;string&gt; field, int dist) {
-long long MOD=1000000007LL,ans=1LL;
-int even=0,odd=0,cnt=0;
-H=field.size(),W=field[0].size(),D=dist;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12539&amp;rd=15498 2次元のセルが与えられ、それぞれのセルは鳥がいるかいないかで表わされる。 鳥はガチョウとアヒルの２種類存在する。 その鳥がどちらかはわから" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-578-div1-easy---gooseinzoodivone-%E5%BE%A9%E7%BF%92/" />
 

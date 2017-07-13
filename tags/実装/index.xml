@@ -17,29 +17,7 @@
       <pubDate>Mon, 16 Mar 2015 20:03:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-648-div1-easy---ab-/</guid>
-      <description>問題 
-・文字の長さがNであり、’A’か’B’から成る文字列を作りたい。
-・ただし、Aより後ろのどこかにBがあるペアをK個作りたい。
-・そのような文字列を作れない場合は-1を、作れる場合はそのような文字列のうち一つを出力する。
-解き方 
-・最大のペア数はN/2 * (N-N/2)であるので、これよりもKが大きければそのような文字列を
-作れない。
-・作れる場合は実装するだけ。Aを出力するときに、それより右にあるべきBの数を保存してあげるように解いた。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AB {
-public: string createString(int N, int K) {
-string ret=&#34;&#34;;
-for(int a=0;a&amp;lt;=N/2;a++){
-int b=N-a;
-if(a*b&amp;lt;K)continue;
-vector&amp;lt;int&amp;gt; v;
-FORE(i,0,a){</description>
+      <description>問題 ・文字の長さがNであり、’A’か’B’から成る文字列を作りたい。 ・ただし、Aより後ろのどこかにBがあるペアをK個作りたい。 ・そのような文</description>
     </item>
     
     <item>
@@ -48,34 +26,7 @@ FORE(i,0,a){</description>
       <pubDate>Sat, 08 Nov 2014 12:13:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-637-div1-easy---divisorspower-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13504&amp;amp;rd=16080
-・1から2Nまで書かれた、2N枚のカードがあり、2人でゲームを行う。
-・このカードが自分と相手それぞれ均等に配られる。
-・2人が一枚ずつカードを出し、大きい数字の方が１ポイント得られる。
-・自分のカードについては、何が配られたかわかっている。
-・相手のカードについては自分のカードから推測できるが、カードを出す順番もわかっている。
-ただし、-1で示されているときは何が出されるかわかっていない。
-・このとき、自分が得ることのできるスコアの最大の期待値を求める。
-解き方 
-・まず、自分のカードから相手のカードを推測し配列に保存する。
-・相手のカードについて、出すものがわかっているものに対しては最適な戦略を取る。
-・つまり、ある相手のわかっているカードについてそれより大きい数のカードがある場合は
-そのうち最小のものを出す。
-・大きい数のカードがない場合は一番小さいカードを出す。
-・残りのカードについては総当たりで計算して期待値を足していけばよい。
-→System Passed
-・もっとシンプルな解き方があるのか他のコードをみてみたが、この方法が一番シンプルそう。
-紙に書いて手順を整理すれば着実に解ける。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class GreaterGame {
-public: double calc(vector&amp;lt;int&amp;gt; hand, vector&amp;lt;int&amp;gt; sothe) {</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13504&amp;amp;rd=16080 ・1から2Nまで書かれた、2N枚のカードがあり、2人でゲームを行う。 ・このカードが自分と相手それぞれ均等に配られる。 ・2人が一枚ずつカ</description>
     </item>
     
     <item>
@@ -84,34 +35,7 @@ public: double calc(vector&amp;lt;int&amp;gt; hand, vector&amp;lt;int&amp;gt; so
       <pubDate>Sat, 22 Feb 2014 09:50:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9943&amp;amp;rd=13508
-ある文字列と、接頭辞と接尾辞が与えられる。
-ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。
-ただし、接頭辞と接尾辞のマッチ数が同じときは接頭辞のマッチ数が大きいものにする。
-また、上記も同じであれば文字の昇順のものにする。
-解き方 
-シミュレーション問題なので、いかにシンプルに実装するか。
-接頭辞の一致に時間がかかってしまったので、例とＦＯＲを回してみて正しく実装してみるか机上で検証してみるのがやはり大事。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-string P,S;
-class TemplateMatching {
-public:
-int prefixes(string str){
-int score=0;
-int n1=str.size(),n2=P.size();
-FOR(i,0,min(n1,n2)){
-string s1=str.substr(0,i+1);
-string s2=P.substr(n2-1-i,i+1);
-if(s1==s2)score=max(score,i+1);
-}
-return score;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9943&amp;amp;rd=13508 ある文字列と、接頭辞と接尾辞が与えられる。 ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。 ただし、接</description>
     </item>
     
     <item>
@@ -120,32 +44,7 @@ return score;</description>
       <pubDate>Wed, 19 Feb 2014 21:28:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8319&amp;amp;rd=10805
-通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、
-ボード上に配置されている。ボード上の数がＫにあたる。
-このとき、すべてのボード上のナイトが同じセルに到達するまでに必要な最小移動回数の合計を求める。
-そのようなセルが存在しない場合はー１を返す。
-解き方 
-ボードが１０＊１０なので、全探索で解くことができる。
-計算量はＯ（１００００）。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class CollectingRiders {
-public: int minimalMoves(vector&amp;lt;string&amp;gt; board) {
-int w=board[0].size(),h=board.size();
-int dx[]={2,2,1,1,-1,-1,-2,-2};
-int dy[]={1,-1,2,-2,2,-2,1,-1};
-int ret=10000;
-FORE(x,0,h){
-FORE(y,0,w){
-int p[h][w];
-FORE(i,0,h)FORE(j,0,w)p[i][j]=10000;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8319&amp;amp;rd=10805 通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、 ボード上に配置されている。ボード上の数がＫにあたる。 こ</description>
     </item>
     
     <item>
@@ -154,31 +53,7 @@ FORE(i,0,h)FORE(j,0,w)p[i][j]=10000;</description>
       <pubDate>Tue, 11 Feb 2014 16:09:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4490&amp;amp;rd=7217
-行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。
-ここで、ある数字を思い浮かべたとき、その数字が何列目に入っているか答える。
-答えた後は行と列の数字を入れ替えて、また何列目に入っているか答える。
-この操作を繰り返した時、最後に思い浮かべた数字のある行を答える。
-複数存在しうるとき、またひとつも存在しないときはー１を返す。
-解き方 
-シミュレーション問題なので、いかにシンプルに実装するか。
-候補の数の更新には配列で＆を使ってもよいが、insertのすでに入っているかの判定を使うことでよりシンプルになる。
-数字の入れ替えは間違えやすいので例を出しながら確かめる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class GuessCard {
-public: int whichRow(int width, int height, vector&amp;lt;int&amp;gt; columns) {
-set&amp;lt;int&amp;gt; s;
-FORE(n,1,height*width+1)s.insert(n);
-int p[height][width],n=1;
-FORE(i,0,height)FORE(j,0,width){
-p[i][j]=n;
-n++;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4490&amp;amp;rd=7217 行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。 ここで、ある数字を思い浮かべたとき、その数字が何列目に</description>
     </item>
     
     <item>
@@ -187,31 +62,7 @@ n++;</description>
       <pubDate>Mon, 10 Feb 2014 23:42:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-157-div1-easy---salary-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1786&amp;amp;rd=4590
-サラリーマンは出社したときと退社した時にスタンプカードを押し、その時間がわかっている。ただし、退社した時の時間は仕事時間に含まれない。
-合わせて時給がわかっており、０：００～５：５９の間、かつ１８：００～２３：５９の間は時給が１．５倍になる。
-このとき、サラリーマンの一日の給料を求める。
-ただし、小数点以下は切り下げる。
-解き方 
-シミュレーション問題なので以下にシンプルに実装するか。
-同じ計算は記載ミスを招くので、２度以上現れる計算は変数に保存して扱うことでミスをより少なくできる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Salary {
-public:
-int calc(string str){
-int h=(str[0]-&#39;0&#39;)*10+(str[1]-&#39;0&#39;);
-int m=(str[3]-&#39;0&#39;)*10+(str[4]-&#39;0&#39;);
-int s=(str[6]-&#39;0&#39;)*10+(str[7]-&#39;0&#39;);
-return h*3600+m*60+s;
-}
-int howMuch(vector&amp;lt;string&amp;gt; arrival, vector&amp;lt;string&amp;gt; departure, int wage) {</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1786&amp;amp;rd=4590 サラリーマンは出社したときと退社した時にスタンプカードを押し、その時間がわかっている。ただし、退社した時の時間は仕事時間に含まれない。</description>
     </item>
     
     <item>
@@ -220,34 +71,7 @@ int howMuch(vector&amp;lt;string&amp;gt; arrival, vector&amp;lt;string&amp;gt; d
       <pubDate>Mon, 10 Feb 2014 22:57:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-153-div1-easy---inventory-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1772&amp;amp;rd=4570
-ある製品について、何日間で何個売れるかがわかっている。
-複数の製品について上記の情報が与えられたとき、
-１カ月あたり、つまり３０日あたり平均何個の製品が売れるかを求めたい。
-ただし、情報が０日間であったときはその製品はないものとみなす。
-また、割りきれない場合は誤差1e-9を引いたのちに繰り上げる。
-解き方 
-実装自体はシンプル。
-以下の例外条件をきちんと書けるかがポイント。
-・情報が０日間はカウントしない。（売れる数が０個のときはカウント）
-・誤差の計算（問題文のとおり、1e-9を引く）
-・最後に割り算が来るので、０のときの例外条件を記載
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Inventory {
-public: int monthlyOrder(vector&amp;lt;int&amp;gt; sales, vector&amp;lt;int&amp;gt; daysAvailable) {
-double cnt=0.0,ret=0.0;
-FORE(i,0,sales.size()){
-if(daysAvailable[i]==0)continue;
-ret+=sales[i]*30.0/daysAvailable[i];
-cnt++;
-}</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1772&amp;amp;rd=4570 ある製品について、何日間で何個売れるかがわかっている。 複数の製品について上記の情報が与えられたとき、 １カ月あたり、つまり３０日あたり平</description>
     </item>
     
     <item>
@@ -256,42 +80,7 @@ cnt++;
       <pubDate>Sun, 09 Feb 2014 22:32:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-159-div1-easy---fryinghamburgers-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1517&amp;amp;rd=4600
-指定された数のハンバーガーを両面焼きたい。
-両面焼くのには、片面ずつ、各５分必要となる。
-また、フライパンが与えられ、一度に何枚のハンバーガーが焼けるかがわかっている。
-このとき、指定された数のハンバーガーを焼くのに必要な最小時間を求める。
-解き方 
-ハンバーガーの数は１０００なので全探索で解ける。
-シミュレーション問題なので、いかにシンプルに解くか。
-片面ずつの配列を作って埋めていってもよいが、それぞれを区別する必要はないので
-以下のように整理する。
-フライパン１回使用につき、
-①まずは両面とも焼いていないものを優先して載せる
-②あまったところで片面のみ焼いてあるものを載せる。
-③最後に両面とも焼けていないもの、片面のみ焼けているものの数を更新し、どちらも０になるまでループさせる。
-１回のターンにつき①と②で同じものを選ばないようにするのがSystemtestで落ちないためのポイント。
-コード 
-class FryingHamburgers {
-public: int howLong(int panSize, int hamburgers) {
-int ret=0,half=0;
-while(hamburgers+half&amp;gt;0){
-ret++;
-int first=min(hamburgers,panSize);
-int both=min(panSize-first,half);
-hamburgers-=first;
-half+=first;
-half-=both;
-}
-return ret*5;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1517&amp;amp;rd=4600 指定された数のハンバーガーを両面焼きたい。 両面焼くのには、片面ずつ、各５分必要となる。 また、フライパンが与えられ、一度に何枚のハンバー</description>
     </item>
     
     <item>
@@ -300,33 +89,7 @@ using namespace std;
       <pubDate>Sun, 09 Feb 2014 14:24:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-204-div1-easy---apothecary-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2312&amp;amp;rd=5850
-ある物体の重さを、天秤を使って測りたい。
-天秤の重さは３＾ｘのものが各１つずつ存在する。
-このとき、必要な天秤の重さを昇順にソートして返す。
-解き方 
-重さの最大は10^6なので、各３のべき乗に対し３通りの計算と考えると
-3^14ほどになり計算量がちょっと怪しい。
-※計算
-10^6=3^x log10^6=log3^x x=6/log3≠13
-ここで各３のべき乗xとそこまでのすべてのべき乗の和をsum[x]とすると、
-sum[x-1]&amp;lt;abs(W)&amp;lt;sum[x]のときその数xは使わなければならない。
-逆にsumが超えてしまうとその数を使ってはいけなくなる。
-これをループさせて範囲を狭めていき、答えを求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Apothecary {
-public: vector&amp;lt;int&amp;gt; balance(int W) {
-vector&amp;lt;int&amp;gt; ans;
-int x=1,sum=1;
-while(W!=0){
-if(sum&amp;gt;=abs(W)){</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2312&amp;amp;rd=5850 ある物体の重さを、天秤を使って測りたい。 天秤の重さは３＾ｘのものが各１つずつ存在する。 このとき、必要な天秤の重さを昇順にソートして返す</description>
     </item>
     
     <item>
@@ -335,32 +98,7 @@ if(sum&amp;gt;=abs(W)){</description>
       <pubDate>Sun, 09 Feb 2014 09:58:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-221-div1-easy---terribleencryption-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1924&amp;amp;rd=5867
-暗号化された文字列があり、それを復号したい。
-あらかじめ暗号化された文字pool、配列data,keysが与えられる。
-復号後の文字列のi番目の文字は、
-(data[i]*k)%keys[i]=1となる最小の正の整数kを求め、
-j=k%(poolのサイズ)としたとき、pool[j]の文字となる。
-このとき、復号後の文字列を求める。
-解き方 
-問題文の理解ができれば、同じように実装するだけ。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TerribleEncryption {
-public: string decrypt(string pool, vector&amp;lt;int&amp;gt; data, vector&amp;lt;int&amp;gt; keys) {
-int n=data.size(),m=pool.size();
-string str=&#34;&#34;;
-FORE(i,0,n){
-int k=1;
-while((data[i]*k)%keys[i]!=1)k++;
-str+=pool[k%m];
-}
-return str;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1924&amp;amp;rd=5867 暗号化された文字列があり、それを復号したい。 あらかじめ暗号化された文字pool、配列data,keysが与えられる。 復号後の文字列のi</description>
     </item>
     
     <item>
@@ -369,30 +107,7 @@ return str;</description>
       <pubDate>Sun, 09 Feb 2014 00:04:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4487&amp;amp;rd=7220
-４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。
-Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlushスコアになる。
-このとき、Flushスコアの期待値を求める。
-解き方 
-カードの種類は４種類、カード数は１３枚なので、
-あり得る全てのカードの取り方について全探索すればよい。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Flush {
-public:
-double f(int x,int y){
-double ret=1.0;
-for(int i=y;i&amp;gt;y-x;i--)ret*=i;
-for(int i=x;i&amp;gt;0;i--)ret/=i;
-return ret;
-}
-double size(vector&amp;lt;int&amp;gt; s, int number) {
-double ret=0.0;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4487&amp;amp;rd=7220 ４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。 Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlus</description>
     </item>
     
     <item>
@@ -401,35 +116,7 @@ double ret=0.0;</description>
       <pubDate>Sat, 08 Feb 2014 10:02:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-265-div1-easy---schedulestrength-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-複数のチームがあり対戦を行う。
-総当たり戦ではなく、対戦しないチーム同士もある。
-ここで、各チームの強さを求めたい。
-あるチームの強さは、対戦した他のチーム全てに対し、
-「他のチームの勝ち数／他のチームの勝ち数＋他のチームの負け数」
-が少ないほど強いチームにある。
-ただし、他のチームの勝ち数からは自チームの負け数、他のチームの負け数からは自チームの勝ち数を引いてカウントしなければならない。
-このとき、各チームを強さの順にソートして返す。強さが同じ時はチーム名の昇順に並べる。
-解き方 
-シミュレーション問題なので、いかにシンプルにコーディングするか。
-いきなり計算してもよいのですが、各チームの勝ち負け数をカウントしてから
-強さを計算することでシンプルに実装できます。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ScheduleStrength {
-public: vector&amp;lt;string&amp;gt; calculate(vector&amp;lt;string&amp;gt; teams, vector&amp;lt;string&amp;gt; results) {
-int n=teams.size();
-int win[n],lose[n];
-memset(win,0,sizeof(win));
-memset(lose,0,sizeof(lose));
-FORE(i,0,n){
-FORE(j,0,n){
-if(results[i][j]==&#39;W&#39;)win[i]++;
-if(results[i][j]==&#39;L&#39;)lose[i]++;</description>
+      <description>問題 複数のチームがあり対戦を行う。 総当たり戦ではなく、対戦しないチーム同士もある。 ここで、各チームの強さを求めたい。 あるチームの強さは、対戦</description>
     </item>
     
     <item>
@@ -438,36 +125,7 @@ if(results[i][j]==&#39;L&#39;)lose[i]++;</description>
       <pubDate>Sat, 01 Feb 2014 17:06:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7291&amp;amp;rd=10657
-誕生日を表わす１０桁の数字が与えられる。
-その数字を&#34;YYMMDDCCCC&#34;とすると、以下で表わされる。
-ＹＹが１９０７～２００６までの西暦の下２桁。
-うるう年も存在する。うるう年は４００で割れるか、４で割れて１００で割れない年。
-ＭＭが月であり、ＭＭは女性の場合に限り５１～６２の範囲になる。
-ＤＤが日付。
-ＣＣＣＣはチェックサムで、１０ケタの数字を１１で割った余りが０になるようになっている。
-このとき、与えられた数字が有効であればＹＥＳを、無効な数字であればＮＯを返す。
-解き方 
-シミュレーション問題なので以下にシンプルに解くか。
-今回の実装のポイントは３つ。
-・各条件の判定には関数を用いる
-・月の判定には配列を用いる。
-・ＹＥＳ，ＮＯの判定にはbool値を定義し、andを取って判定する。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BirthNumbersValidator {
-public:
-long long calc(string str){
-stringstream out(str);
-long long num;
-out&amp;gt;&amp;gt;num;
-return num;
-}</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7291&amp;amp;rd=10657 誕生日を表わす１０桁の数字が与えられる。 その数字を&#34;YYMMDDCCCC&#34;とすると、以下で表わされる。 ＹＹが１９０７～２００６までの西</description>
     </item>
     
     <item>
@@ -476,35 +134,7 @@ return num;
       <pubDate>Fri, 31 Jan 2014 23:05:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2250&amp;amp;rd=4740
-・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。
-・同じペースで走ることができ、予想される時間が計算できるのが理想だが、疲れが影響してペースは一定にはならない。
-・ある地点における予想時間は、その他の任意の２点を使って計算できる。
-・このとき、一番実際の時間と予想時間との差が小さくなる地点を求める。
-解き方 
-問題文の意味を読み解くのに苦労しました。
-ある地点に対する予想時間はその他の任意の２点を使って求めるということがわかれば、
-３点の取り方に対する全ての場合の数を計算してあげれば答えが求まります。
-コード 
-class RaceCalculator {
-public: int bestRace(vector&amp;lt;int&amp;gt; distances, vector&amp;lt;int&amp;gt; times) {
-int n=times.size();
-double badness[n];
-FORE(i,0,n)badness[i]=-(1e+9);
-FORE(i,0,n)FORE(j,0,n)FORE(k,0,n){
-if(i==j||j==k||i==k)continue;
-double a=log(times[j]/(double)times[i]);
-double b=log(distances[i]/(double)distances[k]);
-double c=log(distances[i]/(double)distances[j]);
-double expected=times[i]*exp(a*b/c);
-badness[k]=max(badness[k],(times[k]-expected)/expected);
-}
-int best=0;
-FORE(i,0,n)if(badness[i]&amp;lt;badness[best])best=i;
-return best;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2250&amp;amp;rd=4740 ・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。 ・同じペースで走ることができ、予想される</description>
     </item>
     
     <item>
@@ -513,51 +143,7 @@ return best;
       <pubDate>Thu, 30 Jan 2014 08:05:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-288-div1-easy---findtriangle/</guid>
-      <description>問題 
-・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。
-・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作ることができる。
-・このとき、作ることのできる三角形の最大の面積を求める。
-解き方 
-三角形の求め方がポイント。
-ヘロンの法則を使って求めると、誤差が生じてしまう。
-そのため、２つのベクトルの外積が平行四角形の面積になることを利用して解く。
-コード 
-class FindTriangle {
-public:
-double largestArea(vector&amp;lt;string&amp;gt; points) {
-int n=points.size();
-int c[n],x[n],y[n],z[n];
-FORE(i,0,n){
-stringstream out(points[i]);
-char ch;
-out&amp;gt;&amp;gt;ch&amp;gt;&amp;gt;x[i]&amp;gt;&amp;gt;y[i]&amp;gt;&amp;gt;z[i];
-if(ch==&#39;R&#39;)c[i]=1;
-else if(ch==&#39;G&#39;)c[i]=2;
-else c[i]=4;
-}
-double ret=0.0;
-FORE(i,0,n){
-FORE(j,i+1,n){
-FORE(k,j+1,n){
-int flag=c[i]|c[j]|c[k];
-if(flag==1||flag==2||flag==4||flag==7){
-double dx1=x[j]-x[i];
-double dy1=y[j]-y[i];
-double dz1=z[j]-z[i];
-double dx2=x[k]-x[i];
-double dy2=y[k]-y[i];
-double dz2=z[k]-z[i];
-double len=(dy1*dz2-dz1*dy2)*(dy1*dz2-dz1*dy2);
-len+=(dz1*dx2-dx1*dz2)*(dz1*dx2-dx1*dz2);
-len+=(dx1*dy2-dy1*dx2)*(dx1*dy2-dy1*dx2);
-ret=max(ret,len);
-}
-}
-}
-}
-return sqrt(ret)/2.0;
-}
-}; </description>
+      <description>問題 ・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。 ・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作る</description>
     </item>
     
     <item>
@@ -566,44 +152,7 @@ return sqrt(ret)/2.0;
       <pubDate>Tue, 28 Jan 2014 08:38:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6013&amp;amp;rd=9808
-・２次方程式が与えられる。
-・このとき、ｘ、ｙを求める。
-ただし解がない時は&#34;NO SOLUTIONS&#34;、解が複数あるときは&#34;MULTIPLE SOLUTIONS&#34;を返す。
-解き方 
-シミュレーションの問題なので、いかに簡単に実装するか。
-ポイントは３つ。
-１つめは、文字列から数字を取り出すところ。
-２つめは、解がない時、複数あるときの例外判定。
-３つめは、ｘ、ｙの求め方。
-１つめについては数字の取り出しとかっこの判定を分けることで実装。
-２つめ、３つめについては方程式を
-Ax+ by= c、Dx+ ey= fとしたとき、
-X= ce-bf / ae-bd,　Y= cd-af / bd-ae　となる。
-２つめ、ae-bdが０のとき ce-bfかつcd-afが０であれば解が複数あり、そうでなければ解が存在しない。
-またx,yのすべての係数が０のとき、右の項がすべて０なら解が複数あり、そうでなければ解が存在しない。
-３つめについては上記の式でｘ、ｙを求めればよい。
-コード 
-class TwoEquations {
-public:
-int getnum2(string str){
-string org;
-if(str[0]==&#39;(&#39;)org=str.substr(1,2);
-else org=str[0];
-stringstream out(org);
-int ans;
-out&amp;gt;&amp;gt;ans;
-return ans;
-}
-vector&amp;lt;int&amp;gt; getnum(string str){
-stringstream out(str);
-vector&amp;lt;int&amp;gt; ans(3,0);
-string a0,a1,a2,b,c;
-out&amp;gt;&amp;gt;a0&amp;gt;&amp;gt;b&amp;gt;&amp;gt;a1&amp;gt;&amp;gt;c&amp;gt;&amp;gt;a2;
-ans[0]=getnum2(a0);
-ans[1]=getnum2(a1);
-ans[2]=getnum2(a2);</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6013&amp;amp;rd=9808 ・２次方程式が与えられる。 ・このとき、ｘ、ｙを求める。 ただし解がない時は&#34;NO SOLUTIONS&#34;、解が複数あるときは&#34;MULTIPL</description>
     </item>
     
     <item>
@@ -612,53 +161,7 @@ ans[2]=getnum2(a2);</description>
       <pubDate>Sun, 26 Jan 2014 13:28:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11146&amp;amp;rd=14238
-・ある数列が与えられる。
-・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。
-このとき、もとの等差数列を求める。
-解き方 
-等差数列の差と、初項が決まれば等差数列になるかどうかは容易に判定できる。
-問題文から数字はintの範囲なので、この範囲で全探索すれば答えが求まる。
-＃もしくは、初項が偶数・奇数、差が偶数、奇数の場合を考えると
-２項目から０項目の差/2、もしくは３項目から１項目の差/2が答えになることがわかる。
-コード 
-class AfraidOfEven {
-public:
-vector&amp;lt;int&amp;gt; calc(vector&amp;lt;int&amp;gt; org,int d){
-int invalid=0;
-FORE(i,1,org.size()){
-while(1){
-if(org[i]!=org[i-1]+d)org[i]*=2;
-else break;
-if(org[i]&amp;lt;1||org[i]&amp;gt;org[i-1]+d){
-invalid=1;
-break;
-}
-}
-if(invalid){
-org[0]=-1;
-return org;
-}
-}
-return org;
-}
-vector&amp;lt;int&amp;gt; restoreProgression(vector&amp;lt;int&amp;gt; seq) {
-vector&amp;lt;int&amp;gt; ans;
-FORE(d,-1000,1001){
-vector&amp;lt;int&amp;gt; cur=seq;
-while(cur[0]&amp;lt;=1e+9){
-vector&amp;lt;int&amp;gt; tmp=calc(cur,d);
-if(tmp[0]!=-1 &amp;amp;&amp;amp; (ans.empty()||ans&amp;gt;tmp))ans=tmp;
-if(cur[0]&amp;gt;1e+8)break;
-cur[0]*=2;
-}
-}
-return ans;
-}
-};
-using namespace std;
-#define all(c) (c).</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11146&amp;amp;rd=14238 ・ある数列が与えられる。 ・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。 このとき、もとの等差数列を求める。 解き方</description>
     </item>
     
     <item>
@@ -667,48 +170,7 @@ using namespace std;
       <pubDate>Sat, 25 Jan 2014 20:56:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2866&amp;amp;rd=5853
-・複数のチームが総当たりで対戦する。
-・各チームは与えられた対戦数をホーム・アウェーで対戦する。
-・対戦する際の勝率が与えられる。
-・勝つ試合数は勝率＊対戦数の和を最後に四捨五入(round up)したものになる。
-・最後に勝った試合数の降順、同じ場合は四捨五入前の勝った試合数の降順、それも同じ場合はチーム名の昇順で”チーム名　勝った試合数”のフォーマットで返す。
-解き方 
-勝率の求め方が少しわかりにくくて苦労しました。
-最後のソートは構造体のソートを書きましたが、
-四捨五入前の数字があれば勝った試合数の降順は使わなくてもよいことに気づけばもっと単純にかけました。
-計算ごとに１００で割るのではなく、最後に１００で割るのが丸め誤差を防ぐポイント。
-コード 
-class RegularSeason {
-public:
-struct team{
-double points;
-int score;
-string name;
-bool operator&amp;lt;(const team &amp;amp; v)const{
-if(score!=v.score)return score&amp;gt;v.score;
-if(points!=v.points)return points&amp;gt;v.points;
-return name&amp;lt;v.name;
-}
-};
-vector&amp;lt;string&amp;gt; finalStandings(vector&amp;lt;string&amp;gt; teams, int rounds) {
-int n=teams.size();
-vector&amp;lt;team&amp;gt; t(n);
-vector&amp;lt;string&amp;gt; ans(n,&#34;&#34;);
-FORE(i,0,n){
-stringstream out(teams[i]);
-out&amp;gt;&amp;gt;t[i].name;
-FORE(j,0,n){
-double num;
-out&amp;gt;&amp;gt;num;
-if(i==j)continue;
-else{
-t[i].points+=num*rounds;
-t[j].points+=(100-num)*rounds;
-}
-}
-}</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2866&amp;amp;rd=5853 ・複数のチームが総当たりで対戦する。 ・各チームは与えられた対戦数をホーム・アウェーで対戦する。 ・対戦する際の勝率が与えられる。 ・勝つ試</description>
     </item>
     
     <item>
@@ -717,44 +179,7 @@ t[j].points+=(100-num)*rounds;
       <pubDate>Sat, 25 Jan 2014 15:47:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-145-div1-easy---bonuses-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://topcoder.bgcoder.com/print.php?id=276
-・従業員それぞれに対し、稼いだポイントが与えられる。
-・稼いだポイントに対し、ボーナスの配分を決めたい。
-・ボーナスの配分の割合は、全従業員のポイント数に対する各従業員のポイントとする。ただし、割り切れない場合は切り捨てとする。
-・最後に切り捨てて余った分の割合は、ポイントの多い従業員から順に１％ずつ割り当てる。同じポイントの場合は順番が最初の方に割り当てる。
-解き方 
-余ったポイントの割り当て方だけコーディングできれば簡単に解ける。
-ソートを使いたいところだが、規則が簡単なので割り当て済みかを判定する配列を使ってあげれば簡単に実装できる。
-コード 
-class Bonuses {
-public: vector&amp;lt;int&amp;gt; getDivision(vector&amp;lt;int&amp;gt; points) {
-int n=points.size();
-vector&amp;lt;int&amp;gt; ans(n,0);
-double sum=0;
-FORE(i,0,n)sum+=points[i];
-int score=100;
-FORE(i,0,n){
-int tmp=(points[i]/sum)*100.0;
-ans[i]=tmp;
-score-=tmp;
-}
-vector&amp;lt;int&amp;gt; used(n,0);
-FORE(i,0,score){
-int cmax=-1,idx=-1;
-FORE(j,0,n){
-if(used[j])continue;
-if(cmax&amp;lt;points[j]){
-cmax=points[j];
-idx=j;
-}
-}
-ans[idx]++;
-used[idx]=1;
-}
-return ans;
-}
-}; </description>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=276 ・従業員それぞれに対し、稼いだポイントが与えられる。 ・稼いだポイントに対し、ボーナスの配分を決めたい。 ・ボーナスの配分の割合は、全従業</description>
     </item>
     
     <item>
@@ -763,50 +188,7 @@ return ans;
       <pubDate>Sat, 25 Jan 2014 13:09:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-171-div1-easy---crosscountry-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1950&amp;amp;rd=4660
-・チーム数と、ゴールしたメンバーのチーム名が到着順に与えられる。
-・チームのスコアは最初にゴールした５人の到着順の和になる。
-ゴールした人数が５人未満のチームはカウント対象にならない。
-・スコアの小さい順にチームを並べる。
-スコアが同じとき、６人目のゴール者がいる場合はその到着が早い方が先になる。
-６人目のゴール者がいない場合は６人目のゴール者がいる方が先になる。
-それでも同一の場合は、チーム名の昇順になる。
-このとき、チーム名を順番に並べた文字列を返す。
-解き方 
-ソートの方法が複雑なので、独自にソート順を定義する。
-こちらを参考にさせていただきました。
-http://d.hatena.ne.jp/minus9d/20130501/1367415668
-コード 
-class CrossCountry {
-public:
-struct team{
-int score;
-int sixth;
-char name;
-bool operator&amp;lt;(const team &amp;amp; a)const{
-if(score!=a.score)return score&amp;lt;a.score;
-if(sixth!=a.sixth)return sixth&amp;lt;a.sixth;
-return name&amp;lt;a.name;
-}
-};
-string scoreMeet(int numTeams, string finishOrder) {
-vector&amp;lt;team&amp;gt; teams;
-string ans=&#34;&#34;;
-FORE(i,0,numTeams){
-team t;
-t.score=0;
-t.sixth=10000;
-t.name=&#39;A&#39;+i;
-int num=0;
-FORE(j,0,finishOrder.size()){
-if((&#39;A&#39;+i)==finishOrder[j]){
-if(num&amp;lt;5)t.score+=j;
-else if(num==5)t.sixth=j;
-num++;
-}
-}
-if(num&amp;gt;=5)teams.push_back(t);</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1950&amp;amp;rd=4660 ・チーム数と、ゴールしたメンバーのチーム名が到着順に与えられる。 ・チームのスコアは最初にゴールした５人の到着順の和になる。 ゴールした人</description>
     </item>
     
     <item>
@@ -815,53 +197,7 @@ if(num&amp;gt;=5)teams.push_back(t);</description>
       <pubDate>Sun, 29 Sep 2013 18:29:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-529-div1-easy---kingsort-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11740&amp;amp;rd=14722
-王様の名前が与えられ、順番に並べる。
-名前はアルファベットの連続とＩ，ＩIの数字で与えられ、アルファベットの昇順、同じ場合はＩ，ＩIの小さい順になる。
-名前が与えられた時、ソート後の順列を返す。
-解き方 
-シミュレーション問題。
-数字側の規則が多いので、ここをいかに簡略化できるか。
-今回のコツは以下の３つ。
-①判定が多い場合は配列にパターンを格納し判定。
-②与えられた文字列を分解して判別するのではなく、全てのパターンを作りマッチするものを返す。
-③ソートの要素が２つあるときは、pairを２回入れ子にし最初のpairを判定の順番に格納する。
-計算量はＯ（70*50*50*2=3.5*10^5）。
-コード 
-class KingSort {
-public:
-int calc(string s){
-string c1[]={&#34;&#34;,&#34;I&#34;,&#34;II&#34;,&#34;III&#34;,&#34;IV&#34;,&#34;V&#34;,&#34;VI&#34;,&#34;VII&#34;,&#34;VIII&#34;,&#34;IX&#34;};
-string c10[]={&#34;&#34;,&#34;X&#34;,&#34;XX&#34;,&#34;XXX&#34;,&#34;XL&#34;,&#34;L&#34;};
-int num=0;
-FORE(i,0,10)FORE(j,0,6){
-if(i==0&amp;amp;&amp;amp;j==0)continue;
-if(c10[j]+c1[i]==s){
-num=j*10+i;
-break;
-}
-}
-return num;
-}
-vector&amp;lt;string&amp;gt; getSortedList(vector&amp;lt;string&amp;gt; kings) {
-int n=kings.size();
-vector&amp;lt;pair&amp;lt;pair&amp;lt;string,int&amp;gt;,string&amp;gt; &amp;gt; vx(n);
-vector&amp;lt;string &amp;gt; ans(n);
-FORE(i,0,kings.size()){
-string tmp1,tmp2;
-stringstream out(kings[i]);
-out&amp;gt;&amp;gt;tmp1;
-out&amp;gt;&amp;gt;tmp2;
-vx[i].first.first=tmp1;
-vx[i].first.second=calc(tmp2);
-vx[i].second=kings[i];
-}
-sort(vx.begin(),vx.end());
-FORE(i,0,n)ans[i]=vx[i].second;
-return ans;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11740&amp;amp;rd=14722 王様の名前が与えられ、順番に並べる。 名前はアルファベットの連続とＩ，ＩIの数字で与えられ、アルファベットの昇順、同じ場合はＩ，ＩIの小</description>
     </item>
     
     <item>
@@ -870,45 +206,7 @@ return ans;
       <pubDate>Sun, 14 Jul 2013 09:09:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm576-div2--level2/</guid>
-      <description>問題 
-①２次元の配列が与えられる。
-②配列には”Ｘ”で表わされる床が存在する。一番下は全て床になっている。
-③また、コインのある座標が与えられる。
-④ユーザは一番下の床からスタートし、任意の長さの梯子を使って床へ移動し、コインを獲得する。
-⑤このとき、必要となる最小の梯子の長さを求める。
-解き方 
-問題の性質から、２分探索が思い浮かぶ。
-ただ高さの上限が少ないので、単純に小さい数からループさせてもよい。
-Ｃｈａｌｌｅｎｇｅのポイント
-また、移動の判定とキューへのスタックがかなりの計算量になるので、
-一度行ったことのある例外判定をきちんと行う必要がある。
-たとえばコード中の以下など。
-if(check[i][j]==1)continue;
-コード 
-class ArcadeManao {
-public: int shortestLadder(vector&amp;lt;string&amp;gt; level, int coinRow, int coinColumn) {
-int h=level.size(),w=level[0].size();
-int check[h][w];
-int low=0,high=h;
-for(int L=0;L&amp;lt;100;L++){
-queue &amp;lt;pair &amp;lt;int, int&amp;gt; &amp;gt; q;
-q.push(make_pair(coinRow-1,coinColumn-1));
-int flag=0;
-FORE(i,0,h)FORE(j,0,w)check[i][j]=0;
-while(!q.empty()){
-int i=q.front().first;
-int j=q.front().second;
-q.pop();
-if(check[i][j]==1)continue;
-if(i==h-1){
-flag=1;
-break;
-}
-while(j-1&amp;gt;=0 &amp;amp;&amp;amp; level[i][j-1]==&#39;X&#39;)j--;
-for(int cur=j;level[i][cur]==&#39;X&#39;;cur++){
-check[i][cur]=1;
-for(int up=i;up&amp;gt;=max(0,i-L);up--)
-if(check[up][cur]==0 &amp;amp;&amp;amp; level[up][cur]==&#39;X&#39;)q.push(make_pair(up,cur));</description>
+      <description>問題 ①２次元の配列が与えられる。 ②配列には”Ｘ”で表わされる床が存在する。一番下は全て床になっている。 ③また、コインのある座標が与えられる。</description>
     </item>
     
   </channel>

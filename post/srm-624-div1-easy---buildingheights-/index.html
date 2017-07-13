@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 624 DIV1 Easy - BuildingHeights (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13211&amp;rd=15857
-・様々な高さを持つ建物が与えられる。
-・建物の高さを１変えるのにコストが１かかる。
-・同じ建物がｍ個必ずあるようにしたい。
-・建物の数をｎとしたとき、ｍは１～ｎすべての値としてそれぞれの最小コストのXORを求める。
-解き方 
-・ｍを１～ｎそれぞれについて調べることとし、各建物の長さについて答えを求める。
-・求め方として２分探索？でも最小値を求めるので使えなさそう。
-・全探索では4000*4000*4000かかりそう。
-→他の人のコードをみてみる
-・ｍを固定した時、どの長さにするかは各建物の元々の長さにすればよい、、ことを単純ながら見落としてしまった。
-・あとは各建物の長さに固定した時のコスト計算をO(１)とするために、累積和をとっておけばよい。
-・反省：最適解探索の検討がまだまだ足りない。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BuildingHeights {
-public:
-int minimum(vector&lt;int&gt; heights) {
-int n=heights.size();
-sort(all(heights));
-int sum[n&#43;1];
-sum[0]=0;
-FORE(i,1,n&#43;1)sum[i]=sum[i-1]&#43;heights[i-1];
-int ret=0;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13211&amp;rd=15857 ・様々な高さを持つ建物が与えられる。 ・建物の高さを１変えるのにコストが１かかる。 ・同じ建物がｍ個必ずあるようにしたい。 ・建物の数をｎと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-624-div1-easy---buildingheights-/" />
 

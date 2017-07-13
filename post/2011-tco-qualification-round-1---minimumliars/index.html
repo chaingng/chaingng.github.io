@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2011 TCO Qualification Round 1 - MinimumLiars" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11414&amp;rd=14524
-・複数の人が存在し、それぞれそのグループに何人以上嘘つきがいるかと言っているかの
-&nbsp;liarの値がわかっている。
-・誰が嘘つきかはわからないが、矛盾しないように嘘つきが何人いるかを求める。
-複数の可能性がある場合は、そのうち最小の人数を求める。
-また、あらゆるケースで矛盾する場合は-1を返す。
-解き方 
-・liarの値は最大で100、人数の最大は50であるため全探索ができそう。
-・よって嘘つきの人数を0～100人までと固定し、その時の嘘つきの数を数えて
-一致するものが矛盾しないケースとなる。
-そのうち、最小のものを返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class MinimumLiars {
-public: int getMinimum(vector&lt;int&gt; claim) {
-int n=claim.size();
-int ret=1e&#43;9;
-FORE(i,0,101){
-int tmp=0;
-FORE(j,0,n)if(claim[j]&gt;i)tmp&#43;&#43;;
-if(i==tmp)ret=min(ret,i);
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11414&amp;rd=14524 ・複数の人が存在し、それぞれそのグループに何人以上嘘つきがいるかと言っているかの &nbsp;liarの値がわかっている。 ・誰が嘘つきか" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2011-tco-qualification-round-1---minimumliars/" />
 

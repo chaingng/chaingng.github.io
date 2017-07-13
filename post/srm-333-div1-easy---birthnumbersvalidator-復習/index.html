@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 333 DIV1 Easy - BirthNumbersValidator (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7291&amp;rd=10657
-誕生日を表わす１０桁の数字が与えられる。
-その数字を&#34;YYMMDDCCCC&#34;とすると、以下で表わされる。
-ＹＹが１９０７～２００６までの西暦の下２桁。
-うるう年も存在する。うるう年は４００で割れるか、４で割れて１００で割れない年。
-ＭＭが月であり、ＭＭは女性の場合に限り５１～６２の範囲になる。
-ＤＤが日付。
-ＣＣＣＣはチェックサムで、１０ケタの数字を１１で割った余りが０になるようになっている。
-このとき、与えられた数字が有効であればＹＥＳを、無効な数字であればＮＯを返す。
-解き方 
-シミュレーション問題なので以下にシンプルに解くか。
-今回の実装のポイントは３つ。
-・各条件の判定には関数を用いる
-・月の判定には配列を用いる。
-・ＹＥＳ，ＮＯの判定にはbool値を定義し、andを取って判定する。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BirthNumbersValidator {
-public:
-long long calc(string str){
-stringstream out(str);
-long long num;
-out&gt;&gt;num;
-return num;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7291&amp;rd=10657 誕生日を表わす１０桁の数字が与えられる。 その数字を&#34;YYMMDDCCCC&#34;とすると、以下で表わされる。 ＹＹが１９０７～２００６までの西" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/" />
 

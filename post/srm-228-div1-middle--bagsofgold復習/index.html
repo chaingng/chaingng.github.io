@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 228 DIV1 Middle -BagsOfGold　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=768
-ゴールドの山が順に並んでいる。
-あらかじめ、それぞれの山にどれだけゴールドがあるかわかっている。
-２人でこのゴールドの山の取りあいを行い、最初は自分のターン。
-左端か右端のいずれかを選び、相手のターンに移る。
-どちらも最適な選択をしたとき、自分が得られるゴールドと相手が得られるゴールドの差の最大値を求める。
-解き方 
-ｄｐの問題だが、自分のターンと相手のターンで選び方が異なる。
-ターンの区別をなくし、次のターンは必ず相手は最善の選び方をすると考える。
-そうすると、左端を選んだときに左端のスコアから相手が得られる最大のゴールドを引いたものと、右端を選んだときに右はじのスコアと相手から得られる最大のゴールドを引いたもののうち、最大のものを返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-vector&lt;int&gt; b;
-int dp[51][51];
-class BagsOfGold {
-public:
-int calc(int left,int right){
-if(left==right)return b[left];
-if(dp[left][right]!=-1)return dp[left][right];
-return dp[left][right]=max(b[left]-calc(left&#43;1,right),b[right]-calc(left,right-1));
-}" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=768 ゴールドの山が順に並んでいる。 あらかじめ、それぞれの山にどれだけゴールドがあるかわかっている。 ２人でこのゴールドの山の取りあいを行い、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-228-div1-middle--bagsofgold%E5%BE%A9%E7%BF%92/" />
 

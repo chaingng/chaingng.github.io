@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 619 DIV1 Easy - SplitStoneGame (××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13113&amp;rd=15852
-・積み重ねられた石の山が複数存在する。
-・それぞれの山について、あらかじめいくつ石が積み重ねられているかわかっている。
-・現在の石の山から１つ選んで２つに分け、また別の山を２つ選んで振り分ける。
-・２つに分ける方法として、片方が０にならなければどのように分けてもよい。
-・上記のゲームを2人で交互に行い、分けられなくなった場合は負けになる。
-・このとき、最初のプレイヤーが勝つときはWIN,、負けるときはLOSEを返す。
-解き方 
-・サンプルと問題文からダメなパターンをみてみる。
-・まず、石の山が２つ以下の場合は必ず負ける。
-・また、全ての石の山が１のときは動かせないので必ず負ける。
-・それ以外のときとして、山が３つの時は必ず２つにできるので勝つ。
-・山が４つのときは必ず３つ→２つになるので負けてしまう。
-・よって、最初が全て１でなければ山を一つずつ必ず減らすことができる。
-・まとめると、石の山が２つ以下またはすべて１のときは負け、
-そうでないときは山の数が奇数のときは勝ち、偶数のときは負ける。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SplitStoneGame {
-public: string winOrLose(vector&lt;int&gt; number) {
-int n=number.size();
-int flag=1;
-FORE(i,0,n)if(number[i]!=1)flag=0;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13113&amp;rd=15852 ・積み重ねられた石の山が複数存在する。 ・それぞれの山について、あらかじめいくつ石が積み重ねられているかわかっている。 ・現在の石の山から" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-619-div1-easy---splitstonegame-/" />
 

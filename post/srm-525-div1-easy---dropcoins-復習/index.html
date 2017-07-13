@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 525 DIV1 Easy - DropCoins （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11665&amp;rd=14550
-四角形のセルに複数コインがある。
-１回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。
-コインの数Ｋが与えられた時、コインを落としてＫ個にできるとき最小の操作回数を返す。できないときはー１を返す。
-解き方 
-全探索で上下左右に動いた時のコインのマスを保存して重複しないようにすればよいと思いつくが、少し複雑。
-「最後に残るコインのマスはかならず四角形になる」ことがわかれば、
-四角形からすべてのサブ四角形を求め、その四角形にあるコインの数がＫに一致したものが答えの候補になる。
-そのときの移動回数は縦横それぞれに対し、角の位置＋戻るために２つのうち最小の角の位置を足してあげればよい。
-コード 
-class DropCoins {
-public: int getMinimum(vector&lt;string&gt; board, int K) {
-int INF=1e&#43;8, ret=INF;
-int h=board.size(),w=board[0].size();
-for(int x0=0;x0&lt;h;x0&#43;&#43;){
-for(int y0=0;y0&lt;w;y0&#43;&#43;){
-for(int x1=x0&#43;1;x1&lt;=h;x1&#43;&#43;){
-for(int y1=y0;y1&lt;=w;y1&#43;&#43;){
-int coin=0;
-FORE(a,x0,x1)FORE(b,y0,y1)if(board[a][b]==&#39;o&#39;)coin&#43;&#43;;
-if(coin!=K)continue;
-int a=x0,b=h-x1,c=y0,d=w-y1;
-ret=min(ret,a&#43;b&#43;c&#43;d&#43;min(a,b)&#43;min(c,d));
-}
-}
-}
-}
-return ret==INF ? -1 : ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11665&amp;rd=14550 四角形のセルに複数コインがある。 １回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。 コインの数Ｋ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/" />
 

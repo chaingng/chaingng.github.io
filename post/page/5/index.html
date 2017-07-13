@@ -77,28 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13858&amp;rd=16511
-解き方 
-Dが1000までなので、Dを固定することで解けそう。
-ただ、Dをできるだけ小さくするということは、並べ方は以下の通り
-一意に定まる。
-要はh[i]の小さい順に0,1,2,3,4...とすると、単に0から左右に順に並べていけば良い。
-3 1 0 2 4...となる。
-コード 
-class FoxesOfTheRoundTable {
-public: vector&lt;int&gt; minimalDifference(vector&lt;int&gt; h) {
-int n=h.size();
-vector&lt;pair&lt;int,int&gt; &gt; p;
-FORE(i,0,n)p.push_back(make_pair(h[i],i));
-sort(all(p));
-vector&lt;int&gt; ans;
-int end = n%2 ? n-2 : n-1;
-for(int i=end;i&gt;0;i-=2)ans.push_back(p[i].second);
-for(int i=0;i&lt;n;i+=2)ans.push_back(p[i].second);
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13858&amp;rd=16511 解き方 Dが1000までなので、Dを固定することで解けそう。 ただ、Dをできるだけ小さくするということは、並べ方は以下の通り 一意に定まる。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-662-div1-easy---foxesoftheroundtable-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -115,38 +97,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13778&amp;rd=16500
-解き方 
-dpで解く。
-dp[現在の位置][現在が1か0か][1が最初から連続しているかのフラグ]とする。
-現在のビット０になったとき、
-１が最初から連続していれば１回の操作が必要で、
-連続していなければ２回の操作が必要になる。
-#英出張中で出れなかったが、日本だと出場しやすい時間だったので出たかった…
-コード 
-class Bitwisdom {
-public: double expectedActions(vector&lt;int&gt; p) {
-int n=p.size();
-double dp[301][2][2];
-memset(dp,0,sizeof(dp));
-double ret=0;
-dp[0][0][0]=(100-p[0])*0.01;
-dp[0][1][1]=p[0]*0.01;
-for(int i=1;i&lt;n;i++){
-ret+=dp[i-1][1][0]*(100-p[i])*0.02;
-ret+=dp[i-1][1][1]*(100-p[i])*0.01;
-dp[i][0][0]+=dp[i-1][0][0]*(100-p[i])*0.01;
-dp[i][0][0]+=dp[i-1][1][0]*(100-p[i])*0.01;
-dp[i][0][0]+=dp[i-1][1][1]*(100-p[i])*0.01;
-dp[i][1][0]+=dp[i-1][0][0]*p[i]*0.01;
-dp[i][1][0]+=dp[i-1][1][0]*p[i]*0.01;
-dp[i][1][1]+=dp[i-1][1][1]*p[i]*0.01;
-}
-ret+=dp[n-1][1][1]+dp[n-1][1][0];
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13778&amp;rd=16500 解き方 dpで解く。 dp[現在の位置][現在が1か0か][1が最初から連続しているかのフラグ]とする。 現在のビット０になったとき、 １が最
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2015-tco-round-2b-easy---bitwisdom/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -163,33 +117,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12706&amp;rd=15700
-解き方 
-どの範囲のトーンを利用するか、という情報がわかれば
-あとはその範囲内のトーンについてdurationが小さい順に選んでいけばよい。
-コード 
-class GUMIAndSongsDiv1 {
-public: int maxSongs(vector&lt;int&gt; duration, vector&lt;int&gt; tone, int T) {
-int n=duration.size();
-vector&lt;pair&lt;int,int&gt; &gt; p;
-FORE(i,0,n)p.push_back(make_pair(tone[i],duration[i]));
-sort(all(p));
-int ret=0;
-FORE(i,0,n)FORE(j,i,n){
-vector&lt;int&gt; vx;
-for(int k=i;k&lt;=j;k++)vx.push_back(p[k].second);
-sort(all(vx));
-int tt=T-(p[j].first-p[i].first);
-for(int k=0;k&lt;vx.size();k++){
-tt-=vx[k];
-if(tt&lt;0)break;
-ret=max(ret,k+1);
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12706&amp;rd=15700 解き方 どの範囲のトーンを利用するか、という情報がわかれば あとはその範囲内のトーンについてdurationが小さい順に選んでいけばよい。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-588-div1-easy---gumiandsongsdiv1/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -206,28 +137,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12758&amp;rd=15704
-解き方 
-問題文を、最終的にボールを置いた位置の状態にすると勘違いしてしまった。
-ボールが左から順に与えられて、それを任意の位置に配置する、という
-問題になる。
-RGBそれぞれについて最初に出た時は左側に、次に出た時は右側においていけば
-各色についてスコアは最初に出現した時は１、それ以降は２となる。
-コード 
-class LittleElephantAndBalls {
-public: int getNumber(string S) {
-int ret=0;
-int r=0,g=0,b=0;
-FORE(i,0,S.size()){
-ret+=min(r,2)+min(g,2)+min(b,2);
-if(S[i]=='R')r++;
-else if(S[i]=='G')g++;
-else b++;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12758&amp;rd=15704 解き方 問題文を、最終的にボールを置いた位置の状態にすると勘違いしてしまった。 ボールが左から順に与えられて、それを任意の位置に配置する、
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-592-div1-easy---littleelephantandballs/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -244,41 +157,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12730&amp;rd=15701
-解き方 
-回文にするために一致させなければならアルファベットの集合を考えた時、
-もっとも出現回数の大きいものだけを残して、他を変換するのが
-一番コストをおさえられる。
-あとは、上記の集合をしらべるのに無向グラフを利用すればよい。
-コード 
-class GooseTattarrattatDiv1 {
-public: int getmin(string S) {
-int n=S.size();
-int d[26][26],num[26],used[26];
-memset(num,0,sizeof(num));
-FORE(i,0,n)num[S[i]-'a']++;
-memset(d,0,sizeof(d));
-for(int i=0;i&lt;n/2;i++){
-d[S[i]-'a'][S[n-1-i]-'a']=1;
-d[S[n-1-i]-'a'][S[i]-'a']=1;
-}
-FORE(k,0,26)FORE(i,0,26)FORE(j,0,26)d[i][j]|=(d[i][k] &amp;&amp; d[k][j]);
-int ret=0;
-memset(used,0,sizeof(used));
-FORE(i,0,26)if(!used[i]){
-used[i]=1;
-int sum=num[i],mx=num[i];
-FORE(j,0,26)if(i!=j &amp;&amp; d[i][j]){
-mx=max(mx,num[j]);
-sum+=num[j];
-used[j]=1;
-}
-ret+=sum-mx;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12730&amp;rd=15701 解き方 回文にするために一致させなければならアルファベットの集合を考えた時、 もっとも出現回数の大きいものだけを残して、他を変換するのが 一
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-589-div1-easy---goosetattarrattatdiv1-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -295,30 +177,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12300&amp;rd=15699
-解き方 
-最初はすべてのターンでジャンプし、そのときbadStepに当たらなければ
-それが最大の答えとなる。
-badStepにあたった時、最初の１ステップだけ待てばbadStepに当たらなくなるので
-それが答えになる。
-コード 
-class JumpFurther {
-public: int furthest(int N, int badStep) {
-int valid=1;
-int cur=0;
-for(int i=1;i&lt;=N;i++){
-cur+=i;
-if(cur==badStep)valid=0;
-}
-if(valid)return cur;
-cur=0;
-for(int i=2;i&lt;=N;i++){
-cur+=i;
-}
-return cur;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12300&amp;rd=15699 解き方 最初はすべてのターンでジャンプし、そのときbadStepに当たらなければ それが最大の答えとなる。 badStepにあたった時、最初
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-587-div1-easy---jumpfurther-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -335,40 +197,10 @@ return cur;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12725&amp;rd=15702
-解き方 
-左にある要素から順に、
-①アルファベットが一致するか
-②Lならばbeginの方が右側にあるか
-③Rならばbeginの方が左側にあるか
-を調べていき、すべて満たすかどうかを判定すれば良い。
-コード 
-class FoxAndChess {
-public: string ableToMove(string begin, string target) {
-int n=begin.size();
-while(1){
-int finish=1;
-FORE(i,0,n)if(begin[i]!='.' || target[i]!='.')finish=0;
-if(finish)break;
-int idx1=-1,idx2=-1;
-char ch1='*',ch2='*';
-FORE(i,0,n)if(begin[i]!='.'){
-ch1=begin[i],idx1=i;
-break;
-}
-FORE(i,0,n)if(target[i]!='.'){
-ch2=target[i],idx2=i;
-break;
-}
-if(ch1!=ch2)return "Impossible";
-if(ch1=='L' &amp;&amp; idx1&lt;idx2)return "Impossible";
-if(ch1=='R' &amp;&amp; idx1&gt;idx2)return "Impossible";
-begin[idx1]='.',target[idx2]='.';
-}
-return "Possible";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12725&amp;rd=15702 解き方 左にある要素から順に、 ①アルファベットが一致するか ②Lならばbeginの方が右側にあるか ③Rならばbeginの方が左側にあるか を
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-590-div1-easy---foxandchess-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -385,32 +217,7 @@ return "Possible";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12146&amp;rd=15174
-解き方 
-法則を導き出しても解けるが、少し複雑なことに気づけば
-2分探索するのが確実。
-N=1のときは必要なボールの数の計算が例外値となるので別に判定するのに注意。
-コード 
-class FoxPaintingBalls {
-public: long long theMax(long long R, long long G, long long B, int N) {
-if(N==1)return R+G+B;
-long long sum=(long long)N*(N+1)/2LL;
-long long one=(long long)N*(N+1)/6LL;
-if((N%3)!=1){
-return min(R,min(G,B))/one;
-}
-long long low=0,high=max(R,max(G,B));
-while(high-low&gt;1){
-long long mid=(low+high)/2LL;
-if( min(R,min(G,B))/one&gt;=mid &amp;&amp; (R+G+B)/sum&gt;=mid)low=mid;
-else high=mid;
-}
-return low;
-/*if(N==1)return R+G+B;
-long long num=(long long)N*(N+1)/6;
-if(N%3==1)return min(min(R,min(G,B))/num,(R+G+B)/((long long)N*(N+1)/2) );
-return min(R,min(G,B))/num ;*/
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12146&amp;rd=15174 解き方 法則を導き出しても解けるが、少し複雑なことに気づけば 2分探索するのが確実。 N=1のときは必要なボールの数の計算が例外値となるので
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-552-div1-easy---foxpaintingballs/">Read more…</a>
@@ -430,29 +237,10 @@ return min(R,min(G,B))/num ;*/
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11476&amp;rd=14539
-解き方 
-(1,n)と(1,-n)の動作により現在のマスから２つ上下に移動したマスには
-必ず到達することができる。
-ここで、jumpTypesが偶数のとき、（ｘ，ｙ）が
-（偶数、偶数）→上記より可能　（奇数、奇数）→(1,n) (n,1)により可能
-（偶数、奇数）→(n,1)により可能
-よってすべての（ｘ，ｙ）に到達可能。
-jumpTypesが奇数のときは、
-（偶数、偶数）→上記より可能　（奇数、奇数）→(1,n) により可能
-（偶数、奇数）→不可能
-よって（ｘ，ｙ）が（偶数、奇数）のときだけ不可能となる。
-
-コード 
-class MagicalGirlLevelOneDivOne {
-public: string isReachable(vector&lt;int&gt; jumpTypes, int x, int y) {
-int n=jumpTypes.size();
-FORE(i,0,n)if(jumpTypes[i]%2==0)return "YES";
-if((x+y)%2==0)return "YES";
-return "NO";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11476&amp;rd=14539 解き方 (1,n)と(1,-n)の動作により現在のマスから２つ上下に移動したマスには 必ず到達することができる。 ここで、jumpTypes
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-514-div1-easy---magicalgirllevelonedivone/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -469,42 +257,10 @@ return "NO";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11842&amp;rd=14732
-解き方 
-上限と下限を決めるのに、最初の数字は増加列になる。
-a(i)=s*a0+t、(初項はs=1,t=0)とする。
-+が現れた時、そのときの数字B[i]について
-a(i)+a(i+1)=B[i]となるので
-a(i+1)=-s*a0+B[i]-tとなり、このとき切片が上限となる。
-同様に-が現れた時、a(i)-a(i+1)=B[i]から
-a(i+1)=s*a0+t-B[i]となり、このとき切片が下限となる。
-以上の条件を満たしていくことで上下限が求められる。
-コード 
-class ImportantSequence {
-public: int getCount(vector&lt;int&gt; B, string operators) {
-int n=B.size();
-long long s=1,t=0;
-long long low=0,high=LONG_MAX;
-FORE(i,0,n+1){
-if(s==1){
-low=max(low,-t);
-}else{
-high=min(high,t);
-}
-if(i==n)break;
-if(operators[i]=='+'){
-s*=-1;
-t=B[i]-t;
-}else{
-t=t-B[i];
-}
-}
-if(high==LONG_MAX)return -1;
-if(low&gt;=high)return 0;
-return high-low-1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11842&amp;rd=14732 解き方 上限と下限を決めるのに、最初の数字は増加列になる。 a(i)=s*a0+t、(初項はs=1,t=0)とする。 +が現れた時、そのとき
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-540-div1-easy---importantsequence/">Read more…</a>
 		</div>
 	</div>
 </article>

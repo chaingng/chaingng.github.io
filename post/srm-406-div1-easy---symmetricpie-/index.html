@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 406 DIV1 Easy - SymmetricPie ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8784&amp;rd=12178
-パイチャートを作り、各要素が全体の何％を占めるかわかっている。
-このパイチャートを作るにあたって、できるだけ区切りの線が真ん中を
-横断するようにしたい。
-要素我与えられたとき、すべての作り方の中で
-最大となる区切りの線の数を求める。
-解き方 
-区切りの線はある線からちょうど５０％分のパイを並べたときに
-作ることができる。
-また、要素数は８のためすべての並べ方について調べることができる。
-よって、各並べ方の部分列の和が５０となるものの和が区切りの和となるので
-そのようなうち最大のものを答えとする。
-ただし、最初から５０％をとったとき、残りも５０％となり重複してしまうので
-このケースだけ１つしか数え内容にする。
-コード 
-class SymmetricPie {
-public: int getLines(vector&lt;int&gt; dogs) {
-int n=dogs.size();
-int ret=0;
-sort(all(dogs));
-do{
-int score=0;
-FORE(i,0,n){
-int tmp=0;
-FORE(j,i,n)if(tmp&lt;50)tmp&#43;=dogs[j];
-if(tmp==50 &amp;&amp; i!=0)score&#43;&#43;;
-}
-ret=max(ret,score);
-}while(next_permutation(all(dogs)));
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8784&amp;rd=12178 パイチャートを作り、各要素が全体の何％を占めるかわかっている。 このパイチャートを作るにあたって、できるだけ区切りの線が真ん中を 横断する" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-406-div1-easy---symmetricpie-/" />
 

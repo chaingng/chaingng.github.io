@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 596 DIV2 Middle - ColorfulRoad (○○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12837
-複数のタイルからなる１列の道路があり、各タイルは赤、緑、青のいずれかの色が塗られている。
-また、最初のタイルは赤色である。
-このタイルからスタートし、赤→緑→青→赤・・・の順で右側にあるタイルにジャンプできる。
-ただし、ジャンプしたときにその距離の２乗のコストがかかる。
-このとき、ゴールまで到達するのに最小のコストを求める。
-ゴールまでたどり着けない場合は－1を返す。
-解き方 
-単純なｄｐで解ける。
-道路の配列を文字列から０～２で現すようにしてあげれば
-場合分けも簡単になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class ColorfulRoad {
-public: int getMin(string road) {
-int n=road.size();
-int R[n];
-memset(R,0,sizeof(R));
-FORE(i,0,n){
-if(road[i]==&#39;G&#39;)R[i]=1;
-else if(road[i]==&#39;B&#39;)R[i]=2;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12837 複数のタイルからなる１列の道路があり、各タイルは赤、緑、青のいずれかの色が塗られている。 また、最初のタイルは赤色である。 このタイルから" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-596-div2-middle---colorfulroad-/" />
 

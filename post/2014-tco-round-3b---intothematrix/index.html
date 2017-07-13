@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Round 3B - IntoTheMatrix" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13066&amp;rd=16058
-N種類のピルがあり、どれがマジックピルかを判別したい。
-判別するのに友人に協力してもらうことができ、マジックピルを飲んだ友人は消えてしまう。
-協力してもらうターン数turnsが与えられた時、最低限必要な友人の数を求める。
-解き方 
-・問題文から、ターンと友人の数により判別できるピルの数を列挙してみる
-・問題文の誘導からか、なんとなくはまってしまう。
-・他の人のコードを読む
-・要は、人数とターンにより表わされる状態数が判別できるピルの数
-・例えば１ターンでA,Bがいるときは、{ABが残る}、{Aだけ残る}、{Bだけ残る}、{両方消える}の４通り
-・友人の数を固定すると、１人のとき1ターンで２通り、２ターンで３通り・・・Tターンで（T&#43;1）通り
-・よって、友人の数を０から増やしていき、（T&#43;1)＾友人の数がN以上となるところが答え
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class IntoTheMatrix {
-public: int takePills(int turns, int N) {
-int F=0;
-long long x=1;
-while(x&lt;(long long)N){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13066&amp;rd=16058 N種類のピルがあり、どれがマジックピルかを判別したい。 判別するのに友人に協力してもらうことができ、マジックピルを飲んだ友人は消えてしま" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-round-3b---intothematrix/" />
 

@@ -77,32 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11211&amp;rd=14242
-２つのボールを捨てて、新しくボールを作るマシーンがある。２つのボールのタイプがi、jとすると、
-新しく作られるボールはパターンc[i][j]もしくはc[j][i]となる。
-このとき、最初に入っているボールがわかっているときに結果が変わらないパターンであればＧｏｏｄ、そうでなければＢａｄを返す。
-解き方 
-問題文を理解するのが難しかった。
-要は、任意の３つのボールに対して結合法則が成り立つかどうかを全てのタイプに対して調べればよい。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BallsConverter {
-public:
-int f(char ch){
-if('A'&lt;=ch&amp;&amp;ch&lt;='Z')return ch-'A';
-else return ch-'a'+26;
-}
-string theGood(vector&lt;string&gt; c) {
-int n=c.size();
-FORE(i,0,n)FORE(j,0,n)FORE(k,0,n)if(c[f(c[i][j])][k]!=c[i][f(c[j][k])])return "Bad";
-return "Good";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11211&amp;rd=14242 ２つのボールを捨てて、新しくボールを作るマシーンがある。２つのボールのタイプがi、jとすると、 新しく作られるボールはパターンc[i][
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-489-div1-easy---ballsconverter-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -119,28 +97,7 @@ return "Good";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11227&amp;rd=14243
-Ｍ秒間隔でスペースシャトルが到着し、Ｎ秒間隔でテレポートが始まる。
-スペースシャトルが到着したときにテレポート間隔とぴったりでなければ、次のテレポート時間まで待つ。
-このとき、待ち時間の平均時間を求める。
-解き方 
-数学的に解く問題。
-サンプルを元に計算すると、
-N=10 M=4 (gcd=2 lcm=20)M:4 8 12 16 20 24 28 32 36 40 44N: &nbsp; &nbsp;10 &nbsp; &nbsp; &nbsp; 20 &nbsp; &nbsp; &nbsp; 30 &nbsp; &nbsp; &nbsp; &nbsp; 40 50 60 70
-１サイクルの待ち時間 T=6+2+8+4+0=20となる。
-また、要素数はlcm/Mとなることがわかる。
-また要素をgcdにて割ると、
-M':2 4 6 8 10&nbsp;N': &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp;10 &nbsp;
-１サイクルの待ち時間はT=gcd*(3+1+4+2+0)
-また、0,1,...N'-1のすべての要素が出現することがわかる。
-つまり、合計待ち時間T、要素数Kと答えとなるT/Kは以下のように計算できる。
-T=gcd*N'*(N'-1)/2
-&nbsp; =gcd*(N/gcd)(N/gcd-1)/2
-&nbsp; =N(N/gcd-1)/2
-K=lcm/M=N/gcd
-T/K= (N(N/gcd-1)/2) &nbsp;/(N/gcd)
-&nbsp; &nbsp; &nbsp;= (N(N/gcd-1)*gcd) &nbsp;/(N*2)
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11227&amp;rd=14243 Ｍ秒間隔でスペースシャトルが到着し、Ｎ秒間隔でテレポートが始まる。 スペースシャトルが到着したときにテレポート間隔とぴったりでなければ、
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -160,35 +117,7 @@ T/K= (N(N/gcd-1)/2) &nbsp;/(N/gcd)
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11292&amp;rd=14422
-番号が１から始まる長さＮの列に、ひとつだけ白い石が置かれている。
-そのほかの場所には黒い石が置かれている。
-ここで２人のプレイヤーでゲームを行い、連続してＫ個の石を選びその順番をひっくりかえす。
-ただし、選んだ中には白い石がなければならない。
-プレイヤーは交互にプレイする。最初はRomeoの番で、次はStrangletの番。
-このとき、勝つ方のプレイヤーの名前を返す。
-ただし、決着がつかない場合はDrawを返す。
-解き方 
-石の場所とゴールの場所が与えられた時に勝ちかどうかを判定できる関数を正確に作ることができるか。
-関数は以下の条件で作成できる。
-・ゴールと初期位置の差とＫ＋１の偶奇が一致しているか
-・ゴールと初期位置の差がＫ未満であるか
-・ひっくり返すＫの選び方が、列におさまるか
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class StonesGame {
-public:
-bool can(int N,int M,int K,int L){
-if(M&gt;L)swap(M,L);
-if(L-M&gt;=K)return 0;
-if(K%2==0){
-if(abs(M-L)%2==0)return false;
-int len=(K-abs(L-M)-1)/2;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11292&amp;rd=14422 番号が１から始まる長さＮの列に、ひとつだけ白い石が置かれている。 そのほかの場所には黒い石が置かれている。 ここで２人のプレイヤーでゲーム
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -208,46 +137,7 @@ int len=(K-abs(L-M)-1)/2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12867&amp;rd=15711
-・最初は１から始まり、Ａ＾Ｂとなる数にしたい。
-・操作方法は、素数をかけるか、現在の数の約数をかけるかの２通り。
-このとき、最小の操作回数を求める。
-解き方 
-サンプルを例に素因数分解してみる。
-Ａ＝360、Ｂ＝8のとき、
-Ａ＝2＾3＋3＾2＋5
-Ａ＾Ｂ＝2＾24＋3^16＋5＾8
-ここで、最も大きい階乗２４に対して2^K&gt;=24となるＫを考えた時
-素因数の数＋Ｋが答えになることがわかる。
-コード 
-class BigFatInteger {
-public: int minOperations(int A, int B) {
-int x0=0;
-int x1=0;
-for(int i=2;i&lt;=A;i++){
-int cnt=0;
-while(A%i==0){
-A/=i;
-cnt++;
-}
-if(cnt==0)continue;
-x0++;
-cnt*=B;
-int p=1,tmp=0;
-while(p&lt;cnt){
-p*=2;
-tmp++;
-}
-x1=max(x1,tmp);
-}
-return x0+x1;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i !
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12867&amp;rd=15711 ・最初は１から始まり、Ａ＾Ｂとなる数にしたい。 ・操作方法は、素数をかけるか、現在の数の約数をかけるかの２通り。 このとき、最小の操作回数
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-599-div1-easy---bigfatinteger-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -267,41 +157,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12917&amp;rd=15837
-ロボットが座標（０，０）からスタートし、４方向に移動する。
-ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。
-移動したい座標（ｘ、ｙ）が与えられた時、その座標に移動できるなら”Possible”、移動できないなら"Impossible"を返す。
-解き方 
-足し引きできる数は３の階乗なので、
-ビット計算に落とし込むことで解くことができる。
-座標の正負は関係ないので正の座標に変換し、
-例としてサンプルの一つを３進数で考えると以下のように変換できる。
-ｘ座標：１＝００１
-ｙ座標：９＝１００
-ここで３の階乗を足していくステップは、
-３進数の右から考えていくと毎回ｘ、ｙのどちらかの数を引くことと同じになる。
-ここでどちらかが１であればよいが、
-どちらも０、もしくはどちらも１であれば”Impossible”になる。
-途中でｘ＝０、ｙ＝０になれば"Possible"で終了になる。
-コード 
-class PowerOfThree {
-public:
-string ableToGet(int x, int y) {
-x=abs(x);
-y=abs(y);
-while(!(x==0&amp;&amp;y==0)){
-if(x%3==0&amp;&amp;y%3==0)return "Impossible";
-if(x%3!=0&amp;&amp;y%3!=0)return "Impossible";
-if(x%3==1)x--;
-if(x%3==2)x++;
-if(y%3==1)y--;
-if(y%3==2)y++;
-x/=3,y/=3;
-}
-return "Possible";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12917&amp;rd=15837 ロボットが座標（０，０）からスタートし、４方向に移動する。 ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。 移動し
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-604-div1-easy---powerofthree-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -318,40 +177,7 @@ return "Possible";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10408&amp;rd=13747
-N個のボトルがあり、最初は１Ｌだけ水が入っている。
-ここで同じ量だけ水が入っているボトルを選んで、一つのボトルに水をまとめることができる。
-このとき、水が入っているボトルをＫ個以下にしたい。
-ただし現在のボトル数ではＫ個以下にできない場合は、ボトルを追加で買うことができる。
-このとき、水が入っているボトルをＫ個以下にしたいときに、追加で必要なボトルの最小数を求める。
-解き方 
-ぱっと見た感じだと解法が思い浮かばないので、ボトル数の計算を式に落とせないか考えてみる。
-ここで、１個、２個、４個、８個・・・のボトルは一つにまとめられることから
-２＾Ｋ個のボトルは１つにまとめることができる。
-次に例をあげてみると、
-１５＝２＾３＋＋２＾２＋２＾１＋１のように変換することができる。
-上記の式を眺めてみると、ボトルの数は２進数に変換したときの１の数と等しい
-ことがわかる。
-次にボトルを減らしたいときに買うべきボトルの数を、先の例を使って考える。
-１５＝１１１１であり、ボトルを１つ買うと
-１００００、つまりボトルが１つになる。
-つまり、右から走査し１が存在した時はその数を足し、
-ボトル数がＫ個以下になるまで繰り返してあげればよい。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PouringWater {
-public:
-int calc(int x){
-int ret=0;
-while(x&gt;0){
-ret+=x%2;
-x/=2;
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10408&amp;rd=13747 N個のボトルがあり、最初は１Ｌだけ水が入っている。 ここで同じ量だけ水が入っているボトルを選んで、一つのボトルに水をまとめることができる
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -371,29 +197,7 @@ x/=2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10341&amp;rd=13698
-間隔１で一列に高層ビルが並んでいる。
-高層ビルの上から他のビルをできるだけ多く見渡したい。
-他のビルを見渡すには、そのビルと他のビルの屋上を結んだときに間に他のビルがなければよい。
-このとき、一番多く見渡せるビルの数を求める。
-解き方 
-各ビルにおいて見渡せるビルの数を全探索する。
-最初は三平方の定理を使ってしまったが、座標の傾きを使えば簡単に他のビルがさえぎっているかどうかを判定することができる。
-aからbを見渡す時、uがさえぎっていないかを判定するには
-(h(u)-h(a))/(b-a) *x +h(a) &lt;= h(u) ここでx=(u-a)のときにビルuがさえぎってしまうので
-(h(u)-h(a))/(b-a) *(u-a) +h(a) &lt;= h(u) (h(u)-h(a))/(b-a) *(u-a) &lt;= h(u) -h(a)
-(h(u)-h(a)) *(u-a) &lt;= (h(u) -h(a)) *(b-a)
-この式で判定できる。
-見渡すビルを固定した時に他のビルを見渡せるかの判定については、
-最初順序を決めて左と右の走査と分けてしまったが
-間のビルがさえぎっていないかどうかだけを判定すればよいので
-それがわかればよりシンプルに実装することができる。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10341&amp;rd=13698 間隔１で一列に高層ビルが並んでいる。 高層ビルの上から他のビルをできるだけ多く見渡したい。 他のビルを見渡すには、そのビルと他のビルの屋上
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-436-div1-easy---bestview-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -413,34 +217,7 @@ aからbを見渡す時、uがさえぎっていないかを判定するには
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10155&amp;rd=13518
-１日あたりの日数Ｄと１年あたりの日数Ｙが与えられる。
-１年あたりの日数が１日あたりの日数で割り切れるのに必要な年数を求める。
-解き方 
-問題文がとにかく難しい。
-要は、必要な年数をＸとすると
-（Ｙ＊Ｘ）％Ｄ＝＝０となる最小のＸを求めればよい。
-ここでＹ％Ｄ＝aとすると、求めるxは
-（例）
-a=4,D=6のとき lcd=12 gcd=2となりx=3
-a=4,D=14のとき lcd=28 gcd=2となりx=7
-
-つまり、x=D/gcd(a,D)となる。
-例外処理として、aが割り切れる場合は答えは１となるのに注意。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class DesignCalendar {
-public:
-int gcd(int a,int b){
-if(a%b==0)return b;
-return gcd(b,a%b);
-}
-int shortestPeriod(int dayLength, int yearLength) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10155&amp;rd=13518 １日あたりの日数Ｄと１年あたりの日数Ｙが与えられる。 １年あたりの日数が１日あたりの日数で割り切れるのに必要な年数を求める。 解き方 問題文
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -460,36 +237,10 @@ int shortestPeriod(int dayLength, int yearLength) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10196&amp;rd=13517
-カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。
-シャッフル方法についてプレイヤーは知っている。
-プレイヤーがシャッフル後に受け取るカードの位置と、欲しいカードの枚数がわかっている。
-加えてシャッフル回数の最大はわかっているが、実際のシャッフルは１～最大回数のうちランダムな回数になる。
-このとき、欲しいカードを最適な場所においたときに、欲しいカードがもらえる最大の期待値を求める。
-解き方 
-シャッフルの仕方について問題文を理解するのに時間がかかってしまった。
-全探索により、最大回数までシャッフルしたときに各位置について得られるスコアを計算する。
-各位置について得られるスコアは独立であるため、最後に大きい順からＫ個の和をとり、最大のシャッフル数で割ることで答えが求められる。
-コード 
-class ShufflingMachine {
-public:
-double stackDeck(vector&lt;int&gt; shuffle, int maxShuffles, vector&lt;int&gt; cardsReceived, int K) {
-int n=shuffle.size();
-vector&lt;int&gt; order(n,0);
-FORE(i,0,n)order[i]=i;
-vector&lt;int&gt; score(n,0);
-FORE(i,0,maxShuffles){
-vector&lt;int&gt; tmp=order;
-FORE(j,0,n)order[j]=tmp[shuffle[j]];
-FORE(j,0,cardsReceived.size())FORE(k,0,n)if(order[k]==cardsReceived[j])score[k]++;
-}
-sort(score.rbegin(),score.rend());
-double ret=0;
-FORE(i,0,K)ret+=score[i];
-return ret/(double)maxShuffles;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10196&amp;rd=13517 カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。 シャッフル方法についてプレイヤーは知っている。 プレイヤ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -506,36 +257,7 @@ return ret/(double)maxShuffles;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7291&amp;rd=10657
-誕生日を表わす１０桁の数字が与えられる。
-その数字を"YYMMDDCCCC"とすると、以下で表わされる。
-ＹＹが１９０７～２００６までの西暦の下２桁。
-うるう年も存在する。うるう年は４００で割れるか、４で割れて１００で割れない年。
-ＭＭが月であり、ＭＭは女性の場合に限り５１～６２の範囲になる。
-ＤＤが日付。
-ＣＣＣＣはチェックサムで、１０ケタの数字を１１で割った余りが０になるようになっている。
-このとき、与えられた数字が有効であればＹＥＳを、無効な数字であればＮＯを返す。
-解き方 
-シミュレーション問題なので以下にシンプルに解くか。
-今回の実装のポイントは３つ。
-・各条件の判定には関数を用いる
-・月の判定には配列を用いる。
-・ＹＥＳ，ＮＯの判定にはbool値を定義し、andを取って判定する。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BirthNumbersValidator {
-public:
-long long calc(string str){
-stringstream out(str);
-long long num;
-out&gt;&gt;num;
-return num;
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7291&amp;rd=10657 誕生日を表わす１０桁の数字が与えられる。 その数字を"YYMMDDCCCC"とすると、以下で表わされる。 ＹＹが１９０７～２００６までの西
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/">Read more…</a>

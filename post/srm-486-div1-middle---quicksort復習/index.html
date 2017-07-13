@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 486 DIV1 Middle - QuickSort　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=2702
-クイックソートは、配列をサブ集合に分けるときのピボットの選び方によりソートまでのスワップ回数が異なる。
-ある配列が与えられた時、その配列をソートするまでに必要なスワップ回数の期待値を求める。
-解き方 
-すべてのサブ集合のコストを洗い出す、と考えると計算量はオーバーしてしまう。
-ソート済みの配列を考え、その配列の各長さのサブ集合を考える。
-そのサブ集合については、元の配列の要素の順番を守った配列をソートしたスワップ回数と等しくなる。
-これを利用して、サブ集合の長さを２～ｎまでｄｐによって求めればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class QuickSort {
-public: double getEval(vector&lt;int&gt; L) {
-int n=L.size();
-double dp[n&#43;1][n&#43;1];
-memset(dp,0,sizeof(dp));
-vector&lt;int&gt; sorted=L;
-sort(all(sorted));
-FORE(len,2,n&#43;1){
-for(int s=0;s&#43;len&lt;=n;s&#43;&#43;){
-int e=s&#43;len;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=2702 クイックソートは、配列をサブ集合に分けるときのピボットの選び方によりソートまでのスワップ回数が異なる。 ある配列が与えられた時、その配列" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-486-div1-middle---quicksort%E5%BE%A9%E7%BF%92/" />
 

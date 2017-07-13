@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 539 DIV1 Easy - Over9000Rocks" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11855&amp;rd=14731
-解き方 
-９０００以上となる数をすべて保存しては間に合わないので、
-その始点と終点のみ保存してあげて、その間の範囲を計算していくことで
-メモリ、計算量ともに制限内で解くことができる。
-コード 
-pair&lt;int,int&gt; p[1000000];
-class Over9000Rocks {
-public: int countPossibilities(vector&lt;int&gt; lowerBound, vector&lt;int&gt; upperBound) {
-int n=lowerBound.size();
-int m=0;
-for(int mask=1;mask&lt;(1&lt;&lt;n);mask&#43;&#43;){
-int minx=0,maxx=0;
-FORE(i,0,n)if(mask&amp;(1&lt;&lt;i)){
-minx&#43;=lowerBound[i];
-maxx&#43;=upperBound[i];
-}
-minx=max(minx,9001);
-if(minx&lt;=maxx){
-p[m&#43;&#43;]=make_pair(minx,1);
-p[m&#43;&#43;]=make_pair(maxx&#43;1,-1);
-}
-}
-sort(p,p&#43;m);
-int ret=0,cur=0;
-FORE(i,0,m){
-cur&#43;=p[i].second;
-if(cur!=0)ret&#43;=p[i&#43;1].first-p[i].first;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11855&amp;rd=14731 解き方 ９０００以上となる数をすべて保存しては間に合わないので、 その始点と終点のみ保存してあげて、その間の範囲を計算していくことで メモリ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-539-div1-easy---over9000rocks/" />
 

@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 598 DIV1 Easy - BinPacking (○×)" />
-<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12861&amp;rd=15710
-複数のアイテムが与えられ、それを瓶に格納したい。
-１つの瓶には重さ３００までのアイテムしか入れられない。
-各アイテムの重さがわかっているとき、最低でいくつ瓶が必要か求める。
-解き方 
-・問題文だけを考えると、かなりの数の組み合わせがありそう。
-・条件をみると、ひとつのアイテムの重さは１００～３００．
-・これから、１つの瓶に入るアイテムは１～３つ。
-・アイテムの重さが２０１以上であれば１つの瓶には１つしか入らない。
-・重さが１００であるアイテムが３つあれば１つの瓶に３つ入れられる。
-・残りはソートして、一番大きいアイテムと小さいアイテムの合計が３００以下であれば
-一つに入れて、そうでなければ大きいアイテム１つだけ瓶に入れる。
-・上記の条件を貪欲法で、と思ったが
-１００のアイテムを３つ入れるケースと一番大きいアイテムと
-小さいアイテムの２つを入れるケースでは、どちらがよいかは選択できない。
-・こういうときはｄｐに切り替える。
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[60][60];
-vector&lt;int&gt; items;
-class BinPacking {
-public:
-int rec(int l,int r){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12861&amp;rd=15710 複数のアイテムが与えられ、それを瓶に格納したい。 １つの瓶には重さ３００までのアイテムしか入れられない。 各アイテムの重さがわかっていると" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-598-div1-easy---binpacking-/" />
 

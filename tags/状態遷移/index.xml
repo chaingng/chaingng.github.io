@@ -17,43 +17,7 @@
       <pubDate>Sat, 11 Apr 2015 10:02:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-655-div1-easy---bichromepainting/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13709&amp;amp;rd=16415
-・２次元のボードがあり、各セルは最初すべて白に塗られている。
-・プレイヤーはK*Kの正方形のマスをすべて白か黒に上塗りすることができる。
-・最終的なボードの状態が与えられるとき、そのボードの状態にすることができれば
-Possible,そうでなければImpossibleを返す。
-解き方 
-状態遷移の問題。SRM 595に似ている。
-違いとしては、２次元に拡張されているのと、順番が決まっていない、つまり好きに順番を選べるということ。
-まずは最終の状態に着目する。
-ここで、K*Kのすべて白か黒で塗られている正方形があった場合、
-その前の状態が何であっても最後に上書きすることで、その状態にすることができる。
-そのような状態を任意の状態&#39;*&#39;に変換して、最後に全て任意の状態にできれば、
-その操作を逆にたどることで再現可能なのでPossibleとなる。
-コード 
-class BichromePainting {
-public: string isThatPossible(vector&amp;lt;string&amp;gt; board, int k) {
-int h=board.size(),w=board[0].size();
-int update=1;
-while(update){
-update=0;
-for(int r=0;r+k-1&amp;lt;h;r++)for(int c=0;c+k-1&amp;lt;w;c++){
-int w=0,b=0;
-FORE(dr,0,k)FORE(dc,0,k){
-if(board[r+dr][c+dc]==&#39;W&#39;)w++;
-else if(board[r+dr][c+dc]==&#39;B&#39;)b++;
-}
-if(w&amp;amp;&amp;amp;b)continue;
-if(w==0&amp;amp;&amp;amp;b==0)continue;
-update=1;
-FORE(dr,0,k)FORE(dc,0,k)board[r+dr][c+dc]=&#39;*&#39;;
-}
-}
-FORE(i,0,h)FORE(j,0,w)if(board[i][j]!=&#39;*&#39;)return &#34;Impossible&#34;;
-return &#34;Possible&#34;;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13709&amp;amp;rd=16415 ・２次元のボードがあり、各セルは最初すべて白に塗られている。 ・プレイヤーはK*Kの正方形のマスをすべて白か黒に上塗りすることができる。</description>
     </item>
     
     <item>
@@ -62,33 +26,7 @@ return &#34;Possible&#34;;
       <pubDate>Sun, 15 Mar 2015 10:40:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-642-div2-middle---lightswitchingpuzzle-/</guid>
-      <description>問題 
-・N個のスイッチがある。
-・各スイッチはONかOFFの状態を持ち、その初期状態が与えられる。
-・各スイッチはその位置の倍数のスイッチと連動しており、そのスイッチを押すと連動しているスイッチの状態も変化する。
-・すべてのスイッチをOFFにしたいとき、最小の操作回数を求める。
-・ただしそのような操作ができないときはー１を返す。
-解き方 
-・あるスイッチを操作するとき、それよりも左のスイッチの動作には影響しない。
-・よって左からONのスイッチに対してOFFにしていけば、最小の操作ですべてのスイッチがOFFになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class LightSwitchingPuzzle {
-public: int minFlips(string state) {
-int n=state.size();
-int p[n];
-FORE(i,0,n)p[i]=(state[i]==&#39;Y&#39;);
-int ret=0;
-while(accumulate(p,p+n,int())!=0){
-int idx=0;
-while(p[idx]==0)idx++;
-ret++;
-for(int i=idx;i&amp;lt;n;i+=idx+1)p[i]=1-p[i];</description>
+      <description>問題 ・N個のスイッチがある。 ・各スイッチはONかOFFの状態を持ち、その初期状態が与えられる。 ・各スイッチはその位置の倍数のスイッチと連動し</description>
     </item>
     
     <item>
@@ -97,31 +35,7 @@ for(int i=idx;i&amp;lt;n;i+=idx+1)p[i]=1-p[i];</description>
       <pubDate>Wed, 10 Dec 2014 21:46:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-595-div1-easy---littleelephantandintervalsdiv1-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12822&amp;amp;rd=15707
-M個のボールがあり、１からMまで順番に番号がついている。
-ボールの色は最初は白。
-複数のステージが与えられ、各ステージiについてL[i]番目からR[i]番目までの色を
-白か黒の好きな色どちらか一色に塗る。
-このとき、色の塗り方は何通りあるか求める。
-解き方 
-・色の塗り方なので、ボールの区切りの数を求め、その２＾（区切り数）が
-答えになりそう？
-・サンプルを見るとこれでは失敗。
-→他の人のコードをみる。
-・順番に色を塗っていく、という問題文の条件を見落としていた。
-・各ボールについて順番に色をぬっていくときのステージ数を上書きしていく。
-・最後に残った、各ボールのステージ数の場合の数について２の累乗をとってあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class LittleElephantAndIntervalsDiv1 {
-public: long long getNumber(int M, vector&amp;lt;int&amp;gt; L, vector&amp;lt;int&amp;gt; R) {
-int n=L.size();
-int p[M+1];</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12822&amp;amp;rd=15707 M個のボールがあり、１からMまで順番に番号がついている。 ボールの色は最初は白。 複数のステージが与えられ、各ステージiについてL[i]番</description>
     </item>
     
     <item>
@@ -130,35 +44,7 @@ int p[M+1];</description>
       <pubDate>Wed, 29 Oct 2014 15:45:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2013-tco-round-2c-easy---dancingfoxes-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12548&amp;amp;rd=15656
-・友達が複数存在し、互いに誰と誰が友達であるかがわかっている。
-・パーティにて、ダンスが任意の回数行われる。ダンスは２人ペアで行われる。
-・ペアとなれるのは友達同士か、もしくは共通の友達がいる必要がある。
-・一度ダンスを行えば、そのペアは友達となる。
-・このとき、０番目の人と１番目の人が友達になるまでに必要な
-最小のダンス回数を求める。
-解き方 
-・最短経路を求める問題なので、ワーシャルフロイドが使えそう。
-・サンプルを見ると、０と１との最短経路－１が答え？
-・サンプルは通ったので提出。
-→SystemFailed.
-・問題文を良く見ると、毎回のダンスで複数の友達がペアになるので、
-初期状態の距離だけでは答えは求まらない。
-・具体的には「0-A-B-C-D-1」のときは１回のダンスで「0-B-C-1」となる。
-・つまり、最初の距離dから(d+1)/3ずつ引いていき、１以下になるまでのダンス回数が
-答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class DancingFoxes {
-public: int minimalDays(vector&amp;lt;string&amp;gt; friendship) {
-int n=friendship.size();
-int d[n][n];</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12548&amp;amp;rd=15656 ・友達が複数存在し、互いに誰と誰が友達であるかがわかっている。 ・パーティにて、ダンスが任意の回数行われる。ダンスは２人ペアで行われる。</description>
     </item>
     
     <item>
@@ -167,34 +53,7 @@ int d[n][n];</description>
       <pubDate>Tue, 28 Oct 2014 22:14:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996
-・ONとOFFができるスイッチが複数与えられる。
-・最初は全てOFFの状態。
-・複数スイッチの状態が与えられ、順番にその状態に変化させていく。
-・スイッチの状態はON,OFF,？の３つであり、？はON/OFFどちらでもよい。
-・スイッチの状態変化は、好きなだけ＋に変化させる動作が１動作、
-好きなだけ－に変化させる動作が１動作、
-状態を一緒に合わせたあとボタンを押すのに１動作かかる。
-・このとき、必要な動作回数の最小値を求める。
-解き方 
-・前のスイッチの状態を持っておき、毎回変化数を記録しておけばよさそう。
-・？については好きな状態でよい。
-・つまり、そのあとに出てくるのが＋でプラスの動作が行われるのであれば＋にしてしまい、
-逆に出てくるのが－でマイナスの動作が行われるのであれば－にしてしまうのが
-最適な動作になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SwitchingGame {
-public: int timeToWin(vector&amp;lt;string&amp;gt; states) {
-int m=states[0].size();
-int n=states.size();
-int ret=n;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996 ・ONとOFFができるスイッチが複数与えられる。 ・最初は全てOFFの状態。 ・複数スイッチの状態が与えられ、順番にその状態に変化させてい</description>
     </item>
     
     <item>
@@ -203,31 +62,7 @@ int ret=n;</description>
       <pubDate>Tue, 28 Oct 2014 20:52:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2014-tco-round-1b-easy---spamchecker-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13119&amp;amp;rd=15950
-・与えられたe-mailがスパムかどうかチェックしたい。
-・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であるという
-情報が与えられる。
-・○が現れたら○のときのスコアを足し、×のときは×のときのスコアを引く。
-・最初のスコアは０であり１行目から順にスコアを計算していき、１度でもスコアが
-マイナスになったらそのe-mailはスパムとなる。
-・このとき、与えられたe-mailがスパムであるかどうかを求める。
-解き方 
-単純に実装するだけ。
-スコアを順に計算して毎回マイナスかどうかを判定すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SpamChecker {
-public: string spamCheck(string judgeLog, int good, int bad) {
-int n=judgeLog.size();
-int score=0;
-FORE(i,0,n){
-if(judgeLog[i]==&#39;o&#39;)score+=good;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13119&amp;amp;rd=15950 ・与えられたe-mailがスパムかどうかチェックしたい。 ・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であ</description>
     </item>
     
     <item>
@@ -236,32 +71,7 @@ if(judgeLog[i]==&#39;o&#39;)score+=good;</description>
       <pubDate>Tue, 28 Oct 2014 20:40:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2014-tco-round-1a-easy---ellyssortingtrimmer-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12971&amp;amp;rd=15942
-・ある文字列Sが与えられる。
-・パラメータLが与えられ、Sから長さL分の文字列を選んで順番をひっくり返すことができる。
-また、操作後選んだサブ文字列以降の文字列は消えてしまう。
-（例）S=”ESPRIT”、L=3のとき
-”ES[PRI]T”の選択後 ”ESIRP”
-・操作は何回行ってもよいとき、得られる最も辞書順の小さい文字列を求める。
-解き方 
-・基本はSのうち辞書順に小さいアルファベットL個分。
-・ただし、最初の文字は削除することができない。
-・よって、ソートして最初からL-1個分のアルファベットと、Sの最初の文字をソートした
-ものが答えになる。
-・別解として全探索、つまり後ろからソートを繰り返して行き、最後に残ったものが答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysSortingTrimmer {
-public: string getMin(string S, int L) {
-int n=S.size();
-char ch[n];
-FORE(i,0,n)ch[i]=S[i];</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12971&amp;amp;rd=15942 ・ある文字列Sが与えられる。 ・パラメータLが与えられ、Sから長さL分の文字列を選んで順番をひっくり返すことができる。 また、操作後選んだ</description>
     </item>
     
     <item>
@@ -270,33 +80,7 @@ FORE(i,0,n)ch[i]=S[i];</description>
       <pubDate>Mon, 20 Oct 2014 20:44:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2014-tco-round-3a-easy---brightlamps-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13343&amp;amp;rd=16050
-・複数のランプがあり、現在ついているかどうかの情報が与えられる。
-・各ランプについて、ついているときの明るさの値が与えられる。
-・連続K個のランプの状態を変化させることができ、何回でも変化させてよいとき、得られる最大の明るさの値を求める。
-解き方 
-・ランプの数は２５００個のため、全探索は厳しい。
-・ｄｐができないか考えてみるが、前の状態を持つことも難しいためできなさそう
-他のコードを見てみる。
-・状態を良く見てみると、あるランプからK個離れたランプは他のランプの状態を変化させずに
-それぞれ反転することが可能。
-・例えば、ABCDEというランプがありK＝４、A＝０、E＝０とする。
-このとき、ABCDを反転し、BCDEを反転させることで他をかえずにA=1、E=1とすることができる。
-・よって、K個ずつ離れた集合をそれぞれ考え、一番最適な反転を考える。
-つまり、０の数が偶数個のときはすべて１にすることができ、奇数個の時は一番小さいものだけを
-０にして残りを１にすることができる。
-・ただし、状態によっては集合を奇数回反転した場合がよいことがある。
-よって、すべて偶数回反転させる場合と、奇数回反転させるときのうち大きい値が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BrightLamps {
-public: int maxBrightness(string init, vector&amp;lt;int&amp;gt; a, int K) {</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13343&amp;amp;rd=16050 ・複数のランプがあり、現在ついているかどうかの情報が与えられる。 ・各ランプについて、ついているときの明るさの値が与えられる。 ・連続K個</description>
     </item>
     
     <item>
@@ -305,33 +89,7 @@ public: int maxBrightness(string init, vector&amp;lt;int&amp;gt; a, int K) {</de
       <pubDate>Sun, 09 Feb 2014 10:18:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-212-div1-easy---winningrecord-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3003&amp;amp;rd=5858
-あるチームの直近の勝ち負けの結果が与えられる。
-そこから、直近のいつまでがもっとも勝率がよくて、直近のいつまでがもっとも勝率が悪かったかを求める。
-ただし、答えは３ゲーム目以降の結果から比較する。
-解き方 
-直近の１試合前から最後まで勝率を計算しベストとワーストのものを更新していけばよい。
-２ゲーム目までは比較対象にせず、３ゲーム目から更新していく。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class WinningRecord {
-public: vector&amp;lt;int&amp;gt; getBestAndWorst(string games) {
-vector&amp;lt;int&amp;gt; ans(2,0);
-double best=0.0,worst=0.0;
-double wins=0,loses=0;
-FORE(i,0,games.size()){
-if(games[i]==&#39;W&#39;)wins++;
-else loses++;
-if(i&amp;lt;2)continue;
-if(best&amp;lt;=wins/(wins+loses)){
-best=wins/(wins+loses);
-ans[0]=i+1;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3003&amp;amp;rd=5858 あるチームの直近の勝ち負けの結果が与えられる。 そこから、直近のいつまでがもっとも勝率がよくて、直近のいつまでがもっとも勝率が悪かったか</description>
     </item>
     
     <item>
@@ -340,32 +98,7 @@ ans[0]=i+1;</description>
       <pubDate>Sun, 02 Feb 2014 20:45:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-489-div1-easy---ballsconverter-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11211&amp;amp;rd=14242
-２つのボールを捨てて、新しくボールを作るマシーンがある。２つのボールのタイプがi、jとすると、
-新しく作られるボールはパターンc[i][j]もしくはc[j][i]となる。
-このとき、最初に入っているボールがわかっているときに結果が変わらないパターンであればＧｏｏｄ、そうでなければＢａｄを返す。
-解き方 
-問題文を理解するのが難しかった。
-要は、任意の３つのボールに対して結合法則が成り立つかどうかを全てのタイプに対して調べればよい。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BallsConverter {
-public:
-int f(char ch){
-if(&#39;A&#39;&amp;lt;=ch&amp;amp;&amp;amp;ch&amp;lt;=&#39;Z&#39;)return ch-&#39;A&#39;;
-else return ch-&#39;a&#39;+26;
-}
-string theGood(vector&amp;lt;string&amp;gt; c) {
-int n=c.size();
-FORE(i,0,n)FORE(j,0,n)FORE(k,0,n)if(c[f(c[i][j])][k]!=c[i][f(c[j][k])])return &#34;Bad&#34;;
-return &#34;Good&#34;;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11211&amp;amp;rd=14242 ２つのボールを捨てて、新しくボールを作るマシーンがある。２つのボールのタイプがi、jとすると、 新しく作られるボールはパターンc[i][</description>
     </item>
     
     <item>
@@ -374,26 +107,7 @@ return &#34;Good&#34;;
       <pubDate>Sun, 13 Oct 2013 08:27:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10943&amp;amp;rd=14546
-カッコの並びが与えられる。
-カッコがきちんと閉じた形になるために、追加で必要なカッコの数を求める。
-解き方 
-左カッコが出てきたら＋１、右カッコが出てきたらー１としてカッコの閉じ具合を走査する。
-０から始め、マイナスになるときは必ず左にカッコが必要なので答えを＋１して数を０に戻す。
-そうでない場合はそのまま走査し、最後に残った数を答えに足せばよい。
-コード 
-class MissingParentheses {
-public: int countCorrections(string par) {
-int left=0,ans=0;
-FORE(i,0,par.size()){
-if(par[i]==&#39;(&#39;)left++;
-else if(left&amp;gt;0)left--;
-else ans++;
-}
-return ans+left;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10943&amp;amp;rd=14546 カッコの並びが与えられる。 カッコがきちんと閉じた形になるために、追加で必要なカッコの数を求める。 解き方 左カッコが出てきたら＋１、右カッ</description>
     </item>
     
   </channel>

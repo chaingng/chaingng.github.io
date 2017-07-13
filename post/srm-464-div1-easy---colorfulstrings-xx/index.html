@@ -7,50 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 464 DIV1 Easy - ColorfulStrings xx" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10724&amp;rd=14149
-解き方 
-Nは５０だが、同じ数字が２度出現すると条件を満たさないので
-N=10までであれば全探索可能。
-DFSでこれまで出現した数字をカウントし、有効であればカウントしていき
-K番目のものが答えになる。
-コード 
-int was[11111111],n,k;
-string ret,s;
-class ColorfulStrings {
-public:
-void rec(int at){
-if(at==n){
-k--;
-if(k==0)ret=s;
-return;
-}
-for(char ch=&#39;0&#39;;ch&lt;=&#39;9&#39;;ch&#43;&#43;){
-s&#43;=ch;
-int ok=1,p=1;
-for(int i=at;i&gt;=0;i--){
-p*=s[i]-&#39;0&#39;;
-if(was[p])ok=0;
-was[p]&#43;&#43;;
-}
-if(ok)rec(at&#43;1);
-p=1;
-for(int i=at;i&gt;=0;i--){
-p*=s[i]-&#39;0&#39;;
-was[p]--;
-}
-s=s.substr(0,s.size()-1);
-}
-}
-string getKth(int nn, int kk) {
-n=nn,k=kk;
-if(n&gt;10)return &#34;&#34;;
-memset(was,0,sizeof(was));
-ret=&#34;&#34;,s=&#34;&#34;;
-rec(0);
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10724&amp;rd=14149 解き方 Nは５０だが、同じ数字が２度出現すると条件を満たさないので N=10までであれば全探索可能。 DFSでこれまで出現した数字をカウント" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-464-div1-easy---colorfulstrings-xx/" />
 

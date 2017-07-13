@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 426 DIV1 Easy - ShufflingMachine (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10196&amp;rd=13517
-カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。
-シャッフル方法についてプレイヤーは知っている。
-プレイヤーがシャッフル後に受け取るカードの位置と、欲しいカードの枚数がわかっている。
-加えてシャッフル回数の最大はわかっているが、実際のシャッフルは１～最大回数のうちランダムな回数になる。
-このとき、欲しいカードを最適な場所においたときに、欲しいカードがもらえる最大の期待値を求める。
-解き方 
-シャッフルの仕方について問題文を理解するのに時間がかかってしまった。
-全探索により、最大回数までシャッフルしたときに各位置について得られるスコアを計算する。
-各位置について得られるスコアは独立であるため、最後に大きい順からＫ個の和をとり、最大のシャッフル数で割ることで答えが求められる。
-コード 
-class ShufflingMachine {
-public:
-double stackDeck(vector&lt;int&gt; shuffle, int maxShuffles, vector&lt;int&gt; cardsReceived, int K) {
-int n=shuffle.size();
-vector&lt;int&gt; order(n,0);
-FORE(i,0,n)order[i]=i;
-vector&lt;int&gt; score(n,0);
-FORE(i,0,maxShuffles){
-vector&lt;int&gt; tmp=order;
-FORE(j,0,n)order[j]=tmp[shuffle[j]];
-FORE(j,0,cardsReceived.size())FORE(k,0,n)if(order[k]==cardsReceived[j])score[k]&#43;&#43;;
-}
-sort(score.rbegin(),score.rend());
-double ret=0;
-FORE(i,0,K)ret&#43;=score[i];
-return ret/(double)maxShuffles;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10196&amp;rd=13517 カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。 シャッフル方法についてプレイヤーは知っている。 プレイヤ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/" />
 

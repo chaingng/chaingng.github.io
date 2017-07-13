@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 631 DIV1 Easy - TaroJiroGrid (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13393&amp;rd=16062
-N*Nのボードがあり、WかBの色が塗られている。
-１回の操作で１つの行の色をWかB一色にすることができる。
-このとき、全ての列について、同じ色がN/2より多く連続しないようにするための
-最小の操作回数を求める。
-解き方 
-同じ色がN/2より多く連続しない、というのがポイント。
-最悪のケースでは、N/2行とN/2&#43;1行を別の色にすれば条件を満たすのでよいので２回で済む。
-よって、操作回数０回と１回の場合を全探索すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TaroJiroGrid {
-public:
-bool check(vector&lt;string&gt; g){
-int n=g.size();
-FORE(j,0,n){
-char prev=g[0][j];
-int cnt=1;
-FORE(i,1,n){
-if(g[i][j]==prev)cnt&#43;&#43;;
-else{
-if(cnt&gt;n/2)return false;
-prev=g[i][j];" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13393&amp;rd=16062 N*Nのボードがあり、WかBの色が塗られている。 １回の操作で１つの行の色をWかB一色にすることができる。 このとき、全ての列について、同" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-631-div1-easy---tarojirogrid-%E5%BE%A9%E7%BF%92/" />
 

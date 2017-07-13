@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 469 DIV1 Easy - TheMoviesLevelOneDivOne" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10898&amp;rd=14152
-２人が座席に横並びで座りたい。
-座席はn個の行だけ与えられる。
-座席は各行、m個の席が横並びになっている。
-また、すでに予約されている席もわかっている。
-このとき、座り方の総数を求める。
-解き方 
-n,mともに10^9なので単純な全探索では求められない。
-ここで予約されている席は47個なので、
-出現した行の列を除いてあげれば、残りの行ｘ(m-1)で
-出現していない行の席の総数を求められるので
-nをすべて計算しなくてよい。
-また出現した行について、その間だけ調べることで
-mもすべて計算しなくてよい。
-コード 
-class TheMoviesLevelOneDivOne {
-public: long long find(int n, int m, vector&lt;int&gt; row, vector&lt;int&gt; seat) {
-long long ret=0,num=0;
-int l=row.size();
-int used[l];
-memset(used,0,sizeof(used));
-FORE(i,0,l)if(!used[i]){
-num&#43;&#43;;
-vector&lt;int&gt; vx;
-vx.push_back(0),vx.push_back(m&#43;1);
-FORE(j,0,l)if(row[i]==row[j]){
-vx.push_back(seat[j]);
-used[j]=1;
-}
-sort(all(vx));
-FORE(j,0,vx.size()-1)ret&#43;=max(0,vx[j&#43;1]-vx[j]-2);
-}
-ret&#43;=(long long)(n-num)*(long long)(m-1);
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10898&amp;rd=14152 ２人が座席に横並びで座りたい。 座席はn個の行だけ与えられる。 座席は各行、m個の席が横並びになっている。 また、すでに予約されている席もわ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-469-div1-easy---themovieslevelonedivone/" />
 

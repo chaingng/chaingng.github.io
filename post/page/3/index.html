@@ -77,30 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8440&amp;rd=10800
-解き方 
-一見すべての価格について調べる必要があり、10^6なのでそれでも解けそう。
-ただし少し考えると各顧客の最大購入価格が一番利益を得ることができる選び方なので
-すべての最大購入価格のうち、最も利益の出るものが答えになる。
-コード 
-class SellingProducts {
-public: int optimalPrice(vector&lt;int&gt; price, vector&lt;int&gt; cost) {
-int n=price.size();
-int profit=0,idx=0;
-FORE(i,0,n){
-int cur=0;
-FORE(j,0,n)if(price[i]&lt;=price[j] &amp;&amp; price[i]&gt;cost[j]){
-cur+=price[i]-cost[j];
-}
-if(cur&gt;=0 &amp;&amp; (profit&lt;cur || (profit==cur &amp;&amp; price[idx]&gt;price[i]) )){
-profit=cur;
-idx=i;
-}
-}
-return profit==0 ? 0 : price[idx];
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8440&amp;rd=10800 解き方 一見すべての価格について調べる必要があり、10^6なのでそれでも解けそう。 ただし少し考えると各顧客の最大購入価格が一番利益を得る
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-379-div1-easy---sellingproducts-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -117,24 +97,10 @@ return profit==0 ? 0 : price[idx];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8390&amp;rd=10798
-解き方 
-正しいことを言っている人数を０〜５０までのすべてについて調べ、
-矛盾しないもののうち最大の人数が答えになる。
-コード 
-class TrueStatements {
-public: int numberTrue(vector&lt;int&gt; statements) {
-int n=statements.size();
-int ret=-1;
-for(int i=0;i&lt;=50;i++){
-int cnt=0;
-FORE(j,0,n)if(i==statements[j])cnt++;
-if(i==cnt)ret=i;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8390&amp;rd=10798 解き方 正しいことを言っている人数を０〜５０までのすべてについて調べ、 矛盾しないもののうち最大の人数が答えになる。 コード class TrueStatements { public: int numberTrue(vector&lt;int&gt; statements) {
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-378-div1-easy---truestatements-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -151,37 +117,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6555&amp;rd=10796
-解き方 
-実装問題。システムテストで落ちやすい問題なので、すべて条件文をもれなく書かないといけない。
-コード 
-class Trainyard {
-public: int reachableSquares(vector&lt;string&gt; layout, int fuel) {
-int h=layout.size(),w=layout[0].size();
-int dr[]={1,0,-1,0},dc[]={0,1,0,-1};
-int dp[4][10][10];
-FORE(i,0,4)FORE(j,0,10)FORE(k,0,10)dp[i][j][k]=-1;
-queue&lt;pair&lt;int,pair&lt;int,int&gt; &gt; &gt; q;
-FORE(i,0,h)FORE(j,0,w)if(layout[i][j]=='S'){
-FORE(k,0,4){
-dp[k][i][j]=fuel;
-q.push(make_pair(k,make_pair(i,j)));
-}
-}
-while(!q.empty()){
-int r=q.front().second.first;
-int c=q.front().second.second;
-int d=q.front().first;
-int cost=dp[d][r][c];
-q.pop();
-FORE(i,0,4){
-if(layout[r][c]=='|' &amp;&amp; (i==1 || i==3))continue;
-if(layout[r][c]=='-' &amp;&amp; (i==0 || i==2))continue;
-int nr=r+dr[i],nc=c+dc[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; layout[nr][nc]!='.'){
-if(layout[nr][nc]!='+'){
-if((abs(d-i)%2)!=0 &amp;&amp; abs(d-i)==2)continue;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6555&amp;rd=10796 解き方 実装問題。システムテストで落ちやすい問題なので、すべて条件文をもれなく書かないといけない。 コード class Trainyard { public: int reachableSquares(vector&lt;string&gt; layout, int fuel) { int h=layout.size(),w=layout[0].size(); int dr[]={1,0,-1,0},dc[]={0,1,0,-1}; int dp[4][10][10];
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-376-div1-easy---trainyard-x/">Read more…</a>
@@ -201,30 +137,10 @@ if((abs(d-i)%2)!=0 &amp;&amp; abs(d-i)==2)continue;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8396&amp;rd=10806
-解き方 
-１つの木の長さを１〜１００００のそれぞれに固定して考える。
-あとは、与えられた木がその長さで割った時、値がプラスなら足していき
-最大のものを求めれば良い。
-コード 
-class Planks {
-public: int makeSimilar(vector&lt;int&gt; lengths, int costPerCut, int woodValue) {
-int n=lengths.size();
-int ret=0;
-for(int len=1;len&lt;=10000;len++){
-int cur=0;
-FORE(i,0,n)if(len&lt;=lengths[i]){
-int num=lengths[i]/len;
-int cuts=num-((lengths[i]%len)==0);
-int value=num*woodValue*len-cuts*costPerCut;
-if(value&gt;0)cur+=value;
-}
-ret=max(ret,cur);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8396&amp;rd=10806 解き方 １つの木の長さを１〜１００００のそれぞれに固定して考える。 あとは、与えられた木がその長さで割った時、値がプラスなら足していき 最大
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-383-div1-easy---planks-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -241,29 +157,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7659&amp;rd=10808
-解き方 
-解くだけ。
-setを使えば重複の考慮も不要で、条件を満たしているかも簡単に判断できる。
-コード 
-class Library {
-public: int documentAccess(vector&lt;string&gt; records, vector&lt;string&gt; userGroups, vector&lt;string&gt; roomRights) {
-set&lt;string&gt; user,room;
-FORE(i,0,userGroups.size())user.insert(userGroups[i]);
-FORE(i,0,roomRights.size())room.insert(roomRights[i]);
-set&lt;string&gt; ans;
-FORE(i,0,records.size()){
-stringstream out(records[i]);
-string doc,u,r;
-out &gt;&gt; doc &gt;&gt; r &gt;&gt; u;
-if(room.find(r)!=room.end() &amp;&amp; user.find(u)!=user.end()){
-ans.insert(doc);
-}
-}
-return ans.size();
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7659&amp;rd=10808 解き方 解くだけ。 setを使えば重複の考慮も不要で、条件を満たしているかも簡単に判断できる。 コード class Library { public: int documentAccess(vector&lt;string&gt; records, vector&lt;string&gt; userGroups, vector&lt;string&gt; roomRights) { set&lt;string&gt; user,room; FORE(i,0,userGroups.size())user.insert(userGroups[i]); FORE(i,0,roomRights.size())room.insert(roomRights[i]); set&lt;string&gt; ans; FORE(i,0,records.size()){
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-384-div1-easy---library-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -280,37 +177,10 @@ return ans.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8482&amp;rd=10810
-解き方 
-各スペースに挿入するアンダースコアの数の差は最大１なので、
-スペースの数と挿入できるアンダースコアの数がわかれば
-答えは一意に定まる。
-コード 
-class UnderscoreJustification {
-public:
-string justifyLine(vector&lt;string&gt; words, int width) {
-int n=words.size();
-int len=0;
-FORE(i,0,n)len+=words[i].size();
-int s=width-len;
-int num2=s%(n-1);
-int num1=(n-1)-num2;
-s/=(n-1);
-string ret=words[0];
-FORE(i,1,n){
-if((num1&gt;0 &amp;&amp; num2==0) || (words[i][0]&lt;='Z' &amp;&amp; num1&gt;0)){
-FORE(j,0,s)ret+='_';
-num1--;
-}else{
-FORE(j,0,s+1)ret+='_';
-num2--;
-}
-ret+=words[i];
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8482&amp;rd=10810 解き方 各スペースに挿入するアンダースコアの数の差は最大１なので、 スペースの数と挿入できるアンダースコアの数がわかれば 答えは一意に定まる
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-385-div1-easy---underscorejustification-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -327,43 +197,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13912&amp;rd=16523
-解き方 
-dpの問題。
-１．どのような順序で処理されるか
-→petr、snukeが順番に１つずつ出していく
-２．前の状態としてどのような状態があればよいか
-→前に出されたカードと、それまでに重ねられたカードの数
-dp[一番上のカードの数字]＝ 重ねられたカードの数の最大値とし、
-毎ターンできるだけ小さな数字でカードを重ねていけば良い。
-問題文中の取ることが出きる動作のうち、１枚カードを食べるというのは
-要はパスしてもよいというのがわかれば上記に帰着できそうだった。
-コード 
-class YetAnotherCardGame {
-public: int maxCards(vector&lt;int&gt; petr, vector&lt;int&gt; snuke) {
-int n=petr.size();
-int dp[101];
-memset(dp,0,sizeof(dp));
-sort(all(petr));
-sort(all(snuke));
-FORE(i,0,n){
-for(int x=100;x&gt;=0;x--){
-FORE(j,0,n)if(petr[j]&gt;x){
-dp[petr[j]]=max(dp[petr[j]],dp[x]+1);
-break;
-}
-}
-for(int x=100;x&gt;=0;x--){
-FORE(j,0,n)if(snuke[j]&gt;x){
-dp[snuke[j]]=max(dp[snuke[j]],dp[x]+1);
-break;
-}
-}
-}
-return *max_element(dp,dp+101);
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13912&amp;rd=16523 解き方 dpの問題。 １．どのような順序で処理されるか →petr、snukeが順番に１つずつ出していく ２．前の状態としてどのような状態があ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2015-tco-round-2c-easy---yetanothercardgame-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -380,42 +217,10 @@ return *max_element(dp,dp+101);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8444&amp;rd=11120
-解き方 
-ビット列ですべての組み合わせについて調べれば良い。
-ただし、その部分集合で満たすものがあれば偽になるので
-これまで調べたビット列で真のものを保存して、含まれないか判定する。
-ビット列は順番に調べていけばそれまでの値は必ず含まれるので問題ない。
-コード 
-class CandidateKeys {
-public: vector&lt;int&gt; getKeys(vector&lt;string&gt; table) {
-int n=table.size(),m=table[0].size();
-int valid=0;
-vector&lt;int&gt; ans(2);
-ans[0]=1e+9,ans[1]=0;
-vector&lt;int&gt; vx;
-for(int mask=1;mask&lt;(1&lt;&lt;m);mask++){
-set&lt;string&gt; s;
-FORE(i,0,n){
-string str="";
-FORE(j,0,m)if(mask&amp;(1&lt;&lt;j))str+=table[i][j];
-s.insert(str);
-}
-if(s.size()==n){
-valid=1;
-int can=1;
-FORE(i,0,vx.size())if((vx[i]&amp;mask)==vx[i])can=0;
-if(can){
-ans[0]=min(ans[0],__builtin_popcount(mask));
-ans[1]=max(ans[1],__builtin_popcount(mask));
-vx.push_back(mask);
-}
-}
-}
-return valid ? ans : vector&lt;int&gt;();
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8444&amp;rd=11120 解き方 ビット列ですべての組み合わせについて調べれば良い。 ただし、その部分集合で満たすものがあれば偽になるので これまで調べたビット列で真
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-386-div1-easy---candidatekeys-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -432,35 +237,10 @@ return valid ? ans : vector&lt;int&gt;();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8527&amp;rd=11121
-解き方 
-全てのjoker boxの選び方について全探索する。
-joker box以外の箱について２色以上入っている箱は必ず動かさなければいけない。
-そのため１色しか入っていない箱のみ調べ、
-使っていない色であればその色を割り当てていけばよい。
-コード 
-class MarblesRegroupingEasy {
-public:
-int minMoves(vector&lt;string&gt; boxes) {
-int n=boxes.size(),m=boxes[0].size();
-int used[m];
-int ret=1e+9;
-FORE(i,0,n){
-int cost=0;
-memset(used,0,sizeof(used));
-FORE(j,0,n)if(i!=j){
-int cnt=0,color=-1;
-FORE(k,0,m)if(boxes[j][k]!='0')cnt++,color=k;
-if(cnt==0)continue;
-if(cnt==1 &amp;&amp; used[color]==0)used[color]=1;
-else cost++;
-}
-ret=min(ret,cost);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8527&amp;rd=11121 解き方 全てのjoker boxの選び方について全探索する。 joker box以外の箱について２色以上入っている箱は必ず動かさなければいけない。 その
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-387-div1-easy---foxesoftheroundtable-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -477,35 +257,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8519&amp;rd=11122
-解き方 
-あらかじめ対象となる全ての数について素数かどうか判定しておけば
-O(sqrt(10^5) * 10^5)=O(3*10^7)なので間に合う。
-素数かどうかの判定にエラトステネスのふるいを使えば
-こちらの計算量も多く見積もってsqrt(10^5)*5*10^4=1.5*10^7程度。
-コード 
-int isprime[100001];
-class SmoothNumbers {
-public: int countSmoothNumbers(int N, int k) {
-FORE(i,0,100001)isprime[i]=1;
-isprime[0]=0,isprime[1]=0;
-for(int i=2;i*i&lt;=100000;i++)if(isprime[i]){
-for(int j=i*2;j&lt;=100000;j+=i)isprime[j]=0;
-}
-int ret=0;
-for(int i=1;i&lt;=N;i++){
-int mx=0;
-for(int j=2;j*j&lt;=i;j++)if(i%j==0){
-if(isprime[j])mx=max(mx,j);
-if(isprime[i/j])mx=max(mx,i/j);
-}
-if(isprime[i])mx=i;
-if(mx&lt;=k)ret++;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8519&amp;rd=11122 解き方 あらかじめ対象となる全ての数について素数かどうか判定しておけば O(sqrt(10^5) * 10^5)=O(3*10^7)なので間に合う。 素数かどうかの判
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-388-div1-easy---smoothnumbers-/">Read more…</a>
 		</div>
 	</div>
 </article>

@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 499 DIV1 Easy - ColorfulRabbits ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11327&amp;rd=14428
-様々な種類のうさぎがいる。
-そのうちいくつかのうさぎに質問し、自分以外に同じ種類のうさぎが何匹いるか
-答えている。
-このとき、うさぎの総数について、矛盾しないような最小の数を求める。
-解き方 
-同じ数xを答えたうさぎについて、x＋１匹まで同じ種類二まとめられる。
-答えたすべての数xについて、上記から計算できる最小のうさぎの総数を
-求める。
-コード 
-class ColorfulRabbits {
-public: int getMinimum(vector&lt;int&gt; replies) {
-int n=replies.size();
-int used[n];
-memset(used,0,sizeof(used));
-long long ret=0;
-FORE(i,0,n)if(!used[i]){
-int cnt=0;
-FORE(j,0,n)if(replies[i]==replies[j]){
-cnt&#43;&#43;;
-used[j]=1;
-}
-long long x=replies[i]&#43;1;
-ret&#43;=x*((cnt&#43;x-1)/x);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11327&amp;rd=14428 様々な種類のうさぎがいる。 そのうちいくつかのうさぎに質問し、自分以外に同じ種類のうさぎが何匹いるか 答えている。 このとき、うさぎの総数に" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-499-div1-easy---colorfulrabbits-/" />
 

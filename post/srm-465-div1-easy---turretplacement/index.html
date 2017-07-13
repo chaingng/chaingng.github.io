@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 465 DIV1 Easy - TurretPlacement" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10840&amp;rd=14182
-２次元座標上の複数の点が与えられる。
-ここから２つの点を選び、それぞれ各点が中心となるように正方形をそれぞれ
-１つずつ設置したい。
-正方形の１辺は整数になるようにしたい。
-また、正方形は互いに重ならないようにしたい。
-このとき、正方形の設置の仕方の総数を求める。
-解き方 
-ある２点の選び方すべてについて、置けるすべての正方形の長さを
-試してあげればよい。
-選んだ２点の距離＊２が、２つの正方形の１辺の和以下であればよい。
-ある点の距離＊２我与えられたときの置き方の総数は、
-例えば長さがn=５であったとき１＋２＋３＋４となるので（n-1)*n/2となる。
-コード 
-class TurretPlacement {
-public: long long count(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-long long ret=0;
-int n=x.size();
-FORE(i,0,n)FORE(j,i&#43;1,n){
-double d=sqrt((x[j]-x[i])*(x[j]-x[i])&#43;(y[j]-y[i])*(y[j]-y[i]));
-long long num=d*2;
-ret&#43;=(num-1)*num/2.0;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10840&amp;rd=14182 ２次元座標上の複数の点が与えられる。 ここから２つの点を選び、それぞれ各点が中心となるように正方形をそれぞれ １つずつ設置したい。 正方形の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-465-div1-easy---turretplacement/" />
 

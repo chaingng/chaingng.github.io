@@ -77,44 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8763&amp;rd=12172
-ある整数ｎが与えられる。
-このｎが素数の階乗で表せるならその素数と階乗数を返す。
-そのように表せられなければ空の文字列を返す。
-解き方 
-nの最大は10^18で全探索できないが、
-2乗の場合を除けば探索範囲はO(10^6)となり全探索可能。
-2乗の場合の計算はdouble*double==longにならないよう、型を一致させることに注意。
-コード 
-class StrongPrimePower {
-public: vector&lt;int&gt; baseAndExponent(string n) {
-vector&lt;int&gt; ans;
-long long x;
-stringstream out(n);
-out&gt;&gt;x;
-for(int i=2;i&lt;=1000000 &amp;&amp; i&lt;x;i++)if(x%i==0){
-long long tmp=x;
-int cnt=0;
-while(tmp%i==0){
-tmp/=i;
-cnt++;
-}
-if(tmp==1){
-ans.push_back(i);
-ans.push_back(cnt);
-return ans;
-}
-return ans;
-}
-long long y=sqrt((double)x);
-if(y*y==x){
-ans.push_back(y);
-ans.push_back(2);
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8763&amp;rd=12172 ある整数ｎが与えられる。 このｎが素数の階乗で表せるならその素数と階乗数を返す。 そのように表せられなければ空の文字列を返す。 解き方 nの最
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-400-div1-easy---strongprimepower/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -131,40 +97,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13268&amp;rd=16187
-・複数の動物がおりラベルが付けられている。
-・そのうち番号がlowerからupperまでのラベルの動物を各種類最低１匹ずつ選びたい。
-その他の動物については１匹も選ばないようにしたい。
-・動物の選び方としては隣り合う動物については一つの集合とすることができる。
-・このとき、そのような動物の選び方のうち一番少なくなる集合数を求める。
-そのような選び方がない場合は−１を返す。
-解き方 
-たとえばサンプルから選ぶラベルが２〜６のとき、
-{[3, 4, 3], 1, [6, 2, 5, 7, 5, 2]}が選ぶ集合となる。
-同じラベルの動物は１種類以上であれば問題ないので、
-選ぶだけ選んだ方が集合が少なくなるので存在するものはすべて貪欲に選ぶ。
-このとき、要素数は最大４４なので集合数は最大２２個となる。
-このとき集合の選び方は2^22となり全探索が可能なので、
-すべての選び方に対し、すべてのラベルの動物が含まれているか判定すればよい。
-コード 
-long long dp[2000000];
-class ZooExchangeProgram {
-public: int getNumber(vector&lt;int&gt; label, int lower, int upper) {
-int n=label.size();
-int count=0;
-for(int pos=0;pos&lt;n;pos++){
-while(pos&lt;n &amp;&amp; !(lower&lt;=label[pos] &amp;&amp; label[pos]&lt;=upper))pos++;
-if(pos&gt;=n)break;
-long long mask=0;
-while(pos&lt;n){
-if(lower&lt;=label[pos] &amp;&amp; label[pos]&lt;=upper){
-mask|=(1LL&lt;&lt;label[pos]);
-pos++;
-}
-else break;
-}
-dp[count++]=mask;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13268&amp;rd=16187 ・複数の動物がおりラベルが付けられている。 ・そのうち番号がlowerからupperまでのラベルの動物を各種類最低１匹ずつ選びたい。 その
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2014-tco-semifinal1-div1-easy---zooexchangeprogram/">Read more…</a>
@@ -184,46 +117,10 @@ dp[count++]=mask;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13628&amp;rd=16278
-・２次元の座標が与えられる。
-・（０，０）がスタート地点になり、各ターン上下左右のいずれかに移動することができる。
-・ただし複数の障害物が与えられ、障害物がある方向には移動することができない。
-・Kターン移動するとき、最後に移動することができる最大のｘ座標の値を求める。
-解き方 
-問題文を見るとｋ＝１０００なので前探索できそう。
-ただしマイナスの方向にも移動するので、座標変換が必要。
-今回は最小で−１０００なので、ｘ，ｙ座標ともに１０００を足してあげて、最後の答えから１０００を引けば良い。
-コード 
-int dp[2010][2010];
-class TheGridDivTwo {
-public: int find(vector&lt;int&gt; x, vector&lt;int&gt; y, int k) {
-queue&lt;pair&lt;int,int&gt; &gt; q;
-int dx[]={1,0,-1,0};
-int dy[]={0,1,0,-1};
-memset(dp,0,sizeof(dp));
-FORE(i,0,x.size())dp[x[i]+1000][y[i]+1000]=-1;
-dp[1000][1000]=1;
-q.push(make_pair(1000,1000));
-while(!q.empty()){
-int x=q.front().first;
-int y=q.front().second;
-if(dp[x][y]==k+1)break;
-q.pop();
-FORE(i,0,4){
-int cx=x+dx[i];
-int cy=y+dy[i];
-if(dp[cx][cy]==0){
-dp[cx][cy]=dp[x][y]+1;
-q.push(make_pair(cx,cy));
-}
-}
-}
-int ret=-3000;
-FORE(i,0,2010)FORE(j,0,2010)if(dp[i][j]&gt;0)ret=max(ret,i);
-return ret-1000;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13628&amp;rd=16278 ・２次元の座標が与えられる。 ・（０，０）がスタート地点になり、各ターン上下左右のいずれかに移動することができる。 ・ただし複数の障害物が
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-646-div2-middle---thegriddivtwo/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -240,42 +137,10 @@ return ret-1000;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13714&amp;rd=16432
-ある数字ｘとｙが与えられた時、０〜９のうち同じ数字が存在する数だけSimilarityの値が高くなる。
-（例）ｘ＝１１２４、ｙ＝１１２２　１と２が双方に出るのでSimilarityは２
-数字の範囲LとRが与えられた時、L~Rのうちの２つの数字のペアのうち、
-最も高いSimilarityを求める。
-解き方 
-数字が10^5のため、全探索すると10^10で間に合わない。
-このような場合、探索する集合を変換できないか考える。
-今回は１〜９の出現数が答えであるので、
-「数字の集合」→「１〜９までの出現数の集合」に変換できる。
-このとき、集合の総数は10^3（0から9の数字がそれぞれ出現するかどうか）となるので
-全探索が可能になる。
-コード 
-class Similars {
-public: int maxsim(int L, int R) {
-int dp[1024];
-memset(dp,0,sizeof(dp));
-for(int i=L;i&lt;=R;i++){
-int x=i;
-int mask=0;
-while(x&gt;0){
-mask|=1&lt;&lt;(x%10);
-x/=10;
-}
-dp[mask]++;
-}
-int ret=0;
-FORE(i,0,1024)FORE(j,0,1024){
-if(i==j &amp;&amp; dp[i]&lt;=1)continue;
-if(dp[i]==0 || dp[j]==0)continue;
-ret=max(ret,__builtin_popcount(i&amp;j));
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13714&amp;rd=16432 ある数字ｘとｙが与えられた時、０〜９のうち同じ数字が存在する数だけSimilarityの値が高くなる。 （例）ｘ＝１１２４、ｙ＝１１２２
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2015-tco-round-1a-easy---similars/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -292,33 +157,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11867&amp;rd=15092
-・数字で表わされるあるパスワードがある。
-・そのパスワードを忘れてしまったが、複数の人がどのパスワードであったか答えてくれる。
-・ただし、そのパスワードは思い出したものであるため１文字だけ間違っている。
-・このとき、元のパスワードとして考えられるものの数を求める。
-解き方 
-・ｄｐを利用する？
-・各桁についてあっているか、間違っているか、どちらでもよいかの情報をもつ
-・でもこれだと計算量が間に合わない・・・
-→他の人のコードをみる
-・パスワードは５０ケタであるので、最悪５０＊１０＝５００個しか存在しない
-・よって全探索可能
-・反省：全探索の検討が足りなかった。ぱっとｄｐ？と思ってしまったが解の候補、探索の候補どちらも全探索を検討するのが基本。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PasswordXGuessing {
-public: long long howMany(vector&lt;string&gt; guesses) {
-int n=guesses.size(),m=guesses[0].size();
-set&lt;string&gt; s;
-FORE(i,0,n){
-set&lt;string&gt; tmp;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11867&amp;rd=15092 ・数字で表わされるあるパスワードがある。 ・そのパスワードを忘れてしまったが、複数の人がどのパスワードであったか答えてくれる。 ・ただし、
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2012-tco-algorithm-round-1c-easy---passwordxguessing/">Read more…</a>
@@ -338,34 +177,7 @@ set&lt;string&gt; tmp;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13241&amp;rd=16009
-・ある正の整数nを考えた時、その約数の数である関数d(n)とh(n)=n*d(n)を考える。
-・nが与えられた時、h(x)を満たす最も小さいxを求める。そのようなxがなければ-1を返す。
-解き方 
-・nは10^18のため工夫が必要そう。
-・与えられたnを素因数分解して、その階乗で考えればよいか。
-・でも素因数分解が間に合わなさそう。
-・ではｎから平方根、３乗根・・・としていき探索すればよいか。
-・３乗根以上はベースの数を求めるのが難しそう。２分探索も無理がある。
-→他の人のコードをみる
-・２乗の場合を除けば、３乗以上になるのでベースの数は10^6までになるので
-全探索できる。
-・２乗の場合は平方根をとれば簡単に確かめられる。
-・反省：階乗の問題は２乗と３乗以上を別に考えて探索範囲を狭めることで全探索ができる、
-という視点は勉強になった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class DivisorsPower {
-public:
-long long calc(long long x){
-long long ret=0;
-for(long long i=1;i*i&lt;=x;i++)if(x%i==0)ret+=1+(i*i!
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13241&amp;rd=16009 ・ある正の整数nを考えた時、その約数の数である関数d(n)とh(n)=n*d(n)を考える。 ・nが与えられた時、h(x)を満たす最も小
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-628-div1-easy---divisorspower-/">Read more…</a>
@@ -385,33 +197,7 @@ for(long long i=1;i*i&lt;=x;i++)if(x%i==0)ret+=1+(i*i!
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11418&amp;rd=14530
-・黒と白の石が並べられている配列が与えられる。
-・その石をswapすることで、白白・・白黒黒・・黒としたい。
-・ただし、swapできる距離１つごとに１回のswapしかできない。
-・このとき、必要な最小の操作回数を求める。
-解き方 
-・swapの距離によらず、各１回の操作で白と黒を入れ替えることができそう。
-・白と黒が分かれるようにswapする。
-→system failed
-・問題文を見落としてしまった。
-・まず問題文は白→黒の順と決まっていることと、白と黒の数は任意であること。
-・問題文をきちんと読んで条件を整理する基本を徹底せねば。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BlackWhiteMagic {
-public: int count(string creatures) {
-int n=creatures.size();
-int w=0,ret=0;
-FORE(i,0,n)if(creatures[i]=='W')w++;
-FORE(i,0,w)if(creatures[i]=='B')ret++;
-return ret;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11418&amp;rd=14530 ・黒と白の石が並べられている配列が与えられる。 ・その石をswapすることで、白白・・白黒黒・・黒としたい。 ・ただし、swapできる距離
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2011-tco-qualification-round-2---blackwhitemagic/">Read more…</a>
@@ -431,34 +217,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11843&amp;rd=15090
-・アップルジュースとオレンジジュースが１ガロンずつある。
-・プレイヤーは順番に交互のジュースを半分ずつ飲んでいく。
-・ここで、プレイヤーの集合が与えられる。ただし、実際に飲んだ順番はわかっていない。
-・このとき、存在しうる一番ジュースを飲んだプレイヤーを求める。
-・ただし、一番ジュースを飲んだ量が同じであるプレイヤーが複数存在した場合は
-勝者は存在しない。
-解き方 
-・プレイヤー数は８なので、全探索ができそう。
-・ただし、実装が若干大変。
-・そこで問題文から、複数名前が存在するプレイヤー、もしくはプレイヤーの数が１人のとき
-そのプレイヤーが勝者になることがわかる。
-・これがわかれば、実装するだけ。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysJuice {
-public: vector&lt;string&gt; getWinners(vector&lt;string&gt; players) {
-int n=players.size();
-int maxn=0;
-map&lt;string,int&gt; m;
-FORE(i,0,n){
-m[players[i]]++;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11843&amp;rd=15090 ・アップルジュースとオレンジジュースが１ガロンずつある。 ・プレイヤーは順番に交互のジュースを半分ずつ飲んでいく。 ・ここで、プレイヤーの
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2012-tco-round-1a-easy---ellysjuice-/">Read more…</a>
@@ -478,32 +237,7 @@ m[players[i]]++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11809&amp;rd=15091
-・複数の長さの棒が与えられ、ここからK-gramを作りたい。
-・K-gramとはK個からなる集合で、
-各要素は長さKの棒もしくは2つの棒を組み合わせて長さK-1のものとなる。
-・与えられた棒から作ることのできるK-gramのうち、最も大きいKのものを求める。
-解き方 
-・棒の個数は最大５０個、長さも最大５０なので全探索ができそう。
-・すべてのKに対してK-gramが作ることができるか判定すればよい。
-・判定の方法としては、棒の長さでソートし１個の棒で成り立つものをカウント後、
-それ以下の長さのペアを左側と右側双方から探索すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class FoxAndKgram {
-public: int maxK(vector&lt;int&gt; len) {
-int n=len.size();
-sort(all(len));
-int ret=0;
-FORE(i,1,n+1){
-int l=0,r=n-1,cnt=0;
-while(r&gt;=0 &amp;&amp; len[r]&gt;=i){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11809&amp;rd=15091 ・複数の長さの棒が与えられ、ここからK-gramを作りたい。 ・K-gramとはK個からなる集合で、 各要素は長さKの棒もしくは2つの棒を
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2012-tco-round-1b-easy---foxandkgram-/">Read more…</a>
@@ -523,34 +257,7 @@ while(r&gt;=0 &amp;&amp; len[r]&gt;=i){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11414&amp;rd=14524
-・複数の人が存在し、それぞれそのグループに何人以上嘘つきがいるかと言っているかの
-&nbsp;liarの値がわかっている。
-・誰が嘘つきかはわからないが、矛盾しないように嘘つきが何人いるかを求める。
-複数の可能性がある場合は、そのうち最小の人数を求める。
-また、あらゆるケースで矛盾する場合は-1を返す。
-解き方 
-・liarの値は最大で100、人数の最大は50であるため全探索ができそう。
-・よって嘘つきの人数を0～100人までと固定し、その時の嘘つきの数を数えて
-一致するものが矛盾しないケースとなる。
-そのうち、最小のものを返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class MinimumLiars {
-public: int getMinimum(vector&lt;int&gt; claim) {
-int n=claim.size();
-int ret=1e+9;
-FORE(i,0,101){
-int tmp=0;
-FORE(j,0,n)if(claim[j]&gt;i)tmp++;
-if(i==tmp)ret=min(ret,i);
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11414&amp;rd=14524 ・複数の人が存在し、それぞれそのグループに何人以上嘘つきがいるかと言っているかの &nbsp;liarの値がわかっている。 ・誰が嘘つきか
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2011-tco-qualification-round-1---minimumliars/">Read more…</a>

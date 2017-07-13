@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM571 DIV2 -Level2" />
-<meta property="og:description" content="&lt;問題&gt;
-①数字Ｎが与えられる。
-②１からＮまでの数字が付けられたｍｐ３ファイル、&#34;1.mp3&#34;,&#34;2.mp3&#34;...&#34;n.mp3&#34;が作られる。
-③このとき、ファイル名を辞書順に並べたときの配列を返す。
-ただし、Ｎが５０を超える場合は最初の５０個を返す。
-＜解き方＞
-辞書順、ということに気づいて文字列のソートができればＯＫ．
-要素が５０個を超える場合は、最初の５０個のみ表示するということに注意。
-&lt;コード&gt;
-class FoxAndMp3Easy {
-public: vector&lt;string&gt; playList(int n) {
-vector &lt;string&gt; vx,ans;
-for(int i=1;i&lt;=n;i&#43;&#43;){
-stringstream ss;
-ss &lt;&lt; i &lt;&lt; &#34;.mp3&#34;;
-string tmp;
-ss &gt;&gt;tmp;
-vx.push_back(tmp);
-}
-sort(vx.begin(),vx.end());
-for(int i=0;i&lt;min(50,n);i&#43;&#43;)ans.push_back(vx[i]);
-return ans;
-}
-}; " />
+<meta property="og:description" content="&lt;問題&gt; ①数字Ｎが与えられる。 ②１からＮまでの数字が付けられたｍｐ３ファイル、&#34;1.mp3&#34;,&#34;2.mp3&#34;...&#34;n.mp3&#34;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm571-div2--level2/" />
 

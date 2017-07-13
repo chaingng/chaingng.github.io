@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 654 DIV1 Easy - SquareScores" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13694&amp;rd=16318
-・ある文字列が与えられる。
-・文字列はaからzのアルファベット、もしくは?から成る。
-・?の場合、aからzの任意の文字列が入る。
-・また、ある文字列が与えられた時、そのスコアは連続する文字列の数となる。
-（例）aaabaのスコア aが４つ,aaが２つ、aaaが1つ、bが１つで8
-・このとき、与えられた文字列のスコアの期待値を求める。
-解き方
-スコアがabc・・ではなく、aaa,bbbなど連続した文字列だけでよいので、
-実は全探索が可能。
-各部分文字列の位置について、aからzのすべての文字列が連続するときの
-期待値を求めてあげて足していけばよい。
-計算量はO(10^3 * 10~3 * 26)=O(10^7*2.6)なので間に合う。
-まずは全探索できないか考える原則にのっとる。
-コード 
-class SquareScores {
-public: double calcexpectation(vector&lt;int&gt; p, string s) {
-int n=s.size(),m=p.size();
-double prob[m];
-double ret=0.0;
-FORE(i,0,n){
-FORE(j,0,m)prob[j]=1.0;
-FORE(j,i,n){
-if(s[j]==&#39;?&#39;){
-FORE(k,0,m)prob[k]*=p[k]*0.01;
-}
-else{
-FORE(k,0,m)if(k!=s[j]-&#39;a&#39;)prob[k]=0.0;
-}
-FORE(k,0,m)ret&#43;=prob[k];
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13694&amp;rd=16318 ・ある文字列が与えられる。 ・文字列はaからzのアルファベット、もしくは?から成る。 ・?の場合、aからzの任意の文字列が入る。 ・また、あ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-654-div1-easy---squarescores/" />
 

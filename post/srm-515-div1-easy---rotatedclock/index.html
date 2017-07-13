@@ -7,27 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 515 DIV1 Easy - RotatedClock" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11329&amp;rd=14540
-解き方 
-３０度ずつ回転させることが可能なので、全探索して
-有効な数字の時の値を更新すればよい。
-コード 
-class RotatedClock {
-public: string getEarliest(int hourHand, int minuteHand) {
-string ret=&#34;&#34;;
-for(int i=0;i&lt;=360;i&#43;=30){
-int h=(hourHand&#43;i)%360;
-int m=(minuteHand&#43;i)%360;
-if((h%30)*12==m){
-char ch[20];
-sprintf(ch,&#34;%02d:%02d&#34;,h/30,m/6);
-if(ret.empty()||ch&lt;ret)ret=ch;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11329&amp;rd=14540 解き方 ３０度ずつ回転させることが可能なので、全探索して 有効な数字の時の値を更新すればよい。 コード class RotatedClock { public: string getEarliest(int hourHand, int minuteHand) { string ret=&#34;&#34;; for(int i=0;i&lt;=360;i&#43;=30){ int h=(hourHand&#43;i)%360; int m=(minuteHand&#43;i)%360; if((h%30)*12==m){" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/" />
 

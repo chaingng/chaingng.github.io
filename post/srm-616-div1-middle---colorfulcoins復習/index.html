@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 616 DIV1 Middle - ColorfulCoins　（復習×）" />
-<meta property="og:description" content="問題 
-硬貨が複数種類存在し、１枚当たりの価値value[i]があらかじめわかっている。
-それぞれの硬貨は異なる色をしている。
-またＡＴＭが存在し、好きな回数だけ好きな金額を引き出すことができる。
-引きだされる金額は、もっとも硬貨が少ないように引きだされる。
-このとき、すべての硬貨の色の価値を判定するために必要な最小の引き出し回数を求める。
-考えたこと
-サンプルより１度に引き出せないときは、ある硬貨の価値の半分の硬貨があり、かつ倍の価値の硬貨があるときに存在しそう。
-また各硬貨について他の硬貨にならないように一度に引き出せる枚数は、その次の硬貨の価値から割りだせそう。
-では１度の引き出しについて枚数が異なるように選び、その組み合わせの最大化で解けるか。
-サンプルと照らし合わせると合わないので、もっと最小となる考え方がありそう。
-ここでEditorialを読む。
-基本的には、２進数で表せる数とビット数の関係を用いる。
-全てのコインが２枚まで引き出せると、２回の判定で９通りまで判定できる。
-（例）引き出されたコインの枚数
-１回目：０　０　０　１　１　１　２　２　２
-２回目：０　１　２　０　１　２　０　１　２
-ただしすべてのコインが2回引き出せなくとも、１枚まで引き出せるコインが４枚までなら
-上記の判定に含むことができる。
-４枚というのは、２回の引き出しにおける０と１の組み合わせ数。
-つまり引き出す回数がｎ回とすると、各コインの引き出せる最大の数ｘのコインがx^2までで
-あればよい。
-ただしExampleから、どのコインも少なくても１回は引き出さないといけない。
-これは引き出せる最大のコインの枚数でソートすると何枚目かの情報もわかるので、
-各配列のi番目にある最大数xのコインについて x^2&gt;=i&#43;2であるような最小のnを求めればよい。
-最後に、long longの割り算でint型に代入しようとするとintを超える、またはマイナスになるケースがあるので同じ型で取り扱う必要がある。
-コード 
-class ColorfulCoins {
-public: int minQueries(vector&lt;long long&gt; values) {
-vector&lt;long long&gt; num;
-int n=values.size();
-FORE(i,0,n-1)num.push_back( min(100LL,(long long)(values[i&#43;1]/values[i])) );
-sort(all(num));
-FORE(count,1,7){
-int ok=1;
-FORE(i,0,num.size()){" />
+<meta property="og:description" content="問題 硬貨が複数種類存在し、１枚当たりの価値value[i]があらかじめわかっている。 それぞれの硬貨は異なる色をしている。 またＡＴＭが存在し、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-616-div1-middle---colorfulcoins%E5%BE%A9%E7%BF%92/" />
 

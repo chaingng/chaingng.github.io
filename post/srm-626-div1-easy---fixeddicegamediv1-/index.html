@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 626 DIV1 Easy - FixedDiceGameDiv1 (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13239&amp;rd=15859
-・AliceとBobでゲームを行う。
-・Aliceはa個b面あるサイコロを投げ、Bobはc個d面あるサイコロを投げる。
-・b面あるサイコロは1～bの数字が書かれており、d面あるサイコロは1～dの数字が書かれている。
-・Aliceが勝った時、出た目の期待値を求める。
-・Aliceが勝つケースがないときは-1を返す。
-解き方 
-・まずAliceが勝つかどうか判定する。
-・Bobの一番小さい数はcであるので、c&#43;1以上の面が出るときに勝つことができる。
-・次にAliceの勝つ面について、どれだけの確率があるか計算する。
-・dpを用いればできそう。
-・現在までに使ったサイコロの数、現在までの合計のスコアを持つdpを作れば
-場合の数は計算できる。
-・確率として、勝つ面が出た時のすべての場合の数の和を取り、最後に割ってあげる。
-・サンプルはすべて通った。
-→System Failed
-・Aliceだけの面をみていたが、Bobの面も見る必要がある。
-・つまり、Aliceの勝つ数についての場合の数＊Bobがそれに負けるときの場合の数を足してあげ、
-その和を全てとり最後に割ってあげる必要がある。
-・反省：確率の問題に弱い・・・。基礎が足りないのを実感。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class FixedDiceGameDiv1 {
-public: double getExpectation(int a, int b, int c, int d) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13239&amp;rd=15859 ・AliceとBobでゲームを行う。 ・Aliceはa個b面あるサイコロを投げ、Bobはc個d面あるサイコロを投げる。 ・b面あるサイコロ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-626-div1-easy---fixeddicegamediv1-/" />
 

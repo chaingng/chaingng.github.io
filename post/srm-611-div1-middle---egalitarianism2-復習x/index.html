@@ -7,52 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 611 DIV1 Middle - Egalitarianism2 （復習x）" />
-<meta property="og:description" content="問題 
-Ｎ個の都市があり、すべての都市についてある都市からある都市までいけるようにしたい。
-ただし、そのために引くエッジの距離はできるだけ差がないようにしたく、その標準偏差を最小になるようにしたい。
-このとき、最小となる標準偏差を求める。
-解き方 
-標準偏差は全ての辺のコストの平均をave、一つの辺のコストをAiとすると、
-sqrt( Σ(ave-Ai)^2 /(N-1))で求められる。
-このとき、aveの値によってどの辺を用いたらよいかの優先度が変化する。
-そのため、すべての考えられる優先度に対して標準偏差を計算し、そのうちの最小となるものを求めればよい。
-それでは、すべての考えられる優先度を考える。
-このとき、２辺間の優先度はその平均に対して大小があるときに変化する。
-そのため、aveをすべての２辺間の平均＋αに仮に設定し、そのときの標準偏差をすべて求めればよい。
-このとき優先度が決定したときのグラフの作成は最小全域木を求めることと等しい。
-よって、プリム法を適用して最小全域木を求める。
-最後に、標準偏差は計算にあたって以下のように変形する。
-sqrt( Σ(ave-Ai)^2 /(N-1))
-=sqrt( Σ(ave^2) -2*Σ(Ai)*ave&#43;Σ(Ai)^2 /(N-1))
-=sqrt( (n-1)ave^2-2*Σ(Ai)*ave&#43;Σ(Ai)^2/(N-1))
-数列の和の公式でΣの変数にかからない項は項数の積となる。
-コード 
-double d[30][30],d2[30][30];
-int n;
-class Egalitarianism2 {
-public:
-void prim(double m,double &amp;sum,long long &amp;sum2){
-int used[n],prev[n];
-double mind[n];
-FORE(i,0,n)mind[i]=1e&#43;18;
-memset(used,0,sizeof(used));
-used[0]=1;
-FORE(i,0,n){
-mind[i]=fabs(d[0][i]-m);
-prev[i]=0;
-}
-FORE(t,1,n){
-double cost=1e&#43;18;
-int add=-1;
-FORE(i,0,n){
-if(!used[i]&amp;&amp;cost&gt;mind[i]){
-cost=mind[i];
-add=i;
-}
-}
-sum&#43;=d[prev[add]][add];
-sum2&#43;=d2[prev[add]][add];
-used[add]=1;" />
+<meta property="og:description" content="問題 Ｎ個の都市があり、すべての都市についてある都市からある都市までいけるようにしたい。 ただし、そのために引くエッジの距離はできるだけ差がない" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-611-div1-middle---egalitarianism2-%E5%BE%A9%E7%BF%92x/" />
 

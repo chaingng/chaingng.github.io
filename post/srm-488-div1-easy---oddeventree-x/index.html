@@ -7,50 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 488 DIV1 Easy - OddEvenTree x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13759&amp;rd=16461
-N個のノード、N-1のエッジからなる木がある。
-どのノードとエッジが接続しているかわからないが、各ノード間の距離が
-偶数ならE,奇数ならOであるという情報が与えられている。
-このとき、与えられた情報で木が再現できるならそのエッジの例を一つ出力する。
-そうでない場合はー１を返す。
-解き方 
-まずは木でつながっていることから、一つの木（例えばノード０）からのエッジが
-すべてEなら再現できない。
-上記を満たす場合、一つのノード０を基準にして、
-・ノード０からの距離が偶数同士のノード間エッジはE
-・偶数と奇数であればO
-・奇数同士であればE
-であるか判定し、存在する場合は一つのエッジO（例えばノード０～ノード３）
-を固定して、そこからエッジを伸ばしていけば有効なエッジの集合となる。
-コード 
-class OddEvenTree {
-public: vector&lt;int&gt; getTree(vector&lt;string&gt; x) {
-int n=x.size();
-int d[n];
-vector&lt;int&gt; invalid(1,-1);
-int flag=1;
-FORE(i,0,n)if(x[0][i]==&#39;O&#39;)flag=0;
-if(flag)return invalid;
-FORE(i,0,n)d[i]=(x[0][i]==&#39;O&#39;);
-FORE(i,0,n)FORE(j,0,n){
-int cur=(x[i][j]==&#39;O&#39;);
-if(cur!=(d[i]^d[j]))return invalid;
-}
-int r0=0,r1;
-FORE(i,0,n)if(x[0][i]==&#39;O&#39;)r1=i;
-vector&lt;int&gt; ans;
-ans.push_back(r0),ans.push_back(r1);
-FORE(i,1,n)if(i!=r1){
-if(d[i]){
-ans.push_back(r0),ans.push_back(i);
-}else{
-ans.push_back(i),ans.push_back(r1);
-}
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13759&amp;rd=16461 N個のノード、N-1のエッジからなる木がある。 どのノードとエッジが接続しているかわからないが、各ノード間の距離が 偶数ならE,奇数ならO" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-488-div1-easy---oddeventree-x/" />
 

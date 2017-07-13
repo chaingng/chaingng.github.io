@@ -7,54 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM541 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①複数の座標が与えられる。
-それぞれの座標にたいして、ＮＷＳＥの方向が与えられる。
-②それぞれの座標には蟻がいて指定された方向に進む。
-③蟻は他の蟻とぶつかったときにフィールドから消える。
-フィールドの大きさに制限はない。
-④このとき、最後に残る蟻の数を返す。
-解き方 
-単純にシミュレーションすることで解くことができる。
-Ｃｈａｌｌｅｎｇｅ
-このとき、１マスずつシミュレーションすると、
-蟻の距離の差が１マスで方向が互い違いの時すれちがってしまいシステムエラーとなる。
-１マスごとの処理で良いか、「選んだ単位の処理でミスがないか」チェックが必要。
-コード 
-class AntsMeet {
-public: int countAnts(vector&lt;int&gt; x, vector&lt;int&gt; y, string direction) {
-int n=x.size(),ans=0;
-vector&lt;int&gt; check(n,0);
-double cx[n],cy[n];
-FORE(i,0,n){
-cx[i]=x[i];
-cy[i]=y[i];
-}
-FORE(i,0,5000){
-FORE(j,0,n){
-if(check[j]==1)continue;
-if(direction[j]==&#39;N&#39;)cy[j]&#43;=0.5;
-if(direction[j]==&#39;W&#39;)cx[j]-=0.5;
-if(direction[j]==&#39;E&#39;)cx[j]&#43;=0.5;
-if(direction[j]==&#39;S&#39;)cy[j]-=0.5;
-}
-FORE(j,0,n){
-int used=0;
-if(check[j]==1)continue;
-FORE(k,j&#43;1,n){
-if(check[k]==1)continue;
-if(cx[j]==cx[k] &amp;&amp; cy[j]==cy[k]){
-check[k]=1;
-used=1;
-}
-}
-if(used==1)check[j]=1;
-}
-}
-FORE(i,0,n)if(check[i]==0)ans&#43;&#43;;
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 ①複数の座標が与えられる。 それぞれの座標にたいして、ＮＷＳＥの方向が与えられる。 ②それぞれの座標には蟻がいて指定された方向に進む。 ③蟻は" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm541-div2--level2/" />
 

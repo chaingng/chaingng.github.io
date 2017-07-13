@@ -7,53 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 526 DIV1 Easy - DucksAlignment （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11667&amp;rd=14551
-四角形のマスにダチョウが複数存在する。
-ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。
-解き方 
-縦に並べるときと横に並べるときの２通りを試し小さい方を返す。
-縦と横それぞれに対して、並べる列／行と詰めるときの移動数を求めてあげればよい。
-コード 
-class DucksAlignment {
-public: int minimumTime(vector&lt;string&gt; grid) {
-int h=grid.size(),w=grid[0].size();
-vector&lt;int&gt; tate,yoko;
-FORE(i,0,h){
-FORE(j,0,w){
-if(grid[i][j]==&#39;o&#39;){
-tate.push_back(i);
-yoko.push_back(j);
-}
-}
-}
-sort(tate.begin(),tate.end());
-sort(yoko.begin(),yoko.end());
-//move to one column
-int tate1=1e&#43;8,yoko1=1e&#43;8;
-FORE(i,0,h){
-int tmp=0;
-FORE(k,0,tate.size())tmp&#43;=abs(i-tate[k]);
-tate1=min(tate1,tmp);
-}
-FORE(i,0,w-yoko.size()&#43;1){
-int tmp=0,cur=i;
-FORE(j,0,yoko.size()){
-tmp&#43;=abs(yoko[j]-cur);
-cur&#43;&#43;;
-}
-yoko1=min(yoko1,tmp);
-}
-int ans1=tate1&#43;yoko1;
-//move to one row
-int tate2=1e&#43;8,yoko2=1e&#43;8;
-FORE(i,0,w){
-int tmp=0;
-FORE(k,0,yoko.size())tmp&#43;=abs(i-yoko[k]);
-yoko2=min(yoko2,tmp);
-}
-FORE(i,0,h-tate.size()&#43;1){
-int tmp=0,cur=i;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11667&amp;rd=14551 四角形のマスにダチョウが複数存在する。 ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。 解き方 縦に並べるときと横に並べると" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/" />
 

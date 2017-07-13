@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Round 3A Easy - BrightLamps (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13343&amp;rd=16050
-・複数のランプがあり、現在ついているかどうかの情報が与えられる。
-・各ランプについて、ついているときの明るさの値が与えられる。
-・連続K個のランプの状態を変化させることができ、何回でも変化させてよいとき、得られる最大の明るさの値を求める。
-解き方 
-・ランプの数は２５００個のため、全探索は厳しい。
-・ｄｐができないか考えてみるが、前の状態を持つことも難しいためできなさそう
-他のコードを見てみる。
-・状態を良く見てみると、あるランプからK個離れたランプは他のランプの状態を変化させずに
-それぞれ反転することが可能。
-・例えば、ABCDEというランプがありK＝４、A＝０、E＝０とする。
-このとき、ABCDを反転し、BCDEを反転させることで他をかえずにA=1、E=1とすることができる。
-・よって、K個ずつ離れた集合をそれぞれ考え、一番最適な反転を考える。
-つまり、０の数が偶数個のときはすべて１にすることができ、奇数個の時は一番小さいものだけを
-０にして残りを１にすることができる。
-・ただし、状態によっては集合を奇数回反転した場合がよいことがある。
-よって、すべて偶数回反転させる場合と、奇数回反転させるときのうち大きい値が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BrightLamps {
-public: int maxBrightness(string init, vector&lt;int&gt; a, int K) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13343&amp;rd=16050 ・複数のランプがあり、現在ついているかどうかの情報が与えられる。 ・各ランプについて、ついているときの明るさの値が与えられる。 ・連続K個" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-round-3a-easy---brightlamps-/" />
 

@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM551 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①大文字のアルファベットの配列が与えられる。
-②任意の要素をスワップことができるが、スワップ回数の上限も与えられる。
-③このとき、同じアルファベットが隣り合う最大の数を求める。
-解き方 
-最初に全探索をイメージすると、各アルファベットごとに最大の数を求めることがイメージできます。
-次に、スワップについての全探索のイメージを浮かべるのが難しかったです。
-スワップの操作について全探索を考えるのではなく、
-スワップ後の「最終形をイメージ」すると、
-隣り合うアルファベットのサブセット最大数は
-一番左の要素番号ごとに一意に求められることがわかります。
-さらに、並べるのに使うアルファベットも「連続している」ということがわかれば、
-最初に使うアルファベットの数も最も左のものから一つずつインクリメントしていくことで、全探索することができます。
-コード 
-class ColorfulChocolates {
-public: int maximumSpread(string chocolates, int maxSwaps) {
-int ans=0,n=chocolates.size();
-for(char C=&#39;A&#39;;C&lt;=&#39;Z&#39;;C&#43;&#43;){
-FORE(i,0,n){
-FORE(j,0,n){
-int left=i,cur=j;
-int swaps=0;
-while(left&lt;n &amp;&amp; cur&lt;n){
-while(cur&lt;n &amp;&amp; chocolates[cur]!=C)cur&#43;&#43;;
-if(cur&gt;=n)break;
-int tmp=abs(cur-left);
-if(swaps&#43;tmp&gt;maxSwaps)break;
-swaps&#43;=tmp;
-left&#43;&#43;;
-cur&#43;&#43;;
-}
-ans=max(ans,left-i);
-}
-}
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 ①大文字のアルファベットの配列が与えられる。 ②任意の要素をスワップことができるが、スワップ回数の上限も与えられる。 ③このとき、同じアルフ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm551-div2--level2/" />
 

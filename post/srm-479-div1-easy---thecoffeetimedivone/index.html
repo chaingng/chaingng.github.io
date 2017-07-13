@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 479 DIV1 Easy - TheCoffeeTimeDivOne" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11028&amp;rd=14158
-1列の席に座っている客にコーヒーか紅茶を提供したい。
-１番めの席の横にサーブマシンがあり、そこで紅茶かコーヒーを７人分
-入れることができる。入れるのには４７秒かかる。
-また、お客に飲み物を提供するのに４秒かかる。
-お客はコーヒーか紅茶どちらを要望しているかあらかじめわかっている。
-このとき、すべてのお客に要望する飲み物を提供するのにかかる時間を求める。
-解き方 
-nは4*10^7。
-配列を作るのにメモリは足りないが、全探索可能なので必要な配列だけを
-作るように全探索すればよい。
-コード 
-class TheCoffeeTimeDivOne {
-public: long long find(int n, vector&lt;int&gt; tea) {
-int tn=tea.size();
-long long ret=n*4LL;
-ret&#43;=47*((tn&#43;6)/7)&#43;47*((n-tn&#43;6)/7);
-sort(all(tea));
-for(int i=tn-1;i&gt;=0;i-=7)ret&#43;=tea[i]*2;
-set&lt;int&gt; s;
-FORE(i,0,tn)s.insert(tea[i]);
-int cnt=0;
-for(int i=n;i&gt;=1;i--){
-if(s.find(i)!=s.end())continue;
-if(cnt==0){
-ret&#43;=i*2LL;
-cnt=7;
-}
-cnt--;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11028&amp;rd=14158 1列の席に座っている客にコーヒーか紅茶を提供したい。 １番めの席の横にサーブマシンがあり、そこで紅茶かコーヒーを７人分 入れることができる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-479-div1-easy---thecoffeetimedivone/" />
 

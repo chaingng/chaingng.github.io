@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 410 DIV1 Easy - AddElectricalWires (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8817&amp;rd=12182
-ノードが複数存在し、任意のノード同士がつながっている。
-また、任意のノードが電力源につながっている。ただし、複数の電力源につながってはいけない。
-このとき、接続可能なエッジの数を求める。
-解き方 
-各電力源につながっているノードの集合ごとに、残りでつなぐことのできるエッジ数を求める。
-また、そのうち最大の集合と、電力源につながっていないノードの積も答えに加わる。
-あるノードの集合におけるエッジ数は、残りのエッジ数ではなく最大エッジ数を求めた後で、最後に最初に存在するエッジ数を引いてあげればコーディングが簡単になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int cnt,p[50],n;
-vector&lt;string&gt; W;
-class AddElectricalWires {
-public:
-void dfs(int x){
-if(p[x])return;
-p[x]=1;
-cnt&#43;&#43;;
-FORE(i,0,n)if(W[x][i]==&#39;1&#39;&amp;&amp;p[i]==0)dfs(i);
-}
-int maxNewWires(vector&lt;string&gt; wires, vector&lt;int&gt; grid) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8817&amp;rd=12182 ノードが複数存在し、任意のノード同士がつながっている。 また、任意のノードが電力源につながっている。ただし、複数の電力源につながってはい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/" />
 

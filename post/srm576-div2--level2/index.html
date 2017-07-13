@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM576 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①２次元の配列が与えられる。
-②配列には”Ｘ”で表わされる床が存在する。一番下は全て床になっている。
-③また、コインのある座標が与えられる。
-④ユーザは一番下の床からスタートし、任意の長さの梯子を使って床へ移動し、コインを獲得する。
-⑤このとき、必要となる最小の梯子の長さを求める。
-解き方 
-問題の性質から、２分探索が思い浮かぶ。
-ただ高さの上限が少ないので、単純に小さい数からループさせてもよい。
-Ｃｈａｌｌｅｎｇｅのポイント
-また、移動の判定とキューへのスタックがかなりの計算量になるので、
-一度行ったことのある例外判定をきちんと行う必要がある。
-たとえばコード中の以下など。
-if(check[i][j]==1)continue;
-コード 
-class ArcadeManao {
-public: int shortestLadder(vector&lt;string&gt; level, int coinRow, int coinColumn) {
-int h=level.size(),w=level[0].size();
-int check[h][w];
-int low=0,high=h;
-for(int L=0;L&lt;100;L&#43;&#43;){
-queue &lt;pair &lt;int, int&gt; &gt; q;
-q.push(make_pair(coinRow-1,coinColumn-1));
-int flag=0;
-FORE(i,0,h)FORE(j,0,w)check[i][j]=0;
-while(!q.empty()){
-int i=q.front().first;
-int j=q.front().second;
-q.pop();
-if(check[i][j]==1)continue;
-if(i==h-1){
-flag=1;
-break;
-}
-while(j-1&gt;=0 &amp;&amp; level[i][j-1]==&#39;X&#39;)j--;
-for(int cur=j;level[i][cur]==&#39;X&#39;;cur&#43;&#43;){
-check[i][cur]=1;
-for(int up=i;up&gt;=max(0,i-L);up--)
-if(check[up][cur]==0 &amp;&amp; level[up][cur]==&#39;X&#39;)q.push(make_pair(up,cur));" />
+<meta property="og:description" content="問題 ①２次元の配列が与えられる。 ②配列には”Ｘ”で表わされる床が存在する。一番下は全て床になっている。 ③また、コインのある座標が与えられる。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm576-div2--level2/" />
 

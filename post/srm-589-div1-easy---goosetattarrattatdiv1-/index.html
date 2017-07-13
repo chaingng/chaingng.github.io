@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 589 DIV1 Easy - GooseTattarrattatDiv1 ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12730&amp;rd=15701
-解き方 
-回文にするために一致させなければならアルファベットの集合を考えた時、
-もっとも出現回数の大きいものだけを残して、他を変換するのが
-一番コストをおさえられる。
-あとは、上記の集合をしらべるのに無向グラフを利用すればよい。
-コード 
-class GooseTattarrattatDiv1 {
-public: int getmin(string S) {
-int n=S.size();
-int d[26][26],num[26],used[26];
-memset(num,0,sizeof(num));
-FORE(i,0,n)num[S[i]-&#39;a&#39;]&#43;&#43;;
-memset(d,0,sizeof(d));
-for(int i=0;i&lt;n/2;i&#43;&#43;){
-d[S[i]-&#39;a&#39;][S[n-1-i]-&#39;a&#39;]=1;
-d[S[n-1-i]-&#39;a&#39;][S[i]-&#39;a&#39;]=1;
-}
-FORE(k,0,26)FORE(i,0,26)FORE(j,0,26)d[i][j]|=(d[i][k] &amp;&amp; d[k][j]);
-int ret=0;
-memset(used,0,sizeof(used));
-FORE(i,0,26)if(!used[i]){
-used[i]=1;
-int sum=num[i],mx=num[i];
-FORE(j,0,26)if(i!=j &amp;&amp; d[i][j]){
-mx=max(mx,num[j]);
-sum&#43;=num[j];
-used[j]=1;
-}
-ret&#43;=sum-mx;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12730&amp;rd=15701 解き方 回文にするために一致させなければならアルファベットの集合を考えた時、 もっとも出現回数の大きいものだけを残して、他を変換するのが 一" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-589-div1-easy---goosetattarrattatdiv1-/" />
 

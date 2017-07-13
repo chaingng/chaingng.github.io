@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 212 DIV1 Middle - SumOfSquareRoots　（復習×○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2943&amp;rd=5858
-正の整数の集合が与えられ、この数の平方根を考える。
-この平方根に対して足すことができるものを全てまとめて、最後に昇順にして返す。
-解き方 
-全ての平方根に対して整数を切り出して、根が一緒のものをまとめる。
-最後に切り出した整数をまた根の中に戻してあげて、昇順にソートすればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[1001];
-class SumOfSquareRoots {
-public:
-vector&lt;int&gt; shortestList(vector&lt;int&gt; A) {
-memset(dp,0,sizeof(dp));
-FORE(i,0,A.size()){
-int x=A[i];
-int cost=1;
-for(int j=2;j*j&lt;=A[i];j&#43;&#43;){
-if(x%(j*j)==0){
-while(x%(j*j)==0){
-cost*=j;
-x/=(j*j);
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2943&amp;rd=5858 正の整数の集合が与えられ、この数の平方根を考える。 この平方根に対して足すことができるものを全てまとめて、最後に昇順にして返す。 解き方 全" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-212-div1-middle---sumofsquareroots%E5%BE%A9%E7%BF%92/" />
 

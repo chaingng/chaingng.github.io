@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM533 DIV2 -Level2" />
-<meta property="og:description" content="問題
-①数字の配列が与えられ、それぞれの配列は重さを表わす。
-②最初と最後以外の要素を任意で選ぶことができ、選んだ要素の前と後の重さの積がスコアにプラスされる。
-選ばれた要素は消去される。
-③このとき、最大となるスコアを求める。
-解き方
-配列の数は最大で１０のため
-全ての場合の数を求めてもＯ（８！＝４０３２０）となるので全探索可能。
-コード
-class CasketOfStarEasy {
-public:
-int f(vector&lt;int&gt; &amp;w){
-if(w.size()==2)return 0;
-int score=0;
-FORE(i,1,w.size()-1){
-vector&lt;int&gt; tmp;
-FORE(j,0,w.size())if(j!=i)tmp.push_back(w[j]);
-score=max(score,w[i-1]*w[i&#43;1]&#43;f(tmp));
-}
-return score;
-}
-int maxEnergy(vector&lt;int&gt; weight) {
-return f(weight);
-}
-};
-
- " />
+<meta property="og:description" content="問題 ①数字の配列が与えられ、それぞれの配列は重さを表わす。 ②最初と最後以外の要素を任意で選ぶことができ、選んだ要素の前と後の重さの積がスコア" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm533-div2--level2/" />
 

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 583 DIV1 Easy - TravelOnMars （復習x）" />
-<meta property="og:description" content="問題 
-都市が円状につながっている。
-各都市には、そこから１ターンでいける都市数が保存されている。
-始点と終点が与えられた時、移動するための最小ターン数を求める。
-解き方 
-グラフの最短距離を求める問題なので、ワーシャルフロイド法が使えないか考える。
-グラフを作成し、隣り合う都市は１、そこから１ターンで行ける都市は１とし、
-最後にワーシャルフロイドを走らせる。
-Challenge
-一方向だけではなく、順と逆を組み合わせてもよいことに注意。
-コード 
-class TravelOnMars {
-public: int minTimes(vector&lt;int&gt; range, int startCity, int endCity) {
-int n=range.size(),INF=100000000;
-int dp[n][n];
-FORE(i,0,n)FORE(j,0,n)dp[i][j]=INF;
-FORE(i,0,n){
-FORE(j,0,n){
-int l=(i-j&#43;n)%n;
-int r=(j-i&#43;n)%n;
-if(min(l,r)&lt;=range[i])dp[i][j]=1;
-}
-}
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)dp[i][j]=min(dp[i][j],dp[i][k]&#43;dp[k][j]);
-return dp[startCity][endCity];
-}
-}; " />
+<meta property="og:description" content="問題 都市が円状につながっている。 各都市には、そこから１ターンでいける都市数が保存されている。 始点と終点が与えられた時、移動するための最小ター" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-583-div1-easy---travelonmars-%E5%BE%A9%E7%BF%92x/" />
 

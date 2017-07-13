@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 526.5 DIV1 Easy - MagicCandy x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11706&amp;rd=14762
-解き方 
-普通に計算していては間に合わない。
-例えば２０個のキャンディーからは
-20-4=16→16-4=12→12-3=9→9-3=6→6-2=4→4-2=2→2-1=1となり、
-この操作を逆にたどれば計算量が間に合う。
-つまり、ある数からそのsqrtを引かれると次の数になる計算式を
-逆にたどっていけばよい。
-コード 
-class MagicCandy {
-public:
-int rec(int n){
-if(n==1)return 1;
-int candy=rec(n-(int)sqrt(n));
-int low=1,high=n;
-while(low&lt;high){
-int mid=(low&#43;high)/2;
-if(mid-(int)sqrt(mid)&gt;=candy)high=mid;
-else low=mid&#43;1;
-}
-return high;
-}
-int whichOne(int n) {
-return rec(n);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11706&amp;rd=14762 解き方 普通に計算していては間に合わない。 例えば２０個のキャンディーからは 20-4=16→16-4=12→12-3=9→9-3=6→6-" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-526.5-div1-easy---magiccandy-x/" />
 

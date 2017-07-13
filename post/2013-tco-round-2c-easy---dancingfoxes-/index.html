@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2013 TCO Round 2C Easy - DancingFoxes (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12548&amp;rd=15656
-・友達が複数存在し、互いに誰と誰が友達であるかがわかっている。
-・パーティにて、ダンスが任意の回数行われる。ダンスは２人ペアで行われる。
-・ペアとなれるのは友達同士か、もしくは共通の友達がいる必要がある。
-・一度ダンスを行えば、そのペアは友達となる。
-・このとき、０番目の人と１番目の人が友達になるまでに必要な
-最小のダンス回数を求める。
-解き方 
-・最短経路を求める問題なので、ワーシャルフロイドが使えそう。
-・サンプルを見ると、０と１との最短経路－１が答え？
-・サンプルは通ったので提出。
-→SystemFailed.
-・問題文を良く見ると、毎回のダンスで複数の友達がペアになるので、
-初期状態の距離だけでは答えは求まらない。
-・具体的には「0-A-B-C-D-1」のときは１回のダンスで「0-B-C-1」となる。
-・つまり、最初の距離dから(d&#43;1)/3ずつ引いていき、１以下になるまでのダンス回数が
-答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class DancingFoxes {
-public: int minimalDays(vector&lt;string&gt; friendship) {
-int n=friendship.size();
-int d[n][n];" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12548&amp;rd=15656 ・友達が複数存在し、互いに誰と誰が友達であるかがわかっている。 ・パーティにて、ダンスが任意の回数行われる。ダンスは２人ペアで行われる。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2013-tco-round-2c-easy---dancingfoxes-/" />
 

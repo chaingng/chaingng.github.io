@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 672 DIV1 Easy - Procrastination x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=14072&amp;rd=16552
-解き方 
-素数を考えると、素数自身は交換対象とならない。
-よって、何度交換が発生しても、ｎはｎより小さい素数とｎより大きい素数の
-間に収まる。
-素数の間隔は６００以内におさまるので、その間の全ての数の約数を調べて
-シミュレーションし、最終的なｎの収束点が答えになる。
-コード 
-class Procrastination {
-public: long long findFinalAssignee(long long n) {
-long long L=max(2LL,n-600),R=n&#43;600;
-set&lt;long long&gt; s;
-for(long long i=L;i&lt;=R;i&#43;&#43;){
-for(long long j=2;j*j&lt;=i;j&#43;&#43;){
-if(i%j==0){
-s.insert(j);
-s.insert(i/j);
-}
-}
-}
-vector&lt;long long&gt; vx;
-for(set&lt;long long&gt;::iterator it=s.begin();it!=s.end();it&#43;&#43;){
-vx.push_back(*it);
-}
-sort(all(vx));
-FORE(i,0,vx.size()){
-if((n-1)%vx[i]==0 &amp;&amp; n-1&gt;vx[i])n--;
-else if(n%vx[i]==0 &amp;&amp; n&gt;vx[i])n&#43;&#43;;
-}
-return n;
-}
-};
-
- " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=14072&amp;rd=16552 解き方 素数を考えると、素数自身は交換対象とならない。 よって、何度交換が発生しても、ｎはｎより小さい素数とｎより大きい素数の 間に収まる。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-672-div1-easy---procrastination-x/" />
 

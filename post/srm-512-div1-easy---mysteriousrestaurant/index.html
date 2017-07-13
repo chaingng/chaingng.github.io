@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 512 DIV1 Easy - MysteriousRestaurant" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11295&amp;rd=14537
-解き方 
-何日目まで訪れることができるかを固定することで貪欲法で解くことができる。
-N日目まで訪れるとすると、１日目＋７の倍数・・・６日目＋７の倍数のそれぞれについて
-一番コストの少ない種類の和をとり、それが予算以下であれば
-N日目まで訪れることができる。
-コード 
-class MysteriousRestaurant {
-public:
-int calc(char ch){
-if(&#39;A&#39;&lt;=ch &amp;&amp; ch&lt;=&#39;Z&#39;)return ch-&#39;A&#39;&#43;10;
-if(&#39;a&#39;&lt;=ch &amp;&amp; ch&lt;=&#39;z&#39;)return ch-&#39;a&#39;&#43;36;
-return ch-&#39;0&#39;;
-}
-int maxDays(vector&lt;string&gt; prices, int budget) {
-int n=prices.size(),m=prices[0].size();
-int ret=0;
-FORE(i,0,n){
-int cost=0;
-for(int j=0;j&lt;7&amp;&amp;j&lt;=i;j&#43;&#43;){
-int sum=1e&#43;9;
-for(int k=0;k&lt;m;k&#43;&#43;){
-int tmp=0;
-for(int l=j;l&lt;=i;l&#43;=7)tmp&#43;=calc(prices[l][k]);
-sum=min(sum,tmp);
-}
-cost&#43;=sum;
-}
-if(cost&lt;=budget)ret=max(ret,i&#43;1);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11295&amp;rd=14537 解き方 何日目まで訪れることができるかを固定することで貪欲法で解くことができる。 N日目まで訪れるとすると、１日目＋７の倍数・・・６日目＋" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-512-div1-easy---mysteriousrestaurant/" />
 

@@ -77,37 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12474&amp;rd=15494
-２人のプレイヤーが交互に行うゲーム。
-それぞれ正の整数が与えられる。
-各ターンにて、プレイヤーはその数字を１０で割るか、逆にすることができる。
-このとき、最初のプレイヤーの数字を２人目のプレイヤーの数字に一致させることができるかどうかを答える。
-ターン数は最大で１０００。
-解き方 
-２人目のプレイヤーの数字にすることができれば、
-その後の操作は全て一緒にできるので答えは必ずＹＥＳになる。
-仮に一緒にできなければ、２人目のプレイヤーは数字をひっくり返し続けてればよいのでＮＯとなる。
-待ち伏せる場合、２人目のプレイヤーが逆になるのを待ち伏せる場合は逆にできないので例外、と考えがちだが、逆の数字にできるということは最初の数字にもできるということなので問題ない。
-Challenge
-2人の操作で１ターンではなく、１人のプレイヤーの操作が終われば1ターンで、
-そこで判定できることを見逃してしまった。問題文の理解ミスです。
-sprintfはchar型で使うのですが、stringをchar変換しようとしたらうまくいかなかったです。そのままchar型を宣言して使いました。
-コード 
-class TheNumberGame {
-public:
-string determineOutcome(int A, int B) {
-bool win=false;
-char tx[15],ty[15];
-sprintf(tx,"%d",A);
-sprintf(ty,"%d",B);
-string x=tx,y=ty;
-if(x.find(y)!=string::npos)win=true;
-reverse(y.begin(),y.end());
-if(x.find(y)!=string::npos)win=true;
-return win ? "Manao wins" :"Manao loses";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12474&amp;rd=15494 ２人のプレイヤーが交互に行うゲーム。 それぞれ正の整数が与えられる。 各ターンにて、プレイヤーはその数字を１０で割るか、逆にすることができ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-574-div1-easy---thenumbergame-%E5%BE%A9%E7%BF%92x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -124,41 +97,10 @@ return win ? "Manao wins" :"Manao loses";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12470&amp;rd=15493
-それぞれのプレイヤーの強さが与えられる。
-３人でチームを作り、チームの強さはそのうち最小と最大の強さを足したものになる。
-自分のチームは最初の３人であり、このとき一番数字が大きくなる順位を求める。
-解き方 
-最初の順番は答えに関係ないので、自分のチームの強さを保存した後
-除いたものを昇順にソートする。
-一番左と一番右のindexを用意し、最強のプレイヤーが最弱のプレイヤーとチームを組んだ場合を考える。
-自分のチームより強ければチームを作り、左のインデックスを２つ動かし、右のインデックスを一つ左に動かす。
-自分のチームより弱ければその最弱のプレイヤーはどれと組んでも負けるので、左のインデックスのみ３つ動かす。
-Challenge
-自分のプレイヤーを除いたのにカウントしてしまったミスを最初してしまったので操作には注意する。
-コード 
-class TeamContest {
-public: int worstRank(vector&lt;int&gt; strength) {
-int my=min(strength[0],min(strength[1],strength[2]))+max(strength[0],max(strength[1],strength[2]));
-int rank=1;
-vector&lt;int&gt; v;
-FORE(i,3,strength.size())v.push_back(strength[i]);
-sort(v.begin(),v.end());
-int l=0,r=v.size()-1;
-while(l&lt;r){
-if(v[l]+v[r]&gt;my){
-rank++;
-l+=2;
-r--;
-}
-else{
-l+=3;
-}
-}
-return rank;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12470&amp;rd=15493 それぞれのプレイヤーの強さが与えられる。 ３人でチームを作り、チームの強さはそのうち最小と最大の強さを足したものになる。 自分のチームは最
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-573-div1-easy---teamcontest-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -175,45 +117,10 @@ return rank;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12195
-山登りをし、スタートの高さとゴールの高さ、ステップ数が与えられる。
-１ステップごとに、１段上がるか下がるかすることができる。
-また、登山の部分列が与えられる。
-このとき、登山にその部分列が存在するときは”ＹＥＳ”、存在しないときは”ＮＯ”を返す。
-解き方 
-まずはその部分列の操作をしたとき、ゴールにたどり着けるかを判定。
-残りのステップ数がゴールへの距離も多い時はＮＯ。
-残りのステップ数を２で割ったときの余りと、ゴールへの距離を２で割ったときの余りが一致しない場合もＮＯ．
-次に、その部分列の操作をしたときに高さが０未満にならないかを判定。
-まず、残りのステップ数からゴールまでのステップ数を引き、その半分は余裕がある。
-また部分列の操作をしたあとに上る操作ならば最初に登っておいてもよいため、
-ゴールまでのステップ数の分も余裕がある。
-Challenge
-登山のため、高さが０未満になることはないことに注意。
-コード 
-class FoxAndMountainEasy {
-public: string possible(int n, int h0, int hn, string history) {
-int x=h0,m=history.size();
-FORE(i,0,history.size()){
-if(history[i]=='U')x++;
-else x--;
-}
-int d=hn-x;
-if(d&lt;0)d=-d;
-if(n-m&lt;d)return "NO";
-if((n-m)%2!=d%2)return "NO";
-int up=(n-m-d)/2;
-if(x&lt;hn)up+=hn-x;
-x=h0+up;
-FORE(i,0,history.size()){
-if(history[i]=='U')x++;
-else x--;
-if(x&lt;0)return "NO";
-}
-return "YES";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12195 山登りをし、スタートの高さとゴールの高さ、ステップ数が与えられる。 １ステップごとに、１段上がるか下がるかすることができる。 また、登山の
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-557-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -230,24 +137,10 @@ return "YES";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11799&amp;rd=14728
-複数の会社が与えられる。
-そのうち任意の数を選択し、その価値の和／選択した数が合併した後の価値になる。
-すべての会社を合併した時、最大となる価値を求める。
-解き方 
-最初の数の順番は回答に関係しないので昇順にソート。
-このとき、すべての点をプロットすると、２つずつ左から合併を繰り返した方がよいことがわかる。
-（合併後の点が順に右に移動していく。仮に３つを選択した時はその中間になり間の値があまり意味を持たないため、２つずつがよいことがわかる）
-コード 
-class MergersDivOne {
-public: double findMaximum(vector&lt;int&gt; revenues) {
-sort(revenues.begin(),revenues.end());
-double ans=revenues[0];
-FORE(i,1,revenues.size())ans=(ans+revenues[i])/2.0;
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11799&amp;rd=14728 複数の会社が与えられる。 そのうち任意の数を選択し、その価値の和／選択した数が合併した後の価値になる。 すべての会社を合併した時、最大とな
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-536-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -264,34 +157,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12159&amp;rd=15176
-２つの色のレンガと、レンガの個数がそれぞれ与えられる。
-レンガは違う色を交互にだけ積み重ねることができる。
-このとき、とりうる高さの場合の数を求める。
-解き方 
-いくつか例を出してみると、積み重ねたレンガの数が偶数のときは2通り存在し、
-それ以外の場合は１通りしか存在しないことがわかる。
-１）積み重ねたレンガが偶数のときの場合の数　２色のうち最小の数
-２）レンガが奇数のときの場合の数
-＜レンガの長さが違う時＞
-レンガの数が２色とも同じ
-その数×２
-レンガの数が２色で異なる
-少ない方×２＋１
-＜レンガの長さが２色とも同じ時＞
-レンガの数が２色とも同じ
-その数
-レンガの数が２色で異なる
-少ない方＋１
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheBrickTowerEasyDivOne {
-public: int find(int redCount, int redHeight, int blueCount, int blueHeight) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12159&amp;rd=15176 ２つの色のレンガと、レンガの個数がそれぞれ与えられる。 レンガは違う色を交互にだけ積み重ねることができる。 このとき、とりうる高さの場合の
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-554-div1-easy---thebricktowereasydivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -311,38 +177,7 @@ public: int find(int redCount, int redHeight, int blueCount, int blueHeight) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12055&amp;rd=14739
-柱が２つ与えられる。柱の間の距離はｗ。
-２つの柱の最大の長さｘ、ｙが与えられ、１～ｘ、１～ｙの間で好きに決めることができる。
-最後に、柱のてっぺんをロープで結び、その長さの平均値を求める。
-解き方 
-ｘ、ｙが１０＾５のため、全探索で解くことはできない。
-２つの柱の差の数は、２つの求め方がある。
-１）ｘ、ｙから計算式を求めて一意に決定
-２）ｘのみ１～ｘまで変化させ、それぞれに対しとりうる値を区間で求める。
-今回は２の方法でコーディングしました。
-１つエラーではまった原因としては、iをint型で計算したため数が大きい場合にエラーになってしまいました。
-「計算は全て型を一致させる」、という基本を忘れないようにします。
-ちなみに１の場合は、長さのとりうる値１－ｘからｙ－１までループさせ、
-i&lt;=０のときはmin(y,x+i)
-i&gt;0のときはmin(x,y-i)分だけその長さが存在することになります。
-コード 
-class Pillars {
-public: double getExpectedLength(int w, int x, int y) {
-if(x&gt;y)swap(x,y);
-double ret=w*x;
-for(int len=1;len&lt;=y-1;len++){
-int cnt=max(0,min(x,y-len))+max(0,min(x-len,y));
-ret+=cnt*sqrt((double)len*len+w*w);
-}
-return ret/x/y;
-}
-};
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i !
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12055&amp;rd=14739 柱が２つ与えられる。柱の間の距離はｗ。 ２つの柱の最大の長さｘ、ｙが与えられ、１～ｘ、１～ｙの間で好きに決めることができる。 最後に、柱の
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-547-div1-easy---pillars-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -362,32 +197,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12388&amp;rd=15489
-プレートの問題の応用。
-各ビットごとに、ＸＯＲ，ＡＮＤ，ＯＲいずれかの動作をするデバイスがある。
-またビットの和で構成されているプレートがいくつか与えられている。
-このとき、各ビットのデバイスがどの動作をしているか判定するために
-追加で必要なプレートの数を求める。
-解き方 
-各ビットに１，１，０があればよい。
-足りない場合は、各ビットごとに足りない数を求め、その最大値を返してあげればよい。
-コード 
-class TheDevice {
-public: int minimumAdditional(vector&lt;string&gt; plates) {
-int cost=0;
-FORE(j,0,plates[0].size()){
-int one=0,zero=0;
-FORE(i,0,plates.size()){
-if(plates[i][j]=='1')one++;
-else zero++;
-}
-int tmp=3-min(2,one)-min(1,zero);
-cost=max(cost,tmp);
-}
-return cost;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12388&amp;rd=15489 プレートの問題の応用。 各ビットごとに、ＸＯＲ，ＡＮＤ，ＯＲいずれかの動作をするデバイスがある。 またビットの和で構成されているプレートが
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-569-div1-easy---thedevice-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -404,40 +217,10 @@ return cost;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12427&amp;rd=15490
-ロボットが与えられた数の配列の通りに動作する。
-最初は任意の方向を向いており、配列の最初の数だけまっすぐ移動する。
-その後、移動した分だけ左を向く。
-次の配列に移り、同じ動作をする。最後の配列まで終わったら一度の操作が終了。
-この動作をＴ回実施する。
-最後に、最初の位置とのマンハッタン距離を返す。
-解き方 
-最小・最大を求めるわけではないシミュレーション問題。
-今回はＴが10^9と大きいので単純なシミュレーションでは解けない。
-一度の動作後に動いた座標と向きは常に一緒なので、
-そのＴ回の繰り返しで解ける。
-４回動くと向きは戻るので、４の倍数のときは×Ｔ、
-余りが出た場合は４の倍数から１回、２回、３回いずれかの値を足す。
-コード 
-class RobotHerb {
-public: long long getdist(int T, vector&lt;int&gt; a) {
-int x[]={0,1,0,-1},y[]={1,0,-1,0};
-int d=0,curx=0,cury=0;
-long long ans=0,move[4]={};
-FORE(n,1,5){
-FORE(i,0,a.size()){
-curx+=a[i]*x[d];
-cury+=a[i]*y[d];
-d=(d+a[i])%4;
-}
-move[n%4]=abs(curx)+abs(cury);
-}
-ans=move[0]*(T/4);
-if(T%4)ans+=move[T%4];
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12427&amp;rd=15490 ロボットが与えられた数の配列の通りに動作する。 最初は任意の方向を向いており、配列の最初の数だけまっすぐ移動する。 その後、移動した分だけ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-570-div1-easy---robotherb-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -454,51 +237,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12496&amp;rd=15495
-２人でのゲーム。
-ある数が与えられ、プレイヤーは１とその数自身以外の約数をそこから引くことができる。
-約数を引いたら、次のプレイヤーに交替して進めていく。
-このとき、ある数が与えられたときに最初のプレイヤーが勝つなら”Ｊｏｈｎ”、
-負けるなら”Ｂｒｕｓ”を返す。
-解き方 
-与えられる数の最大は１０＾１８のため、ｄｐでは解くことができない。
-そのため、法則がないか見つける。
-とりあえず「適当な数までサンプル出力し、法則をながめる」ことが１つの手法。
-法則は以下の通り。
-１）２＾ｎ以外の偶数が与えられたら勝ち
-この場合、ｘ＝２ｙ＊２ｚ＝２（ｙ＋ｚ）、
-（ただしｙ＋ｚは２＾ｎではない、つまり奇数の約数を含む）
-で表わすことができる。
-このとき、偶数と奇数の約数が必ず存在するので勝ちとなる。
-２）奇数が与えられたら負け
-奇数は「素数」もしくは「奇数で割る」ことができる。
-奇数で割れるときは、奇数ー奇数のため必ず偶数になる。
-このとき、２＾ｎを含んでいるとすると奇数はｘ＝２＾ｎ＋ｙと表わせるが
-２＾ｎの倍数で割れないため、２＾ｎの偶数ではない。
-つまり、奇数を引いたときは２＾ｎ以外の偶数が現れる。
-２＾ｎ以外の偶数は必ず約数が存在して、
-一方奇数で割ることができなければ負けとなるためこの場合は負けとなる。
-３）２＾ｎの偶数のとき
-たとえば２＾３＝８のときは、２，４で割ることができる。
-２＾１を引くと６となり２＾ｎ以外の偶数が出るので負けとなる。
-そのため、２＾ｎが与えられた時は２＾（ｎ－１）を引くしかないが
-その結果が２、つまりｎが偶数のときは勝ちとなるが
-奇数のときは負けとなる。
-コード 
-class TheNumberGameDivOne {
-public: string find(long long n) {
-int num=0;
-if(n%2)return "Brus";
-while(n%2==0){
-n/=2;
-num=(num+1)%2;
-}
-if(n!=1)return "John";
-if(num)return "Brus";
-return "John";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12496&amp;rd=15495 ２人でのゲーム。 ある数が与えられ、プレイヤーは１とその数自身以外の約数をそこから引くことができる。 約数を引いたら、次のプレイヤーに交替
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-575-div1-easy---thenumbergamedivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -515,33 +257,10 @@ return "John";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-都市が円状につながっている。
-各都市には、そこから１ターンでいける都市数が保存されている。
-始点と終点が与えられた時、移動するための最小ターン数を求める。
-解き方 
-グラフの最短距離を求める問題なので、ワーシャルフロイド法が使えないか考える。
-グラフを作成し、隣り合う都市は１、そこから１ターンで行ける都市は１とし、
-最後にワーシャルフロイドを走らせる。
-Challenge
-一方向だけではなく、順と逆を組み合わせてもよいことに注意。
-コード 
-class TravelOnMars {
-public: int minTimes(vector&lt;int&gt; range, int startCity, int endCity) {
-int n=range.size(),INF=100000000;
-int dp[n][n];
-FORE(i,0,n)FORE(j,0,n)dp[i][j]=INF;
-FORE(i,0,n){
-FORE(j,0,n){
-int l=(i-j+n)%n;
-int r=(j-i+n)%n;
-if(min(l,r)&lt;=range[i])dp[i][j]=1;
-}
-}
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]);
-return dp[startCity][endCity];
-}
-}; 
+			問題 都市が円状につながっている。 各都市には、そこから１ターンでいける都市数が保存されている。 始点と終点が与えられた時、移動するための最小ター
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-583-div1-easy---travelonmars-%E5%BE%A9%E7%BF%92x/">Read more…</a>
 		</div>
 	</div>
 </article>

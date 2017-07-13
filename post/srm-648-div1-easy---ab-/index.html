@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 648 DIV1 Easy - AB (×)" />
-<meta property="og:description" content="問題 
-・文字の長さがNであり、’A’か’B’から成る文字列を作りたい。
-・ただし、Aより後ろのどこかにBがあるペアをK個作りたい。
-・そのような文字列を作れない場合は-1を、作れる場合はそのような文字列のうち一つを出力する。
-解き方 
-・最大のペア数はN/2 * (N-N/2)であるので、これよりもKが大きければそのような文字列を
-作れない。
-・作れる場合は実装するだけ。Aを出力するときに、それより右にあるべきBの数を保存してあげるように解いた。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class AB {
-public: string createString(int N, int K) {
-string ret=&#34;&#34;;
-for(int a=0;a&lt;=N/2;a&#43;&#43;){
-int b=N-a;
-if(a*b&lt;K)continue;
-vector&lt;int&gt; v;
-FORE(i,0,a){" />
+<meta property="og:description" content="問題 ・文字の長さがNであり、’A’か’B’から成る文字列を作りたい。 ・ただし、Aより後ろのどこかにBがあるペアをK個作りたい。 ・そのような文" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-648-div1-easy---ab-/" />
 

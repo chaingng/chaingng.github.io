@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 427 DIV1 Middle - LocateTreasure　（復習××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9984
-関数dig(x)が与えられ、x&lt;10のときはx、そうでないときは各桁の和が返される。
-プレイヤーはｘｙ座標の(0,0)にいる。
-最初は北にdig(１)歩進む。
-９０度右に転換する。
-次に与えられたmultiを進む数にかける。
-このステップをＫ回繰り返した時、最後にいる位置を答える。
-解き方 
-dig(x)はある値に収束しそう。
-繰り返してみると、ある配列に収束することがわかる。
-もう少し踏み込んでみると、各桁の和をとるということは、各桁を９で割ったあまりを足すことと同義となる。
-よって、xが10以上の場合は10未満になるまで9を引いてあげればよい。
-次に、配列は最大でも長さ12になることがわかる。
-よってKが12より大きい場合は12で割った余りに、安全に24を足してあげれば同じ座標に収束する。
-最後に、収束する座標は初期値の繰り返しにならないことに注意。
-(0, 0), (0, 1), [(6, 1), (6, -8), (-3, -8), (-3, 1)]
-[]が繰り返し部分であり、(0,1)は一回しか現れないことに注意する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class LocateTreasure {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9984 関数dig(x)が与えられ、x&lt;10のときはx、そうでないときは各桁の和が返される。 プレイヤーはｘｙ座標の(0,0)にいる。 最初" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-427-div1-middle---locatetreasure%E5%BE%A9%E7%BF%92/" />
 

@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 597 DIV1 Easy - LittleElephantAndString (○)" />
-<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12854&amp;rd=15709
-文字列の長さが同じである、文字列Aと文字列Bが与えられる。
-文字列Aの任意の文字を１つ選んで、先頭に持ってくる動作を繰り返して文字列Bにしたい。
-このとき、必要な最小の操作回数を求める。
-どうしても文字列Bにできないときは-1を返す。
-解き方 
-・文字列Aの先頭からｘ文字と、文字列Bの後ろからｘ文字のうち最長のｘを求め、
-残りの文字列長が答えになる？
-・サンプルをみると、Aの部分文字列のうち間の文字をとることで部分文字列Bにもできるので
-そうではなさそう。
-・間の文字を取れるということは、Aの部分文字列とBの最後からｘ文字の文字列のうち
-最長のｘをとれればよさそう。
-・最長部分文字列の問題なのでｄｐでｘを求める。
-→System Passed
-・AもBも部分文字列であればｄｐだが、Bは固定文字列なので貪欲法でもよかった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class LittleElephantAndString {
-public: int getNumber(string A, string B) {
-int n=A.size();
-int a[26]={},b[26]={};" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12854&amp;rd=15709 文字列の長さが同じである、文字列Aと文字列Bが与えられる。 文字列Aの任意の文字を１つ選んで、先頭に持ってくる動作を繰り返して文字列Bに" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-597-div1-easy---littleelephantandstring-/" />
 

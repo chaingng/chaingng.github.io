@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 400 DIV1 Easy - StrongPrimePower" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8763&amp;rd=12172
-ある整数ｎが与えられる。
-このｎが素数の階乗で表せるならその素数と階乗数を返す。
-そのように表せられなければ空の文字列を返す。
-解き方 
-nの最大は10^18で全探索できないが、
-2乗の場合を除けば探索範囲はO(10^6)となり全探索可能。
-2乗の場合の計算はdouble*double==longにならないよう、型を一致させることに注意。
-コード 
-class StrongPrimePower {
-public: vector&lt;int&gt; baseAndExponent(string n) {
-vector&lt;int&gt; ans;
-long long x;
-stringstream out(n);
-out&gt;&gt;x;
-for(int i=2;i&lt;=1000000 &amp;&amp; i&lt;x;i&#43;&#43;)if(x%i==0){
-long long tmp=x;
-int cnt=0;
-while(tmp%i==0){
-tmp/=i;
-cnt&#43;&#43;;
-}
-if(tmp==1){
-ans.push_back(i);
-ans.push_back(cnt);
-return ans;
-}
-return ans;
-}
-long long y=sqrt((double)x);
-if(y*y==x){
-ans.push_back(y);
-ans.push_back(2);
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8763&amp;rd=12172 ある整数ｎが与えられる。 このｎが素数の階乗で表せるならその素数と階乗数を返す。 そのように表せられなければ空の文字列を返す。 解き方 nの最" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-400-div1-easy---strongprimepower/" />
 

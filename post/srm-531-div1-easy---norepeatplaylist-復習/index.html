@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 531 DIV1 Easy - NoRepeatPlaylist (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11774&amp;rd=14724
-プレイヤーにＮ曲の曲が入っており、Ｐ曲からなるプレイリストを作りたい。
-Ｎ曲はそれぞれ少なくとも１回は再生しなければならない。
-また、１度再生した曲はＭ曲以上開ければまた再生できる。
-このとき、作成できるプレイリストの場合の数を求める。
-解き方 
-Ｃの順列の問題のとき、この場合は各変数を決めてＤＦＳを使うことで解くことができる。
-ＤＦＳでは各曲は区別しなくてもよい。
-変数は①Ｐ曲の曲を作るので現在までで作っている曲数、②Ｎ曲をすべて再生しなければならないのでまだ再生していない曲数、③これまでに再生した曲数となる。
-ＤＦＳのみの実装だとＯ（２＾１００＝１０＾１０）となるが、
-ｄｐを使うことでｄｐのサイズ１００＾３＝１０＾６まで減る。
-さらに向上させようとすれば、まだ再生していない曲はＮ－これまでに再生した曲だけ考えればよいので１０＾３まで減らすこともできる。
-コード 
-class NoRepeatPlaylist {
-public:
-long long f(int idx,int XS, int YS){
-if(idx==P)return YS==0 ? 1 : 0;
-if(dp[idx][XS][YS]!=-1)return dp[idx][XS][YS];
-long long ans=0;
-if(YS&gt;0)ans&#43;=YS*f(idx&#43;1,XS&#43;1,YS-1)%MOD;
-if(XS-M&gt;0)ans&#43;=(XS-M)*f(idx&#43;1,XS,YS)%MOD;
-return dp[idx][XS][YS]=ans%MOD;
-}
-int numPlaylists(int N1, int M1, int P1) {
-FORE(i,0,101)FORE(j,0,101)FORE(k,0,101)dp[i][j][k]=-1;
-P=P1;
-M=M1;
-return f(0,0,N1);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11774&amp;rd=14724 プレイヤーにＮ曲の曲が入っており、Ｐ曲からなるプレイリストを作りたい。 Ｎ曲はそれぞれ少なくとも１回は再生しなければならない。 また、１度" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-531-div1-easy---norepeatplaylist-%E5%BE%A9%E7%BF%92/" />
 

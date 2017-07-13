@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 510 DIV1 Easy - TheAlmostLuckyNumbersDivOne" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11461&amp;rd=14439
-解き方 
-４か７以外の数字は最大ひとつしか含めてはいけないので、
-１つ含んでいる場合とひとつも含んでいない場合で場合分けすれば
-すべての数字を発生させられる。
-あとはa以上かつb以下か判定すればよい。
-コード 
-class TheAlmostLuckyNumbersDivOne {
-public:
-int calc(long long x){
-int ret=0;
-while(x&gt;0){
-if(!(x%10==4||x%10==7))ret&#43;&#43;;
-x/=10;
-}
-return ret;
-}
-void dfs(long long x){
-if(x&lt;=b){
-dfs(x*10&#43;4);
-dfs(x*10&#43;7);
-if(calc(x)==0){
-for(int i=0;i&lt;=9;i&#43;&#43;){
-if(i==0 &amp;&amp; x==0)continue;
-if(i==4 || i==7)continue;
-dfs(x*10&#43;i);
-}
-}
-if(a&lt;=x)ret&#43;&#43;;
-}
-}
-long long find(long long a_, long long b_) {
-a=a_,b=b_;
-ret=0;
-dfs(0);
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11461&amp;rd=14439 解き方 ４か７以外の数字は最大ひとつしか含めてはいけないので、 １つ含んでいる場合とひとつも含んでいない場合で場合分けすれば すべての数字を" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-510-div1-easy---thealmostluckynumbersdivone/" />
 

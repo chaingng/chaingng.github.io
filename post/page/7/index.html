@@ -77,51 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11887&amp;rd=14733
-解き方 
-0.5単位のターンでぶつからないか試せば良い。
-試す数の最大値に注意。
-コード 
-class AntsMeet {
-public: int countAnts(vector&lt;int&gt; x, vector&lt;int&gt; y, string direction) {
-int n=x.size();
-double dx[]={1,0,-1,0},dy[]={0,1,0,-1};
-int d[n];
-FORE(i,0,n){
-if(direction[i]=='E')d[i]=0;
-if(direction[i]=='N')d[i]=1;
-if(direction[i]=='W')d[i]=2;
-if(direction[i]=='S')d[i]=3;
-}
-double px[n],py[n];
-FORE(i,0,n){
-px[i]=x[i];
-py[i]=y[i];
-}
-int used[n];
-memset(used,0,sizeof(used));
-FORE(num,0,5000){
-FORE(i,0,n){
-px[i]+=dx[d[i]]*0.5;
-py[i]+=dy[d[i]]*0.5;
-}
-FORE(i,0,n)if(!used[i]){
-int update=0;
-FORE(j,i+1,n)if(!used[j]){
-if(px[i]==px[j] &amp;&amp; py[i]==py[j]){
-used[j]=1;
-update=1;
-}
-}
-if(update)used[i]=1;
-}
-}
-int ret=0;
-FORE(i,0,n)if(used[i])ret++;
-return n-ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11887&amp;rd=14733 解き方 0.5単位のターンでぶつからないか試せば良い。 試す数の最大値に注意。 コード class AntsMeet { public: int countAnts(vector&lt;int&gt; x, vector&lt;int&gt; y, string direction) { int n=x.size(); double dx[]={1,0,-1,0},dy[]={0,1,0,-1}; int d[n]; FORE(i,0,n){ if(direction[i]=='E')d[i]=0; if(direction[i]=='N')d[i]=1; if(direction[i]=='W')d[i]=2; if(direction[i]=='S')d[i]=3; } double px[n],py[n]; FORE(i,0,n){
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-541-div1-easy---antsmeet/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -138,37 +97,10 @@ return n-ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12296&amp;rd=15182
-解き方 
-貪欲法で解けば良い。システムテストで落ちないように間違いの少ないような実装を
-するよう気をつける。
-コード 
-class TomekPhone {
-public: int minKeystrokes(vector&lt;int&gt; f, vector&lt;int&gt; key) {
-int n=f.size();
-int cnt=0;
-FORE(i,0,key.size())cnt+=key[i];
-if(n&gt;cnt)return -1;
-int ret=0,p=1;
-while(1){
-int finish=1;
-FORE(i,0,n)if(f[i]!=0)finish=0;
-if(finish)break;
-sort(f.rbegin(),f.rend());
-cnt=0;
-FORE(i,0,key.size()){
-if(key[i]&gt;0)key[i]--,cnt++;
-}
-FORE(i,0,cnt)if(f[i%n]&gt;0){
-ret+=f[i%n]*p;
-f[i%n]=0;
-}
-p++;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12296&amp;rd=15182 解き方 貪欲法で解けば良い。システムテストで落ちないように間違いの少ないような実装を するよう気をつける。 コード class TomekPhone { public: int minKeystrokes(vector&lt;int&gt; f, vector&lt;int&gt; key) { int n=f.size(); int
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-560-div1-easy---tomekphone/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -185,48 +117,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12314&amp;rd=15183
-解き方 
-maxAcceptedの数は15個までなので、各問題についてMとLすべての分け方を試すことが
-できる。
-各分け方について、貪欲に風船を割り当てていけば最適解が求まる。
-コード 
-class ICPCBalloons {
-public: int minRepaintings(vector&lt;int&gt; balloonCount, string balloonSize, vector&lt;int&gt; maxAccepted) {
-int n=maxAccepted.size();
-vector&lt;int&gt; m,l;
-int allm=0,alll=0;
-FORE(i,0,balloonCount.size()){
-if(balloonSize[i]=='M'){
-m.push_back(balloonCount[i]);
-allm+=balloonCount[i];
-}else{
-l.push_back(balloonCount[i]);
-alll+=balloonCount[i];
-}
-}
-sort(m.rbegin(),m.rend());
-sort(l.rbegin(),l.rend());
-int ret=1e+9;
-for(int mask=0;mask&lt;(1&lt;&lt;n);mask++){
-vector&lt;int&gt; cm,cl;
-int cntm=0,cntl=0;
-FORE(i,0,n){
-if(mask&amp;(1&lt;&lt;i)){
-cm.push_back(maxAccepted[i]);
-cntm+=maxAccepted[i];
-}else{
-cl.push_back(maxAccepted[i]);
-cntl+=maxAccepted[i];
-}
-}
-if(allm&lt;cntm || alll&lt;cntl)continue;
-int cost=0;
-sort(cm.rbegin(),cm.rend());
-sort(cl.rbegin(),cl.rend());
-FORE(i,0,cm.size()){
-int cur= i&gt;=m.size() ? 0 : m[i];
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12314&amp;rd=15183 解き方 maxAcceptedの数は15個までなので、各問題についてMとLすべての分け方を試すことが できる。 各分け方について、貪欲に風船
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-651-div1-easy---icpcballoons-/">Read more…</a>
@@ -246,27 +137,10 @@ int cur= i&gt;=m.size() ? 0 : m[i];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11808&amp;rd=14729
-解き方 
-（ｘ，ｙ）の合計が奇数の座標と偶数の座標が存在すれば、どちらにもできるので
-答えは必ずYESになる。
-そうでない場合はそれぞれ奇数のみ、偶数のみのルートとなる。
-コード 
-class EvenRoute {
-public: string isItPossible(vector&lt;int&gt; x, vector&lt;int&gt; y, int wantedParity) {
-int n=x.size();
-int odd=0,even=0;
-FORE(i,0,n){
-if((x[i]+y[i])%2==0)even++;
-else odd++;
-}
-if(even &amp;&amp; odd)return "CAN";
-if(even&gt;0 &amp;&amp; wantedParity==0)return "CAN";
-if(odd&gt;0 &amp;&amp; wantedParity==1)return "CAN";
-return "CANNOT";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11808&amp;rd=14729 解き方 （ｘ，ｙ）の合計が奇数の座標と偶数の座標が存在すれば、どちらにもできるので 答えは必ずYESになる。 そうでない場合はそれぞれ奇数の
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-538-div1-easy---evenroute/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -283,31 +157,10 @@ return "CANNOT";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11817&amp;rd=14730
-解き方 
-A，B自身をXとYで表せられるような整数を求めれば良い。
-どちらもXで割り切れるならばYが不要になるので−１となる。
-コード 
-class KingXNewCurrency {
-public: int howMany(int A, int B, int X) {
-if(A%X==0 &amp;&amp; B%X==0)return -1;
-set&lt;int&gt; s1,s2;
-for(int i=0;i&lt;A;i+=X)for(int j=1;j&lt;=A-i;j++){
-if((A-i)%j==0)s1.insert(j);
-}
-for(int i=0;i&lt;B;i+=X)for(int j=1;j&lt;=B-i;j++){
-if((B-i)%j==0)s2.insert(j);
-}
-if(A%X==0)return s2.size();
-if(B%X==0)return s1.size();
-int ret=0;
-for(set&lt;int&gt;::iterator it=s1.begin();it!=s1.end();it++){
-if(s2.find(*it)!=s2.end())ret++;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11817&amp;rd=14730 解き方 A，B自身をXとYで表せられるような整数を求めれば良い。 どちらもXで割り切れるならばYが不要になるので−１となる。 コード class KingXNewCurrency { public:
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-537-div1-easy---kingxnewcurrency/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -324,44 +177,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12025&amp;rd=14737
-解き方 
-貪欲法で、左のアルファベットから決めていけば良い。
-決めていく材料として、
-あるアルファベットを固定した時に最大のminInvが指定した値以上になり、
-かつつくることのできる最も降順の文字列が与えられた文字列よりも大きければ良い。
-コード 
-class StrIIRec {
-public: string recovstr(int n, int minInv, string minStr) {
-int used[n];
-memset(used,0,sizeof(used));
-string ret="";
-int cnt=0;
-for(int i=0;i&lt;n;i++){
-for(int j=0;j&lt;n;j++)if(used[j]==0){
-string tmp=ret;
-tmp+='a'+j;
-for(int k=n-1;k&gt;=0;k--)if(!used[k] &amp;&amp; k!=j)tmp+='a'+k;
-if(tmp&lt;minStr)continue;
-int cost=cnt;
-for(int k=0;k&lt;j;k++)if(!used[k])cost++;
-used[j]=1;
-for(int k=n-1;k&gt;=0;k--)if(!used[k]){
-for(int l=k-1;l&gt;=0;l--)if(!used[l])cost++;
-}
-if(cost&lt;minInv){
-used[j]=0;
-continue;
-}
-ret+='a'+j;
-for(int k=0;k&lt;j;k++)if(!used[k])cnt++;
-break;
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12025&amp;rd=14737 解き方 貪欲法で、左のアルファベットから決めていけば良い。 決めていく材料として、 あるアルファベットを固定した時に最大のminInvが指定
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-545-div1-easy---striirec/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -378,45 +197,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11965&amp;rd=15171
-解き方 
-上に載せるハットと下に載せるハットの組み合わせに分かれるので、
-二部マッチングの問題に帰着できる。
-最大フローアルゴリズムを用いれば良い。
-コード 
-int d[60][60];
-int a[60],b[60],used[60];
-int n,m;
-class PointyWizardHats {
-public:
-bool ispossible(int th,int tr,int bh,int br){
-return tr&lt;br &amp;&amp; th*br&gt;bh*tr;
-}
-bool dfs(int x){
-if(x==-1)return true;
-if(used[x])return false;
-used[x]=1;
-FORE(i,0,m){
-if(d[x][i]){
-if(dfs(b[i])){
-a[x]=i;
-b[i]=x;
-return true;
-}
-}
-}
-return false;
-}
-int getNumHats(vector&lt;int&gt; topHeight, vector&lt;int&gt; topRadius, vector&lt;int&gt; bottomHeight, vector&lt;int&gt; bottomRadius) {
-n=topHeight.size(),m=bottomHeight.size();
-memset(d,0,sizeof(d));
-FORE(i,0,n)FORE(j,0,m){
-d[i][j]=ispossible(topHeight[i],topRadius[i],bottomHeight[j],bottomRadius[j]);
-}
-memset(a,-1,sizeof(a));
-memset(b,-1,sizeof(b));
-int ret=0;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11965&amp;rd=15171 解き方 上に載せるハットと下に載せるハットの組み合わせに分かれるので、 二部マッチングの問題に帰着できる。 最大フローアルゴリズムを用いれば
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-549-div1-easy---pointywizardhats-xx/">Read more…</a>
@@ -436,33 +217,10 @@ int ret=0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11967&amp;rd=15170
-解き方 
-二分探索を用いればよい。
-０が答えのときを含ませるには、lowを-1以下に設定する必要があることに注意。
-コード 
-class KingdomAndTrees {
-public:
-bool ispossible(vector&lt;int&gt; h,int m){
-int n=h.size();
-h[0]=max(1,h[0]-m);
-FORE(i,1,n){
-if(h[i]+m&lt;=h[i-1])return false;
-h[i]=max(h[i-1]+1,h[i]-m);
-}
-return true;
-}
-int minLevel(vector&lt;int&gt; heights) {
-long long low=-1,high=INT_MAX;
-while(high-low&gt;1){
-int mid=(low+high)/2;
-if(ispossible(heights,mid))high=mid;
-else low=mid;
-}
-return high;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11967&amp;rd=15170 解き方 二分探索を用いればよい。 ０が答えのときを含ませるには、lowを-1以下に設定する必要があることに注意。 コード class KingdomAndTrees { public: bool ispossible(vector&lt;int&gt; h,int m){ int n=h.size();
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-548-div1-easy---kingdomandtrees/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -479,39 +237,10 @@ return high;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12137&amp;rd=15173
-解き方 
-各アルファベットごとに最大の連続数を考え、最大のものを求める。
-あるアルファベットについて最大の連続数を考えるとき、
-どれか１つのアルファベットの位置は変わらないことを利用する。
-よって、すべての位置を起点にして同じアルファベット結合させ、
-そのスワップ回数がmaxswap数以下のときの連続数をそれぞれとっていけばよい。
-コード 
-class ColorfulChocolates {
-public: int maximumSpread(string chocolates, int maxSwaps) {
-int n=chocolates.size();
-int ret=0;
-for(char ch='A';ch&lt;='Z';ch++){
-vector&lt;int&gt; vx;
-FORE(i,0,n)if(ch==chocolates[i])vx.push_back(i);
-FORE(i,0,vx.size()){
-vector&lt;int&gt; tmp;
-FORE(j,0,vx.size())tmp.push_back(abs(vx[i]-vx[j]-(i-j)));
-sort(all(tmp));
-int sum=0,num=0;
-FORE(j,0,vx.size()){
-if(sum+tmp[j]&lt;=maxSwaps){
-num++;
-sum+=tmp[j];
-}
-}
-ret=max(ret,num);
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12137&amp;rd=15173 解き方 各アルファベットごとに最大の連続数を考え、最大のものを求める。 あるアルファベットについて最大の連続数を考えるとき、 どれか１つのア
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-551-div1-easy---colorfulchocolates/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -528,46 +257,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12033&amp;rd=15172
-解き方 
-メモリも計算量も足りるので、正しく間違えないように実装すればよい。
-コード 
-int p[1300][1300];
-class RotatingBot {
-public: int minArea(vector&lt;int&gt; moves) {
-int n=moves.size();
-int dx[]={1,0,-1,0},dy[]={0,1,0,-1};
-memset(p,0,sizeof(p));
-int minx=650,miny=650,maxx=650,maxy=650;
-int x=650,y=650,d=0;
-FORE(i,0,n){
-FORE(j,0,moves[i]){
-int nx=x+dx[d],ny=y+dy[d];
-x=nx,y=ny;
-minx=min(minx,x);
-maxx=max(maxx,x);
-miny=min(miny,y);
-maxy=max(maxy,y);
-}
-d=(d+1)%4;
-}
-x=650,y=650,d=0;
-p[x][y]=1;
-FORE(i,0,n){
-FORE(j,0,moves[i]){
-int nx=x+dx[d],ny=y+dy[d];
-if(p[nx][ny]==1)return -1;
-x=nx,y=ny;
-p[x][y]=1;
-}
-int xx=x+dx[d],yy=y+dy[d];
-if(!(xx&lt;minx || xx&gt;maxx || yy&lt;miny || yy&gt;maxy || p[xx][yy]==1 || i==n-1)){
-return -1;
-}
-d=(d+1)%4;
-}
-return (maxx-minx+1)*(maxy-miny+1);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12033&amp;rd=15172 解き方 メモリも計算量も足りるので、正しく間違えないように実装すればよい。 コード int p[1300][1300]; class RotatingBot { public: int minArea(vector&lt;int&gt; moves) { int n=moves.size(); int dx[]={1,0,-1,0},dy[]={0,1,0,-1}; memset(p,0,sizeof(p)); int minx=650,miny=650,maxx=650,maxy=650; int x=650,y=650,d=0; FORE(i,0,n){ FORE(j,0,moves[i]){ int nx=x+dx[d],ny=y+dy[d]; x=nx,y=ny; minx=min(minx,x); maxx=max(maxx,x); miny=min(miny,y); maxy=max(maxy,y);
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-550-div1-easy---rotatingbot/">Read more…</a>

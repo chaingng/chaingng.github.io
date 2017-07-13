@@ -77,34 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①整数ＬとＲが与えられる。
-②このとき、ＬからＲまでの間全ての数をＸＯＲした後の値を求める。
-解き方 
-Ｌ，Ｒは４＊１０＾９のため単純なシミュレーションでは解くことができない。
-そのため、数学的解法、法則を見つける。
-法則を見つけるために１からずっとＸＯＲをしたときの値を並べてみると、
-整数ｎを４で割ったときの余りによって以下になることがわかる。
-余り０　→　ｎ
-余り１　→　１
-余り２　→　ｎ　ＸＯＲ　１
-余り３　→　０
-最後に１からスタートしているわけではなくてＬからスタートしなければならない。
-これは１からＲまで求めた答えから、１からＬ－１まで求めた答えを引く、つまりＸＯＲしてあげればよい。
-コード 
-class EllysXors {
-public:
-long long f(long long n){
-long long check=n%4;
-if(check==0)return n;
-if(check==1)return 1;
-if(check==2)return n^1;
-return 0;
-}
-long long getXor(long long L, long long R) {
-return f(R)^f(L-1);
-}
-}; 
+			問題 ①整数ＬとＲが与えられる。 ②このとき、ＬからＲまでの間全ての数をＸＯＲした後の値を求める。 解き方 Ｌ，Ｒは４＊１０＾９のため単純なシミュレ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-543-div1-easy---ellysxors/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -121,29 +97,10 @@ return f(R)^f(L-1);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①１次元の列が与えられ、ランダムな数の石がおかれている。
-②この石は右に１マスもしくは３マス動かすことができる。
-３マス動かす時はその間の石を飛び越すことができる。
-しかし、動かした先に石がある場合は動かすことができない。
-最後のマスに達したときはその石は動かすことはできなく、消えてしまう。
-③２人のプレイヤーが順にこの操作を行う。
-石を動かせなくなった方が負けとなる。
-④このとき、最初のプレイヤーが勝つならＹＥＳ,負けるならＮＯを返す。
-解き方 
-デッドロックが発生する場合を想定すると複雑になりそうに見える。
-しかし、そのように見える場合でも一番右の石は動かすことができるので、
-それぞれの石は独立に考えることができる。
-これがわかれば、動かすことのできるマスが奇数の場合は最初のプレイヤーが勝ち、
-偶数の場合は負けることがわかる。
-コード 
-class EllysCheckers {
-public: string getWinner(string board) {
-int parity=0;
-FORE(i,0,board.size()-1)if(board[i]=='o')parity+=(board.size()-1-i);
-return parity%2!=0 ? "YES" : "NO" ;
-}
-}; 
+			問題 ①１次元の列が与えられ、ランダムな数の石がおかれている。 ②この石は右に１マスもしくは３マス動かすことができる。 ３マス動かす時はその間の石
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm534-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -160,33 +117,10 @@ return parity%2!=0 ? "YES" : "NO" ;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題
-①数字の配列が与えられ、それぞれの配列は重さを表わす。
-②最初と最後以外の要素を任意で選ぶことができ、選んだ要素の前と後の重さの積がスコアにプラスされる。
-選ばれた要素は消去される。
-③このとき、最大となるスコアを求める。
-解き方
-配列の数は最大で１０のため
-全ての場合の数を求めてもＯ（８！＝４０３２０）となるので全探索可能。
-コード
-class CasketOfStarEasy {
-public:
-int f(vector&lt;int&gt; &amp;w){
-if(w.size()==2)return 0;
-int score=0;
-FORE(i,1,w.size()-1){
-vector&lt;int&gt; tmp;
-FORE(j,0,w.size())if(j!=i)tmp.push_back(w[j]);
-score=max(score,w[i-1]*w[i+1]+f(tmp));
-}
-return score;
-}
-int maxEnergy(vector&lt;int&gt; weight) {
-return f(weight);
-}
-};
-
- 
+			問題 ①数字の配列が与えられ、それぞれの配列は重さを表わす。 ②最初と最後以外の要素を任意で選ぶことができ、選んだ要素の前と後の重さの積がスコア
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm533-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -203,59 +137,7 @@ return f(weight);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題
-①数字の配列が２つ与えられる。
-それぞれの番号は、岩が入るＢＯＸの最小の数と最大の数を表わす。
-②あなたは岩を無数に持っており、選んだＢＯＸに最小の数以上、
-最大の数まで岩を入れることができる。
-③このとき、岩を９００１個以上入れた時に表わすことのできる
-岩の個数の場合の数を返す。
-解き方
-問題文を最初ミスリーディングしてしまったのですが、
-「９００１個以上入れることのできる場合の数」ではなく、
-「表わすことのできる岩の個数の場合の数」になります。
-最初にこのまま全探索しても手掛かりがないため、
-全てのＢＯＸの選び方はＯ（２＾１５＝１０＾３＊３２）で選ぶことができるため
-選んだＢＯＸについて考える。
-そうすることで最小の岩の数と最大の岩の数がわかるため、
-９００１以上の表わせる岩の個数がわかる。
-ただし表わせる岩の個数を配列に保存しようとすると
-次に、岩の数は１０＾６とかなり大きいため、
-Ｏ（１０＾６＊１０＾３＊３２）で計算できない。
-そこで、全て配列に保存するのではなく
-範囲を保存することを考える。
-始点の岩の数の配列を＋１とし、終点の次の配列をー１とすることで、
-＋のときはその間の数は存在することとなる。
-この処理を全て行っていくと、
-配列の数を最初から足していったとき＋１以上のときはその数は存在することとなる。
-Ｃｈａｌｌｅｎｇｅポイント
-配列（ループ）の数を１０＾７＊２だとエラーになってしまいました。
-１０＾６＊１．６だと通ったので、
-１０＾７＊２以上にならないことがＣｈａｌｌｅｎｇｅのポイントになりそうです。
-またケアレスミスをしてしまいましたが
-ビット列計算をするときは＆＆ではなく＆になります。
-コード
-class Over9000Rocks {
-public: int countPossibilities(vector&lt;int&gt; lowerBound, vector&lt;int&gt; upperBound) {
-int n=lowerBound.size(),ans=0;
-vector&lt;int&gt; check(16000000,0);
-for(int select=1;select&lt;(1&lt;&lt;n);select++){
-int upper=0,lower=0;
-for(int j=0;j&lt;n;j++){
-if(select&amp;1&lt;&lt;j){
-lower+=lowerBound[j];
-upper+=upperBound[j];
-}
-}
-check[lower]++;
-check[upper+1]--;
-}
-int parity=0;
-FORE(i,0,(int)check.size()){
-parity+=check[i];
-if(i&gt;9000 &amp;&amp; parity&gt;0)ans++;
-}
-return ans;
+			問題 ①数字の配列が２つ与えられる。 それぞれの番号は、岩が入るＢＯＸの最小の数と最大の数を表わす。 ②あなたは岩を無数に持っており、選んだＢＯＸ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm539-div2--level2/">Read more…</a>
@@ -275,40 +157,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題
-①数字のペアＡ，Ｂが与えられる。
-このとき、０以上のｐ、ｑに対し、Ａ＊ｐ＋Ｂ＊ｑで数が生成できる。
-②また、新たな数字Ｘが与えられる。
-このとき、Ａ，Ｂで表わせる全てのペアが、Ｘ，Ｙでも表わせるような
-Ｙの場合の数を求める。ただしＹが無限になる場合はー１を返す。
-解き方
-Ｘ，ＹにてＡ，Ｂが表わすことができれば、
-Ａ，Ｂで現すことのできる全ての数はＸ，Ｙで現すことができる。
-Ｙのとりうる数は１～max(A,B) (Xを除く)なので、
-全てのＹに対してＸ，ＹがＡ，Ｂで表わせるかを判定する。
-Ａ＝Ｘ＊ｐ＋Ｙ＊ｑ
-ｑ＝１として、
-pが０からＸ＊ｐがＡになるまで増やしていき、
-Ｙで割ることができるか判定する。
-ｑ＝０の場合も調べるため、ＡがＸで割り切れるかも判定する。
-全て数学的解法に頼らず、全探索との組み合わせで落とし所を探る。
-コード
-class KingXNewCurrency {
-public:
-bool f(int num,int x,int y){
-if(num%x==0)return true;
-for(int i=0;x*i&lt;=num;i++)if((num-x*i)%y==0)return true;
-return false;
-}
-int howMany(int A, int B, int X) {
-if(A%X==0 &amp;&amp; B%X==0)return -1;
-int ans=0;
-for(int n=1;n&lt;=max(A,B);n++)if(X!=n &amp;&amp; f(A,X,n) &amp;&amp; f(B,X,n))ans++;
-return ans;
-}
-};
-
- 
+			問題 ①数字のペアＡ，Ｂが与えられる。 このとき、０以上のｐ、ｑに対し、Ａ＊ｐ＋Ｂ＊ｑで数が生成できる。 ②また、新たな数字Ｘが与えられる。 このと
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm537-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -325,41 +177,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題  ①座標上にある２つの長方形の左下と右上の座標が与えられる。
-②２つの長方形の重なりが四角形の時はrectangle、線で接している場合はsegment、
-点で接している場合はpoint、接していないときはnoneを返す。
-解き方  単純に場合分けで解いてもよいが複雑になり間違えやすくなる＆コードが書きにくくなるので、数学的に簡単にできないか検討する。
-まず２次元の問題ということで、それぞれ1次元の問題に分割できないか検討する。
-今回の場合はｘ軸とｙ軸はそれぞれ影響を与えないので独立に考えられる。
-次に、ｘ軸が線・点を作れるか、ｙ軸も同じように線・点を作れるか
-という考え方ができれば、ｘ軸とｙ軸の組み合わせによってどの重なりになるか
-求めることができる。
-最後に各軸が線・点を作れる場合を考える。
-１つ目の長方形の最左辺と最右辺がa、ｂとすると、
-長方形の中にあるｘ軸の値はa&lt;=x&lt;=bとなる。
-同様に2つ目の最左辺と最右辺をｃ、ｄとすると、
-c&lt;=x&lt;=dとなる。
-ここで２つの条件を合わせると、
-max(a,c)&lt;x&lt;min(b,d)がｘの範囲となる。
-つまりxのとりうる範囲　min(b,d)-max(a,c)が
-複数であれば線、
-１点のみであれば点、
-存在しなければ、どちらも作れないということがわかる。
-これをｙ軸も同じように判定すれば簡単に求められる。
-コード  class TwoRectangles {
-public:
-int f(int x){
-if(x&gt;0)return 1;
-if(x==0)return 0;
-return -1;
-}
-string describeIntersection(vector&lt;int&gt; A, vector&lt;int&gt; B) {
-int checkx=f(min(A[2],B[2])-max(A[0],B[0]));
-int checky=f(min(A[3],B[3])-max(A[1],B[1]));
-if(checkx==1 &amp;&amp; checky==1)return &ldquo;rectangle&rdquo;;
-if(checkx==1 &amp;&amp; checky==0 || checkx==0 &amp;&amp; checky==1)return &ldquo;segment&rdquo;;
-if(checkx==0 &amp;&amp; checky==0)return &ldquo;point&rdquo;;
-return &ldquo;none&rdquo;;
+			問題 ①座標上にある２つの長方形の左下と右上の座標が与えられる。 ②２つの長方形の重なりが四角形の時はrectangle、線で接している場合はs
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm546-div2--level2/">Read more…</a>
@@ -379,43 +197,7 @@ return &ldquo;none&rdquo;;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①２次元のフィールドが与えられる。
-②フィールドにはランダムな数の障害物と、２つのコインが置かれている。
-③プレイヤーは上下左右の操作をすることができ、１度の操作で選んだ方向に１マスだけ２つのコインを動かせる。動く先に障害物がある場合は動かない。
-④コインが動いた時、フィールドから外れた場合はコインが落ちる。
-⑤このとき、コインを１つだけ落としたいときの最小の操作回数を返す。
-ただし、操作回数が１０回を超えた時はー１を返す。
-＜解き方＞
-動的計画法で最小の操作回数を求める。
-単純なシミュレーションですが、いかに簡単に書いて間違いを少なくするかが
-ポイントだと思います。
--1となる例外の処理を再帰関数で書いた時には処理がうまくいかなかったので、
-例外の処理はメイン関数で行う方がよさそう。
-また、vectorを渡す時には &amp;bのようにしてあげないと
-処理がおかしくなるので注意。
-＜コード＞
-class CoinsGameEasy {
-public:
-int f(int turn,int x1,int y1,int x2,int y2,vector&lt;string&gt;&amp; b){
-if(turn&gt;10)return turn;
-int ret=11,w=b[0].size(),h=b.size();
-int dx[]={1,-1,0,0};
-int dy[]={0,0,-1,1};
-FORE(i,0,4){
-int flag=0;
-int tx1=x1+dx[i],ty1=y1+dy[i],tx2=x2+dx[i],ty2=y2+dy[i];
-if(tx1&lt;0 || tx1&gt;=w || ty1&lt;0 || ty1&gt;=h)flag++;
-if(tx2&lt;0 || tx2&gt;=w || ty2&lt;0 || ty2&gt;=h)flag++;
-if(flag==1)return turn+1;
-if(flag==2)continue;
-if(b[ty1][tx1]=='#')tx1=x1,ty1=y1;
-if(b[ty2][tx2]=='#')tx2=x2,ty2=y2;
-ret=min(ret,f(turn+1,tx1,ty1,tx2,ty2,b));
-}
-return ret;
-}
-int minimalSteps(vector&lt;string&gt; board) {
+			＜問題＞ ①２次元のフィールドが与えられる。 ②フィールドにはランダムな数の障害物と、２つのコインが置かれている。 ③プレイヤーは上下左右の操作を
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm563-div2--level2/">Read more…</a>
@@ -435,44 +217,7 @@ int minimalSteps(vector&lt;string&gt; board) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①整数ＧとＬが与えられる。
-②最大公約数がＧ，かつ最小公倍数がＬである２つの数字の場合の数を返す。
-存在しない場合はー１を返す。
-＜解き方＞
-２つの数字がＸ、Ｙとすると、Ｘ＊Ｙ＝Ｇ＊Ｌとなる。
-このままではＧとＬともに１０＾１２と膨大な数のため計算式を工夫する。
-次に、Ｘ＝a*Gとなるa, Y=b*Gとなるbが必ず存在する。
-ここで、
-(a*G)*(b*G)=G*L
-つまりa*b=L/Gとなるaとbが必ず存在する。
-また、最大公約数がＧであることから、aとbは互いに素でないといけない。
-これによりＯ（１０＾６）で計算可能となる。
-まとめると、
-a*b=L/G かつ aとbは互いに素=最大公約数が1　となる全てのaとbを求めればよい。
-そして裏を返すと、LがGで割り切れない場合は-1を返す。
-＜コード＞
-class FoxAndGCDLCM {
-public:
-long long gcd(long long a,long long b){
-while(b!=0){
-long long c=b;
-b=a%b;
-a=c;
-}
-return a;
-}
-long long get(long long G, long long L) {
-long long ab=L/G,ret=-1;
-if(L%G!=0)return -1;
-for(long long a=1;a&lt;=ab/a;a++){
-if(ab%a==0 &amp;&amp; gcd(a,ab/a)==1){
-if(ret==-1)ret=G*(a+ab/a);
-else ret=min(ret,G*(a+ab/a));
-}
-}
-return ret;
-}
+			＜問題＞ ①整数ＧとＬが与えられる。 ②最大公約数がＧ，かつ最小公倍数がＬである２つの数字の場合の数を返す。 存在しない場合はー１を返す。 ＜解き方
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm535-div2--level2/">Read more…</a>
@@ -492,32 +237,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			&lt;問題&gt;
-①１～９個の面を持つサイコロがあり、決められた数だけ存在する。
-②どのサイコロを与えられたかはわからない。同じ面を持つサイコロは複数存在しうる。
-③そのサイコロの集合を複数回投げて、出た表の面の集合が与えられる。
-④このとき、可能性のあるサイコロの集合のうち最も面の数が少なくなるような和を返す。
-＜解き方＞
-全ての面の出方についてそれぞれソートする。
-ソートした後、それぞれの１番目の要素の中で最大のものが
-１番目の要素の最小の答えとなる。
-２番目以降も同様。
-最後に求めた全ての要素の和を返す。
-＜コード＞
-class RollingDiceDivTwo {
-public: int minimumFaces(vector&lt;string&gt; rolls) {
-int n=rolls.size(),ret=0;
-vector &lt;int&gt; ans(rolls[0].size(),0);
-FORE(i,0,n)sort(rolls[i].begin(),rolls[i].end());
-FORE(i,0,n){
-FORE(j,0,rolls[0].size()){
-if(ans[j]&lt;rolls[i][j]-'0')ans[j]=rolls[i][j]-'0';
-}
-}
-FORE(i,0,rolls[0].size())ret+=ans[i];
-return ret;
-}
-}; 
+			&lt;問題&gt; ①１～９個の面を持つサイコロがあり、決められた数だけ存在する。 ②どのサイコロを与えられたかはわからない。同じ面を持つサイ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm536-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -534,13 +257,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			日々暮らしていると時々えっ！となるようなことがありますが、
-そういうときでも怒らないことって大事だと思います。
-怒ることで自分の感情はすっきりするかもしれませんが、その後その人と接するのがストレスになったり、結果として自分としてもよくないことがかえってくるなと感じます。
-じゃあどうすればよいかですが、自分の言いたいことは伝えても、どうしても強く言わなければならないときは、怒るのではなく叱るということがよいと思っています。
-その人を責めるのではなく、物事や怒ったことに対して話をする。感情で話をしないようにする。
-こうすることで、自分にとってもプラスになると考えています。実践できないことも多いですが・・・日々の心がけですね。
- 
+			日々暮らしていると時々えっ！となるようなことがありますが、 そういうときでも怒らないことって大事だと思います。 怒ることで自分の感情はすっきりす
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E6%80%92%E3%82%89%E3%81%AA%E3%81%84%E3%81%93%E3%81%A8/">Read more…</a>
 		</div>
 	</div>
 </article>

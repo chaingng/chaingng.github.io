@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 293 DIV1 Easy - ScrabbleBet （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6116&amp;rd=9814
-１セットあたりのゲーム回数が与えられ、それを指定回数分のセット数行う。
-１ゲームにたいして勝つ確率が与えられ、そのセット数で勝つために必要な勝ちゲーム数が与えられる。
-このとき、少なくとも１つのセットで勝つことのできる確率を求める。
-解き方 
-問題文の理解に少し時間がかかった。
-１セットあたりに負ける確率さえ計算できれば、答えは１－負ける確率＾セット数で求められる。
-１セットあたりに負ける確率の計算に順列を使ってもよいが、
-ゲーム数は２０なので全探索してもたかだか１０＾６程度なので間に合う。
-コード 
-class ScrabbleBet {
-public: double estimate(int trials, int games, int winsNeeded, int winChance) {
-double loses=0.0;
-double p=winChance/100.0;
-for(int i=0;i&lt;(1&lt;&lt;games);i&#43;&#43;){
-int x=0;
-for(int j=0;j&lt;20;j&#43;&#43;)if(i&amp;(1&lt;&lt;j))x&#43;&#43;;
-if(x&lt;winsNeeded)loses&#43;=pow(p,x)*pow(1.0-p,games-x);
-}
-return 1.0-pow(loses,trials);
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c)." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6116&amp;rd=9814 １セットあたりのゲーム回数が与えられ、それを指定回数分のセット数行う。 １ゲームにたいして勝つ確率が与えられ、そのセット数で勝つために必" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-293-div1-easy---scrabblebet-%E5%BE%A9%E7%BF%92/" />
 

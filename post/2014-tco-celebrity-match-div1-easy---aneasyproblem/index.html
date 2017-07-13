@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Celebrity Match DIV1 Easy - AnEasyProblem" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13527&amp;rd=16191
-・関数F（h,r）が与えられる。その要素は{1,2,3,...h-1,h,h-1...r&#43;1,r}となる。
-（例）F(3,2)={1,2,3,2}
-・関数Fの和があらかじめわかっているとき、その和を構成できる関数Fのうち
-最も少ない要素数を求める。
-そのようなFがない場合は−１を返す。
-解き方 
-和の最大が10^12であるため、n*(n&#43;1)/2&lt;=10^12から
-nは最大でも10^6程度なので全探索できそう。
-まず１から単調増加で和を計算していき、そのような和が構成できれば
-それは最小要素なので答えになる。
-そのような最小要素がなければ、途中で折り返す要素を計算する。
-この場合最悪ケースで10^12になってしまうので、工夫が必要。
-このとき、折り返し分の要素は最大のnからn-1,n-2・・・の和のいずれかであるので
-あらかじめ累積和を計算しておき、二分探索することで
-計算量を20*10^6に収めることができる。
-コード 
-long long dp[1500000];
-class AnEasyProblem {
-public: int solve(long long sum) {
-long long cur=0;
-int n=0;
-while(cur&#43;n&#43;1&lt;=sum){
-n&#43;&#43;;
-cur&#43;=n;
-}
-if(cur==sum)return n;
-dp[0]=0;
-for(int i=1;i&lt;=n;i&#43;&#43;)dp[i]=dp[i-1]&#43;i;
-for(int x=n;x&gt;=1;x--){
-if(dp[x-1]*2&#43;x&lt;sum)break;
-long long tmp=dp[x-1]-(sum-dp[x]);
-int m = (lower_bound(dp,dp&#43;n,tmp)) - dp ;
-if(dp[m]==tmp)return (x-1)-m&#43;x;
-}
-return -1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13527&amp;rd=16191 ・関数F（h,r）が与えられる。その要素は{1,2,3,...h-1,h,h-1...r&#43;1,r}となる。 （例）F(3,2)={1,2" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-celebrity-match-div1-easy---aneasyproblem/" />
 

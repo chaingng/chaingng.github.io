@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2010 TCO Qualification Round 1 - GirlsAndBoys" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7794&amp;rd=14294
-・男の子と女の子が並んでいる。
-・このうち、男の子と女の子が隣に並んでいる並びをできるだけ少なくしたい。
-・並びを変えるには、一回の操作で任意の２人を入れ替えることができる。
-・このときの、最小の操作回数を求める。
-解き方 
-・最小の並べ方はBBBGGGもしくはGGGBBBとなる並べ方になる。
-・よって、上の２つの並べ方のうち操作回数が小さいものが答えになる。
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class GirlsAndBoys {
-public: int sortThem(string row) {
-int INF=1e&#43;8,n=row.size();
-int cost=INF;
-int tmpcost=0,pos=0;
-for(int letter=0;letter&lt;n;letter&#43;&#43;){
-if(row[letter]!=&#39;B&#39;)continue;
-tmpcost&#43;=abs(letter-pos);
-pos&#43;&#43;;
-}
-cost=min(cost,tmpcost);
-tmpcost=0,pos=0;
-for(int letter=0;letter&lt;n;letter&#43;&#43;){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7794&amp;rd=14294 ・男の子と女の子が並んでいる。 ・このうち、男の子と女の子が隣に並んでいる並びをできるだけ少なくしたい。 ・並びを変えるには、一回の操作で" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2010-tco-qualification-round-1---girlsandboys/" />
 

@@ -17,28 +17,7 @@
       <pubDate>Sun, 15 Mar 2015 11:22:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-647-div2-middle---travellingsalesmaneasy-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13631&amp;amp;rd=16279
-・M個の都市があり、その訪問順が決まっている。
-・複数のアイテムについて、そのアイテムを売った時の利益と、そのアイテムを売ることができる都市のペアが与えられる。
-・アイテムについて、その都市を訪問するごとにひとつ売ることができる。
-・このとき、得られる最大の利益を求める。
-解き方 
-・訪問順が決まっており、かつ一つのアイテムについて売ることのできる都市は１つであるので、
-貪欲法で解くことができる。
-計算量はO(１００＊２５００＝２．５＊１０＾５)なので間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TravellingSalesmanEasy {
-public: int getMaxProfit(int M, vector&amp;lt;int&amp;gt; profit, vector&amp;lt;int&amp;gt; city, vector&amp;lt;int&amp;gt; visit) {
-int ret=0;
-int n=profit.size();
-int used[n];</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13631&amp;amp;rd=16279 ・M個の都市があり、その訪問順が決まっている。 ・複数のアイテムについて、そのアイテムを売った時の利益と、そのアイテムを売ることができる</description>
     </item>
     
     <item>
@@ -47,31 +26,7 @@ int used[n];</description>
       <pubDate>Sat, 22 Nov 2014 15:48:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-605-div1-easy---alienandhamburgers-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12948&amp;amp;rd=15838
-・様々なハンバーガーがあり、そのタイプと大きさが与えられる。
-・好きなだけハンバーガーを選んでよく、選んだ後のスコアは選んだタイプの種類×大きさの和
-となる。
-・このとき、取りうる最大のスコアを求める。
-解き方 
-・大きさがマイナスになるときは判定が必要になる
-・とりあえず、大きさが０以上の時はスコアが下がることはないので必ず選ぶ
-・ソートして、大きい順に判定
-・大きさが０以上のときは必ず選び、マイナスのときはそのハンバーガーを選んだときにスコアが上がれば選び、そうでなければ選ばないのが最適解になりそう
-・あるハンバーガーを選ばないとき、それより小さい大きさのときはスコアはそれ以上にならないので貪欲法で解ける
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AlienAndHamburgers {
-public: int getNumber(vector&amp;lt;int&amp;gt; type, vector&amp;lt;int&amp;gt; taste) {
-int n=type.size();
-vector&amp;lt;pair&amp;lt;int,int&amp;gt; &amp;gt; p;
-FORE(i,0,n)p.push_back(make_pair(taste[i],type[i]));</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12948&amp;amp;rd=15838 ・様々なハンバーガーがあり、そのタイプと大きさが与えられる。 ・好きなだけハンバーガーを選んでよく、選んだ後のスコアは選んだタイプの種類</description>
     </item>
     
     <item>
@@ -80,30 +35,7 @@ FORE(i,0,n)p.push_back(make_pair(taste[i],type[i]));</description>
       <pubDate>Thu, 30 Oct 2014 09:58:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2010-tco-qualification-round-2----jingleringle/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10896&amp;amp;rd=14277
-・１つの硬貨Jingleをある硬貨Ringleで売るsellerが複数人と、
-１つの硬貨Jingleをある硬貨Ringleで買うbuyerが複数人いる。
-また、buyerに売るときは売るときの硬貨floor(X*tax/100)の税金がかかる。
-・１人のsellerからは１回、１人のbuyerからは１回の取引しかできないとき、
-得られる最大のprofitを求める。
-解き方 
-・貪欲法で解くことができそう。
-・ソートし、一番安いsellerと一番高く売れるbuyerについて税金も含めて利益が出るときは取引し、そうでないときは取引しなければよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class JingleRingle {
-public: int profit(vector&amp;lt;int&amp;gt; buyOffers, vector&amp;lt;int&amp;gt; sellOffers, int tax) {
-int n=buyOffers.size();
-int m=sellOffers.size();
-if(n==0||m==0)return 0;
-sort(all(buyOffers));
-sort(all(sellOffers));</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10896&amp;amp;rd=14277 ・１つの硬貨Jingleをある硬貨Ringleで売るsellerが複数人と、 １つの硬貨Jingleをある硬貨Ringleで買うbuye</description>
     </item>
     
     <item>
@@ -112,36 +44,7 @@ sort(all(sellOffers));</description>
       <pubDate>Sat, 01 Feb 2014 19:00:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10196&amp;amp;rd=13517
-カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。
-シャッフル方法についてプレイヤーは知っている。
-プレイヤーがシャッフル後に受け取るカードの位置と、欲しいカードの枚数がわかっている。
-加えてシャッフル回数の最大はわかっているが、実際のシャッフルは１～最大回数のうちランダムな回数になる。
-このとき、欲しいカードを最適な場所においたときに、欲しいカードがもらえる最大の期待値を求める。
-解き方 
-シャッフルの仕方について問題文を理解するのに時間がかかってしまった。
-全探索により、最大回数までシャッフルしたときに各位置について得られるスコアを計算する。
-各位置について得られるスコアは独立であるため、最後に大きい順からＫ個の和をとり、最大のシャッフル数で割ることで答えが求められる。
-コード 
-class ShufflingMachine {
-public:
-double stackDeck(vector&amp;lt;int&amp;gt; shuffle, int maxShuffles, vector&amp;lt;int&amp;gt; cardsReceived, int K) {
-int n=shuffle.size();
-vector&amp;lt;int&amp;gt; order(n,0);
-FORE(i,0,n)order[i]=i;
-vector&amp;lt;int&amp;gt; score(n,0);
-FORE(i,0,maxShuffles){
-vector&amp;lt;int&amp;gt; tmp=order;
-FORE(j,0,n)order[j]=tmp[shuffle[j]];
-FORE(j,0,cardsReceived.size())FORE(k,0,n)if(order[k]==cardsReceived[j])score[k]++;
-}
-sort(score.rbegin(),score.rend());
-double ret=0;
-FORE(i,0,K)ret+=score[i];
-return ret/(double)maxShuffles;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10196&amp;amp;rd=13517 カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。 シャッフル方法についてプレイヤーは知っている。 プレイヤ</description>
     </item>
     
     <item>
@@ -150,43 +53,7 @@ return ret/(double)maxShuffles;
       <pubDate>Sun, 13 Oct 2013 08:45:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-520-div1-easy---srmcodingphase-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11381&amp;amp;rd=14545
-SRMの３問の問題を７５分以内で解く。
-各問題については、最大獲得ポイントと解くのにかかる時間が与えられる。
-各３問については、解いたときに以下のポイントが得られる。
-問題０：最大獲得ポイント - ２＊解くのにかかる時間
-問題１：最大獲得ポイント - ４＊解くのにかかる時間
-問題２：最大獲得ポイント - ８＊解くのにかかる時間
-またluckが与えられ、これを使うことで解くのにかかる時間を引くことができる。配分は自由に決められるが各問題１分以上残さなければならない。
-各問題について最大獲得ポイント、解くのにかかる時間、luckが与えられた時
-得られる最大ポイントを求める。
-解き方 
-問題０よりも１、１よりも２の方が最大獲得ポイント数が多い。
-そのためluckの配分は難しい問題に対して配分すればよいように見えるが、
-75分以内で解けない場合があるので75分以内で解けるよう配分した方がよい場合もある。
-そこで、問題は３つしかないので解ける問題の組み合わせ全てに対し
-難しい問題からluckを配分してあげればよい。
-難しい問題からの配分で75分以内に収まらなく解けなくても、違う組み合わせでカバーできている。
-コード 
-class SRMCodingPhase {
-public: int countScore(vector&amp;lt;int&amp;gt; points, vector&amp;lt;int&amp;gt; skills, int luck) {
-int ans=0;
-for(int i=0;i&amp;lt;(1&amp;lt;&amp;lt;3);i++){
-int cost=0,tluck=luck,point=0;
-for(int j=2;j&amp;gt;=0;j--){
-if(i&amp;amp;(1&amp;lt;&amp;lt;j)){
-int use=min(tluck,skills[j]-1);
-point+=points[j]-(1&amp;lt;&amp;lt;(j+1))*(skills[j]-use);
-tluck-=use;
-cost+=skills[j];
-}
-}
-if(cost-luck&amp;lt;=75)ans=max(ans,point);
-}
-return ans;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11381&amp;amp;rd=14545 SRMの３問の問題を７５分以内で解く。 各問題については、最大獲得ポイントと解くのにかかる時間が与えられる。 各３問については、解いたとき</description>
     </item>
     
   </channel>

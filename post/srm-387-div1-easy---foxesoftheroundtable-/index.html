@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 387 DIV1 Easy - FoxesOfTheRoundTable △" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8527&amp;rd=11121
-解き方 
-全てのjoker boxの選び方について全探索する。
-joker box以外の箱について２色以上入っている箱は必ず動かさなければいけない。
-そのため１色しか入っていない箱のみ調べ、
-使っていない色であればその色を割り当てていけばよい。
-コード 
-class MarblesRegroupingEasy {
-public:
-int minMoves(vector&lt;string&gt; boxes) {
-int n=boxes.size(),m=boxes[0].size();
-int used[m];
-int ret=1e&#43;9;
-FORE(i,0,n){
-int cost=0;
-memset(used,0,sizeof(used));
-FORE(j,0,n)if(i!=j){
-int cnt=0,color=-1;
-FORE(k,0,m)if(boxes[j][k]!=&#39;0&#39;)cnt&#43;&#43;,color=k;
-if(cnt==0)continue;
-if(cnt==1 &amp;&amp; used[color]==0)used[color]=1;
-else cost&#43;&#43;;
-}
-ret=min(ret,cost);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8527&amp;rd=11121 解き方 全てのjoker boxの選び方について全探索する。 joker box以外の箱について２色以上入っている箱は必ず動かさなければいけない。 その" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-387-div1-easy---foxesoftheroundtable-/" />
 

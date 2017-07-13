@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 381 DIV1 Middle - TheHomework　（復習○）" />
-<meta property="og:description" content="問題 
-数字の配列が与えられ、最初の配列からもう一つの配列へ変換したい。
-可能な操作は以下の３通り。
-・追加：最大で元の配列の分だけ、好きな数字を追加
-・削除：最大で元の配列の半分を超えないよう、好きな数字を削除
-・変更：最大で元の配列の半分を超えないよう、好きな数字を変換
-このとき、必要な最小操作回数を求める。
-解き方 
-数字を変換するのでコードで扱うのは大変そうだが、要は数字が何個一致しているか、何個一致していないかだけわかればよいので、数字自身は無視して良い。
-変換する法則を考えていかに分岐が少なくシンプルに実装するかを考えるが、この場合は場合分けが大変になってしまう。
-そのため、全探索で解けないかを考えてみる。
-状態として「現在までに一致している数字の数」、「異なる数字の数」、「追加で一致しなければならない数字の数」をもつｄｐを考え、ＤＦＳを用いれば全探索で解くことが可能。
-法則を考える方法もあるが、まずは確実でかつシンプルに解ける全探索で解けないかを考えてみるのが大事。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][51][51];
-class TheHomework {
-public:
-int rec(int sames,int diff,int missing){
-if(diff==0&amp;&amp;missing==0)return 0;
-if(dp[sames][diff][missing]!=-1)return dp[sames][diff][missing];
-int n=sames&#43;diff;" />
+<meta property="og:description" content="問題 数字の配列が与えられ、最初の配列からもう一つの配列へ変換したい。 可能な操作は以下の３通り。 ・追加：最大で元の配列の分だけ、好きな数字を追" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-381-div1-middle---thehomework%E5%BE%A9%E7%BF%92/" />
 

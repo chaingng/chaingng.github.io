@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 419 DIV1 Easy - Undo ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10054&amp;rd=13510
-２つの操作の列が与えられる。
-操作は以下の２種類。
-・type a 与えられたアルファベット（ここではa）をタイプする
-・undo x　x秒前までの操作を取り消す。
-このとき、最後のこった文字列を求める。
-解き方 
-操作は右側の操作によって打ち消されるので、
-右側の方から取り消される操作を調べていく。
-残ったタイプの操作が最後に残る文字列となる。
-コード 
-class Undo {
-public: string getText(vector&lt;string&gt; commands, vector&lt;int&gt; time) {
-int n=commands.size();
-int used[n];
-memset(used,0,sizeof(used));
-for(int i=n-1;i&gt;=0;i--)if(!used[i]){
-stringstream out(commands[i]);
-string c;
-int num;
-out&gt;&gt;c&gt;&gt;num;
-if(c==&#34;undo&#34;){
-int e=time[i]-num;
-used[i]=1;
-for(int j=i-1;j&gt;=0;j--)if(e&lt;=time[j])used[j]=1;
-}
-}
-string ret=&#34;&#34;;
-for(int i=0;i&lt;n;i&#43;&#43;)if(!used[i]){
-stringstream out(commands[i]);
-string tmp;
-char ch;
-out&gt;&gt;tmp&gt;&gt;ch;
-ret&#43;=ch;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10054&amp;rd=13510 ２つの操作の列が与えられる。 操作は以下の２種類。 ・type a 与えられたアルファベット（ここではa）をタイプする ・undo x x秒前までの" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-419-div1-easy---undo-/" />
 

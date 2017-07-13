@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 522 DIV1 Middle - CorrectMultiplication　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11604&amp;rd=14547
-正の整数a,b,cが与えられる。
-正の整数A,B,Cがa,b,cをそれぞれ増減した値であるとき
-A*B=Cが成り立つ、|A-a|&#43;|B-b|&#43;|C-c|の最小値を求める。
-解き方 
-Cの値の最大値がわからないと手掛かりがないため、まずはCの最大値を求める。
-答えは|A-a|&#43;|B-b|&#43;|C-c|であることから最小である答えが1*1=1であるとき
-答えの最大値はa&#43;b&#43;c-3となる。
-つまり、Cの最大値はc&#43;a&#43;b&#43;c-3となる。
-次に、Aを１から調べていく。
-Ｂも同様に調べることで対称性があるので、ＡはＡ＊Ａ＜＝Ｃの最大値まで調べればよい。
-Ａが決まったとき、Ｂはc/Aの±１の範囲で最適なCが存在するのでそれぞれの場合について|A-a|&#43;|B-b|&#43;|C-c|の最小値を更新していくことで答えが求まる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class CorrectMultiplication {
-public: long long getMinimum(int a, int b, int c) {
-long long ret=1e&#43;18;
-long long maxans=(long long)a&#43;b&#43;c-3;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11604&amp;rd=14547 正の整数a,b,cが与えられる。 正の整数A,B,Cがa,b,cをそれぞれ増減した値であるとき A*B=Cが成り立つ、|A-a|&#43;|B-b" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-522-div1-middle---correctmultiplication%E5%BE%A9%E7%BF%92/" />
 

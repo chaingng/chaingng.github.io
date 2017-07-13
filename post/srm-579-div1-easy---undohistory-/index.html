@@ -7,38 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 579 DIV1 Easy - UndoHistory ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12523&amp;rd=15499
-解き方 
-前の文字列からそのまま続けられる時はその場合と、
-以前の部分文字列を使う場合のうち最小のものを採用していけばよい。
-コード 
-class UndoHistory {
-public: int minPresses(vector&lt;string&gt; lines) {
-int n=lines.size();
-int ret=n;
-string prev=&#34;&#34;;
-FORE(i,0,n){
-int cost=1e&#43;9;
-if(prev.size()&lt;=lines[i].size()){
-int valid=1;
-FORE(j,0,prev.size())if(prev[j]!=lines[i][j])valid=0;
-if(valid)cost=min(cost,(int)lines[i].size()-(int)prev.size());
-}
-FORE(j,0,i){
-int tmp=0;
-for(int k=0;k&lt;lines[i].size() &amp;&amp; k&lt;lines[j].size();k&#43;&#43;){
-if(lines[i][k]==lines[j][k])tmp&#43;&#43;;
-else break;
-}
-cost=min(cost,(int)lines[i].size()-tmp&#43;2);
-}
-ret&#43;=cost;
-prev=lines[i];
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12523&amp;rd=15499 解き方 前の文字列からそのまま続けられる時はその場合と、 以前の部分文字列を使う場合のうち最小のものを採用していけばよい。 コード class UndoHistory { public: int" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-579-div1-easy---undohistory-/" />
 

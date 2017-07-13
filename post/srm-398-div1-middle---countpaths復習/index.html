@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 398 DIV1 Middle - CountPaths　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1897
-フィールドの長さとして行の数rと列の数cが与えられる。
-rとcの番号は1からスタートする。
-合わせて、行列中の特別なフィールドが、(r,c)の形で順番に与えられる。
-(1,1)からスタートし、下または右にしか移動して(r,c)まで移動する。
-このとき、フィールドを通った回数ごとに、その場合の数を求める。
-ただし、フィールドは与えられた順に通った時にしか通った回数は加算されない。
-例えば、フィールドの順番１を通った後に順番２以降を通ったら回数は加算されるが、
-順番２を通った後に０，１を通っても加算されない。
-解き方 
-格子状の経路の場合の数の求め方の応用。
-ｄｐをどう設計するか。
-行番号、列番号の他に、フィールドを通った回数、さらに以前に通ったフィールドの順番が必要なことがわかる。
-すべての行列で全探索し、
-さらにその中で各長さ、各フィールドの順番の和を求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][51][51][51];
-class CountPaths {
-public:
-vector&lt;int&gt; difPaths(int r, int c, vector&lt;int&gt; fieldrow, vector&lt;int&gt; fieldcol) {" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1897 フィールドの長さとして行の数rと列の数cが与えられる。 rとcの番号は1からスタートする。 合わせて、行列中の特別なフィールドが、(r,c" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/" />
 

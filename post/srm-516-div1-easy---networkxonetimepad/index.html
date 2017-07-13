@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 516 DIV1 Easy - NetworkXOneTimePad" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10846&amp;rd=14541
-解き方 
-すべての暗号前の文字と暗号後の文字の組み合わせで、候補となる
-キーがすべて作成できる。
-あるキーについて、暗号後の文字を復号した時に暗号前の文字がすべて存在すれば
-有効なので、上記で生成した全てのキーに対してこの条件が成り立つか判定すればよい。
-コード 
-class NetworkXOneTimePad {
-public:
-string calc(string s1,string s2){
-string ret=&#34;&#34;;
-FORE(i,0,s1.size()){
-ret&#43;= s1[i]==s2[i] ? &#39;0&#39; : &#39;1&#39;;
-}
-return ret;
-}
-int crack(vector&lt;string&gt; plaintexts, vector&lt;string&gt; ciphertexts) {
-int n=plaintexts.size(),m=ciphertexts.size();
-set&lt;string&gt; s;
-FORE(i,0,n)FORE(j,0,m){
-s.insert(calc(plaintexts[i],ciphertexts[j]));
-}
-set&lt;string&gt; ans;
-for(set&lt;string&gt;::iterator it=s.begin();it!=s.end();it&#43;&#43;){
-int valid=1;
-FORE(i,0,m){
-string tmp=calc(*it,ciphertexts[i]);
-int invalid=1;
-FORE(j,0,n)if(tmp==plaintexts[j])invalid=0;
-if(invalid)valid=0;
-}
-if(valid)ans.insert(*it);
-}
-return ans.size();
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10846&amp;rd=14541 解き方 すべての暗号前の文字と暗号後の文字の組み合わせで、候補となる キーがすべて作成できる。 あるキーについて、暗号後の文字を復号した時に" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-516-div1-easy---networkxonetimepad/" />
 

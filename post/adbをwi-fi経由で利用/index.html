@@ -7,17 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="adbをWi-Fi経由で利用" />
-<meta property="og:description" content="端末が増えてくるとそれぞれusb接続してadbコマンドを打つと大変になった。
-そこで、usbに接続しなくとも無線LAN経由にてadbを利用する方法があったので整理しておく。
-１．下準備として、端末にusb接続してtcpポートを解放。
-$adb tcpip 5555
-２．usbを外して、adb connectにて端末のIPアドレス(ここでは仮に10.10.10.10)にアクセス。
-このとき、操作元の端末と操作したい端末は同じWi-Fiネットワーク下にあること。
-$adb kill-server
-$adb connect 10.10.10.10:5555
-これだけで無線LAN経由でadbコマンドを打つことが可能になる。
-ちなみに、公式ページを下の方にも解説がある。
-http://developer.android.com/tools/help/adb.html " />
+<meta property="og:description" content="端末が増えてくるとそれぞれusb接続してadbコマンドを打つと大変になった。 そこで、usbに接続しなくとも無線LAN経由にてadbを利用する" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/adb%E3%82%92wi-fi%E7%B5%8C%E7%94%B1%E3%81%A7%E5%88%A9%E7%94%A8/" />
 

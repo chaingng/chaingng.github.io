@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 662 DIV1 Easy - FoxesOfTheRoundTable △" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13858&amp;rd=16511
-解き方 
-Dが1000までなので、Dを固定することで解けそう。
-ただ、Dをできるだけ小さくするということは、並べ方は以下の通り
-一意に定まる。
-要はh[i]の小さい順に0,1,2,3,4...とすると、単に0から左右に順に並べていけば良い。
-3 1 0 2 4...となる。
-コード 
-class FoxesOfTheRoundTable {
-public: vector&lt;int&gt; minimalDifference(vector&lt;int&gt; h) {
-int n=h.size();
-vector&lt;pair&lt;int,int&gt; &gt; p;
-FORE(i,0,n)p.push_back(make_pair(h[i],i));
-sort(all(p));
-vector&lt;int&gt; ans;
-int end = n%2 ? n-2 : n-1;
-for(int i=end;i&gt;0;i-=2)ans.push_back(p[i].second);
-for(int i=0;i&lt;n;i&#43;=2)ans.push_back(p[i].second);
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13858&amp;rd=16511 解き方 Dが1000までなので、Dを固定することで解けそう。 ただ、Dをできるだけ小さくするということは、並べ方は以下の通り 一意に定まる。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-662-div1-easy---foxesoftheroundtable-/" />
 

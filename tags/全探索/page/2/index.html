@@ -77,34 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7794&amp;rd=14294
-・男の子と女の子が並んでいる。
-・このうち、男の子と女の子が隣に並んでいる並びをできるだけ少なくしたい。
-・並びを変えるには、一回の操作で任意の２人を入れ替えることができる。
-・このときの、最小の操作回数を求める。
-解き方 
-・最小の並べ方はBBBGGGもしくはGGGBBBとなる並べ方になる。
-・よって、上の２つの並べ方のうち操作回数が小さいものが答えになる。
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class GirlsAndBoys {
-public: int sortThem(string row) {
-int INF=1e+8,n=row.size();
-int cost=INF;
-int tmpcost=0,pos=0;
-for(int letter=0;letter&lt;n;letter++){
-if(row[letter]!='B')continue;
-tmpcost+=abs(letter-pos);
-pos++;
-}
-cost=min(cost,tmpcost);
-tmpcost=0,pos=0;
-for(int letter=0;letter&lt;n;letter++){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7794&amp;rd=14294 ・男の子と女の子が並んでいる。 ・このうち、男の子と女の子が隣に並んでいる並びをできるだけ少なくしたい。 ・並びを変えるには、一回の操作で
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2010-tco-qualification-round-1---girlsandboys/">Read more…</a>
@@ -124,34 +97,7 @@ for(int letter=0;letter&lt;n;letter++){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12396&amp;rd=15571
-・与えられた長方形の地面を平らにしたい。
-・地面はセルで区別されており、それぞれのセルの現在の高さがわかっている。
-・高さを変化させるには、変化させた高さの分の労力がかかる。
-・全てのセルの高さをそれぞれが高々１以下の差にしたいとき、
-必要な最小の労力を求める。
-解き方 
-・高さは０～９の９通り。
-・このうち、高さの差が高々１になる場合は、
-ならした後の高さは（０，１）、（１，２）・・・（８，９）の８通り。
-・よって、それぞれの高さにするときに必要な労力をそれぞれ求め、そのうち最小のものが
-答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class HouseBuilding {
-public: int getMinimum(vector&lt;string&gt; area) {
-int ret=1e+9;
-int h=area.size(),w=area[0].size();
-FORE(i,0,9){
-int tmp=0;
-FORE(j,0,h)FORE(k,0,w){
-tmp+=min(abs(area[j][k]-'0'-i),abs(area[j][k]-'0'-(i+1)));
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12396&amp;rd=15571 ・与えられた長方形の地面を平らにしたい。 ・地面はセルで区別されており、それぞれのセルの現在の高さがわかっている。 ・高さを変化させるには
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2013-tco-round-1a-easy---housebuilding-/">Read more…</a>
@@ -171,28 +117,7 @@ tmp+=min(abs(area[j][k]-'0'-i),abs(area[j][k]-'0'-(i+1)));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13455&amp;rd=16077
-・N人の客がいて、各商品を多くて１つ買うことができる。
-・また、K種類以上の商品を買うBig Shopperがいる。
-・商品iを買った人数s[i]がわかっているとき、Big Shopperは最低何人いるか求める。
-解き方 
-・問題文をミスリードしてしまった。
-・貪欲法で、Big Shopperが０人から増やしていきその場合に条件が成立するか
-確かめればよい。
-・確かめ方は、Big Shopperが存在するとき
-買う種類はK以上であればよいので全部の商品を買うことにする。
-このとき、残った値が（N-Big Shopperの数）×（K-1）以下であればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ShoppingSurveyDiv1 {
-public: int minValue(int N, int K, vector&lt;int&gt; s) {
-int n=s.
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13455&amp;rd=16077 ・N人の客がいて、各商品を多くて１つ買うことができる。 ・また、K種類以上の商品を買うBig Shopperがいる。 ・商品iを買った人数s
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-634-div1-easy---shoppingsurveydiv1-/">Read more…</a>
@@ -212,32 +137,7 @@ int n=s.
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8745&amp;rd=12169
-１～ｎまでの数字からなる配列が与えられる。
-また、ｋ個の連続した数字を逆順に並び変えることができる。
-このとき、元の配列を昇順にソートするのに必要な操作回数を求める。
-ただし、昇順にソートできない場合はー１を返す。
-解き方 
-メモ化を利用した全探索を行う。
-今回はｄｆｓよりキューを利用したｂｆｓの方が効率よく書くことができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-map&lt;vector&lt;int&gt;,int&gt; m;
-queue&lt;vector&lt;int&gt; &gt; q;
-class SortingGame {
-public:
-int fewestMoves(vector&lt;int&gt; board, int k) {
-int n=board.size();
-m.clear();
-m[board]=1;
-q.push(board);
-while(!q.empty()){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8745&amp;rd=12169 １～ｎまでの数字からなる配列が与えられる。 また、ｋ個の連続した数字を逆順に並び変えることができる。 このとき、元の配列を昇順にソートする
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -257,31 +157,7 @@ while(!q.empty()){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1523&amp;rd=4555
-３の倍数はその各桁の数の和も同じく３の倍数になる。
-上記に対し、ｘ進数のときにも同じ法則が成り立つ倍数を求める。
-解き方 
-ｘ進数を考えた時、ｘ＾４まで考えればよく、ｘは最大で３０であるので
-計算量は30^4 *30 =30^5 =3*10^5となる。
-条件を満たさない場合はbreak,continue等で打ち切りを行えば
-十分全探索で間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class InterestingDigits {
-public: vector&lt;int&gt; digits(int base) {
-vector&lt;int&gt; ans;
-FORE(i,2,base){
-int valid=1;
-FORE(j,1,pow(base,4)){
-if(j%i!=0)continue;
-int tmp=j,num=0;
-while(tmp&gt;0){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1523&amp;rd=4555 ３の倍数はその各桁の数の和も同じく３の倍数になる。 上記に対し、ｘ進数のときにも同じ法則が成り立つ倍数を求める。 解き方 ｘ進数を考えた時、
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-150-div1-easy---interestingdigits-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -301,28 +177,10 @@ while(tmp&gt;0){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4811&amp;rd=8081
-１辺の最小の長さと、最大の長さが与えられる。
-このとき、とりうる三角形の数を求める。
-ただし、回転して同じ三角形になる場合は同じものとみなす。
-答えが10^9を超える場合は-1を返す。
-解き方 
-２重ループでは計算量として間に合わない、はずなのですが
-10^9以上は-1を返すので２重ループで収まります。
-コード 
-class TriCount {
-public: int count(int minLength, int maxLength) {
-long long ret=0LL;
-FORE(i,minLength,maxLength+1){
-FORE(j,i,maxLength+1){
-ret+=min(maxLength,i+j-1)-j+1;
-if(ret&gt;1000000000)return -1;
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4811&amp;rd=8081 １辺の最小の長さと、最大の長さが与えられる。 このとき、とりうる三角形の数を求める。 ただし、回転して同じ三角形になる場合は同じものとみな
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-284-div1-easy---tricount-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -339,35 +197,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12975&amp;rd=15839
-・２人でゲームを行い、一人は１～１０＾９までの数を思い浮かべ、
-もう一人が言った数との絶対値を答える。
-・このターンを何度か繰り返したとき、最後に思い浮かべた数を返す。
-ただし、そのような数が存在しないときはー２、複数存在するときは－１を返す。
-解き方 
-各ターンごとに存在しうる数字についてＡＮＤをとり、最後に残ったものが答えになる。
-具体的には最初のターンで存在しうる２通りの数について、各ターンごとに現れるのであれば残し、なければfalseとして最後に判定すればよい。
-また、最初に１～１０＾９内にある数か判定してあげればその後は毎回判定しなくてもよい。
-単純に数を数えるコーディングや、同じセットが複数存在するときにエラーとなるコーディングではひっかかるので上記のように問題にシンプルに従って実装する。
-コード 
-class EllysNumberGuessing {
-public: int getNumber(vector&lt;int&gt; guesses, vector&lt;int&gt; answers) {
-int num1=guesses[0]+answers[0];
-int num2=guesses[0]-answers[0];
-int flag1=0,flag2=0;
-if(1&lt;=num1&amp;&amp;num1&lt;=1000000000)flag1=1;
-if(1&lt;=num2&amp;&amp;num2&lt;=1000000000)flag2=1;
-FORE(i,0,guesses.size()){
-if(guesses[i]+answers[i]!=num1&amp;&amp;guesses[i]-answers[i]!=num1)flag1=0;
-if(guesses[i]+answers[i]!=num2&amp;&amp;guesses[i]-answers[i]!=num2)flag2=0;
-}
-if(flag1&amp;&amp;flag2)return -1;
-if(!flag1&amp;&amp;!flag2)return -2;
-if(flag1)return num1;
-return num2;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12975&amp;rd=15839 ・２人でゲームを行い、一人は１～１０＾９までの数を思い浮かべ、 もう一人が言った数との絶対値を答える。 ・このターンを何度か繰り返したとき
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-606-div1-easy---ellysnumberguessing-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -384,34 +217,10 @@ return num2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11110&amp;rd=14235
-N個のドアがある。
-最初は一つおきにドアを開けていく。
-次は空いているドアはないとみなして、２つおきにドアをあけていく。
-次は３つおき・・・としたときに、最後に空けるドアを求める。
-解き方 
-Ｎ＝１０＾６。
-全探索だとN+N/2+N/(2*3)+N/(2*3*4)・・・
-=N(1/2+1/6+1/24...)
-最大ケースを試しても240msほどなのでこれで解けます。
-こちらを拝見させていただくと、法則を出しても解けるそうです。
-http://be.nucl.ap.titech.ac.jp/~kawada/indigo/view/memo341.html
-http://d.hatena.ne.jp/kusano_prog/20100915/1284572746
-コード 
-class LockersDivOne {
-public:
-int lastOpened(int N) {
-vector&lt;int&gt; a;
-FORE(i,0,N)a.push_back(i+1);
-for(int d=2;;d++){
-if(a.size()==1)return a[0];
-vector&lt;int&gt; b;
-FORE(i,0,a.size())if(i%d!=0)b.push_back(a[i]);
-a.swap(b);
-}
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11110&amp;rd=14235 N個のドアがある。 最初は一つおきにドアを開けていく。 次は空いているドアはないとみなして、２つおきにドアをあけていく。 次は３つおき・・・
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-482-div1-easy---lockersdivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -428,52 +237,7 @@ a.swap(b);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10180&amp;rd=13519
-ある文字列が与えられる。
-文字列を入れ替えた時、隣り合う文字が同じアルファベットにならない
-場合の数を求める。
-解き方 
-Ｎ＝１０なので全探索できそうだが、
-計算量をきちんとしないとオーバーフローしてしまう。
-全ての順列で10!=3628800=3.6*10^6だが
-その中で全ての順列について10回の判定で3.6*10^7がぎりぎり。
-それ以上、7.2*10^7がエラー境界な感覚なので
-上位の人でもエラーとなっている人が多かったです。
-nextpermutation＆判定文ではなく、
-再帰関数を使うことでO(10!)に近いオーダーで計算することができます。
-コード 
-class TheLuckyString {
-public:
-int N;
-int total;
-string str;
-int have[26];
-void calc(int pos,char prev){
-if(pos==N){
-total++;
-return;
-}
-for(int ch='a';ch&lt;='z';ch++){
-if(ch!=prev &amp;&amp; have[ch-'a']&gt;0){
-have[ch-'a']--;
-calc(pos+1,ch);
-have[ch-'a']++;
-}
-}
-}
-int count(string s) {
-N=s.size();
-total=0;
-FORE(i,0,26)have[i]=0;
-FORE(i,0,N)have[s[i]-'a']++;
-calc(0,' ');
-return total;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10180&amp;rd=13519 ある文字列が与えられる。 文字列を入れ替えた時、隣り合う文字が同じアルファベットにならない 場合の数を求める。 解き方 Ｎ＝１０なので全探索で
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-428-div1-easy---theluckystring-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -493,37 +257,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①高さを示す配列が与えられる。
-②隣り合う高さについては、倒れた時もぶつからないよう２つのうち最大の高さ分の距離をとらなければならない。
-③このとき、最小の距離となるよう高さを並べ替えるとき、
-並べ替え後の要素の番号の配列を求める。
-解き方 
-高さの要素数が７なので、全探索すればよいです。
-最初は高さに応じてnext_permutationと考えてしまったが、
-このとき同じ距離の配列が存在するときに要素の昇順によってはエラーとなってしまいます。
-ここでもう一つ考えられるかなのですが、
-それでは「高さ」でソートするのではなく、「要素番号」でソートすれば
-昇順で判定するため、上記の問題を解決することができます。
-コード 
-class TheBrickTowerMediumDivTwo {
-public: vector&lt;int&gt; find(vector&lt;int&gt; heights) {
-int ans=500;
-int n=heights.size();
-vector&lt;int&gt; tmp(n,0),tmp2(n,0);
-FORE(i,0,n)tmp[i]=i;
-sort(tmp.begin(),tmp.end());
-do{
-int cost=0;
-FORE(i,0,n-1)cost+=max(heights[tmp[i]],heights[tmp[i+1]]);
-if(cost&lt;ans){
-FORE(i,0,n)tmp2[i]=tmp[i];
-ans=cost;
-}
-}while(next_permutation(tmp.begin(),tmp.end()));
-return tmp2;
-}
-}; 
+			問題 ①高さを示す配列が与えられる。 ②隣り合う高さについては、倒れた時もぶつからないよう２つのうち最大の高さ分の距離をとらなければならない。 ③
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-554-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>

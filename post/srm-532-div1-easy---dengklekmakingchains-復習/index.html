@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 532 DIV1 Easy - DengklekMakingChains (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11754&amp;rd=14725
-長さ３からなる鎖がある。
-鎖はビーズか数字のパーツからなる。
-複数の鎖が与えられ、鎖をつなげたときに連続した数字が美しさの値になる。
-このとき、最大となる美しさの値を求める。
-解き方 
-シミュレーションの問題なので、いかにＣｈａｌｌｅｎｇｅケースを網羅するか、間違いのないように実装するか。
-１）真ん中のみに数字がある場合は、その最大値と連結した鎖と比較する必要がある
-２）左と右にある鎖について、左とも右とも取れるものを考慮する。
-さらに２つではなく１つだけの場合もあるため、その場合も考慮する。
-文字列１つ１つでif文を書いてもよいが、for文をうまく使うことで間違いが少なく簡略化することができる。
-コード 
-class DengklekMakingChains {
-public:
-int maxBeauty(vector&lt;string&gt; c) {
-int n=c.size();
-int ans=0,single=0,a[60]={},b[60]={},added=0;
-FORE(i,0,n){
-if(c[i][0]!=&#39;.&#39;&amp;&amp;c[i][1]!=&#39;.&#39;&amp;&amp;c[i][2]!=&#39;.&#39;)FORE(j,0,3)ans&#43;=c[i][j]-&#39;0&#39;;
-else {
-if(c[i][0]==&#39;.&#39;&amp;&amp;c[i][1]!=&#39;.&#39;&amp;&amp;c[i][2]==&#39;.&#39;)single=max(single,c[i][1]-&#39;0&#39;);
-for(int j=0;j&lt;3&amp;&amp;c[i][j]!=&#39;.&#39;;j&#43;&#43;)a[i]&#43;=c[i][j]-&#39;0&#39;;
-for(int j=2;j&gt;=0&amp;&amp;c[i][j]!=&#39;.&#39;;j--)b[i]&#43;=c[i][j]-&#39;0&#39;;
-}
-}
-FORE(i,0,n){
-added=max(added,max(a[i],b[i]));
-FORE(j,0,n)if(i!=j)added=max(added,a[i]&#43;b[j]);
-}
-ans&#43;=added;
-return single&gt;ans ? single : ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11754&amp;rd=14725 長さ３からなる鎖がある。 鎖はビーズか数字のパーツからなる。 複数の鎖が与えられ、鎖をつなげたときに連続した数字が美しさの値になる。 このと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-532-div1-easy---dengklekmakingchains-%E5%BE%A9%E7%BF%92/" />
 

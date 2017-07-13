@@ -7,54 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM545 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①文字数ｎが与えられる。
-②最小文字列minStrが与えられる。
-③文字列s中の順番i&lt;jでs[i]&gt;s[j]となるとき、inversionが１となるとき、
-最小のinversion minInvが与えられる。
-④このとき、文字数nでminStrより大きく、かつminInv以上の中で
-最も辞書順で小さい文字列を求める。
-そのような文字列が存在しなければ””を返す。
-また、文字列には同じ文字が入らないとする。
-＜解き方＞
-まずは全探索で考えると、文字数nの全てに対してminInv,minStrの判定を行い
-その中で最も辞書順で小さい文字列を探索することになる。
-単純に検索するとO(26Pn=26!/(26-n)!)のため計算量を超えてしまう。
-次に貪欲法でできないか考える。
-文字の後ろから計算するとオーバーしてしまうので、最初の文字から決定していく。
-このとき、求めるのは辞書順最小であるためaから順に調べていく。
-aの後に続く文字は、そのケースのstr,invの最大を考えることでaなのか
-b以上なのか判定できる。
-（例）n=5のとき、afdcbを考え、minInv以下、もしくはminStr以下であれば
-最初の文字はa以上となる。
-この場合だとO(26*n)のため計算量に収まる。
-あと、条件に一致しなければ&#34;&#34;を返すため、答えの初期値を&#34;&#34;とする。
-その文字を使ったか使っていないかの判定はused[]配列を用いてもよいが、
-ビット計算でもよい。
-redcoderの人の回答を参考に書いたままです。
-&lt;コード&gt;
-class StrIIRec {
-public: string recovstr(int n, int minInv, string minStr) {
-string ans=&#34;&#34;;
-int used=0;
-FORE(i,0,n){
-FORE(j,0,n){
-if(used&amp;(1&lt;&lt;j))continue;
-string s=ans;
-s&#43;=(j&#43;&#39;a&#39;);
-for(int k=n-1;k&gt;=0;k--)if(!(used&amp;(1&lt;&lt;k)) &amp;&amp; k!=j)s&#43;=(k&#43;&#39;a&#39;);
-if(s&lt;minStr)continue;
-int inv=0;
-FORE(k,0,n)FORE(l,k&#43;1,n)if(s[k]&gt;s[l])inv&#43;&#43;;
-if(inv&lt;minInv)continue;
-ans&#43;=(j&#43;&#39;a&#39;);
-used|=(1&lt;&lt;j);
-break;
-}
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="＜問題＞ ①文字数ｎが与えられる。 ②最小文字列minStrが与えられる。 ③文字列s中の順番i&lt;jでs[i]&gt;s[j]となるとき、i" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm545-div2--level2/" />
 

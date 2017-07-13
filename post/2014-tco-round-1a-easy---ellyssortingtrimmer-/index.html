@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Round 1A Easy - EllysSortingTrimmer (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12971&amp;rd=15942
-・ある文字列Sが与えられる。
-・パラメータLが与えられ、Sから長さL分の文字列を選んで順番をひっくり返すことができる。
-また、操作後選んだサブ文字列以降の文字列は消えてしまう。
-（例）S=”ESPRIT”、L=3のとき
-”ES[PRI]T”の選択後 ”ESIRP”
-・操作は何回行ってもよいとき、得られる最も辞書順の小さい文字列を求める。
-解き方 
-・基本はSのうち辞書順に小さいアルファベットL個分。
-・ただし、最初の文字は削除することができない。
-・よって、ソートして最初からL-1個分のアルファベットと、Sの最初の文字をソートした
-ものが答えになる。
-・別解として全探索、つまり後ろからソートを繰り返して行き、最後に残ったものが答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysSortingTrimmer {
-public: string getMin(string S, int L) {
-int n=S.size();
-char ch[n];
-FORE(i,0,n)ch[i]=S[i];" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12971&amp;rd=15942 ・ある文字列Sが与えられる。 ・パラメータLが与えられ、Sから長さL分の文字列を選んで順番をひっくり返すことができる。 また、操作後選んだ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-round-1a-easy---ellyssortingtrimmer-/" />
 

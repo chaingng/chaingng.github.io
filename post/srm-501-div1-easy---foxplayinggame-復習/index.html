@@ -7,53 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 501 DIV1 Easy - FoxPlayingGame (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11284&amp;rd=14430
-・nA,nB,paramA,paramBが与えられる。
-・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけparamB/1000をかける。それぞれは好きな順番で行ってもよい。
-このとき、最大となる値を求める。
-解き方 
-２つ解き方がある。
-１つ目は、与えられたパラメータによって法則を見つける、場合分けして解く方法。
-きちんと整理すれば解くことはできるが、少し複雑なので時間がかかってしまう。
-２つ目は、dpを利用する方法。
-今回は乗算の際に最大と最小が入れかわる可能性があるので、最大を求める通常のｄｐ１と最小を求めるｄｐ２の２つが必要。
-データ構造と解き方が分かればこちらが確実でコーディングも早い。
-コードは上記がｄｐの方法、コメントアウトしているのが１つめの方法。
-コード 
-class FoxPlayingGame {
-public:
-double theMax(int nA, int nB, int paramA, int paramB) {
-double dp1[60][60]={},dp2[60][60]={};
-FORE(i,0,nA&#43;1){
-FORE(j,0,nB&#43;1){
-if(i&#43;j){
-dp1[i][j]=-1e&#43;100;
-dp2[i][j]=1e&#43;100;
-}
-if(i)dp1[i][j]=max(dp1[i][j],dp1[i-1][j]&#43;0.001*paramA);
-if(j)dp1[i][j]=max(dp1[i][j],max(dp1[i][j-1]*0.001*paramB,dp2[i][j-1]*0.001*paramB));
-if(i)dp2[i][j]=min(dp2[i][j],dp2[i-1][j]&#43;0.001*paramA);
-if(j)dp2[i][j]=min(dp2[i][j],min(dp1[i][j-1]*0.001*paramB,dp2[i][j-1]*0.001*paramB));
-}
-}
-return dp1[nA][nB];
-/*double ret=0.0;
-double pA=paramA/1000.0;
-double pB=paramB/1000.0;
-if(pA&gt;=0){
-if(pB&gt;=1)ret=nA*pA*pow(pB,nB);
-else if(-1&lt;=pB&amp;&amp;pB&lt;1)ret=nA*pA;
-else {
-if(nB%2==1)nB=max(0,nB-1);
-ret=nA*pA*pow(pB,nB);
-}
-}
-else{
-if(pB&gt;=1)ret=nA*pA;
-else if(0&lt;=pB&amp;&amp;pB&lt;1)ret=nA*pA*pow(pB,nB);
-else if(-1&lt;=pB&amp;&amp;pB&lt;0)ret=nA*pA*pow(pB,nB&gt;0);
-else{" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11284&amp;rd=14430 ・nA,nB,paramA,paramBが与えられる。 ・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけpara" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/" />
 

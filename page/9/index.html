@@ -74,40 +74,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11295&amp;rd=14537
-解き方 
-何日目まで訪れることができるかを固定することで貪欲法で解くことができる。
-N日目まで訪れるとすると、１日目＋７の倍数・・・６日目＋７の倍数のそれぞれについて
-一番コストの少ない種類の和をとり、それが予算以下であれば
-N日目まで訪れることができる。
-コード 
-class MysteriousRestaurant {
-public:
-int calc(char ch){
-if('A'&lt;=ch &amp;&amp; ch&lt;='Z')return ch-'A'+10;
-if('a'&lt;=ch &amp;&amp; ch&lt;='z')return ch-'a'+36;
-return ch-'0';
-}
-int maxDays(vector&lt;string&gt; prices, int budget) {
-int n=prices.size(),m=prices[0].size();
-int ret=0;
-FORE(i,0,n){
-int cost=0;
-for(int j=0;j&lt;7&amp;&amp;j&lt;=i;j++){
-int sum=1e+9;
-for(int k=0;k&lt;m;k++){
-int tmp=0;
-for(int l=j;l&lt;=i;l+=7)tmp+=calc(prices[l][k]);
-sum=min(sum,tmp);
-}
-cost+=sum;
-}
-if(cost&lt;=budget)ret=max(ret,i+1);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11295&amp;rd=14537 解き方 何日目まで訪れることができるかを固定することで貪欲法で解くことができる。 N日目まで訪れるとすると、１日目＋７の倍数・・・６日目＋
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-512-div1-easy---mysteriousrestaurant/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -124,39 +94,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11485&amp;rd=14536
-解き方 
-動物数がN匹であれば、各動物が（０匹，N匹）〜（N匹、０匹）までの
-すべての場合が考えられる。
-各場合について、動物が答えている数が一致しているか判定し、
-有効であればmin（うさぎの数、猫の数）^2がその場合の総数になる。
-コード 
-class Zoo {
-public: long long theCount(vector&lt;int&gt; answers) {
-long long ret=0;
-int n=answers.size();
-map&lt;int,int&gt; m;
-FORE(i,0,n)m[answers[i]]++;
-for(int l=0;l&lt;=n;l++){
-int r=n-l;
-int cnt=0,valid=1;
-for(int i=0;i&lt;min(l,r);i++){
-if(m[i]!=2)valid=0;
-cnt+=m[i];
-}
-for(int i=min(l,r);i&lt;max(l,r);i++){
-if(m[i]!=1)valid=0;
-cnt+=m[i];
-}
-if(cnt!=n)valid=0;
-if(valid){
-ret+=pow(2,min(l,r));
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11485&amp;rd=14536 解き方 動物数がN匹であれば、各動物が（０匹，N匹）〜（N匹、０匹）までの すべての場合が考えられる。 各場合について、動物が答えている数が
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-511-div1-easy---zoo/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -173,45 +114,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11461&amp;rd=14439
-解き方 
-４か７以外の数字は最大ひとつしか含めてはいけないので、
-１つ含んでいる場合とひとつも含んでいない場合で場合分けすれば
-すべての数字を発生させられる。
-あとはa以上かつb以下か判定すればよい。
-コード 
-class TheAlmostLuckyNumbersDivOne {
-public:
-int calc(long long x){
-int ret=0;
-while(x&gt;0){
-if(!(x%10==4||x%10==7))ret++;
-x/=10;
-}
-return ret;
-}
-void dfs(long long x){
-if(x&lt;=b){
-dfs(x*10+4);
-dfs(x*10+7);
-if(calc(x)==0){
-for(int i=0;i&lt;=9;i++){
-if(i==0 &amp;&amp; x==0)continue;
-if(i==4 || i==7)continue;
-dfs(x*10+i);
-}
-}
-if(a&lt;=x)ret++;
-}
-}
-long long find(long long a_, long long b_) {
-a=a_,b=b_;
-ret=0;
-dfs(0);
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11461&amp;rd=14439 解き方 ４か７以外の数字は最大ひとつしか含めてはいけないので、 １つ含んでいる場合とひとつも含んでいない場合で場合分けすれば すべての数字を
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-510-div1-easy---thealmostluckynumbersdivone/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -228,27 +134,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11329&amp;rd=14540
-解き方 
-３０度ずつ回転させることが可能なので、全探索して
-有効な数字の時の値を更新すればよい。
-コード 
-class RotatedClock {
-public: string getEarliest(int hourHand, int minuteHand) {
-string ret="";
-for(int i=0;i&lt;=360;i+=30){
-int h=(hourHand+i)%360;
-int m=(minuteHand+i)%360;
-if((h%30)*12==m){
-char ch[20];
-sprintf(ch,"%02d:%02d",h/30,m/6);
-if(ret.empty()||ch&lt;ret)ret=ch;
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11329&amp;rd=14540 解き方 ３０度ずつ回転させることが可能なので、全探索して 有効な数字の時の値を更新すればよい。 コード class RotatedClock { public: string getEarliest(int hourHand, int minuteHand) { string ret=""; for(int i=0;i&lt;=360;i+=30){ int h=(hourHand+i)%360; int m=(minuteHand+i)%360; if((h%30)*12==m){
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-515-div1-easy---rotatedclock/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -265,33 +154,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11502&amp;rd=14538
-解き方 
-各プラットフォームについて有効な場所の総数を、それぞれかけていけばよい。
-あるプラットフォームについて有効な場所かどうかの判定は、
-一番左側の点と右側の点の間にボールがなければよい。
-この判定には二分探索を使うことができる。
-コード 
-class YetAnotherIncredibleMachine {
-public: int countWays(vector&lt;int&gt; platformMount, vector&lt;int&gt; platformLength, vector&lt;int&gt; balls) {
-int n=platformMount.size();
-int MOD=1000000009;
-int m=balls.size();
-sort(all(balls));
-int ret=1;
-FORE(i,0,n){
-int cur=0;
-for(int l=platformMount[i]-platformLength[i];l&lt;=platformMount[i];l++){
-int r=l+platformLength[i];
-int s=lower_bound(balls.begin(),balls.end(),l)-balls.begin();
-if( !(0&lt;=s &amp;&amp; s&lt;m) || balls[s]&gt;r )cur++;
-}
-ret=(1LL*ret*cur)%MOD;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11502&amp;rd=14538 解き方 各プラットフォームについて有効な場所の総数を、それぞれかけていけばよい。 あるプラットフォームについて有効な場所かどうかの判定は、
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-513-div1-easy---yetanotherincrediblemachine/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -308,48 +174,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11302&amp;rd=14424
-解き方 
-すべての状態について、満たすすべての整数を調べていっては
-コード量が大変になってしまう。
-そこで各状態について、とりうる最小の整数と最大の整数を調べ、
-一致していればその整数、一致していない、つまり複数通り存在するならば
-−１を返す。
-コード 
-class ColorfulCards {
-public: vector&lt;int&gt; theCards(int N, string colors) {
-int prime[N+1];
-FORE(i,1,N+1)prime[i]=1;
-prime[1]=0;
-for(int i=2;i&lt;=N;i++)if(prime[i]){
-for(int j=i*2;j&lt;=N;j+=i)prime[j]=0;
-}
-int m=colors.size();
-int minx[m],maxx[m];
-int at=0;
-for(int i=1;i&lt;=N;i++){
-if(at&gt;=m)break;
-if((colors[at]=='R')==prime[i]){
-minx[at++]=i;
-}
-}
-at=m-1;
-for(int i=N;i&gt;=1;i--){
-if(at&lt;0)break;
-if((colors[at]=='R')==prime[i]){
-maxx[at--]=i;
-}
-}
-vector&lt;int&gt; ans;
-ans.clear();
-FORE(i,0,m){
-if(minx[i]==maxx[i])ans.push_back(minx[i]);
-else ans.push_back(-1);
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11302&amp;rd=14424 解き方 すべての状態について、満たすすべての整数を調べていっては コード量が大変になってしまう。 そこで各状態について、とりうる最小の整数と
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-495-div1-easy---colorfulcards-xx/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -366,31 +194,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13746&amp;rd=16434
-解き方 
-木のルートからDFSでたどっていってパスの数を足していけば良い。
-ルート０に直接つながっているノードについて、
-さらにその下にノードがつながっていればそのパスの和、
-つながっていなければ１を返す。
-コード 
-vector&lt;int&gt; p;
-int n;
-class UnrelatedPaths {
-public:
-int dfs(int x){
-int ret=0;
-FORE(i,0,n)if(p[i]==x){
-ret+=dfs(i+1);
-}
-return ret==0 ? 1 : ret;
-}
-int maxUnrelatedPaths(vector&lt;int&gt; parent) {
-p=parent;
-n=p.size();
-return dfs(0);
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13746&amp;rd=16434 解き方 木のルートからDFSでたどっていってパスの数を足していけば良い。 ルート０に直接つながっているノードについて、 さらにその下にノード
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/tco-2015-1c-middle---unrelatedpaths/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -407,39 +214,10 @@ return dfs(0);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13743&amp;rd=16434
-解き方 
-２つ行があるが、追加する木については上下のどちらに追加しても変わらないので
-片方だけを考える。
-すでに存在する木によって追加できるスペースはいくつかに区切られるが、
-各区切りごとのセルの連続数によって、追加できる木の数が決まる。
-コード 
-class DevuAndPlantingTrees {
-public: int maximumTreesDevuCanGrow(vector&lt;string&gt; garden) {
-int n=garden[0].size();
-int used[n];
-int ret=0;
-memset(used,0,sizeof(used));
-FORE(i,0,2)FORE(j,0,n)if(garden[i][j]=='*'){
-if(j-1&gt;=0)used[j-1]=1;
-if(j+1&lt;n)used[j+1]=1;
-used[j]=1;
-ret++;
-}
-int at=0;
-while(1){
-while(at&lt;n &amp;&amp; used[at])at++;
-if(at&gt;=n)break;
-int l=at;
-at++;
-while(at&lt;n &amp;&amp; !used[at+1])at++;
-ret+=(at-l+2)/2;
-at++;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13743&amp;rd=16434 解き方 ２つ行があるが、追加する木については上下のどちらに追加しても変わらないので 片方だけを考える。 すでに存在する木によって追加できるス
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2015-tco-round-1c-easy---devuandplantingtrees/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -456,34 +234,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13731&amp;rd=16434
-解き方 
-dpの問題。
-dp[現在調べている桁数][beautifulcountの数][10の連続数]＝そのbeautifulcountの総数
-とすると、前の結果について以下のようになる。
-１：前の結果から１０が連続しないように１桁追加
-→連続数が１になり、beautifulcountが１増える
-２：前の結果から１０が連続するように１桁追加
-→連続数が１増えて、beautifulcountが連続数＋１個増える
-コード 
-class DevuAndBeautifulSubstrings {
-public: long long countBeautifulSubstrings(int n, int cnt) {
-int num=n*(n+1)/2;
-long long dp[n+1][num][n+1];
-memset(dp,0,sizeof(dp));
-dp[1][1][1]=2;
-for(int i=1;i&lt;n;i++)for(int j=0;j&lt;=num;j++)for(int prev=0;prev&lt;=n;prev++){
-if(dp[i][j][prev]!=0){
-dp[i+1][j+1][1]+=dp[i][j][prev];
-dp[i+1][j+1+prev][prev+1]+=dp[i][j][prev];
-}
-}
-long long ret=0LL;
-FORE(i,0,n+1)ret+=dp[n][cnt][i];
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13731&amp;rd=16434 解き方 dpの問題。 dp[現在調べている桁数][beautifulcountの数][10の連続数]＝そのbeautifulcountの総
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/tco-2015-1c-hard----magicwords/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -500,29 +254,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9895&amp;rd=13505
-解き方 
-スタート地点によって待ち時間は異なるので、
-すべてのスタート地点においてシミュレーションし、最短となる
-時間が答えとなる。
-コード 
-class Embassy {
-public: int visaApplication(vector&lt;int&gt; forms, int dayLength, int openTime) {
-int ret=1e+9;
-int n=forms.size();
-for(int s=0;s&lt;=1000000;s++){
-int tmp=0;
-FORE(i,0,n){
-tmp+=forms[i];
-if( ((tmp-s)%dayLength+dayLength)%dayLength&lt;=openTime)continue;
-tmp+=dayLength-((tmp-s)%dayLength+dayLength)%dayLength;
-}
-ret=min(ret,tmp);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9895&amp;rd=13505 解き方 スタート地点によって待ち時間は異なるので、 すべてのスタート地点においてシミュレーションし、最短となる 時間が答えとなる。 コード class Embassy
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-414-div1-easy---embassy/">Read more…</a>
 		</div>
 	</div>
 </article>

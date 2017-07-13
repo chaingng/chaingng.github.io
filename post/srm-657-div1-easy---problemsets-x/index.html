@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 657 DIV1 Easy - ProblemSets x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13771&amp;rd=16417
-・問題Easy,EM,Middle,MH,Hardの数が与えられる。
-・ここから問題のセットをできるだけ多く作りたい。
-・各問題セットは、Easy,Middle,Hardの問題を各一つ含む必要がある。
-・問題EMはEasyもしくはMiddleの代わり、MHはMiddleもしくはHardの代わりに使える。
-・このとき、作ることのできる最大の問題セット数を求める。
-解き方 
-まずは法則がないか考えてしまうが、かなり複雑になりそう。
-ここで作ることの問題セットがわかっていれば、それを作ることができるかどうかは
-すぐに判定することができる。
-よって二分探索を用いればよい。
-コード 
-class ProblemSets {
-public:
-bool ispossible(long long x,long long E, long long EM, long long M, long long MH, long long H){
-if(EM&lt;x-E)return false;
-if(MH&lt;x-H)return false;
-if(E&lt;x)EM-=(x-E);
-if(H&lt;x)MH-=(x-H);
-return M&#43;EM&#43;MH&gt;=x;
-}
-long long maxSets(long long E, long long EM, long long M, long long MH, long long H) {
-long long low=0,high=LONG_MAX;
-while(high-low&gt;1){
-long long mid=(low&#43;high)/2;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13771&amp;rd=16417 ・問題Easy,EM,Middle,MH,Hardの数が与えられる。 ・ここから問題のセットをできるだけ多く作りたい。 ・各問題セットは、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-657-div1-easy---problemsets-x/" />
 

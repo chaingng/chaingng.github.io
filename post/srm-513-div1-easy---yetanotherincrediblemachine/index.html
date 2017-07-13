@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 513 DIV1 Easy - YetAnotherIncredibleMachine" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11502&amp;rd=14538
-解き方 
-各プラットフォームについて有効な場所の総数を、それぞれかけていけばよい。
-あるプラットフォームについて有効な場所かどうかの判定は、
-一番左側の点と右側の点の間にボールがなければよい。
-この判定には二分探索を使うことができる。
-コード 
-class YetAnotherIncredibleMachine {
-public: int countWays(vector&lt;int&gt; platformMount, vector&lt;int&gt; platformLength, vector&lt;int&gt; balls) {
-int n=platformMount.size();
-int MOD=1000000009;
-int m=balls.size();
-sort(all(balls));
-int ret=1;
-FORE(i,0,n){
-int cur=0;
-for(int l=platformMount[i]-platformLength[i];l&lt;=platformMount[i];l&#43;&#43;){
-int r=l&#43;platformLength[i];
-int s=lower_bound(balls.begin(),balls.end(),l)-balls.begin();
-if( !(0&lt;=s &amp;&amp; s&lt;m) || balls[s]&gt;r )cur&#43;&#43;;
-}
-ret=(1LL*ret*cur)%MOD;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11502&amp;rd=14538 解き方 各プラットフォームについて有効な場所の総数を、それぞれかけていけばよい。 あるプラットフォームについて有効な場所かどうかの判定は、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-513-div1-easy---yetanotherincrediblemachine/" />
 

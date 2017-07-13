@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 587 DIV1 Easy - JumpFurther ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12300&amp;rd=15699
-解き方 
-最初はすべてのターンでジャンプし、そのときbadStepに当たらなければ
-それが最大の答えとなる。
-badStepにあたった時、最初の１ステップだけ待てばbadStepに当たらなくなるので
-それが答えになる。
-コード 
-class JumpFurther {
-public: int furthest(int N, int badStep) {
-int valid=1;
-int cur=0;
-for(int i=1;i&lt;=N;i&#43;&#43;){
-cur&#43;=i;
-if(cur==badStep)valid=0;
-}
-if(valid)return cur;
-cur=0;
-for(int i=2;i&lt;=N;i&#43;&#43;){
-cur&#43;=i;
-}
-return cur;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12300&amp;rd=15699 解き方 最初はすべてのターンでジャンプし、そのときbadStepに当たらなければ それが最大の答えとなる。 badStepにあたった時、最初" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-587-div1-easy---jumpfurther-/" />
 

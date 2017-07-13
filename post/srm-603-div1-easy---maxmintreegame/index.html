@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 603 DIV1 Easy - MaxMinTreeGame" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12946&amp;rd=15836
-有向グラフが与えられる。
-各ノードについてはコストを持つ。
-２人のプレイヤーがゲームを行い、各ターンごとにグラフを２つに分割し、
-好きな方の１つを消すことができる。
-最初のプレイヤーはできるだけ最後に残るノードのコストを大きくしたく、
-２人目のプレイヤーはできるだけ小さくしたい。
-このとき、最後に残るノードの最大コストを求める。
-解き方 
-２人ゲームなので必勝法を考察する。
-今回は間にあるノードを残したくても、相手のターンで必ず消されてしまう。
-逆に端にあるノードは必ず残すことができる。
-よって、端にあるノードのうち最大のものが答えになる。
-コード 
-class MaxMinTreeGame {
-public: int findend(vector&lt;int&gt; edges, vector&lt;int&gt; costs) {
-int n=costs.size();
-int d[n][n];
-memset(d,0,sizeof(d));
-FORE(i,0,edges.size()){
-d[edges[i]][i&#43;1]=1;
-d[i&#43;1][edges[i]]=1;
-}
-int ret=0;
-FORE(i,0,n){
-int cnt=0;
-FORE(j,0,n)if(d[i][j])cnt&#43;&#43;;
-if(cnt&lt;=1)ret=max(ret,costs[i]);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12946&amp;rd=15836 有向グラフが与えられる。 各ノードについてはコストを持つ。 ２人のプレイヤーがゲームを行い、各ターンごとにグラフを２つに分割し、 好きな方の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-603-div1-easy---maxmintreegame/" />
 

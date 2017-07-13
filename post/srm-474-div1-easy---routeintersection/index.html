@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 474 DIV1 Easy - RouteIntersection" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10804&amp;rd=14185
-N個の次元があり、最初はすべての次元について位置０からスタートする。
-各ステップについて、どの次元の座標を＋ーするか与えられる。
-このとき、ステップ中にすでに通った道に戻るときはInvalidを、
-そうでないときはvalidを返す。
-解き方 
-Nが大きく配列に保存できないため、必要な配列だけを保存する。
-同じ場所にもどってくるかどうかは、ある地点を基準にして
-各エリアの＋ーがすべて０になったときとなる。
-上記ついてすべての地点で判定してあげれば良い。
-コード 
-class RouteIntersection {
-public: string isValid(int N, vector&lt;int&gt; coords, string moves) {
-int len=coords.size();
-FORE(i,0,len){
-map&lt;int,int&gt; m;
-FORE(j,i,len){
-if(moves[j]==&#39;&#43;&#39;)m[coords[j]]&#43;&#43;;
-else m[coords[j]]--;
-int invalid=1;
-for(map&lt;int,int&gt;::iterator it=m.begin();it!=m.end();it&#43;&#43;){
-if(it-&gt;second!=0)invalid=0;
-}
-if(invalid)return &#34;NOT VALID&#34;;
-}
-}
-return &#34;VALID&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10804&amp;rd=14185 N個の次元があり、最初はすべての次元について位置０からスタートする。 各ステップについて、どの次元の座標を＋ーするか与えられる。 このとき" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-474-div1-easy---routeintersection/" />
 

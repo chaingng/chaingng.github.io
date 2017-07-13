@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 353 DIV1 Middle - PlatformJumper　（復習××○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7847&amp;rd=10710
-x,y座標上に複数のプラットフォームがあり、各プラットフォームには任意の数のコインが存在する。
-また、走る速さvと重力加速度gが与えられ、時間tあたりt*t*g/2の速さで落下していく。
-プレイヤーは、走る速さvが足りていれば高いプラットフォームから低いプラットフォームへ移動することができる。
-任意のプラットフォームからスタートできるとき、得られる最大のコインを求める。
-解き方 
-ｄｐで解ける問題。
-あるプラットフォームiに対して、そこから到達できる全てのプラットフォームのdp[j]のうち最大の値とプラットフォームiにあるコインの数の和がdp[i]になる。
-届くか届かないかの判定の関数は、式を変形することでできるだけ割り算を少なくすることが誤差を小さくするポイント。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[60],n,v,g;
-vector&lt;pair&lt;pair&lt;int,int&gt;,int&gt; &gt; p;
-class PlatformJumper {
-public:
-int f(int pos){
-if(dp[pos]!=-1)return dp[pos];
-if(pos==n)return 0;
-int x=p[pos].first.second,y=p[pos].first.first,score=p[pos].second;
-int ret=score;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7847&amp;rd=10710 x,y座標上に複数のプラットフォームがあり、各プラットフォームには任意の数のコインが存在する。 また、走る速さvと重力加速度gが与えられ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-353-div1-middle---platformjumper%E5%BE%A9%E7%BF%92/" />
 

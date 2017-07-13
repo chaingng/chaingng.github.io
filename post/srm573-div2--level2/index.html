@@ -7,57 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM573 DIV2 -Level2" />
-<meta property="og:description" content="&lt;問題&gt;
-①数字の列が与えられる。数字の数はそれぞれの人のプログラミング能力の強さを表す。
-②そのうち３人一組でチームを作り、チームの強さは３人のうち強い方から２人の強さの和となる。
-③自分のチームは数字の列の最初から３人で構成される。
-④このとき、様々なチームの組み合わせのうち、最も自分のチームの順位が低くなるときの順位を返す。
-＜解き方＞
-自分のチームは最初の３人なので、それを省いて考えると最大でＮ＝４5。
-全探索で考えると、Ｏ（４５Ｃ３×４２Ｃ3）．．．となり難しそう。
-次に貪欲法で考える。
-まずは数字列をソートすることで、小さい順に並べることで大きい数だけを扱えばよいことは思いつく。
-このとき、「チームの強さは３人のうち強い方から２人の強さの和」から
-「一番弱い一人は考えなくてよい」ので、
-最初のN/3より小さい数は考えなくてよいことがわかる。
-そのため、Ｎ／３～Ｎ－１番までの２人の組み合わせについて考えればよい。
-ここまででＯ（３０Ｃ２×２８Ｃ２・・・）。まだ足りない。
-次に、Ｎ／３番から始まる昇順で数字をindex1、Ｎ－１から降順で始まる数字をindex2とすると、
-仮にindex1=Ｎ／３のとき
-①index2=N-1の数字の和が自分のチームより大きければ
-→index1は自分よりも強いチームに所属（答えを＋）
-②小さい場合
-→index1は自分よりも弱いチームに所属（次のindex1に移動）
-することになる。
-最後に貪欲法で抜けがないか確認。
-index2=N-1がＯＫのとき、N-1未満の値でもチームが作れたとしても、
-それ以上のindex1の場合は常にindex=N-1の値はそれ以上に強いチームの値になるので
-必ず使われることになる。
-そのため単純に strength[index1]&#43;strength[index2]の和を試し、
-自分のチーム以上であればindex1&#43;&#43;,index2--,答えを&#43;し、
-それ以下であればindex&#43;&#43;のみでよいことがわかる。
-Challengeのポイント
-最初、判定後に要素を取り除いていなかったので
-きちんと要素を取り除いているかを確認する。
-＜コード＞
-class TeamContestEasy {
-public: int worstRank(vector&lt;int&gt; st) {
-int my=st[0]&#43;st[1]&#43;st[2]-min(st[0],min(st[1],st[2]));
-int rank=1;
-sort(st.begin()&#43;3,st.end());
-int low=3&#43;(st.size()-3)/3,high=st.size()-1;
-while(low&lt;high){
-if(st[low]&#43;st[high]&gt;my){
-low&#43;&#43;;
-high--;
-rank&#43;&#43;;
-}
-else low&#43;&#43;;
-}
-return rank;
-}
-};
- " />
+<meta property="og:description" content="&lt;問題&gt; ①数字の列が与えられる。数字の数はそれぞれの人のプログラミング能力の強さを表す。 ②そのうち３人一組でチームを作り、チーム" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm573-div2--level2/" />
 

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 633 DIV1 Easy - PeriodicJumping (×××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13234&amp;rd=16076
-・点（０，０）からスタートし、ゴール（ｘ、０）まで到達したい。
-・ジャンプして移動することができ、ジャンプできる距離の配列が与えられる。
-この順にジャンプして到達する必要がある。配列が終了したら最初の要素に戻る。
-・このとき、ゴールまで到達するのに必要な最小のジャンプ回数を求める。
-解き方 ・多角形を構成する問題であり、構成するには最大の辺＜その他の辺の合計である
-必要がある。今回は直線でもよいので等号が成立する。
-・配列の長さをｎ、配列の距離の合計をSとする。
-・ｘ＜＝Sのとき
-２＊ｎまでにゴールに到達することができる。
-ｎ＝０～２ｎ－１まで順に調べていき、それまでの距離の合計がｘ以上であり
-かつ最大の長さの辺が合計距離の半分以下であればそこが答えになる。
-・それ以外（ｘ＞S）のとき
-順に調べていき、距離の和がｘを超えた時が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PeriodicJumping {
-public: int minimalTime(int x, vector&lt;int&gt; jumpLengths) {
-if(x==0)return 0;
-if(x&lt;0)x=-x;
-int n=jumpLengths.size();" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13234&amp;rd=16076 ・点（０，０）からスタートし、ゴール（ｘ、０）まで到達したい。 ・ジャンプして移動することができ、ジャンプできる距離の配列が与えられる。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-633-div1-easy---periodicjumping-/" />
 

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 400 DIV1 Middle -ReversalChain　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=2146
-0と１からなる文字列が２つ与えられ、１つ目の文字列を２つ目の文字列に変換したい。
-変換する方法として、文字列のi番目とj番目を選ぶことでそのサブ文字列を反対にすることができる。
-このとき、文字列を変換するのに最小の変換回数を求める。
-ただし、変換できないときはー１を返す。
-解き方 
-文字列の最初と最後に着目し、そこが同じであればその場所については交換しなくてもよい。
-つまり、ｄｆｓを用いて最初が一緒のときはその文字を削除し次の走査に入り、
-最後の文字についても同様。
-どちらのケースもない場合は交換が必要だが、上記に当てはまらない場合は文字をすべてひっくり返すしか選択しはない。そのためすべてひっくり返し、上記の場合を調べる。
-ｄｐの状態はサブ文字列とした箇所とひっくり返したかどうかなので、メモ化することで計算量も間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-map&lt;string,int&gt; m;
-class ReversalChain {
-public:
-int calc(string init,string goal){
-if(init==goal)return 0;
-int n=init.size();
-string str=init&#43;&#39; &#39;&#43;goal;
-if(m.find(str)!=m.end())return m[str];" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=2146 0と１からなる文字列が２つ与えられ、１つ目の文字列を２つ目の文字列に変換したい。 変換する方法として、文字列のi番目とj番目を選ぶことで" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-400-div1-middle--reversalchain%E5%BE%A9%E7%BF%92/" />
 

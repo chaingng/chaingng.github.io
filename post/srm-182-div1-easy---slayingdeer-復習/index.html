@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 182 DIV1 Easy - SlayingDeer （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2308&amp;rd=4730
-鹿を追いかけて捕まえたい。
-プレイヤーは速度Ａ，鹿は速度Ｂ，距離はＣで与えられる。
-ただし、鹿は３０分走ったあと１５分休憩する。
-このとき、何分後に鹿を捕まえられるかを求める。
-ただし、決して捕まえられない場合はー１を返す。
-解き方 
-シミュレーションで間に合わない場合はお互い走って休んでを１周とすると
-何周目に捕まえられるかの計算が必要になるが、
-時間Ｃの最大が10^5なので単純なシミュレーションで間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SlayingDeer {
-public: int getTime(int A, int B, int C) {
-int rest=C,ret=0;
-while(1){
-if((A-B)*30&lt;rest){
-ret&#43;=30;
-rest-=(A-B)*30;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2308&amp;rd=4730 鹿を追いかけて捕まえたい。 プレイヤーは速度Ａ，鹿は速度Ｂ，距離はＣで与えられる。 ただし、鹿は３０分走ったあと１５分休憩する。 このとき、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-182-div1-easy---slayingdeer-%E5%BE%A9%E7%BF%92/" />
 

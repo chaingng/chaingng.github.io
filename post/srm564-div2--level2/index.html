@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM564 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①赤のボールの数、緑のボールの数、青のボールの数と１つの整数が与えられる。
-②システムは赤のボールがあれば1個壊し、次に緑のボールがあれば１個壊し、次に青のボールがあれば１個壊す。この操作を繰り返す。
-③このとき、与えられた整数のターンの時に壊すボールの色を返す。
-＜解き方＞
-整数が３つのボールのうち１番小さい数×３以下であれば３で割った余りで色を判別できる。
-それ以上であればいったん一番小さい数を除いたあと、２つの色で判定。
-そのあとは残りの１色となる。
-if文の分岐で記載することもできるが、
-ループ処理で書くことによって処理が間違えにくくなる。
-色の数を３から減らしていくことと、
-１つの色の処理ごとに、配列を詰めていくやり方でコードを書く。
-＜コード＞
-class AlternateColors {
-public: string getColor(long long r, long long g, long long b, long long k) {
-long long c[]={r,g,b};
-string name[]={&#34;RED&#34;,&#34;GREEN&#34;,&#34;BLUE&#34;};
-int t=3;
-while(t&gt;1){
-long long m=c[0];
-FORE(i,1,t)m=min(m,c[i]);
-if(k&lt;=m*t)return name[(k-1)%t];
-k-=(m*t);
-int tmp=t;
-t=0;
-FORE(i,0,tmp){
-if(c[i]-m&gt;0){
-c[t]=c[i]-m;
-name[t]=name[i];
-t&#43;&#43;;
-}
-}
-}
-return name[0];
-}
-}; " />
+<meta property="og:description" content="＜問題＞ ①赤のボールの数、緑のボールの数、青のボールの数と１つの整数が与えられる。 ②システムは赤のボールがあれば1個壊し、次に緑のボールがあ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm564-div2--level2/" />
 

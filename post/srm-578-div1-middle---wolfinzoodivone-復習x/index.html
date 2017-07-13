@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 578 DIV1 Middle - WolfInZooDivOne （復習x）" />
-<meta property="og:description" content="問題 
-Ｎ個のセクションに区切られた道路を渡りたい。
-ただし、各セクションには多くて１匹の狼がいるので注意して歩かなくてはいけない。
-今回上記に加えて、狼の存在について追加の情報が与えられる。
-複数のleft[i]、right[i]が与えられ、この区間中に最大で２匹の狼が存在する。
-このとき、各セクションの狼の存在についてすべての場合の数を求める。
-解き方 
-ｄｐで解けそうな問題なので、どのようにｄｐを設計するか。
-現在の状態を考えた時に、最後に狼がいたセクションと現在いるセクションを考える。
-この状態のすべての場合の数は、以下の２通りになる。
-（１）現在のセクションに狼を追加せずに次のセクションに移る場合
-（２）現在のセクションに狼を追加して次のセクションに移る場合
-ただし（２）の場合は、与えられた条件の制約から次に移ることのできるセッションは限られる。
-具体的には、前に狼がいたセクションと今回追加するセクションが両方含まれるセクションは
-狼が２匹以上となりこれ以上狼は追加できないので、その次の場所から検索することになる。
-あとは上記の条件をＤＦＳで実装すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int N,n,dp[305][305];
-vector&lt;int&gt; s,t;
-class WolfInZooDivOne {
-public:
-vector&lt;int&gt; parse(vector&lt;string&gt; str){
-string s=&#34;&#34;;
-FORE(i,0,str.size())s&#43;=str[i];" />
+<meta property="og:description" content="問題 Ｎ個のセクションに区切られた道路を渡りたい。 ただし、各セクションには多くて１匹の狼がいるので注意して歩かなくてはいけない。 今回上記に加え" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-578-div1-middle---wolfinzoodivone-%E5%BE%A9%E7%BF%92x/" />
 

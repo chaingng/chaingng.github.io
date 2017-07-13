@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 618 DIV1 Easy - Family (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10541&amp;rd=15851
-・有効グラフが２つ与えられる。
-・それぞれのグラフは親と子の関係を示しており、ｘ→ｙのときｘが親、ｙが子になる。
-・子は親がいないか、２人の親がいるかのどちらかでなければならない。
-・子のノード番号より、親のノード番号の方が小さくてはならない。
-・２人親がいる場合は、１人が父親、１人が母親でなくてはならない。
-・与えられたグラフが上記の条件を満たす場合は&#34;Possible&#34;、満たさない場合は
-&#34;Impossible&#34;を返す。
-解き方 
-・まず、子について親が０もしくは２人でないかを判定する。
-・次に、ノード番号について規則通りかを判定する。
-・次に、母親と父親とペアになるべきノードについて無向グラフを作成する。
-・最後に、そのグラフについて母親もしくは父親を埋めていき、条件を満たすかどうか判定する。
-→System Failed
-・母親もしくは父親の埋め方がまずかった。
-・最初はすべてのノードを順番に埋めていったが、これでは最適な埋め方にならない。
-・最初に埋めていないノードを選択して父親か母親としたとき、それに連結したノードをBFSで調べていけばよい。
-・反省：自分の書いたコードが正しいかのトレース不足だった。思いつきだけではなく
-きちんと検証する癖をつける。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Family {
-public: string isFamily(vector&lt;int&gt; parent1, vector&lt;int&gt; parent2) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10541&amp;rd=15851 ・有効グラフが２つ与えられる。 ・それぞれのグラフは親と子の関係を示しており、ｘ→ｙのときｘが親、ｙが子になる。 ・子は親がいないか、２人" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-618-div1-easy---family-%E5%BE%A9%E7%BF%92/" />
 

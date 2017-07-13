@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 585 DIV1 Easy - TrafficCongestion (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11361&amp;rd=15697
-２分木の高さが与えられる。
-車は一筆書きでそのセルを移動することができる。
-ただし、一度車が通った道は行くことができない。
-このとき、すべてのセルを移動するのに必要な車の台数を求める。
-解き方 
-いくつか例を並べてみると、前の高さで必要な車の数＋２つ前で必要な車の数×２が答えになるという法則が出てくる。
-あとはこれをｄｐで実装すればよい。
-Challenge
-高さが０のときはセルが1個存在するので答えは１になる。
-値が０、１のときにコードがそのままでよいのか、例外条件を書かなければいけないのかを確かめる。
-特にこの問題の場合は2つ前の配列を調べることからスタートは２からになるので
-特に注意する。
-dpの配列の宣言がなぜかうまく通らなかったのですが、vectorで宣言するとうまくいきました。１０＾６を超えるなど大きい場合のときはvectorを用いるのがよさそうです。
-コード 
-class TrafficCongestion {
-public: int theMinCars(int treeHeight) {
-vector&lt;long long&gt; dp(treeHeight&#43;1,0);
-long long MOD=1000000007;
-dp[0]=1,dp[1]=1;
-FORE(i,2,treeHeight&#43;1)dp[i]=(dp[i-1]&#43;2*dp[i-2])%MOD;
-return (int)dp[treeHeight];
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11361&amp;rd=15697 ２分木の高さが与えられる。 車は一筆書きでそのセルを移動することができる。 ただし、一度車が通った道は行くことができない。 このとき、すべて" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-585-div1-easy---trafficcongestion-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 552 DIV1 Easy - FoxPaintingBalls" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12146&amp;rd=15174
-解き方 
-法則を導き出しても解けるが、少し複雑なことに気づけば
-2分探索するのが確実。
-N=1のときは必要なボールの数の計算が例外値となるので別に判定するのに注意。
-コード 
-class FoxPaintingBalls {
-public: long long theMax(long long R, long long G, long long B, int N) {
-if(N==1)return R&#43;G&#43;B;
-long long sum=(long long)N*(N&#43;1)/2LL;
-long long one=(long long)N*(N&#43;1)/6LL;
-if((N%3)!=1){
-return min(R,min(G,B))/one;
-}
-long long low=0,high=max(R,max(G,B));
-while(high-low&gt;1){
-long long mid=(low&#43;high)/2LL;
-if( min(R,min(G,B))/one&gt;=mid &amp;&amp; (R&#43;G&#43;B)/sum&gt;=mid)low=mid;
-else high=mid;
-}
-return low;
-/*if(N==1)return R&#43;G&#43;B;
-long long num=(long long)N*(N&#43;1)/6;
-if(N%3==1)return min(min(R,min(G,B))/num,(R&#43;G&#43;B)/((long long)N*(N&#43;1)/2) );
-return min(R,min(G,B))/num ;*/" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12146&amp;rd=15174 解き方 法則を導き出しても解けるが、少し複雑なことに気づけば 2分探索するのが確実。 N=1のときは必要なボールの数の計算が例外値となるので" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-552-div1-easy---foxpaintingballs/" />
 

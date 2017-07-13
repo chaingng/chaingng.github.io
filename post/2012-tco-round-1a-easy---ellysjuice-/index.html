@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2012 TCO Round 1A Easy - EllysJuice (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11843&amp;rd=15090
-・アップルジュースとオレンジジュースが１ガロンずつある。
-・プレイヤーは順番に交互のジュースを半分ずつ飲んでいく。
-・ここで、プレイヤーの集合が与えられる。ただし、実際に飲んだ順番はわかっていない。
-・このとき、存在しうる一番ジュースを飲んだプレイヤーを求める。
-・ただし、一番ジュースを飲んだ量が同じであるプレイヤーが複数存在した場合は
-勝者は存在しない。
-解き方 
-・プレイヤー数は８なので、全探索ができそう。
-・ただし、実装が若干大変。
-・そこで問題文から、複数名前が存在するプレイヤー、もしくはプレイヤーの数が１人のとき
-そのプレイヤーが勝者になることがわかる。
-・これがわかれば、実装するだけ。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysJuice {
-public: vector&lt;string&gt; getWinners(vector&lt;string&gt; players) {
-int n=players.size();
-int maxn=0;
-map&lt;string,int&gt; m;
-FORE(i,0,n){
-m[players[i]]&#43;&#43;;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11843&amp;rd=15090 ・アップルジュースとオレンジジュースが１ガロンずつある。 ・プレイヤーは順番に交互のジュースを半分ずつ飲んでいく。 ・ここで、プレイヤーの" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2012-tco-round-1a-easy---ellysjuice-/" />
 

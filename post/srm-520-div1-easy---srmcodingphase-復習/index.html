@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 520 DIV1 Easy - SRMCodingPhase （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11381&amp;rd=14545
-SRMの３問の問題を７５分以内で解く。
-各問題については、最大獲得ポイントと解くのにかかる時間が与えられる。
-各３問については、解いたときに以下のポイントが得られる。
-問題０：最大獲得ポイント - ２＊解くのにかかる時間
-問題１：最大獲得ポイント - ４＊解くのにかかる時間
-問題２：最大獲得ポイント - ８＊解くのにかかる時間
-またluckが与えられ、これを使うことで解くのにかかる時間を引くことができる。配分は自由に決められるが各問題１分以上残さなければならない。
-各問題について最大獲得ポイント、解くのにかかる時間、luckが与えられた時
-得られる最大ポイントを求める。
-解き方 
-問題０よりも１、１よりも２の方が最大獲得ポイント数が多い。
-そのためluckの配分は難しい問題に対して配分すればよいように見えるが、
-75分以内で解けない場合があるので75分以内で解けるよう配分した方がよい場合もある。
-そこで、問題は３つしかないので解ける問題の組み合わせ全てに対し
-難しい問題からluckを配分してあげればよい。
-難しい問題からの配分で75分以内に収まらなく解けなくても、違う組み合わせでカバーできている。
-コード 
-class SRMCodingPhase {
-public: int countScore(vector&lt;int&gt; points, vector&lt;int&gt; skills, int luck) {
-int ans=0;
-for(int i=0;i&lt;(1&lt;&lt;3);i&#43;&#43;){
-int cost=0,tluck=luck,point=0;
-for(int j=2;j&gt;=0;j--){
-if(i&amp;(1&lt;&lt;j)){
-int use=min(tluck,skills[j]-1);
-point&#43;=points[j]-(1&lt;&lt;(j&#43;1))*(skills[j]-use);
-tluck-=use;
-cost&#43;=skills[j];
-}
-}
-if(cost-luck&lt;=75)ans=max(ans,point);
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11381&amp;rd=14545 SRMの３問の問題を７５分以内で解く。 各問題については、最大獲得ポイントと解くのにかかる時間が与えられる。 各３問については、解いたとき" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-520-div1-easy---srmcodingphase-%E5%BE%A9%E7%BF%92/" />
 

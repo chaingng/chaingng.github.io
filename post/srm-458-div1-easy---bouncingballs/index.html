@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 458 DIV1 Easy - BouncingBalls" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10726&amp;rd=14180
-１直線上に複数のボールが置かれている。
-ボールの置かれている位置はあらかじめわかっている。
-各ボールを同時に、それぞれ左右のどちらかに転がしたとき
-T秒後にボールが衝突した回数の期待値を求める。
-解き方 
-ボールが衝突した時に左右に移動することは考えず、
-すり抜けると考えることができる。
-このとき、各ボールが左右に動くすべての場合に対し、
-ボールのペアすべてに対し衝突しているかどうかカウントしていけばよい。
-別解として、ボールのペアそれぞれについてカウントすることになるので
-左右に動くすべての場合を求めずとも、
-各ペアについて衝突する可能性があるなら０．２５を足していけば求められる。
-コード 
-class BouncingBalls {
-public: double expectedBounces(vector&lt;int&gt; x, int T) {
-int n=x.size();
-sort(all(x));
-double ret=0;
-for(int mask=0;mask&lt;(1&lt;&lt;n);mask&#43;&#43;){
-FORE(i,0,n)FORE(j,i&#43;1,n){
-if( (mask&amp;(1&lt;&lt;i)) &amp;&amp; !(mask&amp;(1&lt;&lt;j)) &amp;&amp; x[j]-x[i]&lt;=2*T){
-ret&#43;&#43;;
-}
-}
-}
-return ret/(double)(1&lt;&lt;n);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10726&amp;rd=14180 １直線上に複数のボールが置かれている。 ボールの置かれている位置はあらかじめわかっている。 各ボールを同時に、それぞれ左右のどちらかに転が" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-458-div1-easy---bouncingballs/" />
 

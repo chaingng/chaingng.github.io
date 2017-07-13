@@ -7,26 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 395 DIV1 Easy - StreetWalking ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8464&amp;rd=11129
-解き方 
-以下の３通りのうち、最小のものが答えになる。
-１．すべて直線で移動（直線移動のコストが小さい時に有効）
-２．できるだけ斜めに移動して、残りを直線で移動（斜め移動のコストが小さいときに有効）
-３．最短距離で移動（どちらの移動のコストも同程度のときに有効）
-コード 
-class StreetWalking {
-public: long long minTime(int X, int Y, int walkTime, int sneakTime) {
-long long ret=(X&#43;Y)*(long long)walkTime;
-long long wnum=max(X,Y)-min(X,Y);
-long long snum=min(X,Y);
-ret=min(ret,snum*sneakTime&#43;wnum*walkTime);
-snum&#43;=(wnum/2)*2;
-wnum%=2;
-ret=min(ret,snum*sneakTime&#43;wnum*walkTime);
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8464&amp;rd=11129 解き方 以下の３通りのうち、最小のものが答えになる。 １．すべて直線で移動（直線移動のコストが小さい時に有効） ２．できるだけ斜めに移動して" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-395-div1-easy---streetwalking-/" />
 

@@ -7,48 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM578 DIV2 -500points" />
-<meta property="og:description" content="＜問題＞
-①四角形のフィールドとマンハッタン距離が与えられる。
-各セルに鳥が入れば「v」、いなければ「.」で表わされる。
-②鳥はガチョウかアヒルだがフィールドだけ見てもわからない。
-③ガチョウは少なくとも１匹存在する。
-④ガチョウとマンハッタン距離以内にある鳥は必ずガチョウになる。
-⑤このとき、ガチョウとアヒルの位置について場合の数を返す。
-＜関数＞
-座標を保管するテンプレート。
-queue &lt;pair &lt;int,int &gt; &gt; q;
-q.push(make_pair(x,y)); で(x,y)の座標を保管できます。
-i=q.front().first; でxを取り出し、
-j=q.front().second;　でyを取り出せます。
-＜考え方＞
-あるガチョウとマンハッタン距離以内にある鳥は全てガチョウということは
-逆を返すと、あるアヒルとマンハッタン距離以内にある鳥は全てアヒルになる。
-つまり、マンハッタン距離にある鳥同士は全てガチョウ、もしくは全てアヒルになるということがわかる。
-これがわかれば、
-「マンハッタン距離にある鳥の集合の数＊２」が場合の数にあることが導ける。
-ただし、それだとガチョウがいない場合が存在するので、最後に１を引く必要がある。
-int count(vector&lt;string&gt; field, int dist) {
-int h=field.size(),w=field[0].size();
-int ans=1,MOD=1000000007;
-queue &lt;pair &lt;int, int&gt; &gt; q;
-for(int i=0;i&lt;h;i&#43;&#43;){
-for(int j=0;j&lt;w;j&#43;&#43;){
-if(field[i][j]!=&#39;v&#39;)continue;
-q.push(make_pair(i,j));
-field[i][j]=&#39;.&#39;;
-while(!q.empty()){
-int x=q.front().first;
-int y=q.front().second;
-q.pop();
-for(int k=0;k&lt;h;k&#43;&#43;)
-for(int l=0;l&lt;w;l&#43;&#43;)
-if(field[k][l]==&#39;v&#39; &amp;&amp; (abs(k-x)&#43;abs(l-y))&lt;=dist){
-q.push(make_pair(k,l));
-field[k][l]=&#39;.&#39;;
-}
-}
-ans*=2;
-ans%=MOD;" />
+<meta property="og:description" content="＜問題＞ ①四角形のフィールドとマンハッタン距離が与えられる。 各セルに鳥が入れば「v」、いなければ「.」で表わされる。 ②鳥はガチョウかアヒルだ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm578-div2--500points/" />
 

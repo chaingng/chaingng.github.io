@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 242 DIV1 Easy - GuessCard (復習○)" />
-<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4490&amp;rd=7217
-行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。
-ここで、ある数字を思い浮かべたとき、その数字が何列目に入っているか答える。
-答えた後は行と列の数字を入れ替えて、また何列目に入っているか答える。
-この操作を繰り返した時、最後に思い浮かべた数字のある行を答える。
-複数存在しうるとき、またひとつも存在しないときはー１を返す。
-解き方 
-シミュレーション問題なので、いかにシンプルに実装するか。
-候補の数の更新には配列で＆を使ってもよいが、insertのすでに入っているかの判定を使うことでよりシンプルになる。
-数字の入れ替えは間違えやすいので例を出しながら確かめる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class GuessCard {
-public: int whichRow(int width, int height, vector&lt;int&gt; columns) {
-set&lt;int&gt; s;
-FORE(n,1,height*width&#43;1)s.insert(n);
-int p[height][width],n=1;
-FORE(i,0,height)FORE(j,0,width){
-p[i][j]=n;
-n&#43;&#43;;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4490&amp;rd=7217 行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。 ここで、ある数字を思い浮かべたとき、その数字が何列目に" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/" />
 

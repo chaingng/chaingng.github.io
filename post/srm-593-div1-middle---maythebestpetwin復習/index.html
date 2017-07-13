@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 593 DIV1 Middle - MayTheBestPetWin　（復習××○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12779&amp;rd=15705
-複数のペットがおり、各ペットごとにトラックを走りきる最小の時間と最大の時間が与えられる。
-ペットを２つのチームに分けてチームごとに競争させ、２つのチームのゴール時間ができるだけ均衡するようにしたい。
-このとき、２チーム間のゴール時間の差の最小を求める。
-解き方 
-２つのチームをそれぞれＳ，Ｔとしたとき、
-Ｓの最小とＴの最大の差、Ｓの最大とＴの最小の差のうち大きい方が答えになる。
-各ペットの最小時間の集合をＡ，最大時間の集合をＢとしたとき、
-Ｓの最小とＴの最大の差は　|ΣA(s)ーΣB(t)|
-(A(sum)-ΣA(t))-ΣB(t)
-A(sum)-Σ(A(t)&#43;B(t))
-よって、Ａの合計からＴチームのA&#43;Bを引いたものになる。
-同様にＳの最大とＴの最小の差は
-|ΣB(s)-ΣA(t)|
-B(sum)-ΣA(s)-ΣA(t)
-B(sum)-Σ(A(s)&#43;A(t))
-よって、Ｂの合計からＴチームのA&#43;Bを引いたものになる。
-あとは、全てのとりうるA&#43;Bに対してAの合計とＢの合計との差を計算し、
-最小の値が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class MayTheBestPetWin {
-public:
-int calc(vector&lt;int&gt; A, vector&lt;int&gt; B) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12779&amp;rd=15705 複数のペットがおり、各ペットごとにトラックを走りきる最小の時間と最大の時間が与えられる。 ペットを２つのチームに分けてチームごとに競争さ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-593-div1-middle---maythebestpetwin%E5%BE%A9%E7%BF%92/" />
 

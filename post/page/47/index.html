@@ -77,37 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11665&amp;rd=14550
-四角形のセルに複数コインがある。
-１回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。
-コインの数Ｋが与えられた時、コインを落としてＫ個にできるとき最小の操作回数を返す。できないときはー１を返す。
-解き方 
-全探索で上下左右に動いた時のコインのマスを保存して重複しないようにすればよいと思いつくが、少し複雑。
-「最後に残るコインのマスはかならず四角形になる」ことがわかれば、
-四角形からすべてのサブ四角形を求め、その四角形にあるコインの数がＫに一致したものが答えの候補になる。
-そのときの移動回数は縦横それぞれに対し、角の位置＋戻るために２つのうち最小の角の位置を足してあげればよい。
-コード 
-class DropCoins {
-public: int getMinimum(vector&lt;string&gt; board, int K) {
-int INF=1e+8, ret=INF;
-int h=board.size(),w=board[0].size();
-for(int x0=0;x0&lt;h;x0++){
-for(int y0=0;y0&lt;w;y0++){
-for(int x1=x0+1;x1&lt;=h;x1++){
-for(int y1=y0;y1&lt;=w;y1++){
-int coin=0;
-FORE(a,x0,x1)FORE(b,y0,y1)if(board[a][b]=='o')coin++;
-if(coin!=K)continue;
-int a=x0,b=h-x1,c=y0,d=w-y1;
-ret=min(ret,a+b+c+d+min(a,b)+min(c,d));
-}
-}
-}
-}
-return ret==INF ? -1 : ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11665&amp;rd=14550 四角形のセルに複数コインがある。 １回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。 コインの数Ｋ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -124,53 +97,7 @@ return ret==INF ? -1 : ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11667&amp;rd=14551
-四角形のマスにダチョウが複数存在する。
-ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。
-解き方 
-縦に並べるときと横に並べるときの２通りを試し小さい方を返す。
-縦と横それぞれに対して、並べる列／行と詰めるときの移動数を求めてあげればよい。
-コード 
-class DucksAlignment {
-public: int minimumTime(vector&lt;string&gt; grid) {
-int h=grid.size(),w=grid[0].size();
-vector&lt;int&gt; tate,yoko;
-FORE(i,0,h){
-FORE(j,0,w){
-if(grid[i][j]=='o'){
-tate.push_back(i);
-yoko.push_back(j);
-}
-}
-}
-sort(tate.begin(),tate.end());
-sort(yoko.begin(),yoko.end());
-//move to one column
-int tate1=1e+8,yoko1=1e+8;
-FORE(i,0,h){
-int tmp=0;
-FORE(k,0,tate.size())tmp+=abs(i-tate[k]);
-tate1=min(tate1,tmp);
-}
-FORE(i,0,w-yoko.size()+1){
-int tmp=0,cur=i;
-FORE(j,0,yoko.size()){
-tmp+=abs(yoko[j]-cur);
-cur++;
-}
-yoko1=min(yoko1,tmp);
-}
-int ans1=tate1+yoko1;
-//move to one row
-int tate2=1e+8,yoko2=1e+8;
-FORE(i,0,w){
-int tmp=0;
-FORE(k,0,yoko.size())tmp+=abs(i-yoko[k]);
-yoko2=min(yoko2,tmp);
-}
-FORE(i,0,h-tate.size()+1){
-int tmp=0,cur=i;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11667&amp;rd=14551 四角形のマスにダチョウが複数存在する。 ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。 解き方 縦に並べるときと横に並べると
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -190,38 +117,10 @@ int tmp=0,cur=i;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11564&amp;rd=14553
-様々な長さのうなぎとカットできる数が与えられる。
-カットして、できるだけ多く１０の長さのうなぎをつくる。
-このとき、最大となる１０の長さのうなぎの数を求める。
-解き方 
-１０の倍数のとき、すべてカットできればカット数が１つ少なく済むことから、１０の倍数から検査していく必要がある。
-ソートして、１０の倍数のうなぎを検査し、その後それ以外のうなぎを順に検査していけばよい。
-最大の計算量はＯ（N^2*N*2=50*50*50*2=2.5*10^5）。
-コード 
-class Cut {
-public: int getMaximum(vector&lt;int&gt; eel, int maxCuts) {
-int ans=0;
-sort(eel.begin(),eel.end());
-FORE(i,0,eel.size()){
-if(eel[i]%10!=0)continue;
-int cut=min(maxCuts,eel[i]/10-1);
-if(maxCuts&gt;=eel[i]/10-1)ans++;
-ans+=cut;
-maxCuts-=cut;
-if(maxCuts==0)return ans;
-}
-FORE(i,0,eel.size()){
-if(eel[i]%10==0)continue;
-int cut=min(maxCuts,eel[i]/10);
-maxCuts-=cut;
-ans+=cut;
-if(maxCuts==0)return ans;
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11564&amp;rd=14553 様々な長さのうなぎとカットできる数が与えられる。 カットして、できるだけ多く１０の長さのうなぎをつくる。 このとき、最大となる１０の長さの
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-528-div1-easy---cut-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -238,53 +137,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11740&amp;rd=14722
-王様の名前が与えられ、順番に並べる。
-名前はアルファベットの連続とＩ，ＩIの数字で与えられ、アルファベットの昇順、同じ場合はＩ，ＩIの小さい順になる。
-名前が与えられた時、ソート後の順列を返す。
-解き方 
-シミュレーション問題。
-数字側の規則が多いので、ここをいかに簡略化できるか。
-今回のコツは以下の３つ。
-①判定が多い場合は配列にパターンを格納し判定。
-②与えられた文字列を分解して判別するのではなく、全てのパターンを作りマッチするものを返す。
-③ソートの要素が２つあるときは、pairを２回入れ子にし最初のpairを判定の順番に格納する。
-計算量はＯ（70*50*50*2=3.5*10^5）。
-コード 
-class KingSort {
-public:
-int calc(string s){
-string c1[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
-string c10[]={"","X","XX","XXX","XL","L"};
-int num=0;
-FORE(i,0,10)FORE(j,0,6){
-if(i==0&amp;&amp;j==0)continue;
-if(c10[j]+c1[i]==s){
-num=j*10+i;
-break;
-}
-}
-return num;
-}
-vector&lt;string&gt; getSortedList(vector&lt;string&gt; kings) {
-int n=kings.size();
-vector&lt;pair&lt;pair&lt;string,int&gt;,string&gt; &gt; vx(n);
-vector&lt;string &gt; ans(n);
-FORE(i,0,kings.size()){
-string tmp1,tmp2;
-stringstream out(kings[i]);
-out&gt;&gt;tmp1;
-out&gt;&gt;tmp2;
-vx[i].first.first=tmp1;
-vx[i].first.second=calc(tmp2);
-vx[i].second=kings[i];
-}
-sort(vx.begin(),vx.end());
-FORE(i,0,n)ans[i]=vx[i].second;
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11740&amp;rd=14722 王様の名前が与えられ、順番に並べる。 名前はアルファベットの連続とＩ，ＩIの数字で与えられ、アルファベットの昇順、同じ場合はＩ，ＩIの小
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-529-div1-easy---kingsort-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -301,40 +157,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11274&amp;rd=14723
-ケーキをカットする問題。
-カットされたあとのケーキの形と、カットするナイフが与えられる。
-ナイフを当てるときは必ず、そのマスにもケーキがなければいけない。
-カット後のケーキの形にすることができればＹｅｓ，ダメならＮｏを返す。
-解き方 
-単純にシミュレーションするだけ。
-カットできるときはカットしなければ答えを導けないことがわかれば、単純に実装できる。
-最初にカットするべきマスとダメなマスをマーキング。
-次に順番にナイフを当てていき、全てカットすることができるときだけカットする。
-最後にカットするべきマスが残っていればＮｏ，残っていなければＹｅｓ．
-コード 
-class GogoXCake {
-public: string solve(vector&lt;string&gt; cake, vector&lt;string&gt; cutter) {
-int h=cake.size(),w=cake[0].size();
-int ch=cutter.size(),cw=cutter[0].size();
-int g[h][w];
-FORE(i,0,h)FORE(j,0,w){
-if(cake[i][j]=='.')g[i][j]=-1;
-else g[i][j]=1;
-}
-FORE(i,0,h-ch+1){
-FORE(j,0,w-cw+1){
-int invalid=0;
-FORE(a,i,ch+i)FORE(b,j,cw+j)if(cutter[a-i][b-j]=='.'&amp;&amp;g[a][b]!=-1)invalid=1;
-if(invalid)continue;
-FORE(a,i,ch+i)FORE(b,j,cw+j)if(cutter[a-i][b-j]=='.')g[a][b]=1;
-}
-}
-FORE(i,0,h)FORE(j,0,w)if(g[i][j]==-1)return "NO";
-return "YES";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11274&amp;rd=14723 ケーキをカットする問題。 カットされたあとのケーキの形と、カットするナイフが与えられる。 ナイフを当てるときは必ず、そのマスにもケーキがな
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-530-div1-easy---gogoxcake-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -351,37 +177,10 @@ return "YES";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11774&amp;rd=14724
-プレイヤーにＮ曲の曲が入っており、Ｐ曲からなるプレイリストを作りたい。
-Ｎ曲はそれぞれ少なくとも１回は再生しなければならない。
-また、１度再生した曲はＭ曲以上開ければまた再生できる。
-このとき、作成できるプレイリストの場合の数を求める。
-解き方 
-Ｃの順列の問題のとき、この場合は各変数を決めてＤＦＳを使うことで解くことができる。
-ＤＦＳでは各曲は区別しなくてもよい。
-変数は①Ｐ曲の曲を作るので現在までで作っている曲数、②Ｎ曲をすべて再生しなければならないのでまだ再生していない曲数、③これまでに再生した曲数となる。
-ＤＦＳのみの実装だとＯ（２＾１００＝１０＾１０）となるが、
-ｄｐを使うことでｄｐのサイズ１００＾３＝１０＾６まで減る。
-さらに向上させようとすれば、まだ再生していない曲はＮ－これまでに再生した曲だけ考えればよいので１０＾３まで減らすこともできる。
-コード 
-class NoRepeatPlaylist {
-public:
-long long f(int idx,int XS, int YS){
-if(idx==P)return YS==0 ? 1 : 0;
-if(dp[idx][XS][YS]!=-1)return dp[idx][XS][YS];
-long long ans=0;
-if(YS&gt;0)ans+=YS*f(idx+1,XS+1,YS-1)%MOD;
-if(XS-M&gt;0)ans+=(XS-M)*f(idx+1,XS,YS)%MOD;
-return dp[idx][XS][YS]=ans%MOD;
-}
-int numPlaylists(int N1, int M1, int P1) {
-FORE(i,0,101)FORE(j,0,101)FORE(k,0,101)dp[i][j][k]=-1;
-P=P1;
-M=M1;
-return f(0,0,N1);
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11774&amp;rd=14724 プレイヤーにＮ曲の曲が入っており、Ｐ曲からなるプレイリストを作りたい。 Ｎ曲はそれぞれ少なくとも１回は再生しなければならない。 また、１度
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-531-div1-easy---norepeatplaylist-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -398,40 +197,10 @@ return f(0,0,N1);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11754&amp;rd=14725
-長さ３からなる鎖がある。
-鎖はビーズか数字のパーツからなる。
-複数の鎖が与えられ、鎖をつなげたときに連続した数字が美しさの値になる。
-このとき、最大となる美しさの値を求める。
-解き方 
-シミュレーションの問題なので、いかにＣｈａｌｌｅｎｇｅケースを網羅するか、間違いのないように実装するか。
-１）真ん中のみに数字がある場合は、その最大値と連結した鎖と比較する必要がある
-２）左と右にある鎖について、左とも右とも取れるものを考慮する。
-さらに２つではなく１つだけの場合もあるため、その場合も考慮する。
-文字列１つ１つでif文を書いてもよいが、for文をうまく使うことで間違いが少なく簡略化することができる。
-コード 
-class DengklekMakingChains {
-public:
-int maxBeauty(vector&lt;string&gt; c) {
-int n=c.size();
-int ans=0,single=0,a[60]={},b[60]={},added=0;
-FORE(i,0,n){
-if(c[i][0]!='.'&amp;&amp;c[i][1]!='.'&amp;&amp;c[i][2]!='.')FORE(j,0,3)ans+=c[i][j]-'0';
-else {
-if(c[i][0]=='.'&amp;&amp;c[i][1]!='.'&amp;&amp;c[i][2]=='.')single=max(single,c[i][1]-'0');
-for(int j=0;j&lt;3&amp;&amp;c[i][j]!='.';j++)a[i]+=c[i][j]-'0';
-for(int j=2;j&gt;=0&amp;&amp;c[i][j]!='.';j--)b[i]+=c[i][j]-'0';
-}
-}
-FORE(i,0,n){
-added=max(added,max(a[i],b[i]));
-FORE(j,0,n)if(i!=j)added=max(added,a[i]+b[j]);
-}
-ans+=added;
-return single&gt;ans ? single : ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11754&amp;rd=14725 長さ３からなる鎖がある。 鎖はビーズか数字のパーツからなる。 複数の鎖が与えられ、鎖をつなげたときに連続した数字が美しさの値になる。 このと
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-532-div1-easy---dengklekmakingchains-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -448,43 +217,7 @@ return single&gt;ans ? single : ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11781&amp;rd=14726
-数字の文字列が与えられる。
-ひとつずつ文字を選び、その両端の値をかけたものがスコアになる。
-選んだあとはその文字は消滅する。
-最初と最後の値になるまでこの処理を繰り返した時、最大となるスコアを求める。
-解き方 
-単純に深さ優先探索を行おうとすると、最大でＯ（４８！）のため
-解くことができない。
-そこで、処理を逆にできないか考えてみる。
-ここで、ある数字を選んで挿入することを考えると
-そのときのスコアは一意に定まる。
-また、そこから挿入するときの最大のスコアは最初～挿入した場所＋挿入した場所～最後
-のスコアになる。
-この場合は区間ごとの最大値の判定となり葉の判定が増えるのでｄｐが活用でき、
-さらに判定回数も減るのでＯ（５０×５０）ほどになる。
-コード 
-int dp[60][60];
-vector&lt;int&gt; w;
-class CasketOfStar {
-public:
-int solve(int l,int r){
-if(dp[l][r]!=-1)return dp[l][r];
-if(l+1==r)return 0;
-FORE(i,l+1,r)dp[l][r]=max(dp[l][r],solve(l,i)+solve(i,r)+w[l]*w[r]);
-return dp[l][r];
-}
-int maxEnergy(vector&lt;int&gt; weight) {
-w=weight;
-FORE(i,0,60)FORE(j,0,60)dp[i][j]=-1;
-return solve(0,weight.size()-1);
-}
-};
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11781&amp;rd=14726 数字の文字列が与えられる。 ひとつずつ文字を選び、その両端の値をかけたものがスコアになる。 選んだあとはその文字は消滅する。 最初と最後の値
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-533-div1-easy---casketofstar-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -504,39 +237,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12331&amp;rd=15185
-文字列が与えられて、その文字をシャッフルして元の文字にランダムに挿入する。
-挿入後の文字列が与えられた時、元の文字列のうち辞書順に最小のものを求める。
-解き方 
-文字の種類については、与えられた各文字を２で割ったものになる。
-次に文字の順番については、ひとつ選ぶとその前の文字は選べなくなる。
-選ぶべき文字の種類を満たし、かつ辞書順になるよう小さいアルファベットから
-上の判定を繰り返していく。
-コード 
-class FoxAndHandle {
-public: string lexSmallestName(string S) {
-int num[26]={0};
-string ans="";
-FORE(i,0,S.size())num[S[i]-'a']++;
-FORE(i,0,26)num[i]=num[i]/2;
-while(accumulate(num,num+26,0)&gt;0){
-pair&lt;char,int&gt; best=make_pair('z'+1,-1);
-FORE(i,0,S.size()){
-if(num[S[i]-'a']==0)continue;
-int count[26]={},invalid=0;
-FORE(j,i,S.size())count[S[j]-'a']++;
-FORE(j,0,26)if(num[j]&gt;count[j])invalid=1;
-if(invalid)continue;
-best=min(best,make_pair(S[i],i));
-}
-ans+=best.first;
-num[best.first-'a']--;
-S=S.substr(best.second+1);
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12331&amp;rd=15185 文字列が与えられて、その文字をシャッフルして元の文字にランダムに挿入する。 挿入後の文字列が与えられた時、元の文字列のうち辞書順に最小の
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-563-div1-easy---foxandhandle-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -553,52 +257,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12539&amp;rd=15498
-2次元のセルが与えられ、それぞれのセルは鳥がいるかいないかで表わされる。
-鳥はガチョウとアヒルの２種類存在する。
-その鳥がどちらかはわからないが、あるガチョウとマンハッタン距離にある鳥はすべて
-ガチョウとなる。
-このとき、ガチョウの鳥の数が偶数となる場合の数を求める。
-解き方 
-あるガチョウとマンハッタン距離にある鳥は全てガチョウということは、
-マンハッタン距離にある鳥の集合それぞれは、ガチョウかアヒルになるということがわかる。
-つぎにそれぞれの集合に対して、鳥の数が偶数か奇数かに分類する。
-偶数の集合Ｎについては２＾Ｎとなる。
-奇数の集合については、ｎＣ０×ｎＣ２ｘ・・・ｎＣｎ－１となる。
-ここで二項定理により(1+x)^n=(n,0)*x^0+(n,1)*x^1...+(n,n)*x^n
-x=1,-1のとき、
-2^n=(n,0)+(n,1)+...+(n,n)
-0=(n,0)-(n,1)+(n,2)...-(n,n)
-2^n=2(n,0)+2(n,2)...+2(n,n-1)
-2^(n-1)=(n,0)+(n,2)...+(n,n-1)
-よって奇数の集合は2^(n-1)となるので、2^(n-1+N)が答えになる。
-コード 
-int H,W,D;
-int cell[55][55];
-class GooseInZooDivOne {
-public:
-int DFS(int i,int j){
-int ans=1;
-queue&lt;pair&lt;int,int&gt; &gt; q;
-q.push(make_pair(i,j));
-cell[i][j]=1;
-while(!q.empty()){
-int x=q.front().first;
-int y=q.front().second;
-q.pop();
-FORE(i,0,H)FORE(j,0,W)if(cell[i][j]==0&amp;&amp;abs(x-i)+abs(y-j)&lt;=D){
-cell[i][j]=1;
-q.push(make_pair(i,j));
-ans++;
-}
-}
-return ans;
-}
-int count(vector&lt;string&gt; field, int dist) {
-long long MOD=1000000007LL,ans=1LL;
-int even=0,odd=0,cnt=0;
-H=field.size(),W=field[0].size(),D=dist;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12539&amp;rd=15498 2次元のセルが与えられ、それぞれのセルは鳥がいるかいないかで表わされる。 鳥はガチョウとアヒルの２種類存在する。 その鳥がどちらかはわから
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-578-div1-easy---gooseinzoodivone-%E5%BE%A9%E7%BF%92/">Read more…</a>

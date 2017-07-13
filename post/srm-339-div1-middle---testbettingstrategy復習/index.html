@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 339 DIV1 Middle - TestBettingStrategy　（復習○）" />
-<meta property="og:description" content="問題 
-最初にコインをinitSum個持っており、goalSum個まで増やしたい。
-rounds回のラウンドがあり、最初のラウンドはコインを１個かけ、勝ったら１個もらえる。
-負けるとそのコインは失い、次は２倍のコインをかけなければいけない。
-勝った場合は賭けた分のコインはもらえる。
-またあらかじめ、勝つ確率はprobになるとわかっている。
-goalSum個までコインが増えたら辞めてもよいが、賭ける分のコインが無くなったらゲームを終えなければならない。
-このとき、コインがgoalSum個になる確率を求める。
-解き方 
-ｄｐの問題。
-状態に「ラウンド数」、「連続で負けた数」、「現在のコインの数」を持ち、
-値に「確率」を持たせればよい。
-ｄｐの更新のさせ方が最大・最小をとるのか、加算していくのかで途中つまづいた。
-また問題文のスコアの条件を正しく読みとれなくつまずいてしまったので、
-きちんと問題文を読むことが大事。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-double dp[51][10][1001];
-class TestBettingStrategy {
-public: double winProbability(int initSum, int goalSum, int rounds, int prob) {" />
+<meta property="og:description" content="問題 最初にコインをinitSum個持っており、goalSum個まで増やしたい。 rounds回のラウンドがあり、最初のラウンドはコインを１個か" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-339-div1-middle---testbettingstrategy%E5%BE%A9%E7%BF%92/" />
 

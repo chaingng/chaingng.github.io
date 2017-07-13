@@ -7,47 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 327 DIV1 Easy - NiceOrUgly (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6871&amp;rd=10007
-・？を含んだ文字列が与えられる。
-・母音が３つ連続する、または子音が５つ連続したらその文字列はＵＧＬYであり、そうでなければＮＩＣＥである。
-・？は任意の文字に置き換えられる。
-このとき、与えられた文字列がＮＩＣＥであればＮＩＣＥを返し、ＵＧＬＹであればＵＧＬＹ，どちらもあり得るのであれば４２を返す。
-解き方 
-文字の長さが最大５０であることから全探索はできない。
-ここでｄｐを考えると、状態の数はdp[50][3][5]であるためdpで解くことができる。
-コード 
-int dp[100][100][100];
-string str;
-class NiceOrUgly {
-public:
-bool is_vow(char ch){
-return ch==&#39;A&#39;||ch==&#39;E&#39;||ch==&#39;I&#39;||ch==&#39;O&#39;||ch==&#39;U&#39;;
-}
-int calc(int pos,int x,int y){
-if(x&gt;=3||y&gt;=5)return 2;
-if(pos&gt;=str.size())return 1;
-if(dp[pos][x][y]!=-1)return dp[pos][x][y];
-int ret=0;
-if(str[pos]==&#39;?&#39;){
-ret|=calc(pos&#43;1,x&#43;1,0);
-ret|=calc(pos&#43;1,0,y&#43;1);
-}
-else{
-if(is_vow(str[pos]))ret|=calc(pos&#43;1,x&#43;1,0);
-else ret|=calc(pos&#43;1,0,y&#43;1);
-}
-return dp[pos][x][y]=ret;
-}
-string describe(string s) {
-memset(dp,-1,sizeof(dp));
-str=s;
-int ret=calc(0,0,0);
-if(ret==3)return &#34;42&#34;;
-if(ret==1)return &#34;NICE&#34;;
-return &#34;UGLY&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6871&amp;rd=10007 ・？を含んだ文字列が与えられる。 ・母音が３つ連続する、または子音が５つ連続したらその文字列はＵＧＬYであり、そうでなければＮＩＣＥであ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/" />
 

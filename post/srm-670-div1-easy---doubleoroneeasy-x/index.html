@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 670 DIV1 Easy - DoubleOrOneEasy x" />
-<meta property="og:description" content="問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=14059&amp;rd=16550
-解き方 
-文字列長がnのとき、条件を満たすLCSは必ずn-1となる。
-そのようなサブ文字列を全て求めて条件を満たすか確かめれば良い。
-サブ文字列の作り方でミスをしてしまった。。
-コード 
-class Bracket107 {
-public:
-int yetanother(string s) {
-int n=s.size();
-set&lt;string&gt; ans;
-FORE(i,0,n){
-string str=s.substr(0,i)&#43;s.substr(i&#43;1,n);
-FORE(j,0,n){
-string cur=str.substr(0,j)&#43;s[i]&#43; str.substr(j);
-if(s==cur)continue;
-int valid=1;
-int cnt=0;
-FORE(k,0,n){
-if(cur[k]==&#39;(&#39;)cnt&#43;&#43;;
-else cnt--;
-if(cnt&lt;0)valid=0;
-}
-if(valid)ans.insert(cur);
-}
-}
-return ans.size();
-}
-}; " />
+<meta property="og:description" content="問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=14059&amp;rd=16550 解き方 文字列長がnのとき、条件を満たすLCSは必ずn-1となる。 そのようなサブ文字列を全て求めて条件を満たすか確かめれば良い。 サブ文字" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-670-div1-easy---doubleoroneeasy-x/" />
 

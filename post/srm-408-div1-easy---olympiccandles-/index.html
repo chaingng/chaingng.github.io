@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 408 DIV1 Easy - OlympicCandles ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8467&amp;rd=12180
-キャンドルが複数与えられ、それぞれの高さがわかっている。
-１日目は１つ、2日めは２つ、、、とキャンドルをつけていき、
-最大何日目までキャンドルをつけられるか求める。
-ただし、つけられたキャンドルは１日につき高さが１減り、０となると消滅してしまう。
-解き方 
-要素数が５０であることから最大値は５０になる。
-よって、毎回ソートしてもO(50*50*50log50)=O(1.25*10^5log50)となり
-貪欲法で全探索しても間に合う。
-コード 
-class OlympicCandles {
-public: int numberOfNights(vector&lt;int&gt; candles) {
-int n=candles.size();
-int turn=0;
-while(turn&lt;n){
-sort(candles.rbegin(),candles.rend());
-for(int i=0;i&lt;turn&#43;1;i&#43;&#43;){
-if(candles[i]&lt;=0)return turn;
-}
-for(int i=0;i&lt;turn&#43;1;i&#43;&#43;)candles[i]--;
-turn&#43;&#43;;
-}
-return turn;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8467&amp;rd=12180 キャンドルが複数与えられ、それぞれの高さがわかっている。 １日目は１つ、2日めは２つ、、、とキャンドルをつけていき、 最大何日目までキャン" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-408-div1-easy---olympiccandles-/" />
 

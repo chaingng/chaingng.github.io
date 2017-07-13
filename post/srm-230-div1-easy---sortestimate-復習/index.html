@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 230 DIV1 Easy - SortEstimate （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=3561&amp;rd=6519
-ソートアルゴリズムの計算量を計算したい。
-計算量はc*n*log2(n)で表わされ、これをtime以下でかつ最大となるときのｎを求めたい。
-cとtimeはあらかじめ与えられる。
-解き方 
-nが一意に決まれば計算量は算出できるので、二分探索が適用できる。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SortEstimate {
-public: double howMany(int c, int time) {
-double low=0.0,high=1e&#43;18;
-FORE(i,0,100){
-double mid=(low&#43;high)/2.0;
-if(c*mid*log(mid)/log(2)&lt;=time)low=mid;
-else high=mid;
-}
-return low;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=3561&amp;rd=6519 ソートアルゴリズムの計算量を計算したい。 計算量はc*n*log2(n)で表わされ、これをtime以下でかつ最大となるときのｎを求めたい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/" />
 

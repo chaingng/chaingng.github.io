@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 619 DIV2 Middle - ChooseTheBestOne (×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13146
-・N人が円になって並んでいる。
-・そこから各ターンｔごとにｔ＾３番目にいる人を消し、その次の人へ移動する。
-・このとき、最後に残る人の番号を求める。
-解き方 ・各ターンごとに移動する数は、そのターンで残っている人でMODを取れば
-計算量が間に合うので、あとはメモ化すれば解くことができる。
-・MOD関連でシステムで一度落ちてしまったので、できるだけ実装はシンプルに。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class ChooseTheBestOne {
-public: int countNumber(int N) {
-int dp[N];
-memset(dp,0,sizeof(dp));
-int s=0;
-for(long long t=1;t&lt;N;t&#43;&#43;){
-while(dp[s])s=(s&#43;1)%N;
-long long num=N-t&#43;1;
-int move=(((t*t*t)%num)&#43;num-1)%num;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13146 ・N人が円になって並んでいる。 ・そこから各ターンｔごとにｔ＾３番目にいる人を消し、その次の人へ移動する。 ・このとき、最後に残る人の番号" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-619-div2-middle---choosethebestone-/" />
 

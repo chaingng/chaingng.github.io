@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 383 DIV1 Easy - Planks ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8396&amp;rd=10806
-解き方 
-１つの木の長さを１〜１００００のそれぞれに固定して考える。
-あとは、与えられた木がその長さで割った時、値がプラスなら足していき
-最大のものを求めれば良い。
-コード 
-class Planks {
-public: int makeSimilar(vector&lt;int&gt; lengths, int costPerCut, int woodValue) {
-int n=lengths.size();
-int ret=0;
-for(int len=1;len&lt;=10000;len&#43;&#43;){
-int cur=0;
-FORE(i,0,n)if(len&lt;=lengths[i]){
-int num=lengths[i]/len;
-int cuts=num-((lengths[i]%len)==0);
-int value=num*woodValue*len-cuts*costPerCut;
-if(value&gt;0)cur&#43;=value;
-}
-ret=max(ret,cur);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8396&amp;rd=10806 解き方 １つの木の長さを１〜１００００のそれぞれに固定して考える。 あとは、与えられた木がその長さで割った時、値がプラスなら足していき 最大" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-383-div1-easy---planks-/" />
 

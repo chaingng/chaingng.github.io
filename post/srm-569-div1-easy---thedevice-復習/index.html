@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 569 DIV1 Easy - TheDevice （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12388&amp;rd=15489
-プレートの問題の応用。
-各ビットごとに、ＸＯＲ，ＡＮＤ，ＯＲいずれかの動作をするデバイスがある。
-またビットの和で構成されているプレートがいくつか与えられている。
-このとき、各ビットのデバイスがどの動作をしているか判定するために
-追加で必要なプレートの数を求める。
-解き方 
-各ビットに１，１，０があればよい。
-足りない場合は、各ビットごとに足りない数を求め、その最大値を返してあげればよい。
-コード 
-class TheDevice {
-public: int minimumAdditional(vector&lt;string&gt; plates) {
-int cost=0;
-FORE(j,0,plates[0].size()){
-int one=0,zero=0;
-FORE(i,0,plates.size()){
-if(plates[i][j]==&#39;1&#39;)one&#43;&#43;;
-else zero&#43;&#43;;
-}
-int tmp=3-min(2,one)-min(1,zero);
-cost=max(cost,tmp);
-}
-return cost;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12388&amp;rd=15489 プレートの問題の応用。 各ビットごとに、ＸＯＲ，ＡＮＤ，ＯＲいずれかの動作をするデバイスがある。 またビットの和で構成されているプレートが" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-569-div1-easy---thedevice-%E5%BE%A9%E7%BF%92/" />
 

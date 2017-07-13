@@ -7,38 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 625 DIV1 Easy - PalindromePermutations (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11856&amp;rd=15858
-・ある文字列が与えられる。
-・この文字をシャッフルした時に、回文となる確率を求める。
-解き方 
-・まず与えられた文字列が回文となるかどうか判定する必要がある。
-・すべてのアルファベットについて出現回数を調べる。
-・このとき、すべてのアルファベットの出現回数が偶数回なら回文となる。
-また、奇数回出現するアルファベットが１つだけなら回文となる。
-それ以外は回文とならない。
-・次に、回文となるときの確率を求める。
-
-→System Failed
-・まず奇数回出現するアルファベットがある場合、その中央にそのアルファベットを
-置く必要がある。その確率はその出現回数／文字列長。
-そこから出現回数と文字列長をデクリメントする。
-・あとはすべてのアルファベットが偶数回の出現回数となる。
-あるアルファベット２つ置く時、それが回文となるのはひとつアルファベットを置いたときに
-一意に定まる。
-よって、ひとつアルファベットを置かれたとき、そのあと残りのアルファベットを指定の場所に置く　ので(出現回数-1)/(L-1)となる。
-&nbsp; （例）
-L(文字列長)=4 ,アルファベットaのcnt(出現回数)=2のとき
-すべての並び：aaxx, axax, axxa, xaax, xaxa, xxaa
-うち回文のもの：axxa, xaax
-&nbsp; つまり(cnt-1)/(L-1)となる。
-・反省：確率の計算の基本が・・・。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i !" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11856&amp;rd=15858 ・ある文字列が与えられる。 ・この文字をシャッフルした時に、回文となる確率を求める。 解き方 ・まず与えられた文字列が回文となるかどうか判定" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-625-div1-easy---palindromepermutations-/" />
 

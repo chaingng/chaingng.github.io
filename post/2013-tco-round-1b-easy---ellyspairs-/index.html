@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2013 TCO Round 1B Easy - EllysPairs (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12450&amp;rd=15580
-・生徒が複数存在し、それぞれの生徒のknowledgeの値がわかっている。
-・生徒が２人ずつのペアを作る。このとき、ペアのknowledgeは各生徒のknowledgeの和となる。
-・各ペアのknowledgeの差をできるだけ小さくした時の、最小の差を求める。
-解き方 
-・小さいknowledgeであるほど大きいknowledgeと組み合わせるのが最適解。
-・よってknowledgeの順にソートし、一番左と一番右をペア、といったように
-順に組み合わせていき、ペアの最大と最小の差が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysPairs {
-public: int getDifference(vector&lt;int&gt; knowledge) {
-int n=knowledge.size();
-sort(all(knowledge));
-int maxp=knowledge[0]&#43;knowledge[n-1];
-int minp=knowledge[0]&#43;knowledge[n-1];
-FORE(i,0,n/2){
-maxp=max(maxp,knowledge[i]&#43;knowledge[n-1-i]);
-minp=min(minp,knowledge[i]&#43;knowledge[n-1-i]);
-}
-return maxp-minp;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12450&amp;rd=15580 ・生徒が複数存在し、それぞれの生徒のknowledgeの値がわかっている。 ・生徒が２人ずつのペアを作る。このとき、ペアのknowled" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2013-tco-round-1b-easy---ellyspairs-/" />
 

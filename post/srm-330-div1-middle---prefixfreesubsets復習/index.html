@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 330 DIV1 Middle - PrefixFreeSubsets　（復習×○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1520
-複数の文字列集合が与えられる。
-そこから任意のサブ集合をピックアップして、そのうちのどのペアも接頭辞になっていないようにしたい。
-このとき、そのようなサブ集合は何通りあるか求める。
-解き方 
-支配集合のうち、互いに子でない組み合わせを求める問題。
-漸化式としてｄｐを利用して、それまでの組み合わせ＋そのうち子がいない組み合わせの値を更新していく。
-今回は文字列をソートすることで子である文字列は隣り合わせになるので、シンプルに実装することができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PrefixFreeSubsets {
-public: long long cantPrefFreeSubsets(vector&lt;string&gt; words) {
-int n=words.size();
-long long dp[n&#43;1];
-memset(dp,0,sizeof(dp));
-dp[n]=1;
-sort(all(words));
-for(int i=n-1;i&gt;=0;i--){
-int j=i;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1520 複数の文字列集合が与えられる。 そこから任意のサブ集合をピックアップして、そのうちのどのペアも接頭辞になっていないようにしたい。 このとき" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-330-div1-middle---prefixfreesubsets%E5%BE%A9%E7%BF%92/" />
 

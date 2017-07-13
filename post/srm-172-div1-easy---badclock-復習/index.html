@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 172 DIV1 Easy - BadClock （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1969&amp;rd=4665
-正確な時計と、１時間あたり必ずｘ分ズレる時計がある。
-各時計は１～１２時までの表示になる。
-正確な時計とズレる時計の現在時刻が与えられた時、
-時計の時刻が一緒になるまでに必要な時間を求める。
-解き方 
-現在時刻のズレＤとｘ分のずれの正負が異なれば答えはＤ／ｘになる。
-一方で、正負が一緒であれば一周する必要があるので、（４３２００－Ｄ）／ｘとなる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BadClock {
-public:
-int calc(string str){
-int h=(str[0]-&#39;0&#39;)*10&#43;(str[1]-&#39;0&#39;);
-int m=(str[3]-&#39;0&#39;)*10&#43;(str[4]-&#39;0&#39;);
-int s=(str[6]-&#39;0&#39;)*10&#43;(str[7]-&#39;0&#39;);
-return h*3600&#43;m*60&#43;s;
-}
-double nextAgreement(string trueTime, string skewTime, int hourlyGain) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1969&amp;rd=4665 正確な時計と、１時間あたり必ずｘ分ズレる時計がある。 各時計は１～１２時までの表示になる。 正確な時計とズレる時計の現在時刻が与えられた時" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/" />
 

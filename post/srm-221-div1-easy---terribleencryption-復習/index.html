@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 221 DIV1 Easy - TerribleEncryption (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1924&amp;rd=5867
-暗号化された文字列があり、それを復号したい。
-あらかじめ暗号化された文字pool、配列data,keysが与えられる。
-復号後の文字列のi番目の文字は、
-(data[i]*k)%keys[i]=1となる最小の正の整数kを求め、
-j=k%(poolのサイズ)としたとき、pool[j]の文字となる。
-このとき、復号後の文字列を求める。
-解き方 
-問題文の理解ができれば、同じように実装するだけ。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TerribleEncryption {
-public: string decrypt(string pool, vector&lt;int&gt; data, vector&lt;int&gt; keys) {
-int n=data.size(),m=pool.size();
-string str=&#34;&#34;;
-FORE(i,0,n){
-int k=1;
-while((data[i]*k)%keys[i]!=1)k&#43;&#43;;
-str&#43;=pool[k%m];
-}
-return str;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1924&amp;rd=5867 暗号化された文字列があり、それを復号したい。 あらかじめ暗号化された文字pool、配列data,keysが与えられる。 復号後の文字列のi" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-221-div1-easy---terribleencryption-%E5%BE%A9%E7%BF%92/" />
 

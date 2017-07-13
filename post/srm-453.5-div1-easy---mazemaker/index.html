@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 453.5 DIV1 Easy - MazeMaker" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10451&amp;rd=14174
-迷路とプレイヤーが１ターンで移動できる方向のマスが与えられる。
-このとき、プレイヤーがゴールできない位置、もしくはゴールできるときは
-一番遠い位置にゴールを置きたい。
-ゴールできない位置におけるときはー１を、そうでないときは
-もっとも遠いターン数を求める。
-解き方 
-幅優先探索で全探索すればよい。
-幅優先探索なのでセルの値の更新は一度だけでよい。
-コード 
-class MazeMaker {
-public: int longestPath(vector&lt;string&gt; maze, int startRow, int startCol, vector&lt;int&gt; moveRow, vector&lt;int&gt; moveCol) {
-int h=maze.size(),w=maze[0].size(),n=moveRow.size();
-int used[h][w];
-memset(used,-1,sizeof(used));
-queue&lt;pair&lt;int,int&gt; &gt; q;
-q.push(make_pair(startRow,startCol));
-used[startRow][startCol]=0;
-while(!q.empty()){
-int r=q.front().first;
-int c=q.front().second;
-int turn=used[r][c];
-q.pop();
-FORE(i,0,n){
-int nr=r&#43;moveRow[i],nc=c&#43;moveCol[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; maze[nr][nc]!=&#39;X&#39; &amp;&amp; used[nr][nc]==-1){
-q.push(make_pair(nr,nc));
-used[nr][nc]=turn&#43;1;
-}
-}
-}
-int ret=0;
-FORE(i,0,h)FORE(j,0,w)if(maze[i][j]==&#39;.&#39;){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10451&amp;rd=14174 迷路とプレイヤーが１ターンで移動できる方向のマスが与えられる。 このとき、プレイヤーがゴールできない位置、もしくはゴールできるときは 一番" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-453.5-div1-easy---mazemaker/" />
 

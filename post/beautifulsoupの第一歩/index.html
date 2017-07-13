@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="BeautifulSoupの第一歩" />
-<meta property="og:description" content="クローラーで取ってきたHTMLを解析するのにBeautifulSoupが使いやすそうだったので使ってみました。以下は簡単な使い方のメモ。
-バージョン
-BeautifulSoupは３と４がありますが
-現在はBeautiful Soup３は終了していてBeautiful Soup４が主流とのこと。
-Webをみていると３の使い方が多いので注意。
-そしてPython3はBS3が使えないです。
-インポート
-まずはインポート。
-BeautifulSoup4は以下の書き方になります。
-from bs4 import BeautifulSoup
-まずは全文抽出
-まずは、以下のように書くことでhtmlの全文が保存されます。
-datas = BeautifulSoup(datas)
-
-findで指定のタグを抽出
-次にfind文で指定のタグを抽出できます。
-今回はfindAll文を使うことで、html中の指定のタグを抽出しました。
-以下ではdivタグのresult classを抽出。
-datas2 = datas.findAll(&#34;div&#34;, attrs={&#34;class&#34;: &#34;result&#34;})
-
-さらに下層の情報取得とテキスト抽出
-ここで抽出された情報は配列となっているので、
-さらにそこから抽出したい情報があれば配列番号でアクセス。
-result_name=datas2[1].find(&#34;h5&#34;).get_text().replace(&#39; &#39;,&#39;&#39;)
-score=datas2[2].find(&#34;h5&#34;).get_text()
-ここでは1番目と2番目にあるh5タグを抽出しています。
-これまでだとタグと本文を含めてまとめて抽出されるので、
-本文だけを取りだしたい場合はget_text()を利用。
-また、タグ内の属性情報を取り出したいときはget(&#39;href&#39;)など指定することで可能です。
-タグ名を取りだしたいときは .nameで取れます。
- " />
+<meta property="og:description" content="クローラーで取ってきたHTMLを解析するのにBeautifulSoupが使いやすそうだったので使ってみました。以下は簡単な使い方のメモ。 バー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/beautifulsoup%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9/" />
 

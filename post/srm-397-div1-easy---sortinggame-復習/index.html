@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 397 DIV1 Easy - SortingGame （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8745&amp;rd=12169
-１～ｎまでの数字からなる配列が与えられる。
-また、ｋ個の連続した数字を逆順に並び変えることができる。
-このとき、元の配列を昇順にソートするのに必要な操作回数を求める。
-ただし、昇順にソートできない場合はー１を返す。
-解き方 
-メモ化を利用した全探索を行う。
-今回はｄｆｓよりキューを利用したｂｆｓの方が効率よく書くことができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-map&lt;vector&lt;int&gt;,int&gt; m;
-queue&lt;vector&lt;int&gt; &gt; q;
-class SortingGame {
-public:
-int fewestMoves(vector&lt;int&gt; board, int k) {
-int n=board.size();
-m.clear();
-m[board]=1;
-q.push(board);
-while(!q.empty()){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8745&amp;rd=12169 １～ｎまでの数字からなる配列が与えられる。 また、ｋ個の連続した数字を逆順に並び変えることができる。 このとき、元の配列を昇順にソートする" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/" />
 

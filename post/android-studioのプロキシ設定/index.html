@@ -7,22 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="android studioのプロキシ設定" />
-<meta property="og:description" content="android studioのプロキシ設定のメモ。
-HTTP Proxy
-File&gt;Setting&gt;HTTP Proxyから
-Manual Proxy Settingを選んで設定。
-設定後、「Check Connection」ボタンで正しく設定されているか確認できる。
-Gradle
-Gradleを使用するとき、proxy設定が必要な場合は以下のエラーが出る。
-Failed to refresh Gradle project &#39;dummy Application&#39;
-Could not GET &#39;http://repo1.maven.org/maven2/com/android/tools/build/gradle/&#39;.
-Received status code 407 from server:
-Proxy Authentication Required ( Forefront TMG requires authorization to fulfill the request. Access to the Web Proxy filter is denied. )
-Enable Gradle &#39;offline mode&#39; and sync project
-この際、File&gt;Setting&gt;Gradleから
-Global Gradle Settingsのオプションにて以下の設定が必要。
-（dummyHost, dummyPort, dummyUser, dummyPasswordにそれぞれ必要な設定を入れる）
--Dhttp.proxyHost=dummyHost -Dhttp.proxyPort=dummyPort -Dhttp.proxyUser=dummyUser -Dhttp.proxyPassword=dummyPassword " />
+<meta property="og:description" content="android studioのプロキシ設定のメモ。 HTTP Proxy File&gt;Setting&gt;HTTP Proxyから Manual Proxy Settingを選んで設定。 設定後、「Check Connection」ボタンで正" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/android-studio%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A/" />
 

@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 507 DIV1 Easy - CubeStickers" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11315&amp;rd=14436
-６面体を与えられた色を使って塗りたい。
-ただし、隣り合う面は違う色で塗らなくてはいけない。
-使える色の集合が与えられたとき、６面体を塗ることができれば”Yes”、塗れなければ
-”No”を返す。
-解き方 
-各色について、２色までであれば反対側の面で使うことができる。
-よって各色についてその色の数もしくは２のうちの最小のものを足していき
-最後にその数の和が６以上であれば６面体を塗ることができる。
-コード 
-class CubeStickers {
-public: string isPossible(vector&lt;string&gt; sticker) {
-int n=sticker.size();
-map&lt;string,int&gt; m;
-FORE(i,0,n)m[sticker[i]]&#43;&#43;;
-int sum=0;
-for(map&lt;string,int&gt;::iterator it=m.begin();it!=m.end();it&#43;&#43;){
-sum&#43;=min(2,it-&gt;second);
-}
-return sum&gt;=6 ? &#34;YES&#34; : &#34;NO&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11315&amp;rd=14436 ６面体を与えられた色を使って塗りたい。 ただし、隣り合う面は違う色で塗らなくてはいけない。 使える色の集合が与えられたとき、６面体を塗るこ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-507-div1-easy---cubestickers/" />
 

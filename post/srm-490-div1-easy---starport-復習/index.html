@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 490 DIV1 Easy - Starport (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11227&amp;rd=14243
-Ｍ秒間隔でスペースシャトルが到着し、Ｎ秒間隔でテレポートが始まる。
-スペースシャトルが到着したときにテレポート間隔とぴったりでなければ、次のテレポート時間まで待つ。
-このとき、待ち時間の平均時間を求める。
-解き方 
-数学的に解く問題。
-サンプルを元に計算すると、
-N=10 M=4 (gcd=2 lcm=20)M:4 8 12 16 20 24 28 32 36 40 44N: &nbsp; &nbsp;10 &nbsp; &nbsp; &nbsp; 20 &nbsp; &nbsp; &nbsp; 30 &nbsp; &nbsp; &nbsp; &nbsp; 40 50 60 70
-１サイクルの待ち時間 T=6&#43;2&#43;8&#43;4&#43;0=20となる。
-また、要素数はlcm/Mとなることがわかる。
-また要素をgcdにて割ると、
-M&#39;:2 4 6 8 10&nbsp;N&#39;: &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp;10 &nbsp;
-１サイクルの待ち時間はT=gcd*(3&#43;1&#43;4&#43;2&#43;0)
-また、0,1,...N&#39;-1のすべての要素が出現することがわかる。
-つまり、合計待ち時間T、要素数Kと答えとなるT/Kは以下のように計算できる。
-T=gcd*N&#39;*(N&#39;-1)/2
-&nbsp; =gcd*(N/gcd)(N/gcd-1)/2
-&nbsp; =N(N/gcd-1)/2
-K=lcm/M=N/gcd
-T/K= (N(N/gcd-1)/2) &nbsp;/(N/gcd)
-&nbsp; &nbsp; &nbsp;= (N(N/gcd-1)*gcd) &nbsp;/(N*2)" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11227&amp;rd=14243 Ｍ秒間隔でスペースシャトルが到着し、Ｎ秒間隔でテレポートが始まる。 スペースシャトルが到着したときにテレポート間隔とぴったりでなければ、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/" />
 

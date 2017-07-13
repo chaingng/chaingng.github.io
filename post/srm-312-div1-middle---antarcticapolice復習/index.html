@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 312 DIV1 Middle - AntarcticaPolice　（復習××○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6501&amp;rd=9992
-都市Antarcticaにポリスステーションを建てたい。
-Antarcticaには複数の町があり、それぞれの町にポリスステーションを建てた時のコストがあらかじめわかっている。
-ただし全ての町にポリスステーションを建てる必要はなく、その他のポリスステーションからその町に行くことができれば必要ない。
-また、各町について一方通行でつながっているかどうかの情報も与えられる。
-このとき、１つのポリスステーションを建てた時の平均コストが最小になるときの値を求める。
-解き方 
-無向グラフではなく有向グラフの問題。
-強連結である部分集合を求め、その他の集合からたどりつけない集合であればその部分集合から最小のコストを足す必要がある。
-最後に、選ばれていない町のコストについて、平均が低くなるものについてのみコストを足してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class AntarcticaPolice {
-public:
-double minAverageCost(vector&lt;int&gt; costs, vector&lt;string&gt; roads) {
-int n=costs.size();
-bool p[n][n];
-FORE(i,0,n)FORE(j,0,n)p[i][j]=(roads[i][j]==&#39;Y&#39;);
-FORE(i,0,n)p[i][i]=1;
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)p[i][j]|=(p[i][k]&amp;&amp;p[k][j]);
-int G=0,root[n];" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6501&amp;rd=9992 都市Antarcticaにポリスステーションを建てたい。 Antarcticaには複数の町があり、それぞれの町にポリスステーションを建て" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-312-div1-middle---antarcticapolice%E5%BE%A9%E7%BF%92/" />
 

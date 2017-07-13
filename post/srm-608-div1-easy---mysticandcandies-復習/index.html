@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 608 DIV1 Easy - MysticAndCandies (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12997&amp;rd=15841
-複数の箱それぞれに対しlowとhighの値が割り振られ、lowからhighの間の数のキャンディーが入っている。
-また、合計のキャンディーの数もわかっている。
-プレイヤーは複数の箱を選び、Ｘ個以上のキャンディーを食べたい。
-このとき、どの箱を選んでもＸ個以上のキャンディーが入っているような、最小の箱の数を求める。
-解き方 
-問題文のどのキャンディーの入り方でもＸ個以上、という最悪条件になっていることに気付くのに時間がかかってしまいました。
-答えは最大で箱の数なので、選ぶ数は１～ｎまで順番に調べていき
-条件を満たせばそこで答えになります。
-条件の満たし方は以下の２通りのうちいずれかを満たせばよいです。
-①最小のキャンディーは必ず入っているので、最小の数のみの和でＸ以上になること
-②選んでいない残りの箱の最大数がＣ－Ｘ以下になること。
-例外条件として、②は選んだ箱の取りうるキャンディー数がＸを満たすか気になります。
-これは、選んだ箱の取りうるキャンディー数がＸ未満の場合、残りの箱は最大数を選んでいるため合計のキャンディー数が決して満たない数になってしまいます。
-①の例外条件として合計だけでは満たさなくとも、残りで最大を選んだときのバッファを足せば満たすかがありますが、これはまさに②なので大丈夫です。
-例外条件をちゃんと確かめるか、もしくはコードでカバーしておくかが大事です。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class MysticAndCandies {
-public: int minBoxes(int C, int X, vector&lt;int&gt; low, vector&lt;int&gt; high) {
-int n=low.size();" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12997&amp;rd=15841 複数の箱それぞれに対しlowとhighの値が割り振られ、lowからhighの間の数のキャンディーが入っている。 また、合計のキャンディー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-608-div1-easy---mysticandcandies-%E5%BE%A9%E7%BF%92/" />
 

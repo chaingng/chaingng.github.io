@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 584 DIV1 Easy - Egalitarianism （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12613&amp;rd=15696
-友達のつながりの集合が与えられる。
-それぞれの人はお金を所ゆすることができるが、
-友達同士は、ｄ以下の差でなければいけない。
-このとき、集合にある人のお金の差の最大値を求める。
-差が無限大になる場合はー１を返す。
-解き方 
-友達以外にはお金の制限がないことから、全員が友達でない場合は
-差が無限大になるのでー１．
-全て友達のつながりがある場合は、最も遠い友達との距離×ｄが答えになることが
-わかる。
-距離を求める問題なので、ワーシャルフロイド法を用いて最大となる友達との距離を求める。
-Challenge
-(i,i)は自分との連結なので探索から除外する。
-コード 
-int INF=1e&#43;9;
-class Egalitarianism {
-public: int maxDifference(vector&lt;string&gt; isFriend, int d) {
-int n=isFriend.size();
-int check[n][n];
-int ans=0;
-FORE(i,0,n){
-FORE(j,0,n){
-if(isFriend[i][j]==&#39;Y&#39;)check[i][j]=1;
-else check[i][j]=INF;
-}
-}
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)check[i][j]=min(check[i][j],check[i][k]&#43;check[k][j]);
-FORE(i,0,n){
-FORE(j,0,n){
-if(i==j)continue;
-if(check[i][j]==INF)return -1;
-ans=max(ans,check[i][j]);
-}
-}
-return ans*d;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12613&amp;rd=15696 友達のつながりの集合が与えられる。 それぞれの人はお金を所ゆすることができるが、 友達同士は、ｄ以下の差でなければいけない。 このとき、集合" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-584-div1-easy---egalitarianism-%E5%BE%A9%E7%BF%92/" />
 

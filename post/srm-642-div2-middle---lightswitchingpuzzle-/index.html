@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 642 DIV2 Middle - LightSwitchingPuzzle (○)" />
-<meta property="og:description" content="問題 
-・N個のスイッチがある。
-・各スイッチはONかOFFの状態を持ち、その初期状態が与えられる。
-・各スイッチはその位置の倍数のスイッチと連動しており、そのスイッチを押すと連動しているスイッチの状態も変化する。
-・すべてのスイッチをOFFにしたいとき、最小の操作回数を求める。
-・ただしそのような操作ができないときはー１を返す。
-解き方 
-・あるスイッチを操作するとき、それよりも左のスイッチの動作には影響しない。
-・よって左からONのスイッチに対してOFFにしていけば、最小の操作ですべてのスイッチがOFFになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class LightSwitchingPuzzle {
-public: int minFlips(string state) {
-int n=state.size();
-int p[n];
-FORE(i,0,n)p[i]=(state[i]==&#39;Y&#39;);
-int ret=0;
-while(accumulate(p,p&#43;n,int())!=0){
-int idx=0;
-while(p[idx]==0)idx&#43;&#43;;
-ret&#43;&#43;;
-for(int i=idx;i&lt;n;i&#43;=idx&#43;1)p[i]=1-p[i];" />
+<meta property="og:description" content="問題 ・N個のスイッチがある。 ・各スイッチはONかOFFの状態を持ち、その初期状態が与えられる。 ・各スイッチはその位置の倍数のスイッチと連動し" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-642-div2-middle---lightswitchingpuzzle-/" />
 

@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 390 DIV1 Middle - PaintingBoards　（復習××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8516&amp;rd=11124
-それぞれ長さの違うボードが連続して並んでおり、すべてのボードにペンキを塗りたい。
-各ボードの長さはあらかじめわかっている。
-また、ペンキを塗るペインターが複数おり、各ペインターが長さ１のボードを塗る速さもわかっている。
-一人のペインターは複数のボードを塗ることができるが、塗るボードは連続していないといけない。
-ボードを塗るペインターの数に制限はなく同時に作業することができるとき、
-すべてのボードを塗るのに必要な最小時間を求める。
-解き方 
-時間を固定することでその条件を満たすかどうか決められそうなので、二分探索が使えそう。
-ただし時間は10^13刻みで探索が必要になる。
-ここで、今回長さの取りうる数はあらかじめわかっているので、
-全ての長さの値と全てのペインターで割った数が今回とりうる値になる。
-そうすると数はn(ボードの数)*n*m(ペインターの数)で5*10^4ほどに削減できる。
-次に長さが決まったとき、ペインターの全ての塗る順番を調べなければいけない。
-Ｏ（2^16）なので計算量は間に合いそう。
-ペインターの数mの全てのビット列を操作し、各ビットが０のペインターから順に選んでいきビット列のｄｐを更新していけば、全てのペインターの塗る順番を調べることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int sum[100],memo[16][60],n,m,cnt;
-double times[1&lt;&lt;16];
-int dp[1000000];
-vector&lt;int&gt; painter;
-class PaintingBoards {
-public:
-int f(int x,int start,double len){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8516&amp;rd=11124 それぞれ長さの違うボードが連続して並んでおり、すべてのボードにペンキを塗りたい。 各ボードの長さはあらかじめわかっている。 また、ペンキを" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-390-div1-middle---paintingboards%E5%BE%A9%E7%BF%92/" />
 

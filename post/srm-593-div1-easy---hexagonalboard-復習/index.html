@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 593 DIV1 Easy - HexagonalBoard (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12784&amp;rd=15705
-５角形のセルからなるボードがあり、任意の場所に石が置いてある。
-石が隣り合うときは、かならず違う色にしなければいけない。
-このとき、全ての石を塗るのに必要な最小の色の数を求める。
-解き方 
-シミュレーションしてみると、色の数は最大３色になることがわかる。
-色が０色のときは石がないとき、１色のときは全て独立したセルであることから簡単に判定できるので、２色と３色のときの判定ができればよい。
-今回は２色でぬろうとしたときに塗れないとき、つまり隣り合うセルが同じ色になってしまうときに３色を返すようにＤＦＳでコーディングする。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int w,h;
-vector&lt;string&gt; B;
-int dr[]={-1,-1,0,0,1,1};
-int dc[]={0,1,-1,1,-1,0};
-class HexagonalBoard {
-public:
-int dfs(int r,int c,int v){
-if(B[r][c]!=&#39;X&#39;)return 0;
-int ret=1;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12784&amp;rd=15705 ５角形のセルからなるボードがあり、任意の場所に石が置いてある。 石が隣り合うときは、かならず違う色にしなければいけない。 このとき、全ての" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-593-div1-easy---hexagonalboard-%E5%BE%A9%E7%BF%92/" />
 

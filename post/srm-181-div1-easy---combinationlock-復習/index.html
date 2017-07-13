@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 181 DIV1 Easy - CombinationLock (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1945&amp;rd=4725
-数字を合わせてロックを空ける回転式の鍵がある。
-合わせるのに必要な数字の一覧が順に与えられ、数字の数も与えられる。
-ロックを解除する操作は以下の通り。
-１．回す方向を決める
-２．合わせるのに必要な一覧の、残りの数だけ１回転させる
-３．現在合わせる数字まで回転させる
-４．次の回転は逆回り
-最初にセットしてある数字が与えられるとき、ロックの解除までに必要な回転角度を求める。
-解き方 
-問題文の理解に時間がかかったが、サンプルを例に試してみることで理解できた。
-問題文の理解ができれば、あとはシミュレーション問題なので実装するだけ。
-時計回りと反時計回りのときに数字を合わせるまでに動かす数だけ正確に実装できればあとは簡単。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class CombinationLock {
-public: double degreesTurned(vector&lt;int&gt; combo, int size, int start) {
-double ret=0.0;
-int n=combo.size();" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1945&amp;rd=4725 数字を合わせてロックを空ける回転式の鍵がある。 合わせるのに必要な数字の一覧が順に与えられ、数字の数も与えられる。 ロックを解除する操作は" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-181-div1-easy---combinationlock-%E5%BE%A9%E7%BF%92/" />
 

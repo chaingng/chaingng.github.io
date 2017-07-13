@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 609 DIV1 Middle - PackingBallsDiv1 （復習○）" />
-<meta property="og:description" content="問題 
-Ｋ種類のボールがそれぞれX[i]個存在する。
-各X[i]は、あらかじめ与えられるA,B,C,Dを用いて以下の式で求められる。
-X[0]=A;
-X[i]=(X[i-1]*B&#43;C)%D&#43;1
-ここで、全てのボールをできるだけ少ない箱にまとめたい。
-それぞれの箱は最大Ｋ個のボールが入り、１つの箱に入っているボールはすべて同じ色か、すべて異なる色でなくてはならない。
-このとき、できるだけ少ない箱にまとめたときの箱の個数を求める。
-解き方 
-X[i]はlong long型を用いることで容易に求めることができる。
-箱の詰め方だが、各色のボールは10^9のため単純なｄｐでは解くことができない。
-そこで詰め方に対して貪欲法で解くことができないか考える。
-各色に対してＫ個以上のボールがある際には、Ｋ個未満になるまで同じ色のボールを詰めた方がよいのではないかと考える。
-反例について考えてみる。
-反例は、各色に対してＫ個以上のボールがあるとき、すべて異なる色で詰める方がよいとする。
-このとき色の数がｘ＜Ｋであるとき、各箱の個数はｘ個、つまりＫ個未満である。
-このときはｘ種類それぞれに対してＫ個のボールをつめると箱の数はｘ個、つまりＫ個未満になりよりい解があるので成り立たない。
-よって、Ｋ個以上のボールがあるときには同色で詰めた方がよい。
-上記の処理を行うことで各色に残っている数はＫ個未満になるため、あとは全探索を用いてあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PackingBallsDiv1 {
-public: int minPacks(int K, int A, int B, int C, int D) {" />
+<meta property="og:description" content="問題 Ｋ種類のボールがそれぞれX[i]個存在する。 各X[i]は、あらかじめ与えられるA,B,C,Dを用いて以下の式で求められる。 X[0]=A; X[i]=(X[i-1]*B&#43;C)%D&#43;1 ここで、全" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-609-div1-middle---packingballsdiv1-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 287 DIV1 Easy - TwoEquations (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6013&amp;rd=9808
-・２次方程式が与えられる。
-・このとき、ｘ、ｙを求める。
-ただし解がない時は&#34;NO SOLUTIONS&#34;、解が複数あるときは&#34;MULTIPLE SOLUTIONS&#34;を返す。
-解き方 
-シミュレーションの問題なので、いかに簡単に実装するか。
-ポイントは３つ。
-１つめは、文字列から数字を取り出すところ。
-２つめは、解がない時、複数あるときの例外判定。
-３つめは、ｘ、ｙの求め方。
-１つめについては数字の取り出しとかっこの判定を分けることで実装。
-２つめ、３つめについては方程式を
-Ax&#43; by= c、Dx&#43; ey= fとしたとき、
-X= ce-bf / ae-bd,　Y= cd-af / bd-ae　となる。
-２つめ、ae-bdが０のとき ce-bfかつcd-afが０であれば解が複数あり、そうでなければ解が存在しない。
-またx,yのすべての係数が０のとき、右の項がすべて０なら解が複数あり、そうでなければ解が存在しない。
-３つめについては上記の式でｘ、ｙを求めればよい。
-コード 
-class TwoEquations {
-public:
-int getnum2(string str){
-string org;
-if(str[0]==&#39;(&#39;)org=str.substr(1,2);
-else org=str[0];
-stringstream out(org);
-int ans;
-out&gt;&gt;ans;
-return ans;
-}
-vector&lt;int&gt; getnum(string str){
-stringstream out(str);
-vector&lt;int&gt; ans(3,0);
-string a0,a1,a2,b,c;
-out&gt;&gt;a0&gt;&gt;b&gt;&gt;a1&gt;&gt;c&gt;&gt;a2;
-ans[0]=getnum2(a0);
-ans[1]=getnum2(a1);
-ans[2]=getnum2(a2);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6013&amp;rd=9808 ・２次方程式が与えられる。 ・このとき、ｘ、ｙを求める。 ただし解がない時は&#34;NO SOLUTIONS&#34;、解が複数あるときは&#34;MULTIPL" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/" />
 

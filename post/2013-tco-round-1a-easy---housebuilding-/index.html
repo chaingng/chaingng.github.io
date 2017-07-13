@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2013 TCO Round 1A Easy - HouseBuilding (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12396&amp;rd=15571
-・与えられた長方形の地面を平らにしたい。
-・地面はセルで区別されており、それぞれのセルの現在の高さがわかっている。
-・高さを変化させるには、変化させた高さの分の労力がかかる。
-・全てのセルの高さをそれぞれが高々１以下の差にしたいとき、
-必要な最小の労力を求める。
-解き方 
-・高さは０～９の９通り。
-・このうち、高さの差が高々１になる場合は、
-ならした後の高さは（０，１）、（１，２）・・・（８，９）の８通り。
-・よって、それぞれの高さにするときに必要な労力をそれぞれ求め、そのうち最小のものが
-答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class HouseBuilding {
-public: int getMinimum(vector&lt;string&gt; area) {
-int ret=1e&#43;9;
-int h=area.size(),w=area[0].size();
-FORE(i,0,9){
-int tmp=0;
-FORE(j,0,h)FORE(k,0,w){
-tmp&#43;=min(abs(area[j][k]-&#39;0&#39;-i),abs(area[j][k]-&#39;0&#39;-(i&#43;1)));" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12396&amp;rd=15571 ・与えられた長方形の地面を平らにしたい。 ・地面はセルで区別されており、それぞれのセルの現在の高さがわかっている。 ・高さを変化させるには" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2013-tco-round-1a-easy---housebuilding-/" />
 

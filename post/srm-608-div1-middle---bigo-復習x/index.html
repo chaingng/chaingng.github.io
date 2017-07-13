@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 608 DIV1 Middle - BigO （復習x）" />
-<meta property="og:description" content="問題 
-有向グラフが与えられる。
-このうち、巨大な経路長Ｌを考え、そのＬの場合の数がＯ（Ｌ＾Ｋ）となるかを知りたい。
-Ｏ（Ｌ＾Ｋ）となるときはＫを、そうでないときは-1を返す。
-解き方 
-ある閉路に対して途中で分岐があるのであれば、経路長は２＾Ｌに増え続けるため-1となる。
-逆に、そうでない閉路が存在すれば答えは存在する。
-ただし、閉路でない場合はＬが巨大になりえないので、答えは０となる。
-ある閉路からある閉路まで移動することができるとき、
-最初の閉路でＬのうちいくつかの道を作り、次の経路で残りの数を選べるのでＬ＾１となる。
-つまり、閉路間の最大距離がＫとなることがわかる。
-同じ閉路に属するノードはＵＮＩＯＮ－ＦＩＮＤ木を用いて同じ集合とし、最後にＵＮＩON同士の最大距離を求めればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int un=1000;
-int urank[1000],uparent[1000];
-int d[60][60],d2[60][60];
-class BigO {
-public:
-void union_init(){
-FORE(i,0,un){
-uparent[i]=i;
-urank[i]=0;
-}
-}
-int union_find(int x){" />
+<meta property="og:description" content="問題 有向グラフが与えられる。 このうち、巨大な経路長Ｌを考え、そのＬの場合の数がＯ（Ｌ＾Ｋ）となるかを知りたい。 Ｏ（Ｌ＾Ｋ）となるときはＫを、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-608-div1-middle---bigo-%E5%BE%A9%E7%BF%92x/" />
 

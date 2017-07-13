@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 522 DIV1 Easy - RowAndCoins （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11566&amp;rd=14547
-AliceとBobの２人で行うゲーム。
-一行のマスの並びが与えられて、各マスにはＡかＢのどちらかが書かれている。
-ゲームはAliceから始まり、連続する任意のマスにコインを置くことができる。
-ただし、マスは最低一つコインを置かずに残さなければいけない。
-このとき、残った最後のマスがＡならAliceの勝ち、そうでなければBobの勝ちとなる。
-一行のマスが与えられた時、どちらが勝つかを求める。
-解き方 
-単純なシミュレーションに見えるが、全ての手の全探索は難しそう。
-ここで「勝ちの法則」がないかを考える。
-まず、Aliceは１マスを除いて好きなだけ連続するマスに置けるので、
-最初か最後のマスがＡであれば必ず勝ちになる。
-次にそうでない場合（両端がＢ）、どう消してもBは残ってしまうので
-どうやってもAliceは勝つことができない。
-例）BAAABABのとき
-①左のＢを消す　：AAABAB →次に右端以外を消されてしまう
-②右のＢを消す　：上記と同様
-②真ん中のＢを消す：BAAA*AB 左もしくは右のAを消されてＢは残る(B*AB or BA*B)
-つまり、両端のどちらかがＡであればAlice、そうでなければBobの勝ちとなる。
-コード 
-class RowAndCoins {
-public: string getWinner(string cells) {
-return cells[0]==&#39;B&#39;&amp;&amp;cells[cells.size()-1]==&#39;B&#39; ? &#34;Bob&#34; : &#34;Alice&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11566&amp;rd=14547 AliceとBobの２人で行うゲーム。 一行のマスの並びが与えられて、各マスにはＡかＢのどちらかが書かれている。 ゲームはAliceから始" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/" />
 

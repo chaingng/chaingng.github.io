@@ -74,34 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11414&amp;rd=14524
-・複数の人が存在し、それぞれそのグループに何人以上嘘つきがいるかと言っているかの
-&nbsp;liarの値がわかっている。
-・誰が嘘つきかはわからないが、矛盾しないように嘘つきが何人いるかを求める。
-複数の可能性がある場合は、そのうち最小の人数を求める。
-また、あらゆるケースで矛盾する場合は-1を返す。
-解き方 
-・liarの値は最大で100、人数の最大は50であるため全探索ができそう。
-・よって嘘つきの人数を0～100人までと固定し、その時の嘘つきの数を数えて
-一致するものが矛盾しないケースとなる。
-そのうち、最小のものを返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class MinimumLiars {
-public: int getMinimum(vector&lt;int&gt; claim) {
-int n=claim.size();
-int ret=1e+9;
-FORE(i,0,101){
-int tmp=0;
-FORE(j,0,n)if(claim[j]&gt;i)tmp++;
-if(i==tmp)ret=min(ret,i);
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11414&amp;rd=14524 ・複数の人が存在し、それぞれそのグループに何人以上嘘つきがいるかと言っているかの &nbsp;liarの値がわかっている。 ・誰が嘘つきか
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2011-tco-qualification-round-1---minimumliars/">Read more…</a>
@@ -121,19 +94,7 @@ if(i==tmp)ret=min(ret,i);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			catコマンドを使う。
-下記のコマンドで指定したディレクトリ以下の全てのファイルを結合し、
-newfilename.txtにその結果を保存できる。
-cat targetdir/* &gt; newfilename.txt&nbsp;
-ちなみにmanコマンドは以下の通り。
-Concatenate　filesなのでcatコマンド。
-CAT(1) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; User Commands &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CAT(1)
-NAME
-&nbsp; &nbsp; &nbsp; &nbsp;cat - concatenate files and print on the standard output
-SYNOPSIS
-&nbsp; &nbsp; &nbsp; &nbsp;cat [OPTION]... [FILE]...
-DESCRIPTION
-&nbsp; &nbsp; &nbsp; &nbsp;Concatenate FILE(s), or standard input, to standard output.
+			catコマンドを使う。 下記のコマンドで指定したディレクトリ以下の全てのファイルを結合し、 newfilename.txtにその結果を保存できる
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/linux%E3%81%A7%E8%A4%87%E6%95%B0%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%B5%90%E5%90%88/">Read more…</a>
@@ -153,34 +114,7 @@ DESCRIPTION
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7794&amp;rd=14294
-・男の子と女の子が並んでいる。
-・このうち、男の子と女の子が隣に並んでいる並びをできるだけ少なくしたい。
-・並びを変えるには、一回の操作で任意の２人を入れ替えることができる。
-・このときの、最小の操作回数を求める。
-解き方 
-・最小の並べ方はBBBGGGもしくはGGGBBBとなる並べ方になる。
-・よって、上の２つの並べ方のうち操作回数が小さいものが答えになる。
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class GirlsAndBoys {
-public: int sortThem(string row) {
-int INF=1e+8,n=row.size();
-int cost=INF;
-int tmpcost=0,pos=0;
-for(int letter=0;letter&lt;n;letter++){
-if(row[letter]!='B')continue;
-tmpcost+=abs(letter-pos);
-pos++;
-}
-cost=min(cost,tmpcost);
-tmpcost=0,pos=0;
-for(int letter=0;letter&lt;n;letter++){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7794&amp;rd=14294 ・男の子と女の子が並んでいる。 ・このうち、男の子と女の子が隣に並んでいる並びをできるだけ少なくしたい。 ・並びを変えるには、一回の操作で
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2010-tco-qualification-round-1---girlsandboys/">Read more…</a>
@@ -200,36 +134,7 @@ for(int letter=0;letter&lt;n;letter++){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996
-・正方形に並べられた１６個のマスがある。
-・各マスに、高さheightが分かっているタワーを置く。
-・このとき、見えている表面積が最も高くなるようにタワーを置く時の面積を求める。
-解き方 
-・下側は見えないので無視してよさそう。
-・上側は常に１６となる。
-・あとはどう横に置くか。
-→思いつかなかったため、他の人のコードをみてみる。
-・サンプルの一つにあるように、互い違いに置くことで（#の場所）８つ分はheight×４を足す。
-*#*#
-&nbsp; #*#*
-&nbsp; *#*#
-&nbsp; #*#*
-・残りのうち、置く場所によって見えなくなる面の数が異なる。
-0#2#
-&nbsp; #4#2
-&nbsp; 2#4#
-&nbsp; #2#0
-・よってheightでソートし、大きいうちから8つはheight×4を足し、
-小さい方から2つはheight×4を引き、次の4つはheight×2を引けばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SixteenBricks {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996 ・正方形に並べられた１６個のマスがある。 ・各マスに、高さheightが分かっているタワーを置く。 ・このとき、見えている表面積が最も高く
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2014-tco-round-2a-easy---sixteenbricks-/">Read more…</a>
@@ -249,33 +154,7 @@ class SixteenBricks {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12450&amp;rd=15580
-・生徒が複数存在し、それぞれの生徒のknowledgeの値がわかっている。
-・生徒が２人ずつのペアを作る。このとき、ペアのknowledgeは各生徒のknowledgeの和となる。
-・各ペアのknowledgeの差をできるだけ小さくした時の、最小の差を求める。
-解き方 
-・小さいknowledgeであるほど大きいknowledgeと組み合わせるのが最適解。
-・よってknowledgeの順にソートし、一番左と一番右をペア、といったように
-順に組み合わせていき、ペアの最大と最小の差が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysPairs {
-public: int getDifference(vector&lt;int&gt; knowledge) {
-int n=knowledge.size();
-sort(all(knowledge));
-int maxp=knowledge[0]+knowledge[n-1];
-int minp=knowledge[0]+knowledge[n-1];
-FORE(i,0,n/2){
-maxp=max(maxp,knowledge[i]+knowledge[n-1-i]);
-minp=min(minp,knowledge[i]+knowledge[n-1-i]);
-}
-return maxp-minp;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12450&amp;rd=15580 ・生徒が複数存在し、それぞれの生徒のknowledgeの値がわかっている。 ・生徒が２人ずつのペアを作る。このとき、ペアのknowled
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2013-tco-round-1b-easy---ellyspairs-/">Read more…</a>
@@ -295,34 +174,7 @@ return maxp-minp;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12396&amp;rd=15571
-・与えられた長方形の地面を平らにしたい。
-・地面はセルで区別されており、それぞれのセルの現在の高さがわかっている。
-・高さを変化させるには、変化させた高さの分の労力がかかる。
-・全てのセルの高さをそれぞれが高々１以下の差にしたいとき、
-必要な最小の労力を求める。
-解き方 
-・高さは０～９の９通り。
-・このうち、高さの差が高々１になる場合は、
-ならした後の高さは（０，１）、（１，２）・・・（８，９）の８通り。
-・よって、それぞれの高さにするときに必要な労力をそれぞれ求め、そのうち最小のものが
-答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class HouseBuilding {
-public: int getMinimum(vector&lt;string&gt; area) {
-int ret=1e+9;
-int h=area.size(),w=area[0].size();
-FORE(i,0,9){
-int tmp=0;
-FORE(j,0,h)FORE(k,0,w){
-tmp+=min(abs(area[j][k]-'0'-i),abs(area[j][k]-'0'-(i+1)));
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12396&amp;rd=15571 ・与えられた長方形の地面を平らにしたい。 ・地面はセルで区別されており、それぞれのセルの現在の高さがわかっている。 ・高さを変化させるには
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2013-tco-round-1a-easy---housebuilding-/">Read more…</a>
@@ -342,35 +194,7 @@ tmp+=min(abs(area[j][k]-'0'-i),abs(area[j][k]-'0'-(i+1)));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12548&amp;rd=15656
-・友達が複数存在し、互いに誰と誰が友達であるかがわかっている。
-・パーティにて、ダンスが任意の回数行われる。ダンスは２人ペアで行われる。
-・ペアとなれるのは友達同士か、もしくは共通の友達がいる必要がある。
-・一度ダンスを行えば、そのペアは友達となる。
-・このとき、０番目の人と１番目の人が友達になるまでに必要な
-最小のダンス回数を求める。
-解き方 
-・最短経路を求める問題なので、ワーシャルフロイドが使えそう。
-・サンプルを見ると、０と１との最短経路－１が答え？
-・サンプルは通ったので提出。
-→SystemFailed.
-・問題文を良く見ると、毎回のダンスで複数の友達がペアになるので、
-初期状態の距離だけでは答えは求まらない。
-・具体的には「0-A-B-C-D-1」のときは１回のダンスで「0-B-C-1」となる。
-・つまり、最初の距離dから(d+1)/3ずつ引いていき、１以下になるまでのダンス回数が
-答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class DancingFoxes {
-public: int minimalDays(vector&lt;string&gt; friendship) {
-int n=friendship.size();
-int d[n][n];
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12548&amp;rd=15656 ・友達が複数存在し、互いに誰と誰が友達であるかがわかっている。 ・パーティにて、ダンスが任意の回数行われる。ダンスは２人ペアで行われる。
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2013-tco-round-2c-easy---dancingfoxes-/">Read more…</a>
@@ -390,34 +214,7 @@ int d[n][n];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996
-・ONとOFFができるスイッチが複数与えられる。
-・最初は全てOFFの状態。
-・複数スイッチの状態が与えられ、順番にその状態に変化させていく。
-・スイッチの状態はON,OFF,？の３つであり、？はON/OFFどちらでもよい。
-・スイッチの状態変化は、好きなだけ＋に変化させる動作が１動作、
-好きなだけ－に変化させる動作が１動作、
-状態を一緒に合わせたあとボタンを押すのに１動作かかる。
-・このとき、必要な動作回数の最小値を求める。
-解き方 
-・前のスイッチの状態を持っておき、毎回変化数を記録しておけばよさそう。
-・？については好きな状態でよい。
-・つまり、そのあとに出てくるのが＋でプラスの動作が行われるのであれば＋にしてしまい、
-逆に出てくるのが－でマイナスの動作が行われるのであれば－にしてしまうのが
-最適な動作になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SwitchingGame {
-public: int timeToWin(vector&lt;string&gt; states) {
-int m=states[0].size();
-int n=states.size();
-int ret=n;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13110&amp;rd=15996 ・ONとOFFができるスイッチが複数与えられる。 ・最初は全てOFFの状態。 ・複数スイッチの状態が与えられ、順番にその状態に変化させてい
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2014-tco-round-2b-easy---switchinggame-/">Read more…</a>
@@ -437,31 +234,7 @@ int ret=n;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13119&amp;rd=15950
-・与えられたe-mailがスパムかどうかチェックしたい。
-・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であるという
-情報が与えられる。
-・○が現れたら○のときのスコアを足し、×のときは×のときのスコアを引く。
-・最初のスコアは０であり１行目から順にスコアを計算していき、１度でもスコアが
-マイナスになったらそのe-mailはスパムとなる。
-・このとき、与えられたe-mailがスパムであるかどうかを求める。
-解き方 
-単純に実装するだけ。
-スコアを順に計算して毎回マイナスかどうかを判定すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SpamChecker {
-public: string spamCheck(string judgeLog, int good, int bad) {
-int n=judgeLog.size();
-int score=0;
-FORE(i,0,n){
-if(judgeLog[i]=='o')score+=good;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13119&amp;rd=15950 ・与えられたe-mailがスパムかどうかチェックしたい。 ・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2014-tco-round-1b-easy---spamchecker-/">Read more…</a>
@@ -481,34 +254,7 @@ if(judgeLog[i]=='o')score+=good;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13067&amp;rd=15958
-・ある文字列が与えられる。
-・そのうち、同じアルファベットは一度しか使わないようにしたい。
-・同じアルファベットが出現する場合、最初のアルファベットのみ残すようにしたときに
-最後に残る文字列を求める。
-解き方 
-単に実装するだけ。
-アルファベットの出現回数を保持する配列を持っておき、
-初めて出現するアルファベットのみ答えに足していけばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Unique {
-public: string removeDuplicates(string S) {
-string ret="";
-int n=S.size();
-int ch[26];
-memset(ch,0,sizeof(ch));
-FORE(i,0,n){
-if(ch[S[i]-'a']==0){
-ret+=S[i];
-ch[S[i]-'a']++;
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13067&amp;rd=15958 ・ある文字列が与えられる。 ・そのうち、同じアルファベットは一度しか使わないようにしたい。 ・同じアルファベットが出現する場合、最初のアル
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2014-tco-round-1c-easy---unique-/">Read more…</a>

@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 605 DIV1 Middle - AlienAndSetDiv1 （復習○）" />
-<meta property="og:description" content="問題 
-1から2Nまでの数字を、２つの集合に分けたい。
-各集合にはＮ個の数字が入るようにし、それぞれ昇順でi番目の数字の差がＫ－１以下になるようにしたい。
-このとき、何通りの集合の分け方があるか求める。
-解き方 
-TopCoder SRM 605 Div1 Medium AlienAndSetDiv1を参考にさせていただきました。
-全ての数字がＡに使ったかＢに使ったか保存することはできないが、小さい順に処理をしていくということ、さらにその場合に現在の数からＫ－１まで小さい数までの情報を持っていればよい。
-Ｋは最大１０なので情報を持つことができる。
-あとはＤＦＳにして問題を解く。
-ｄｐの状態として「いままで選んだＡの数」「いままで選んだＢの数」「Ｋ－１まででＡを選んだ数」を持ち、値は場合の数とする。
-ＡはＮを超えた際に０を返すようにしてＡは無条件に足していく。
-Ｂは直前のＫ－１がＡである数が今まで選んだＡ－Ｂ個以上だと差がＫ以上になってしまうので、
-この条件を満たさないときにＢを足していけばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int N,K,mask;
-int dp[60][60][(1&lt;&lt;10)&#43;1];
-class AlienAndSetDiv1 {
-public:
-int rec(int x,int y,int bits){" />
+<meta property="og:description" content="問題 1から2Nまでの数字を、２つの集合に分けたい。 各集合にはＮ個の数字が入るようにし、それぞれ昇順でi番目の数字の差がＫ－１以下になるように" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-605-div1-middle---alienandsetdiv1-%E5%BE%A9%E7%BF%92/" />
 

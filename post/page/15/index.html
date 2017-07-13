@@ -77,36 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10726&amp;rd=14180
-１直線上に複数のボールが置かれている。
-ボールの置かれている位置はあらかじめわかっている。
-各ボールを同時に、それぞれ左右のどちらかに転がしたとき
-T秒後にボールが衝突した回数の期待値を求める。
-解き方 
-ボールが衝突した時に左右に移動することは考えず、
-すり抜けると考えることができる。
-このとき、各ボールが左右に動くすべての場合に対し、
-ボールのペアすべてに対し衝突しているかどうかカウントしていけばよい。
-別解として、ボールのペアそれぞれについてカウントすることになるので
-左右に動くすべての場合を求めずとも、
-各ペアについて衝突する可能性があるなら０．２５を足していけば求められる。
-コード 
-class BouncingBalls {
-public: double expectedBounces(vector&lt;int&gt; x, int T) {
-int n=x.size();
-sort(all(x));
-double ret=0;
-for(int mask=0;mask&lt;(1&lt;&lt;n);mask++){
-FORE(i,0,n)FORE(j,i+1,n){
-if( (mask&amp;(1&lt;&lt;i)) &amp;&amp; !(mask&amp;(1&lt;&lt;j)) &amp;&amp; x[j]-x[i]&lt;=2*T){
-ret++;
-}
-}
-}
-return ret/(double)(1&lt;&lt;n);
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10726&amp;rd=14180 １直線上に複数のボールが置かれている。 ボールの置かれている位置はあらかじめわかっている。 各ボールを同時に、それぞれ左右のどちらかに転が
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-458-div1-easy---bouncingballs/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -123,44 +97,10 @@ return ret/(double)(1&lt;&lt;n);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10682&amp;rd=14145
-不等式は複数与えられる。
-与えられた不等式をできるだけ多く満たすような実数に対し
-その満たす不等式の最大数を求める。
-解き方 
-不等式の数Xは０～１０００になる。
-よってー１～１００１まで0.5刻みの数を考え、このすべてに対し
-不等式をどれだけ満たすか求めてあげればよい。
-実数に対して配列のインデックスと一致させるために、
-実数＊２＋２と変換してあげれば配列を利用できる。
-コード 
-int num[2100];
-class Inequalities {
-public:
-void calc(string str){
-stringstream out(str);
-string s1,s2;
-int x;
-out&gt;&gt;s1&gt;&gt;s2&gt;&gt;x;
-if(s2=="&lt;")for(double i=-1;i&lt;x;i+=0.5)num[(int)(i*2+2)]++;
-if(s2=="&lt;=")for(double i=-1;i&lt;=x;i+=0.5)num[(int)(i*2+2)]++;
-if(s2=="=")num[x*2+2]++;
-if(s2=="&gt;")for(double i=x+0.5;i&lt;=1005;i+=0.5)num[(int)(i*2+2)]++;
-if(s2=="&gt;=")for(double i=x;i&lt;=1005;i+=0.5)num[(int)(i*2+2)]++;
-}
-int maximumSubset(vector&lt;string&gt; inequalities) {
-memset(num,0,sizeof(num));
-FORE(i,0,inequalities.size()){
-calc(inequalities[i]);
-}
-int ret=0;
-FORE(i,0,2100){
-ret=max(ret,num[i]);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10682&amp;rd=14145 不等式は複数与えられる。 与えられた不等式をできるだけ多く満たすような実数に対し その満たす不等式の最大数を求める。 解き方 不等式の数Xは０
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-459-div1-easy---inequalities/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -177,46 +117,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10731&amp;rd=14181
-長方形を、与えられた赤と青の円で覆いたい。
-各円について、その直径が与えられる。
-また、円の中心は長方形を横１線に分割する線上にあるようにする。
-また円が重複するとき、前の円とは違う色にしなければならない。
-このとき、すべて覆うのに必要な最小の円の数を求める。
-ただし、そのような場合がないときは−１を返す。
-解き方 
-赤と青それぞれの円に対し降順にソートし、
-赤から覆い始める場合、青から覆い始める場合それぞれについて
-いくつの円で覆えるか確かめてあげればよい。
-コード 
-class ColoringRectangle {
-public:
-int calc(vector&lt;int&gt; a,vector&lt;int&gt; b,int w,double h){
-double sum=0;
-int at=0,ret=0;
-while(1){
-if(at&gt;=a.size()||a[at]/2.0&lt;h)break;
-sum+=sqrt(a[at]*a[at]/4.0-h*h)*2;
-ret++;
-if(sum&gt;=w)return ret;
-if(at&gt;=b.size()||b[at]/2.0&lt;h)break;
-sum+=sqrt(b[at]*b[at]/4.0-h*h)*2;
-ret++;
-if(sum&gt;=w)return ret;
-at++;
-}
-return 1e+9;
-}
-int chooseDisks(int width, int height, vector&lt;int&gt; red, vector&lt;int&gt; blue) {
-sort(red.rbegin(),red.rend());
-sort(blue.rbegin(),blue.rend());
-int ret=1e+9;
-ret=min(ret,calc(red,blue,width,height/2.0));
-ret=min(ret,calc(blue,red,width,height/2.0));
-return ret==1e+9 ? -1 : ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10731&amp;rd=14181 長方形を、与えられた赤と青の円で覆いたい。 各円について、その直径が与えられる。 また、円の中心は長方形を横１線に分割する線上にあるように
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-461-div1-easy---coloringrectangle-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -233,43 +137,7 @@ return ret==1e+9 ? -1 : ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10589&amp;rd=14147
-１と０からなる数が与えられ、これをｘ進数にすることでｎを表したい。
-ｘは整数でなくても良いとき、ｘを求める。
-ただしそのようなｘが存在しない場合は−１を、
-複数存在する場合は−２を返す。
-解き方 
-２分探索の問題。
-あとは例外判定が重要になる。
-①N＝１のときは１のとき複数の場合があるので−２、
-また一番下の桁が１で、その他の桁がすべて０でない場合は−１になる。
-②ｎは１以上のため、すべて０のときは−１となる。
-③N=1でなくすべて１のときは表すことができないので−１となる。
-コード 
-class AgeEncoding {
-public:
-double calc(double b,string s){
-int n=s.size();
-double sum=0.0;
-double p=1;
-for(int i=n-1;i&gt;=0;i--){
-if(s[i]=='1')sum+=p;
-p*=b;
-if(sum&gt;100)return sum;
-}
-return sum;
-}
-double getRadix(int age, string candles) {
-int n=candles.size();
-int valid=1;
-FORE(i,0,n-1)if(candles[i]!='0')valid=0;
-if(age==1){
-if(!valid &amp;&amp; candles[n-1]=='1')return -1;
-if(valid &amp;&amp; candles[n-1]=='1')return -2;
-}
-if(valid &amp;&amp; candles[n-1]=='1')return -1;
-if(valid &amp;&amp; candles[n-1]=='0')return -1;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10589&amp;rd=14147 １と０からなる数が与えられ、これをｘ進数にすることでｎを表したい。 ｘは整数でなくても良いとき、ｘを求める。 ただしそのようなｘが存在しな
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-462-div1-easy---ageencoding/">Read more…</a>
@@ -289,43 +157,10 @@ if(valid &amp;&amp; candles[n-1]=='0')return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10898&amp;rd=14152
-２人が座席に横並びで座りたい。
-座席はn個の行だけ与えられる。
-座席は各行、m個の席が横並びになっている。
-また、すでに予約されている席もわかっている。
-このとき、座り方の総数を求める。
-解き方 
-n,mともに10^9なので単純な全探索では求められない。
-ここで予約されている席は47個なので、
-出現した行の列を除いてあげれば、残りの行ｘ(m-1)で
-出現していない行の席の総数を求められるので
-nをすべて計算しなくてよい。
-また出現した行について、その間だけ調べることで
-mもすべて計算しなくてよい。
-コード 
-class TheMoviesLevelOneDivOne {
-public: long long find(int n, int m, vector&lt;int&gt; row, vector&lt;int&gt; seat) {
-long long ret=0,num=0;
-int l=row.size();
-int used[l];
-memset(used,0,sizeof(used));
-FORE(i,0,l)if(!used[i]){
-num++;
-vector&lt;int&gt; vx;
-vx.push_back(0),vx.push_back(m+1);
-FORE(j,0,l)if(row[i]==row[j]){
-vx.push_back(seat[j]);
-used[j]=1;
-}
-sort(all(vx));
-FORE(j,0,vx.size()-1)ret+=max(0,vx[j+1]-vx[j]-2);
-}
-ret+=(long long)(n-num)*(long long)(m-1);
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10898&amp;rd=14152 ２人が座席に横並びで座りたい。 座席はn個の行だけ与えられる。 座席は各行、m個の席が横並びになっている。 また、すでに予約されている席もわ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-469-div1-easy---themovieslevelonedivone/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -342,33 +177,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10840&amp;rd=14182
-２次元座標上の複数の点が与えられる。
-ここから２つの点を選び、それぞれ各点が中心となるように正方形をそれぞれ
-１つずつ設置したい。
-正方形の１辺は整数になるようにしたい。
-また、正方形は互いに重ならないようにしたい。
-このとき、正方形の設置の仕方の総数を求める。
-解き方 
-ある２点の選び方すべてについて、置けるすべての正方形の長さを
-試してあげればよい。
-選んだ２点の距離＊２が、２つの正方形の１辺の和以下であればよい。
-ある点の距離＊２我与えられたときの置き方の総数は、
-例えば長さがn=５であったとき１＋２＋３＋４となるので（n-1)*n/2となる。
-コード 
-class TurretPlacement {
-public: long long count(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-long long ret=0;
-int n=x.size();
-FORE(i,0,n)FORE(j,i+1,n){
-double d=sqrt((x[j]-x[i])*(x[j]-x[i])+(y[j]-y[i])*(y[j]-y[i]));
-long long num=d*2;
-ret+=(num-1)*num/2.0;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10840&amp;rd=14182 ２次元座標上の複数の点が与えられる。 ここから２つの点を選び、それぞれ各点が中心となるように正方形をそれぞれ １つずつ設置したい。 正方形の
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-465-div1-easy---turretplacement/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -385,30 +197,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10697&amp;rd=14148
-複数のうさぎが存在し、すべてのうさぎに番号をつけたい。
-それぞれのうさぎは違う番号をつける。
-各うさぎはつけて欲しい番号の最大数を持っており、１～その最大数までの
-いずれかの数字をつける。
-このとき、うさぎの番号の付け方の総数を求める。
-解き方 
-普通に考えると計算量がオーバーしてしまう。
-各うさぎのmaxnumberでソートし、小さい数から順番に見ていくことで
-総数を簡単に数えることができる。
-コード 
-class RabbitNumbering {
-public: int theCount(vector&lt;int&gt; maxNumber) {
-int MOD=1000000007;
-int n=maxNumber.size();
-int ret=1;
-sort(all(maxNumber));
-FORE(i,0,n){
-ret=(ret*1LL*(maxNumber[i]-i))%MOD;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10697&amp;rd=14148 複数のうさぎが存在し、すべてのうさぎに番号をつけたい。 それぞれのうさぎは違う番号をつける。 各うさぎはつけて欲しい番号の最大数を持ってお
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-463-div1-easy---rabbitnumbering-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -425,43 +217,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10268&amp;rd=13696
-1桁の数字がかかれた２次元のセルが与えられる。
-各列、行番号についてそれぞれ等差数列になるように任意の数字を連結させることができる。
-連結した数字のうち、それがある数の２乗になるようなもののうち
-最大のものを求める。
-解き方 
-すべての位置について、列番号、行番号それぞれについてとりうる
-等差数列すべてを調べてあげればよい。
-2乗の確認はdoubleでは確かめられなく、整数型にすることに注意。
-コード 
-class FindingSquareInTable {
-public:
-long long tolong(string str){
-stringstream out(str);
-long long num;
-out&gt;&gt;num;
-return num;
-}
-int findMaximalSquare(vector&lt;string&gt; table) {
-int h=table.size(),w=table[0].size();
-long long ret=-1;
-FORE(i,0,h)FORE(j,0,w){
-for(int dr=-h;dr&lt;=h;dr++)for(int dc=-w;dc&lt;=w;dc++){
-if(dr==0&amp;&amp;dc==0)continue;
-string str="";
-int r=i,c=j;
-while(0&lt;=r &amp;&amp; r&lt;h &amp;&amp; 0&lt;=c &amp;&amp; c&lt;w){
-str+=table[r][c];
-r+=dr,c+=dc;
-long long num=tolong(str);
-if((long long)sqrt(num)*(long long)sqrt(num)==num)ret=max(ret,num);
-}
-}
-}
-return ret;
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10268&amp;rd=13696 1桁の数字がかかれた２次元のセルが与えられる。 各列、行番号についてそれぞれ等差数列になるように任意の数字を連結させることができる。 連結
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-434-div1-easy---findingsquareintable/">Read more…</a>
@@ -481,46 +237,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10356&amp;rd=13803
-luckyである整数の集合が与えられる。
-また、unluckyな区間の取り方が定義される。
-unluckyな区間とは、[A B]となるA&lt;Bである取り方で
-区間中一つもluckyな数字がない場合となる。
-各整数について、unluckyな区間の取り方ができるだけ少ない方がよい。
-整数ｎ個を、できるだけunluckyでない順に求める。
-解き方 
-整数は10^9であるためすべての数字を調べられない。
-ただしnは100であるため、luckyな数字の前後ｎ個ずつとってあげればよい。
-unluckyな値はその前後のluckyな整数によって定義されるので
-ピックアップした各整数について計算してあげればよい。
-整数のピックアップについて重複しないことに注意。
-コード 
-vector&lt;pair&lt;long long,long long&gt; &gt; p;
-class UnluckyIntervals {
-public: vector&lt;int&gt; getLuckiest(vector&lt;int&gt; luckySet, int n) {
-int m=luckySet.size();
-p.clear();
-FORE(i,0,m)p.push_back(make_pair(0LL,luckySet[i]));
-luckySet.push_back(0);
-sort(all(luckySet));
-int cur=0;
-FORE(i,0,m){
-for(long long j=luckySet[i]+1;j&lt;luckySet[i+1]&amp;&amp;j&lt;luckySet[i]+n;j++){
-long long cost=max(0LL,(long long)(luckySet[i+1]-j)*(j-luckySet[i])-1);
-p.push_back(make_pair(cost,j));
-cur=j;
-}
-for(long long j=max(cur+1,luckySet[i+1]-n);j&lt;luckySet[i+1];j++){
-int valid=1;
-FORE(k,0,m+1)if(j==luckySet[k])valid=0;
-if(!valid)continue;
-long long cost=max(0LL,(long long)(luckySet[i+1]-j)*(j-luckySet[i])-1);
-p.push_back(make_pair(cost,j));
-cur=j;
-}
-}
-for(long long i=luckySet[m]+1;i&lt;luckySet[m]+n+1;i++){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10356&amp;rd=13803 luckyである整数の集合が与えられる。 また、unluckyな区間の取り方が定義される。 unluckyな区間とは、[A B]となるA&l
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-438-div1-easy---unluckyintervals/">Read more…</a>
@@ -540,42 +257,10 @@ for(long long i=luckySet[m]+1;i&lt;luckySet[m]+n+1;i++){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9933&amp;rd=13506
-複数のクレーンがあり、それぞれが運ぶことのできる最大の重さがわかっている。
-また複数の積荷があり、これをすべて運びたい。
-クレーンは同時に複数種類を動かすことができる。
-このとき、すべての積荷を運ぶのに必要な最小時間を求める。
-解き方 
-要素数は５０なので全探索可能。
-vectorでeraseを使えばシンプルに実装できる。
-コード 
-class ShipLoading {
-public: int minimumTime(vector&lt;int&gt; cranes, vector&lt;string&gt; boxes) {
-int n=cranes.size();
-vector&lt;int&gt; box;
-string str="";
-FORE(i,0,boxes.size())str+=boxes[i];
-stringstream out;
-out&lt;&lt;str;
-for(int num;out&gt;&gt;num;)box.push_back(num);
-sort(cranes.rbegin(),cranes.rend());
-sort(box.rbegin(),box.rend());
-if(box.empty() || cranes[0]&lt;box[0])return -1;
-int ret=0;
-while(!box.empty()){
-ret++;
-FORE(i,0,n)FORE(j,0,box.size()){
-if(cranes[i]&gt;=box[j]){
-vector&lt;int&gt;:: iterator it=box.begin();
-box.erase(it+j);
-break;
-}
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9933&amp;rd=13506 複数のクレーンがあり、それぞれが運ぶことのできる最大の重さがわかっている。 また複数の積荷があり、これをすべて運びたい。 クレーンは同時に
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-416-div1-easy---shiploading/">Read more…</a>
 		</div>
 	</div>
 </article>

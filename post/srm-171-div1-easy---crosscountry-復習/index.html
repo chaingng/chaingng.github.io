@@ -7,50 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 171 DIV1 Easy - CrossCountry (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1950&amp;rd=4660
-・チーム数と、ゴールしたメンバーのチーム名が到着順に与えられる。
-・チームのスコアは最初にゴールした５人の到着順の和になる。
-ゴールした人数が５人未満のチームはカウント対象にならない。
-・スコアの小さい順にチームを並べる。
-スコアが同じとき、６人目のゴール者がいる場合はその到着が早い方が先になる。
-６人目のゴール者がいない場合は６人目のゴール者がいる方が先になる。
-それでも同一の場合は、チーム名の昇順になる。
-このとき、チーム名を順番に並べた文字列を返す。
-解き方 
-ソートの方法が複雑なので、独自にソート順を定義する。
-こちらを参考にさせていただきました。
-http://d.hatena.ne.jp/minus9d/20130501/1367415668
-コード 
-class CrossCountry {
-public:
-struct team{
-int score;
-int sixth;
-char name;
-bool operator&lt;(const team &amp; a)const{
-if(score!=a.score)return score&lt;a.score;
-if(sixth!=a.sixth)return sixth&lt;a.sixth;
-return name&lt;a.name;
-}
-};
-string scoreMeet(int numTeams, string finishOrder) {
-vector&lt;team&gt; teams;
-string ans=&#34;&#34;;
-FORE(i,0,numTeams){
-team t;
-t.score=0;
-t.sixth=10000;
-t.name=&#39;A&#39;&#43;i;
-int num=0;
-FORE(j,0,finishOrder.size()){
-if((&#39;A&#39;&#43;i)==finishOrder[j]){
-if(num&lt;5)t.score&#43;=j;
-else if(num==5)t.sixth=j;
-num&#43;&#43;;
-}
-}
-if(num&gt;=5)teams.push_back(t);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1950&amp;rd=4660 ・チーム数と、ゴールしたメンバーのチーム名が到着順に与えられる。 ・チームのスコアは最初にゴールした５人の到着順の和になる。 ゴールした人" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-171-div1-easy---crosscountry-%E5%BE%A9%E7%BF%92/" />
 

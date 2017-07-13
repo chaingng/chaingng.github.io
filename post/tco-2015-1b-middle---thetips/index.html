@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="TCO 2015 1B Middle - TheTips" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433
-N人のクルーが隠れており、そのクルーを見つけたい。
-各クルーについては見つけられる確率が与えられている。
-また、各クルーについて、そのクルーが見つかったときに見つけられるクルーも与えられる。
-このとき、見つけられるクルーの数の期待値を求める。
-解き方 
-期待値なのでｄｐを考えたいが、順序関係を明らかにする必要がある。
-まず期待値の考え方として独立な事象とそうでない事象を考える。
-独立な事象としては、全体で見つかる人数に対して、各クルーが見つかるかどうかは
-独立で考えて和をとればよい。
-そして各クルーについて見つかるかどうかは、その他のクルーが見つかったときにそのクルーも必ず見つかる場合について、そのクルーが全て見つからない事象の積の排他を
-とればよい。
-コード 
-class TheTips {
-public: double solve(vector&lt;string&gt; clues, vector&lt;int&gt; probability) {
-int n=probability.size();
-int d[n][n];
-FORE(i,0,n)FORE(j,0,n)d[i][j]=(clues[i][j]==&#39;Y&#39;);
-FORE(i,0,n)d[i][i]=1;
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)d[i][j]|=d[i][k]&amp;d[k][j];
-double ret=0.0;
-FORE(i,0,n){
-double p=1.0;
-FORE(j,0,n)if(d[j][i])p*=(1.0-probability[j]*0.01);
-ret&#43;=(1.0-p);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433 N人のクルーが隠れており、そのクルーを見つけたい。 各クルーについては見つけられる確率が与えられている。 また、各クルーについて、そのクル" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/tco-2015-1b-middle---thetips/" />
 

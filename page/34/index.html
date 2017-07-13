@@ -74,34 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=328
-商品の価格の一覧が与えられる。
-最初はすべて伏せられていて金額がいくらかわからない。
-ここで、プレイヤーは任意の数だけ伏せられている数をめくり、めくったものが昇順に並んでいるようにしたい。
-このとき、昇順となる一番最長のめくった数とその場合の数を求める。
-解き方 
-単純なｄｐでは数字が１０＾６であるため解けないので、少し工夫したｄｐを使う。
-ｄｆｓによる降順からの探索ではなく、漸化式のように順に最適値を求めていき、すでに求まっている最適値からその位置での最適値を求めるようにする。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ThePriceIsRight {
-public: vector&lt;int&gt; howManyReveals(vector&lt;int&gt; prices) {
-int n=prices.size();
-int len[n],cnt[n];
-memset(len,0,sizeof(len));
-memset(cnt,0,sizeof(cnt));
-FORE(i,0,n){
-int maxlen=0;
-FORE(j,0,i)if(prices[i]&gt;prices[j])maxlen=max(maxlen,len[j]);
-FORE(j,0,i)if(len[j]==maxlen&amp;&amp;prices[i]&gt;prices[j])cnt[i]+=cnt[j];
-if(maxlen==0)cnt[i]=1;
-len[i]=maxlen+1;
+			問題 http://topcoder.bgcoder.com/print.php?id=328 商品の価格の一覧が与えられる。 最初はすべて伏せられていて金額がいくらかわからない。 ここで、プレイヤーは任意の数だけ伏せられている数をめ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-159-div1-middle----thepriceisright%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -121,26 +94,10 @@ len[i]=maxlen+1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。
-①CPU使用率とメモリ使用状況の表示
-vmstatを使うことでCPU・メモリ使用率のログが取ることができる。
-5秒間隔で３回ログを取りたいときは、以下のように引数を指定する。
-$vmstat 5 3
-②時刻情報の表示
-使用率の分析にはいつ出力されたかが知りたいと思うので、時刻と紐づけたいことが多いと思う。これはpipとawkを使うことで実現する。
-vmstat 1 | awk '{ print strftime("%Y/%m/%d %H:%M:%S"), $0 }'
-awkで時刻情報を出力させた後、現在の行(vmstat)を出力させている。
-これで１秒間隔で、年／月／日　hh:mm:sssの時刻情報と紐づけて出力することができる。
-③ログへの出力
-実は上記のコマンドの標準出力をログに出そうとしても出力されない。
-vmstat 1 | awk '{ print strftime("%Y/%m/%d %H:%M:%S"), $0 }'　&gt;&gt; sample.log
-これは、pipの後ろの処理が終了してからバッファに保存してある情報をファイルに書き込みむため。
-そのため、system()関数を用いてバッファをリフレッシュする。
-vmstat 1 | awk '{ print strftime("%Y/%m/%d %H:%M:%S"), $0 } {system("")}'　&gt;&gt; sample.log
-こちらに詳細な解説が。
-http://www.kt.rim.or.jp/~kbk/gawk-30/gawk_13.html
-これでやっと、途中でコマンドを終了させてもログに書き込まれているようになる。
- 
+			Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。 ①CPU使用率とメモ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -157,32 +114,7 @@ http://www.kt.rim.or.jp/~kbk/gawk-30/gawk_13.html
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=975
-アルファベットＡ～Ｚからなる配列が与えられる。
-長さlengthが与えられ、このときAを長さ1とし、B,C,,,と長さ分の連続したアルファベットを作りたい。
-連続したアルファベットを作る際には、配列の任意の文字からスタートして、縦横斜めに一つずつ移動することができる。
-このとき、作ることのできる連続したアルファベットは何通りあるか求める。
-ただし、１０＾９通り以上ある場合は１０＾９を返す。
-解き方 
-ｄｐで解く問題。ただし、１０＾９を超えているかチェックし超えていればそこで打ち切る処理が必要。
-ｄｐ＝０で初期化すると実装はより簡単だが、探索して何もなかったときの判定ができないので計算量が間に合わない場合がある。
-そのため、ｄｐ＝ー１で初期化して探索済みの場合は０以上になるようにした。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int length,w,h;
-int p[60][60];
-long long dp[60][60];
-class AlphabetCount {
-public:
-int rec(int r,int c,int len){
-if(dp[r][c]!=-1)return dp[r][c];
-if(len==length-1)return dp[r][c]=1;
+			問題 http://topcoder.bgcoder.com/print.php?id=975 アルファベットＡ～Ｚからなる配列が与えられる。 長さlengthが与えられ、このときAを長さ1とし、B,C,,,と長さ分の連続したアルフ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-253-div1-middle---alphabetcount%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -202,35 +134,7 @@ if(len==length-1)return dp[r][c]=1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=1005
-文字列が与えられたとき、その文字列中１回しか出現しないアルファベットの和がその文字列のスコアになる。
-ある文字列が与えられた時、スコアが最も大きくなるサブ文字列を求める。
-ただし同じスコアの場合は、アルファベットの昇順のものを返す。
-解き方 
-コーディングは単純だが、単純に実装するとO（2500^3）計算量が間に合わない。
-そこで、最初に最も高いスコアがいくつであるか走査する。
-スコアがわかった後にもう一度走査させて、最大のスコアのもののみ文字列が昇順であるかの判定を行う。
-これにより計算量がＯ（2*2500^2）とオーダーが一つ下がるので時間内に解くことができる。
-オーダーを線形に変換できるかがポイント。
-実装するときに細かく計算量を見積もらないと、システムテストで失敗してしまう。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SuperString {
-public:
-string goodnessSubstring(vector&lt;string&gt; superstring) {
-string str="";
-FORE(i,0,superstring.size())str+=superstring[i];
-int best=0;
-FORE(i,0,str.size()){
-int check[26]={},cnt=0;
-FORE(j,i,str.size()){
-if(check[str[j]-'A']==0)cnt++;
+			問題 http://topcoder.bgcoder.com/print.php?id=1005 文字列が与えられたとき、その文字列中１回しか出現しないアルファベットの和がその文字列のスコアになる。 ある文字列が与えられた時、スコアが
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-259-div1-middle---superstring%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -250,31 +154,7 @@ if(check[str[j]-'A']==0)cnt++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=1248
-各囚人がペアで鎖でつながれている。
-ただし、囚人のペアによっては鎖でつながれていない。
-ここで、つながれている鎖それぞれの長さがわかっている。
-このとき、２人の囚人が最も離れることのできる距離を求める。
-ただし、つながれていない場合はー１を返す。
-解き方 
-囚人aと bの距離は、その他の囚人xに対してa-b &lt;=a-x+x-bでなければいけない。
-この距離は小さい方から決まっていくので、鎖の長さ０から最大の長さそれぞれに対して
-上記の式を満たすよう長さを更新していき、最後に残った最も長い距離を返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int p[60][60];
-class EscapingJail {
-public:
-int calc(char ch){
-if(ch==' ')return 1e+9;
-if('0'&lt;=ch &amp;&amp; ch&lt;='9')return (int)(ch-'0');
-if('a'&lt;=ch &amp;&amp; ch&lt;='z')return (int)(ch-'a')+10;
+			問題 http://topcoder.bgcoder.com/print.php?id=1248 各囚人がペアで鎖でつながれている。 ただし、囚人のペアによっては鎖でつながれていない。 ここで、つながれている鎖それぞれの長さがわかってい
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-301-div1-middle---escapingjail%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -294,32 +174,7 @@ if('a'&lt;=ch &amp;&amp; ch&lt;='z')return (int)(ch-'a')+10;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9922&amp;rd=13504
-X[n]=X[n/p-x]+X[n/q-y]となる関数がある。
-ただし、n&lt;=0のときX[n]=1となる。
-ｎが与えられたとき、X[n]がいくつになるか求める。
-解き方
-nは１０＾１３なので全探索では解けない。
-ｄｐを利用した場合でも、10^13のメモリ空間は使えないのでメモリ量としても解くことができない。
-ここで、関数の性質からnが小さいほどメモ化が有効になることが想定される。
-そのため、メモリ量として保存できるだけはメモ化して、それより大きい数については単純にＤＦＳすることでメモリ量も計算量も抑えて解くことができる。
-最初はmapを使っていたが動的にメモリを確保するデータ構造ではエラーが起きてしまうので、単純にlong long型で最初からメモリを確保しておく。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int p,q,x,y;
-long long dp[5000001];
-class InfiniteSequence2 {
-public:
-long long f(long long n){
-if(n&lt;=0)return 1;
-if(n&lt;=5000000&amp;&amp;dp[n]!=0)return dp[n];
-long long a=n/p-x,b=n/q-y;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9922&amp;rd=13504 X[n]=X[n/p-x]+X[n/q-y]となる関数がある。 ただし、n&lt;=0のときX[n]=1となる。 ｎが与えられたとき、X[
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-413-div1-middle---infinitesequence2%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -339,34 +194,7 @@ long long a=n/p-x,b=n/q-y;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=1154
-１個、２個、３個・・・とボールを三角形上に積み重ねていく。
-このときに内部に存在する三角形は１，４、１０個・・・になる。
-Ｎ個を内部に存在する三角形の数の和で現したいとき、
-最低何個の三角形が必要になるか求める。
-解き方 
-まず、内部に存在する三角形の個数をＮまで全て調べる。
-その後ｄｐを利用する。
-今回Ｎは最大３＊１０＾５なので、ｄｐの全探索で間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class CannonBalls {
-public: int fewestPiles(int n) {
-vector&lt;int&gt; p;
-for(int x=0,cur=0,add=0;cur&lt;=n;x++){
-add+=x;
-cur+=add;
-p.push_back(cur);
-}
-int dp[n+1];
-FORE(i,0,n+1)dp[i]=1e+9;
-dp[0]=0;
+			問題 http://topcoder.bgcoder.com/print.php?id=1154 １個、２個、３個・・・とボールを三角形上に積み重ねていく。 このときに内部に存在する三角形は１，４、１０個・・・になる。 Ｎ個を内部に存在
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-288-div1-middle---cannonballs%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -386,34 +214,7 @@ dp[0]=0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2943&amp;rd=5858
-正の整数の集合が与えられ、この数の平方根を考える。
-この平方根に対して足すことができるものを全てまとめて、最後に昇順にして返す。
-解き方 
-全ての平方根に対して整数を切り出して、根が一緒のものをまとめる。
-最後に切り出した整数をまた根の中に戻してあげて、昇順にソートすればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[1001];
-class SumOfSquareRoots {
-public:
-vector&lt;int&gt; shortestList(vector&lt;int&gt; A) {
-memset(dp,0,sizeof(dp));
-FORE(i,0,A.size()){
-int x=A[i];
-int cost=1;
-for(int j=2;j*j&lt;=A[i];j++){
-if(x%(j*j)==0){
-while(x%(j*j)==0){
-cost*=j;
-x/=(j*j);
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2943&amp;rd=5858 正の整数の集合が与えられ、この数の平方根を考える。 この平方根に対して足すことができるものを全てまとめて、最後に昇順にして返す。 解き方 全
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-212-div1-middle---sumofsquareroots%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -433,34 +234,7 @@ x/=(j*j);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2921&amp;rd=5851
-６面体を左下が重なるように順に大きいものを重ねていく。
-そのときの点の数は１、６，１８，２５，４５，６６・・・となる。
-また、正の整数Ｎが与えられた時、これを上記の数の組み合わせで表現したい。
-どのＮであっても６個以下の組み合わせで表現することができ、
-Ｎ＝２６のときが６個の組み合わせの最大数、
-Ｎ＝１３０のときが５個の組み合わせの最大数、
-Ｎ＝１４６８５８のときが４個の組み合わせの最大数になる。
-Ｎが与えられた時、組み合わせる６面体の数の最小の個数を求める。
-解き方 
-Ｎが１３０以下のときはｄｐで全探索を用いる。
-それ以上のときは６面体全てのペアの組み合わせの値を求め、さらにその組み合わせでＮを表現することで、４個以下の組み合わせになるので答えが求まる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[1000001];
-class HexagonalSums {
-public:
-int minLength(int N) {
-vector&lt;int&gt; v;
-int prev=1;
-for(int x=2;prev&lt;=1000000;x++){
-v.push_back(prev);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2921&amp;rd=5851 ６面体を左下が重なるように順に大きいものを重ねていく。 そのときの点の数は１、６，１８，２５，４５，６６・・・となる。 また、正の整数Ｎが
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-205-div1-middle---hexagonalsums%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -480,36 +254,7 @@ v.push_back(prev);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10766&amp;rd=14157
-以下の条件を満たす３角形を考える。
-・３辺a,b,cがすべて整数
-・a^2+b^2=c^2
-・a,bの最大公約数が1
-また辺の集合が与えられ、この中からできるだけ多く(a,b)のペアを作りたい。
-このとき、(a,b)のペアの最大数を求める。
-解き方 
-a,bの最大公約数が1であるということは、片方が奇数で片方が偶数になる。
-仮に両方とも偶数であれば最大公約数は2以上になり、
-両方とも奇数であればa^2+b^2=c^2が成り立たない。
-上記より奇数のグループと偶数のグループからペアの最大数を見つける問題になるので
-２部マッチングが適用できる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int edge[2600][2600],visited[2600],to[2600],ret,n;
-class PythTriplets {
-public:
-bool dfs(int x){
-if(x==-1)return true;
-if(visited[x])return false;
-visited[x]=true;
-FORE(i,0,n){
-if(edge[x][i]&amp;&amp;dfs(to[i])){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10766&amp;rd=14157 以下の条件を満たす３角形を考える。 ・３辺a,b,cがすべて整数 ・a^2+b^2=c^2 ・a,bの最大公約数が1 また辺の集合が与えられ、
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-477-div1-middle---pythtriplets%E5%BE%A9%E7%BF%92/">Read more…</a>

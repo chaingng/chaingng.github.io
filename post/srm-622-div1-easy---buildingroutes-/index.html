@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 622 DIV1 Easy - BuildingRoutes ××○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13193&amp;rd=15855
-・有向グラフとエッジの距離が与えられる。
-・ある点からある点に行くまでに通る最短の経路を考えるとき、
-すべての点から点までの最短経路で通る数がT以上であれば、その経路の距離の和を求める。
-解き方 ・最短距離といえばワーシャルフロイドだが、途中の経路を知る必要がある。
-・それではダイクストラ？でも途中の経路を知るのは難しい・・・で断念。
-→他の人のコードをみる
-・ワーシャルフロイドを適用したあと、ある最短経路のうちあるエッジを通るかは、
-そのエッジを含めた距離が最短経路と一致していればよい。
-・反省：最短経路と途中の経路の関係を応用できるようにすべき。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class BuildingRoutes {
-public: int build(vector&lt;string&gt; dist, int T) {
-int n=dist.size();
-int d[n][n],cnt[n][n];
-memset(cnt,0,sizeof(cnt));
-FORE(i,0,n)FORE(j,0,n)d[i][j]=dist[i][j]-&#39;0&#39;;
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)d[i][j]=min(d[i][j],d[i][k]&#43;d[k][j]);
-FORE(i,0,n)FORE(j,0,n)if(i!=j){
-FORE(k,0,n)FORE(l,0,n)if(k!=l &amp;&amp; d[i][k]&#43;dist[k][l]-&#39;0&#39;&#43;d[l][j]==d[i][j])cnt[k][l]&#43;&#43;;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13193&amp;rd=15855 ・有向グラフとエッジの距離が与えられる。 ・ある点からある点に行くまでに通る最短の経路を考えるとき、 すべての点から点までの最短経路で通る" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-622-div1-easy---buildingroutes-/" />
 

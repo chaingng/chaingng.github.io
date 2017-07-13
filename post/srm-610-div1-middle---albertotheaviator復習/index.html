@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 610 DIV1 Middle - AlbertoTheAviator　（復習×）" />
-<meta property="og:description" content="問題 
-車を運転しており、最初に持っている燃料Fが与えられる。
-また、複数の給油ポイントがあり、そこまでにいくのに必要な燃料durationと給油できる燃料refuelが与えられる。
-好きな給油ポイントを選んで行ってよいとき、たどりつくことのできる最大の給油ポイントの数を求める。
-解き方 
-給油ポイントの数が５０であるため、Ｏ（５０！）と全探索では解けない。
-そのため、順番を考慮しないとｄｐで解くことはできない。
-では、どのようにたどる順番があるかを考える。
-問題文より、必要な燃料の順では解けないことがわかる。
-証明として、refuelの降順にたどることができないかを反例を用いて考える。
-仮に、ある給油ポイントがduration[i]、refuel[i]、
-それよりもrefuelが少ない給油ポイントduration[j]、refuel[j]を考える。
-refuelが少ない給油ポイントから多いポイントに行けて、
-多い給油ポイントから少ない給油ポイントに行けないとすると、
-F-duration[j]&#43;refuel[j]&gt;=duration[i]
-F-duration[i]&#43;refuel[i]&lt;duration[j]
-式を変形すると、
-F&#43;refuel[j]&gt;=duration[i]&#43;duration[j]
-F&#43;refuel[i]&lt;duration[i]&#43;duration[j]
-refuel[i]&gt;refuel[j]より上記は成立しないので、
-少ない給油ポイントから多い給油ポイントに行けるときは、
-必ず多い給油ポイントから少ない給油ポイントに行けることがわかる。
-よって、refuelの降順にｄｐを適用していけばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][5001];
-class AlbertoTheAviator {
-public: int MaximumFlights(int F, vector&lt;int&gt; duration, vector&lt;int&gt; refuel) {" />
+<meta property="og:description" content="問題 車を運転しており、最初に持っている燃料Fが与えられる。 また、複数の給油ポイントがあり、そこまでにいくのに必要な燃料durationと給油" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-610-div1-middle---albertotheaviator%E5%BE%A9%E7%BF%92/" />
 

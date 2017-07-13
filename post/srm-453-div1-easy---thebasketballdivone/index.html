@@ -7,48 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 453 DIV1 Easy - TheBasketballDivOne" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10687&amp;rd=13907
-解き方 
-全探索可能。
-DFSを用いて各チームの勝ち負けについてすべて調べ、
-行列の対角側についてはすでに調べているのですでに決められた値を代入して
-更新していく。
-コード 
-int a[5][5];
-set&lt;vector&lt;int&gt; &gt; s;
-class TheBasketballDivOne {
-public:
-void rec(int n,int x,int y){
-if(n==x){
-int b[n];
-memset(b,0,sizeof(b));
-FORE(i,0,n)FORE(j,0,n)b[i]&#43;=a[i][j];
-vector&lt;int&gt; vx;
-FORE(i,0,n)vx.push_back(b[i]);
-sort(vx.rbegin(),vx.rend());
-s.insert(vx);
-return;
-}
-int xx=x&#43;(y==n-1 ? 1 : 0);
-int yy=(y&#43;1)%n;
-if(x&gt;y){
-a[x][y]=2-a[y][x];
-rec(n,xx,yy);
-}
-else if(y&gt;x){
-FORE(i,0,3){
-a[x][y]=i;
-rec(n,xx,yy);
-}
-}
-else rec(n,xx,yy);
-}
-int find(int n, int m) {
-int ret=0;
-s.clear();
-rec(n,0,0);
-for(set&lt;vector&lt;int&gt; &gt;::iterator it=s." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10687&amp;rd=13907 解き方 全探索可能。 DFSを用いて各チームの勝ち負けについてすべて調べ、 行列の対角側についてはすでに調べているのですでに決められた値を代" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-453-div1-easy---thebasketballdivone/" />
 

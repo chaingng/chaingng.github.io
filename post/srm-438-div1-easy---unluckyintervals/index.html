@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 438 DIV1 Easy - UnluckyIntervals" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10356&amp;rd=13803
-luckyである整数の集合が与えられる。
-また、unluckyな区間の取り方が定義される。
-unluckyな区間とは、[A B]となるA&lt;Bである取り方で
-区間中一つもluckyな数字がない場合となる。
-各整数について、unluckyな区間の取り方ができるだけ少ない方がよい。
-整数ｎ個を、できるだけunluckyでない順に求める。
-解き方 
-整数は10^9であるためすべての数字を調べられない。
-ただしnは100であるため、luckyな数字の前後ｎ個ずつとってあげればよい。
-unluckyな値はその前後のluckyな整数によって定義されるので
-ピックアップした各整数について計算してあげればよい。
-整数のピックアップについて重複しないことに注意。
-コード 
-vector&lt;pair&lt;long long,long long&gt; &gt; p;
-class UnluckyIntervals {
-public: vector&lt;int&gt; getLuckiest(vector&lt;int&gt; luckySet, int n) {
-int m=luckySet.size();
-p.clear();
-FORE(i,0,m)p.push_back(make_pair(0LL,luckySet[i]));
-luckySet.push_back(0);
-sort(all(luckySet));
-int cur=0;
-FORE(i,0,m){
-for(long long j=luckySet[i]&#43;1;j&lt;luckySet[i&#43;1]&amp;&amp;j&lt;luckySet[i]&#43;n;j&#43;&#43;){
-long long cost=max(0LL,(long long)(luckySet[i&#43;1]-j)*(j-luckySet[i])-1);
-p.push_back(make_pair(cost,j));
-cur=j;
-}
-for(long long j=max(cur&#43;1,luckySet[i&#43;1]-n);j&lt;luckySet[i&#43;1];j&#43;&#43;){
-int valid=1;
-FORE(k,0,m&#43;1)if(j==luckySet[k])valid=0;
-if(!valid)continue;
-long long cost=max(0LL,(long long)(luckySet[i&#43;1]-j)*(j-luckySet[i])-1);
-p.push_back(make_pair(cost,j));
-cur=j;
-}
-}
-for(long long i=luckySet[m]&#43;1;i&lt;luckySet[m]&#43;n&#43;1;i&#43;&#43;){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10356&amp;rd=13803 luckyである整数の集合が与えられる。 また、unluckyな区間の取り方が定義される。 unluckyな区間とは、[A B]となるA&l" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-438-div1-easy---unluckyintervals/" />
 

@@ -77,35 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8480&amp;rd=13503
-A,B,Cからなる文字列がある。
-ただし、AとBとCが連続して３つ並ばないようにしたい。
-文字列の長さnが与えられたとき、そのような文字列の総数を求める。
-解き方 
-dpで解けそうな問題。
-前の状態として直前２つの文字が何であったか覚えていればよいので、
-dp[現在位置][２つ前までのAの有無][２つ前までのBの有無][２つ前までのCの有無]
-としてあげればよい。
-コード 
-class ForbiddenStrings {
-public: long long countNotForbidden(int n) {
-long long dp[n+1][4][4][4];
-memset(dp,0,sizeof(dp));
-dp[0][0][0][0]=1;
-FORE(i,0,n)FORE(j,0,4)FORE(k,0,4)FORE(l,0,4){
-int nextj=(j&amp;1)&lt;&lt;1;
-int nextk=(k&amp;1)&lt;&lt;1;
-int nextl=(l&amp;1)&lt;&lt;1;
-if(!(k &amp;&amp; l))dp[i+1][nextj|1][nextk][nextl]+=dp[i][j][k][l];
-if(!(j &amp;&amp; l))dp[i+1][nextj][nextk|1][nextl]+=dp[i][j][k][l];
-if(!(j &amp;&amp; k))dp[i+1][nextj][nextk][nextl|1]+=dp[i][j][k][l];
-}
-long long ret=0;
-FORE(i,0,4)FORE(j,0,4)FORE(k,0,4)ret+=dp[n][i][j][k];
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8480&amp;rd=13503 A,B,Cからなる文字列がある。 ただし、AとBとCが連続して３つ並ばないようにしたい。 文字列の長さnが与えられたとき、そのような文字列
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-412-div1-easy---forbiddenstrings-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -122,50 +97,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9823&amp;rd=12181
-複数の文字列が与えられる。
-各文字列を順につなげていく。
-ただし、これまでの文字列の後ろ部分と、次につなげる文字列の前部分で一致
-しているところがあれば重ねてつなげることができる。
-また、毎回つなげる位置は、前につなげた位置もしくはそれより後ろで
-なければいけない。
-このとき、最後にできた文字列のうち最小のものの長さを求める。
-解き方 
-貪欲法で解くことができる。
-
-つなげる位置は毎回後ろになっていくため、
-毎回最適なつなぎかたを求めていけばよい。
-コード 
-class OrderedSuperString {
-public:
-string rec(int pos,string s1,string s2){
-int cur=0;
-while(pos+cur&lt;s1.size() &amp;&amp; cur&lt;s2.size()){
-if(s1[pos+cur]!=s2[cur])return "";
-cur++;
-}
-if(cur&gt;=s2.size())return s1;
-return s1+s2.substr(cur);
-}
-int getLength(vector&lt;string&gt; words) {
-int n=words.size(),pos=0;
-string str="";
-FORE(i,0,n){
-string tmp="";
-while(pos&lt;str.size()){
-tmp=rec(pos,str,words[i]);
-if(!tmp.empty()){
-str=tmp;
-break;
-}
-pos++;
-}
-if(tmp.empty())str+=words[i];
-}
-return str.size();
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9823&amp;rd=12181 複数の文字列が与えられる。 各文字列を順につなげていく。 ただし、これまでの文字列の後ろ部分と、次につなげる文字列の前部分で一致 していると
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-409-div1-easy---orderedsuperstring/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -182,32 +117,10 @@ return str.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8467&amp;rd=12180
-キャンドルが複数与えられ、それぞれの高さがわかっている。
-１日目は１つ、2日めは２つ、、、とキャンドルをつけていき、
-最大何日目までキャンドルをつけられるか求める。
-ただし、つけられたキャンドルは１日につき高さが１減り、０となると消滅してしまう。
-解き方 
-要素数が５０であることから最大値は５０になる。
-よって、毎回ソートしてもO(50*50*50log50)=O(1.25*10^5log50)となり
-貪欲法で全探索しても間に合う。
-コード 
-class OlympicCandles {
-public: int numberOfNights(vector&lt;int&gt; candles) {
-int n=candles.size();
-int turn=0;
-while(turn&lt;n){
-sort(candles.rbegin(),candles.rend());
-for(int i=0;i&lt;turn+1;i++){
-if(candles[i]&lt;=0)return turn;
-}
-for(int i=0;i&lt;turn+1;i++)candles[i]--;
-turn++;
-}
-return turn;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8467&amp;rd=12180 キャンドルが複数与えられ、それぞれの高さがわかっている。 １日目は１つ、2日めは２つ、、、とキャンドルをつけていき、 最大何日目までキャン
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-408-div1-easy---olympiccandles-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -224,39 +137,10 @@ return turn;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8784&amp;rd=12178
-パイチャートを作り、各要素が全体の何％を占めるかわかっている。
-このパイチャートを作るにあたって、できるだけ区切りの線が真ん中を
-横断するようにしたい。
-要素我与えられたとき、すべての作り方の中で
-最大となる区切りの線の数を求める。
-解き方 
-区切りの線はある線からちょうど５０％分のパイを並べたときに
-作ることができる。
-また、要素数は８のためすべての並べ方について調べることができる。
-よって、各並べ方の部分列の和が５０となるものの和が区切りの和となるので
-そのようなうち最大のものを答えとする。
-ただし、最初から５０％をとったとき、残りも５０％となり重複してしまうので
-このケースだけ１つしか数え内容にする。
-コード 
-class SymmetricPie {
-public: int getLines(vector&lt;int&gt; dogs) {
-int n=dogs.size();
-int ret=0;
-sort(all(dogs));
-do{
-int score=0;
-FORE(i,0,n){
-int tmp=0;
-FORE(j,i,n)if(tmp&lt;50)tmp+=dogs[j];
-if(tmp==50 &amp;&amp; i!=0)score++;
-}
-ret=max(ret,score);
-}while(next_permutation(all(dogs)));
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8784&amp;rd=12178 パイチャートを作り、各要素が全体の何％を占めるかわかっている。 このパイチャートを作るにあたって、できるだけ区切りの線が真ん中を 横断する
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-406-div1-easy---symmetricpie-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -273,46 +157,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8215&amp;rd=12176
-逆三角形からなる数字の配列が与えられる。
-高さが４のとき、1行目は数字が４つ、2行めは３つ、、、４行めは数字が１つになる。
-また、各行について１つは数字がわかっているがその他の数字は？となりわかっていない。
-ある位置の数字は、その上にある数字と右上にある数字の和の一桁目の数になる。
-このとき、？の数字をすべて復元して求める。
-解き方
-一番下の行は１つ、つまりすべての数字が分かっているため、
-すべての数字を復元することができる。
-また、復元については下から上へ順に行っていけばよい。
-ある行について調べるとき、その下の行はすべてわかっていることから
-？２
-３
-のように上側の数字が？になる。
-このとき、（３＋１０ー２）％１０が？の数になるので
-このようにすべての？を求めてあげればよい。
-コード 
-class RevealTriangle {
-public: vector&lt;string&gt; calcTriangle(vector&lt;string&gt; q) {
-int n=q.size();
-for(int i=n-2;i&gt;=0;i--){
-while(1){
-if(q[i].find('?')==string::npos)break;
-for(int j=0;j&lt;n-i;j++){
-int cnt= (q[i][j]=='?') + (q[i][j+1]=='?');
-if(cnt==1){
-int y=0;
-if(q[i][j]!='?')y=q[i][j]-'0';
-else y=q[i][j+1]-'0';
-int x=(q[i+1][j]-'0'+10-y)%10;
-if(q[i][j]=='?')q[i][j]=x+'0';
-else q[i][j+1]=x+'0';
-}
-}
-}
-}
-return q;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8215&amp;rd=12176 逆三角形からなる数字の配列が与えられる。 高さが４のとき、1行目は数字が４つ、2行めは３つ、、、４行めは数字が１つになる。 また、各行につ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-404-div1-easy---revealtriangle-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -329,32 +177,10 @@ return q;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8568&amp;rd=12175
-整数aとbが与えられる。
-a以上かつb以下の整数のうち、4と7からなる整数の総数を求める。
-解き方 
-a,bは10^9でありすべて全探索しては間に合わないが、
-４と７からなる数字は2^9のため、
-DFSにて４と７からなるすべての数字について調べればよい。
-コード 
-int ret,a,b;
-class TheLuckyNumbers {
-public:
-void dfs(long long x){
-if(x&lt;=b){
-dfs(x*10+4);
-dfs(x*10+7);
-if(a&lt;=x)ret++;
-}
-}
-int count(int a_, int b_) {
-a=a_,b=b_;
-ret=0;
-dfs(0);
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8568&amp;rd=12175 整数aとbが与えられる。 a以上かつb以下の整数のうち、4と7からなる整数の総数を求める。 解き方 a,bは10^9でありすべて全探索しては
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-403-div1-easy---theluckynumbers-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -371,31 +197,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8776&amp;rd=12173
-整数fieldDiagramが与えられて、fieldDiagram行からなるBOXを作る。
-各行0,1,2,...において、長さはそれぞれfieldDiagram,fieldDiagram-1,fieldDiagram-2以下で
-なければならない。
-また、各行において上の行以下の長さでなければならない。
-このような条件を満たすようなBOXの作り方の総数を求める。
-解き方 
-上の行における長さがわかっていれば、上から順にたどっていくことで総数が
-計算できるのでｄｐで解ける。
-すべて０の場合は空になるので、最後にそのケース１通りを引いてあげれば良い。
-コード 
-class FIELDDiagrams {
-public: long long countDiagrams(int f) {
-long long dp[f+1][f+1];
-memset(dp,0,sizeof(dp));
-dp[0][f]=1LL;
-FORE(i,0,f)FORE(j,0,f+1){
-for(int k=min(j,f-i);k&gt;=0;k--)dp[i+1][k]+=dp[i][j];
-}
-long long ret=0;
-FORE(i,0,f+1)ret+=dp[f][i];
-return ret-1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8776&amp;rd=12173 整数fieldDiagramが与えられて、fieldDiagram行からなるBOXを作る。 各行0,1,2,...において、長さはそれぞ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-401-div1-easy---fielddiagrams/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -412,44 +217,10 @@ return ret-1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8763&amp;rd=12172
-ある整数ｎが与えられる。
-このｎが素数の階乗で表せるならその素数と階乗数を返す。
-そのように表せられなければ空の文字列を返す。
-解き方 
-nの最大は10^18で全探索できないが、
-2乗の場合を除けば探索範囲はO(10^6)となり全探索可能。
-2乗の場合の計算はdouble*double==longにならないよう、型を一致させることに注意。
-コード 
-class StrongPrimePower {
-public: vector&lt;int&gt; baseAndExponent(string n) {
-vector&lt;int&gt; ans;
-long long x;
-stringstream out(n);
-out&gt;&gt;x;
-for(int i=2;i&lt;=1000000 &amp;&amp; i&lt;x;i++)if(x%i==0){
-long long tmp=x;
-int cnt=0;
-while(tmp%i==0){
-tmp/=i;
-cnt++;
-}
-if(tmp==1){
-ans.push_back(i);
-ans.push_back(cnt);
-return ans;
-}
-return ans;
-}
-long long y=sqrt((double)x);
-if(y*y==x){
-ans.push_back(y);
-ans.push_back(2);
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8763&amp;rd=12172 ある整数ｎが与えられる。 このｎが素数の階乗で表せるならその素数と階乗数を返す。 そのように表せられなければ空の文字列を返す。 解き方 nの最
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-400-div1-easy---strongprimepower/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -466,32 +237,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13771&amp;rd=16417
-・問題Easy,EM,Middle,MH,Hardの数が与えられる。
-・ここから問題のセットをできるだけ多く作りたい。
-・各問題セットは、Easy,Middle,Hardの問題を各一つ含む必要がある。
-・問題EMはEasyもしくはMiddleの代わり、MHはMiddleもしくはHardの代わりに使える。
-・このとき、作ることのできる最大の問題セット数を求める。
-解き方 
-まずは法則がないか考えてしまうが、かなり複雑になりそう。
-ここで作ることの問題セットがわかっていれば、それを作ることができるかどうかは
-すぐに判定することができる。
-よって二分探索を用いればよい。
-コード 
-class ProblemSets {
-public:
-bool ispossible(long long x,long long E, long long EM, long long M, long long MH, long long H){
-if(EM&lt;x-E)return false;
-if(MH&lt;x-H)return false;
-if(E&lt;x)EM-=(x-E);
-if(H&lt;x)MH-=(x-H);
-return M+EM+MH&gt;=x;
-}
-long long maxSets(long long E, long long EM, long long M, long long MH, long long H) {
-long long low=0,high=LONG_MAX;
-while(high-low&gt;1){
-long long mid=(low+high)/2;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13771&amp;rd=16417 ・問題Easy,EM,Middle,MH,Hardの数が与えられる。 ・ここから問題のセットをできるだけ多く作りたい。 ・各問題セットは、
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-657-div1-easy---problemsets-x/">Read more…</a>
@@ -511,35 +257,10 @@ long long mid=(low+high)/2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433
-ノード数Nの有向グラフが与えられる。
-エッジの数は最大Nであり、各ノードから出るエッジはひとつだけになる。
-このグラフで最初に任意のノードを選んでトークンを置き、Kステップ遷移させる。
-Kステップ経過後、どのトークンも重ならないような置き方の総数を求める。
-解き方 
-法則を考えようとして複雑なコードになってしまった。
-ステップ数Kは10^9であるがノード数が５０なので、シミュレーションさせて
-最後の位置の重なり具合で場合の数を求めればシンプルに求められる。
-コード 
-class Autogame {
-public: int wayscnt(vector&lt;int&gt; a, int K) {
-int n=a.size();
-int p[n];
-int MOD=1000000007;
-FORE(i,0,n)p[i]=i;
-for(int i=0;i&lt;K &amp;&amp; i&lt;100;i++){
-for(int j=0;j&lt;n;j++)p[j]=a[p[j]]-1;
-}
-int ret=1;
-FORE(i,0,n){
-int cnt=0;
-FORE(j,0,n)if(p[j]==i)cnt++;
-if(cnt&gt;0)ret=(ret*1LL*(cnt+1))%MOD;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433 ノード数Nの有向グラフが与えられる。 エッジの数は最大Nであり、各ノードから出るエッジはひとつだけになる。 このグラフで最初に任意のノード
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/tco-2015-1a-middle---autogame/">Read more…</a>
 		</div>
 	</div>
 </article>

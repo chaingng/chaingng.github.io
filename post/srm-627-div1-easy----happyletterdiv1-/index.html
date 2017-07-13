@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 627 DIV1 Easy -  HappyLetterDiv1 (××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13274&amp;rd=16008
-・ある文字列が与えられる。
-・２つ異なる文字を選んで消す操作を繰り返し、最後に残るアルファベットがひとつもしくは
-すべて同じアルファベットであるなら、そのアルファベットは答えとなる。
-・複数そのようなアルファベットがある際は、連結して昇順に並べたものを返す。
-解き方 
-・各アルファベットの出現回数を調べる。
-・すべてのアルファベットに対し、そのアルファベットを除いたものすべてに対しペアを求め
-あまりがそのアルファベット-1以上であれば答えを満たす。
-・ペアの消し方については、昇順にソートし１番最後と２番目に最後を引いていきソートを繰り返す。
-・サンプル通った。提出。
-→System Failed.
-・ペアの消し方がまずそう。１番最後と２番目に最後の文字を一つずつ引いていけば最適となる。
-・システム通った。
-・別解として、一番多く出現するアルファベットが過半数を超えなく、かつ合計が偶数であればすべて消すことができる。この方法は知っていたのに引き出せなかった。
-・反省：計算量が間に合うのであれば一番確実な方法を採用する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class HappyLetterDiv1 {
-public: string getHappyLetters(string letters) {
-int n=letters.size();
-int num[26];" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13274&amp;rd=16008 ・ある文字列が与えられる。 ・２つ異なる文字を選んで消す操作を繰り返し、最後に残るアルファベットがひとつもしくは すべて同じアルファベット" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-627-div1-easy----happyletterdiv1-/" />
 

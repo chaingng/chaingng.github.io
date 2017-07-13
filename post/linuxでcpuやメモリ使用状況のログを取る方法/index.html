@@ -7,26 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="LinuxでCPUやメモリ使用状況のログを取る方法" />
-<meta property="og:description" content="Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。
-①CPU使用率とメモリ使用状況の表示
-vmstatを使うことでCPU・メモリ使用率のログが取ることができる。
-5秒間隔で３回ログを取りたいときは、以下のように引数を指定する。
-$vmstat 5 3
-②時刻情報の表示
-使用率の分析にはいつ出力されたかが知りたいと思うので、時刻と紐づけたいことが多いと思う。これはpipとawkを使うことで実現する。
-vmstat 1 | awk &#39;{ print strftime(&#34;%Y/%m/%d %H:%M:%S&#34;), $0 }&#39;
-awkで時刻情報を出力させた後、現在の行(vmstat)を出力させている。
-これで１秒間隔で、年／月／日　hh:mm:sssの時刻情報と紐づけて出力することができる。
-③ログへの出力
-実は上記のコマンドの標準出力をログに出そうとしても出力されない。
-vmstat 1 | awk &#39;{ print strftime(&#34;%Y/%m/%d %H:%M:%S&#34;), $0 }&#39;　&gt;&gt; sample.log
-これは、pipの後ろの処理が終了してからバッファに保存してある情報をファイルに書き込みむため。
-そのため、system()関数を用いてバッファをリフレッシュする。
-vmstat 1 | awk &#39;{ print strftime(&#34;%Y/%m/%d %H:%M:%S&#34;), $0 } {system(&#34;&#34;)}&#39;　&gt;&gt; sample.log
-こちらに詳細な解説が。
-http://www.kt.rim.or.jp/~kbk/gawk-30/gawk_13.html
-これでやっと、途中でコマンドを終了させてもログに書き込まれているようになる。
- " />
+<meta property="og:description" content="Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。 ①CPU使用率とメモ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/" />
 

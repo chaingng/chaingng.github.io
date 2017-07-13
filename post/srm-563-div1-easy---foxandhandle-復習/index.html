@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 563 DIV1 Easy - FoxAndHandle (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12331&amp;rd=15185
-文字列が与えられて、その文字をシャッフルして元の文字にランダムに挿入する。
-挿入後の文字列が与えられた時、元の文字列のうち辞書順に最小のものを求める。
-解き方 
-文字の種類については、与えられた各文字を２で割ったものになる。
-次に文字の順番については、ひとつ選ぶとその前の文字は選べなくなる。
-選ぶべき文字の種類を満たし、かつ辞書順になるよう小さいアルファベットから
-上の判定を繰り返していく。
-コード 
-class FoxAndHandle {
-public: string lexSmallestName(string S) {
-int num[26]={0};
-string ans=&#34;&#34;;
-FORE(i,0,S.size())num[S[i]-&#39;a&#39;]&#43;&#43;;
-FORE(i,0,26)num[i]=num[i]/2;
-while(accumulate(num,num&#43;26,0)&gt;0){
-pair&lt;char,int&gt; best=make_pair(&#39;z&#39;&#43;1,-1);
-FORE(i,0,S.size()){
-if(num[S[i]-&#39;a&#39;]==0)continue;
-int count[26]={},invalid=0;
-FORE(j,i,S.size())count[S[j]-&#39;a&#39;]&#43;&#43;;
-FORE(j,0,26)if(num[j]&gt;count[j])invalid=1;
-if(invalid)continue;
-best=min(best,make_pair(S[i],i));
-}
-ans&#43;=best.first;
-num[best.first-&#39;a&#39;]--;
-S=S.substr(best.second&#43;1);
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12331&amp;rd=15185 文字列が与えられて、その文字をシャッフルして元の文字にランダムに挿入する。 挿入後の文字列が与えられた時、元の文字列のうち辞書順に最小の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-563-div1-easy---foxandhandle-%E5%BE%A9%E7%BF%92/" />
 

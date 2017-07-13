@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 588 DIV1 Easy - GUMIAndSongsDiv1" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12706&amp;rd=15700
-解き方 
-どの範囲のトーンを利用するか、という情報がわかれば
-あとはその範囲内のトーンについてdurationが小さい順に選んでいけばよい。
-コード 
-class GUMIAndSongsDiv1 {
-public: int maxSongs(vector&lt;int&gt; duration, vector&lt;int&gt; tone, int T) {
-int n=duration.size();
-vector&lt;pair&lt;int,int&gt; &gt; p;
-FORE(i,0,n)p.push_back(make_pair(tone[i],duration[i]));
-sort(all(p));
-int ret=0;
-FORE(i,0,n)FORE(j,i,n){
-vector&lt;int&gt; vx;
-for(int k=i;k&lt;=j;k&#43;&#43;)vx.push_back(p[k].second);
-sort(all(vx));
-int tt=T-(p[j].first-p[i].first);
-for(int k=0;k&lt;vx.size();k&#43;&#43;){
-tt-=vx[k];
-if(tt&lt;0)break;
-ret=max(ret,k&#43;1);
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12706&amp;rd=15700 解き方 どの範囲のトーンを利用するか、という情報がわかれば あとはその範囲内のトーンについてdurationが小さい順に選んでいけばよい。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-588-div1-easy---gumiandsongsdiv1/" />
 

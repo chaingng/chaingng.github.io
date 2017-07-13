@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 302 DIV1 Easy - DivisorInc （復習××○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6186&amp;rd=9823
-ある整数から、ある整数へ変換したい。
-ある整数からの変換は、１とその数以外の、その整数で割りきれる数を足すことができる。
-このとき、最小の変換回数を求める。
-解き方 
-ぱっと見てdpで解く問題。
-ただし、整数Ｎ割り切れる数を探すのにＮ/2まで探索しては間に合わない。
-そこで、sqrt(Ｎ）まで探索してその数iとN/iの両方で検査する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class DivisorInc {
-public: int countOperations(int N, int M) {
-int dp[M&#43;1];
-FORE(i,N,M&#43;1)dp[i]=1e&#43;9;
-dp[N]=0;
-FORE(i,N,M&#43;1){
-if(dp[i]==1e&#43;9)continue;
-for(int j=2;j*j&lt;=i;j&#43;&#43;){
-if(i%j!=0)continue;
-if(i&#43;j&lt;=M)dp[i&#43;j]=min(dp[i&#43;j],dp[i]&#43;1);
-if(i&#43;i/j&lt;=M)dp[i&#43;i/j]=min(dp[i&#43;i/j],dp[i]&#43;1);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6186&amp;rd=9823 ある整数から、ある整数へ変換したい。 ある整数からの変換は、１とその数以外の、その整数で割りきれる数を足すことができる。 このとき、最小の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,18 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 381 DIV1 Easy - TheDiceGame x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8414&amp;rd=10804
-解き方 
-dpで解く。
-前の状態から現在の状態までに行ける全ての場合について和をとっていく。
-前の状態から＋１回かつサイコロなので1/6を掛けたものになる。
-コード 
-class TheDiceGame {
-
-public: double expectedThrows(int candies) {memset(dp,0,sizeof(dp));for(int i=1;i&lt;=candies;i&#43;&#43;){for(int j=1;j&lt;=6;j&#43;&#43;){int prev=max(0,i-j);dp[i]&#43;=(dp[prev]&#43;1.0)/6.0;}}
-return dp[candies];}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8414&amp;rd=10804 解き方 dpで解く。 前の状態から現在の状態までに行ける全ての場合について和をとっていく。 前の状態から＋１回かつサイコロなので1/6を掛け" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-381-div1-easy---thedicegame-x/" />
 

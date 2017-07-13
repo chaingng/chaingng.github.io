@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 609 DIV1 Easy - MagicalStringDiv1 (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13003&amp;rd=15842
-・’＜’と’＞’で表わされる配列が与えられる。
-・この配列から、順序を保って任意の文字を抜き出したサブ文字列を考える。
-・このサブ文字列が、＞が最初にｎ個続き、次に＜がｎ個続くようなもののうち最大の２＊ｎを
-求める。
-解き方 
-・順序を保ったサブ文字列の生成であるので、ある位置を選び、そこから左側で作れる最大の＞の数と右側で作れる最大の＜の数のうち最小の数＊２がその位置での最大の２＊ｎとなる。
-・上記について、全ての位置について試して最大のものを返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class MagicalStringDiv1 {
-public: int getLongest(string S) {
-int n=S.size();
-int ret=0;
-FORE(i,0,n){
-int l=0,r=0;
-FORE(j,0,i)if(S[j]==&#39;&gt;&#39;)l&#43;&#43;;
-FORE(j,i,n)if(S[j]==&#39;&lt;&#39;)r&#43;&#43;;
-ret=max(ret,min(l,r)*2);
-}
-return ret;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13003&amp;rd=15842 ・’＜’と’＞’で表わされる配列が与えられる。 ・この配列から、順序を保って任意の文字を抜き出したサブ文字列を考える。 ・このサブ文字列が" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-609-div1-easy---magicalstringdiv1-/" />
 

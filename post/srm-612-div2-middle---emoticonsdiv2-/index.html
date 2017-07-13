@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 612 DIV2 Middle - EmoticonsDiv2 (○○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13041
-・笑顔のアイコンをsmiles数だけ送りたい。
-・最初は１個のアイコンだけすでに送られており、クリップボードは空になっている。
-・送り方としては次の２つの操作がある。
-（１）クリップボードの数だけの笑顔を送る
-（２）現在すでに送っているアイコン数だけクリップボードに張り付ける。
-・このとき、最小の操作回数を求める。
-解き方 
-操作の方法について、単純にｄｐを適用してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[1001][1001];
-class EmoticonsDiv2 {
-public: int printSmiles(int smiles) {
-FORE(i,0,smiles&#43;1)FORE(j,0,smiles&#43;1)dp[i][j]=1e&#43;9;
-dp[0][1]=0,dp[1][1]=1;
-FORE(i,1,smiles&#43;1)FORE(j,0,smiles&#43;1){
-if(i&#43;j&lt;=smiles)dp[i][i&#43;j]=min(dp[i][i&#43;j],dp[i][j]&#43;1);
-dp[j][j]=min(dp[j][j],dp[i][j]&#43;1);
-}
-int ret=1e&#43;9;
-FORE(i,0,smiles&#43;1)ret=min(ret,dp[i][smiles]);
-return ret;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13041 ・笑顔のアイコンをsmiles数だけ送りたい。 ・最初は１個のアイコンだけすでに送られており、クリップボードは空になっている。 ・送り方と" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-612-div2-middle---emoticonsdiv2-/" />
 

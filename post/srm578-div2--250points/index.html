@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM578 DIV2 -250points" />
-<meta property="og:description" content="問題
-①鹿の数と、落ちている角の数が与えられる。
-例）　鹿３匹、角２本
-②鹿は角が０～２本である。
-③このとき、角が２本ある鹿の数の最小値と最大値を求める。
-関数
-vector&lt;int &gt;が返り値なのでこれが使えれば。
-vector &lt;int&gt; a;
-a.push_back(b);でbを挿入できます。
-考え方
-最小値
-鹿１匹につき角が１本落ちている場合なので
-「鹿の数ー角の数」。
-最大値
-鹿１匹につき角が２本落ちている場合。
-「鹿の数ー角の数／２」だが、
-整数の計算なので奇数の場合と偶数の場合で結果が異なってしまうので整理。
-鹿３匹、角１本　～　３－（１＋１）／２＝２匹
-鹿３匹、角２本　～　３－（２＋１）／２＝２匹
-鹿３匹、角３本　～　３－（３＋１）／２＝１匹
-となるので、
-「鹿の数ー（角の数＋１）／２」が最大値。
-vector&lt;int&gt; getminmax(int N, int K) {
-vector&lt;int&gt; ans(2);
-ans.push_back(N-K);
-ans.push_back(N-(K&#43;1)/2);
-return ans;
-}
- " />
+<meta property="og:description" content="問題 ①鹿の数と、落ちている角の数が与えられる。 例） 鹿３匹、角２本 ②鹿は角が０～２本である。 ③このとき、角が２本ある鹿の数の最小値と最大値を求" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm578-div2--250points/" />
 

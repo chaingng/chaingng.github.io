@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 553 DIV1 Easy - Suminator" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11354&amp;rd=15175
-解き方 
-プログラムをスタックで実行し、０，１，２で出力させ
-０で出力した時に求める値と一致すれば０，
-１，２を出力させた時に出力が同じで、求める答えと違えば−１，
-出力が求める答えよりも小さければ差分を足すことで答えが求められる。
-intでは和がフローしてしまうのでlong long型を用いる。
-コード 
-class Suminator {
-public:
-long long rec(vector&lt;int&gt; program,int x){
-stack&lt;long long&gt; s;
-FORE(i,0,program.size()){
-if(program[i]==-1)program[i]=x;
-if(program[i]==0){
-long long a=0,b=0;
-if(!s.empty()){
-a=s.top();
-s.pop();
-}
-if(!s.empty()){
-b=s.top();
-s.pop();
-}
-s.push(a&#43;b);
-}else{
-s.push(program[i]);
-}
-}
-return s.empty() ? 0 : s.top();
-}
-int findMissing(vector&lt;int&gt; program, int wantedResult) {
-if(rec(program,0)==wantedResult)return 0;
-long long x=rec(program,1);
-long long y=rec(program,2);
-if(x==wantedResult)return 1;
-if(x==y || x&gt;wantedResult)return -1;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11354&amp;rd=15175 解き方 プログラムをスタックで実行し、０，１，２で出力させ ０で出力した時に求める値と一致すれば０， １，２を出力させた時に出力が同じで、求" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-553-div1-easy---suminator/" />
 

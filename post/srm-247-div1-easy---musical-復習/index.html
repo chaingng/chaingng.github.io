@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 247 DIV1 Easy - Musical (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4495&amp;rd=7222
-椅子取りゲームを行う。
-プレイヤーはｎ人、椅子はn-1個で等間隔でサークル上に置かれる。
-プレイヤーはＡが椅子の横、Ｂがその次に続き、Ｃがその次に・・・とサークル上に等間隔で位置している。
-プレイヤーは椅子のサークルをtime秒だけ周回し、止まったときにある椅子に最も近いプレイヤーがその椅子に座る。
-ただし、10秒でちょうど一周することになる。
-このとき、負けるプレイヤーが誰になるかを求める。
-解き方 
-問題条件をいかにシミュレーションできるか、簡単にコーディングできるかになる。
-まず、１周の長さを１とすると、各プレイヤーは周る方向とは逆の順にＢ，Ｃ、と並ぶ。
-各プレイヤーの間隔は1/n、各椅子は同様にして、1/(n-1)離れている。
-最後に、最も椅子から離れているプレイヤーが負けるプレイヤーになる。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Musical {
-public: string loser(int n, double time) {
-time=fmod(time,10.0)/10.0;
-vector&lt;double&gt; x,c;
-FORE(i,0,n)x.push_back(fmod((double)i/n&#43;1.0-time,1.0));
-FORE(i,0,n-1)c.push_back((double)i/(n-1));
-double worst=0.0;
-int ret=-1;
-FORE(i,0,n){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4495&amp;rd=7222 椅子取りゲームを行う。 プレイヤーはｎ人、椅子はn-1個で等間隔でサークル上に置かれる。 プレイヤーはＡが椅子の横、Ｂがその次に続き、Ｃが" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-247-div1-easy---musical-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 487 DIV1 Easy - BunnyComputer x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11157&amp;rd=14240
-Bコンピュータをすべてのうさぎが使いたい。
-ただしBコンピュータは１台しかないため、１度に１匹のうさぎしか使えない。
-うさぎがタスクをこなすのに、１秒Bコンピュータを専有し、その後K秒机上で計算を行い、その後１秒コンピュータを専有する。
-コンピュータを専有する時間によってpreferenceの値が与えられ、この時間を最大化したい。
-その最大値を求める。
-解き方 
-スタート時間を０〜Kとし、各スタート時間に対しK&#43;1秒ごとに同じ集合に
-することができる。
-この集合ごとに得られるpreferenceを最大化し、その和を求める。
-各集合についてpreferenceを最大化する選び方は貪欲法では難しいので
-dpを用いればよい。
-コード 
-class BunnyComputer {
-public: int getMaximum(vector&lt;int&gt; preference, int k) {
-int n=preference.size();
-int ret=0;
-for(int i=0;i&lt;k&#43;1;i&#43;&#43;){
-vector&lt;int&gt; vx;
-for(int j=i;j&lt;n;j&#43;=k&#43;1)vx.push_back(preference[j]);
-int m=vx.size();
-int dp[m&#43;1];
-memset(dp,0,sizeof(dp));
-for(int j=2;j&lt;=m;j&#43;&#43;){
-dp[j]=max(dp[j],dp[j-1]);
-dp[j]=max(dp[j],dp[j-2]&#43;vx[j-2]&#43;vx[j-1]);
-}
-ret&#43;=dp[m];
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11157&amp;rd=14240 Bコンピュータをすべてのうさぎが使いたい。 ただしBコンピュータは１台しかないため、１度に１匹のうさぎしか使えない。 うさぎがタスクをこな" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-487-div1-easy---bunnycomputer-x/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 423 DIV1 Easy - TheTower x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9976&amp;rd=13514
-（x、y）の点がN個与えられる。
-この点を１個～N個までそれぞれ同じ位置にあるよう移動させるときの、
-それぞれの最小移動数を求める。
-解き方 
-各点の移動距離が最小となるx、y座標は、
-与えられたx、y座標のいずれかになる。
-よって、与えられたx、y座標のすべてを始点としたときの
-移動距離が最小のものを更新していって求める。
-コード 
-class TheTower {
-public: vector&lt;int&gt; count(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-int n=x.size();
-vector&lt;int&gt; ans(n,1e&#43;9);
-FORE(i,0,n)FORE(j,0,n){
-vector&lt;int&gt; vx;
-FORE(k,0,n)vx.push_back(abs(x[i]-x[k])&#43;abs(y[j]-y[k]));
-sort(all(vx));
-int sum=0;
-FORE(k,0,n){
-sum&#43;=vx[k];
-ans[k]=min(ans[k],sum);
-}
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9976&amp;rd=13514 （x、y）の点がN個与えられる。 この点を１個～N個までそれぞれ同じ位置にあるよう移動させるときの、 それぞれの最小移動数を求める。 解き方" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-423-div1-easy---thetower-x/" />
 

@@ -77,16 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。 その当たり前をマジックとして理解せずに置いておいていけはいけないなと思い、 仕組みについて調べて理解してみた。
-Fork-Exec まずはFork-Execについて知っている必要がある。
-fork -wikipediaによると以下の通り。
-Fork-Execは、UNIXで一般的に使われる手法であり、新たなプログラムをプロセスとして実行する。 fork()は親プロセスを2つの同一内容のプロセスに（フォークの先のように）分岐させるシステムコールである。 fork()によって子プロセスが親プロセスのコピーとして生成され、子プロセスがexec()システムコールを呼び出すことで（子プロセス）自身の内容を置き換える。  要は、UNIXでコマンドを実行されると実行したいコマンドはforkにより 子プロセスが生成され、その子プロセスにてexec()にて実行される。
-exec() exec() -wikipediaによると execveをシステムコールとするとのこと。
-現代のたいていのUnixにおける実装では、最も汎用的なexecveをシステムコールとし（すなわちexecve(2)）、 他はそれを呼ぶライブラリ関数（たとえばexec(3)）としている。  なので、execve()を調べてみる。
-evecve() EXECVEによると、 指定されたプログラムはバイナリ形式、または以下の形式の行で始まるスクリプトでなければならないとある。
-execve() は、filename によって指定されたプログラムを実行する。 filename は、バイナリ実行形式か、 以下の形式の行で始まるスクリプトでなければならない。 #! interpreter [optional-arg]  つまり、execve()にてファイルを実行するための形式として、ファイルの先頭にシェバンを指定しなければならないことがわかった。
-まとめ シェバンと呼ばれ、スクリプトの最初で指定している#!/bin/shは
- UNIXでコマンドが実行される仕組みはFork-Execであり Fork-Execではコマンドはexec()で実行される exec()はシステムコールでexecve()を呼び出す execve()で実行できるfileはバイナリ形式またはファイルの先頭に#! interpreter [optional-arg] を指定しなければならない  ということが理解できた。仕組み理解するの大事。
+			unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/shebang_init/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -120,42 +114,10 @@ execve() は、filename によって指定されたプログラムを実行す�
 			</div>
 		</header>
 		<div class="list__excerpt">
-			CodeComplete 第8章防御的プログラミングのまとめ。
-防御的プログラミングとは、「そうなるはずだ」と決めつけないこと、
-防御運転にヒントを得たものである。
-無効な入力への防御「ゴミ入れ、ゴミ出し」を行うコードは書かない。
-代わりに、「ゴミ入れ、なにも出さない」、「ゴミ入れ、エラーメッセージをだす」、「ゴミ入れ禁止」を採用する。
-ゴミ入れに対処する方法
-外部ソースからのデータをすべて確認するルーチン（外部ソースではない）のすべての入力値を確認する不正な入力を処理する方法を検討する　8.3エラー処理テクニックの１０のうちのいずれかの方法を採用アサーションアサーションは、大きくて複雑なプログラムや特に高い信頼性が求められるプログラムでは特に効果的。
-アサーションのガイドライン
-予想される状況にはエラーコードを用い、予想されない状況にはアサーションを用いるアサーションに実行コードを埋め込まないなぜなら、デバッグモードをオフにした時にコンパイルされないことがある事前条件と事後条件の文書化に使うルーチンの最初にアサーションを定義する堅牢性の高いコードはアサーションしてから処理するエラー処理テクニックエラー処理テクニックのガイドライン。
-当たり障りのない値を返す次に有効なデータで代替する前回と同じ値を返す有効な値のうち、もっとも近いもので代用するファイルに警告メッセージを記録するエラーコードを返すエラー処理ルーチンを呼び出す発生した場所でエラーメッセージを出すローカルでもっともうまくいく方法でエラーを処理する処理を中止する
-堅牢性と正当性のどちらを担保するか最初に設計する。
-そして上位レベルのエラー処理を設計する。
-堅牢性とは、ソフトウェアの実行を継続するように手をつくすこと。
-正当性とは、不正確な結果を決して返さないこと。
-例外例外が正常な処理としてあつかわれているプログラムは可読性や保守性の問題から逃れられない。
-例外の利点を理解し、問題を避けるためのアドバイス。
-本当に例外的状況のみエラーをスローする例外を責任逃れて使用しないローカルでキャッチできない例外をスローしてはいけないコンストラクタとデストラクタで例外をスローしないオブジェクトが完全に生成されていないとデストラクタできずメモリリークを発生させる正しい抽象化レベルで例外をスローするそのクラスで発生する例外に具体化する例外メッセージに原因となるすべてのメッセージを盛り込む空のcatchブロックをかかないライブラリコードがスローする例外を知る例外レポート用ルーチンでの集中管理を検討するプロジェクトで例外の使用方法を標準化する例外に変わる手段を検討する最後に、プログラムに本当に例外処理が必要かを検討することバリケードによるエラーの被害の囲い込み検証クラスによるバリケードを設けることで、正しいものが渡されていないかもしれない信頼できないクラスから、正しいものが渡されているとする信頼できるクラスへ渡す。
-手術室に例えると、外のものを消毒して内部に持ち込むこと。
-入力データは入力されたらすぐに正しい型に変換する。
-なぜなら、誰かがデータを変換してプログラムをクラッシュさせる危険が高まるため
-バリケードの外側は何かを想定するのは危険なので、エラー処理を行う。　内側は安全なはずなので、アサーションを行う。
-デバッグエイドデバッグエイドとはデバッグを補助するツールで、エラーをすばやく検出するための心強い味方になる。
-製品バージョンと開発バージョンは求めるパフォーマンスやリソースが異なるので、製品の制約を開発に当てはめない。
-デバッグエイドの導入は早ければ早い方が良い。
-攻撃的プログラミングを使う。
-開発中に例外状況を明確にし、コードの実行中に回復できるようにする。
-通常は、動かないプログラムのほうが欠陥のないプログラムよりもずっと問題は少ない。
-攻撃的プログラミングのガイドライン。
-アサーションを使ってプログラムを中断するメモリ割当のエラーを検出できるようにするファイルフォーマットのエラーをすべて検出できるようにする条件分岐のelse defaultを激しく失敗させるオブジェクトを削除するまえにジャンクデータを設定するエラーログファイルが自分あてにメールされるようにする
-デバッグエイドの削除計画を立てる。以下の方法が有効。
-　製品版ではデバッグコードをとりのぞく　プリプロセッサで簡単に切り替える　デバッグ用のスタブを使用する製品コードに防御的プログラミングをどれくらい残すか開発段階ではエラーを見逃さないように醜悪に目立たせるようにしたい。
-しかし製品段階ではエラーを目立たないようにしてプログラムを回復させるか上品に終わらせたい、という矛盾に応える
-どれを製品コードに残すかのガイドライン。
-重要なエラーを検査するコードは残すささいなエラーを検知するコードは削除する処理を中断するコードは削除する致命的なエラーを検出するデバッグコードが含まれるとき、プログラムを上品にクラッシュさせるコードがあれば残すテクニカルサポート編集者のためのエラーを記録するわかりやすいエラーメッセージは残す防御的プログラミングに対する防御複雑性が増え、そして防御的コードにもまたエラーの可能性を含むため
-あまりにもチェックが多いとコードは肥大化する。
-そのため、優先順位を設定する 
+			CodeComplete 第8章防御的プログラミングのまとめ。 防御的プログラミングとは、「そうなるはずだ」と決めつけないこと、 防御運転にヒントを得たものである。 無効
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -172,49 +134,10 @@ execve() は、filename によって指定されたプログラムを実行す�
 			</div>
 		</header>
 		<div class="list__excerpt">
-			目的 
-いまの投資信託をよりリターン得られるように最適化する。
-1.購入時手数料
-投資信託の購入時にかかる手数料。
-一般に対面である銀行はこれが高い。
-ネット証券のNISAだとノーロードと呼ばれる、購入時手数料がかからないサービスがある。
-結論:
-この金額は意外と大きいので、ノーロードを活用する。
-2.信託留保財産額
-投資信託の売却時にかかる手数料。
-投資信託に組み込まれている株式を売るときに手数料がかかるが、これを公平に負担するために、売却時に手数料を設けている。
-結論:
-上記より大きくならないが、選べるのであれば他のファクターが変わらないなら、こちらが安いものを選ぶ。
-3.信託報酬
-投資信託を運用するためにかかる手数料。
-日々引かれるもの。要は、表示価格やグラフはこの金額が引かれた後のものになる。
-上記よりこの手数料が運用に一番大きく左右されるため、信託報酬が安いものを選ぶのが一番の方針。
-4.アクティブ型vsパッシブ型
-アクティブ型投資信託はファンドマネージャーが日々売買を繰り返し運用するためこの金額が高い。
-一方、パッシブ型は指数連動するもので手間がかからないのでこの金額が安い。
-結論:
-パッシブ型の方が統計的に成績がよく、かつ信託報酬も安い2つの理由からパッシブ型を選択する。
-5.毎月分配型ｖｓ配当型ｖｓ再投資型
-再投資型:
-配当金が再投資されるもの。複利効果が見込める。
-配当型:
-配当金が再投資されず分配されるもの。
-単利効果が見込める。
-毎月分配型
-毎月決まった金額が分配されるもの。
-配当金が足りない場合は元本が切り崩されるため、単利効果が薄くなる。
-参考
-こちらのページ、グラフが参考になりました。
-さらにこの線の下に毎月分配型があるイメージ。
-http://www.morningstar.co.jp/nisa/product/fund09.html
-結論:
-再投資型を選ぶ。
-6.現状:グローバルアロケーションファンド
-1.購入手数料3.78％2.信託財産額なし3.信託報酬1.9424%4.毎月分配型
-参考おすすめされていない。http://tohshi.blog61.fc2.com/blog-entry-1959.html
-成績3年のスパンで-30%ほど。この間の毎月分配金を足して、プラマイゼロになっているかどうか、、
-http://www.shinkotoushin.co.jp/fund/chart/118508/index.html#pnav
-7.候補:MAXIS 海外株式（MSCIコクサイ）上場投信MSCIコクサイに連動した投資信託。sbi証券だと以下の通り。1.購入手数料なし(ノーロード)2.信託財産額0.1%3.信託報酬0.15%4.再投資型成績3年で約1.4倍、5年で約2倍http://www.am.mufg.jp/fund/181550.html 
+			目的 いまの投資信託をよりリターン得られるように最適化する。 1.購入時手数料 投資信託の購入時にかかる手数料。 一般に対面である銀行はこれが高い。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%81%AE%E8%A6%8B%E7%9B%B4%E3%81%97%E3%81%BE%E3%81%A8%E3%82%81/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -231,23 +154,10 @@ http://www.shinkotoushin.co.jp/fund/chart/118508/index.html#pnav
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=13846&amp;rd=16548
-解き方 
-K=1の場合はどのようなR,Cでも達成できる。
-その他の場合は、全ての道を通って元のセルに戻ってこれればOKとなる。
-Rが偶数の場合もしくはCが偶数のときは元のセルに戻ってこれるが、
-双方とも奇数のときは戻ってこれない。
-よって、RかつCがどちらも奇数かつKが２以上の時のみCannot Paintとなる。
-コード 
-class PaintTheRoom {
-public: string canPaintEvenly(int R, int C, int K) {
-if(R%2 &amp;&amp; C%2 &amp;&amp; K&gt;1)return "Cannot paint";
-return "Paint";
-}
-};
-
- 
+			問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=13846&amp;rd=16548 解き方 K=1の場合はどのようなR,Cでも達成できる。 その他の場合は、全ての道を通って元のセルに戻ってこれればOKとなる。 Rが偶数の場合
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-668-div1-easy---painttheroom-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -264,36 +174,10 @@ return "Paint";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=14059&amp;rd=16550
-解き方 
-文字列長がnのとき、条件を満たすLCSは必ずn-1となる。
-そのようなサブ文字列を全て求めて条件を満たすか確かめれば良い。
-サブ文字列の作り方でミスをしてしまった。。
-コード 
-class Bracket107 {
-public:
-int yetanother(string s) {
-int n=s.size();
-set&lt;string&gt; ans;
-FORE(i,0,n){
-string str=s.substr(0,i)+s.substr(i+1,n);
-FORE(j,0,n){
-string cur=str.substr(0,j)+s[i]+ str.substr(j);
-if(s==cur)continue;
-int valid=1;
-int cnt=0;
-FORE(k,0,n){
-if(cur[k]=='(')cnt++;
-else cnt--;
-if(cnt&lt;0)valid=0;
-}
-if(valid)ans.insert(cur);
-}
-}
-return ans.size();
-}
-}; 
+			問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=14059&amp;rd=16550 解き方 文字列長がnのとき、条件を満たすLCSは必ずn-1となる。 そのようなサブ文字列を全て求めて条件を満たすか確かめれば良い。 サブ文字
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-670-div1-easy---doubleoroneeasy-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -310,40 +194,10 @@ return ans.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=14101&amp;rd=16627
-解き方 
-２倍と１足す動作を単純に全通り試そうとするとオーバーフローしてしまう。
-ここでnewA,newBからa,bを作ることを考えてみる。
-すると、２で割る動作を先にしたほうが最小の答えを得られることがわかる。
-よって、割れるときは２で割る、割れない時は１を引く動作をして
-そのとき、newA-a == newB-bであれば答えにたどりつけるのでこの判定ができるか
-繰り返す。
-１つ、片方が２で割れなく片方が割れるときは１引く動作を続けてしまい計算量がオーバーするのでbreakする必要がある。
-このときの終了判定で、breakする前に答えを判定する必要があるのにミスしてしまった。。
-コード 
-class DoubleOrOneEasy {
-public: int minimalSteps(int a, int b, int newA, int newB) {
-int ret=1e+9;
-int count=0;
-while(a&lt;=newA &amp;&amp; b&lt;=newB){
-if(newA-a==newB-b){
-ret=min(ret,count+newA-a);
-}else if(newA%2==0 &amp;&amp; newB%2==1){
-break;
-}
-if(newA%2==0 &amp;&amp; newB%2==0){
-newA/=2;
-newB/=2;
-}else{
-newA--;
-newB--;
-}
-count++;
-}
-return ret==1e+9 ? -1 : ret;
-}
-}; 
+			問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=14101&amp;rd=16627 解き方 ２倍と１足す動作を単純に全通り試そうとするとオーバーフローしてしまう。 ここでnewA,newBからa,bを作ることを考えてみる。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-677-div1-easy---doubleoroneeasy-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -360,30 +214,10 @@ return ret==1e+9 ? -1 : ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=13946&amp;rd=16549
-解き方 
-すべての場合の数を考えるとはまってしまう。
-逆に制約条件を考えると、Sが与えられた時、最大まで分割した時は１がS個並ぶ、
-つまり最大でS-1回分割することができる。
-次に、N回分割するとき、その数の最大は均等に分割すると得られる。
-よって、分割数を２〜S-1まで試していき、最大がMを超えたものが答えになる。
-コード 
-class SubdividedSlimes {
-public: int needCut(int S, int M) {
-for(int i=2;i&lt;=S;i++){
-vector&lt;long long&gt; num;
-FORE(j,0,i)num.push_back(S/i);
-FORE(j,0,S%i)num[j]++;
-long long total=0;
-FORE(j,0,i)total+=num[j];
-long long sum=0;
-FORE(j,0,i)sum+=num[j]*(total-num[j]);
-if(sum/2&gt;=M)return i-1;
-}
-return -1;
-}
-}; 
+			問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=13946&amp;rd=16549 解き方 すべての場合の数を考えるとはまってしまう。 逆に制約条件を考えると、Sが与えられた時、最大まで分割した時は１がS個並ぶ、 つまり最大
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-669-div1-easy---subdividedslimes-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -400,35 +234,10 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=14010&amp;rd=16551
-解き方 
-固定できる条件はなさそう。
-ある値でソーティングして貪欲にも解けなさそうなのでｄｐを考える。
-dp[現在の位置][;があって_がない絵文字][;があって_がある絵文字]=現在の位置の一つ前までの状態数と考えると、200*200*200=8*10^6で間に合う。
-dp[n][0][0]が最終的な答えになる。
-コード 
-long long dp[202][202][202];
-class BearCries {
-public: int count(string message) {
-int n=message.size();
-int MOD=1000000007;
-memset(dp,0,sizeof(dp));
-dp[0][0][0]=1;
-FORE(i,0,n){
-FORE(j,0,201)FORE(k,0,201){
-if(message[i]=='_'){
-if(j)dp[i+1][j-1][k+1]=(dp[i+1][j-1][k+1]+dp[i][j][k]*j)%MOD;
-dp[i+1][j][k]=(dp[i+1][j][k]+dp[i][j][k]*k)%MOD;
-}else{
-if(k)dp[i+1][j][k-1]=(dp[i+1][j][k-1]+dp[i][j][k]*k)%MOD;
-dp[i+1][j+1][k]=(dp[i+1][j+1][k]+dp[i][j][k])%MOD;
-}
-}
-}
-return dp[n][0][0];
-}
-}; 
+			問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=14010&amp;rd=16551 解き方 固定できる条件はなさそう。 ある値でソーティングして貪欲にも解けなさそうなのでｄｐを考える。 dp[現在の位置][;があって_がない
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-671-div1-easy---bearcries-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -445,36 +254,10 @@ return dp[n][0][0];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=14081&amp;rd=16616
-解き方 
-w[0]について各組み合わせを決めることで、最大にならければならないスコアが決まる。
-あとは残りについて、その数を超えないように全ての組み合わせ数を求める。
-ここで各兵士について、乗ることができる馬の数を考える。
-この数でソートすることで、i番目の兵士は、「乗ることのできる馬の数-(i-1)」が選ぶことのできる数であり、よって組み合わせていく順番が一意に決まる。
-ある値（最大スコア）を固定することで、残りを貪欲法で選ぶことができないか、選ぶことのできる観点（各兵士について乗ることのできる馬の数）がないか考える。
-コード 
-class BearCavalry {
-public:
-int countAssignments(vector&lt;int&gt; warriors, vector&lt;int&gt; horses) {
-long long ret=0;
-int n=warriors.size();
-int MOD=1000000007;
-FORE(i,0,n){
-int value=warriors[0]*horses[i];
-int cur[n-1];
-memset(cur,0,sizeof(cur));
-FORE(j,0,n-1)FORE(k,0,n)if(k!=i &amp;&amp; warriors[j+1]*horses[k]&lt;value)cur[j]++;
-sort(cur,cur+n-1);
-long long tmp=1;
-FORE(j,0,n-1)tmp=(tmp*max(0,cur[j]-j))%MOD;
-ret+=tmp;
-}
-return ret%MOD;
-}
-};
-
- 
+			問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=14081&amp;rd=16616 解き方 w[0]について各組み合わせを決めることで、最大にならければならないスコアが決まる。 あとは残りについて、その数を超えないように全
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-673-div1-easy---bearcavalry-x/">Read more…</a>
 		</div>
 	</div>
 </article>

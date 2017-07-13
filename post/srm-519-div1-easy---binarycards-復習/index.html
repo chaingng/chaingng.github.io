@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 519 DIV1 Easy - BinaryCards (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11552&amp;rd=14544
-正の整数ＡとＢが与えられる。
-ＡからＢを得るには、２進数で表わされたＡから各ビットを返していく。
-この操作を行ったとき、途中で現れる最大の数を求める。
-解き方 
-Ａ，Ｂは最大１０＾１８のため単純なシミュレーションでは解くことができない。
-そのため、計算量を削減する法則がないか考える。
-２進数にしてみて、最初と最後の状態までのプロセスの変化が答えに関連しないか考えてみる。
-いくつか例を出してみると、
-一度も触ったことがないビットは固定しなければいけないが
-「ＡからＢを得るときに１度でもひっくり返したビット以降はすべて１」にできることがわかる。
-コード 
-class BinaryCards {
-public: long long largestNumber(long long A, long long B) {
-for(long long i=63;i&gt;=0;i--){
-long long x=1LL&lt;&lt;i;
-if((A&amp;x)!=(B&amp;x))return A | ( (1LL&lt;&lt;(i&#43;1))-1);
-}
-return A;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11552&amp;rd=14544 正の整数ＡとＢが与えられる。 ＡからＢを得るには、２進数で表わされたＡから各ビットを返していく。 この操作を行ったとき、途中で現れる最大の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/" />
 

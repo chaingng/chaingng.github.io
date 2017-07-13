@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 446 DIV1 Easy - CubeWalking ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10515&amp;rd=13900
-六面体のキューブがある。
-キューブの各面は３＊３のセルからなり、
-真ん中が緑、その上下左右が青、その他は赤色に塗られている。
-プレイヤーは最初緑のセルからスタートし、いずれかの方向を向いている。
-そこから左に向く、右に向く、前に進むの３種類のコマンドからなる
-行動リストが与えられる。
-このとき、最終的にいる位置のセルの色を求める。
-解き方 
-キューブを展開して無限のセルの集合と考える。
-このとき、最後の位置が最初の位置とｘ座標、ｙ座標ともに３で割り切れれば緑、
-どちらも割り切れないなら赤、どちらでもなければ青色になる。
-コード 
-class CubeWalking {
-public: string finalPosition(string movement) {
-int dx[]={1,0,-1,0},dy[]={0,1,0,-1};
-int dir=0;
-int x=0,y=0;
-FORE(i,0,movement.size()){
-if(movement[i]==&#39;L&#39;)dir--;
-else if(movement[i]==&#39;R&#39;)dir&#43;&#43;;
-else{
-x&#43;=dx[((dir%4)&#43;4)%4],y&#43;=dy[((dir%4)&#43;4)%4];
-}
-}
-if(x%3==0 &amp;&amp; y%3==0)return &#34;GREEN&#34;;
-if(x%3!=0 &amp;&amp; y%3!=0)return &#34;RED&#34;;
-return &#34;BLUE&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10515&amp;rd=13900 六面体のキューブがある。 キューブの各面は３＊３のセルからなり、 真ん中が緑、その上下左右が青、その他は赤色に塗られている。 プレイヤーは最" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-446-div1-easy---cubewalking-/" />
 

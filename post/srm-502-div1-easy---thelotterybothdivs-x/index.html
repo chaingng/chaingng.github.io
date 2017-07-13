@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 502 DIV1 Easy - TheLotteryBothDivs x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11359&amp;rd=14431
-解き方 
-初期配列のままで各文字列ペアについて包含しているかで判定すると
-３つ以上の要素が互いに関係する場合にただしく計算できない。
-そのため、ある文字列に包含できる場合はその文字列を削除することで
-排他的に答えを求める。
-コード 
-class TheLotteryBothDivs {
-public:
-bool issuffix(string s1,string s2){
-int n=min(s1.size(),s2.size());
-FORE(i,0,n)if(s1[s1.size()-1-i]!=s2[s2.size()-1-i])return false;
-return true;
-}
-double find(vector&lt;string&gt; g) {
-while(1){
-next:
-FORE(i,0,g.size())FORE(j,i&#43;1,g.size()){
-if(issuffix(g[i],g[j])){
-if(g[i].size()&lt;g[j].size())swap(g[i],g[j]);
-vector&lt;string&gt;::iterator it=g.begin();
-g.erase(it&#43;i);
-goto next;;
-}
-}
-break;
-}
-double ret=0;
-FORE(i,0,g.size())ret&#43;=pow(0.1,g[i].size());
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11359&amp;rd=14431 解き方 初期配列のままで各文字列ペアについて包含しているかで判定すると ３つ以上の要素が互いに関係する場合にただしく計算できない。 そのため" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-502-div1-easy---thelotterybothdivs-x/" />
 

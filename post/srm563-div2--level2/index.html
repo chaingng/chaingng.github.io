@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM563 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①２次元のフィールドが与えられる。
-②フィールドにはランダムな数の障害物と、２つのコインが置かれている。
-③プレイヤーは上下左右の操作をすることができ、１度の操作で選んだ方向に１マスだけ２つのコインを動かせる。動く先に障害物がある場合は動かない。
-④コインが動いた時、フィールドから外れた場合はコインが落ちる。
-⑤このとき、コインを１つだけ落としたいときの最小の操作回数を返す。
-ただし、操作回数が１０回を超えた時はー１を返す。
-＜解き方＞
-動的計画法で最小の操作回数を求める。
-単純なシミュレーションですが、いかに簡単に書いて間違いを少なくするかが
-ポイントだと思います。
--1となる例外の処理を再帰関数で書いた時には処理がうまくいかなかったので、
-例外の処理はメイン関数で行う方がよさそう。
-また、vectorを渡す時には &amp;bのようにしてあげないと
-処理がおかしくなるので注意。
-＜コード＞
-class CoinsGameEasy {
-public:
-int f(int turn,int x1,int y1,int x2,int y2,vector&lt;string&gt;&amp; b){
-if(turn&gt;10)return turn;
-int ret=11,w=b[0].size(),h=b.size();
-int dx[]={1,-1,0,0};
-int dy[]={0,0,-1,1};
-FORE(i,0,4){
-int flag=0;
-int tx1=x1&#43;dx[i],ty1=y1&#43;dy[i],tx2=x2&#43;dx[i],ty2=y2&#43;dy[i];
-if(tx1&lt;0 || tx1&gt;=w || ty1&lt;0 || ty1&gt;=h)flag&#43;&#43;;
-if(tx2&lt;0 || tx2&gt;=w || ty2&lt;0 || ty2&gt;=h)flag&#43;&#43;;
-if(flag==1)return turn&#43;1;
-if(flag==2)continue;
-if(b[ty1][tx1]==&#39;#&#39;)tx1=x1,ty1=y1;
-if(b[ty2][tx2]==&#39;#&#39;)tx2=x2,ty2=y2;
-ret=min(ret,f(turn&#43;1,tx1,ty1,tx2,ty2,b));
-}
-return ret;
-}
-int minimalSteps(vector&lt;string&gt; board) {" />
+<meta property="og:description" content="＜問題＞ ①２次元のフィールドが与えられる。 ②フィールドにはランダムな数の障害物と、２つのコインが置かれている。 ③プレイヤーは上下左右の操作を" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm563-div2--level2/" />
 

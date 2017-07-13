@@ -77,39 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13594&amp;rd=16086
-整数Nを素因数分解したい。
-ただし、Nはとても大きいため、Nを素因数分解したときの答えの
-昇順に1番目、3番目、、と一つ置きの因数が与えられる。
-このとき、すべての因数を求める。
-解き方 
-Nが最大で10^18のため計算量の考慮が必要。
-まず、Nを与えられた素因数で割ってから残りの数を求めようとすると
-{2,(2),2,(10^16)}のときO(10^8)となり計算量オーバー。
-次に、与えられた素因数の間の数prime[i]とprime[i+1]の間を求めていくやり方も
-{2,(2),10^16}のときO(10^16)となり計算量オーバー。
-そこで、両方の判定を加えてあげることで
-{2,(2),10^6,(10^11)}の場合でも、最大でO(10^6)に収められる。
-コード 
-class TheKingsFactorization {
-public: vector&lt;long long&gt; getVector(long long N, vector&lt;long long&gt; primes) {
-int n=primes.size();
-FORE(i,0,n)N/=primes[i];
-vector&lt;long long&gt; ans=primes;
-FORE(i,0,n-1){
-for(long long j=primes[i];j&lt;=primes[i+1] &amp;&amp; j*j&lt;=N;j++){
-while(N%j==0){
-ans.push_back(j);
-N/=j;
-}
-}
-}
-if(N!=1)ans.push_back(N);
-sort(all(ans));
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13594&amp;rd=16086 整数Nを素因数分解したい。 ただし、Nはとても大きいため、Nを素因数分解したときの答えの 昇順に1番目、3番目、、と一つ置きの因数が与えら
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-643-div1-easy---thekingsfactorization-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -126,34 +97,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13603&amp;rd=16277
-ホテルに複数の人が宿泊に訪れる。
-各ゲストについて到着日と出発日がわかっている。
-ここで、ホテルでプロモーションを行うことができ、プロモーションを行うとその日に宿泊している人はよいレビューを残してくれる。
-また、プロモーションを受けた人とそうでない人の宿泊日が重なると、プロモーションを受けていない人もよいレビューを残してくれる。
-このとき、すべての宿泊客がよいレビューを残してくれる最小のプロモーション開催日数を求める。
-解き方 
-条件を満たす集合の数を求めていけばよい。
-プロモーションを「直接」受けている人と宿泊日が重ならなければ
-よいレビューを残さないことに注意。
-まず、プロモーションの開催日を求める。
-このとき、一番早く出発する人からプロモーション日を求めていけば貪欲法で解ける。
-プロモーション日が決まったら、そのプロモーションを直接受けられる宿泊客のうち
-最も遅く出発する日を求める。
-その最も遅い出発日と重なる宿泊客は同じ集合にすることができ、
-このオペレーションの回数が最小のプロモーション開催日数となる。
-コード 
-class JanuszTheBusinessman {
-public: int makeGuestsReturn(vector&lt;int&gt; arrivals, vector&lt;int&gt; departures) {
-int n=arrivals.size();
-&nbsp; &nbsp; &nbsp; &nbsp; int ok[n];
-&nbsp; &nbsp; &nbsp; &nbsp; memset(ok,0,sizeof(ok));
-&nbsp; &nbsp; &nbsp; &nbsp; int ret=0;
-&nbsp; &nbsp; &nbsp; &nbsp; while(true){
-&nbsp; &nbsp; &nbsp; &nbsp; int promday=1e+9;
-&nbsp; &nbsp; &nbsp; &nbsp; FORE(i,0,n)if(!ok[i])promday=min(promday,departures[i]);
-&nbsp; &nbsp; &nbsp; &nbsp; if(promday==1e+9)break;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13603&amp;rd=16277 ホテルに複数の人が宿泊に訪れる。 各ゲストについて到着日と出発日がわかっている。 ここで、ホテルでプロモーションを行うことができ、プロモー
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-645-div1-easy---januszthebusinessman/">Read more…</a>
@@ -173,42 +117,10 @@ int n=arrivals.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13714&amp;rd=16432
-ある数字ｘとｙが与えられた時、０〜９のうち同じ数字が存在する数だけSimilarityの値が高くなる。
-（例）ｘ＝１１２４、ｙ＝１１２２　１と２が双方に出るのでSimilarityは２
-数字の範囲LとRが与えられた時、L~Rのうちの２つの数字のペアのうち、
-最も高いSimilarityを求める。
-解き方 
-数字が10^5のため、全探索すると10^10で間に合わない。
-このような場合、探索する集合を変換できないか考える。
-今回は１〜９の出現数が答えであるので、
-「数字の集合」→「１〜９までの出現数の集合」に変換できる。
-このとき、集合の総数は10^3（0から9の数字がそれぞれ出現するかどうか）となるので
-全探索が可能になる。
-コード 
-class Similars {
-public: int maxsim(int L, int R) {
-int dp[1024];
-memset(dp,0,sizeof(dp));
-for(int i=L;i&lt;=R;i++){
-int x=i;
-int mask=0;
-while(x&gt;0){
-mask|=1&lt;&lt;(x%10);
-x/=10;
-}
-dp[mask]++;
-}
-int ret=0;
-FORE(i,0,1024)FORE(j,0,1024){
-if(i==j &amp;&amp; dp[i]&lt;=1)continue;
-if(dp[i]==0 || dp[j]==0)continue;
-ret=max(ret,__builtin_popcount(i&amp;j));
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13714&amp;rd=16432 ある数字ｘとｙが与えられた時、０〜９のうち同じ数字が存在する数だけSimilarityの値が高くなる。 （例）ｘ＝１１２４、ｙ＝１１２２
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2015-tco-round-1a-easy---similars/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -225,29 +137,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13656&amp;rd=16313
-・a～ｚから成る文字列が与えられる。
-・この文字列から、任意のK個の文字を取り除いたとき、それがどの箇所か
-特定できればCertain、特定できなければUncertainを返す。
-解き方 
-どのような文字列が削除されると特定できないかの法則を探す。
-まず、すべての文字列が削除された場合は特定できる。
-次に、文字列の対称性を考えた場合に、a***aの文字列があった場合
-Kが４以上だとaだけを残すことができ、どちらを消したか特定できない。
-このような同じ文字ではさまれたサブ文字列すべてに対して判定を行い
-ひとつでもあてはまれば特定できない文字列となる。
-コード 
-class Decipherability {
-public: string check(string s, int K) {
-int n=s.size();
-if(K==n)return "Certain";
-FORE(i,0,n)FORE(j,i+1,n)if(s[i]==s[j]){
-if(j-i&lt;=K)return "Uncertain";
-}
-return "Certain";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13656&amp;rd=16313 ・a～ｚから成る文字列が与えられる。 ・この文字列から、任意のK個の文字を取り除いたとき、それがどの箇所か 特定できればCertain、特
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-649-div1-easy---decipherability/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -264,33 +157,10 @@ return "Certain";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13634&amp;rd=16279
-・N個の建物を建てたい。
-・建物は１からNまですべて連続していなければならなく、隣合う建物の高さの差は
-１以内でなければならない。
-・また、最初の建物の高さは０になる。
-・加えて、x[i]番目の建物の高さはt[i]以下でなければならない。
-・このとき、建物の中で最も高い建物の高さを求める。
-解き方 
-2013 1cEasyと類似した、山の問題。
-条件は以下の２つ。
-・建物１は高さ０から始まって、そこからの差は１以内ずつとなる。
-・各位置pについて、すべてのx[i]と比較して最大の高さはt[i]＋abs(p-x[i])以内にならなければいけない。
-最後に２つの条件を満たすもっとも高い建物の高さが答えになる。
-コード 
-class BuildingTowersEasy {
-public: int maxHeight(int N, vector&lt;int&gt; x, vector&lt;int&gt; t) {
-int d[N+1];
-for(int i=1;i&lt;=N;i++)d[i]=i-1;
-for(int i=1;i&lt;=N;i++){
-FORE(j,0,x.size()){
-d[i]=min(d[i],t[j]+abs(i-x[j]));
-}
-}
-return *max_element(d+1,d+1+N);
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13634&amp;rd=16279 ・N個の建物を建てたい。 ・建物は１からNまですべて連続していなければならなく、隣合う建物の高さの差は １以内でなければならない。 ・また、
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-647-div1-easy---buildingtowerseasy-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -307,46 +177,10 @@ return *max_element(d+1,d+1+N);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13229&amp;rd=16316
-・１～Nの数それぞれからなる、数字の列が与えられる。
-（例）N=2、｛１，２｝　N=3、｛１，２，３｝
-・この数はランダムの回数シャッフルされる。
-・また、関数ｆが与えられる。
-・シャッフルされたあとの数列をpとすると、 f(1)=p[1]、f(m)=p[f(m-1)]となる。
-このとき、どのようにシャッフルされてもf(x)=1となるような最小のｘを求める。
-解き方 
-SRM441と似ている。周期をまず求める。
-シャッフルされた数列の最初の数を考えると、
-この数は１～Nの場合が考えられ、それぞれ１～N回の周期でf(x)が１となる。
-つまり、１～Nの全ての周期で割り切れる1～Nの最小公倍数が答えになる。
-最小公倍数を求めるとき、途中でMODで剰余をとってしまうと最小公倍数が計算できないので
-工夫が必要。
-ある数列の最小公倍数を求めるとき、存在する素数それぞれについて、
-N以下でその素数が存在する最大数をかけていけば答えを求めることができる。
-コード 
-int MOD=1000000007;
-class ThePermutationGame {
-public:
-int findMin(int N) {
-int ret=1;
-for(int i=2;i&lt;=N;i++){
-bool prime=true;
-for(int j=2;j*j&lt;=i;j++){
-if(i%j==0){
-prime=false;
-break;
-}
-}
-if(prime){
-int add=i;
-while(add&lt;=N/i)add*=i;
-ret=(ret*1LL*add)%MOD;
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13229&amp;rd=16316 ・１～Nの数それぞれからなる、数字の列が与えられる。 （例）N=2、｛１，２｝ N=3、｛１，２，３｝ ・この数はランダムの回数シャッフルさ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-652-div1-easy---thepermutationgame/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -363,43 +197,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13688&amp;rd=16317
-・様々な国の人々が、１列になって並んでいる。
-・同じ国の人々は連続して並んでいる。
-・ここで、その国の人がどのように並んでいるか確かめたい。
-・並んでいる人に対して、同じ国の人が何人連続で並んでいるか聞くことができ、
-その結果が与えられる。
-ただし、聞いていない人の数は０になる。
-・このとき、並べ方が１通りに定まればSufficient、そうでなければInsufficientを返す。
-解き方 
-場合の数を求めるのでｄｐを使う。
-SRM411の応用で、ある位置iを考えた時、それより前の長さjからｊ-iまでの長さを
-足すことができるか判定する、ｄｐになる。
-今回長さを足すことができるかの判定は、
-j-iまでの区間について0を除く人の答えが、すべてj-iの長さと一致していればよい。
-最終的に、場合の数が１通りであればSuffientになる。
-コード 
-class CountryGroupHard {
-public: string solve(vector&lt;int&gt; a) {
-int n=a.size();
-int dp[n+1];
-memset(dp,0,sizeof(dp));
-dp[0]=1;
-FORE(i,0,n){
-FORE(j,0,i+1){
-int len=i-j+1;
-int valid=1;
-FORE(k,j,i+1){
-if(a[k]==0)continue;
-if(a[k]!=len)valid=0;
-}
-if(valid)dp[i+1]+=dp[j];
-}
-}
-return dp[n]==1 ? "Sufficient" : "Insufficient";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13688&amp;rd=16317 ・様々な国の人々が、１列になって並んでいる。 ・同じ国の人々は連続して並んでいる。 ・ここで、その国の人がどのように並んでいるか確かめたい
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-653-div1-easy---countrygrouphard/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -416,42 +217,10 @@ return dp[n]==1 ? "Sufficient" : "Insufficient";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13694&amp;rd=16318
-・ある文字列が与えられる。
-・文字列はaからzのアルファベット、もしくは?から成る。
-・?の場合、aからzの任意の文字列が入る。
-・また、ある文字列が与えられた時、そのスコアは連続する文字列の数となる。
-（例）aaabaのスコア aが４つ,aaが２つ、aaaが1つ、bが１つで8
-・このとき、与えられた文字列のスコアの期待値を求める。
-解き方
-スコアがabc・・ではなく、aaa,bbbなど連続した文字列だけでよいので、
-実は全探索が可能。
-各部分文字列の位置について、aからzのすべての文字列が連続するときの
-期待値を求めてあげて足していけばよい。
-計算量はO(10^3 * 10~3 * 26)=O(10^7*2.6)なので間に合う。
-まずは全探索できないか考える原則にのっとる。
-コード 
-class SquareScores {
-public: double calcexpectation(vector&lt;int&gt; p, string s) {
-int n=s.size(),m=p.size();
-double prob[m];
-double ret=0.0;
-FORE(i,0,n){
-FORE(j,0,m)prob[j]=1.0;
-FORE(j,i,n){
-if(s[j]=='?'){
-FORE(k,0,m)prob[k]*=p[k]*0.01;
-}
-else{
-FORE(k,0,m)if(k!=s[j]-'a')prob[k]=0.0;
-}
-FORE(k,0,m)ret+=prob[k];
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13694&amp;rd=16318 ・ある文字列が与えられる。 ・文字列はaからzのアルファベット、もしくは?から成る。 ・?の場合、aからzの任意の文字列が入る。 ・また、あ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-654-div1-easy---squarescores/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -468,43 +237,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13709&amp;rd=16415
-・２次元のボードがあり、各セルは最初すべて白に塗られている。
-・プレイヤーはK*Kの正方形のマスをすべて白か黒に上塗りすることができる。
-・最終的なボードの状態が与えられるとき、そのボードの状態にすることができれば
-Possible,そうでなければImpossibleを返す。
-解き方 
-状態遷移の問題。SRM 595に似ている。
-違いとしては、２次元に拡張されているのと、順番が決まっていない、つまり好きに順番を選べるということ。
-まずは最終の状態に着目する。
-ここで、K*Kのすべて白か黒で塗られている正方形があった場合、
-その前の状態が何であっても最後に上書きすることで、その状態にすることができる。
-そのような状態を任意の状態'*'に変換して、最後に全て任意の状態にできれば、
-その操作を逆にたどることで再現可能なのでPossibleとなる。
-コード 
-class BichromePainting {
-public: string isThatPossible(vector&lt;string&gt; board, int k) {
-int h=board.size(),w=board[0].size();
-int update=1;
-while(update){
-update=0;
-for(int r=0;r+k-1&lt;h;r++)for(int c=0;c+k-1&lt;w;c++){
-int w=0,b=0;
-FORE(dr,0,k)FORE(dc,0,k){
-if(board[r+dr][c+dc]=='W')w++;
-else if(board[r+dr][c+dc]=='B')b++;
-}
-if(w&amp;&amp;b)continue;
-if(w==0&amp;&amp;b==0)continue;
-update=1;
-FORE(dr,0,k)FORE(dc,0,k)board[r+dr][c+dc]='*';
-}
-}
-FORE(i,0,h)FORE(j,0,w)if(board[i][j]!='*')return "Impossible";
-return "Possible";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13709&amp;rd=16415 ・２次元のボードがあり、各セルは最初すべて白に塗られている。 ・プレイヤーはK*Kの正方形のマスをすべて白か黒に上塗りすることができる。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-655-div1-easy---bichromepainting/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -521,35 +257,7 @@ return "Possible";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13041
-・笑顔のアイコンをsmiles数だけ送りたい。
-・最初は１個のアイコンだけすでに送られており、クリップボードは空になっている。
-・送り方としては次の２つの操作がある。
-（１）クリップボードの数だけの笑顔を送る
-（２）現在すでに送っているアイコン数だけクリップボードに張り付ける。
-・このとき、最小の操作回数を求める。
-解き方 
-操作の方法について、単純にｄｐを適用してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[1001][1001];
-class EmoticonsDiv2 {
-public: int printSmiles(int smiles) {
-FORE(i,0,smiles+1)FORE(j,0,smiles+1)dp[i][j]=1e+9;
-dp[0][1]=0,dp[1][1]=1;
-FORE(i,1,smiles+1)FORE(j,0,smiles+1){
-if(i+j&lt;=smiles)dp[i][i+j]=min(dp[i][i+j],dp[i][j]+1);
-dp[j][j]=min(dp[j][j],dp[i][j]+1);
-}
-int ret=1e+9;
-FORE(i,0,smiles+1)ret=min(ret,dp[i][smiles]);
-return ret;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13041 ・笑顔のアイコンをsmiles数だけ送りたい。 ・最初は１個のアイコンだけすでに送られており、クリップボードは空になっている。 ・送り方と
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-612-div2-middle---emoticonsdiv2-/">Read more…</a>

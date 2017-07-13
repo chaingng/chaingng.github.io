@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 196 DIV1 Middle - Assemble　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=209
-複数の電力源が与えられて、エネルギーの値があらかじめわかっている。
-隣り合う２つの電力源について、左側が入力値、右側が出力値をあらわす。
-このとき、隣り合う２つの電力源を融合することができる。
-融合するのに必要なコストは
-左側の電力源をinpA、右側の電力源をconnection、その右側の電力源をoutBとすると、
-cost=(inpA&#43;sizeA)*connection*(outB&#43;sizeB)
-で表わされる。
-sizeは最初は全て１であり、融合するとsizeA&#43;sizeBが新しいサイズになる。
-このとき、全ての電力源を融合するために必要な最小のコストを求める。
-解き方 
-電力源の数は５０個なので、全探索しようとすると50!で間に合わない。
-そのためｄｐを利用する。
-まず、距離がlenにある電力源aとbをつなげるときの最小のコストを考える。
-このときの最小のコストは、aとbを全ての場所で区切ったときのコストのうち最小、
-つまりaとbの間で1~len-1で区切ったときのコストのうち最小のものになる。
-上記について、lenを1からnまでの長さについて求めてあげれば
-最終的に0からn-1までの最小のコストが求められる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][51];
-class Assemble {
-public: int minCost(vector&lt;int&gt; connect) {
-int n=connect." />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=209 複数の電力源が与えられて、エネルギーの値があらかじめわかっている。 隣り合う２つの電力源について、左側が入力値、右側が出力値をあらわす。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-196-div1-middle---assemble%E5%BE%A9%E7%BF%92/" />
 

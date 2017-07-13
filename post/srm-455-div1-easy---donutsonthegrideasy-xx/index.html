@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 455 DIV1 Easy - DonutsOnTheGridEasy xx" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10719&amp;rd=14179
-解き方 
-ｄｐを利用して、ある長方形を考えた時
-その内部にある長方形のうち最大のものか、
-それより内部にある長方形＋現在の長方形のうち最大のものを求めていく。
-コード 
-int dp[55][55][55][55];
-class DonutsOnTheGridEasy {
-public:
-int calc(vector&lt;string&gt; grid) {
-int h=grid.size(),w=grid[0].size();
-memset(dp,0,sizeof(dp));
-for(int hh=3;hh&lt;=h;hh&#43;&#43;)for(int ww=3;ww&lt;=w;ww&#43;&#43;){
-for(int i=0;i&#43;hh-1&lt;h;i&#43;&#43;)for(int j=0;j&#43;ww-1&lt;w;j&#43;&#43;){
-int u=i&#43;hh-1,v=j&#43;ww-1;
-int ok=1;
-FORE(k,0,ww){
-if(grid[i][j&#43;k]!=&#39;0&#39; || grid[u][j&#43;k]!=&#39;0&#39;)ok=0;
-}
-FORE(k,0,hh){
-if(grid[i&#43;k][j]!=&#39;0&#39; || grid[i&#43;k][v]!=&#39;0&#39;)ok=0;
-}
-dp[i][j][u][v]=ok;
-dp[i][j][u][v]=max(dp[i][j][u][v],dp[i&#43;1][j][u][v]);
-dp[i][j][u][v]=max(dp[i][j][u][v],dp[i][j&#43;1][u][v]);
-dp[i][j][u][v]=max(dp[i][j][u][v],dp[i][j][u-1][v]);
-dp[i][j][u][v]=max(dp[i][j][u][v],dp[i][j][u][v-1]);
-dp[i][j][u][v]=max(dp[i][j][u][v],dp[i&#43;1][j&#43;1][u-1][v-1]&#43;ok);
-}
-}
-return dp[0][0][h-1][w-1];
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10719&amp;rd=14179 解き方 ｄｐを利用して、ある長方形を考えた時 その内部にある長方形のうち最大のものか、 それより内部にある長方形＋現在の長方形のうち最大のも" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-455-div1-easy---donutsonthegrideasy-xx/" />
 

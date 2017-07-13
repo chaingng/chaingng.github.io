@@ -7,50 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 470 DIV1 Easy - DoorsGame ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10915&amp;rd=14153
-AからPまでの16色のいずれかの色がついたドアがある。
-Johnは最初左端におり、Brusは最初右端にいる。
-Johnからスタートし、交互に好きな色を選んでいく。
-選ばれた色のドアはすべてオープンする。
-また、トロフィーが置かれている場所もわかっている。
-このとき、Johnが勝つときはそのターン数を、
-Brusが勝つときはそのターン数にー１をかけたものを、
-引き分けのときは０を返す。
-解き方 
-色の選び方は最大１６！となり単純な全探索では解くことができない。
-今回、JohnとBrusがドアを開けていくのに必要な情報は、
-「john側だけにある色数」「Brus側だけにある色数」「両方にある色のドアの色数」
-だけであり、各ドアの色の種類や数は関係ない。
-上記の集合に変換することができれば、
-あとは各プレイヤーが最適な戦略をとるようにして全探索で解くことができる。
-コード 
-class DoorsGame {
-public: int determineOutcome(string doors, int trophy) {
-int n=doors.size();
-int a=0,b=0,common=0;
-for(char ch=&#39;A&#39;;ch&lt;=&#39;P&#39;;ch&#43;&#43;){
-int flaga=0,flagb=0;
-for(int j=0;j&lt;trophy;j&#43;&#43;)if(doors[j]==ch)flaga=1;
-for(int j=n-1;j&gt;=trophy;j--)if(doors[j]==ch)flagb=1;
-if(flaga &amp;&amp; flagb)common&#43;&#43;;
-else if(flaga)a&#43;&#43;;
-else if(flagb)b&#43;&#43;;
-}
-int turn=0;
-while(a&#43;b&#43;common&gt;0){
-turn&#43;&#43;;
-if(turn%2){
-if(a&gt;0)a--;
-else if(common&gt;0)common--;
-else b--;
-}
-else{
-if(b&gt;0)b--;
-else if(common&gt;0)common--;
-else a--;
-}
-if(a&#43;b&#43;common==0)return 0;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10915&amp;rd=14153 AからPまでの16色のいずれかの色がついたドアがある。 Johnは最初左端におり、Brusは最初右端にいる。 Johnからスタートし、交互" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-470-div1-easy---doorsgame-/" />
 

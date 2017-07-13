@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 542 DIV1 Easy - PatrolRoute" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11934&amp;rd=14734
-解き方 
-３点を選んだ時、そのｘ座標の最小値と最大値の差、ｙ座標の最小値と最大値の差が
-それぞれ１辺となる長方形の外周の長さが、たどるルートの長さになる。
-あとはその長方形が与えられたセルでいくつつくれるか、
-その長方形を作ることのできる点の組み合わせの数をかけてあげればよい。
-コード 
-class PatrolRoute {
-public: int countRoutes(int X, int Y, int minT, int maxT) {
-int ret=0;
-int MOD=1000000007;
-for(int xlen=3;xlen&lt;=X;xlen&#43;&#43;)for(int ylen=3;ylen&lt;=Y;ylen&#43;&#43;){
-int len=((xlen-1)&#43;(ylen-1))*2;
-if(minT&lt;=len &amp;&amp; len&lt;=maxT){
-long long sum=(xlen-2)*(ylen-2)*6;
-sum=(sum*(X-xlen&#43;1)*(Y-ylen&#43;1))%MOD;
-ret=(ret&#43;sum)%MOD;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11934&amp;rd=14734 解き方 ３点を選んだ時、そのｘ座標の最小値と最大値の差、ｙ座標の最小値と最大値の差が それぞれ１辺となる長方形の外周の長さが、たどるルート" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-542-div1-easy---patrolroute/" />
 

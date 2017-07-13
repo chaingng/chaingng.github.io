@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="二分探索" />
-<meta property="og:description" content="二分探索について考えたいと思います。
-■適用できそうな問題
-・最長・最短というキーワードがあること。
-・Ｃ（ｘ)を満たすという条件があること。
-・全てのｘ’がＣ（ｘ’）を満たすこと。
-■計算量
-O(log N)
-log Nというのが今までイメージしにくかったのですが、
-N=8であれば8/2→4/2→2/2→1となるので例を出すと納得。
-■終了条件
-整数を返すのであればhigh-low&gt;1で可能だが、
-double型のときは注意が必要。
-特に1e-9以下の誤差で求めるというときは
-high-low&gt;1e-9(10^-9)とすると丸め誤差で収束しないというエラーが起きる。
-対処方法は以下の２つ。
-&nbsp; &nbsp;①high-low&gt;1e-9 || (high-low)/high &gt;1e-9と
-絶対誤差と相対誤差の２つで判定する。
-ただ、highで割るときは０にならないような注意が必要。 ②for(int i=0;i&lt;100;i&#43;&#43;)のように100回程度ループを回すことで
-2^-100→(2^10)^-10→10^-30倍となり
-1e-9以下とすることができる。
-■ＳＴＬ
-lower_bound(num.begin(),num.end(),7)
-指定した値「以上」の要素が最初に現れる位置を返す
- " />
+<meta property="og:description" content="二分探索について考えたいと思います。 ■適用できそうな問題 ・最長・最短というキーワードがあること。 ・Ｃ（ｘ)を満たすという条件があること。 ・全" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2/" />
 

@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 459 DIV1 Easy - Inequalities" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10682&amp;rd=14145
-不等式は複数与えられる。
-与えられた不等式をできるだけ多く満たすような実数に対し
-その満たす不等式の最大数を求める。
-解き方 
-不等式の数Xは０～１０００になる。
-よってー１～１００１まで0.5刻みの数を考え、このすべてに対し
-不等式をどれだけ満たすか求めてあげればよい。
-実数に対して配列のインデックスと一致させるために、
-実数＊２＋２と変換してあげれば配列を利用できる。
-コード 
-int num[2100];
-class Inequalities {
-public:
-void calc(string str){
-stringstream out(str);
-string s1,s2;
-int x;
-out&gt;&gt;s1&gt;&gt;s2&gt;&gt;x;
-if(s2==&#34;&lt;&#34;)for(double i=-1;i&lt;x;i&#43;=0.5)num[(int)(i*2&#43;2)]&#43;&#43;;
-if(s2==&#34;&lt;=&#34;)for(double i=-1;i&lt;=x;i&#43;=0.5)num[(int)(i*2&#43;2)]&#43;&#43;;
-if(s2==&#34;=&#34;)num[x*2&#43;2]&#43;&#43;;
-if(s2==&#34;&gt;&#34;)for(double i=x&#43;0.5;i&lt;=1005;i&#43;=0.5)num[(int)(i*2&#43;2)]&#43;&#43;;
-if(s2==&#34;&gt;=&#34;)for(double i=x;i&lt;=1005;i&#43;=0.5)num[(int)(i*2&#43;2)]&#43;&#43;;
-}
-int maximumSubset(vector&lt;string&gt; inequalities) {
-memset(num,0,sizeof(num));
-FORE(i,0,inequalities.size()){
-calc(inequalities[i]);
-}
-int ret=0;
-FORE(i,0,2100){
-ret=max(ret,num[i]);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10682&amp;rd=14145 不等式は複数与えられる。 与えられた不等式をできるだけ多く満たすような実数に対し その満たす不等式の最大数を求める。 解き方 不等式の数Xは０" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-459-div1-easy---inequalities/" />
 

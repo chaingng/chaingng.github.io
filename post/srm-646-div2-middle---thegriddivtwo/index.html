@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 646 DIV2 Middle - TheGridDivTwo" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13628&amp;rd=16278
-・２次元の座標が与えられる。
-・（０，０）がスタート地点になり、各ターン上下左右のいずれかに移動することができる。
-・ただし複数の障害物が与えられ、障害物がある方向には移動することができない。
-・Kターン移動するとき、最後に移動することができる最大のｘ座標の値を求める。
-解き方 
-問題文を見るとｋ＝１０００なので前探索できそう。
-ただしマイナスの方向にも移動するので、座標変換が必要。
-今回は最小で−１０００なので、ｘ，ｙ座標ともに１０００を足してあげて、最後の答えから１０００を引けば良い。
-コード 
-int dp[2010][2010];
-class TheGridDivTwo {
-public: int find(vector&lt;int&gt; x, vector&lt;int&gt; y, int k) {
-queue&lt;pair&lt;int,int&gt; &gt; q;
-int dx[]={1,0,-1,0};
-int dy[]={0,1,0,-1};
-memset(dp,0,sizeof(dp));
-FORE(i,0,x.size())dp[x[i]&#43;1000][y[i]&#43;1000]=-1;
-dp[1000][1000]=1;
-q.push(make_pair(1000,1000));
-while(!q.empty()){
-int x=q.front().first;
-int y=q.front().second;
-if(dp[x][y]==k&#43;1)break;
-q.pop();
-FORE(i,0,4){
-int cx=x&#43;dx[i];
-int cy=y&#43;dy[i];
-if(dp[cx][cy]==0){
-dp[cx][cy]=dp[x][y]&#43;1;
-q.push(make_pair(cx,cy));
-}
-}
-}
-int ret=-3000;
-FORE(i,0,2010)FORE(j,0,2010)if(dp[i][j]&gt;0)ret=max(ret,i);
-return ret-1000;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13628&amp;rd=16278 ・２次元の座標が与えられる。 ・（０，０）がスタート地点になり、各ターン上下左右のいずれかに移動することができる。 ・ただし複数の障害物が" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-646-div2-middle---thegriddivtwo/" />
 

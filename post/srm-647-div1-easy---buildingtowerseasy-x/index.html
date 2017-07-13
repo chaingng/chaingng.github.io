@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 647 DIV1 Easy - BuildingTowersEasy x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13634&amp;rd=16279
-・N個の建物を建てたい。
-・建物は１からNまですべて連続していなければならなく、隣合う建物の高さの差は
-１以内でなければならない。
-・また、最初の建物の高さは０になる。
-・加えて、x[i]番目の建物の高さはt[i]以下でなければならない。
-・このとき、建物の中で最も高い建物の高さを求める。
-解き方 
-2013 1cEasyと類似した、山の問題。
-条件は以下の２つ。
-・建物１は高さ０から始まって、そこからの差は１以内ずつとなる。
-・各位置pについて、すべてのx[i]と比較して最大の高さはt[i]＋abs(p-x[i])以内にならなければいけない。
-最後に２つの条件を満たすもっとも高い建物の高さが答えになる。
-コード 
-class BuildingTowersEasy {
-public: int maxHeight(int N, vector&lt;int&gt; x, vector&lt;int&gt; t) {
-int d[N&#43;1];
-for(int i=1;i&lt;=N;i&#43;&#43;)d[i]=i-1;
-for(int i=1;i&lt;=N;i&#43;&#43;){
-FORE(j,0,x.size()){
-d[i]=min(d[i],t[j]&#43;abs(i-x[j]));
-}
-}
-return *max_element(d&#43;1,d&#43;1&#43;N);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13634&amp;rd=16279 ・N個の建物を建てたい。 ・建物は１からNまですべて連続していなければならなく、隣合う建物の高さの差は １以内でなければならない。 ・また、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-647-div1-easy---buildingtowerseasy-x/" />
 

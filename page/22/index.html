@@ -74,29 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12455&amp;rd=15585
-・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。
-・スタート位置からn回移動し、最後に最後の位置に到達している必要があるとき、
-途中で到達しうる最大の高さを求める。
-解き方 
-・問題として２分探索が使えそう。
-・ある位置を考えた時、スタート位置から到達するために必要なターン数と、そこから最後の位置に到達するためのターン数の和がｎ以下であればよさそう。
-・２分探索の最小値はスタート位置もしくは最後の位置のうち小さいもの、最後に得られた値と小喜一のうち最大のものが答えになる。
-→System Passed
-・他の解き方、というか一番わかりやすい解き方として、nは10^6で全探索できるので
-各ターンにおいて最初の位置から到達しうる高さ、最後の位置から到達しうる高さのうち最小の　ものを取り、そのうち最大のものを求めれば簡単。
-・反省：全探索できる変数、探索を考えてみる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheArray {
-public: int find(int n, int d, int first, int last) {
-if(d==0)return max(first,last);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12455&amp;rd=15585 ・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。 ・スタート位置からn回移動
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2013-tco-round-1c-easy---thearray-/">Read more…</a>
@@ -116,34 +94,7 @@ if(d==0)return max(first,last);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13241&amp;rd=16009
-・ある正の整数nを考えた時、その約数の数である関数d(n)とh(n)=n*d(n)を考える。
-・nが与えられた時、h(x)を満たす最も小さいxを求める。そのようなxがなければ-1を返す。
-解き方 
-・nは10^18のため工夫が必要そう。
-・与えられたnを素因数分解して、その階乗で考えればよいか。
-・でも素因数分解が間に合わなさそう。
-・ではｎから平方根、３乗根・・・としていき探索すればよいか。
-・３乗根以上はベースの数を求めるのが難しそう。２分探索も無理がある。
-→他の人のコードをみる
-・２乗の場合を除けば、３乗以上になるのでベースの数は10^6までになるので
-全探索できる。
-・２乗の場合は平方根をとれば簡単に確かめられる。
-・反省：階乗の問題は２乗と３乗以上を別に考えて探索範囲を狭めることで全探索ができる、
-という視点は勉強になった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class DivisorsPower {
-public:
-long long calc(long long x){
-long long ret=0;
-for(long long i=1;i*i&lt;=x;i++)if(x%i==0)ret+=1+(i*i!
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13241&amp;rd=16009 ・ある正の整数nを考えた時、その約数の数である関数d(n)とh(n)=n*d(n)を考える。 ・nが与えられた時、h(x)を満たす最も小
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-628-div1-easy---divisorspower-/">Read more…</a>
@@ -163,34 +114,7 @@ for(long long i=1;i*i&lt;=x;i++)if(x%i==0)ret+=1+(i*i!
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13274&amp;rd=16008
-・ある文字列が与えられる。
-・２つ異なる文字を選んで消す操作を繰り返し、最後に残るアルファベットがひとつもしくは
-すべて同じアルファベットであるなら、そのアルファベットは答えとなる。
-・複数そのようなアルファベットがある際は、連結して昇順に並べたものを返す。
-解き方 
-・各アルファベットの出現回数を調べる。
-・すべてのアルファベットに対し、そのアルファベットを除いたものすべてに対しペアを求め
-あまりがそのアルファベット-1以上であれば答えを満たす。
-・ペアの消し方については、昇順にソートし１番最後と２番目に最後を引いていきソートを繰り返す。
-・サンプル通った。提出。
-→System Failed.
-・ペアの消し方がまずそう。１番最後と２番目に最後の文字を一つずつ引いていけば最適となる。
-・システム通った。
-・別解として、一番多く出現するアルファベットが過半数を超えなく、かつ合計が偶数であればすべて消すことができる。この方法は知っていたのに引き出せなかった。
-・反省：計算量が間に合うのであれば一番確実な方法を採用する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class HappyLetterDiv1 {
-public: string getHappyLetters(string letters) {
-int n=letters.size();
-int num[26];
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13274&amp;rd=16008 ・ある文字列が与えられる。 ・２つ異なる文字を選んで消す操作を繰り返し、最後に残るアルファベットがひとつもしくは すべて同じアルファベット
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-627-div1-easy----happyletterdiv1-/">Read more…</a>
@@ -210,36 +134,7 @@ int num[26];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13239&amp;rd=15859
-・AliceとBobでゲームを行う。
-・Aliceはa個b面あるサイコロを投げ、Bobはc個d面あるサイコロを投げる。
-・b面あるサイコロは1～bの数字が書かれており、d面あるサイコロは1～dの数字が書かれている。
-・Aliceが勝った時、出た目の期待値を求める。
-・Aliceが勝つケースがないときは-1を返す。
-解き方 
-・まずAliceが勝つかどうか判定する。
-・Bobの一番小さい数はcであるので、c+1以上の面が出るときに勝つことができる。
-・次にAliceの勝つ面について、どれだけの確率があるか計算する。
-・dpを用いればできそう。
-・現在までに使ったサイコロの数、現在までの合計のスコアを持つdpを作れば
-場合の数は計算できる。
-・確率として、勝つ面が出た時のすべての場合の数の和を取り、最後に割ってあげる。
-・サンプルはすべて通った。
-→System Failed
-・Aliceだけの面をみていたが、Bobの面も見る必要がある。
-・つまり、Aliceの勝つ数についての場合の数＊Bobがそれに負けるときの場合の数を足してあげ、
-その和を全てとり最後に割ってあげる必要がある。
-・反省：確率の問題に弱い・・・。基礎が足りないのを実感。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class FixedDiceGameDiv1 {
-public: double getExpectation(int a, int b, int c, int d) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13239&amp;rd=15859 ・AliceとBobでゲームを行う。 ・Aliceはa個b面あるサイコロを投げ、Bobはc個d面あるサイコロを投げる。 ・b面あるサイコロ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-626-div1-easy---fixeddicegamediv1-/">Read more…</a>
@@ -259,38 +154,7 @@ public: double getExpectation(int a, int b, int c, int d) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11856&amp;rd=15858
-・ある文字列が与えられる。
-・この文字をシャッフルした時に、回文となる確率を求める。
-解き方 
-・まず与えられた文字列が回文となるかどうか判定する必要がある。
-・すべてのアルファベットについて出現回数を調べる。
-・このとき、すべてのアルファベットの出現回数が偶数回なら回文となる。
-また、奇数回出現するアルファベットが１つだけなら回文となる。
-それ以外は回文とならない。
-・次に、回文となるときの確率を求める。
-
-→System Failed
-・まず奇数回出現するアルファベットがある場合、その中央にそのアルファベットを
-置く必要がある。その確率はその出現回数／文字列長。
-そこから出現回数と文字列長をデクリメントする。
-・あとはすべてのアルファベットが偶数回の出現回数となる。
-あるアルファベット２つ置く時、それが回文となるのはひとつアルファベットを置いたときに
-一意に定まる。
-よって、ひとつアルファベットを置かれたとき、そのあと残りのアルファベットを指定の場所に置く　ので(出現回数-1)/(L-1)となる。
-&nbsp; （例）
-L(文字列長)=4 ,アルファベットaのcnt(出現回数)=2のとき
-すべての並び：aaxx, axax, axxa, xaax, xaxa, xxaa
-うち回文のもの：axxa, xaax
-&nbsp; つまり(cnt-1)/(L-1)となる。
-・反省：確率の計算の基本が・・・。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i !
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11856&amp;rd=15858 ・ある文字列が与えられる。 ・この文字をシャッフルした時に、回文となる確率を求める。 解き方 ・まず与えられた文字列が回文となるかどうか判定
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-625-div1-easy---palindromepermutations-/">Read more…</a>
@@ -310,36 +174,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13211&amp;rd=15857
-・様々な高さを持つ建物が与えられる。
-・建物の高さを１変えるのにコストが１かかる。
-・同じ建物がｍ個必ずあるようにしたい。
-・建物の数をｎとしたとき、ｍは１～ｎすべての値としてそれぞれの最小コストのXORを求める。
-解き方 
-・ｍを１～ｎそれぞれについて調べることとし、各建物の長さについて答えを求める。
-・求め方として２分探索？でも最小値を求めるので使えなさそう。
-・全探索では4000*4000*4000かかりそう。
-→他の人のコードをみてみる
-・ｍを固定した時、どの長さにするかは各建物の元々の長さにすればよい、、ことを単純ながら見落としてしまった。
-・あとは各建物の長さに固定した時のコスト計算をO(１)とするために、累積和をとっておけばよい。
-・反省：最適解探索の検討がまだまだ足りない。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BuildingHeights {
-public:
-int minimum(vector&lt;int&gt; heights) {
-int n=heights.size();
-sort(all(heights));
-int sum[n+1];
-sum[0]=0;
-FORE(i,1,n+1)sum[i]=sum[i-1]+heights[i-1];
-int ret=0;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13211&amp;rd=15857 ・様々な高さを持つ建物が与えられる。 ・建物の高さを１変えるのにコストが１かかる。 ・同じ建物がｍ個必ずあるようにしたい。 ・建物の数をｎと
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-624-div1-easy---buildingheights-/">Read more…</a>
@@ -359,31 +194,7 @@ int ret=0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12520&amp;rd=15633
-・appleとkiwi、grapeがあり、それぞれ与えられた間隔で一定に置いていく。
-・このとき、２つの果物間の最短距離が最も大きくなるような並べ方のときの
-&nbsp;最短距離を求める。
-解き方 
-・３つ果実があると複雑そう。
-・appleの距離が４、kiwiの距離が３のとき、と考えるとどう置いても重なる・・うまく見つからない。
-→他の人のコードをみてみる
-・もう少し洞察してみると、２つの果実の距離のgcdのMODが最短距離となる。
-・よって、appleを固定し、kiwiとgrapeを変化させそのときの最短距離を求めればよい。
-・反省：紙に書いてもっと検討・試行錯誤してみることが必要。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class FruitTrees {
-public:
-int gcd(int x,int y){
-return y ? gcd(y,x%y) : x;
-}
-int maxDist(int apple, int kiwi, int grape) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12520&amp;rd=15633 ・appleとkiwi、grapeがあり、それぞれ与えられた間隔で一定に置いていく。 ・このとき、２つの果物間の最短距離が最も大きくなる
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2013-tco-round-2b-easy---fruittrees-/">Read more…</a>
@@ -403,33 +214,7 @@ int maxDist(int apple, int kiwi, int grape) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13193&amp;rd=15855
-・有向グラフとエッジの距離が与えられる。
-・ある点からある点に行くまでに通る最短の経路を考えるとき、
-すべての点から点までの最短経路で通る数がT以上であれば、その経路の距離の和を求める。
-解き方 ・最短距離といえばワーシャルフロイドだが、途中の経路を知る必要がある。
-・それではダイクストラ？でも途中の経路を知るのは難しい・・・で断念。
-→他の人のコードをみる
-・ワーシャルフロイドを適用したあと、ある最短経路のうちあるエッジを通るかは、
-そのエッジを含めた距離が最短経路と一致していればよい。
-・反省：最短経路と途中の経路の関係を応用できるようにすべき。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class BuildingRoutes {
-public: int build(vector&lt;string&gt; dist, int T) {
-int n=dist.size();
-int d[n][n],cnt[n][n];
-memset(cnt,0,sizeof(cnt));
-FORE(i,0,n)FORE(j,0,n)d[i][j]=dist[i][j]-'0';
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)d[i][j]=min(d[i][j],d[i][k]+d[k][j]);
-FORE(i,0,n)FORE(j,0,n)if(i!=j){
-FORE(k,0,n)FORE(l,0,n)if(k!=l &amp;&amp; d[i][k]+dist[k][l]-'0'+d[l][j]==d[i][j])cnt[k][l]++;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13193&amp;rd=15855 ・有向グラフとエッジの距離が与えられる。 ・ある点からある点に行くまでに通る最短の経路を考えるとき、 すべての点から点までの最短経路で通る
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-622-div1-easy---buildingroutes-/">Read more…</a>
@@ -449,34 +234,7 @@ FORE(k,0,n)FORE(l,0,n)if(k!=l &amp;&amp; d[i][k]+dist[k][l]-'0'+d[l][j]==d[i][j]
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13209&amp;rd=15856
-・N×Nのボードが与えられる。
-・ボードの各セルには空白、apple,pearいずれかが置かれている。
-・また、１回の操作でappleかpearを空白に移すことができる。
-・最大の操作回数はKで、任意の長方形の中のセルがすべてappleであるようなときの
-最大の長方形の面積を求める。
-解き方 
-・すべての長方形で検索すればよさそう。
-・長方形を作ったとき、そもそも全体のappleより大きいセルは作れないので
-最初にすべてのappleの数を調べる必要がある。
-・長方形を作ったときにpearが含まれているとき、空白が一つもないと移せないので
-最初に空白があるかどうかを調べる必要がある。
-・空白は１回の操作でappleを置くことができるが、pearは一回どかしてからappleを置く必要が
-あるので２回の操作が必要。
-・よって任意の長方形を考えた時、セルの数が全体のapple以下かつ、
-pearもしくは空白が含まれていないか、空白の数＋pearの数×２＜＝Kかつ空白が全体に
-存在するときはその長方形をすべてappleにできる。
-→System Passed.
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class UniformBoard {
-public: int getBoard(vector&lt;string&gt; board, int K) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13209&amp;rd=15856 ・N×Nのボードが与えられる。 ・ボードの各セルには空白、apple,pearいずれかが置かれている。 ・また、１回の操作でappleかp
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-623-div1-easy---uniformboard-/">Read more…</a>
@@ -496,35 +254,7 @@ public: int getBoard(vector&lt;string&gt; board, int K) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12516&amp;rd=16016
-・ある文字列が与えられる。
-・この文字列の２つの場所を選んで、その間の文字列を順番を逆にすることができる。
-・順番を入れ替えた後最も辞書順に小さくすることのできる、入れ替える場所（ｘ、ｙ）を
-求める。
-・ただし同じ文字列が得られるときはｙが小さい方、さらにｙが小さい時はｘが小さい方の場所を
-求める。
-解き方 
-・単純に入れ替えるｘを小さい方から見ていき、より小さくできる場所があればそこが
-最適になりそう。
-・入れ替える先に同じアルファベットが複数存在するときは、一番手前にあれば一番手前の
-場所になるので最適。
-→System Failed.
-・選んだところの文字列をすべて逆順、という一番基本のところを軽くスルーしてしまった。
-・入れ替える先に同じアルファベットが存在するときは、
-入れ替えた後の文字列が小さいものを選ばなければいけない。
-・入れ替えたアルファベットすべてに対して探索しても計算量は
-2.5*10^3*(1250+2500)=2.5*10^3*3.7*10^3=10^7まではいかないので十分に間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SubstringReversal {
-public: vector&lt;int&gt; solve(string S) {
-int n=S.size();
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12516&amp;rd=16016 ・ある文字列が与えられる。 ・この文字列の２つの場所を選んで、その間の文字列を順番を逆にすることができる。 ・順番を入れ替えた後最も辞書順
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/">Read more…</a>

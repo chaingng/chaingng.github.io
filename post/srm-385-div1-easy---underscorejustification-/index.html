@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 385 DIV1 Easy - UnderscoreJustification ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8482&amp;rd=10810
-解き方 
-各スペースに挿入するアンダースコアの数の差は最大１なので、
-スペースの数と挿入できるアンダースコアの数がわかれば
-答えは一意に定まる。
-コード 
-class UnderscoreJustification {
-public:
-string justifyLine(vector&lt;string&gt; words, int width) {
-int n=words.size();
-int len=0;
-FORE(i,0,n)len&#43;=words[i].size();
-int s=width-len;
-int num2=s%(n-1);
-int num1=(n-1)-num2;
-s/=(n-1);
-string ret=words[0];
-FORE(i,1,n){
-if((num1&gt;0 &amp;&amp; num2==0) || (words[i][0]&lt;=&#39;Z&#39; &amp;&amp; num1&gt;0)){
-FORE(j,0,s)ret&#43;=&#39;_&#39;;
-num1--;
-}else{
-FORE(j,0,s&#43;1)ret&#43;=&#39;_&#39;;
-num2--;
-}
-ret&#43;=words[i];
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8482&amp;rd=10810 解き方 各スペースに挿入するアンダースコアの数の差は最大１なので、 スペースの数と挿入できるアンダースコアの数がわかれば 答えは一意に定まる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-385-div1-easy---underscorejustification-/" />
 

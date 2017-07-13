@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 173 DIV1 Middle - TreasureHunt　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=416
-ある島にある宝を探しにいきたい。
-島のマップが与えられ、陸地の場所と宝の場所がしめされている。
-宝の場所はあいまいであり必ずしも正確ではないが、
-スタート地点からどのように移動すれば宝の位置にたどり着けるかがわかっている。
-スタート地点は海から島にたどり着くため、海に隣接していないといけない。
-このとき、宝の場所がどこにあるかを求める。
-宝の場所が複数存在する場合は、地図の宝の位置とのユークリッド距離が最も近いものになる。ユークリッド距離も同じ場合はもっとも北にあるもの、北の位置も一緒であればもっとも西にあるものになる。
-解き方 
-問題文が長く、スタート位置が海に隣接していなければいけないことを読み落としてしまった。これがわかれば単純に実装するだけ。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-vector&lt;string&gt; island;
-int w,h;
-class TreasureHunt {
-public:
-bool inside(int x,int y){
-return (0&lt;=x&amp;&amp;x&lt;h &amp;&amp; 0&lt;=y&amp;&amp;y&lt;w &amp;&amp; island[x][y]!=&#39;.&#39;);
-}" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=416 ある島にある宝を探しにいきたい。 島のマップが与えられ、陸地の場所と宝の場所がしめされている。 宝の場所はあいまいであり必ずしも正確ではな" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-173-div1-middle---treasurehunt%E5%BE%A9%E7%BF%92/" />
 

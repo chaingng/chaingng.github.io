@@ -77,58 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6577&amp;rd=9990
-・１＊１のキューブが任意の数与えられる。
-・キューブを３＊３、２＊２、１＊１のようにピラミッド状に積み重ねていく。
-下より作っていき、足りなければそこで積み重ねを終える。
-このとき、積み重ねたキューブの表面積を求める。
-解き方 
-シミュレーション問題なので、いかに簡単にコーディングするかがポイント。
-表面積の計算は、以下が独立であることが分かる。
-①上下部分
-②左右部分の手前奥部分
-③左右部分の横部分
-①については、一番下のキューブの数によって計算可能。
-②については、残りのキューブの数とそのときの１辺の長さにて計算可能。
-③については、さらに残ったキューブの数により計算可能。
-最後にコーディングの順番を整理する。
-まずはキューブの数と最大となる１辺の長さから①を計算。
-次に②、③について計算。
-土台を作ることができれば②，③は現在の１辺の長さ＊４。
-作ることができなければ、
-②は残りのキューブの数と現在の１辺の長さの小さい方。
-③は１辺の長さを作ることができる数＋余り分となる。
-コード 
-class PyramidOfCubes {
-public: double surface(int K) {
-double ret=0.0;
-int maxlen;
-long long tmp=0LL;
-for(int i=1;;i++){
-tmp+=i*i;
-if(tmp&gt;=K){
-maxlen=i;
-break;
-}
-}
-if(K&gt;=maxlen*maxlen)ret+=maxlen*maxlen*2;
-else ret+=K*2;
-for(int len=maxlen;len&gt;=1;len--){
-if(K&lt;=0)break;
-if(K&gt;=len*len){
-ret+=len*4;
-K-=len*len;
-continue;
-}
-if(K&gt;=len)ret+=len*2;
-else ret+=K*2;
-while(K&gt;0){
-ret+=2;
-K-=len;
-}
-}
-return ret;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6577&amp;rd=9990 ・１＊１のキューブが任意の数与えられる。 ・キューブを３＊３、２＊２、１＊１のようにピラミッド状に積み重ねていく。 下より作っていき、足り
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-310-div1-easy---pyramidofcubes-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -148,34 +97,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8576&amp;rd=13507
-・整数Ｎが与えられる。
-・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。
-解き方 
-法則が少し複雑。
-サンプルを見てみると、以下のことがわかる。
-①右から走査し、最初に１が存在したらそこから次に０が出る箇所が１になる。
-②１にした箇所より右を、それまで残っている１の分だけ右から詰める。
-ビット列走査により以下のように求められる。
-最初に１が存在する箇所：N &amp; -N(=x)
-０から１にする箇所　：~(N+x=y)&amp;N(=z)
-１にした箇所から左部分：y(=N+x)
-１にした箇所より右部分：z/x&gt;&gt;1
-コード 
-class NextNumber {
-public: int getNextNumber(int N) {
-int x=N&amp;(-N);
-int y=N+x;
-int z=N&amp;(~y);
-return y|(z/x&gt;&gt;1);
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8576&amp;rd=13507 ・整数Ｎが与えられる。 ・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。 解き方 法則が少し複雑。 サンプルを見
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -195,44 +117,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=276
-・従業員それぞれに対し、稼いだポイントが与えられる。
-・稼いだポイントに対し、ボーナスの配分を決めたい。
-・ボーナスの配分の割合は、全従業員のポイント数に対する各従業員のポイントとする。ただし、割り切れない場合は切り捨てとする。
-・最後に切り捨てて余った分の割合は、ポイントの多い従業員から順に１％ずつ割り当てる。同じポイントの場合は順番が最初の方に割り当てる。
-解き方 
-余ったポイントの割り当て方だけコーディングできれば簡単に解ける。
-ソートを使いたいところだが、規則が簡単なので割り当て済みかを判定する配列を使ってあげれば簡単に実装できる。
-コード 
-class Bonuses {
-public: vector&lt;int&gt; getDivision(vector&lt;int&gt; points) {
-int n=points.size();
-vector&lt;int&gt; ans(n,0);
-double sum=0;
-FORE(i,0,n)sum+=points[i];
-int score=100;
-FORE(i,0,n){
-int tmp=(points[i]/sum)*100.0;
-ans[i]=tmp;
-score-=tmp;
-}
-vector&lt;int&gt; used(n,0);
-FORE(i,0,score){
-int cmax=-1,idx=-1;
-FORE(j,0,n){
-if(used[j])continue;
-if(cmax&lt;points[j]){
-cmax=points[j];
-idx=j;
-}
-}
-ans[idx]++;
-used[idx]=1;
-}
-return ans;
-}
-}; 
+			問題 http://topcoder.bgcoder.com/print.php?id=276 ・従業員それぞれに対し、稼いだポイントが与えられる。 ・稼いだポイントに対し、ボーナスの配分を決めたい。 ・ボーナスの配分の割合は、全従業
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-145-div1-easy---bonuses-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -249,50 +137,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1950&amp;rd=4660
-・チーム数と、ゴールしたメンバーのチーム名が到着順に与えられる。
-・チームのスコアは最初にゴールした５人の到着順の和になる。
-ゴールした人数が５人未満のチームはカウント対象にならない。
-・スコアの小さい順にチームを並べる。
-スコアが同じとき、６人目のゴール者がいる場合はその到着が早い方が先になる。
-６人目のゴール者がいない場合は６人目のゴール者がいる方が先になる。
-それでも同一の場合は、チーム名の昇順になる。
-このとき、チーム名を順番に並べた文字列を返す。
-解き方 
-ソートの方法が複雑なので、独自にソート順を定義する。
-こちらを参考にさせていただきました。
-http://d.hatena.ne.jp/minus9d/20130501/1367415668
-コード 
-class CrossCountry {
-public:
-struct team{
-int score;
-int sixth;
-char name;
-bool operator&lt;(const team &amp; a)const{
-if(score!=a.score)return score&lt;a.score;
-if(sixth!=a.sixth)return sixth&lt;a.sixth;
-return name&lt;a.name;
-}
-};
-string scoreMeet(int numTeams, string finishOrder) {
-vector&lt;team&gt; teams;
-string ans="";
-FORE(i,0,numTeams){
-team t;
-t.score=0;
-t.sixth=10000;
-t.name='A'+i;
-int num=0;
-FORE(j,0,finishOrder.size()){
-if(('A'+i)==finishOrder[j]){
-if(num&lt;5)t.score+=j;
-else if(num==5)t.sixth=j;
-num++;
-}
-}
-if(num&gt;=5)teams.push_back(t);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1950&amp;rd=4660 ・チーム数と、ゴールしたメンバーのチーム名が到着順に与えられる。 ・チームのスコアは最初にゴールした５人の到着順の和になる。 ゴールした人
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-171-div1-easy---crosscountry-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -312,24 +157,10 @@ if(num&gt;=5)teams.push_back(t);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=3498&amp;rd=6515
-・直線ax+by=1、スタート位置（x0,y0）が与えられる。
-・スタート位置から直線上の点まで移動する。
-・ただし、ｘ軸に平行、もしくはｙ軸に平行のどちらか１回しか移動できない。
-このとき、スタート位置から直線上の点まで移動するための最小の距離を求める。
-解き方 
-問題文のｘ軸に平行もしくはｙ軸に平行の部分について、どちらも利用できると判断してしまった。
-計算式を変換して、ｘ軸に対する平行移動とｙ軸に対する平行移動のうちどちらか最小を返してあげればよい。
-コード 
-class ManhattanMovement {
-public: double getDistance(int a, int b, int x0, int y0) {
-double ans=1e+18;
-if(a!=0)ans=min(ans,fabs( (1.0-(double)b*(double)y0)/(double)a -(double)x0 ));
-if(b!=0)ans=min(ans,fabs( (1.0-(double)a*(double)x0)/(double)b -(double)y0 ));
-return &nbsp;ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=3498&amp;rd=6515 ・直線ax+by=1、スタート位置（x0,y0）が与えられる。 ・スタート位置から直線上の点まで移動する。 ・ただし、ｘ軸に平行、もしくは
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-226-div1-easy---manhattanmovement-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -346,52 +177,7 @@ return &nbsp;ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4616&amp;rd=7224
-・テーブルが複数存在する。
-・各グループ人数ごとに来店する確率が与えられる。
-来店する回数に制限はない。
-・グループがきたときに、空いているテーブルにランダムに案内する。
-ただし、グループが複数人のときは連続したテーブルに案内しなければならない。
-各テーブルには１人席に着く。
-このとき、テーブルに着席する人数の期待値を求める。
-解き方
-全探索では解けないので、ｄｐを利用する。
-ｄｐをどう設計するかがポイントで、現在の席の空き状態を引数とすることで解くことができる。
-同じグループ人数については何度選択してもよいので、その空き状態に対して全てのグループ数とその座り方について探索する。
-こちらのコードを参考にさせていただきました。
-http://community.topcoder.com/stat?c=problem_solution&amp;rd=7224&amp;pm=4616&amp;cr=7459326
-コード 
-class TableSeating {
-public:
-double getExpected(int num, vector&lt;int&gt; probs) {
-double dp[(1&lt;&lt;12)]={0};
-bool can[15];
-FORE(i,1,(1&lt;&lt;num)){
-FORE(j,0,probs.size()){
-int s=j+1;
-double p=probs[j]/100.0;
-FORE(k,0,15)can[k]=false;
-FORE(k,0,15){
-int uu=(1&lt;&lt;(k+s))-(1&lt;&lt;k);
-if(k+s&lt;=num &amp;&amp; ((i&amp;uu)==uu) )can[k]=true;
-}
-int cnt=0;
-FORE(k,0,15)cnt+=can[k];
-p/=(double)cnt;
-FORE(k,0,15){
-if(!can[k])continue;
-int uu=(1&lt;&lt;(k+s))-(1&lt;&lt;k);
-dp[i]+=p*(dp[i-uu]+s);
-}
-}
-}
-return dp[(1&lt;&lt;num)-1];
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4616&amp;rd=7224 ・テーブルが複数存在する。 ・各グループ人数ごとに来店する確率が与えられる。 来店する回数に制限はない。 ・グループがきたときに、空いている
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -411,36 +197,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6085&amp;rd=9817
-・与えられた曲を全てＣＤに収録したい。
-・曲の長さは全て同じ秒数。
-・１つのＣＤに入れられる秒数も決められている。
-・ＣＤに収録する際、曲の間には必ず１秒空けなければいけない。
-・ただし、１つのＣＤに収録される曲数は１３の倍数になってはいけない。
-曲の長さと１つのＣＤに入れられる秒数、全曲数が与えられた時、
-必要なＣＤの最小数を求める。
-解き方 
-数学的に解くことができるが、少しトリッキー。
-ＣＤに入れられる曲数だけめいっぱい入れていき、
-最後に余った曲数に対して、１３の倍数でなければ１曲のみ他のＣＤに移せばよいので、答えはＣＤに入れられる曲数で割った数になる。
-１３の倍数のとき、他のＣＤがないとき、もしくは１引いたときその数が１３の倍数になるときは新たなＣＤに焼かなければいけないので＋１となる。
-上記のように少し考察が必要だが、ｄｐで解けば簡単に解くことができる。
-文字列のｄｐと同様１次元配列を用い、
-その曲数までの最小ＣＤ数を求めてあげればよい。
-コード 
-class NewAlbum {
-public: int leastAmountOfCDs(int nSongs, int length, int cdCapacity) {
-int dp[nSongs+1];
-int num=(cdCapacity+1)/(length+1);
-dp[0]=0;
-FORE(i,1,nSongs+1){
-dp[i]=100000;
-FORE(j,1,min(num,i)+1)if(j%13!=0)dp[i]=min(dp[i],1+dp[i-j]);
-}
-return dp[nSongs];
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6085&amp;rd=9817 ・与えられた曲を全てＣＤに収録したい。 ・曲の長さは全て同じ秒数。 ・１つのＣＤに入れられる秒数も決められている。 ・ＣＤに収録する際、曲の
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-296-div1-easy---newalbum-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -457,53 +217,10 @@ return dp[nSongs];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6190&amp;rd=9825
-・ある多角形が与えられる。
-・多角形のうち複数の点を１だけ動かすことができる。
-・ただし、１度動かした点と隣り合う点は動かすことができない。
-・また最初の点と最後の点との接続には境界があり、この２つを接続しているとみなすことはできない。
-このとき、任意の点を動かした時最大となる面積の増分を求める。
-解き方 
-ｄｐの問題。
-dp[i] ： 点i-1までの最大面積と定義
-点i-1を動かすか動かさないか、以下のいずれかの最大値を取る
-・dp[i-1] (点i-1を動かさないケース)
-・dp[i-2]+score(点i-1を動かしたときのスコア、点iと点i-2は動かさない)
-ただし、線形にｄｐで解くためには境界についての条件を考慮しなければならない。
-境界について以下の３つに分けることで単純なｄｐになる。
-・点０、点n－１が動かない場合（０とn－１の間に境界）
-・点０のみ動く場合（１と２の間に境界）
-・点ｎ－１のみ動く場合（０と１の間に境界）
-３つの最大のものが最終的な答えになる。
-
-
-コード 
-class PolyMove {
-public:
-double calc(int x1,int y1,int x2,int y2){
-return sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))*0.5;
-}
-double addedArea(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-double ret=0.0;
-int n=x.size();
-double dp[n];
-memset(dp,0,sizeof(dp));
-FORE(i,2,n)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-1]);
-memset(dp,0,sizeof(dp));
-dp[1]=calc(x[1],y[1],x[n-1],y[n-1]);
-dp[2]=dp[1];
-FORE(i,3,n)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-1]);
-memset(dp,0,sizeof(dp));
-dp[0]=calc(x[0],y[0],x[n-2],y[n-2]);
-dp[1]=dp[0];
-FORE(i,2,n-1)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-2]);
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6190&amp;rd=9825 ・ある多角形が与えられる。 ・多角形のうち複数の点を１だけ動かすことができる。 ・ただし、１度動かした点と隣り合う点は動かすことができない
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -520,35 +237,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6827&amp;rd=10005
-・穴のあいたフェンスがある。
-・フェンスを修理するには、sqrt(選んだ長さ)のコストが必要になる。
-このとき、フェンスを修理するのに最小のコストを求める。
-解き方 
-必ずしも、部分的に修理するのが最適解ではないと問題文にあるように、修理方法をパターン化するのは難しい。
-そこで、ｄｐを使って解く。
-現在のフェンスの箇所が穴が開いていなければ前のｄｐと同じ答えになることから、
-dp[n+1]にてdp[i]はi-1番目までのフェンスの修理コストの最小と定義する。
-i番目からn番目まで走査し、0のときは前の値がないのでdp[0]=0として解いてあげればよい。
-コード 
-class FenceRepairing {
-public:
-double calculateCost(vector&lt;string&gt; boards) {
-string str="";
-double INF=10000.0;
-FORE(i,0,boards.size())str+=boards[i];
-int n=str.size();
-double dp[n+1];
-FORE(i,1,n+1)dp[i]=INF;
-dp[0]=0.0;
-FORE(i,1,n+1){
-if(str[i-1]=='.')dp[i]=dp[i-1];
-else FORE(j,0,i)dp[i]=min(dp[i],dp[j]+sqrt(i-j));
-}
-return dp[n];
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6827&amp;rd=10005 ・穴のあいたフェンスがある。 ・フェンスを修理するには、sqrt(選んだ長さ)のコストが必要になる。 このとき、フェンスを修理するのに最小
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -565,47 +257,10 @@ return dp[n];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6871&amp;rd=10007
-・？を含んだ文字列が与えられる。
-・母音が３つ連続する、または子音が５つ連続したらその文字列はＵＧＬYであり、そうでなければＮＩＣＥである。
-・？は任意の文字に置き換えられる。
-このとき、与えられた文字列がＮＩＣＥであればＮＩＣＥを返し、ＵＧＬＹであればＵＧＬＹ，どちらもあり得るのであれば４２を返す。
-解き方 
-文字の長さが最大５０であることから全探索はできない。
-ここでｄｐを考えると、状態の数はdp[50][3][5]であるためdpで解くことができる。
-コード 
-int dp[100][100][100];
-string str;
-class NiceOrUgly {
-public:
-bool is_vow(char ch){
-return ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U';
-}
-int calc(int pos,int x,int y){
-if(x&gt;=3||y&gt;=5)return 2;
-if(pos&gt;=str.size())return 1;
-if(dp[pos][x][y]!=-1)return dp[pos][x][y];
-int ret=0;
-if(str[pos]=='?'){
-ret|=calc(pos+1,x+1,0);
-ret|=calc(pos+1,0,y+1);
-}
-else{
-if(is_vow(str[pos]))ret|=calc(pos+1,x+1,0);
-else ret|=calc(pos+1,0,y+1);
-}
-return dp[pos][x][y]=ret;
-}
-string describe(string s) {
-memset(dp,-1,sizeof(dp));
-str=s;
-int ret=calc(0,0,0);
-if(ret==3)return "42";
-if(ret==1)return "NICE";
-return "UGLY";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6871&amp;rd=10007 ・？を含んだ文字列が与えられる。 ・母音が３つ連続する、または子音が５つ連続したらその文字列はＵＧＬYであり、そうでなければＮＩＣＥであ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>

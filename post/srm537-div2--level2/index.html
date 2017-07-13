@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM537 DIV2 -Level2" />
-<meta property="og:description" content="問題
-①数字のペアＡ，Ｂが与えられる。
-このとき、０以上のｐ、ｑに対し、Ａ＊ｐ＋Ｂ＊ｑで数が生成できる。
-②また、新たな数字Ｘが与えられる。
-このとき、Ａ，Ｂで表わせる全てのペアが、Ｘ，Ｙでも表わせるような
-Ｙの場合の数を求める。ただしＹが無限になる場合はー１を返す。
-解き方
-Ｘ，ＹにてＡ，Ｂが表わすことができれば、
-Ａ，Ｂで現すことのできる全ての数はＸ，Ｙで現すことができる。
-Ｙのとりうる数は１～max(A,B) (Xを除く)なので、
-全てのＹに対してＸ，ＹがＡ，Ｂで表わせるかを判定する。
-Ａ＝Ｘ＊ｐ＋Ｙ＊ｑ
-ｑ＝１として、
-pが０からＸ＊ｐがＡになるまで増やしていき、
-Ｙで割ることができるか判定する。
-ｑ＝０の場合も調べるため、ＡがＸで割り切れるかも判定する。
-全て数学的解法に頼らず、全探索との組み合わせで落とし所を探る。
-コード
-class KingXNewCurrency {
-public:
-bool f(int num,int x,int y){
-if(num%x==0)return true;
-for(int i=0;x*i&lt;=num;i&#43;&#43;)if((num-x*i)%y==0)return true;
-return false;
-}
-int howMany(int A, int B, int X) {
-if(A%X==0 &amp;&amp; B%X==0)return -1;
-int ans=0;
-for(int n=1;n&lt;=max(A,B);n&#43;&#43;)if(X!=n &amp;&amp; f(A,X,n) &amp;&amp; f(B,X,n))ans&#43;&#43;;
-return ans;
-}
-};
-
- " />
+<meta property="og:description" content="問題 ①数字のペアＡ，Ｂが与えられる。 このとき、０以上のｐ、ｑに対し、Ａ＊ｐ＋Ｂ＊ｑで数が生成できる。 ②また、新たな数字Ｘが与えられる。 このと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm537-div2--level2/" />
 

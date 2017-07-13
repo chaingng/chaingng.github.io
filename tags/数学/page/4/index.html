@@ -77,44 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①整数ＧとＬが与えられる。
-②最大公約数がＧ，かつ最小公倍数がＬである２つの数字の場合の数を返す。
-存在しない場合はー１を返す。
-＜解き方＞
-２つの数字がＸ、Ｙとすると、Ｘ＊Ｙ＝Ｇ＊Ｌとなる。
-このままではＧとＬともに１０＾１２と膨大な数のため計算式を工夫する。
-次に、Ｘ＝a*Gとなるa, Y=b*Gとなるbが必ず存在する。
-ここで、
-(a*G)*(b*G)=G*L
-つまりa*b=L/Gとなるaとbが必ず存在する。
-また、最大公約数がＧであることから、aとbは互いに素でないといけない。
-これによりＯ（１０＾６）で計算可能となる。
-まとめると、
-a*b=L/G かつ aとbは互いに素=最大公約数が1　となる全てのaとbを求めればよい。
-そして裏を返すと、LがGで割り切れない場合は-1を返す。
-＜コード＞
-class FoxAndGCDLCM {
-public:
-long long gcd(long long a,long long b){
-while(b!=0){
-long long c=b;
-b=a%b;
-a=c;
-}
-return a;
-}
-long long get(long long G, long long L) {
-long long ab=L/G,ret=-1;
-if(L%G!=0)return -1;
-for(long long a=1;a&lt;=ab/a;a++){
-if(ab%a==0 &amp;&amp; gcd(a,ab/a)==1){
-if(ret==-1)ret=G*(a+ab/a);
-else ret=min(ret,G*(a+ab/a));
-}
-}
-return ret;
-}
+			＜問題＞ ①整数ＧとＬが与えられる。 ②最大公約数がＧ，かつ最小公倍数がＬである２つの数字の場合の数を返す。 存在しない場合はー１を返す。 ＜解き方
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm535-div2--level2/">Read more…</a>
@@ -134,42 +97,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①２つの整数ＮとＭが与えられる。
-②１＜＝Ａ＜＝Ｎ、１＜＝Ｂ＜＝Ｍである、(sqrt(A)+sqrt(B))^2が整数であるＸが存在するとき、ＡとＢの組み合わせの数を返す。
-＜解き方＞
-Ａが１のとき、Ｂ＝１，４，９，１６・・・
-Ａが２のとき、Ｂ＝２＊１、２＊９、２＊１６・・・であることがわかります。
-そのため、Ａを１からＮまでループさせ、
-ＢをＡ＊１＾２、Ａ＊２＾２・・・と繰り返して数を足してあげて
-最後にその和をかえしてあげればよいです。
-Ｏ（８００００＊９００＝７２００００００＝７＊１０＾７）なので微妙。
-もう少し計算量を削減するには、
-Ａが２で選ばれるＢの数と、
-Ａが２＊２＾２、２＊３＾２・・・で選ばれるＢの数は一緒であることが分かります。
-そこでＡもまとめて計算することで計算量が削減できます。
-おおまかですがＯ（９００＊９００＝８１００００＝８＊１０＾５）ぐらい。
-＜コード＞
-class TheSquareRootDilemma {
-public: int countPairs(int N, int M) {
-vector&lt;int&gt; check(77778,0);
-int ans=0;
-FORE(i,1,M+1){
-if(check[i]==1)continue;
-int x=0;
-for(int j=1;j*j*i&lt;=M;j++){
-if(check[i*j*j]==1)continue;
-check[i*j*j]=1;
-x++;
-}
-int y=0;
-for(int j=1;j*j*i&lt;=N;j++)y++;
-ans+=(x*y);
-}
-return ans;
-}
-};
- 
+			＜問題＞ ①２つの整数ＮとＭが与えられる。 ②１＜＝Ａ＜＝Ｎ、１＜＝Ｂ＜＝Ｍである、(sqrt(A)+sqrt(B))^2が整数であるＸが存在す
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm567-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>

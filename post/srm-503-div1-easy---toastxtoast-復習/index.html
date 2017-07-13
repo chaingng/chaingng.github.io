@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 503 DIV1 Easy - ToastXToast (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11204&amp;rd=14432
-様々な種類のトーストがあり、ある焼き時間になるとポッピングシャワーとなるが
-その時間未満だと生焼け、その時間を過ぎると焼きすぎになる。
-ポッピングシャワーとなる焼き時間はトーストの種類により異なる。
-生焼けのトーストとその焼き時間の集合、
-焼きすぎのトーストとその焼き時間の集合が与えられた時、
-最低何種類のトーストが存在したかを求める。
-ただし、集合のうち生焼けと焼きすぎのペアは少なくとも１つは存在する。
-そのようなペアが存在しなければー１を返す。
-解き方 
-生焼けと焼きすぎの境界が１つしかなければ、生焼けのものを１つ、焼きすぎのものを１つにまとめることができるので１種類。
-一番生焼けのものが時間が一番早く、一番焦げすぎのものが一番遅ければ、
-一番生焼けのもの＆一番焦げすぎのもの以外をまとめて１種類、
-一番生焼け以外のもの＆一番焦げすぎのものをまとめて１種類なので
-合計２種類。
-一番生焼けのものが時間が一番早く、一番焦げすぎのものが一番遅くなければ
-ペアが存在しないのでー１。
-コード 
-class ToastXToast {
-public: int bake(vector&lt;int&gt; under, vector&lt;int&gt; over) {
-int n=under.size();
-int m=over.size();
-sort(all(under));
-sort(all(over));
-if(under[0]&gt;over[0]||over[m-1]&lt;under[n-1])return -1;
-if(under[n-1]&lt;over[0])return 1;
-return 2;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11204&amp;rd=14432 様々な種類のトーストがあり、ある焼き時間になるとポッピングシャワーとなるが その時間未満だと生焼け、その時間を過ぎると焼きすぎになる。 ポ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/" />
 

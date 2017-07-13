@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 366 DIV1 Easy - ChangingSounds （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7973&amp;rd=10781
-・ある曲数分、その曲を再生する前に調整可能なボリュームが与えられる。
-・与えられたボリュームに対し、そのボリューム分音を大きくするか、小さくすることができる。ただし、０以上最大ボリューム以下にならなければいけない。
-・最初のボリュームが与えられた時、最後の曲を再生し終わった後に最大のボリューム数を求める。全て再生できなければー１を返す。
-解き方 
-2^50=10^15のため全探索することはできない。
-ただし、ボリューム数が０～１０００の間に収まり曲数が最大５０のため
-dpで解くことができる。
-コード 
-class ChangingSounds {
-public:
-int maxFinal(vector&lt;int&gt; C, int beginLevel, int maxLevel) {
-int ret=-1,n=C.size();
-int dp[n&#43;1][maxLevel&#43;1];
-memset(dp,0,sizeof(dp));
-dp[0][beginLevel]=1;
-FORE(i,0,n){
-FORE(j,0,maxLevel&#43;1){
-if(dp[i][j]){
-if(j&#43;C[i]&lt;=maxLevel)dp[i&#43;1][j&#43;C[i]]=1;
-if(j-C[i]&gt;=0)dp[i&#43;1][j-C[i]]=1;
-}
-}
-}
-FORE(i,0,maxLevel&#43;1)if(dp[n][i])ret=i;
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7973&amp;rd=10781 ・ある曲数分、その曲を再生する前に調整可能なボリュームが与えられる。 ・与えられたボリュームに対し、そのボリューム分音を大きくするか、小" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-366-div1-easy---changingsounds-%E5%BE%A9%E7%BF%92/" />
 

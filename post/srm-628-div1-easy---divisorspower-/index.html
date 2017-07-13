@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 628 DIV1 Easy - DivisorsPower (×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13241&amp;rd=16009
-・ある正の整数nを考えた時、その約数の数である関数d(n)とh(n)=n*d(n)を考える。
-・nが与えられた時、h(x)を満たす最も小さいxを求める。そのようなxがなければ-1を返す。
-解き方 
-・nは10^18のため工夫が必要そう。
-・与えられたnを素因数分解して、その階乗で考えればよいか。
-・でも素因数分解が間に合わなさそう。
-・ではｎから平方根、３乗根・・・としていき探索すればよいか。
-・３乗根以上はベースの数を求めるのが難しそう。２分探索も無理がある。
-→他の人のコードをみる
-・２乗の場合を除けば、３乗以上になるのでベースの数は10^6までになるので
-全探索できる。
-・２乗の場合は平方根をとれば簡単に確かめられる。
-・反省：階乗の問題は２乗と３乗以上を別に考えて探索範囲を狭めることで全探索ができる、
-という視点は勉強になった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class DivisorsPower {
-public:
-long long calc(long long x){
-long long ret=0;
-for(long long i=1;i*i&lt;=x;i&#43;&#43;)if(x%i==0)ret&#43;=1&#43;(i*i!" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13241&amp;rd=16009 ・ある正の整数nを考えた時、その約数の数である関数d(n)とh(n)=n*d(n)を考える。 ・nが与えられた時、h(x)を満たす最も小" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-628-div1-easy---divisorspower-/" />
 

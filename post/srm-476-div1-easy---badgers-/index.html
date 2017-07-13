@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 476 DIV1 Easy - Badgers ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10797&amp;rd=14186
-動物BadgersがN匹おり、できるだけ多く飼いたい。
-ただし１日に与えられる餌がtotalFoodしかないため、この餌の中で
-できるだけ多くの動物を飼うようにしたい。
-各Badgersは一人でいるときに必要な餌の数hungerと、複数匹飼われたときに
-追加で必要な餌greedが与えられる。
-例えば４匹飼われた際はhunger&#43;greed*3の餌が必要になる。
-このとき、最大で何匹のBadgersが飼えるか求める。
-解き方 
-Nは50のため、すべての組み合わせは確かめられない。
-ここで、何匹買うかの情報を固定すると、そのときに必要な餌の量は
-固定値となるため、貪欲法で求めることができる。
-よって、飼う匹数を１〜Nまで固定して、
-それぞれについて貪欲法で選んだ時にtotalFoodに収まる
-最大の匹数を求めればよい。
-コード 
-class Badgers {
-public: int feedMost(vector&lt;int&gt; hunger, vector&lt;int&gt; greed, int totalFood) {
-int n=hunger.size();
-int ret=0;
-for(int num=1;num&lt;=n;num&#43;&#43;){
-vector&lt;int&gt; vx;
-FORE(i,0,n){
-int cost=hunger[i]&#43;greed[i]*(num-1);
-vx.push_back(cost);
-}
-sort(all(vx));
-int sum=0;
-FORE(i,0,num)sum&#43;=vx[i];
-if(totalFood&gt;=sum)ret=max(ret,num);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10797&amp;rd=14186 動物BadgersがN匹おり、できるだけ多く飼いたい。 ただし１日に与えられる餌がtotalFoodしかないため、この餌の中で できるだけ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-476-div1-easy---badgers-/" />
 

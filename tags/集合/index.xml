@@ -17,34 +17,7 @@
       <pubDate>Sun, 19 Apr 2015 11:43:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-645-div1-easy---januszthebusinessman/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13603&amp;amp;rd=16277
-ホテルに複数の人が宿泊に訪れる。
-各ゲストについて到着日と出発日がわかっている。
-ここで、ホテルでプロモーションを行うことができ、プロモーションを行うとその日に宿泊している人はよいレビューを残してくれる。
-また、プロモーションを受けた人とそうでない人の宿泊日が重なると、プロモーションを受けていない人もよいレビューを残してくれる。
-このとき、すべての宿泊客がよいレビューを残してくれる最小のプロモーション開催日数を求める。
-解き方 
-条件を満たす集合の数を求めていけばよい。
-プロモーションを「直接」受けている人と宿泊日が重ならなければ
-よいレビューを残さないことに注意。
-まず、プロモーションの開催日を求める。
-このとき、一番早く出発する人からプロモーション日を求めていけば貪欲法で解ける。
-プロモーション日が決まったら、そのプロモーションを直接受けられる宿泊客のうち
-最も遅く出発する日を求める。
-その最も遅い出発日と重なる宿泊客は同じ集合にすることができ、
-このオペレーションの回数が最小のプロモーション開催日数となる。
-コード 
-class JanuszTheBusinessman {
-public: int makeGuestsReturn(vector&amp;lt;int&amp;gt; arrivals, vector&amp;lt;int&amp;gt; departures) {
-int n=arrivals.size();
-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int ok[n];
-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; memset(ok,0,sizeof(ok));
-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int ret=0;
-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; while(true){
-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int promday=1e+9;
-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; FORE(i,0,n)if(!ok[i])promday=min(promday,departures[i]);
-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if(promday==1e+9)break;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13603&amp;amp;rd=16277 ホテルに複数の人が宿泊に訪れる。 各ゲストについて到着日と出発日がわかっている。 ここで、ホテルでプロモーションを行うことができ、プロモー</description>
     </item>
     
   </channel>

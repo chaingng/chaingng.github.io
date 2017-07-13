@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 413 DIV1 Middle - InfiniteSequence2　（復習×○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9922&amp;rd=13504
-X[n]=X[n/p-x]&#43;X[n/q-y]となる関数がある。
-ただし、n&lt;=0のときX[n]=1となる。
-ｎが与えられたとき、X[n]がいくつになるか求める。
-解き方
-nは１０＾１３なので全探索では解けない。
-ｄｐを利用した場合でも、10^13のメモリ空間は使えないのでメモリ量としても解くことができない。
-ここで、関数の性質からnが小さいほどメモ化が有効になることが想定される。
-そのため、メモリ量として保存できるだけはメモ化して、それより大きい数については単純にＤＦＳすることでメモリ量も計算量も抑えて解くことができる。
-最初はmapを使っていたが動的にメモリを確保するデータ構造ではエラーが起きてしまうので、単純にlong long型で最初からメモリを確保しておく。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int p,q,x,y;
-long long dp[5000001];
-class InfiniteSequence2 {
-public:
-long long f(long long n){
-if(n&lt;=0)return 1;
-if(n&lt;=5000000&amp;&amp;dp[n]!=0)return dp[n];
-long long a=n/p-x,b=n/q-y;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9922&amp;rd=13504 X[n]=X[n/p-x]&#43;X[n/q-y]となる関数がある。 ただし、n&lt;=0のときX[n]=1となる。 ｎが与えられたとき、X[" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-413-div1-middle---infinitesequence2%E5%BE%A9%E7%BF%92/" />
 

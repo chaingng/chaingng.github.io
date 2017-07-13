@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 639 DIV2 Middle - AliceGameEasy (○)" />
-<meta property="og:description" content="問題 
-・整数ｘとｙが与えられる。
-・ｘ＝０、ｙ＝０からスタートし、１から順に数を増やしていき毎回ｘとｙのどちらかにその数を足す。
-・与えられたｘとｙにすることができるなら、そのうちｘに数を足す最小の回数を求める。
-・そのような足し方がない場合は-1を返す。
-解き方 
-・１から順番に和をとっていき、ｘ＋ｙ以上となったときちょうどｘ＋ｙとなればそのような
-足し方は存在し、そうでなければ存在しない。
-ｘ＋ｙ=2*10^12で、n*(n&#43;1)/2がnまでの和なので最大でn=10^6なので間に合う。
-・そのような足し方が存在した場合、今度は上で求めた最大のnから1ずつ引いていく。
-そして毎回x以下であればxを引いていき、0になるまでの引いた数が
-最終的な答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class AliceGameEasy {
-public: long long findMinimumValue(long long x, long long y) {
-long long sum=0,n=0;
-while(sum&lt;x&#43;y){
-n&#43;&#43;;" />
+<meta property="og:description" content="問題 ・整数ｘとｙが与えられる。 ・ｘ＝０、ｙ＝０からスタートし、１から順に数を増やしていき毎回ｘとｙのどちらかにその数を足す。 ・与えられたｘと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-639-div2-middle---alicegameeasy-/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 299 DIV1 Middle -PalindromePartition　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1160
-A~Zからなる文字列がある。
-これをサブ文字列に分割して各サブ文字列が回文になるようにしたい。
-このときの最小のサブ文字列の数を求める。
-解き方 
-２段階でｄｐを適用する。
-最初は各文字について、そこからどの長さまで回文になるかをｄｐで求める。
-最後に、そのｄｐを使って最小のサブ文字列の数を求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int can[2501][2501];
-class PalindromePartition {
-public:
-int partition(vector&lt;string&gt; s) {
-string str=&#34;&#34;;
-FORE(i,0,s.size())str&#43;=s[i];
-int n=str.size();
-memset(can,0,sizeof(can));
-FORE(i,0,n)can[i][1]=1;
-FORE(i,0,n-1)can[i][2]=(str[i]==str[i&#43;1]);
-FORE(len,3,n&#43;1)FORE(i,0,n-len&#43;1){
-can[i][len]=(str[i]==str[i&#43;len-1] &amp;&amp; can[i&#43;1][len-2] );" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1160 A~Zからなる文字列がある。 これをサブ文字列に分割して各サブ文字列が回文になるようにしたい。 このときの最小のサブ文字列の数を求める。 解" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-299-div1-middle--palindromepartition%E5%BE%A9%E7%BF%92/" />
 

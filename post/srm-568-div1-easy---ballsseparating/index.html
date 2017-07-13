@@ -7,38 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 568 DIV1 Easy - BallsSeparating" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12398&amp;rd=15488
-解き方 
-基本的に貪欲法だが、少なくとも各色ごとに１つは箱を用意する必要があるので
-各色ひとつずつ箱を決めた場合について、貪欲法で解く。
-コード 
-class BallsSeparating {
-public: int minOperations(vector&lt;int&gt; red, vector&lt;int&gt; green, vector&lt;int&gt; blue) {
-int n=red.size();
-int r=0,g=0,b=0;
-FORE(i,0,n){
-if(red[i]&gt;0)r=1;
-if(green[i]&gt;0)g=1;
-if(blue[i]&gt;0)b=1;
-}
-if(r&#43;g&#43;b&gt;n)return -1;
-int ret=1e&#43;9;
-FORE(i,0,n)FORE(j,0,n)FORE(k,0,n)if(i!=j &amp;&amp; j!=k &amp;&amp; k!=i){
-int cost=0;
-FORE(l,0,n){
-if(l==i)cost&#43;=green[l]&#43;blue[l];
-else if(l==j)cost&#43;=red[l]&#43;blue[l];
-else if(l==k)cost&#43;=red[l]&#43;green[l];
-else{
-cost&#43;=red[l]&#43;green[l]&#43;blue[l]-max(red[l],max(green[l],blue[l]));
-}
-}
-ret=min(ret,cost);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12398&amp;rd=15488 解き方 基本的に貪欲法だが、少なくとも各色ごとに１つは箱を用意する必要があるので 各色ひとつずつ箱を決めた場合について、貪欲法で解く。 コー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-568-div1-easy---ballsseparating/" />
 

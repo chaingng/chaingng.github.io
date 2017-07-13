@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 434 DIV1 Easy - FindingSquareInTable" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10268&amp;rd=13696
-1桁の数字がかかれた２次元のセルが与えられる。
-各列、行番号についてそれぞれ等差数列になるように任意の数字を連結させることができる。
-連結した数字のうち、それがある数の２乗になるようなもののうち
-最大のものを求める。
-解き方 
-すべての位置について、列番号、行番号それぞれについてとりうる
-等差数列すべてを調べてあげればよい。
-2乗の確認はdoubleでは確かめられなく、整数型にすることに注意。
-コード 
-class FindingSquareInTable {
-public:
-long long tolong(string str){
-stringstream out(str);
-long long num;
-out&gt;&gt;num;
-return num;
-}
-int findMaximalSquare(vector&lt;string&gt; table) {
-int h=table.size(),w=table[0].size();
-long long ret=-1;
-FORE(i,0,h)FORE(j,0,w){
-for(int dr=-h;dr&lt;=h;dr&#43;&#43;)for(int dc=-w;dc&lt;=w;dc&#43;&#43;){
-if(dr==0&amp;&amp;dc==0)continue;
-string str=&#34;&#34;;
-int r=i,c=j;
-while(0&lt;=r &amp;&amp; r&lt;h &amp;&amp; 0&lt;=c &amp;&amp; c&lt;w){
-str&#43;=table[r][c];
-r&#43;=dr,c&#43;=dc;
-long long num=tolong(str);
-if((long long)sqrt(num)*(long long)sqrt(num)==num)ret=max(ret,num);
-}
-}
-}
-return ret;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10268&amp;rd=13696 1桁の数字がかかれた２次元のセルが与えられる。 各列、行番号についてそれぞれ等差数列になるように任意の数字を連結させることができる。 連結" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-434-div1-easy---findingsquareintable/" />
 

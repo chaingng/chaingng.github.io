@@ -17,33 +17,7 @@
       <pubDate>Sat, 22 Nov 2014 23:04:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-609-div1-easy---magicalstringdiv1-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13003&amp;amp;rd=15842
-・’＜’と’＞’で表わされる配列が与えられる。
-・この配列から、順序を保って任意の文字を抜き出したサブ文字列を考える。
-・このサブ文字列が、＞が最初にｎ個続き、次に＜がｎ個続くようなもののうち最大の２＊ｎを
-求める。
-解き方 
-・順序を保ったサブ文字列の生成であるので、ある位置を選び、そこから左側で作れる最大の＞の数と右側で作れる最大の＜の数のうち最小の数＊２がその位置での最大の２＊ｎとなる。
-・上記について、全ての位置について試して最大のものを返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class MagicalStringDiv1 {
-public: int getLongest(string S) {
-int n=S.size();
-int ret=0;
-FORE(i,0,n){
-int l=0,r=0;
-FORE(j,0,i)if(S[j]==&#39;&amp;gt;&#39;)l++;
-FORE(j,i,n)if(S[j]==&#39;&amp;lt;&#39;)r++;
-ret=max(ret,min(l,r)*2);
-}
-return ret;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13003&amp;amp;rd=15842 ・’＜’と’＞’で表わされる配列が与えられる。 ・この配列から、順序を保って任意の文字を抜き出したサブ文字列を考える。 ・このサブ文字列が</description>
     </item>
     
     <item>
@@ -52,33 +26,7 @@ return ret;</description>
       <pubDate>Fri, 14 Nov 2014 19:46:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-613-div1-easy---tarofriends-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13005&amp;amp;rd=15846
-・猫が一直線上に数匹存在する。
-・それぞれの猫が１度移動し、その移動する距離はDであることがわかっている。
-・ただし、左側もしくは右側のどちらに移動するかはわかっていない。
-・移動した後に、最も左端と右端の猫の距離が最短になるときの値を求める。
-解き方 
-・とりあえずソートして考えるのがよさそう
-・左端と右端は右と左に動けばよい？
-・左と右をポイントし、そのうち差の距離が小さくなる方を採用していけばよいか
-・サンプルは通った
-→System Failed
-・貪欲法で解こうとしたが、ソートしたのちに左に動く集合と、右に動く集合にわける場合の数は最大５１通りなので全探索できる。
-・なんとなく思いついたが、貪欲法の方を実装してしまった。
-・反省：トレースして思いついた貪欲法を実装してしまったが、今回のようにソートした後に全探索が可能なケースがあるので全探索の線を優先して考える。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TaroFriends {
-public: int getNumber(vector&amp;lt;int&amp;gt; coordinates, int X) {
-int n=coordinates.size();
-sort(all(coordinates));
-long long ret=1e+18;</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13005&amp;amp;rd=15846 ・猫が一直線上に数匹存在する。 ・それぞれの猫が１度移動し、その移動する距離はDであることがわかっている。 ・ただし、左側もしくは右側のど</description>
     </item>
     
   </channel>

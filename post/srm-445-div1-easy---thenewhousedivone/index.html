@@ -7,25 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 445 DIV1 Easy - TheNewHouseDivOne" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10512&amp;rd=13899
-解き方 
-元となる点はすべて座標上の点なので、
-すべての実数上の点を調べなくても、0.5単位ですべての位置を調べればよい。
-コード 
-class TheNewHouseDivOne {
-public: double distance(vector&lt;int&gt; x, vector&lt;int&gt; y, int k) {
-double ret=1e&#43;9;
-int n=x.size();
-for(double xx=-100;xx&lt;=100;xx&#43;=0.5)for(double yy=-100;yy&lt;=100;yy&#43;=0.5){
-vector&lt;double&gt; vx;
-FORE(i,0,n)vx.push_back(abs(xx-x[i])&#43;abs(yy-y[i]));
-sort(all(vx));
-ret=min(ret,vx[k-1]);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10512&amp;rd=13899 解き方 元となる点はすべて座標上の点なので、 すべての実数上の点を調べなくても、0.5単位ですべての位置を調べればよい。 コード class TheNewHouseDivOne { public: double distance(vector&lt;int&gt;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-445-div1-easy---thenewhousedivone/" />
 

@@ -7,25 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="ブートローダー" />
-<meta property="og:description" content="最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。
-BootLoaderとは
-起動直後のコンピュータはハードディスクからＯＳを読み込むことができない。
-そのため、ＯＳを起動させるためにＢＩＯＳが読み込む小さなプログラムがブートローダーになる。
-ただ、ブートローダーは通常はハードディスク等の先頭部分に５１２バイト分しか存在しないため、ＯＳを呼び出すことができない。
-そこで、ブートローダーは各パーティションの先頭にあるブートマネージャー（２次ブートローダー）を起動させる。
-ブートマネージャーは設定された内容に従って、指定されたパーティションにあるＯＳを起動する。
-ここでブートマネージャーの設定ファイルに複数のＯＳ情報を記載することによって、
-複数のＯＳの起動を選択することができる。
-Bootloaderのアンロック
-ブートローダーにはシステムのアップデート機能もあり、特定の場所にイメージを置いておくとアップデートすることができる。
-ただし、電子署名された特定のイメージしかアップデートできないようにメーカーが設定している場合もある。
-このとき独自のイメージを焼きたいときに、ブートローダーのアンロックが必要になる。
-リカバリーにBootloaderのアンロックが必要
-Androidにはboot,system,recoveryの３つのパーティションがある。
-通常はsystemが起動するが、アップデートの際は起動できないのでrecoveryを起動してアップデートする必要がある。また、boot領域はシステムが壊れても最低限の起動をするのに必要なもの。
-Bootloaderのアンロックをすることで、recovery領域のアップデート（カスタムリカバリー）も可能になる。
-
- " />
+<meta property="og:description" content="最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。 BootLoaderとは 起動直後のコンピュータはハー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/" />
 

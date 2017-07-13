@@ -7,50 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 480 DIV1 Easy - InternetSecurity ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11064&amp;rd=14159
-N個のWebサイトがあり、その危険性を検証したい。
-各Webサイトについて、サイトのアドレスと関連するキーワードが
-わかっている。
-また、危険なキーワードが複数与えられ、あるWebサイト中に
-危険なキーワードがthreshold以上存在するとそのWebサイトは危険になる。
-また、Webサイトが危険になると、そのサイトに関連する
-すべてのキーワードも危険になる。
-このとき、危険なWebサイトのアドレスすべてを昇順に並べたものを求める。
-解き方 
-実装問題なので、正確にかつシンプルなデータ構造で実装するだけ。
-コード 
-class InternetSecurity {
-public: vector&lt;string&gt; determineWebsite(vector&lt;string&gt; address, vector&lt;string&gt; keyword, vector&lt;string&gt; dangerous, int threshold) {
-int n=address.size();
-int p[n];
-memset(p,-1,sizeof(p));
-set&lt;string&gt; d;
-FORE(i,0,dangerous.size())d.insert(dangerous[i]);
-string key[51][51];
-FORE(i,0,51)FORE(j,0,51)key[i][j]=&#34;&#34;;
-FORE(i,0,n){
-stringstream out(keyword[i]);
-int at=0;
-while(out&gt;&gt;key[i][at&#43;&#43;]);
-}
-int next=1;
-while(next){
-next=0;
-FORE(i,0,n){
-int cnt=0,at=0;
-while(!key[i][at].empty()){
-if(d.find(key[i][at])!=d.end())cnt&#43;&#43;;
-at&#43;&#43;;
-}
-if(p[i]==-1 &amp;&amp; cnt&gt;=threshold){
-p[i]=cnt;
-next=1;
-int att=0;
-while(!key[i][att].empty()){
-d.insert(key[i][att&#43;&#43;]);
-}
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11064&amp;rd=14159 N個のWebサイトがあり、その危険性を検証したい。 各Webサイトについて、サイトのアドレスと関連するキーワードが わかっている。 また、危" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-480-div1-easy---internetsecurity-/" />
 

@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 444 DIV1 Easy - UnfoldingTriangles ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10484&amp;rd=13898
-白と黒の２種類からなる２次元のセルがある。
-ただし、そのうちのいくつかの黒のセルは折られており、左半分が白、右半分が
-黒になっている。
-ここからUnfoldlimit数だけ折られているセルを黒のセルに戻すことができる。
-このとき、作ることのできる最大の三角形のセルの数を求める。
-ただし、三角形は左上がすべて斜めのセルであり、右辺と下の辺は端、もしくは
-白のセルで区切られており、中のセルはすべて黒のものとなる。
-解き方 
-実装問題。上記の条件をコードに落とし込んでシンプルに実装する。
-コード 
-int h,w;
-class UnfoldingTriangles {
-public:
-bool can(vector&lt;string&gt; grid,int unfoldLimit,int r,int c,int len){
-if(r&#43;1&lt;h)for(int j=c;j&lt;c&#43;len;j&#43;&#43;)if(grid[r&#43;1][j]==&#39;#&#39;)return false;
-if(c&#43;len&lt;w)for(int i=r;i&gt;=r-len&#43;1;i--)if(grid[i][c&#43;len]==&#39;#&#39;)return false;
-for(int j=c;j&lt;c&#43;len;j&#43;&#43;)if(grid[r-(j-c)][j]!=&#39;/&#39;)return false;
-int cnt=0;
-for(int j=c;j&lt;c&#43;len;j&#43;&#43;){
-for(int i=r;i&gt;r-(j-c);i--){
-if(grid[i][j]==&#39;/&#39;)cnt&#43;&#43;;
-if(grid[i][j]==&#39;.&#39;)return false;
-}
-}
-return unfoldLimit&gt;=cnt;
-}
-int solve(vector&lt;string&gt; grid, int unfoldLimit) {
-h=grid.size(),w=grid[0].size();
-int ret=-1;
-FORE(i,0,h)FORE(j,0,w){
-for(int len=1;len&lt;=i&#43;1&amp;&amp;len&lt;=w-j;len&#43;&#43;){
-if(can(grid,unfoldLimit,i,j,len)){
-int score= len==1 ? 1 : len*(len&#43;1)/2;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10484&amp;rd=13898 白と黒の２種類からなる２次元のセルがある。 ただし、そのうちのいくつかの黒のセルは折られており、左半分が白、右半分が 黒になっている。 ここ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-444-div1-easy---unfoldingtriangles-/" />
 

@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM579 DIV2 -550points" />
-<meta property="og:description" content="＜問題＞
-①複数の単語が与えられる。
-②ディスプレイ・入力画面、ＵＮＤＯ領域の３つが与えられる。
-③キー入力は入力画面に現れ、ＥＮＴＥＲボタンを１回クリックでディスプレイに表示。
-④一度入力した文字は２回の操作でＵＮＤOから呼び出せる。
-⑤与えられた単語を順にディスプレイに表示するとき、最小の操作回数を返す。
-＜関数＞
-line[i].substr(0,line[i-1])
-単語の一致判定に部分文字列を利用
-for(k=0;k&lt;min((int)lines[i].size(), (int)lines[j].size());k&#43;&#43;)
-単語の判定でループを回す際は、終了条件に単語の長さを考慮
-＜考え方＞
-①単語ごとにＥＮＴＥＲボタン１回は必ず必要。
-②次の単語を入力する際の方法は３通り。
-１．ＵＮＤＯで””を呼び出してから、新しい単語を１から入力
-２．ＵＮＤＯで”ｔｐ”など次の単語の一部を呼び出してから残りの文字を入力
-３．前の単語から文字を足すだけで次の単語になる場合は、そのまま続けて入力
-この操作をそのままプログラムにします。
-int minPresses(vector&lt;string&gt; lines) {
-int n=lines.size();
-int ans=lines[0].size()&#43;1;
-FORE(i,1,n){
-int cost=lines[i].size()&#43;1&#43;2;
-FORE(j,0,i){
-int k;
-for(k=0;k&lt;min((int)lines[i].size(), (int)lines[j].size());k&#43;&#43;)
-if(lines[i][k]!=lines[j][k])break;
-cost=min(cost, (int)lines[i].size()-k&#43;1&#43;2);
-}
-if(lines[i].substr(0,lines[i-1].size())==lines[i-1])
-cost=min(cost,(int)lines[i].size()-(int)lines[i-1].size()&#43;1);
-ans&#43;=cost;
-}
-return ans;
- " />
+<meta property="og:description" content="＜問題＞ ①複数の単語が与えられる。 ②ディスプレイ・入力画面、ＵＮＤＯ領域の３つが与えられる。 ③キー入力は入力画面に現れ、ＥＮＴＥＲボタンを１" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm579-div2--550points/" />
 

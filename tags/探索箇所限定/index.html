@@ -77,33 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13088&amp;rd=15848
-・アメーバがいて、同じ大きさのジェルがあればそれを吸収して２倍の大きさになる。
-・アメーバの最初の大きさはわかっていない。
-・アメーバがある道を通り、通る順番に置かれているそれぞれのジェルの大きさがわかっている。
-・このとき、最終的にアメーバがどうしても取ることのできない大きさの場合の数を求める。
-解き方 
-・ジェルの大きさは10^9なので、すべての大きさに対して全探索はできなさそう
-・大きさの場合の数を求めるので、重複するもの、
-つまりある大きさに対してそれよりも後に同じ大きさが現れた際はノーカウントにする
-・次にどのような大きさのものが取ることができないかチェックする
-・取りうるジェルの大きさとして、最初に与えられているジェルの大きさ以外のものは必ず取ることができるので答えにならない。
-・つまり、最初に与えられているジェルの大きさが解の候補となる。
-・あとは変化によってその大きさにならないかをチェックする。　・つまり各大きさについて、最初に与えられているすべてのジェルの大きさについてシミュレーションし、その大きさにならなければよさそう
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AmebaDiv1 {
-public: int count(vector&lt;int&gt; X) {
-int ret=0;
-int n=X.size();
-FORE(i,0,n){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13088&amp;rd=15848 ・アメーバがいて、同じ大きさのジェルがあればそれを吸収して２倍の大きさになる。 ・アメーバの最初の大きさはわかっていない。 ・アメーバがあ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-615-div1-easy---amebadiv1-/">Read more…</a>
@@ -123,33 +97,7 @@ FORE(i,0,n){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1609&amp;rd=4690
-ＰＣのクロックが１ｍｓごとに時間を刻む。
-また、ＰＣの中では複数のプログラムが順に動いており、一つのプログラムが終わったらすぐに次のプログラムが動く。
-このときプログラムの起動タイミングによっては起動する前と終了した後に時刻が変わっていることがある。
-このとき、各プログラムごとに時刻が変わっている／変わっていない２つ状態があるとしたとき、時刻の刻み方による全ての場合の数を求める。
-解き方 
-時刻の取り方は小数点以下10^6あり、全探索していては間に合わない。
-このケースの問題は、調べる箇所は絞らなければいけなく、その箇所は決めることができる場合が多い。
-この問題の場合は各時刻に対して最小数分のみ足した場合を足すことで、
-各プログラムにおいて時刻が変わるときの最小値、時刻が変わらないときの最小値をピックアップすることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TickTick {
-public: int count(vector&lt;string&gt; events) {
-set&lt;string&gt; ans;
-vector&lt;double&gt; p(events.size()+1,0.0);
-FORE(i,0,events.size())sscanf(events[i].c_str(),"%lf",&amp;p[i+1]);
-FORE(i,0,p.size()){
-double tick=p[i]+1e-7;
-tick=tick-(double)((int)tick);
-int prev=-1;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1609&amp;rd=4690 ＰＣのクロックが１ｍｓごとに時間を刻む。 また、ＰＣの中では複数のプログラムが順に動いており、一つのプログラムが終わったらすぐに次のプロ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-177-div1-easy---ticktick-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -169,32 +117,7 @@ int prev=-1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10104&amp;rd=13512
-直線状に複数の点とその点にある球の数が与えられる。
-ある点を考えた時、その点と点ｘの距離をｄ、点ｘの球の数をｍとすると
-Ｆ＝Ｇ＊ｍ１＊ｍ２／ｄ＾２で引力が表わされる。
-ここでＧは定数。
-このとき、引力が左右均衡となる点を求める。
-点が複数存在する場合は、昇順に並べる。
-解き方 
-サンプルを見ると各点の間ごとに均衡点があることがわかる。
-あとは、その間すべてに対して２分探索すれば答えが求められる。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class EquilibriumPoints {
-public:
-double calc(int m,double d){
-return m/d/d;
-}
-vector&lt;double&gt; getPoints(vector&lt;int&gt; x, vector&lt;int&gt; m) {
-vector&lt;double&gt; ans;
-int n=x.size();
-FORE(i,0,n-1){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10104&amp;rd=13512 直線状に複数の点とその点にある球の数が与えられる。 ある点を考えた時、その点と点ｘの距離をｄ、点ｘの球の数をｍとすると Ｆ＝Ｇ＊ｍ１＊ｍ２
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-421-div1-easy---equilibriumpoints-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -214,38 +137,10 @@ FORE(i,0,n-1){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11564&amp;rd=14553
-様々な長さのうなぎとカットできる数が与えられる。
-カットして、できるだけ多く１０の長さのうなぎをつくる。
-このとき、最大となる１０の長さのうなぎの数を求める。
-解き方 
-１０の倍数のとき、すべてカットできればカット数が１つ少なく済むことから、１０の倍数から検査していく必要がある。
-ソートして、１０の倍数のうなぎを検査し、その後それ以外のうなぎを順に検査していけばよい。
-最大の計算量はＯ（N^2*N*2=50*50*50*2=2.5*10^5）。
-コード 
-class Cut {
-public: int getMaximum(vector&lt;int&gt; eel, int maxCuts) {
-int ans=0;
-sort(eel.begin(),eel.end());
-FORE(i,0,eel.size()){
-if(eel[i]%10!=0)continue;
-int cut=min(maxCuts,eel[i]/10-1);
-if(maxCuts&gt;=eel[i]/10-1)ans++;
-ans+=cut;
-maxCuts-=cut;
-if(maxCuts==0)return ans;
-}
-FORE(i,0,eel.size()){
-if(eel[i]%10==0)continue;
-int cut=min(maxCuts,eel[i]/10);
-maxCuts-=cut;
-ans+=cut;
-if(maxCuts==0)return ans;
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11564&amp;rd=14553 様々な長さのうなぎとカットできる数が与えられる。 カットして、できるだけ多く１０の長さのうなぎをつくる。 このとき、最大となる１０の長さの
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-528-div1-easy---cut-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -262,44 +157,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 ①複数のうなぎが川を流れている。
-②各うなぎは毎秒１の速さで進む。
-③各うなぎに対し、最初に到達する時間ｔと、うなぎの長さｌが与えられる。
-④うさぎは２回のｔ時刻だけ、うなぎを捕まえることができる。
-選んだｔに対し、そのときに流れているうなぎを全て捕まえることができる。
-⑤このとき、捕まえることのできるうなぎの最大数を求める。
-解き方 
-最初に全探索で考える。
-各時刻に対しとらえることのできるうなぎの数を洗い出し、
-全ての時刻から２つ時刻を選ぶ方法を全通り試して、最大のうなぎの数を返す。
-しかし今回はうなぎの長さが１０＾９となるため、
-全ての時刻の全探索で解くことができない。
-では、選ぶ時刻の数を少なくすることはできないか？と考える。
-もう少し考えると、うなぎの数が変化するのは頭と尾のときのみということがわかれば、
-高々５０＊２＝１００通りの時刻を調べればよいことがわかる。
-全体の計算量はＯ（１００＊５０＝５０００）なのでこの考え方で解くことができる。
-コード 
-class EelAndRabbit {
-public: int getmax(vector&lt;int&gt; l, vector&lt;int&gt; t) {
-int ans=0;
-vector&lt;int&gt; v;
-v.clear();
-FORE(i,0,t.size()){
-v.push_back(t[i]);
-v.push_back(t[i]+l[i]);
-}
-FORE(i,0,v.size()){
-FORE(j,i+1,v.size()){
-int cur=0;
-FORE(k,0,t.size()){
-if( (t[k]&lt;=t[i] &amp;&amp; t[i]&lt;=t[k]+l[k]) || (t[k]&lt;=t[j] &amp;&amp; t[j]&lt;=t[k]+l[k]))cur++;
-}
-ans=max(ans,cur);
-}
-}
-return ans;
-}
-}; 
+			問題 ①複数のうなぎが川を流れている。 ②各うなぎは毎秒１の速さで進む。 ③各うなぎに対し、最初に到達する時間ｔと、うなぎの長さｌが与えられる。 ④
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm580-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>

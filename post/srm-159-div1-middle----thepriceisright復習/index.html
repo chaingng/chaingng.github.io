@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 159 DIV1 Middle -  ThePriceIsRight　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=328
-商品の価格の一覧が与えられる。
-最初はすべて伏せられていて金額がいくらかわからない。
-ここで、プレイヤーは任意の数だけ伏せられている数をめくり、めくったものが昇順に並んでいるようにしたい。
-このとき、昇順となる一番最長のめくった数とその場合の数を求める。
-解き方 
-単純なｄｐでは数字が１０＾６であるため解けないので、少し工夫したｄｐを使う。
-ｄｆｓによる降順からの探索ではなく、漸化式のように順に最適値を求めていき、すでに求まっている最適値からその位置での最適値を求めるようにする。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class ThePriceIsRight {
-public: vector&lt;int&gt; howManyReveals(vector&lt;int&gt; prices) {
-int n=prices.size();
-int len[n],cnt[n];
-memset(len,0,sizeof(len));
-memset(cnt,0,sizeof(cnt));
-FORE(i,0,n){
-int maxlen=0;
-FORE(j,0,i)if(prices[i]&gt;prices[j])maxlen=max(maxlen,len[j]);
-FORE(j,0,i)if(len[j]==maxlen&amp;&amp;prices[i]&gt;prices[j])cnt[i]&#43;=cnt[j];
-if(maxlen==0)cnt[i]=1;
-len[i]=maxlen&#43;1;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=328 商品の価格の一覧が与えられる。 最初はすべて伏せられていて金額がいくらかわからない。 ここで、プレイヤーは任意の数だけ伏せられている数をめ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-159-div1-middle----thepriceisright%E5%BE%A9%E7%BF%92/" />
 

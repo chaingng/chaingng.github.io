@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 393 DIV1 Easy - InstantRunoffVoting ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8607&amp;rd=11127
-解き方 
-問題分の通り実装し、収束するまで繰り返せば良い。
-コード 
-class InstantRunoffVoting {
-public: int winner(vector&lt;string&gt; voters) {
-int n=voters.size(),m=voters[0].size();
-int used[10],v[10];
-memset(used,0,sizeof(used));
-while(1){
-memset(v,0,sizeof(v));
-int finish=1;
-FORE(i,0,m)if(used[i]==0)finish=0;
-if(finish)break;
-FORE(i,0,n){
-int idx=0;
-while(used[voters[i][idx]-&#39;0&#39;]==1)idx&#43;&#43;;
-v[voters[i][idx]-&#39;0&#39;]&#43;&#43;;
-}
-FORE(i,0,m)if(v[i]&gt;n*0.5)return i;
-int mx=100;
-FORE(i,0,m)if(used[i]==0)mx=min(mx,v[i]);
-FORE(i,0,m)if(v[i]==mx)used[i]=1;
-}
-return -1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8607&amp;rd=11127 解き方 問題分の通り実装し、収束するまで繰り返せば良い。 コード class InstantRunoffVoting { public: int winner(vector&lt;string&gt; voters) { int n=voters.size(),m=voters[0].size(); int used[10],v[10]; memset(used,0,sizeof(used)); while(1){ memset(v,0,sizeof(v)); int finish=1; FORE(i,0,m)if(used[i]==0)finish=0; if(finish)break; FORE(i,0,n){ int idx=0; while(used[voters[i][idx]-&#39;0&#39;]==1)idx&#43;&#43;; v[voters[i][idx]-&#39;0&#39;]&#43;&#43;; } FORE(i,0,m)if(v[i]&gt;n*0.5)return i; int mx=100; FORE(i,0,m)if(used[i]==0)mx=min(mx,v[i]); FORE(i,0,m)if(v[i]==mx)used[i]=1; } return -1; } };" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-393-div1-easy---instantrunoffvoting-/" />
 

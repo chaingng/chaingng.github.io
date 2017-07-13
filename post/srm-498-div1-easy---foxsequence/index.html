@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 498 DIV1 Easy - FoxSequence" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11219&amp;rd=14427
-解き方 
-システムテストで落ちないような実装の正確性が求められる問題。
-共通処理は関数化し、各区間について点の不等号がどうであるか
-正しく実装する。
-コード 
-class FoxSequence {
-public:
-bool ispossible(vector&lt;int&gt; seq,int s,int e,int d){
-for(int i=s;i&lt;=e;i&#43;&#43;)if(seq[s]&#43;(i-s)*d!=seq[i])return false;
-return true;
-}
-string isValid(vector&lt;int&gt; seq) {
-int n=seq.size();
-int at=0,next=0;
-while(next&#43;1&lt;n &amp;&amp; seq[next]&lt;seq[next&#43;1])next&#43;&#43;;
-if(at==next || next&gt;=n)return &#34;NO&#34;;
-if(!ispossible(seq,at,next,seq[at&#43;1]-seq[at]))return &#34;NO&#34;;
-at=next;
-while(next&#43;1&lt;n &amp;&amp; seq[next]&gt;seq[next&#43;1])next&#43;&#43;;
-if(at==next || next&gt;=n)return &#34;NO&#34;;
-if(!ispossible(seq,at,next,seq[at&#43;1]-seq[at]))return &#34;NO&#34;;
-while(next&#43;1&lt;n &amp;&amp; seq[next]==seq[next&#43;1])next&#43;&#43;;
-if(next&gt;=n)return &#34;NO&#34;;
-at=next;
-while(next&#43;1&lt;n &amp;&amp; seq[next]&lt;seq[next&#43;1])next&#43;&#43;;
-if(at==next || next&gt;=n)return &#34;NO&#34;;
-if(!ispossible(seq,at,next,seq[at&#43;1]-seq[at]))return &#34;NO&#34;;
-at=next;
-while(next&#43;1&lt;n &amp;&amp; seq[next]&gt;seq[next&#43;1])next&#43;&#43;;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11219&amp;rd=14427 解き方 システムテストで落ちないような実装の正確性が求められる問題。 共通処理は関数化し、各区間について点の不等号がどうであるか 正しく実装" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-498-div1-easy---foxsequence/" />
 

@@ -77,32 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12494&amp;rd=15594
-・文字列sと、文字列tが与えられる。
-・sとtは同じ長さ。
-・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合する。
-・このとき、最も辞書順に大きくなるような結合後の文字列を求める。
-解き方 
-・一見、貪欲法で解けそう
-・まずはsの大きくなる選び方で試してみる
-・最後のサンプルがエラー。sの選び方に加え、選ばずにs+tの方が辞書順に大きくなる可能性が　あるため貪欲法では解けない。
-・よってｄｐで解く必要がある。
-・最初からｄｐを適用していくと、選び方を全探索しないといけないが、
-後ろから適用していけば、現在の文字列をつなげるかどうかを判断すればよいので
-計算量も間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheLargestString {
-public: string find(string s, string t) {
-int n=s.size();
-pair&lt;string,string&gt; dp[60][60];
-FORE(i,0,60)FORE(j,0,60)dp[i][j]=make_pair("","");
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12494&amp;rd=15594 ・文字列sと、文字列tが与えられる。 ・sとtは同じ長さ。 ・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2013-tco-round-2a-easy---thelargeststring-/">Read more…</a>
@@ -122,34 +97,7 @@ FORE(i,0,60)FORE(j,0,60)dp[i][j]=make_pair("","");
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=328
-商品の価格の一覧が与えられる。
-最初はすべて伏せられていて金額がいくらかわからない。
-ここで、プレイヤーは任意の数だけ伏せられている数をめくり、めくったものが昇順に並んでいるようにしたい。
-このとき、昇順となる一番最長のめくった数とその場合の数を求める。
-解き方 
-単純なｄｐでは数字が１０＾６であるため解けないので、少し工夫したｄｐを使う。
-ｄｆｓによる降順からの探索ではなく、漸化式のように順に最適値を求めていき、すでに求まっている最適値からその位置での最適値を求めるようにする。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ThePriceIsRight {
-public: vector&lt;int&gt; howManyReveals(vector&lt;int&gt; prices) {
-int n=prices.size();
-int len[n],cnt[n];
-memset(len,0,sizeof(len));
-memset(cnt,0,sizeof(cnt));
-FORE(i,0,n){
-int maxlen=0;
-FORE(j,0,i)if(prices[i]&gt;prices[j])maxlen=max(maxlen,len[j]);
-FORE(j,0,i)if(len[j]==maxlen&amp;&amp;prices[i]&gt;prices[j])cnt[i]+=cnt[j];
-if(maxlen==0)cnt[i]=1;
-len[i]=maxlen+1;
+			問題 http://topcoder.bgcoder.com/print.php?id=328 商品の価格の一覧が与えられる。 最初はすべて伏せられていて金額がいくらかわからない。 ここで、プレイヤーは任意の数だけ伏せられている数をめ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-159-div1-middle----thepriceisright%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -169,32 +117,7 @@ len[i]=maxlen+1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7280&amp;rd=10011
-一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。
-このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。
-解き方 
-歌詞の長さは１０なので、全探索可能。
-ビットマスクを利用して全探索する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class CarolsSinging {
-public:
-int choose(vector&lt;string&gt; lyrics) {
-int n=lyrics[0].size();
-int ret=1e+9;
-for(int i=0;i&lt;(1&lt;&lt;n);i++){
-int cnt=0;
-vector&lt;int&gt; p(n,0);
-for(int j=0;j&lt;n;j++){
-if(i&amp;(1&lt;&lt;j)){
-cnt++;
-p[n-j-1]=1;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7280&amp;rd=10011 一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。 このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。 解
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -214,34 +137,7 @@ p[n-j-1]=1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2889&amp;rd=5074
-１辺の長さが与えられる。
-各辺の長さが１の三角形を組み合わせて、１辺の長さが与えられた長さになるよう
-三角形を作る。
-このとき、１辺が１～与えられた長さである三角形の数の合計を求める。
-解き方 
-なにか法則がありそう。
-単純な三角形の数だけ見ても法則はないが、
-普通の三角形と逆にした三角形を別々に考えると以下の法則があることがわかる。
-１辺の長さがｘの三角形を考えると、その数は以下の通りになる。
-普通の三角形：長さがｘのとき１個、ｘ＋１のとき３個、３のとき６個・・・と等差数列の値だけ増加
-逆の三角形　：長さがｘ＊２のとき１個、ｘ＊２＋１のとき３個・・・と等差数列の値だけ増加
-あとはdpにて実装して、最後に全ての和を足すことで答えが求められる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TriangleCount {
-public: int count(int N) {
-int dp[N];
-memset(dp,0,sizeof(dp));
-FORE(i,0,N){
-int cnt=1;
-FORE(j,i,N){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2889&amp;rd=5074 １辺の長さが与えられる。 各辺の長さが１の三角形を組み合わせて、１辺の長さが与えられた長さになるよう 三角形を作る。 このとき、１辺が１～与
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -261,37 +157,10 @@ FORE(j,i,N){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11193&amp;rd=14241
-友人が複数いて、既に飽きている友人と飽きていない友人がいる。
-毎回その中から２人を選んで、握手させる。握手した友人は飽きてしまう。
-このとき、全員が飽きるまでに要する回数を求める。
-解き方 
-通常のｄｐで解くと、数が変わらないときに無限ループになってしまうので工夫が必要。
-ここで、dp[x]をx人が飽きていないときの回数と定義する。
-p1は飽きていない人がｘ人のときから友人を選んで
-飽きていない人の数がx-1人になる確率、p2はx-2人になる確率とすると、
-dp[x]=1+p0*dp[x]+p1*dp[x-1]+p2*dp[x-2]　と表わすことができる。
-式を変形すると、dp[x]=(1+p1*dp[x-1]+p2*dp[x-2])/(1-p0)となりdpで解くことができる。
-dpはそれまでの状態の数がわかれば通常は解くことができるが、
-今回のケースのように状態が変わらないケースが存在するときは等号式を作って変形させてあげる必要がある。
-コード 
-class TheBoredomDivOne {
-public: double find(int n, int m) {
-int t=n+m;
-double dp[t+1];
-memset(dp,0,sizeof(dp));
-FORE(i,1,m+1){
-double sum=t*(t-1)/2.0;
-double p0=(t-i)*(t-i-1)/(sum*2.0);
-double p2=i*(i-1)/(sum*2.0);
-double p1=1.0-p0-p2;
-if(i==1)dp[i]=(1+p1*dp[i-1]+p2*0)/(1-p0);
-else dp[i]=(1+p1*dp[i-1]+p2*dp[i-2])/(1-p0);
-}
-return dp[m];
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11193&amp;rd=14241 友人が複数いて、既に飽きている友人と飽きていない友人がいる。 毎回その中から２人を選んで、握手させる。握手した友人は飽きてしまう。 このと
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -308,48 +177,10 @@ return dp[m];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-・トライアングル上に釘が打ってある台からボールを落とす。
-・台の高さはあらかじめ与えられる。
-・ボールを落としたとき、下に落ちる場所は釘の左側か右側になる。
-・また、通って欲しい釘の場所が複数与えられる。
-・このとき、通って欲しい場所を通るボールの落ち方の場合の数を求める。
-そのような場合がない場合はー１を返す。
-解き方 
-パスカルの三角形を使えば解くことができる。
-最初に与えられた台の数のパスカルの三角形を作り、
-各座標の差だけパスカルの三角形の場合の数をかけていく。
-座標の差が通ることができない差であればー１を返す。
-最後に、台の高さと最後の座標の高さの差の数だけ２の階乗すれば答えが求まる。
-コード 
-class FallingBall {
-public: int howMany(vector&lt;string&gt; cells, int n) {
-int ret=1;
-vector&lt;pair&lt;int,int&gt; &gt; p;
-int dp[n+1][n+1];
-memset(dp,0,sizeof(dp));
-dp[0][0]=1;
-FORE(i,1,n+1){
-dp[i][0]=1;
-FORE(j,1,n+1)dp[i][j]=dp[i-1][j-1]+dp[i-1][j];
-}
-FORE(i,0,cells.size()){
-stringstream out(cells[i]);
-int a,b;
-out&gt;&gt;a&gt;&gt;b;
-p.push_back(make_pair(a,b));
-}
-p.push_back(make_pair(0,0));
-sort(all(p));
-FORE(i,1,p.size()){
-int dy=p[i].first-p[i-1].first;
-int dx=p[i].second-p[i-1].second;
-if(dx&lt;0||dx&gt;dy)return 0;
-ret*=dp[dy][dx];
-}
-return ret*(1&lt;&lt;(n-1-p[p.size()-1].first));
-}
-}; 
+			問題 ・トライアングル上に釘が打ってある台からボールを落とす。 ・台の高さはあらかじめ与えられる。 ・ボールを落としたとき、下に落ちる場所は釘の左
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-289-div1-easy---fallingball/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -366,53 +197,7 @@ return ret*(1&lt;&lt;(n-1-p[p.size()-1].first));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11284&amp;rd=14430
-・nA,nB,paramA,paramBが与えられる。
-・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけparamB/1000をかける。それぞれは好きな順番で行ってもよい。
-このとき、最大となる値を求める。
-解き方 
-２つ解き方がある。
-１つ目は、与えられたパラメータによって法則を見つける、場合分けして解く方法。
-きちんと整理すれば解くことはできるが、少し複雑なので時間がかかってしまう。
-２つ目は、dpを利用する方法。
-今回は乗算の際に最大と最小が入れかわる可能性があるので、最大を求める通常のｄｐ１と最小を求めるｄｐ２の２つが必要。
-データ構造と解き方が分かればこちらが確実でコーディングも早い。
-コードは上記がｄｐの方法、コメントアウトしているのが１つめの方法。
-コード 
-class FoxPlayingGame {
-public:
-double theMax(int nA, int nB, int paramA, int paramB) {
-double dp1[60][60]={},dp2[60][60]={};
-FORE(i,0,nA+1){
-FORE(j,0,nB+1){
-if(i+j){
-dp1[i][j]=-1e+100;
-dp2[i][j]=1e+100;
-}
-if(i)dp1[i][j]=max(dp1[i][j],dp1[i-1][j]+0.001*paramA);
-if(j)dp1[i][j]=max(dp1[i][j],max(dp1[i][j-1]*0.001*paramB,dp2[i][j-1]*0.001*paramB));
-if(i)dp2[i][j]=min(dp2[i][j],dp2[i-1][j]+0.001*paramA);
-if(j)dp2[i][j]=min(dp2[i][j],min(dp1[i][j-1]*0.001*paramB,dp2[i][j-1]*0.001*paramB));
-}
-}
-return dp1[nA][nB];
-/*double ret=0.0;
-double pA=paramA/1000.0;
-double pB=paramB/1000.0;
-if(pA&gt;=0){
-if(pB&gt;=1)ret=nA*pA*pow(pB,nB);
-else if(-1&lt;=pB&amp;&amp;pB&lt;1)ret=nA*pA;
-else {
-if(nB%2==1)nB=max(0,nB-1);
-ret=nA*pA*pow(pB,nB);
-}
-}
-else{
-if(pB&gt;=1)ret=nA*pA;
-else if(0&lt;=pB&amp;&amp;pB&lt;1)ret=nA*pA*pow(pB,nB);
-else if(-1&lt;=pB&amp;&amp;pB&lt;0)ret=nA*pA*pow(pB,nB&gt;0);
-else{
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11284&amp;rd=14430 ・nA,nB,paramA,paramBが与えられる。 ・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけpara
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -432,52 +217,7 @@ else{
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4616&amp;rd=7224
-・テーブルが複数存在する。
-・各グループ人数ごとに来店する確率が与えられる。
-来店する回数に制限はない。
-・グループがきたときに、空いているテーブルにランダムに案内する。
-ただし、グループが複数人のときは連続したテーブルに案内しなければならない。
-各テーブルには１人席に着く。
-このとき、テーブルに着席する人数の期待値を求める。
-解き方
-全探索では解けないので、ｄｐを利用する。
-ｄｐをどう設計するかがポイントで、現在の席の空き状態を引数とすることで解くことができる。
-同じグループ人数については何度選択してもよいので、その空き状態に対して全てのグループ数とその座り方について探索する。
-こちらのコードを参考にさせていただきました。
-http://community.topcoder.com/stat?c=problem_solution&amp;rd=7224&amp;pm=4616&amp;cr=7459326
-コード 
-class TableSeating {
-public:
-double getExpected(int num, vector&lt;int&gt; probs) {
-double dp[(1&lt;&lt;12)]={0};
-bool can[15];
-FORE(i,1,(1&lt;&lt;num)){
-FORE(j,0,probs.size()){
-int s=j+1;
-double p=probs[j]/100.0;
-FORE(k,0,15)can[k]=false;
-FORE(k,0,15){
-int uu=(1&lt;&lt;(k+s))-(1&lt;&lt;k);
-if(k+s&lt;=num &amp;&amp; ((i&amp;uu)==uu) )can[k]=true;
-}
-int cnt=0;
-FORE(k,0,15)cnt+=can[k];
-p/=(double)cnt;
-FORE(k,0,15){
-if(!can[k])continue;
-int uu=(1&lt;&lt;(k+s))-(1&lt;&lt;k);
-dp[i]+=p*(dp[i-uu]+s);
-}
-}
-}
-return dp[(1&lt;&lt;num)-1];
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4616&amp;rd=7224 ・テーブルが複数存在する。 ・各グループ人数ごとに来店する確率が与えられる。 来店する回数に制限はない。 ・グループがきたときに、空いている
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -497,36 +237,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6085&amp;rd=9817
-・与えられた曲を全てＣＤに収録したい。
-・曲の長さは全て同じ秒数。
-・１つのＣＤに入れられる秒数も決められている。
-・ＣＤに収録する際、曲の間には必ず１秒空けなければいけない。
-・ただし、１つのＣＤに収録される曲数は１３の倍数になってはいけない。
-曲の長さと１つのＣＤに入れられる秒数、全曲数が与えられた時、
-必要なＣＤの最小数を求める。
-解き方 
-数学的に解くことができるが、少しトリッキー。
-ＣＤに入れられる曲数だけめいっぱい入れていき、
-最後に余った曲数に対して、１３の倍数でなければ１曲のみ他のＣＤに移せばよいので、答えはＣＤに入れられる曲数で割った数になる。
-１３の倍数のとき、他のＣＤがないとき、もしくは１引いたときその数が１３の倍数になるときは新たなＣＤに焼かなければいけないので＋１となる。
-上記のように少し考察が必要だが、ｄｐで解けば簡単に解くことができる。
-文字列のｄｐと同様１次元配列を用い、
-その曲数までの最小ＣＤ数を求めてあげればよい。
-コード 
-class NewAlbum {
-public: int leastAmountOfCDs(int nSongs, int length, int cdCapacity) {
-int dp[nSongs+1];
-int num=(cdCapacity+1)/(length+1);
-dp[0]=0;
-FORE(i,1,nSongs+1){
-dp[i]=100000;
-FORE(j,1,min(num,i)+1)if(j%13!=0)dp[i]=min(dp[i],1+dp[i-j]);
-}
-return dp[nSongs];
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6085&amp;rd=9817 ・与えられた曲を全てＣＤに収録したい。 ・曲の長さは全て同じ秒数。 ・１つのＣＤに入れられる秒数も決められている。 ・ＣＤに収録する際、曲の
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-296-div1-easy---newalbum-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -543,53 +257,10 @@ return dp[nSongs];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6190&amp;rd=9825
-・ある多角形が与えられる。
-・多角形のうち複数の点を１だけ動かすことができる。
-・ただし、１度動かした点と隣り合う点は動かすことができない。
-・また最初の点と最後の点との接続には境界があり、この２つを接続しているとみなすことはできない。
-このとき、任意の点を動かした時最大となる面積の増分を求める。
-解き方 
-ｄｐの問題。
-dp[i] ： 点i-1までの最大面積と定義
-点i-1を動かすか動かさないか、以下のいずれかの最大値を取る
-・dp[i-1] (点i-1を動かさないケース)
-・dp[i-2]+score(点i-1を動かしたときのスコア、点iと点i-2は動かさない)
-ただし、線形にｄｐで解くためには境界についての条件を考慮しなければならない。
-境界について以下の３つに分けることで単純なｄｐになる。
-・点０、点n－１が動かない場合（０とn－１の間に境界）
-・点０のみ動く場合（１と２の間に境界）
-・点ｎ－１のみ動く場合（０と１の間に境界）
-３つの最大のものが最終的な答えになる。
-
-
-コード 
-class PolyMove {
-public:
-double calc(int x1,int y1,int x2,int y2){
-return sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))*0.5;
-}
-double addedArea(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-double ret=0.0;
-int n=x.size();
-double dp[n];
-memset(dp,0,sizeof(dp));
-FORE(i,2,n)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-1]);
-memset(dp,0,sizeof(dp));
-dp[1]=calc(x[1],y[1],x[n-1],y[n-1]);
-dp[2]=dp[1];
-FORE(i,3,n)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-1]);
-memset(dp,0,sizeof(dp));
-dp[0]=calc(x[0],y[0],x[n-2],y[n-2]);
-dp[1]=dp[0];
-FORE(i,2,n-1)dp[i]=max(dp[i-1],dp[i-2]+calc(x[i-2],y[i-2],x[i],y[i]));
-ret=max(ret,dp[n-2]);
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6190&amp;rd=9825 ・ある多角形が与えられる。 ・多角形のうち複数の点を１だけ動かすことができる。 ・ただし、１度動かした点と隣り合う点は動かすことができない
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>

@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 184 DIV1 Easy - RaceCalculator (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2250&amp;rd=4740
-・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。
-・同じペースで走ることができ、予想される時間が計算できるのが理想だが、疲れが影響してペースは一定にはならない。
-・ある地点における予想時間は、その他の任意の２点を使って計算できる。
-・このとき、一番実際の時間と予想時間との差が小さくなる地点を求める。
-解き方 
-問題文の意味を読み解くのに苦労しました。
-ある地点に対する予想時間はその他の任意の２点を使って求めるということがわかれば、
-３点の取り方に対する全ての場合の数を計算してあげれば答えが求まります。
-コード 
-class RaceCalculator {
-public: int bestRace(vector&lt;int&gt; distances, vector&lt;int&gt; times) {
-int n=times.size();
-double badness[n];
-FORE(i,0,n)badness[i]=-(1e&#43;9);
-FORE(i,0,n)FORE(j,0,n)FORE(k,0,n){
-if(i==j||j==k||i==k)continue;
-double a=log(times[j]/(double)times[i]);
-double b=log(distances[i]/(double)distances[k]);
-double c=log(distances[i]/(double)distances[j]);
-double expected=times[i]*exp(a*b/c);
-badness[k]=max(badness[k],(times[k]-expected)/expected);
-}
-int best=0;
-FORE(i,0,n)if(badness[i]&lt;badness[best])best=i;
-return best;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2250&amp;rd=4740 ・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。 ・同じペースで走ることができ、予想される" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 493 DIV1 Easy - StonesGame (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11292&amp;rd=14422
-番号が１から始まる長さＮの列に、ひとつだけ白い石が置かれている。
-そのほかの場所には黒い石が置かれている。
-ここで２人のプレイヤーでゲームを行い、連続してＫ個の石を選びその順番をひっくりかえす。
-ただし、選んだ中には白い石がなければならない。
-プレイヤーは交互にプレイする。最初はRomeoの番で、次はStrangletの番。
-このとき、勝つ方のプレイヤーの名前を返す。
-ただし、決着がつかない場合はDrawを返す。
-解き方 
-石の場所とゴールの場所が与えられた時に勝ちかどうかを判定できる関数を正確に作ることができるか。
-関数は以下の条件で作成できる。
-・ゴールと初期位置の差とＫ＋１の偶奇が一致しているか
-・ゴールと初期位置の差がＫ未満であるか
-・ひっくり返すＫの選び方が、列におさまるか
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class StonesGame {
-public:
-bool can(int N,int M,int K,int L){
-if(M&gt;L)swap(M,L);
-if(L-M&gt;=K)return 0;
-if(K%2==0){
-if(abs(M-L)%2==0)return false;
-int len=(K-abs(L-M)-1)/2;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11292&amp;rd=14422 番号が１から始まる長さＮの列に、ひとつだけ白い石が置かれている。 そのほかの場所には黒い石が置かれている。 ここで２人のプレイヤーでゲーム" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/" />
 

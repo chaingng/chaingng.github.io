@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2014 TCO Round 1B Easy - SpamChecker (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13119&amp;rd=15950
-・与えられたe-mailがスパムかどうかチェックしたい。
-・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であるという
-情報が与えられる。
-・○が現れたら○のときのスコアを足し、×のときは×のときのスコアを引く。
-・最初のスコアは０であり１行目から順にスコアを計算していき、１度でもスコアが
-マイナスになったらそのe-mailはスパムとなる。
-・このとき、与えられたe-mailがスパムであるかどうかを求める。
-解き方 
-単純に実装するだけ。
-スコアを順に計算して毎回マイナスかどうかを判定すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SpamChecker {
-public: string spamCheck(string judgeLog, int good, int bad) {
-int n=judgeLog.size();
-int score=0;
-FORE(i,0,n){
-if(judgeLog[i]==&#39;o&#39;)score&#43;=good;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13119&amp;rd=15950 ・与えられたe-mailがスパムかどうかチェックしたい。 ・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2014-tco-round-1b-easy---spamchecker-/" />
 

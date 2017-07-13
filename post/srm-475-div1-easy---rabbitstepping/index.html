@@ -7,51 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 475 DIV1 Easy - RabbitStepping" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10878&amp;rd=14156
-１次元のセルがあり、赤、白、黒のいずれかの色が塗られている。
-またセルのうちいくつかにうさぎがいる。
-各ターンごとに、うさぎはそのセルの色と場所によって動く場所が決まる。
-・一番右もしくはその右のセルにいるときは左へ
-・一番左にいるときは右へ
-そうでないときは以下に従って動く。
-・白のとき、ひとつ左に移動
-・黒のとき、ひとつ右に移動
-・赤のとき、最初のステップであれば左に、そうでなければ前のステップにいた場所へ移動
-各ターン終了後、一番右のセルは消滅し、セルの長さが２になったときに終了する。
-さまざまなうさぎの初期位置が考えられるとき、最後に残るうさぎの数の
-期待値を求める。
-解き方 
-実装の問題。
-すべてのうさぎの初期位置に対して、間違いのないようシンプルに実装する。
-コード 
-class RabbitStepping {
-public: double getExpected(string field, int r) {
-int n=field.size();
-double cnt=0,sum=0;
-for(int mask=0;mask&lt;(1&lt;&lt;n);mask&#43;&#43;){
-if(__builtin_popcount(mask)!=r)continue;
-sum&#43;&#43;;
-vector&lt;int&gt; prev(r,-1),cur(r),next(r,-1);
-int at=0;
-for(int i=0;i&lt;n;i&#43;&#43;)if(mask&amp;(1&lt;&lt;i))cur[at&#43;&#43;]=i;
-for(int len=n;len&gt;2;len--){
-FORE(i,0,r)if(cur[i]!=-1){
-if(cur[i]==0)next[i]=1;
-else if(cur[i]==len-1||cur[i]==len-2)next[i]=cur[i]-1;
-else{
-if(field[cur[i]]==&#39;W&#39;)next[i]=cur[i]-1;
-if(field[cur[i]]==&#39;B&#39;)next[i]=cur[i]&#43;1;
-if(field[cur[i]]==&#39;R&#39;)next[i]= len==n ? cur[i]-1 : prev[i];
-}
-}
-FORE(i,0,len){
-int tmp=0;
-FORE(j,0,r)if(next[j]==i)tmp&#43;&#43;;
-if(tmp&gt;=2)FORE(j,0,r)if(next[j]==i)next[j]=-1;
-}
-FORE(i,0,r)if(next[i]==len-1)next[i]=-1;
-prev=cur;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10878&amp;rd=14156 １次元のセルがあり、赤、白、黒のいずれかの色が塗られている。 またセルのうちいくつかにうさぎがいる。 各ターンごとに、うさぎはそのセルの色" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-475-div1-easy---rabbitstepping/" />
 

@@ -7,25 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 527 DIV1 Easy - P8XGraphBuilder" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11308&amp;rd=14552
-解き方 
-ｄｐで解く。最終的に２＊ｎ−２個のエッジが発生する。
-コード 
-class P8XGraphBuilder {
-public: int solve(vector&lt;int&gt; scores) {
-int n=scores.size()&#43;1;
-int dp[n&#43;1][2*n-1];
-FORE(i,0,n&#43;1)FORE(j,0,2*n-1)dp[i][j]=-(1e&#43;9);
-dp[0][0]=0;
-for(int i=0;i&lt;n;i&#43;&#43;)for(int j=i;j&lt;2*n-2;j&#43;&#43;){
-for(int k=0;k&lt;n-1&amp;&amp;j&#43;k&#43;1&lt;=2*n-2;k&#43;&#43;){
-dp[i&#43;1][j&#43;k&#43;1]=max(dp[i&#43;1][j&#43;k&#43;1],dp[i][j]&#43;scores[k]);
-}
-}
-return dp[n][2*n-2];
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11308&amp;rd=14552 解き方 ｄｐで解く。最終的に２＊ｎ−２個のエッジが発生する。 コード class P8XGraphBuilder { public: int solve(vector&lt;int&gt; scores) { int n=scores.size()&#43;1; int dp[n&#43;1][2*n-1]; FORE(i,0,n&#43;1)FORE(j,0,2*n-1)dp[i][j]=-(1e&#43;9); dp[0][0]=0; for(int i=0;i&lt;n;i&#43;&#43;)for(int j=i;j&lt;2*n-2;j&#43;&#43;){ for(int k=0;k&lt;n-1&amp;&amp;j&#43;k&#43;1&lt;=2*n-2;k&#43;&#43;){ dp[i&#43;1][j&#43;k&#43;1]=max(dp[i&#43;1][j&#43;k&#43;1],dp[i][j]&#43;scores[k]); } } return dp[n][2*n-2]; } };" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-527-div1-easy---p8xgraphbuilder/" />
 

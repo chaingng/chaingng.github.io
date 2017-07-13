@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 303 DIV1 Easy - SpiralNumbers (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6093&amp;rd=9824
-座標上に１から始まり、らせん上に数が増えていく。
-この座標の１の場所を（０，０）として右側を正のｘ座標、下側を正のｙ座標としたときに与えられた数字の座標の位置を求める。
-解き方 
-数字の最大が1e&#43;9なので全探索では解くことができない。
-ここで、各四角形を考えると右上の座標の数は１，９，２５と(i&#43;2)^2ずつ増えていることがわかる。また、その座標は（１、－１）、（２、－２）とこちらも１ずつ増減していることがわかる。
-この法則に従ってどの四角形に与えられた数字があるかを判定し、逆にらせんを描くことで答えを求めることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class SpiralNumbers {
-public: string getPosition(int N) {
-int dx[]={-1,0,1,0};
-int dy[]={0,1,0,-1};
-int x=0,y=0,len=0;
-if(N==1)return &#34;(0,0)&#34;;
-for(long long i=1;i*i&lt;=1e&#43;18;i&#43;=2){
-len&#43;&#43;;
-if(i*i&lt;N)continue;
-x=len-1,y=-(len-1);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6093&amp;rd=9824 座標上に１から始まり、らせん上に数が増えていく。 この座標の１の場所を（０，０）として右側を正のｘ座標、下側を正のｙ座標としたときに与え" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-303-div1-easy---spiralnumbers-%E5%BE%A9%E7%BF%92/" />
 

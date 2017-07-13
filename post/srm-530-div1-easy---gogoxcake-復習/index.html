@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 530 DIV1 Easy - GogoXCake （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11274&amp;rd=14723
-ケーキをカットする問題。
-カットされたあとのケーキの形と、カットするナイフが与えられる。
-ナイフを当てるときは必ず、そのマスにもケーキがなければいけない。
-カット後のケーキの形にすることができればＹｅｓ，ダメならＮｏを返す。
-解き方 
-単純にシミュレーションするだけ。
-カットできるときはカットしなければ答えを導けないことがわかれば、単純に実装できる。
-最初にカットするべきマスとダメなマスをマーキング。
-次に順番にナイフを当てていき、全てカットすることができるときだけカットする。
-最後にカットするべきマスが残っていればＮｏ，残っていなければＹｅｓ．
-コード 
-class GogoXCake {
-public: string solve(vector&lt;string&gt; cake, vector&lt;string&gt; cutter) {
-int h=cake.size(),w=cake[0].size();
-int ch=cutter.size(),cw=cutter[0].size();
-int g[h][w];
-FORE(i,0,h)FORE(j,0,w){
-if(cake[i][j]==&#39;.&#39;)g[i][j]=-1;
-else g[i][j]=1;
-}
-FORE(i,0,h-ch&#43;1){
-FORE(j,0,w-cw&#43;1){
-int invalid=0;
-FORE(a,i,ch&#43;i)FORE(b,j,cw&#43;j)if(cutter[a-i][b-j]==&#39;.&#39;&amp;&amp;g[a][b]!=-1)invalid=1;
-if(invalid)continue;
-FORE(a,i,ch&#43;i)FORE(b,j,cw&#43;j)if(cutter[a-i][b-j]==&#39;.&#39;)g[a][b]=1;
-}
-}
-FORE(i,0,h)FORE(j,0,w)if(g[i][j]==-1)return &#34;NO&#34;;
-return &#34;YES&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11274&amp;rd=14723 ケーキをカットする問題。 カットされたあとのケーキの形と、カットするナイフが与えられる。 ナイフを当てるときは必ず、そのマスにもケーキがな" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-530-div1-easy---gogoxcake-%E5%BE%A9%E7%BF%92/" />
 

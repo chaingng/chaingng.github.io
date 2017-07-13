@@ -77,37 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-有向グラフが与えられる。
-このうち、巨大な経路長Ｌを考え、そのＬの場合の数がＯ（Ｌ＾Ｋ）となるかを知りたい。
-Ｏ（Ｌ＾Ｋ）となるときはＫを、そうでないときは-1を返す。
-解き方 
-ある閉路に対して途中で分岐があるのであれば、経路長は２＾Ｌに増え続けるため-1となる。
-逆に、そうでない閉路が存在すれば答えは存在する。
-ただし、閉路でない場合はＬが巨大になりえないので、答えは０となる。
-ある閉路からある閉路まで移動することができるとき、
-最初の閉路でＬのうちいくつかの道を作り、次の経路で残りの数を選べるのでＬ＾１となる。
-つまり、閉路間の最大距離がＫとなることがわかる。
-同じ閉路に属するノードはＵＮＩＯＮ－ＦＩＮＤ木を用いて同じ集合とし、最後にＵＮＩON同士の最大距離を求めればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int un=1000;
-int urank[1000],uparent[1000];
-int d[60][60],d2[60][60];
-class BigO {
-public:
-void union_init(){
-FORE(i,0,un){
-uparent[i]=i;
-urank[i]=0;
-}
-}
-int union_find(int x){
+			問題 有向グラフが与えられる。 このうち、巨大な経路長Ｌを考え、そのＬの場合の数がＯ（Ｌ＾Ｋ）となるかを知りたい。 Ｏ（Ｌ＾Ｋ）となるときはＫを、
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-608-div1-middle---bigo-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -127,52 +97,7 @@ int union_find(int x){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-Ｎ個の都市があり、すべての都市についてある都市からある都市までいけるようにしたい。
-ただし、そのために引くエッジの距離はできるだけ差がないようにしたく、その標準偏差を最小になるようにしたい。
-このとき、最小となる標準偏差を求める。
-解き方 
-標準偏差は全ての辺のコストの平均をave、一つの辺のコストをAiとすると、
-sqrt( Σ(ave-Ai)^2 /(N-1))で求められる。
-このとき、aveの値によってどの辺を用いたらよいかの優先度が変化する。
-そのため、すべての考えられる優先度に対して標準偏差を計算し、そのうちの最小となるものを求めればよい。
-それでは、すべての考えられる優先度を考える。
-このとき、２辺間の優先度はその平均に対して大小があるときに変化する。
-そのため、aveをすべての２辺間の平均＋αに仮に設定し、そのときの標準偏差をすべて求めればよい。
-このとき優先度が決定したときのグラフの作成は最小全域木を求めることと等しい。
-よって、プリム法を適用して最小全域木を求める。
-最後に、標準偏差は計算にあたって以下のように変形する。
-sqrt( Σ(ave-Ai)^2 /(N-1))
-=sqrt( Σ(ave^2) -2*Σ(Ai)*ave+Σ(Ai)^2 /(N-1))
-=sqrt( (n-1)ave^2-2*Σ(Ai)*ave+Σ(Ai)^2/(N-1))
-数列の和の公式でΣの変数にかからない項は項数の積となる。
-コード 
-double d[30][30],d2[30][30];
-int n;
-class Egalitarianism2 {
-public:
-void prim(double m,double &amp;sum,long long &amp;sum2){
-int used[n],prev[n];
-double mind[n];
-FORE(i,0,n)mind[i]=1e+18;
-memset(used,0,sizeof(used));
-used[0]=1;
-FORE(i,0,n){
-mind[i]=fabs(d[0][i]-m);
-prev[i]=0;
-}
-FORE(t,1,n){
-double cost=1e+18;
-int add=-1;
-FORE(i,0,n){
-if(!used[i]&amp;&amp;cost&gt;mind[i]){
-cost=mind[i];
-add=i;
-}
-}
-sum+=d[prev[add]][add];
-sum2+=d2[prev[add]][add];
-used[add]=1;
+			問題 Ｎ個の都市があり、すべての都市についてある都市からある都市までいけるようにしたい。 ただし、そのために引くエッジの距離はできるだけ差がない
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-611-div1-middle---egalitarianism2-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -192,34 +117,7 @@ used[add]=1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-Ｋ種類のボールがそれぞれX[i]個存在する。
-各X[i]は、あらかじめ与えられるA,B,C,Dを用いて以下の式で求められる。
-X[0]=A;
-X[i]=(X[i-1]*B+C)%D+1
-ここで、全てのボールをできるだけ少ない箱にまとめたい。
-それぞれの箱は最大Ｋ個のボールが入り、１つの箱に入っているボールはすべて同じ色か、すべて異なる色でなくてはならない。
-このとき、できるだけ少ない箱にまとめたときの箱の個数を求める。
-解き方 
-X[i]はlong long型を用いることで容易に求めることができる。
-箱の詰め方だが、各色のボールは10^9のため単純なｄｐでは解くことができない。
-そこで詰め方に対して貪欲法で解くことができないか考える。
-各色に対してＫ個以上のボールがある際には、Ｋ個未満になるまで同じ色のボールを詰めた方がよいのではないかと考える。
-反例について考えてみる。
-反例は、各色に対してＫ個以上のボールがあるとき、すべて異なる色で詰める方がよいとする。
-このとき色の数がｘ＜Ｋであるとき、各箱の個数はｘ個、つまりＫ個未満である。
-このときはｘ種類それぞれに対してＫ個のボールをつめると箱の数はｘ個、つまりＫ個未満になりよりい解があるので成り立たない。
-よって、Ｋ個以上のボールがあるときには同色で詰めた方がよい。
-上記の処理を行うことで各色に残っている数はＫ個未満になるため、あとは全探索を用いてあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PackingBallsDiv1 {
-public: int minPacks(int K, int A, int B, int C, int D) {
+			問題 Ｋ種類のボールがそれぞれX[i]個存在する。 各X[i]は、あらかじめ与えられるA,B,C,Dを用いて以下の式で求められる。 X[0]=A; X[i]=(X[i-1]*B+C)%D+1 ここで、全
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-609-div1-middle---packingballsdiv1-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -239,34 +137,7 @@ public: int minPacks(int K, int A, int B, int C, int D) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-lowからhighまでの数字のうち、最大公約数がKとなるようにN個の数字の集合を作る。
-このとき、同じ数字を何回選んでもよい。
-このとき、数字の選び方が何通りあるか求める。
-解き方 
-最大公約数がＫということは、lowからhighまでのうちKの倍数であるものだけを考えたらよい。
-そしてそのうち、それぞれが約数を持たないような全ての場合の数を求めればよい。
-このときの効率的な求め方が思い浮かばなくEditorialを読む。
-Ｋの倍数だけを考えたらよいということは、lowからhighまでの数字をKで割ったものについて考えれば単純化できる。
-さらにその中でｄｐを利用することで約数を持たないような数を求めることができる。
-最初にＫで割ったときにlowが１となったときは、すべて１を選んだときの場合の数１通りを足すことに注意。
-ＭＯＤを使う際は、ＭＯＤする前にオーバーフローすることがあるのでlong long型に変換する。
-オーバーフローしないよう、毎回の計算をＭＯＤすることにも注意。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[100010];
-int MOD=1000000007;
-class RandomGCD {
-public:
-int f(int a,int b){
-int ret=1,cur=a;
-while(b){
-if(b&amp;1)ret=(long long)ret*cur%MOD;
+			問題 lowからhighまでの数字のうち、最大公約数がKとなるようにN個の数字の集合を作る。 このとき、同じ数字を何回選んでもよい。 このとき、数
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-613-div1-middle---randomgcd-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -286,31 +157,7 @@ if(b&amp;1)ret=(long long)ret*cur%MOD;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-Ｎ個の都市が存在する。
-ある都市A[i]とB[i]を結ぶコストD[i]があらかじめわかっている。
-このとき、都市0から都市N-1までちょうどコストTで移動できれば"Possible"、移動できなければ"Impossible"を返す。
-解き方 
-D[i]は最大10000、Tは10^18のため単純な全探索はできない。
-都市0からN-1まではどの経路を重複してもよいので、それぞれの場合を求めなければいけない。
-このあたりで引っかかってしまったのでEditorialを読む。
-ｄｐとしてTはそのまま扱えないが、０から直接つながる経路は最初に何回往復してもよいので、
-その経路の往復分の距離ｄを考える。
-ここで各都市について「都市番号」、「現在までのコスト%d」の状態を持つｄｐを考えることができる。
-ここでｄｐの値はトータルのコストとなる。
-最後に、dp[n-1][T%d]の値がＴ以下であれば、
-都市Ｎ－１にＴ％ｄのコストで到達できることがわかるので、
-ｄを足りない分だけ最初に往復すればちょうどＴで到達できるかを判定できる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-long long dist[60][20001];
-class LongLongTripDiv1 {
-public: string isAble(int N, vector&lt;int&gt; A, vector&lt;int&gt; B, vector&lt;int&gt; D, long long T) {
+			問題 Ｎ個の都市が存在する。 ある都市A[i]とB[i]を結ぶコストD[i]があらかじめわかっている。 このとき、都市0から都市N-1までちょうど
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-615-div1-middle---longlongtripdiv1%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -330,42 +177,7 @@ public: string isAble(int N, vector&lt;int&gt; A, vector&lt;int&gt; B, vector&lt
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-硬貨が複数種類存在し、１枚当たりの価値value[i]があらかじめわかっている。
-それぞれの硬貨は異なる色をしている。
-またＡＴＭが存在し、好きな回数だけ好きな金額を引き出すことができる。
-引きだされる金額は、もっとも硬貨が少ないように引きだされる。
-このとき、すべての硬貨の色の価値を判定するために必要な最小の引き出し回数を求める。
-考えたこと
-サンプルより１度に引き出せないときは、ある硬貨の価値の半分の硬貨があり、かつ倍の価値の硬貨があるときに存在しそう。
-また各硬貨について他の硬貨にならないように一度に引き出せる枚数は、その次の硬貨の価値から割りだせそう。
-では１度の引き出しについて枚数が異なるように選び、その組み合わせの最大化で解けるか。
-サンプルと照らし合わせると合わないので、もっと最小となる考え方がありそう。
-ここでEditorialを読む。
-基本的には、２進数で表せる数とビット数の関係を用いる。
-全てのコインが２枚まで引き出せると、２回の判定で９通りまで判定できる。
-（例）引き出されたコインの枚数
-１回目：０　０　０　１　１　１　２　２　２
-２回目：０　１　２　０　１　２　０　１　２
-ただしすべてのコインが2回引き出せなくとも、１枚まで引き出せるコインが４枚までなら
-上記の判定に含むことができる。
-４枚というのは、２回の引き出しにおける０と１の組み合わせ数。
-つまり引き出す回数がｎ回とすると、各コインの引き出せる最大の数ｘのコインがx^2までで
-あればよい。
-ただしExampleから、どのコインも少なくても１回は引き出さないといけない。
-これは引き出せる最大のコインの枚数でソートすると何枚目かの情報もわかるので、
-各配列のi番目にある最大数xのコインについて x^2&gt;=i+2であるような最小のnを求めればよい。
-最後に、long longの割り算でint型に代入しようとするとintを超える、またはマイナスになるケースがあるので同じ型で取り扱う必要がある。
-コード 
-class ColorfulCoins {
-public: int minQueries(vector&lt;long long&gt; values) {
-vector&lt;long long&gt; num;
-int n=values.size();
-FORE(i,0,n-1)num.push_back( min(100LL,(long long)(values[i+1]/values[i])) );
-sort(all(num));
-FORE(count,1,7){
-int ok=1;
-FORE(i,0,num.size()){
+			問題 硬貨が複数種類存在し、１枚当たりの価値value[i]があらかじめわかっている。 それぞれの硬貨は異なる色をしている。 またＡＴＭが存在し、
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-616-div1-middle---colorfulcoins%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -385,34 +197,7 @@ FORE(i,0,num.size()){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-ｎ種類の文字が与えられる。
-これを、以下の条件にあてはまらないようにできるだけ長い文字列を作成する。
-（１）同じ文字が２つ連続しないこと
-（２）ｘｙｘｙとなるような部分文字列が存在しないこと
-このとき、最長の文字列は何通りあるか求める。
-解き方 
-文字列に法則がないか考える。
-今回は最長の文字数は、以下のパターンになるので2n-1であることがわかる。
-（１）aXYZYXa
-aは一つのアルファベット、XYZYXはaを除いたアルファベットの種類数n-1における最長の文字列 (n-1)+(n-2)=2n-3
-（２）aMNaXYa　aは一つのアルファベット、MN、XYはaを除いた、お互いに同じアルファベットを含まない種類数
-&nbsp; &nbsp; で構成される。MNに含まれる種類をＰ,ＸＹに含まれる種類をQとすると
-MNの長さは2P-1,XYの長さは2Q-1, P+Q=n-1から
-2P-1+2Q-1=2(P+Q)-2=2(n-1)-2=2x-4
-&nbsp; &nbsp; よって全体の長さは2n-1となる。
-上記について長さが1のときからnの時までdpで回してあげ、
-最後にアルファベットの種類数分だけの順列が生じるのでn!をかけてあげればよい。
-最初は最長の文字列が一意に決まると考え着かなかったので、もっと問題を洞察する必要があった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-long long dp[5010];
-int MOD=1000000007;
+			問題 ｎ種類の文字が与えられる。 これを、以下の条件にあてはまらないようにできるだけ長い文字列を作成する。 （１）同じ文字が２つ連続しないこと （２
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-618-div1-middle---longwordsdiv1-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -432,29 +217,7 @@ int MOD=1000000007;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-複数の（ｘ、ｙ）で表わされる点が与えられる。
-各点について、maxPartners以下の次数で結びたい。
-また、各点について結ぶ時はminDistance以上の距離がないといけない。
-２点間の距離は|x1-x2|+|y1-y2|で表わされる。
-このとき、できるだけ多くの点で結びたいときの最終的な結ばれた数と、そのときの最小となる距離の合計を求める。
-解き方 
-点の数は最大１０とのことで、なんとなくビットｄｐが利用できそう。
-ただしmaxPartnersは３以下とのことなので単純なビットではいけない。
-今回、各点ｄｘの値を次数とした、ｆ（ｄ１、ｄ２、ｄ３）という関数を考える。
-この値を減らしていきＤＦＳで探索することで最終的な答えを求めることができる。
-ｄｘは最大３となる数であるため、各点ごとに２桁で表わされるビットｄｐを利用する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int v[1&lt;&lt;(2*10)],m[1&lt;&lt;(2*10)];
-class TwinTowns {
-public: vector&lt;int&gt; optimalTwinTowns(vector&lt;int&gt; x, vector&lt;int&gt; y, int maxPartners, int minDistance) {
-int n=x.size();
+			問題 複数の（ｘ、ｙ）で表わされる点が与えられる。 各点について、maxPartners以下の次数で結びたい。 また、各点について結ぶ時はminD
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-430-div1-middle---twintowns-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -474,39 +237,7 @@ int n=x.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-ある文字列が与えられ、それを回文にしたい。
-回文にするために複数のアルファベットの追加、削除、変換式が与えられ、各変換式について必要なコストも与えられる。
-このとき、回文にするために必要な最小のコストを求める。回文にできないときはー１を返す。
-解き方 
-Editorialを読みました。
-通常の回文の解き方をベースに、それを応用できるか。
-通常の回文の解き方は以下の通り。
-左端と右端の場所が一致、もしくは残り１文字になれば終了。
-そうでなければいずれかの操作を行う。
-１）回分の左端と右端(a,b-1)のアルファベットがことなれば一致するように変換し、
-変換コストを足して(a+1,b-2)を調べる。
-２）左端を削除し、削除コストを足して(a+1,b-1)を調べる。
-３）右端を削除し、削除コストを足して（a,b-2）を調べる。
-今回はコストの考え方について応用する。
-削除については、アルファベットを空白に変換と考えれば変換と同様に操作できる。
-同様に追加についても、空白をアルファベットに変換と考えることができる。
-上記の操作によって、変換のコストだけをコードに落とせればよい。
-変換のコストは問題で与えられるので、配列に保存してからワーシャルフロイドを回して任意の２つのアルファベットの最小の変換コストを求める。
-ただし今回は、変換できればよいことから
-あるアルファベットa→c とb→cのコストの和が最小であれば上記に置き換える必要がある。
-また、例外の判定については定義したＩＮＦの和が発生しうるため、
-オーバーフローしないように値の判定と更新を行うことに注意。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-const int INF=1000000000;
-string word;
-int d[27][27],m[27][27],dp[51][51];
+			問題 ある文字列が与えられ、それを回文にしたい。 回文にするために複数のアルファベットの追加、削除、変換式が与えられ、各変換式について必要なコス
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-509-div1-middle---palindromizationdiv1%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -526,36 +257,7 @@ int d[27][27],m[27][27],dp[51][51];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-Ｎ個のセクションに区切られた道路を渡りたい。
-ただし、各セクションには多くて１匹の狼がいるので注意して歩かなくてはいけない。
-今回上記に加えて、狼の存在について追加の情報が与えられる。
-複数のleft[i]、right[i]が与えられ、この区間中に最大で２匹の狼が存在する。
-このとき、各セクションの狼の存在についてすべての場合の数を求める。
-解き方 
-ｄｐで解けそうな問題なので、どのようにｄｐを設計するか。
-現在の状態を考えた時に、最後に狼がいたセクションと現在いるセクションを考える。
-この状態のすべての場合の数は、以下の２通りになる。
-（１）現在のセクションに狼を追加せずに次のセクションに移る場合
-（２）現在のセクションに狼を追加して次のセクションに移る場合
-ただし（２）の場合は、与えられた条件の制約から次に移ることのできるセッションは限られる。
-具体的には、前に狼がいたセクションと今回追加するセクションが両方含まれるセクションは
-狼が２匹以上となりこれ以上狼は追加できないので、その次の場所から検索することになる。
-あとは上記の条件をＤＦＳで実装すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int N,n,dp[305][305];
-vector&lt;int&gt; s,t;
-class WolfInZooDivOne {
-public:
-vector&lt;int&gt; parse(vector&lt;string&gt; str){
-string s="";
-FORE(i,0,str.size())s+=str[i];
+			問題 Ｎ個のセクションに区切られた道路を渡りたい。 ただし、各セクションには多くて１匹の狼がいるので注意して歩かなくてはいけない。 今回上記に加え
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-578-div1-middle---wolfinzoodivone-%E5%BE%A9%E7%BF%92x/">Read more…</a>

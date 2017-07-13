@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM536 DIV2 -Level2" />
-<meta property="og:description" content="&lt;問題&gt;
-①１～９個の面を持つサイコロがあり、決められた数だけ存在する。
-②どのサイコロを与えられたかはわからない。同じ面を持つサイコロは複数存在しうる。
-③そのサイコロの集合を複数回投げて、出た表の面の集合が与えられる。
-④このとき、可能性のあるサイコロの集合のうち最も面の数が少なくなるような和を返す。
-＜解き方＞
-全ての面の出方についてそれぞれソートする。
-ソートした後、それぞれの１番目の要素の中で最大のものが
-１番目の要素の最小の答えとなる。
-２番目以降も同様。
-最後に求めた全ての要素の和を返す。
-＜コード＞
-class RollingDiceDivTwo {
-public: int minimumFaces(vector&lt;string&gt; rolls) {
-int n=rolls.size(),ret=0;
-vector &lt;int&gt; ans(rolls[0].size(),0);
-FORE(i,0,n)sort(rolls[i].begin(),rolls[i].end());
-FORE(i,0,n){
-FORE(j,0,rolls[0].size()){
-if(ans[j]&lt;rolls[i][j]-&#39;0&#39;)ans[j]=rolls[i][j]-&#39;0&#39;;
-}
-}
-FORE(i,0,rolls[0].size())ret&#43;=ans[i];
-return ret;
-}
-}; " />
+<meta property="og:description" content="&lt;問題&gt; ①１～９個の面を持つサイコロがあり、決められた数だけ存在する。 ②どのサイコロを与えられたかはわからない。同じ面を持つサイ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm536-div2--level2/" />
 

@@ -7,24 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 536 DIV1 Easy - MergersDivOne （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11799&amp;rd=14728
-複数の会社が与えられる。
-そのうち任意の数を選択し、その価値の和／選択した数が合併した後の価値になる。
-すべての会社を合併した時、最大となる価値を求める。
-解き方 
-最初の数の順番は回答に関係しないので昇順にソート。
-このとき、すべての点をプロットすると、２つずつ左から合併を繰り返した方がよいことがわかる。
-（合併後の点が順に右に移動していく。仮に３つを選択した時はその中間になり間の値があまり意味を持たないため、２つずつがよいことがわかる）
-コード 
-class MergersDivOne {
-public: double findMaximum(vector&lt;int&gt; revenues) {
-sort(revenues.begin(),revenues.end());
-double ans=revenues[0];
-FORE(i,1,revenues.size())ans=(ans&#43;revenues[i])/2.0;
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11799&amp;rd=14728 複数の会社が与えられる。 そのうち任意の数を選択し、その価値の和／選択した数が合併した後の価値になる。 すべての会社を合併した時、最大とな" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-536-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/" />
 

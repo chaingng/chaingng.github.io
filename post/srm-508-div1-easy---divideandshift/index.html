@@ -7,53 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 508 DIV1 Easy - DivideAndShift" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11434&amp;rd=14437
-数字の列と、現在の位置が与えられる。
-２つの操作のいずれかによって、位置を１番目に移動させたい。
-・位置を右か左に移動
-・現在の列数の素数で割り、列の長さを列／素数に変換
-このときの最小の操作回数を求める。
-解き方 
-N,Mが大きいのでdpでは配列を確保できない。
-今回２つの匝瑳のうち、
-移動の操作は割る操作よりも後で行えばよいので
-各列についてたかだか１回の操作でよい。
-よって各列について割る操作すべてについてBFSで調べていき、
-また移動についても各列1度のみ調べていけばよい。
-コード 
-class DivideAndShift {
-public:
-int getLeast(int N, int M) {
-int ret=1e&#43;9;
-int prime[N&#43;1];
-memset(prime,1,sizeof(prime));
-prime[0]=0,prime[1]=0;
-for(int i=2;i&lt;=N;i&#43;&#43;)if(prime[i]){
-for(int j=i&#43;i;j&lt;=N;j&#43;=i)prime[j]=0;
-}
-queue&lt;pair&lt;pair&lt;int,int&gt;,int&gt; &gt; q;
-q.push(make_pair(make_pair(N,M-1),0));
-while(!q.empty()){
-int x=q.front().first.first;
-int pos=q.front().first.second;
-int turn=q.front().second;
-q.pop();
-ret=min(ret,turn&#43;min(pos,x-pos));
-vector&lt;int&gt; vx;
-for(int i=2;i*i&lt;=x;i&#43;&#43;)if(x%i==0){
-if(prime[i])vx.push_back(i);
-if(prime[x/i])vx.push_back(x/i);
-}
-if(prime[x])vx.push_back(x);
-FORE(i,0,vx.size()){
-int len=x/vx[i];
-q.push(make_pair(make_pair(len,pos%len),turn&#43;1));
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11434&amp;rd=14437 数字の列と、現在の位置が与えられる。 ２つの操作のいずれかによって、位置を１番目に移動させたい。 ・位置を右か左に移動 ・現在の列数の素数で" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-508-div1-easy---divideandshift/" />
 

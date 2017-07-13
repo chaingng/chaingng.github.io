@@ -77,34 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11110&amp;rd=14235
-N個のドアがある。
-最初は一つおきにドアを開けていく。
-次は空いているドアはないとみなして、２つおきにドアをあけていく。
-次は３つおき・・・としたときに、最後に空けるドアを求める。
-解き方 
-Ｎ＝１０＾６。
-全探索だとN+N/2+N/(2*3)+N/(2*3*4)・・・
-=N(1/2+1/6+1/24...)
-最大ケースを試しても240msほどなのでこれで解けます。
-こちらを拝見させていただくと、法則を出しても解けるそうです。
-http://be.nucl.ap.titech.ac.jp/~kawada/indigo/view/memo341.html
-http://d.hatena.ne.jp/kusano_prog/20100915/1284572746
-コード 
-class LockersDivOne {
-public:
-int lastOpened(int N) {
-vector&lt;int&gt; a;
-FORE(i,0,N)a.push_back(i+1);
-for(int d=2;;d++){
-if(a.size()==1)return a[0];
-vector&lt;int&gt; b;
-FORE(i,0,a.size())if(i%d!=0)b.push_back(a[i]);
-a.swap(b);
-}
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11110&amp;rd=14235 N個のドアがある。 最初は一つおきにドアを開けていく。 次は空いているドアはないとみなして、２つおきにドアをあけていく。 次は３つおき・・・
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-482-div1-easy---lockersdivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -121,52 +97,7 @@ a.swap(b);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10180&amp;rd=13519
-ある文字列が与えられる。
-文字列を入れ替えた時、隣り合う文字が同じアルファベットにならない
-場合の数を求める。
-解き方 
-Ｎ＝１０なので全探索できそうだが、
-計算量をきちんとしないとオーバーフローしてしまう。
-全ての順列で10!=3628800=3.6*10^6だが
-その中で全ての順列について10回の判定で3.6*10^7がぎりぎり。
-それ以上、7.2*10^7がエラー境界な感覚なので
-上位の人でもエラーとなっている人が多かったです。
-nextpermutation＆判定文ではなく、
-再帰関数を使うことでO(10!)に近いオーダーで計算することができます。
-コード 
-class TheLuckyString {
-public:
-int N;
-int total;
-string str;
-int have[26];
-void calc(int pos,char prev){
-if(pos==N){
-total++;
-return;
-}
-for(int ch='a';ch&lt;='z';ch++){
-if(ch!=prev &amp;&amp; have[ch-'a']&gt;0){
-have[ch-'a']--;
-calc(pos+1,ch);
-have[ch-'a']++;
-}
-}
-}
-int count(string s) {
-N=s.size();
-total=0;
-FORE(i,0,26)have[i]=0;
-FORE(i,0,N)have[s[i]-'a']++;
-calc(0,' ');
-return total;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10180&amp;rd=13519 ある文字列が与えられる。 文字列を入れ替えた時、隣り合う文字が同じアルファベットにならない 場合の数を求める。 解き方 Ｎ＝１０なので全探索で
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-428-div1-easy---theluckystring-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -186,41 +117,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11535&amp;rd=14542
-正の整数Ｎとtargetが与えられる。
-Ｎはスマッシュするとx*y=N（x,yは整数）となるｘとｙに分割することができる。
-このとき、どうスマッシュしてもtargetが得られるならYes,得られないならNoを返す。
-解き方 
-ＤＦＳで全探索。
-１つの判定関数の中で全ての割り切れる数に対してtrueとなり、
-かつ割り切れる数で得られるx,yのいずれかが判定関数でtrueとなるか判定する。
-dp化しなければ計算量が超えそうかと思ったけど超えなかった。
-こちらのソリューションでメモ化した方がよいかも。
-http://community.topcoder.com/stat?c=problem_solution&amp;cr=22263204&amp;rd=14542&amp;pm=11535
-コード 
-int T;
-class CompositeSmash {
-public:
-bool f(int N){
-if(N==T)return true;
-bool allfound=true,flag=false;
-for(int i=2;i*i&lt;=N;i++){
-if(N%i==0){
-flag=true;
-allfound&amp;=f(i)|f(N/i);
-}
-}
-return flag ? allfound : false;
-}
-string thePossible(int N, int target) {
-T=target;
-return f(N) ?"Yes" : "No" ;
-}
-};
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i !
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11535&amp;rd=14542 正の整数Ｎとtargetが与えられる。 Ｎはスマッシュするとx*y=N（x,yは整数）となるｘとｙに分割することができる。 このとき、どう
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -240,29 +137,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11471&amp;rd=14543
-ある文字列が与えられる。
-その文字からいくつかの文字を削除したものがそのサブ文字列と定義される。
-このとき、辞書順で最も降順となるサブ文字列を求める。
-解き方 
-現在の文字列で最も降順のアルファベットがサブ文字列の左側にくる。
-次に、選ばれたアルファベット以降の位置から上記の文字を探す。
-この操作を繰り返すことで答えが求められる。
-コード 
-class LargestSubsequence {
-public: string getLargest(string s) {
-string ret;
-int cur=0;
-while(cur!=s.size()+1){
-int tmp=cur;
-FORE(i,cur+1,s.size())if(s[i]&gt;s[tmp])tmp=i;
-ret+=s[tmp];
-cur=tmp+1;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11471&amp;rd=14543 ある文字列が与えられる。 その文字からいくつかの文字を削除したものがそのサブ文字列と定義される。 このとき、辞書順で最も降順となるサブ文字
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-518-div1-easy---largestsubsequence-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -279,28 +157,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11552&amp;rd=14544
-正の整数ＡとＢが与えられる。
-ＡからＢを得るには、２進数で表わされたＡから各ビットを返していく。
-この操作を行ったとき、途中で現れる最大の数を求める。
-解き方 
-Ａ，Ｂは最大１０＾１８のため単純なシミュレーションでは解くことができない。
-そのため、計算量を削減する法則がないか考える。
-２進数にしてみて、最初と最後の状態までのプロセスの変化が答えに関連しないか考えてみる。
-いくつか例を出してみると、
-一度も触ったことがないビットは固定しなければいけないが
-「ＡからＢを得るときに１度でもひっくり返したビット以降はすべて１」にできることがわかる。
-コード 
-class BinaryCards {
-public: long long largestNumber(long long A, long long B) {
-for(long long i=63;i&gt;=0;i--){
-long long x=1LL&lt;&lt;i;
-if((A&amp;x)!=(B&amp;x))return A | ( (1LL&lt;&lt;(i+1))-1);
-}
-return A;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11552&amp;rd=14544 正の整数ＡとＢが与えられる。 ＡからＢを得るには、２進数で表わされたＡから各ビットを返していく。 この操作を行ったとき、途中で現れる最大の
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -317,43 +177,10 @@ return A;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11381&amp;rd=14545
-SRMの３問の問題を７５分以内で解く。
-各問題については、最大獲得ポイントと解くのにかかる時間が与えられる。
-各３問については、解いたときに以下のポイントが得られる。
-問題０：最大獲得ポイント - ２＊解くのにかかる時間
-問題１：最大獲得ポイント - ４＊解くのにかかる時間
-問題２：最大獲得ポイント - ８＊解くのにかかる時間
-またluckが与えられ、これを使うことで解くのにかかる時間を引くことができる。配分は自由に決められるが各問題１分以上残さなければならない。
-各問題について最大獲得ポイント、解くのにかかる時間、luckが与えられた時
-得られる最大ポイントを求める。
-解き方 
-問題０よりも１、１よりも２の方が最大獲得ポイント数が多い。
-そのためluckの配分は難しい問題に対して配分すればよいように見えるが、
-75分以内で解けない場合があるので75分以内で解けるよう配分した方がよい場合もある。
-そこで、問題は３つしかないので解ける問題の組み合わせ全てに対し
-難しい問題からluckを配分してあげればよい。
-難しい問題からの配分で75分以内に収まらなく解けなくても、違う組み合わせでカバーできている。
-コード 
-class SRMCodingPhase {
-public: int countScore(vector&lt;int&gt; points, vector&lt;int&gt; skills, int luck) {
-int ans=0;
-for(int i=0;i&lt;(1&lt;&lt;3);i++){
-int cost=0,tluck=luck,point=0;
-for(int j=2;j&gt;=0;j--){
-if(i&amp;(1&lt;&lt;j)){
-int use=min(tluck,skills[j]-1);
-point+=points[j]-(1&lt;&lt;(j+1))*(skills[j]-use);
-tluck-=use;
-cost+=skills[j];
-}
-}
-if(cost-luck&lt;=75)ans=max(ans,point);
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11381&amp;rd=14545 SRMの３問の問題を７５分以内で解く。 各問題については、最大獲得ポイントと解くのにかかる時間が与えられる。 各３問については、解いたとき
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-520-div1-easy---srmcodingphase-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -370,26 +197,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10943&amp;rd=14546
-カッコの並びが与えられる。
-カッコがきちんと閉じた形になるために、追加で必要なカッコの数を求める。
-解き方 
-左カッコが出てきたら＋１、右カッコが出てきたらー１としてカッコの閉じ具合を走査する。
-０から始め、マイナスになるときは必ず左にカッコが必要なので答えを＋１して数を０に戻す。
-そうでない場合はそのまま走査し、最後に残った数を答えに足せばよい。
-コード 
-class MissingParentheses {
-public: int countCorrections(string par) {
-int left=0,ans=0;
-FORE(i,0,par.size()){
-if(par[i]=='(')left++;
-else if(left&gt;0)left--;
-else ans++;
-}
-return ans+left;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10943&amp;rd=14546 カッコの並びが与えられる。 カッコがきちんと閉じた形になるために、追加で必要なカッコの数を求める。 解き方 左カッコが出てきたら＋１、右カッ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -406,32 +217,10 @@ return ans+left;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11566&amp;rd=14547
-AliceとBobの２人で行うゲーム。
-一行のマスの並びが与えられて、各マスにはＡかＢのどちらかが書かれている。
-ゲームはAliceから始まり、連続する任意のマスにコインを置くことができる。
-ただし、マスは最低一つコインを置かずに残さなければいけない。
-このとき、残った最後のマスがＡならAliceの勝ち、そうでなければBobの勝ちとなる。
-一行のマスが与えられた時、どちらが勝つかを求める。
-解き方 
-単純なシミュレーションに見えるが、全ての手の全探索は難しそう。
-ここで「勝ちの法則」がないかを考える。
-まず、Aliceは１マスを除いて好きなだけ連続するマスに置けるので、
-最初か最後のマスがＡであれば必ず勝ちになる。
-次にそうでない場合（両端がＢ）、どう消してもBは残ってしまうので
-どうやってもAliceは勝つことができない。
-例）BAAABABのとき
-①左のＢを消す　：AAABAB →次に右端以外を消されてしまう
-②右のＢを消す　：上記と同様
-②真ん中のＢを消す：BAAA*AB 左もしくは右のAを消されてＢは残る(B*AB or BA*B)
-つまり、両端のどちらかがＡであればAlice、そうでなければBobの勝ちとなる。
-コード 
-class RowAndCoins {
-public: string getWinner(string cells) {
-return cells[0]=='B'&amp;&amp;cells[cells.size()-1]=='B' ? "Bob" : "Alice";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11566&amp;rd=14547 AliceとBobの２人で行うゲーム。 一行のマスの並びが与えられて、各マスにはＡかＢのどちらかが書かれている。 ゲームはAliceから始
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -448,34 +237,10 @@ return cells[0]=='B'&amp;&amp;cells[cells.size()-1]=='B' ? "Bob" : "Alice";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10957&amp;rd=14548
-１からupperBoundまでの数が与えられる。
-また、a,b,c,dの正の整数が与えられる。
-このとき、a+b*x または c*d^y（x,yは任意の整数）を満たす数がいくつあるか求める。
-解き方 
-「a+b*x」、「c*d^y」は重複する場合があるので、
-重複した場合は１度しか計算しない処理が必要。
-「a+b*x」では、各整数は10^12のため全探索では不可。
-upperBoundがa以上であれば、 (upperBound-a)/b +1が満たす全ての数になる。
-「c*d^y」は全探索が可能。
-各数に対して「a+b*x」でも表わせないか判定し重複を調べる。
-（同じようにa以上かどうかを調べる）
-ただしd=1のときは無限ループになるのでbreak処理が必要。
-Challengeポイント
-階乗が出てくる場合は1の階乗のbreak処理が入っているか？
-数の判定の際は正負の判定が入っているか？
-コード 
-class CountingSeries {
-public: long long countThem(long long a, long long b, long long c, long long d, long long upperBound) {
-long long ans=upperBound&gt;=a ? (upperBound-a)/b+1 :0;
-for(long long x=c;x&lt;=upperBound;x*=d){
-if((x-a)&lt;0||(x-a)%b!=0)ans++;
-if(d&lt;=1)break;
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10957&amp;rd=14548 １からupperBoundまでの数が与えられる。 また、a,b,c,dの正の整数が与えられる。 このとき、a+b*x または c*d^y（x,
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -492,32 +257,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11607&amp;rd=14549
-ｎ個のダイヤモンドを運びたい。
-１度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。
-このとき、消滅せずに全てのダイヤを運べる最小の回数を求める。
-解き方 
-ｎが最大１０＾１２のためＤＦＳ等では解くことができない。
-そこで法則がないかシミュレーションしてみる。
-すると、ｎ＝３（３回）のときを除いて、以下がわかる。
-①素数でない場合は、１回で運べる
-②素数の場合は、「素数ー１」個＆「１」個の２回で運べる
-あとは素数判定関数を作って実装するだけでよい。
-コード 
-class MagicDiamonds {
-public:
-bool isprimary(long long x){
-if(x==2)return true;
-if(x==1||x%2==0)return false;
-for(long long i=3;i*i&lt;=x;i+=2)if(x%i==0)return false;
-return true;
-}
-long long minimalTransfer(long long n) {
-if(n==3)return 3;
-return isprimary(n) ? 2 : 1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11607&amp;rd=14549 ｎ個のダイヤモンドを運びたい。 １度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。 このとき、消滅せずに全てのダイヤを運
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>

@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 494 DIV1 Easy - Painting ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11310&amp;rd=14423
-白いボードが与えられる。
-これをN＊Nの黒いスタンプによって、与えられた絵を作りたい。
-できるだけ大きいスタンプで与えられた絵を作りたいとき、
-その最大の大きさを求める。
-解き方 
-スタンプを押す順番は関係ないので、各スタンプの大きさについて
-スタンプが押せる位置のとき、スタンプを押してしまう。
-押したスタンプのセルを？とし、最後にWと？だけが残れば
-その大きさのスタンプで絵を作ることができる。
-コード 
-class Painting {
-public: int largestBrush(vector&lt;string&gt; picture) {
-int h=picture.size(),w=picture[0].size();
-for(int len=min(w,h);len&gt;=2;len--){
-vector&lt;string&gt; p=picture;
-while(1){
-int finish=1;
-for(int i=0;i&#43;len-1&lt;h;i&#43;&#43;)for(int j=0;j&#43;len-1&lt;w;j&#43;&#43;){
-int valid=1;
-for(int k=i;k&lt;i&#43;len;k&#43;&#43;)for(int l=j;l&lt;j&#43;len;l&#43;&#43;){
-if(p[k][l]==&#39;W&#39;)valid=0;
-}
-if(valid){
-for(int k=i;k&lt;i&#43;len;k&#43;&#43;)for(int l=j;l&lt;j&#43;len;l&#43;&#43;){
-if(p[k][l]==&#39;B&#39;)finish=0;
-p[k][l]=&#39;?&#39;;
-}
-}
-}
-if(finish)break;
-}
-int flag=1;
-FORE(i,0,h)FORE(j,0,w)if(p[i][j]==&#39;B&#39;)flag=0;
-if(flag)return len;
-}
-return 1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11310&amp;rd=14423 白いボードが与えられる。 これをN＊Nの黒いスタンプによって、与えられた絵を作りたい。 できるだけ大きいスタンプで与えられた絵を作りたいと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-494-div1-easy---painting-/" />
 

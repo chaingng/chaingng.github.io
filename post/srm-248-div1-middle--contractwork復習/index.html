@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 248 DIV1 Middle -ContractWork　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=795
-プレイヤーはこなさなければいけない、複数の仕事をかかえている。
-この仕事を外部の会社に委託してすべてこなしたい。
-それぞれの会社は各タスクを遂行するのに必要な金額は異なり、あらかじめのその金額はわかっている。
-プレイヤーはどの会社に何度でも依頼することはできるが、連続して２つまでしか依頼できたい。
-このとき、全ての仕事をこなすのに必要な最小コストを求める。
-解き方 
-ｄｐを適用する。
-各仕事において、直前に依頼した会社とその会社に何回連続して依頼したかの状態を持っておけば計算量は間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[60][60][3],company[60][60],n,comp;
-class ContractWork {
-public:
-int calc(int pos,int prev,int num){
-if(pos==n)return 0;
-if(dp[pos][prev][num]!=-1)return dp[pos][prev][num];
-int ret=1e&#43;9;
-FORE(i,0,comp){
-if(i!=prev)ret=min(ret,company[i][pos]&#43;calc(pos&#43;1,i,1));
-else if(i==prev&amp;&amp;num&lt;2)ret=min(ret,company[i][pos]&#43;calc(pos&#43;1,i,num&#43;1));" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=795 プレイヤーはこなさなければいけない、複数の仕事をかかえている。 この仕事を外部の会社に委託してすべてこなしたい。 それぞれの会社は各タスク" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-248-div1-middle--contractwork%E5%BE%A9%E7%BF%92/" />
 

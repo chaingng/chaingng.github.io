@@ -7,52 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 249 DIV1 Easy - TableSeating (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=4616&amp;rd=7224
-・テーブルが複数存在する。
-・各グループ人数ごとに来店する確率が与えられる。
-来店する回数に制限はない。
-・グループがきたときに、空いているテーブルにランダムに案内する。
-ただし、グループが複数人のときは連続したテーブルに案内しなければならない。
-各テーブルには１人席に着く。
-このとき、テーブルに着席する人数の期待値を求める。
-解き方
-全探索では解けないので、ｄｐを利用する。
-ｄｐをどう設計するかがポイントで、現在の席の空き状態を引数とすることで解くことができる。
-同じグループ人数については何度選択してもよいので、その空き状態に対して全てのグループ数とその座り方について探索する。
-こちらのコードを参考にさせていただきました。
-http://community.topcoder.com/stat?c=problem_solution&amp;rd=7224&amp;pm=4616&amp;cr=7459326
-コード 
-class TableSeating {
-public:
-double getExpected(int num, vector&lt;int&gt; probs) {
-double dp[(1&lt;&lt;12)]={0};
-bool can[15];
-FORE(i,1,(1&lt;&lt;num)){
-FORE(j,0,probs.size()){
-int s=j&#43;1;
-double p=probs[j]/100.0;
-FORE(k,0,15)can[k]=false;
-FORE(k,0,15){
-int uu=(1&lt;&lt;(k&#43;s))-(1&lt;&lt;k);
-if(k&#43;s&lt;=num &amp;&amp; ((i&amp;uu)==uu) )can[k]=true;
-}
-int cnt=0;
-FORE(k,0,15)cnt&#43;=can[k];
-p/=(double)cnt;
-FORE(k,0,15){
-if(!can[k])continue;
-int uu=(1&lt;&lt;(k&#43;s))-(1&lt;&lt;k);
-dp[i]&#43;=p*(dp[i-uu]&#43;s);
-}
-}
-}
-return dp[(1&lt;&lt;num)-1];
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4616&amp;rd=7224 ・テーブルが複数存在する。 ・各グループ人数ごとに来店する確率が与えられる。 来店する回数に制限はない。 ・グループがきたときに、空いている" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 655 DIV1 Easy - BichromePainting" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13709&amp;rd=16415
-・２次元のボードがあり、各セルは最初すべて白に塗られている。
-・プレイヤーはK*Kの正方形のマスをすべて白か黒に上塗りすることができる。
-・最終的なボードの状態が与えられるとき、そのボードの状態にすることができれば
-Possible,そうでなければImpossibleを返す。
-解き方 
-状態遷移の問題。SRM 595に似ている。
-違いとしては、２次元に拡張されているのと、順番が決まっていない、つまり好きに順番を選べるということ。
-まずは最終の状態に着目する。
-ここで、K*Kのすべて白か黒で塗られている正方形があった場合、
-その前の状態が何であっても最後に上書きすることで、その状態にすることができる。
-そのような状態を任意の状態&#39;*&#39;に変換して、最後に全て任意の状態にできれば、
-その操作を逆にたどることで再現可能なのでPossibleとなる。
-コード 
-class BichromePainting {
-public: string isThatPossible(vector&lt;string&gt; board, int k) {
-int h=board.size(),w=board[0].size();
-int update=1;
-while(update){
-update=0;
-for(int r=0;r&#43;k-1&lt;h;r&#43;&#43;)for(int c=0;c&#43;k-1&lt;w;c&#43;&#43;){
-int w=0,b=0;
-FORE(dr,0,k)FORE(dc,0,k){
-if(board[r&#43;dr][c&#43;dc]==&#39;W&#39;)w&#43;&#43;;
-else if(board[r&#43;dr][c&#43;dc]==&#39;B&#39;)b&#43;&#43;;
-}
-if(w&amp;&amp;b)continue;
-if(w==0&amp;&amp;b==0)continue;
-update=1;
-FORE(dr,0,k)FORE(dc,0,k)board[r&#43;dr][c&#43;dc]=&#39;*&#39;;
-}
-}
-FORE(i,0,h)FORE(j,0,w)if(board[i][j]!=&#39;*&#39;)return &#34;Impossible&#34;;
-return &#34;Possible&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13709&amp;rd=16415 ・２次元のボードがあり、各セルは最初すべて白に塗られている。 ・プレイヤーはK*Kの正方形のマスをすべて白か黒に上塗りすることができる。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-655-div1-easy---bichromepainting/" />
 

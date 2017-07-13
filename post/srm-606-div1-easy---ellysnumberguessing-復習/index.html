@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 606 DIV1 Easy - EllysNumberGuessing （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12975&amp;rd=15839
-・２人でゲームを行い、一人は１～１０＾９までの数を思い浮かべ、
-もう一人が言った数との絶対値を答える。
-・このターンを何度か繰り返したとき、最後に思い浮かべた数を返す。
-ただし、そのような数が存在しないときはー２、複数存在するときは－１を返す。
-解き方 
-各ターンごとに存在しうる数字についてＡＮＤをとり、最後に残ったものが答えになる。
-具体的には最初のターンで存在しうる２通りの数について、各ターンごとに現れるのであれば残し、なければfalseとして最後に判定すればよい。
-また、最初に１～１０＾９内にある数か判定してあげればその後は毎回判定しなくてもよい。
-単純に数を数えるコーディングや、同じセットが複数存在するときにエラーとなるコーディングではひっかかるので上記のように問題にシンプルに従って実装する。
-コード 
-class EllysNumberGuessing {
-public: int getNumber(vector&lt;int&gt; guesses, vector&lt;int&gt; answers) {
-int num1=guesses[0]&#43;answers[0];
-int num2=guesses[0]-answers[0];
-int flag1=0,flag2=0;
-if(1&lt;=num1&amp;&amp;num1&lt;=1000000000)flag1=1;
-if(1&lt;=num2&amp;&amp;num2&lt;=1000000000)flag2=1;
-FORE(i,0,guesses.size()){
-if(guesses[i]&#43;answers[i]!=num1&amp;&amp;guesses[i]-answers[i]!=num1)flag1=0;
-if(guesses[i]&#43;answers[i]!=num2&amp;&amp;guesses[i]-answers[i]!=num2)flag2=0;
-}
-if(flag1&amp;&amp;flag2)return -1;
-if(!flag1&amp;&amp;!flag2)return -2;
-if(flag1)return num1;
-return num2;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12975&amp;rd=15839 ・２人でゲームを行い、一人は１～１０＾９までの数を思い浮かべ、 もう一人が言った数との絶対値を答える。 ・このターンを何度か繰り返したとき" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-606-div1-easy---ellysnumberguessing-%E5%BE%A9%E7%BF%92/" />
 

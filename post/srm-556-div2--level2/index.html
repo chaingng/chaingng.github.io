@@ -7,49 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 556 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①複数の地点が与えられて、それぞれの地点に値を持つ。
-②また地点によっては道路で結ばれていて、
-道路として結ばれている２次元配列が与えられる。
-③ユーザは地点０から始まり、地点０のスコアを持つ。
-④地点０から結ばれている地点に何度も行くことができ、
-移動したときのスコアは、今まで持つスコアと移動した地点のスコアのＸＯＲとなる。
-⑤このとき、最大となるスコアを求める。
-解き方 
-ぱっとみたときに何度も同じ地点を行き来することができるので、
-全探索も浮かびにくい。
-手掛かりとなる制約条件がないか例を出してシミュレーションしてみると、
-ある地点に移動したとき、持っているスコアは１度しか現れないことがわかる。
-つまり幅優先探索を行い、
-地点とスコアの2次元配列を作成し
-通ったことがあるかないかを判定すれば収束させることができる。
-計算量はＯ（５０＊５０＊１０２４＝２．５＊１０＾６）なのでＯＫ．
-コード 
-class XorTravelingSalesman {
-public: int maxProfit(vector&lt;int&gt; cityValues, vector&lt;string&gt; roads) {
-int ans=cityValues[0];
-bool visited[50][1023];
-queue&lt; pair&lt;int,int&gt; &gt; q;
-FORE(i,0,50)FORE(j,0,1023)visited[i][j]=false;
-q.push(make_pair(0,cityValues[0]));
-visited[0][cityValues[0]]=true;
-while(!q.empty()){
-int cur=q.front().first;
-int value=q.front().second;
-q.pop();
-FORE(i,0,cityValues.size()){
-if(i==cur)continue;
-int tmpvalue=value^cityValues[i];
-if( (roads[cur][i]==&#39;Y&#39; || roads[i][cur]==&#39;Y&#39;) &amp;&amp; !visited[i][tmpvalue]){
-ans=max(ans,tmpvalue);
-visited[i][tmpvalue]=true;
-q.push(make_pair(i,tmpvalue));
-}
-}
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 ①複数の地点が与えられて、それぞれの地点に値を持つ。 ②また地点によっては道路で結ばれていて、 道路として結ばれている２次元配列が与えられる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-556-div2--level2/" />
 

@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 509 DIV1 Middle - PalindromizationDiv1　（復習×）" />
-<meta property="og:description" content="問題 
-ある文字列が与えられ、それを回文にしたい。
-回文にするために複数のアルファベットの追加、削除、変換式が与えられ、各変換式について必要なコストも与えられる。
-このとき、回文にするために必要な最小のコストを求める。回文にできないときはー１を返す。
-解き方 
-Editorialを読みました。
-通常の回文の解き方をベースに、それを応用できるか。
-通常の回文の解き方は以下の通り。
-左端と右端の場所が一致、もしくは残り１文字になれば終了。
-そうでなければいずれかの操作を行う。
-１）回分の左端と右端(a,b-1)のアルファベットがことなれば一致するように変換し、
-変換コストを足して(a&#43;1,b-2)を調べる。
-２）左端を削除し、削除コストを足して(a&#43;1,b-1)を調べる。
-３）右端を削除し、削除コストを足して（a,b-2）を調べる。
-今回はコストの考え方について応用する。
-削除については、アルファベットを空白に変換と考えれば変換と同様に操作できる。
-同様に追加についても、空白をアルファベットに変換と考えることができる。
-上記の操作によって、変換のコストだけをコードに落とせればよい。
-変換のコストは問題で与えられるので、配列に保存してからワーシャルフロイドを回して任意の２つのアルファベットの最小の変換コストを求める。
-ただし今回は、変換できればよいことから
-あるアルファベットa→c とb→cのコストの和が最小であれば上記に置き換える必要がある。
-また、例外の判定については定義したＩＮＦの和が発生しうるため、
-オーバーフローしないように値の判定と更新を行うことに注意。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-const int INF=1000000000;
-string word;
-int d[27][27],m[27][27],dp[51][51];" />
+<meta property="og:description" content="問題 ある文字列が与えられ、それを回文にしたい。 回文にするために複数のアルファベットの追加、削除、変換式が与えられ、各変換式について必要なコス" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-509-div1-middle---palindromizationdiv1%E5%BE%A9%E7%BF%92/" />
 

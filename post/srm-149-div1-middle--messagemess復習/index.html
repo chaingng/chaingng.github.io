@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 149 DIV1 Middle -MessageMess　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=218
-ある文字列を、与えられた辞書中の文字に分割したい。
-ただし、分割の方法が複数ある場合は&#34;AMBIGOUS!&#34;、ない場合は&#34;IMPOSSIBLE!&#34;を返す。
-解き方 
-与えられた文字列をi,jの位置で分割できるかの配列を作り、dpにてどこまで分割できるかを判定する。
-複数あるかを判断するのでdpの値を足していくが、intの値をオーバーフローしないように注意が必要。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class MessageMess {
-public: string restore(vector&lt;string&gt; dictionary, string message) {
-set&lt;string&gt; w;
-w.clear();
-FORE(i,0,dictionary.size())w.insert(dictionary[i]);
-int n=message.size();
-int can[n&#43;1][n&#43;1];
-memset(can,0,sizeof(can));
-FORE(i,0,n&#43;1)FORE(j,0,n&#43;1)if(i&lt;j &amp;&amp; w.find(message.substr(i,j-i))!=w.end())can[i][j]=1;
-long long dp[n&#43;1];" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=218 ある文字列を、与えられた辞書中の文字に分割したい。 ただし、分割の方法が複数ある場合は&#34;AMBIGOUS!&#34;、ない場合は&#34;IMPOSSI" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-149-div1-middle--messagemess%E5%BE%A9%E7%BF%92/" />
 

@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 605 DIV1 Easy - AlienAndHamburgers (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12948&amp;rd=15838
-・様々なハンバーガーがあり、そのタイプと大きさが与えられる。
-・好きなだけハンバーガーを選んでよく、選んだ後のスコアは選んだタイプの種類×大きさの和
-となる。
-・このとき、取りうる最大のスコアを求める。
-解き方 
-・大きさがマイナスになるときは判定が必要になる
-・とりあえず、大きさが０以上の時はスコアが下がることはないので必ず選ぶ
-・ソートして、大きい順に判定
-・大きさが０以上のときは必ず選び、マイナスのときはそのハンバーガーを選んだときにスコアが上がれば選び、そうでなければ選ばないのが最適解になりそう
-・あるハンバーガーを選ばないとき、それより小さい大きさのときはスコアはそれ以上にならないので貪欲法で解ける
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class AlienAndHamburgers {
-public: int getNumber(vector&lt;int&gt; type, vector&lt;int&gt; taste) {
-int n=type.size();
-vector&lt;pair&lt;int,int&gt; &gt; p;
-FORE(i,0,n)p.push_back(make_pair(taste[i],type[i]));" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12948&amp;rd=15838 ・様々なハンバーガーがあり、そのタイプと大きさが与えられる。 ・好きなだけハンバーガーを選んでよく、選んだ後のスコアは選んだタイプの種類" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-605-div1-easy---alienandhamburgers-/" />
 

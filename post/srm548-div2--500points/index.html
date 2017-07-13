@@ -7,38 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM548 DIV2 -500points" />
-<meta property="og:description" content="&lt;問題&gt;
-①数字の順列が与えられる。
-②魔法の数字Ｌを使うことで、それぞれの数字からＬを引く、または足すことができる。
-③このとき、与えられた数字の順列を昇順にするために必要な最小のＬを返す。
-&lt;解き方&gt;
-二分探索で解けることがわかれば、の問題でした。
-終了条件の設定を間違えると無限ループが続いてしまったり、
-答えがlowかhighのどちらかの判定を加えなければいけなくなります。
-そこで答えを満たす時はmidを範囲に加えて、
-満たさないときはlow=mid&#43;1とmidを範囲に加えないことで
-low&lt;highの条件で収束することができます。
-&lt;コード&gt;
-class KingdomAndTrees {
-bool f(vector&lt;int&gt; h, int x){
-int prev=0;
-FORE(i,0,(int)h.size()){
-if(h[i]&#43;x&lt;=prev)return false;
-prev=max(prev&#43;1,h[i]-x);
-}
-return true;
-}
-public:
-int minLevel(vector&lt;int&gt; heights) {
-int low=0,high=1000000000;
-while(high-low&gt;0){
-int mid=(low&#43;high)/2;
-if(f(heights,mid))high=mid;
-else low=mid&#43;1;
-}
-return high;
-}
-}; " />
+<meta property="og:description" content="&lt;問題&gt; ①数字の順列が与えられる。 ②魔法の数字Ｌを使うことで、それぞれの数字からＬを引く、または足すことができる。 ③このとき、与" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm548-div2--500points/" />
 

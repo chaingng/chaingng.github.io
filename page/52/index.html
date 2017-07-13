@@ -74,36 +74,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①モンスターの集合が与えられ、各モンスターは怖さの値とコインの値を持つ。
-②プレイヤーは最初から順番にモンスターに遭遇する。
-③このとき、プレイヤーはモンスターにそのコインの値を支払って仲間にすることができる。
-④もしくは、仲間にしたモンスターの怖さの和がそのモンスターの怖さの値以上であれば、何もせずに通り過ぎることができる。それ未満であれば、仲間にしないといけない。
-⑤このとき、すべてのモンスターに遭遇した後に最小のコイン消費枚数を返す。
-＜解き方＞
-まさに動的計画法。
-参照用のvectorをグローバルで宣言してpush_backでコピーしようとしたんですが、
-エラーが出たので引数で渡すことに。
-suztomoさんのページを拝見させていただいたのですが、
-１０＾７以上のループに加え、あまり大きな数を扱ってもダメなのかもしれないです。
-http://topcoder.g.hatena.ne.jp/suztomo/20081208/1228768981
-＜コード＞
-class MonstersValley2 {
-public:
-int f(int cur, double cdread, vector&lt;int&gt; d, vector&lt;int&gt; p){
-int coin=0;
-if(cur==n)return 0;
-if(cdread&lt;d[cur])coin=p[cur]+f(cur+1,cdread+d[cur],d,p);
-else coin=min(f(cur+1,cdread,d,p),f(cur+1,cdread+d[cur],d,p)+p[cur]);
-return coin;
-}
-int minimumPrice(vector&lt;int&gt; dread, vector&lt;int&gt; price) {
-n=dread.size();
-return f(1,dread[0],dread,price)+price[0];
-}
-};
-
- 
+			＜問題＞ ①モンスターの集合が与えられ、各モンスターは怖さの値とコインの値を持つ。 ②プレイヤーは最初から順番にモンスターに遭遇する。 ③このとき
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm565-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -120,42 +94,10 @@ return f(1,dread[0],dread,price)+price[0];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①赤のボールの数、緑のボールの数、青のボールの数と１つの整数が与えられる。
-②システムは赤のボールがあれば1個壊し、次に緑のボールがあれば１個壊し、次に青のボールがあれば１個壊す。この操作を繰り返す。
-③このとき、与えられた整数のターンの時に壊すボールの色を返す。
-＜解き方＞
-整数が３つのボールのうち１番小さい数×３以下であれば３で割った余りで色を判別できる。
-それ以上であればいったん一番小さい数を除いたあと、２つの色で判定。
-そのあとは残りの１色となる。
-if文の分岐で記載することもできるが、
-ループ処理で書くことによって処理が間違えにくくなる。
-色の数を３から減らしていくことと、
-１つの色の処理ごとに、配列を詰めていくやり方でコードを書く。
-＜コード＞
-class AlternateColors {
-public: string getColor(long long r, long long g, long long b, long long k) {
-long long c[]={r,g,b};
-string name[]={"RED","GREEN","BLUE"};
-int t=3;
-while(t&gt;1){
-long long m=c[0];
-FORE(i,1,t)m=min(m,c[i]);
-if(k&lt;=m*t)return name[(k-1)%t];
-k-=(m*t);
-int tmp=t;
-t=0;
-FORE(i,0,tmp){
-if(c[i]-m&gt;0){
-c[t]=c[i]-m;
-name[t]=name[i];
-t++;
-}
-}
-}
-return name[0];
-}
-}; 
+			＜問題＞ ①赤のボールの数、緑のボールの数、青のボールの数と１つの整数が与えられる。 ②システムは赤のボールがあれば1個壊し、次に緑のボールがあ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm564-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -172,50 +114,10 @@ return name[0];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①青が好きなペンギンと、赤が好きなペンギンが輪になって並ぶ。
-②同じ色が好きなペンギン同士は線を結んでペアを作る。
-③ただし、線は交差してはいけない。
-④それぞれ好きな色を持つペンギンの集合が与えられた時、
-ペアの最大数を返す。
-＜解き方＞
-隣同士のペンギンで線を結んでも交差に影響することはないので、
-まずは隣同士で同じ色のペアを作って集合から削除していく。
-このとき、輪になっていることから最初と最後の判定を先に行い、
-その後「赤・赤」「青・青」のペアとなっているところを判定していく。
-そのあとは赤と青が交互になった順列ができるので、
-残りのペア数は残った集合の半分－１となる。
-＜関数＞
-stringに対しての処理なので、うまくsubstrとeraseを使ってあげることで
-集合から削除すれば処理が簡単になる。
-＜コード＞
-class PenguinPals {
-public:
-int findMaximumMatching(string colors) {
-int ans=0,flag=1;
-while(flag){
-flag=0;
-if(colors.size()&lt;2)break;
-if(colors[0]==colors[colors.size()-1]){
-ans++;
-colors=colors.substr(1,colors.size()-2);
-flag=1;
-}
-else if(colors.find("RR")!=-1){
-ans++;
-colors.erase(colors.find("RR"),2);
-flag=1;
-}
-else if(colors.find("BB")!=-1){
-ans++;
-colors.erase(colors.find("BB"),2);
-flag=1;
-}
-}
-if(colors.size()&gt;2)ans+=(colors.size()/2-1);
-return ans;
-}
-}; 
+			＜問題＞ ①青が好きなペンギンと、赤が好きなペンギンが輪になって並ぶ。 ②同じ色が好きなペンギン同士は線を結んでペアを作る。 ③ただし、線は交差し
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm566-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -232,42 +134,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①２つの整数ＮとＭが与えられる。
-②１＜＝Ａ＜＝Ｎ、１＜＝Ｂ＜＝Ｍである、(sqrt(A)+sqrt(B))^2が整数であるＸが存在するとき、ＡとＢの組み合わせの数を返す。
-＜解き方＞
-Ａが１のとき、Ｂ＝１，４，９，１６・・・
-Ａが２のとき、Ｂ＝２＊１、２＊９、２＊１６・・・であることがわかります。
-そのため、Ａを１からＮまでループさせ、
-ＢをＡ＊１＾２、Ａ＊２＾２・・・と繰り返して数を足してあげて
-最後にその和をかえしてあげればよいです。
-Ｏ（８００００＊９００＝７２００００００＝７＊１０＾７）なので微妙。
-もう少し計算量を削減するには、
-Ａが２で選ばれるＢの数と、
-Ａが２＊２＾２、２＊３＾２・・・で選ばれるＢの数は一緒であることが分かります。
-そこでＡもまとめて計算することで計算量が削減できます。
-おおまかですがＯ（９００＊９００＝８１００００＝８＊１０＾５）ぐらい。
-＜コード＞
-class TheSquareRootDilemma {
-public: int countPairs(int N, int M) {
-vector&lt;int&gt; check(77778,0);
-int ans=0;
-FORE(i,1,M+1){
-if(check[i]==1)continue;
-int x=0;
-for(int j=1;j*j*i&lt;=M;j++){
-if(check[i*j*j]==1)continue;
-check[i*j*j]=1;
-x++;
-}
-int y=0;
-for(int j=1;j*j*i&lt;=N;j++)y++;
-ans+=(x*y);
-}
-return ans;
-}
-};
- 
+			＜問題＞ ①２つの整数ＮとＭが与えられる。 ②１＜＝Ａ＜＝Ｎ、１＜＝Ｂ＜＝Ｍである、(sqrt(A)+sqrt(B))^2が整数であるＸが存在す
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm567-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -284,20 +154,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			いままで海外はアジア地域でタイ、カンボジア、インド、
-ヨーロッパ地域では安全と言われるフィンランド、スイスからドイツ、治安が悪いと言われるスペインまで行ったことがありますが、
-そこのどこよりもパリは危険な場所と感じました。
-というのも、１つはガイドブックでしか見ていなかったスリに本当にあいそうになったんです。
-それは観光名所で有名なセーヌ川下りにポンヌフ橋まで向かうとき、橋から階段を下りて船着き場にいくところでのことです。
-階段を下りているとき、一緒にいた妻が気づいて声をかけたのですが、後ろを振り向いてみるとピッタリ後ろに着いて降りてくる若い女性二人組が。
-そこで妻は先に行っていいよ、といって追い払ったのですが、のちのち聞いてみると自分のバッグのチャックをつかんでいたとのこと。
-まったく自分では気付かなかったので、そこの場所を専門にしているプロなんだなと、びっくりしました。
-そこからはバッグは前に持つようにしましたが。。
-一緒にいった他の人も、子供が集団で集まってきてポケットに入れたスマホを奪われそうになったり、そして他の人が奪われた光景を見たとのこと。
-スマホをポケットに入れても危ないそうです。
-つい最近はルーブル美術館が犯罪者が増えたことからストを起こして、警備員を増強してもらったというニュースも見ました。
-聞いた話ではなく、身近な人の話だけでこれだけのことがあったので
-皆さんもパリに行く際は気をつけてください。 
+			いままで海外はアジア地域でタイ、カンボジア、インド、 ヨーロッパ地域では安全と言われるフィンランド、スイスからドイツ、治安が悪いと言われるスペ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E3%83%91%E3%83%AA%E3%81%AE%E5%8D%B1%E3%81%AA%E3%81%95/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -314,17 +174,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			前の記事でミスや想定外の事態に備えるためには
-最悪の事態を想定する、と書きましたが、
-ブルガリア戦に負けた際に本田圭佑選手が開いた記者会見にヒントがあったので書きます。
-まず試合に負けたのは「気持ちの面」ということ。
-実力不足ではなく、気持ちの持ちようでカバーできることは意外と多いと思います。
-そしてその気持ちのもちようというのを具体化すると、「くどいほど自問自答すること」。
-「大丈夫か？」「準備はこれで足りているか」と自分がもうくどい！と思えるぐらいやることで、ようやく油断はなくなるものだと。
-確かに、そのくらい大事で緊張する出来事のときは不安になって、ものすごく準備して、そして結果としてうまくいくことが多かったので、
-準備すべきことに対して「不安を感じ」、「くどいぐらい自問自答する」ことがポイントなのだと気付きました。
-やっぱり超一流選手は違いますね。
- 
+			前の記事でミスや想定外の事態に備えるためには 最悪の事態を想定する、と書きましたが、 ブルガリア戦に負けた際に本田圭佑選手が開いた記者会見にヒン
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E3%81%8F%E3%81%A9%E3%81%84%E3%81%BB%E3%81%A9%E3%81%AE%E8%87%AA%E5%95%8F%E8%87%AA%E7%AD%94/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -341,15 +194,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			今日から打ち合わせが始まりました。
-今日の話はこうしておけばという反省から学ぶことをまとめます。
-１つ学んだのは、念には念を入れておく、ということです。
-１つは用意をお願いした設備がなかったということがあったので、その場合を想定してビデオ撮影しておけばよかったなと。
-１つはレビュー時にここを直すか議論になりそのままでいったのが結果として通じなかったということがあったので、とりあえず相手の意見を聞いて反映しておけば責められずに済んだかなと。
-そして正装はいらないという話でしたがもし使うかも、という不安を感じてしまったので念のため用意をしておくということ。
-プラス思考で考えるのも大事なのですが、出来事については最悪のケースを想定して行動すべきだなと思いました。
-そしてそれでも起こってしまうことはあるので、そのときに一呼吸して、臨機応変に行動できることも必要と思いました。
-このように考えて備えを用意できるようにしておきたいです。 
+			今日から打ち合わせが始まりました。 今日の話はこうしておけばという反省から学ぶことをまとめます。 １つ学んだのは、念には念を入れておく、というこ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E6%B5%B7%E5%A4%96%E5%87%BA%E5%BC%B5%EF%BC%92%E6%97%A5%E7%9B%AE/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -366,14 +214,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			研修では昨年一度海外へ行ったことはあるのですが、
-純粋な業務では初めての海外出張です。
-この時期のパリは夜が遅くても明るいので
-びっくりです。
-１日が長く感じますね。
-きちんと成果を出して、
-よい出張になるように頑張りたいです。
- 
+			研修では昨年一度海外へ行ったことはあるのですが、 純粋な業務では初めての海外出張です。 この時期のパリは夜が遅くても明るいので びっくりです。 １日
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E6%B5%B7%E5%A4%96%E5%87%BA%E5%BC%B5%EF%BC%91%E6%97%A5%E7%9B%AE/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -390,49 +234,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			＜問題＞
-①Ｎ個の箱が与えられる。
-②それぞれの箱には、赤と緑と青のボールが複数個入っている。
-③このとき、それぞれの箱に１色のボールしか入らないようにしたいとき、最小のボールの移動回数を求めよ。
-＜解き方＞
-ひとつの箱に着目した時、一番多く入っている色をそのまま残して、
-他の色を移動したらよいことがわかる。
-ただしこのとき、ひとつの色がどの箱にも少ない個数であるときに
-その色に移動させる箱が存在しなくなるため、例外のケースも存在する。
-このままではＮＧ．
-では全探索で考えるとすると、最大で箱が５０個のためＯ（３＾５０）でＮＧ．
-では上の考え方を少し応用させると、それぞれの色は少なくとも１回は選ばれることとなる。
-これがわかると、各色が１回ずつ選ばれる場合の数は最大でも５０＾３でＯＫ．
-つまり答えは、それぞれの色が１回選ばれる場合でループを回して、それ以外の箱は貪欲方で最大の個数の色を残してあげればよい。
-（例外処理）
-最後に例外として、今回は個数が最小で１個なのでこのままでＯＫ．
-最小で0個だと、選ばれない場合の数は削除しないといけないので注意。
-最大の数も今回は５０×１０＾６＝５×１０＾７なのでint型でＯＫ．
-＜コード＞
-class BallsSeparating {
-public: int minOperations(vector&lt;int&gt; red, vector&lt;int&gt; green, vector&lt;int&gt; blue) {
-int ans=1000000000;
-int n=red.size();
-FORE(i,0,n){
-FORE(j,0,n){
-if(i==j)continue;
-FORE(k,0,n){
-if(j==k || k==i)continue;
-int cost=0;
-FORE(x,0,n){
-if(x==i)cost+=(green[x]+blue[x]);
-else if(x==j)cost+=(red[x]+blue[x]);
-else if(x==k)cost+=(red[x]+green[x]);
-else cost+=(red[x]+green[x]+blue[x]-max(red[x],max(green[x],blue[x])));
-}
-ans=min(ans,cost);
-}
-}
-}
-return ans==1000000000? -1:ans ;
-}
-};
- 
+			＜問題＞ ①Ｎ個の箱が与えられる。 ②それぞれの箱には、赤と緑と青のボールが複数個入っている。 ③このとき、それぞれの箱に１色のボールしか入らない
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm568-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -449,20 +254,10 @@ return ans==1000000000? -1:ans ;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			c++での方法ですが、
-２つの配列の各要素が関係しているとき、
-ひとつの配列の要素順に両方をソートする方法です。
-まずはペア型のコンテナを宣言。
-vector &lt;pair &lt;int, int&gt; &gt; enemy;
-次に２つの配列の要素を格納。
-このとき、ソートしたい要素の配列を最初に格納する。
-FORE(i,0,eS.size())enemy.push_back(make_pair(eS[i],eC[i]));
-あとは普通にソートしてあげるだけで、1つ目の要素順にソートされます。
-sort(enemy.begin(),enemy.end());
-このように、使いたい要素は以下のように使えます。
-if(mS[curg]&gt;=enemy[cure].first)
-FORE(i,0,enemy.size())n+=enemy[i].second;
-ときどき役に立つのでメモしておきました。 
+			c++での方法ですが、 ２つの配列の各要素が関係しているとき、 ひとつの配列の要素順に両方をソートする方法です。 まずはペア型のコンテナを宣言。 vector
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%EF%BC%91%E3%81%A4%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AB%E7%9D%80%E7%9B%AE%E3%81%97%E3%81%9F%EF%BC%92%E3%81%A4%E3%81%AE%E9%85%8D%E5%88%97%E3%81%AE%E3%82%BD%E3%83%BC%E3%83%88/">Read more…</a>
 		</div>
 	</div>
 </article>

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 543 DIV1 Easy - EllysXors" />
-<meta property="og:description" content="問題 
-①整数ＬとＲが与えられる。
-②このとき、ＬからＲまでの間全ての数をＸＯＲした後の値を求める。
-解き方 
-Ｌ，Ｒは４＊１０＾９のため単純なシミュレーションでは解くことができない。
-そのため、数学的解法、法則を見つける。
-法則を見つけるために１からずっとＸＯＲをしたときの値を並べてみると、
-整数ｎを４で割ったときの余りによって以下になることがわかる。
-余り０　→　ｎ
-余り１　→　１
-余り２　→　ｎ　ＸＯＲ　１
-余り３　→　０
-最後に１からスタートしているわけではなくてＬからスタートしなければならない。
-これは１からＲまで求めた答えから、１からＬ－１まで求めた答えを引く、つまりＸＯＲしてあげればよい。
-コード 
-class EllysXors {
-public:
-long long f(long long n){
-long long check=n%4;
-if(check==0)return n;
-if(check==1)return 1;
-if(check==2)return n^1;
-return 0;
-}
-long long getXor(long long L, long long R) {
-return f(R)^f(L-1);
-}
-}; " />
+<meta property="og:description" content="問題 ①整数ＬとＲが与えられる。 ②このとき、ＬからＲまでの間全ての数をＸＯＲした後の値を求める。 解き方 Ｌ，Ｒは４＊１０＾９のため単純なシミュレ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-543-div1-easy---ellysxors/" />
 

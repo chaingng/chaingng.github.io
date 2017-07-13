@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 652 DIV1 Easy - ThePermutationGame " />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13229&amp;rd=16316
-・１～Nの数それぞれからなる、数字の列が与えられる。
-（例）N=2、｛１，２｝　N=3、｛１，２，３｝
-・この数はランダムの回数シャッフルされる。
-・また、関数ｆが与えられる。
-・シャッフルされたあとの数列をpとすると、 f(1)=p[1]、f(m)=p[f(m-1)]となる。
-このとき、どのようにシャッフルされてもf(x)=1となるような最小のｘを求める。
-解き方 
-SRM441と似ている。周期をまず求める。
-シャッフルされた数列の最初の数を考えると、
-この数は１～Nの場合が考えられ、それぞれ１～N回の周期でf(x)が１となる。
-つまり、１～Nの全ての周期で割り切れる1～Nの最小公倍数が答えになる。
-最小公倍数を求めるとき、途中でMODで剰余をとってしまうと最小公倍数が計算できないので
-工夫が必要。
-ある数列の最小公倍数を求めるとき、存在する素数それぞれについて、
-N以下でその素数が存在する最大数をかけていけば答えを求めることができる。
-コード 
-int MOD=1000000007;
-class ThePermutationGame {
-public:
-int findMin(int N) {
-int ret=1;
-for(int i=2;i&lt;=N;i&#43;&#43;){
-bool prime=true;
-for(int j=2;j*j&lt;=i;j&#43;&#43;){
-if(i%j==0){
-prime=false;
-break;
-}
-}
-if(prime){
-int add=i;
-while(add&lt;=N/i)add*=i;
-ret=(ret*1LL*add)%MOD;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13229&amp;rd=16316 ・１～Nの数それぞれからなる、数字の列が与えられる。 （例）N=2、｛１，２｝ N=3、｛１，２，３｝ ・この数はランダムの回数シャッフルさ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-652-div1-easy---thepermutationgame/" />
 

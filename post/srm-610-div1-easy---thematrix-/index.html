@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 610 DIV1 Easy - TheMatrix (×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13035&amp;rd=15843
-・白と黒で表わされる２次元のボードが与えられる。
-・ここから任意の長方形を選び、それが交互に白と黒が現れる模様であればそれはチェスボードと呼ぶことができる。
-・そのうち、最大の大きさとなるチェスボードの面積を求める。
-解き方 
-・ボードの大きさは最大１００＊１００
-・ボードの長方形の選び方は１０＾８なのでギリギリそう。
-・長方形を選んだときにそれがチェスボードとO(1)で判断できれば間に合うが・・・
-→他の人のコードをみる
-・あらかじめ各行について、どの長さまでチェスボードが成立するか事前計算しておく。
-・長方形の左上の点のすべてについて、一つずつ下に拡大していき
-左の点がチェスボードが続けば、その下の行の続くチェスボードの長さとの最小をとれば
-そのときの最大のチェスボードを計算することができる。
-・反省：ボードの計算方法をシミュレーションするのが不足していた。もっと紙に書くのが必要。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int d[101][101];
-class TheMatrix {
-public: int MaxArea(vector&lt;string&gt; board) {
-int h=board.size(),w=board[0].size();
-memset(d,0,sizeof(d));
-FORE(i,0,h)FORE(j,0,w){
-int len=1;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13035&amp;rd=15843 ・白と黒で表わされる２次元のボードが与えられる。 ・ここから任意の長方形を選び、それが交互に白と黒が現れる模様であればそれはチェスボード" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-610-div1-easy---thematrix-/" />
 

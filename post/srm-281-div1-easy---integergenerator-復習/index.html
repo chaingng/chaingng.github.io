@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 281 DIV1 Easy - IntegerGenerator (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6093&amp;rd=9824
-有効な一ケタの数字一覧と、現在の数字が与えられる。
-現在の数字より大きく、かつ有効な数字のみで構成された数を求める。
-ただし無効である場合は”INVALID INPUT”を返す。
-解き方 
-例外判定がまずは大事。
-現在の数字に無効な数字が含まれているか、０から始まるのであれば無効。
-あとは一ケタ目から有効な数字をインクリメントしてあげればよい。
-その桁において、元の数より大きい数になればそこで終了、
-そうでなければ桁上がりするので次の桁に進む。
-最後までインクリメントされるのであれば、最初に一番小さい有効な数字を足す。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class IntegerGenerator {
-public: string nextInteger(vector&lt;int&gt; allowed, string current) {
-int num[10]={0};
-FORE(i,0,allowed.size())num[allowed[i]]=1;
-FORE(i,0,current.size())if(num[current[i]-&#39;0&#39;]==0)return &#34;INVALID INPUT&#34;;
-if(current[0]==&#39;0&#39;)return &#34;INVALID INPUT&#34;;
-for(int i=current." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6093&amp;rd=9824 有効な一ケタの数字一覧と、現在の数字が与えられる。 現在の数字より大きく、かつ有効な数字のみで構成された数を求める。 ただし無効である場合" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-281-div1-easy---integergenerator-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 266 DIV1 Middle - ZCurve　（復習×○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1036
-一辺が2^Nからなるセルの集合が与えられる。
-セルの値は左上の0から始まり、ｚを描くように１ずつ増えていく。
-N=1 のとき
-0 1
-2 3
-N=2のとき
-&nbsp;0 &nbsp;1 &nbsp; &nbsp; 4 &nbsp;5
-&nbsp;2 &nbsp;3 &nbsp; &nbsp; 6 &nbsp;7
-&nbsp;8 &nbsp;9 &nbsp; 12 13
-10 11 14 15
-Nと行番号、列番号(r,c)が与えられた時、
-その(r,c)にある数字を求める。
-解き方 
-Nから1までセルを４等分していって、どの位置にあるかを特定していけばよい。
-N=2の例を場合に考える。
-move=2^(N-1)=2とすると、
-rもcもmove未満のときは左上、cのみmove以上のときは右上、
-rのみmove以上のときは左下、そうでなければ右下の位置になる。
-また、score=4^(N-1)=4とすると、
-右上のときは＋score、左下のときは&#43;score*2、右下のときは&#43;score*3してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c)." />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1036 一辺が2^Nからなるセルの集合が与えられる。 セルの値は左上の0から始まり、ｚを描くように１ずつ増えていく。 N=1 のとき 0 1 2 3 N=2のとき" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-266-div1-middle---zcurve%E5%BE%A9%E7%BF%92/" />
 

@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 663 DIV1 Easy - ABBADiv1 ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13922&amp;rd=16512
-解き方 
-initialからtargetを生成するよう順に解いていき、部分列が存在しないようなら
-打ち切ることで、候補数は限られるので時間内に解くことができる。
-targetからinitialに戻せるか試しても良い。
-コード 
-class ABBADiv1 {
-public:
-string rev(string str){
-string ret=&#34;&#34;;
-for(int i=str.size()-1;i&gt;=0;i--)ret&#43;=str[i];
-return ret;
-}
-bool dfs(string cur,string target){
-if(cur.size()&gt;target.size())return false;
-if(cur.size()==target.size()){
-return cur==target;
-}
-bool valid=false;
-string s1=cur&#43;&#39;A&#39;;
-if(target.find(s1)!=string::npos || target.find(rev(s1))!=string::npos){
-valid|=dfs(s1,target);
-}
-string s2=cur&#43;&#39;B&#39;;
-if(target.find(s2)!=string::npos || target.find(rev(s2))!=string::npos){
-valid|=dfs(rev(s2),target);
-}
-return valid;
-}
-string canObtain(string initial, string target) {
-return dfs(initial,target) ? &#34;Possible&#34; : &#34;Impossible&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13922&amp;rd=16512 解き方 initialからtargetを生成するよう順に解いていき、部分列が存在しないようなら 打ち切ることで、候補数は限られるので時間内" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-663-div1-easy---abbadiv1-/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 434 DIV1 Middle - HexatridecimalSum （復習x）" />
-<meta property="og:description" content="問題 0～9、A～Zの36種類のアルファベットで表わされる36進数の数字を考える。
-最初に、複数の36進数の数字が与えられる。
-このうち、任意のk個のアルファベットをZに変換する。
-このとき、与えられた数字の和が最大となるように変換し、その最大の数字を36進数で求める。
-解き方 
-問題としては貪欲法で解けそう。
-ただし与えられる数字は50個、文字列長も50個であることから単純な変換ではオーバーフローしてしまう。
-そこで、36進数のままで足し算と大小比較を行うことにする。
-今回は元の数字を最初に足してしまってもよい。
-それから各アルファベットについての差分を計算し、その計算した差分を降順にソートして順にｋ個足して解いた。
-最初にオーバーフローまで踏まえてコーディングしないと後戻りは難しいので、
-最初にあらかじめオーバーフローと計算量を忘れずに見積もる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class HexatridecimalSum {
-public:
-int getint(char ch){
-if(&#39;0&#39;&lt;=ch&amp;&amp;ch&lt;=&#39;9&#39;)return ch-&#39;0&#39;;
-return ch-&#39;A&#39;&#43;10;
-}
-char getch(int x){
-if(0&lt;=x&amp;&amp;x&lt;=9)return (char)(&#39;0&#39;&#43;x);
-return (char)(x-10)&#43;&#39;A&#39;;" />
+<meta property="og:description" content="問題 0～9、A～Zの36種類のアルファベットで表わされる36進数の数字を考える。 最初に、複数の36進数の数字が与えられる。 このうち、任意のk" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-434-div1-middle---hexatridecimalsum-%E5%BE%A9%E7%BF%92x/" />
 

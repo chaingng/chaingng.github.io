@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 265 DIV1 Easy - ScheduleStrength (復習○)" />
-<meta property="og:description" content="問題 
-複数のチームがあり対戦を行う。
-総当たり戦ではなく、対戦しないチーム同士もある。
-ここで、各チームの強さを求めたい。
-あるチームの強さは、対戦した他のチーム全てに対し、
-「他のチームの勝ち数／他のチームの勝ち数＋他のチームの負け数」
-が少ないほど強いチームにある。
-ただし、他のチームの勝ち数からは自チームの負け数、他のチームの負け数からは自チームの勝ち数を引いてカウントしなければならない。
-このとき、各チームを強さの順にソートして返す。強さが同じ時はチーム名の昇順に並べる。
-解き方 
-シミュレーション問題なので、いかにシンプルにコーディングするか。
-いきなり計算してもよいのですが、各チームの勝ち負け数をカウントしてから
-強さを計算することでシンプルに実装できます。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class ScheduleStrength {
-public: vector&lt;string&gt; calculate(vector&lt;string&gt; teams, vector&lt;string&gt; results) {
-int n=teams.size();
-int win[n],lose[n];
-memset(win,0,sizeof(win));
-memset(lose,0,sizeof(lose));
-FORE(i,0,n){
-FORE(j,0,n){
-if(results[i][j]==&#39;W&#39;)win[i]&#43;&#43;;
-if(results[i][j]==&#39;L&#39;)lose[i]&#43;&#43;;" />
+<meta property="og:description" content="問題 複数のチームがあり対戦を行う。 総当たり戦ではなく、対戦しないチーム同士もある。 ここで、各チームの強さを求めたい。 あるチームの強さは、対戦" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-265-div1-easy---schedulestrength-%E5%BE%A9%E7%BF%92/" />
 

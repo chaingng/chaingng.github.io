@@ -77,29 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-・文字の長さがNであり、’A’か’B’から成る文字列を作りたい。
-・ただし、Aより後ろのどこかにBがあるペアをK個作りたい。
-・そのような文字列を作れない場合は-1を、作れる場合はそのような文字列のうち一つを出力する。
-解き方 
-・最大のペア数はN/2 * (N-N/2)であるので、これよりもKが大きければそのような文字列を
-作れない。
-・作れる場合は実装するだけ。Aを出力するときに、それより右にあるべきBの数を保存してあげるように解いた。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AB {
-public: string createString(int N, int K) {
-string ret="";
-for(int a=0;a&lt;=N/2;a++){
-int b=N-a;
-if(a*b&lt;K)continue;
-vector&lt;int&gt; v;
-FORE(i,0,a){
+			問題 ・文字の長さがNであり、’A’か’B’から成る文字列を作りたい。 ・ただし、Aより後ろのどこかにBがあるペアをK個作りたい。 ・そのような文
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-648-div1-easy---ab-/">Read more…</a>
@@ -119,34 +97,7 @@ FORE(i,0,a){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13504&amp;rd=16080
-・1から2Nまで書かれた、2N枚のカードがあり、2人でゲームを行う。
-・このカードが自分と相手それぞれ均等に配られる。
-・2人が一枚ずつカードを出し、大きい数字の方が１ポイント得られる。
-・自分のカードについては、何が配られたかわかっている。
-・相手のカードについては自分のカードから推測できるが、カードを出す順番もわかっている。
-ただし、-1で示されているときは何が出されるかわかっていない。
-・このとき、自分が得ることのできるスコアの最大の期待値を求める。
-解き方 
-・まず、自分のカードから相手のカードを推測し配列に保存する。
-・相手のカードについて、出すものがわかっているものに対しては最適な戦略を取る。
-・つまり、ある相手のわかっているカードについてそれより大きい数のカードがある場合は
-そのうち最小のものを出す。
-・大きい数のカードがない場合は一番小さいカードを出す。
-・残りのカードについては総当たりで計算して期待値を足していけばよい。
-→System Passed
-・もっとシンプルな解き方があるのか他のコードをみてみたが、この方法が一番シンプルそう。
-紙に書いて手順を整理すれば着実に解ける。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class GreaterGame {
-public: double calc(vector&lt;int&gt; hand, vector&lt;int&gt; sothe) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13504&amp;rd=16080 ・1から2Nまで書かれた、2N枚のカードがあり、2人でゲームを行う。 ・このカードが自分と相手それぞれ均等に配られる。 ・2人が一枚ずつカ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-637-div1-easy---divisorspower-/">Read more…</a>
@@ -166,34 +117,7 @@ public: double calc(vector&lt;int&gt; hand, vector&lt;int&gt; sothe) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9943&amp;rd=13508
-ある文字列と、接頭辞と接尾辞が与えられる。
-ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。
-ただし、接頭辞と接尾辞のマッチ数が同じときは接頭辞のマッチ数が大きいものにする。
-また、上記も同じであれば文字の昇順のものにする。
-解き方 
-シミュレーション問題なので、いかにシンプルに実装するか。
-接頭辞の一致に時間がかかってしまったので、例とＦＯＲを回してみて正しく実装してみるか机上で検証してみるのがやはり大事。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-string P,S;
-class TemplateMatching {
-public:
-int prefixes(string str){
-int score=0;
-int n1=str.size(),n2=P.size();
-FOR(i,0,min(n1,n2)){
-string s1=str.substr(0,i+1);
-string s2=P.substr(n2-1-i,i+1);
-if(s1==s2)score=max(score,i+1);
-}
-return score;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9943&amp;rd=13508 ある文字列と、接頭辞と接尾辞が与えられる。 ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。 ただし、接
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -213,32 +137,7 @@ return score;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8319&amp;rd=10805
-通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、
-ボード上に配置されている。ボード上の数がＫにあたる。
-このとき、すべてのボード上のナイトが同じセルに到達するまでに必要な最小移動回数の合計を求める。
-そのようなセルが存在しない場合はー１を返す。
-解き方 
-ボードが１０＊１０なので、全探索で解くことができる。
-計算量はＯ（１００００）。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class CollectingRiders {
-public: int minimalMoves(vector&lt;string&gt; board) {
-int w=board[0].size(),h=board.size();
-int dx[]={2,2,1,1,-1,-1,-2,-2};
-int dy[]={1,-1,2,-2,2,-2,1,-1};
-int ret=10000;
-FORE(x,0,h){
-FORE(y,0,w){
-int p[h][w];
-FORE(i,0,h)FORE(j,0,w)p[i][j]=10000;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8319&amp;rd=10805 通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、 ボード上に配置されている。ボード上の数がＫにあたる。 こ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -258,31 +157,7 @@ FORE(i,0,h)FORE(j,0,w)p[i][j]=10000;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4490&amp;rd=7217
-行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。
-ここで、ある数字を思い浮かべたとき、その数字が何列目に入っているか答える。
-答えた後は行と列の数字を入れ替えて、また何列目に入っているか答える。
-この操作を繰り返した時、最後に思い浮かべた数字のある行を答える。
-複数存在しうるとき、またひとつも存在しないときはー１を返す。
-解き方 
-シミュレーション問題なので、いかにシンプルに実装するか。
-候補の数の更新には配列で＆を使ってもよいが、insertのすでに入っているかの判定を使うことでよりシンプルになる。
-数字の入れ替えは間違えやすいので例を出しながら確かめる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class GuessCard {
-public: int whichRow(int width, int height, vector&lt;int&gt; columns) {
-set&lt;int&gt; s;
-FORE(n,1,height*width+1)s.insert(n);
-int p[height][width],n=1;
-FORE(i,0,height)FORE(j,0,width){
-p[i][j]=n;
-n++;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=4490&amp;rd=7217 行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。 ここで、ある数字を思い浮かべたとき、その数字が何列目に
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -302,31 +177,7 @@ n++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1786&amp;rd=4590
-サラリーマンは出社したときと退社した時にスタンプカードを押し、その時間がわかっている。ただし、退社した時の時間は仕事時間に含まれない。
-合わせて時給がわかっており、０：００～５：５９の間、かつ１８：００～２３：５９の間は時給が１．５倍になる。
-このとき、サラリーマンの一日の給料を求める。
-ただし、小数点以下は切り下げる。
-解き方 
-シミュレーション問題なので以下にシンプルに実装するか。
-同じ計算は記載ミスを招くので、２度以上現れる計算は変数に保存して扱うことでミスをより少なくできる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Salary {
-public:
-int calc(string str){
-int h=(str[0]-'0')*10+(str[1]-'0');
-int m=(str[3]-'0')*10+(str[4]-'0');
-int s=(str[6]-'0')*10+(str[7]-'0');
-return h*3600+m*60+s;
-}
-int howMuch(vector&lt;string&gt; arrival, vector&lt;string&gt; departure, int wage) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1786&amp;rd=4590 サラリーマンは出社したときと退社した時にスタンプカードを押し、その時間がわかっている。ただし、退社した時の時間は仕事時間に含まれない。
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-157-div1-easy---salary-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -346,34 +197,7 @@ int howMuch(vector&lt;string&gt; arrival, vector&lt;string&gt; departure, int wa
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1772&amp;rd=4570
-ある製品について、何日間で何個売れるかがわかっている。
-複数の製品について上記の情報が与えられたとき、
-１カ月あたり、つまり３０日あたり平均何個の製品が売れるかを求めたい。
-ただし、情報が０日間であったときはその製品はないものとみなす。
-また、割りきれない場合は誤差1e-9を引いたのちに繰り上げる。
-解き方 
-実装自体はシンプル。
-以下の例外条件をきちんと書けるかがポイント。
-・情報が０日間はカウントしない。（売れる数が０個のときはカウント）
-・誤差の計算（問題文のとおり、1e-9を引く）
-・最後に割り算が来るので、０のときの例外条件を記載
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Inventory {
-public: int monthlyOrder(vector&lt;int&gt; sales, vector&lt;int&gt; daysAvailable) {
-double cnt=0.0,ret=0.0;
-FORE(i,0,sales.size()){
-if(daysAvailable[i]==0)continue;
-ret+=sales[i]*30.0/daysAvailable[i];
-cnt++;
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1772&amp;rd=4570 ある製品について、何日間で何個売れるかがわかっている。 複数の製品について上記の情報が与えられたとき、 １カ月あたり、つまり３０日あたり平
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-153-div1-easy---inventory-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -393,42 +217,7 @@ cnt++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1517&amp;rd=4600
-指定された数のハンバーガーを両面焼きたい。
-両面焼くのには、片面ずつ、各５分必要となる。
-また、フライパンが与えられ、一度に何枚のハンバーガーが焼けるかがわかっている。
-このとき、指定された数のハンバーガーを焼くのに必要な最小時間を求める。
-解き方 
-ハンバーガーの数は１０００なので全探索で解ける。
-シミュレーション問題なので、いかにシンプルに解くか。
-片面ずつの配列を作って埋めていってもよいが、それぞれを区別する必要はないので
-以下のように整理する。
-フライパン１回使用につき、
-①まずは両面とも焼いていないものを優先して載せる
-②あまったところで片面のみ焼いてあるものを載せる。
-③最後に両面とも焼けていないもの、片面のみ焼けているものの数を更新し、どちらも０になるまでループさせる。
-１回のターンにつき①と②で同じものを選ばないようにするのがSystemtestで落ちないためのポイント。
-コード 
-class FryingHamburgers {
-public: int howLong(int panSize, int hamburgers) {
-int ret=0,half=0;
-while(hamburgers+half&gt;0){
-ret++;
-int first=min(hamburgers,panSize);
-int both=min(panSize-first,half);
-hamburgers-=first;
-half+=first;
-half-=both;
-}
-return ret*5;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1517&amp;rd=4600 指定された数のハンバーガーを両面焼きたい。 両面焼くのには、片面ずつ、各５分必要となる。 また、フライパンが与えられ、一度に何枚のハンバー
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-159-div1-easy---fryinghamburgers-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -448,33 +237,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2312&amp;rd=5850
-ある物体の重さを、天秤を使って測りたい。
-天秤の重さは３＾ｘのものが各１つずつ存在する。
-このとき、必要な天秤の重さを昇順にソートして返す。
-解き方 
-重さの最大は10^6なので、各３のべき乗に対し３通りの計算と考えると
-3^14ほどになり計算量がちょっと怪しい。
-※計算
-10^6=3^x log10^6=log3^x x=6/log3≠13
-ここで各３のべき乗xとそこまでのすべてのべき乗の和をsum[x]とすると、
-sum[x-1]&lt;abs(W)&lt;sum[x]のときその数xは使わなければならない。
-逆にsumが超えてしまうとその数を使ってはいけなくなる。
-これをループさせて範囲を狭めていき、答えを求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Apothecary {
-public: vector&lt;int&gt; balance(int W) {
-vector&lt;int&gt; ans;
-int x=1,sum=1;
-while(W!=0){
-if(sum&gt;=abs(W)){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2312&amp;rd=5850 ある物体の重さを、天秤を使って測りたい。 天秤の重さは３＾ｘのものが各１つずつ存在する。 このとき、必要な天秤の重さを昇順にソートして返す
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-204-div1-easy---apothecary-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -494,32 +257,7 @@ if(sum&gt;=abs(W)){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1924&amp;rd=5867
-暗号化された文字列があり、それを復号したい。
-あらかじめ暗号化された文字pool、配列data,keysが与えられる。
-復号後の文字列のi番目の文字は、
-(data[i]*k)%keys[i]=1となる最小の正の整数kを求め、
-j=k%(poolのサイズ)としたとき、pool[j]の文字となる。
-このとき、復号後の文字列を求める。
-解き方 
-問題文の理解ができれば、同じように実装するだけ。
-コード 
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TerribleEncryption {
-public: string decrypt(string pool, vector&lt;int&gt; data, vector&lt;int&gt; keys) {
-int n=data.size(),m=pool.size();
-string str="";
-FORE(i,0,n){
-int k=1;
-while((data[i]*k)%keys[i]!=1)k++;
-str+=pool[k%m];
-}
-return str;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1924&amp;rd=5867 暗号化された文字列があり、それを復号したい。 あらかじめ暗号化された文字pool、配列data,keysが与えられる。 復号後の文字列のi
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-221-div1-easy---terribleencryption-%E5%BE%A9%E7%BF%92/">Read more…</a>

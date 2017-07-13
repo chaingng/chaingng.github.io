@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 150 DIV1 Easy - InterestingDigits (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1523&amp;rd=4555
-３の倍数はその各桁の数の和も同じく３の倍数になる。
-上記に対し、ｘ進数のときにも同じ法則が成り立つ倍数を求める。
-解き方 
-ｘ進数を考えた時、ｘ＾４まで考えればよく、ｘは最大で３０であるので
-計算量は30^4 *30 =30^5 =3*10^5となる。
-条件を満たさない場合はbreak,continue等で打ち切りを行えば
-十分全探索で間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class InterestingDigits {
-public: vector&lt;int&gt; digits(int base) {
-vector&lt;int&gt; ans;
-FORE(i,2,base){
-int valid=1;
-FORE(j,1,pow(base,4)){
-if(j%i!=0)continue;
-int tmp=j,num=0;
-while(tmp&gt;0){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1523&amp;rd=4555 ３の倍数はその各桁の数の和も同じく３の倍数になる。 上記に対し、ｘ進数のときにも同じ法則が成り立つ倍数を求める。 解き方 ｘ進数を考えた時、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-150-div1-easy---interestingdigits-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 572 DIV1 Easy - NewArenaPassword （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12386&amp;rd=15492
-古いパスワードから新しいパスワードを作りたいが、できるだけ変更したくない。
-また、パスワードの最初のＫ文字と最後のＫ文字は一致していないといけない。
-古いパスワードが与えられた時、最小の変更文字数を求める。
-解き方 
-正確にシミュレーションしてあげれば解ける問題。
-i文字目について、Ｎ-K文字を足した場所とリンクしていることがわかると、
-最初からN-Kずつ足していった値に対して、最小のリンク関数を求めてあげればよい。
-また、最初からＫもしくはＮ－Ｋまでの操作でよいことがわかる。
-コード 
-class NewArenaPassword {
-public: int minChange(string oldPassword, int K) {
-int cost=0,n=oldPassword.size();
-for(int i=0;i&lt;n&amp;&amp;i&lt;n-K;i&#43;&#43;){
-int count[26]={},num=0;
-for(int j=i;j&lt;n;j&#43;=n-K){
-count[oldPassword[j]-&#39;a&#39;]&#43;&#43;;
-num&#43;&#43;;
-}
-cost&#43;=num-*max_element(count,count&#43;26);
-}
-return cost;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12386&amp;rd=15492 古いパスワードから新しいパスワードを作りたいが、できるだけ変更したくない。 また、パスワードの最初のＫ文字と最後のＫ文字は一致していない" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-572-div1-easy---newarenapassword-%E5%BE%A9%E7%BF%92/" />
 

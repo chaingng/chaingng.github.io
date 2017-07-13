@@ -7,25 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 424 DIV1 Easy - ProductOfDigits x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10177&amp;rd=13515
-ある整数Nが与えられる。
-各桁の数の積がNになる整数について、
-その最小の桁数を求める。
-解き方 
-Nを９から１で順番に割れるか確かめていって、その商の数が桁数になる。
-コード 
-class ProductOfDigits {
-public: int smallestNumber(int N) {
-int ret=0;
-for(int i=9;i&gt;1;i--){
-while(N%i==0)N/=i,ret&#43;&#43;;
-}
-if(N!=1)return -1;
-if(ret==0)return 1;
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10177&amp;rd=13515 ある整数Nが与えられる。 各桁の数の積がNになる整数について、 その最小の桁数を求める。 解き方 Nを９から１で順番に割れるか確かめていって、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-424-div1-easy---productofdigits-x/" />
 

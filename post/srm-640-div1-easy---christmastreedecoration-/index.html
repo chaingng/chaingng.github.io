@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 640 DIV1 Easy - ChristmasTreeDecoration (○)" />
-<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13551&amp;rd=16083
-・クリスマスツリーをデコレーションするのに、N個の星とN-1個のリボンがある。
-・星には色がついていて、全ての星をリボンで一つにつなげたい。
-・ただし、できるだけリボンでつなげるときの星の色は異なるようにしたい。
-・また、つなぐことのできる星のペアもわかっている。
-・このとき、同じ色同士の星をつなげるリボンの最小数を求める。
-解き方 
-・ぱっと見て、ダイクストラ法に見える。
-・ただし、ダイクストラでつなげていって最後に同じ色同士の星しかつなげられない場合、
-つなげた星によって解が異なってしまう。
-・よって、まずは部分的につながっていなくて、かつ異なる色の星をつなげていく。
-・そのような星がなくなったら、同じ色の星をつなげる。
-・集合を使おうかと思ったが、ワーシャルフロイドで計算量は
-50*50*50*50=25*25*10000=625*10^4=6.25*10^6で間に合う。
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class ChristmasTreeDecoration {
-public: int solve(vector&lt;int&gt; col, vector&lt;int&gt; x, vector&lt;int&gt; y) {
-int n=col.size();" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13551&amp;rd=16083 ・クリスマスツリーをデコレーションするのに、N個の星とN-1個のリボンがある。 ・星には色がついていて、全ての星をリボンで一つにつなげた" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-640-div1-easy---christmastreedecoration-/" />
 

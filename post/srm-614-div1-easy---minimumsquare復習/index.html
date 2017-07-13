@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 614 DIV1 Easy - MinimumSquare　（復習××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12976
-座標上に複数の点が与えられる。
-座標上に正方形を描き、その正方形の中に少なくともＫ個以上与えられた点が入っているようににしたい。
-このとき、描くことのできる最小の正方形の面積を求める。
-解き方 
-点の数は１００個なので、単純にすべての点の選び方を全探索しようとすると１００Ｃ５０で間に合わないので違う方法を考える。
-今回ｘ座標は１００個、ｙ座標は１００個とするとすべての始点の選び方は１０＾４となる。
-また、その選んだ始点に対してすべての座標を加えた場合の長さを調べ、
-Ｋ個以上となったときにその中のＫ個目の長さが最小の長さであるので、毎回その長さの正方形の面積と比較して答えを更新する。
-これで計算量は１０＾６となり間に合う。
-始点の選び方は与えられた座標ではなく、ｘ、ｙ座標それぞれの点に対して行うのがポイント。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class MinimumSquare {
-public: long long minArea(vector&lt;int&gt; x, vector&lt;int&gt; y, int K) {
-long long ret=9.2e&#43;18;
-int n=x.size();" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12976 座標上に複数の点が与えられる。 座標上に正方形を描き、その正方形の中に少なくともＫ個以上与えられた点が入っているようににしたい。 このとき" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/" />
 

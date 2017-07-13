@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 352 DIV1 Easy - NumberofFiboCalls （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2292&amp;rd=10709
-フィボナッチ数の計算が再帰プログラムで書かれている。
-このとき、ある整数ｎのフィボナッチ数を求めるときに再帰プログラムにて１と０が出力される回数を求める。
-解き方 
-ｎの最大が４０のため全探索では解くことができない。
-ここで、ある数xまでに出力される０と１の回数もフィボナッチ数と同様に、
-x-1とあるx-2の０と１の回数の和で求められることがわかる。
-これをｄｐで実装する。
-コード 
-class NumberofFiboCalls {
-public: vector&lt;int&gt; fiboCallsMade(int n) {
-vector&lt;int&gt; ans;
-int dp0[n&#43;1],dp1[n&#43;1];
-memset(dp0,0,sizeof(dp0));
-memset(dp1,0,sizeof(dp1));
-dp0[0]=1,dp1[1]=1;
-FORE(i,2,n&#43;1){
-dp0[i]=dp0[i-1]&#43;dp0[i-2];
-dp1[i]=dp1[i-1]&#43;dp1[i-2];
-}
-ans.push_back(dp0[n]);
-ans.push_back(dp1[n]);
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2292&amp;rd=10709 フィボナッチ数の計算が再帰プログラムで書かれている。 このとき、ある整数ｎのフィボナッチ数を求めるときに再帰プログラムにて１と０が出力さ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-352-div1-easy---numberoffibocalls-%E5%BE%A9%E7%BF%92/" />
 

@@ -74,33 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-・N個のスイッチがある。
-・各スイッチはONかOFFの状態を持ち、その初期状態が与えられる。
-・各スイッチはその位置の倍数のスイッチと連動しており、そのスイッチを押すと連動しているスイッチの状態も変化する。
-・すべてのスイッチをOFFにしたいとき、最小の操作回数を求める。
-・ただしそのような操作ができないときはー１を返す。
-解き方 
-・あるスイッチを操作するとき、それよりも左のスイッチの動作には影響しない。
-・よって左からONのスイッチに対してOFFにしていけば、最小の操作ですべてのスイッチがOFFになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class LightSwitchingPuzzle {
-public: int minFlips(string state) {
-int n=state.size();
-int p[n];
-FORE(i,0,n)p[i]=(state[i]=='Y');
-int ret=0;
-while(accumulate(p,p+n,int())!=0){
-int idx=0;
-while(p[idx]==0)idx++;
-ret++;
-for(int i=idx;i&lt;n;i+=idx+1)p[i]=1-p[i];
+			問題 ・N個のスイッチがある。 ・各スイッチはONかOFFの状態を持ち、その初期状態が与えられる。 ・各スイッチはその位置の倍数のスイッチと連動し
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-642-div2-middle---lightswitchingpuzzle-/">Read more…</a>
@@ -120,31 +94,7 @@ for(int i=idx;i&lt;n;i+=idx+1)p[i]=1-p[i];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13551&amp;rd=16083
-・クリスマスツリーをデコレーションするのに、N個の星とN-1個のリボンがある。
-・星には色がついていて、全ての星をリボンで一つにつなげたい。
-・ただし、できるだけリボンでつなげるときの星の色は異なるようにしたい。
-・また、つなぐことのできる星のペアもわかっている。
-・このとき、同じ色同士の星をつなげるリボンの最小数を求める。
-解き方 
-・ぱっと見て、ダイクストラ法に見える。
-・ただし、ダイクストラでつなげていって最後に同じ色同士の星しかつなげられない場合、
-つなげた星によって解が異なってしまう。
-・よって、まずは部分的につながっていなくて、かつ異なる色の星をつなげていく。
-・そのような星がなくなったら、同じ色の星をつなげる。
-・集合を使おうかと思ったが、ワーシャルフロイドで計算量は
-50*50*50*50=25*25*10000=625*10^4=6.25*10^6で間に合う。
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class ChristmasTreeDecoration {
-public: int solve(vector&lt;int&gt; col, vector&lt;int&gt; x, vector&lt;int&gt; y) {
-int n=col.size();
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13551&amp;rd=16083 ・クリスマスツリーをデコレーションするのに、N個の星とN-1個のリボンがある。 ・星には色がついていて、全ての星をリボンで一つにつなげた
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-640-div1-easy---christmastreedecoration-/">Read more…</a>
@@ -164,31 +114,7 @@ int n=col.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12822&amp;rd=15707
-M個のボールがあり、１からMまで順番に番号がついている。
-ボールの色は最初は白。
-複数のステージが与えられ、各ステージiについてL[i]番目からR[i]番目までの色を
-白か黒の好きな色どちらか一色に塗る。
-このとき、色の塗り方は何通りあるか求める。
-解き方 
-・色の塗り方なので、ボールの区切りの数を求め、その２＾（区切り数）が
-答えになりそう？
-・サンプルを見るとこれでは失敗。
-→他の人のコードをみる。
-・順番に色を塗っていく、という問題文の条件を見落としていた。
-・各ボールについて順番に色をぬっていくときのステージ数を上書きしていく。
-・最後に残った、各ボールのステージ数の場合の数について２の累乗をとってあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class LittleElephantAndIntervalsDiv1 {
-public: long long getNumber(int M, vector&lt;int&gt; L, vector&lt;int&gt; R) {
-int n=L.size();
-int p[M+1];
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12822&amp;rd=15707 M個のボールがあり、１からMまで順番に番号がついている。 ボールの色は最初は白。 複数のステージが与えられ、各ステージiについてL[i]番
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-595-div1-easy---littleelephantandintervalsdiv1-/">Read more…</a>
@@ -208,32 +134,7 @@ int p[M+1];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12854&amp;rd=15709
-文字列の長さが同じである、文字列Aと文字列Bが与えられる。
-文字列Aの任意の文字を１つ選んで、先頭に持ってくる動作を繰り返して文字列Bにしたい。
-このとき、必要な最小の操作回数を求める。
-どうしても文字列Bにできないときは-1を返す。
-解き方 
-・文字列Aの先頭からｘ文字と、文字列Bの後ろからｘ文字のうち最長のｘを求め、
-残りの文字列長が答えになる？
-・サンプルをみると、Aの部分文字列のうち間の文字をとることで部分文字列Bにもできるので
-そうではなさそう。
-・間の文字を取れるということは、Aの部分文字列とBの最後からｘ文字の文字列のうち
-最長のｘをとれればよさそう。
-・最長部分文字列の問題なのでｄｐでｘを求める。
-→System Passed
-・AもBも部分文字列であればｄｐだが、Bは固定文字列なので貪欲法でもよかった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class LittleElephantAndString {
-public: int getNumber(string A, string B) {
-int n=A.size();
-int a[26]={},b[26]={};
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12854&amp;rd=15709 文字列の長さが同じである、文字列Aと文字列Bが与えられる。 文字列Aの任意の文字を１つ選んで、先頭に持ってくる動作を繰り返して文字列Bに
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-597-div1-easy---littleelephantandstring-/">Read more…</a>
@@ -253,35 +154,7 @@ int a[26]={},b[26]={};
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12861&amp;rd=15710
-複数のアイテムが与えられ、それを瓶に格納したい。
-１つの瓶には重さ３００までのアイテムしか入れられない。
-各アイテムの重さがわかっているとき、最低でいくつ瓶が必要か求める。
-解き方 
-・問題文だけを考えると、かなりの数の組み合わせがありそう。
-・条件をみると、ひとつのアイテムの重さは１００～３００．
-・これから、１つの瓶に入るアイテムは１～３つ。
-・アイテムの重さが２０１以上であれば１つの瓶には１つしか入らない。
-・重さが１００であるアイテムが３つあれば１つの瓶に３つ入れられる。
-・残りはソートして、一番大きいアイテムと小さいアイテムの合計が３００以下であれば
-一つに入れて、そうでなければ大きいアイテム１つだけ瓶に入れる。
-・上記の条件を貪欲法で、と思ったが
-１００のアイテムを３つ入れるケースと一番大きいアイテムと
-小さいアイテムの２つを入れるケースでは、どちらがよいかは選択できない。
-・こういうときはｄｐに切り替える。
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[60][60];
-vector&lt;int&gt; items;
-class BinPacking {
-public:
-int rec(int l,int r){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12861&amp;rd=15710 複数のアイテムが与えられ、それを瓶に格納したい。 １つの瓶には重さ３００までのアイテムしか入れられない。 各アイテムの重さがわかっていると
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-598-div1-easy---binpacking-/">Read more…</a>
@@ -301,33 +174,7 @@ int rec(int l,int r){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13234&amp;rd=16076
-・点（０，０）からスタートし、ゴール（ｘ、０）まで到達したい。
-・ジャンプして移動することができ、ジャンプできる距離の配列が与えられる。
-この順にジャンプして到達する必要がある。配列が終了したら最初の要素に戻る。
-・このとき、ゴールまで到達するのに必要な最小のジャンプ回数を求める。
-解き方 ・多角形を構成する問題であり、構成するには最大の辺＜その他の辺の合計である
-必要がある。今回は直線でもよいので等号が成立する。
-・配列の長さをｎ、配列の距離の合計をSとする。
-・ｘ＜＝Sのとき
-２＊ｎまでにゴールに到達することができる。
-ｎ＝０～２ｎ－１まで順に調べていき、それまでの距離の合計がｘ以上であり
-かつ最大の長さの辺が合計距離の半分以下であればそこが答えになる。
-・それ以外（ｘ＞S）のとき
-順に調べていき、距離の和がｘを超えた時が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PeriodicJumping {
-public: int minimalTime(int x, vector&lt;int&gt; jumpLengths) {
-if(x==0)return 0;
-if(x&lt;0)x=-x;
-int n=jumpLengths.size();
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13234&amp;rd=16076 ・点（０，０）からスタートし、ゴール（ｘ、０）まで到達したい。 ・ジャンプして移動することができ、ジャンプできる距離の配列が与えられる。
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-633-div1-easy---periodicjumping-/">Read more…</a>
@@ -347,33 +194,7 @@ int n=jumpLengths.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13003&amp;rd=15842
-・’＜’と’＞’で表わされる配列が与えられる。
-・この配列から、順序を保って任意の文字を抜き出したサブ文字列を考える。
-・このサブ文字列が、＞が最初にｎ個続き、次に＜がｎ個続くようなもののうち最大の２＊ｎを
-求める。
-解き方 
-・順序を保ったサブ文字列の生成であるので、ある位置を選び、そこから左側で作れる最大の＞の数と右側で作れる最大の＜の数のうち最小の数＊２がその位置での最大の２＊ｎとなる。
-・上記について、全ての位置について試して最大のものを返してあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class MagicalStringDiv1 {
-public: int getLongest(string S) {
-int n=S.size();
-int ret=0;
-FORE(i,0,n){
-int l=0,r=0;
-FORE(j,0,i)if(S[j]=='&gt;')l++;
-FORE(j,i,n)if(S[j]=='&lt;')r++;
-ret=max(ret,min(l,r)*2);
-}
-return ret;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13003&amp;rd=15842 ・’＜’と’＞’で表わされる配列が与えられる。 ・この配列から、順序を保って任意の文字を抜き出したサブ文字列を考える。 ・このサブ文字列が
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-609-div1-easy---magicalstringdiv1-/">Read more…</a>
@@ -393,31 +214,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12948&amp;rd=15838
-・様々なハンバーガーがあり、そのタイプと大きさが与えられる。
-・好きなだけハンバーガーを選んでよく、選んだ後のスコアは選んだタイプの種類×大きさの和
-となる。
-・このとき、取りうる最大のスコアを求める。
-解き方 
-・大きさがマイナスになるときは判定が必要になる
-・とりあえず、大きさが０以上の時はスコアが下がることはないので必ず選ぶ
-・ソートして、大きい順に判定
-・大きさが０以上のときは必ず選び、マイナスのときはそのハンバーガーを選んだときにスコアが上がれば選び、そうでなければ選ばないのが最適解になりそう
-・あるハンバーガーを選ばないとき、それより小さい大きさのときはスコアはそれ以上にならないので貪欲法で解ける
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class AlienAndHamburgers {
-public: int getNumber(vector&lt;int&gt; type, vector&lt;int&gt; taste) {
-int n=type.size();
-vector&lt;pair&lt;int,int&gt; &gt; p;
-FORE(i,0,n)p.push_back(make_pair(taste[i],type[i]));
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12948&amp;rd=15838 ・様々なハンバーガーがあり、そのタイプと大きさが与えられる。 ・好きなだけハンバーガーを選んでよく、選んだ後のスコアは選んだタイプの種類
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-605-div1-easy---alienandhamburgers-/">Read more…</a>
@@ -437,35 +234,7 @@ FORE(i,0,n)p.push_back(make_pair(taste[i],type[i]));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13035&amp;rd=15843
-・白と黒で表わされる２次元のボードが与えられる。
-・ここから任意の長方形を選び、それが交互に白と黒が現れる模様であればそれはチェスボードと呼ぶことができる。
-・そのうち、最大の大きさとなるチェスボードの面積を求める。
-解き方 
-・ボードの大きさは最大１００＊１００
-・ボードの長方形の選び方は１０＾８なのでギリギリそう。
-・長方形を選んだときにそれがチェスボードとO(1)で判断できれば間に合うが・・・
-→他の人のコードをみる
-・あらかじめ各行について、どの長さまでチェスボードが成立するか事前計算しておく。
-・長方形の左上の点のすべてについて、一つずつ下に拡大していき
-左の点がチェスボードが続けば、その下の行の続くチェスボードの長さとの最小をとれば
-そのときの最大のチェスボードを計算することができる。
-・反省：ボードの計算方法をシミュレーションするのが不足していた。もっと紙に書くのが必要。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int d[101][101];
-class TheMatrix {
-public: int MaxArea(vector&lt;string&gt; board) {
-int h=board.size(),w=board[0].size();
-memset(d,0,sizeof(d));
-FORE(i,0,h)FORE(j,0,w){
-int len=1;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13035&amp;rd=15843 ・白と黒で表わされる２次元のボードが与えられる。 ・ここから任意の長方形を選び、それが交互に白と黒が現れる模様であればそれはチェスボード
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-610-div1-easy---thematrix-/">Read more…</a>
@@ -485,35 +254,7 @@ int len=1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10543&amp;rd=15845
-・笑顔の顔文字をsmiles分送りたい。
-・最初はsmiles１個分送っている。
-・１回の操作で、現在の送っている数をクリップボードにコピーできる。
-・１回の操作で、クリップボードにコピーしている分の顔文字を送ることができる。
-・１回の操作で、現在送っている数を一つ減らすことができる。
-・このときの最小の操作回数を求める。
-解き方 
-・dpで解けそう
-・パラメータとしては、これまでに送っている顔文字の数、クリップボードにコピーされている顔文字の数で計算量も足りそう
-・サンプルは通った
-→System Failed
-・削除はｄｐの順序が変わるんで単純なｄｐでは解けない
-・なのでBFSで解く必要がある。距離が小さくなればキューに入れて、smiles数分送ったときの距離が答えになる。
-・反省：ｄｐっぽいが、探索の順が一方向でないときは単純に適用できなく、BFSを用いるケースがある。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int d[3001][2001];
-class EmoticonsDiv1 {
-public: int printSmiles(int smiles) {
-FORE(i,0,3001)FORE(j,0,2001)d[i][j]=1e+9;
-d[1][0]=0;
-queue&lt;pair&lt;int,int&gt; &gt; q;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10543&amp;rd=15845 ・笑顔の顔文字をsmiles分送りたい。 ・最初はsmiles１個分送っている。 ・１回の操作で、現在の送っている数をクリップボードにコピ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-612-div1-easy---emoticonsdiv1-/">Read more…</a>

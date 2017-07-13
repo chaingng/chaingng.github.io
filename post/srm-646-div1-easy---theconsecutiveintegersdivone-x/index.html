@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 646 DIV1 Easy - TheConsecutiveIntegersDivOne x○" />
-<meta property="og:description" content="問題 
-・複数の数字が与えられる。
-・ｋ個の数字が連続して並ぶようにしたい。
-・数字を１つ動かすのにコストが１かかるとき、最小のコストを求める。
-解き方 
-・数字を連結させるための最小コストを求めるとき、
-少なくともひとつの数字の場所は固定されていることがわかれば解ける。
-・あとはｋ個の連続する数字の範囲全てについて、そのうち全ての数字を固定した場合の
-最小コストを求めればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheConsecutiveIntegersDivOne {
-public: int find(vector&lt;int&gt; numbers, int k) {
-int n=numbers.size();
-sort(all(numbers));
-int ret=1e&#43;9;
-for(int i=0;i&#43;k-1&lt;n;i&#43;&#43;){
-for(int j=i;j&lt;=i&#43;k-1;j&#43;&#43;){
-int cost=0;" />
+<meta property="og:description" content="問題 ・複数の数字が与えられる。 ・ｋ個の数字が連続して並ぶようにしたい。 ・数字を１つ動かすのにコストが１かかるとき、最小のコストを求める。 解き" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-646-div1-easy---theconsecutiveintegersdivone-x/" />
 

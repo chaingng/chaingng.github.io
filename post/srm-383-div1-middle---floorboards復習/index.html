@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 383 DIV1 Middle - FloorBoards　（復習×）" />
-<meta property="og:description" content="問題 
-２次元のセルで示される天井が存在し、すべてにすきまなく屋根を作りたい。
-屋根を作るのに必要な板は幅が１であり、高さは好きに決めてもよい。
-また、天井にはでこぼこが存在し、そこには板を置くことができない。
-このとき、屋根を作るのに必要な板の最小枚数を求める。
-解き方 
-他の方のコードを参考に復習しました。
-ｄｐの考え方として、
-一つ上の行のすべての棒が縦か横かわかっていれば、現在の行に棒を加えたらよいかどうかわかる。
-そのため、「現在の行番号」「現在列番号」「現在列の一つ前の行までの縦横の情報＆一つ上の行の縦横の情報」を状態にもち、「現在の行列番号のひとつ前までのコスト」を値に持つｄｐを考える。
-走査としては、現在の行列に「縦の棒を入れた時」と「横の棒を入れた時」のコストの変化を更新する。
-縦の棒にしたとき、横の棒にしたときそれぞれ縦横の情報が変わるので状態を変更してｄｐを更新する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[11][11][1&lt;&lt;10];
-class FloorBoards {
-public: int layout(vector&lt;string&gt; room) {
-int h=room.size(),w=room[0].size();
-FORE(i,0,h&#43;1)FORE(j,0,w&#43;1)FORE(k,0,(1&lt;&lt;w))dp[i][j][k]=1e&#43;9;
-dp[0][0][0]=0;
-FORE(i,0,h){
-FORE(j,0,w)FORE(k,0,(1&lt;&lt;w))FORE(l,0,2){
-int cost=dp[i][j][k]&#43;1;" />
+<meta property="og:description" content="問題 ２次元のセルで示される天井が存在し、すべてにすきまなく屋根を作りたい。 屋根を作るのに必要な板は幅が１であり、高さは好きに決めてもよい。 ま" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-383-div1-middle---floorboards%E5%BE%A9%E7%BF%92/" />
 

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 258 DIV1 Easy - AutoLoan (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=3970&amp;rd=7993
-・車をローンで購入する。
-・車の費用はあらかじめわかっており、ディーラーは月額の固定支払額と払い終わるまでの月数を教えてくれる。
-・ただしその場合のローン率は教えてくれない。
-・支払いは毎月残額にたいしてローン率／１２が足された後、毎月の固定支払額が引かれる計算となる。
-・このとき、ローン率がいくらになるか求める。
-解き方 
-２分探索で簡単に解くことができる。
-相対誤差で計算してもよいが、100回まわせば誤差1e-9に対して精度は10^2/10^100なので十分。
-コード 
-class AutoLoan {
-public: double interestRate(double price, double monthlyPayment, int loanTerm) {
-double low=0.0,high=100.0;
-FORE(i,0,100){
-double mid=(high&#43;low)/2.0;
-double cost=price;
-FORE(j,0,loanTerm){
-cost&#43;=cost*mid/12.0;
-cost-=monthlyPayment;
-}
-if(cost&lt;=0)low=mid;
-else high=mid;
-}
-return low*100.0;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=3970&amp;rd=7993 ・車をローンで購入する。 ・車の費用はあらかじめわかっており、ディーラーは月額の固定支払額と払い終わるまでの月数を教えてくれる。 ・ただし" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/" />
 

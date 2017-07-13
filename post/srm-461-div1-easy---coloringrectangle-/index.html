@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 461 DIV1 Easy - ColoringRectangle ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10731&amp;rd=14181
-長方形を、与えられた赤と青の円で覆いたい。
-各円について、その直径が与えられる。
-また、円の中心は長方形を横１線に分割する線上にあるようにする。
-また円が重複するとき、前の円とは違う色にしなければならない。
-このとき、すべて覆うのに必要な最小の円の数を求める。
-ただし、そのような場合がないときは−１を返す。
-解き方 
-赤と青それぞれの円に対し降順にソートし、
-赤から覆い始める場合、青から覆い始める場合それぞれについて
-いくつの円で覆えるか確かめてあげればよい。
-コード 
-class ColoringRectangle {
-public:
-int calc(vector&lt;int&gt; a,vector&lt;int&gt; b,int w,double h){
-double sum=0;
-int at=0,ret=0;
-while(1){
-if(at&gt;=a.size()||a[at]/2.0&lt;h)break;
-sum&#43;=sqrt(a[at]*a[at]/4.0-h*h)*2;
-ret&#43;&#43;;
-if(sum&gt;=w)return ret;
-if(at&gt;=b.size()||b[at]/2.0&lt;h)break;
-sum&#43;=sqrt(b[at]*b[at]/4.0-h*h)*2;
-ret&#43;&#43;;
-if(sum&gt;=w)return ret;
-at&#43;&#43;;
-}
-return 1e&#43;9;
-}
-int chooseDisks(int width, int height, vector&lt;int&gt; red, vector&lt;int&gt; blue) {
-sort(red.rbegin(),red.rend());
-sort(blue.rbegin(),blue.rend());
-int ret=1e&#43;9;
-ret=min(ret,calc(red,blue,width,height/2.0));
-ret=min(ret,calc(blue,red,width,height/2.0));
-return ret==1e&#43;9 ? -1 : ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10731&amp;rd=14181 長方形を、与えられた赤と青の円で覆いたい。 各円について、その直径が与えられる。 また、円の中心は長方形を横１線に分割する線上にあるように" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-461-div1-easy---coloringrectangle-/" />
 

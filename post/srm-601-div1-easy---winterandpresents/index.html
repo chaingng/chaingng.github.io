@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 601 DIV1 Easy - WinterAndPresents" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12860&amp;rd=15713
-りんごとオレンジが入ったバッグが複数与えられる。
-各バッグについて、りんごとオレンジそれぞれ何個入っているかわかっている。
-ここで、各バッグからX個ずつフルーツを取り出す。
-このとき、取り出し方の総数を求める。
-解き方 
-各バッグから取り出す数は、各バッグのフルーツの総数の最小数Xとなる。
-なので、各バッグから１個ずつ〜X個ずつの各ケースについて場合の数を求める。
-各バッグからX個ずつ取り出すときの総数について
-すべての場合の数を計算していては間に合わない。
-ここで、りんごの取り出し方の最大数とオレンジの取り出し方の最大数さえわかれば
-場合の数は計算できる。
-２種類のフルーツで合計の数がわかっている場合、１種類だけに着目すれば
-もう１種類は計算しなくてもよいのがコツ。
-コード 
-class WinterAndPresents {
-public: long long getNumber(vector&lt;int&gt; apple, vector&lt;int&gt; orange) {
-int n=apple.size();
-int minx=1e&#43;9;
-FORE(i,0,n)minx=min(minx,apple[i]&#43;orange[i]);
-long long ret=0;
-for(int x=1;x&lt;=minx;x&#43;&#43;){
-int numa=0,numo=0;
-FORE(i,0,n){
-numa&#43;=min(x,apple[i]);
-numo&#43;=min(x,orange[i]);
-}
-if(numa&lt;numo)swap(numa,numo);
-ret&#43;=numa-(x*n-numo)&#43;1;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12860&amp;rd=15713 りんごとオレンジが入ったバッグが複数与えられる。 各バッグについて、りんごとオレンジそれぞれ何個入っているかわかっている。 ここで、各バッ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-601-div1-easy---winterandpresents/" />
 

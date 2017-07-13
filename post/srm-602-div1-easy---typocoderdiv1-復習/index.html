@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 602 DIV1 Easy - TypoCoderDiv1 (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12924&amp;rd=15820
-・現在のレートとコンテストごとの点数が与えられる。
-・そのコンテストに勝利した場合はその点数が足され、負けた場合は引かれる。ただし０　未満にはならない。
-・レートが２２００以上だとbrown、それ未満だとcielの称号になる。
-・２つのコンテスト連続でbrownの称号にならないようにする。
-このとき、brownとcielの称号が変化する最大の数を求める。
-解き方 
-要素数が５０なので全探索では2^50となり間に合わない。
-点数の最大が10^9と全てdpすると間に合わないが、連続してbrownにはならないことを考えると点数が2200までのdp[50][2200]を考えればよい。
-または、全状態数は50×2200なのでこちらでdpするとより簡単なコードになる。
-コード 
-map&lt; pair &lt; int, int &gt;, int &gt; p;
-vector&lt;int&gt; R;
-class TypoCoderDiv1 {
-public:
-int calc(int pos,int rate){
-if(p.count(make_pair(pos,rate)))return p[make_pair(pos,rate)];
-if(pos==R.size())return p[make_pair(pos,rate)]=0;
-int ret=0;
-if(rate&gt;=2200){
-int score=rate-min(R[pos],rate);
-if(score&gt;=2200)ret=-1000000;
-else ret=max(ret,1&#43;calc(pos&#43;1,score));
-}else{
-int score=rate&#43;R[pos];
-if(score&gt;=2200)ret=max(ret,1&#43;calc(pos&#43;1,score));
-else ret=max(ret,calc(pos&#43;1,score));
-score=rate-min(R[pos],rate);
-ret=max(ret,calc(pos&#43;1,score));
-}
-return p[make_pair(pos,rate)]=ret;
-}
-int getmax(vector&lt;int&gt; D, int X) {
-p.clear();
-R=D;
-return calc(0,X);
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12924&amp;rd=15820 ・現在のレートとコンテストごとの点数が与えられる。 ・そのコンテストに勝利した場合はその点数が足され、負けた場合は引かれる。ただし０ 未満" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-602-div1-easy---typocoderdiv1-%E5%BE%A9%E7%BF%92/" />
 

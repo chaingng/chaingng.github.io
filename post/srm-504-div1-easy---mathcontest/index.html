@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 504 DIV1 Easy - MathContest" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11233&amp;rd=14433
-解き方 
-キューが連続的になっているということに気をつければ、
-現在左から見るか右から見るかの情報、
-ひっくり返っているかそうでないかの情報を持つことで
-配列を操作せずに解くことができる。
-コード 
-string str;
-class MathContest {
-public: int countBlack(string ballSequence, int repetitions) {
-int ret=0;
-str=&#34;&#34;;
-FORE(i,0,repetitions)str&#43;=ballSequence;
-int n=str.size();
-int turn=1,dir=1;
-int l=0,r=n-1;
-while(l&lt;=r){
-if(dir){
-if(turn==(str[l]==&#39;B&#39;)){
-turn=1-turn;
-ret&#43;&#43;;
-}
-else dir=1-dir;
-l&#43;&#43;;
-}else{
-if(turn==(str[r]==&#39;B&#39;)){
-turn=1-turn;
-ret&#43;&#43;;
-}
-else dir=1-dir;
-r--;
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11233&amp;rd=14433 解き方 キューが連続的になっているということに気をつければ、 現在左から見るか右から見るかの情報、 ひっくり返っているかそうでないかの情報を" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-504-div1-easy---mathcontest/" />
 

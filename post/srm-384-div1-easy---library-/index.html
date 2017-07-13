@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 384 DIV1 Easy - Library ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7659&amp;rd=10808
-解き方 
-解くだけ。
-setを使えば重複の考慮も不要で、条件を満たしているかも簡単に判断できる。
-コード 
-class Library {
-public: int documentAccess(vector&lt;string&gt; records, vector&lt;string&gt; userGroups, vector&lt;string&gt; roomRights) {
-set&lt;string&gt; user,room;
-FORE(i,0,userGroups.size())user.insert(userGroups[i]);
-FORE(i,0,roomRights.size())room.insert(roomRights[i]);
-set&lt;string&gt; ans;
-FORE(i,0,records.size()){
-stringstream out(records[i]);
-string doc,u,r;
-out &gt;&gt; doc &gt;&gt; r &gt;&gt; u;
-if(room.find(r)!=room.end() &amp;&amp; user.find(u)!=user.end()){
-ans.insert(doc);
-}
-}
-return ans.size();
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7659&amp;rd=10808 解き方 解くだけ。 setを使えば重複の考慮も不要で、条件を満たしているかも簡単に判断できる。 コード class Library { public: int documentAccess(vector&lt;string&gt; records, vector&lt;string&gt; userGroups, vector&lt;string&gt; roomRights) { set&lt;string&gt; user,room; FORE(i,0,userGroups.size())user.insert(userGroups[i]); FORE(i,0,roomRights.size())room.insert(roomRights[i]); set&lt;string&gt; ans; FORE(i,0,records.size()){" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-384-div1-easy---library-/" />
 

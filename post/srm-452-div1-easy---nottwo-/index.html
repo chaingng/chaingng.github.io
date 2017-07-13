@@ -7,46 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 452 DIV1 Easy - NotTwo ○" />
-<meta property="og:description" content="問題 
-H＊Wの大きさである２次元の座標があり、そこにできるだけ多くの
-石を置きたい。
-ただし、それぞれの石の距離についてユークリッド距離が２にならないようにしたい。
-このとき、最も多くおける石の個数を求める。
-解き方 
-ユークリッド距離が２になりうるセルについて、４つの区間に分けることができる。
-この区間はそれぞれどのような石の置かれ方をされてもユークリッド距離が
-２になることはない。
-あとは、各区間について置ける最大の石の個数を求めればよい。
-区間中のセルの数をDFSで求め、その（セルの数＋１）／２が
-置くことができる最大の石の個数となる。
-コード 
-int used[1010][1010];
-int dr[]={2,0,-2,0},dc[]={0,2,0,-2};
-int w,h,cnt;
-class NotTwo {
-public:
-void dfs(int r,int c){
-used[r][c]=1;
-cnt&#43;&#43;;
-FORE(i,0,4){
-int nr=r&#43;dr[i],nc=c&#43;dc[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; !used[nr][nc]){
-dfs(nr,nc);
-}
-}
-}
-int maxStones(int width, int height) {
-int ret=0;
-w=width,h=height;
-memset(used,0,sizeof(used));
-FORE(i,0,height)FORE(j,0,width)if(used[i][j]==0){
-cnt=0;
-dfs(i,j);
-ret&#43;=(cnt&#43;1)/2;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 H＊Wの大きさである２次元の座標があり、そこにできるだけ多くの 石を置きたい。 ただし、それぞれの石の距離についてユークリッド距離が２になら" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-452-div1-easy---nottwo-/" />
 

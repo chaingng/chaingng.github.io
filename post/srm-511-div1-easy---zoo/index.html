@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 511 DIV1 Easy - Zoo" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11485&amp;rd=14536
-解き方 
-動物数がN匹であれば、各動物が（０匹，N匹）〜（N匹、０匹）までの
-すべての場合が考えられる。
-各場合について、動物が答えている数が一致しているか判定し、
-有効であればmin（うさぎの数、猫の数）^2がその場合の総数になる。
-コード 
-class Zoo {
-public: long long theCount(vector&lt;int&gt; answers) {
-long long ret=0;
-int n=answers.size();
-map&lt;int,int&gt; m;
-FORE(i,0,n)m[answers[i]]&#43;&#43;;
-for(int l=0;l&lt;=n;l&#43;&#43;){
-int r=n-l;
-int cnt=0,valid=1;
-for(int i=0;i&lt;min(l,r);i&#43;&#43;){
-if(m[i]!=2)valid=0;
-cnt&#43;=m[i];
-}
-for(int i=min(l,r);i&lt;max(l,r);i&#43;&#43;){
-if(m[i]!=1)valid=0;
-cnt&#43;=m[i];
-}
-if(cnt!=n)valid=0;
-if(valid){
-ret&#43;=pow(2,min(l,r));
-}
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11485&amp;rd=14536 解き方 動物数がN匹であれば、各動物が（０匹，N匹）〜（N匹、０匹）までの すべての場合が考えられる。 各場合について、動物が答えている数が" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-511-div1-easy---zoo/" />
 

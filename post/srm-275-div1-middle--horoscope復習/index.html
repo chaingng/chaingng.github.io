@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 275 DIV1 Middle -Horoscope　（復習○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1090
-占い師がうらなった、今後数日間の良い日、悪い日のリストがある。
-リストは配列で与えられ、良い日は&#39;G&#39;、悪い日は&#39;B&#39;で表わされる。
-しかし、その占いは連続でR日間は当たるが、連続でB日間は外れる。
-このとき、最も良い日が続く時の、良い日の日数を求める。
-解き方 
-ｄｐで解く問題。
-リストは最大で2500、R,Bは最大50であるので、
-リストの長さと現在までに続いているRの長さ、Bの長さを状態としてもっておけば計算量O(2500*50*50)として間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[2510][2][60];
-class Horoscope {
-public:
-int maxGoodDays(vector&lt;string&gt; predictions, int R, int W) {
-string str=&#34;&#34;;
-FORE(i,0,predictions.size())str&#43;=predictions[i];
-int n=str.size();
-memset(dp,0,sizeof(dp));" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1090 占い師がうらなった、今後数日間の良い日、悪い日のリストがある。 リストは配列で与えられ、良い日は&#39;G&#39;、悪い日は&#39;B&#39;で表わされる。 しか" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-275-div1-middle--horoscope%E5%BE%A9%E7%BF%92/" />
 

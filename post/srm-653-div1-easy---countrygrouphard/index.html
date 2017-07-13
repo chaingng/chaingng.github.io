@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 653 DIV1 Easy - CountryGroupHard" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13688&amp;rd=16317
-・様々な国の人々が、１列になって並んでいる。
-・同じ国の人々は連続して並んでいる。
-・ここで、その国の人がどのように並んでいるか確かめたい。
-・並んでいる人に対して、同じ国の人が何人連続で並んでいるか聞くことができ、
-その結果が与えられる。
-ただし、聞いていない人の数は０になる。
-・このとき、並べ方が１通りに定まればSufficient、そうでなければInsufficientを返す。
-解き方 
-場合の数を求めるのでｄｐを使う。
-SRM411の応用で、ある位置iを考えた時、それより前の長さjからｊ-iまでの長さを
-足すことができるか判定する、ｄｐになる。
-今回長さを足すことができるかの判定は、
-j-iまでの区間について0を除く人の答えが、すべてj-iの長さと一致していればよい。
-最終的に、場合の数が１通りであればSuffientになる。
-コード 
-class CountryGroupHard {
-public: string solve(vector&lt;int&gt; a) {
-int n=a.size();
-int dp[n&#43;1];
-memset(dp,0,sizeof(dp));
-dp[0]=1;
-FORE(i,0,n){
-FORE(j,0,i&#43;1){
-int len=i-j&#43;1;
-int valid=1;
-FORE(k,j,i&#43;1){
-if(a[k]==0)continue;
-if(a[k]!=len)valid=0;
-}
-if(valid)dp[i&#43;1]&#43;=dp[j];
-}
-}
-return dp[n]==1 ? &#34;Sufficient&#34; : &#34;Insufficient&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13688&amp;rd=16317 ・様々な国の人々が、１列になって並んでいる。 ・同じ国の人々は連続して並んでいる。 ・ここで、その国の人がどのように並んでいるか確かめたい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-653-div1-easy---countrygrouphard/" />
 

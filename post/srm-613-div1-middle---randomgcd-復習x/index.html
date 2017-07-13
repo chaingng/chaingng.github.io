@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 613 DIV1 Middle - RandomGCD (復習x)" />
-<meta property="og:description" content="問題 
-lowからhighまでの数字のうち、最大公約数がKとなるようにN個の数字の集合を作る。
-このとき、同じ数字を何回選んでもよい。
-このとき、数字の選び方が何通りあるか求める。
-解き方 
-最大公約数がＫということは、lowからhighまでのうちKの倍数であるものだけを考えたらよい。
-そしてそのうち、それぞれが約数を持たないような全ての場合の数を求めればよい。
-このときの効率的な求め方が思い浮かばなくEditorialを読む。
-Ｋの倍数だけを考えたらよいということは、lowからhighまでの数字をKで割ったものについて考えれば単純化できる。
-さらにその中でｄｐを利用することで約数を持たないような数を求めることができる。
-最初にＫで割ったときにlowが１となったときは、すべて１を選んだときの場合の数１通りを足すことに注意。
-ＭＯＤを使う際は、ＭＯＤする前にオーバーフローすることがあるのでlong long型に変換する。
-オーバーフローしないよう、毎回の計算をＭＯＤすることにも注意。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[100010];
-int MOD=1000000007;
-class RandomGCD {
-public:
-int f(int a,int b){
-int ret=1,cur=a;
-while(b){
-if(b&amp;1)ret=(long long)ret*cur%MOD;" />
+<meta property="og:description" content="問題 lowからhighまでの数字のうち、最大公約数がKとなるようにN個の数字の集合を作る。 このとき、同じ数字を何回選んでもよい。 このとき、数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-613-div1-middle---randomgcd-%E5%BE%A9%E7%BF%92x/" />
 

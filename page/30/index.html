@@ -74,34 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-プレイヤーは複数存在するホラー映画を観る。
-各ホラー映画について、映画の長さlengthと恐いシーンが出現するときの映画開始からの長さscaryが与えられる。
-長さscaryまで起きて入れば恐さの値が47加算される。
-プレイヤーは最初に恐さの値を74持つ。
-１分ごとに恐さの値が１ずつ減っていき、－１になると寝てしまい他の映画は見れなくなる。
-
-このとき、できるだけ多くの映画を観ることができる順番を求める。
-複数存在するときは辞書順に小さいものを返す。
-解き方 
-映画の数は20なので、ビット列ｄｐがなんとなく使えそう。
-ただし順番を求めるため、ｄｐの値に配列を持つとメモリが足りなくなってしまう。
-そこで、「映画を観た本数」の配列と「そのうち辞書順で最小の映画の順番」の配列を用意し、状態として「これまでに観た映画のビット列」を持たせる。
-最後に逆順にたどることで、順番を復元することができる。
-ｄｐで求めたい値が２つある場合は、今回のように最小の「映画の順番」、「映画を観た本数」の２つのｄｐを用意して解く。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int c[(1&lt;&lt;20)+1],first[(1&lt;&lt;20)+1];
-class TheMoviesLevelTwoDivOne {
-public:
-vector&lt;int&gt; find(vector&lt;int&gt; length, vector&lt;int&gt; scary) {
-int n=length.size();
-memset(c,0,sizeof(c));
+			問題 プレイヤーは複数存在するホラー映画を観る。 各ホラー映画について、映画の長さlengthと恐いシーンが出現するときの映画開始からの長さsc
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-469-div1-middle---themoviesleveltwodivone%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -121,31 +94,7 @@ memset(c,0,sizeof(c));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-１次元の座標をヘビが歩く。
-startLocationからスタートし、左か右に移動することができる。
-endLocationまでたどり着けばゴールになる。
-途中に複数のorbsで示される座標が与えられ、そこにたどり着くと速度が２倍になる。
-このとき、ゴールにたどり着くまでの最小の時間を求める。
-解き方 
-制約は座標数＝５０。
-これまでにたどり着いた一番左の座標と右の座標、現在左と右のどちらにいるかの状態を持ち、コストを値に持つｄｐを考えればよい。
-上記の状態だけあれば、その時のスピードは簡単に計算できるのでスピードの状態を持つ必要はない。
-座標にスタートとゴールの位置を足すので、それを踏まえた配列の確保が必要。
-グローバル変数の更新に、ローカルでも間違って宣言すると更新されないので注意。
-(global int n; local int n=orbs.size() → n=orbs.size();)
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int e,n;
-double dp[53][53][2];
-vector&lt;int&gt; orb;
-class SnakeTurbo {
-public:
+			問題 １次元の座標をヘビが歩く。 startLocationからスタートし、左か右に移動することができる。 endLocationまでたどり着けば
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-273-div1-middle---snaketurbo%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -165,31 +114,7 @@ public:
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-整数a,b,cが与えられる。
-a,b,cを２進数に変換し、a+b=cとなるように２進数の1の位置を変化させる。
-このとき、式が成立する最小のcの値を求める。
-そのような値が存在しない場合は-1を返す。
-解き方 
-他の方のコードを読ませていただきました。
-前の状態がわかれば現在の状態は簡単に求められるので、ｄｐが適用可能。
-では、どのようにｄｐを適用したらよいかを考える。
-まず、前の桁からの桁上がりと、ｘ、ｙの増分がわかれば
-その桁においてｃの１の数がいくらまで可能か求められる。
-よって、「aの１の数」「bの1の数」「cの1の数」「桁上がりがあるかどうか」「桁数」を引数にもち、「結果のｃの値」を値に持つｄｐを用いればよい。
-計算量はO(2*30^4)となる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[32][32][32][32][2];
-class BinarySum {
-public: int rearrange(int a, int b, int c) {
-int x=0,y=0,z=0,n=0;
-for(;a||b||c;n++){
+			問題 整数a,b,cが与えられる。 a,b,cを２進数に変換し、a+b=cとなるように２進数の1の位置を変化させる。 このとき、式が成立する最小の
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-399-div1-middle---binarysum-%E5%BE%A9%E7%BF%92x/">Read more…</a>
@@ -209,43 +134,7 @@ for(;a||b||c;n++){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-５０人のプレイヤーが存在する。
-毎日コンテストを行い、その勝者２名にイルカ１つとパイ１つをプレゼントする。
-どちらにイルカ、どちらにパイをプレゼントしてもよい。
-コンテストが終わったとき、各プレイヤーが受け取ったイルカとパイの数の絶対値をできるだけ小さくしたい。
-毎日行われるコンテストの勝者２名がわかっているとき、上記を満たすようなプレゼントの仕方を求める。
-解き方 
-問題をグラフに落とすことで単純化できる。
-今回はノードを各プレイヤーとする。
-エッジは各コンテストの勝者２名を有向グラフで結び、入りをイルカ、出をパイとみなすことでグラフに落とし込むことができる。
-このとき、各ノードの入次数と出次数の差を最小化する問題とみなすことができる。
-次に、エッジの向きをどのように最適化していけばよいか考える。
-あるノードからのエッジについて向きをを入れ替えた際、
-つながっているノードの絶対値が増える場合がある。
-ここでもう少し考えると、さらにそのノードからエッジが伸びている場合、
-中間のノードは±０なので絶対値が変わらないことがわかる。
-よって同じノードに戻ってこないようなパスを考えて、それをひっくり返せばよい。
-ただし、同じパスの更新のループにならないようにしなければらない。
-そこで、終了のノードをどこに持ってくればよいかを考える。
-ひとつめの条件は、同じノードに戻ってこないようなパス。
-もう一つは、入次数の方が多い場合はより最適化できるので、そこで終わればよいことがわかる。そのノードで終わることで、次にそのノードから同じパスは再現されないので同じ更新は繰り返されない。
-よって、同じノードに戻ってこないようなパス、もしくは入次数の方が多いノードで終わるパスを考えて、それを全てひっくり返せばよいことがわかる。
-最後に、各ノードは絶対値をいくつまで収束させたらよいかを決めるために、絶対値の最小値はいくつであるか考える。
-０が最適な値であるのは自明。
-また、奇数のときは最小で１になってしまう。
-では、２の場合はどうかを考える。
-そのノードから上記のパスの更新を行ったとき、途中のノードの絶対値は大きくならないことがわかる。よって、２の場合は１または０に更新することができる。
-よって、各ノードの絶対値は１以下になるように収束させる。
-最後に、以上で証明した手順をコードに落とせばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PieOrDolphin {
+			問題 ５０人のプレイヤーが存在する。 毎日コンテストを行い、その勝者２名にイルカ１つとパイ１つをプレゼントする。 どちらにイルカ、どちらにパイをプ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-617-div1-middle---pieordolphin%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -265,36 +154,7 @@ class PieOrDolphin {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-最初に赤い鍵をkey[0]個、緑の鍵をkey[1]個、白い鍵をkey[2]個与えられる。
-ドアが複数存在し、ドアごとに空けるために必要な赤い鍵の数、緑の鍵の数がわかっている。また、ドアを開けた時に得られる各色の鍵の数が与えられる。
-ドアを空けるためには必要な赤い鍵の数、緑の鍵の数を持っていないといけないが、
-白い鍵は赤い鍵もしくは緑の鍵として代用できる。
-ドアを開けたら使った鍵はなくなってしまう。
-またプレイヤーは好きなところでドアを開けるのをやめてもよい。
-このとき、持っている鍵の数が最大となるときの鍵の合計数を求める。
-解き方 
-最初に白い鍵はできるだけ消費しないように貪欲に解けると思ったが、
-空けるドアの順番によって白い鍵の数が変わってしまうため貪欲法では解けない。
-そのため、すでに空けたドアを状態に持つＤＰでは解けない。
-そこで、白い鍵を赤とみなすか、緑とみなすか全ての場合を考えれば全ての鍵の使い方を探索することができる。
-つまり、すでに空けたドアに加え、白い鍵を赤とみなす数を状態に持つＤＰを用いれば解くことができる。
-今回は鍵の数を返り値にもつＤＦＳではなく、グローバルで答えを更新した方が単純なコードになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int n,dp[(1&lt;&lt;12)][131],best;
-vector&lt;int&gt; doorR,doorG,roomR,roomG,roomW,keys;
-class KeyDungeonDiv1 {
-public:
-void dfs(int mask,int w){
-if(dp[mask][w])return;
-dp[mask][w]=1;
-int r=keys[0]+w,g=keys[1]+keys[2]-w;
+			問題 最初に赤い鍵をkey[0]個、緑の鍵をkey[1]個、白い鍵をkey[2]個与えられる。 ドアが複数存在し、ドアごとに空けるために必要な赤
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-588-div1-middle---keydungeondiv1%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -314,31 +174,7 @@ int r=keys[0]+w,g=keys[1]+keys[2]-w;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-オートマトン図が与えられ、各状態について１～４までの数字が与えられた時に遷移する状態が与えられる。
-例）　１行目：１　２　２　３　状態０が１～４を与えられた時に遷移する状態
-すべての要素の初期状態についてわかっていないとき、
-すべての要素が同じ状態になるために必要な最小の遷移回数を求める。
-解き方 
-すべての状態の初期状態が不明なので、最悪の場合、つまり各要素が異なる状態を持っていることを考える。
-要素数は２０なので、各要素の状態数は全探索可能。
-よってメモ化を用いて、ＢＦＳにて答えを求める。
-ＤＦＳの場合は深さ優先探索にて最小の長さを求められないケースも発生しうるので、
-うまくいかない。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[1300000],p[30][4],n,ans;
-class SequenceSync {
-public:
-bool ispossible(int x){
-int cnt=0;
-FORE(i,0,n)if(x&amp;(1&lt;&lt;i))cnt++;
-return cnt==1;
+			問題 オートマトン図が与えられ、各状態について１～４までの数字が与えられた時に遷移する状態が与えられる。 例） １行目：１ ２ ２ ３ 状態０が１～４を与
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-238-div1-middle---sequencesync%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -358,34 +194,7 @@ return cnt==1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-０～５１１の間である数字の配列が与えられ、2人でゲームを行う。
-最初はFoxの番から始まり、次はToastmanの番になる。
-ゲームは配列から好きな数字を選び、現在までの数字とのORを取る。
-ORをとったときに５１１になるか、選ぶ数字がなくなった方の負けになる。
-数字の配列が与えられた時、どちらが勝つかを求める。
-解き方 
-配列数は５０なので全探索しようとすると50!で間に合わない。
-ORをした後は現在まで選んだ数字の順番は関係なくなるので、50C25としても間に合わない。
-そこで、終了条件について考える。
-終了条件は残りのどの配列を選んでも５１１になるか、選ぶものはないかなので、最後にＯＲとなった数の配列数が奇数ならFOX、偶数ならToastmanの勝ちになる。
-ＯＲとなった数の配列数は簡単に求められる。
-また、FOXはORとなった数が奇数になるように、Toastmanは偶数になるように選んでいくのが最適な戦略であるので、これをdpと再帰で書いてあげれば答えは求まる。
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[512][2],score[512];
-vector&lt;int&gt; cards;
-class FiveHundredEleven {
-public:
-int dfs(int x,int turn){
-if(dp[x][turn]!=-1)return dp[x][turn];
-int win=0,cnt=0;
-FORE(i,0,cards.size()){
-if(x!=(x|cards[i]) &amp;&amp; (x|cards[i])!=511 ){
+			問題 ０～５１１の間である数字の配列が与えられ、2人でゲームを行う。 最初はFoxの番から始まり、次はToastmanの番になる。 ゲームは配列か
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -405,36 +214,7 @@ if(x!=(x|cards[i]) &amp;&amp; (x|cards[i])!=511 ){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=209
-複数の電力源が与えられて、エネルギーの値があらかじめわかっている。
-隣り合う２つの電力源について、左側が入力値、右側が出力値をあらわす。
-このとき、隣り合う２つの電力源を融合することができる。
-融合するのに必要なコストは
-左側の電力源をinpA、右側の電力源をconnection、その右側の電力源をoutBとすると、
-cost=(inpA+sizeA)*connection*(outB+sizeB)
-で表わされる。
-sizeは最初は全て１であり、融合するとsizeA+sizeBが新しいサイズになる。
-このとき、全ての電力源を融合するために必要な最小のコストを求める。
-解き方 
-電力源の数は５０個なので、全探索しようとすると50!で間に合わない。
-そのためｄｐを利用する。
-まず、距離がlenにある電力源aとbをつなげるときの最小のコストを考える。
-このときの最小のコストは、aとbを全ての場所で区切ったときのコストのうち最小、
-つまりaとbの間で1~len-1で区切ったときのコストのうち最小のものになる。
-上記について、lenを1からnまでの長さについて求めてあげれば
-最終的に0からn-1までの最小のコストが求められる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][51];
-class Assemble {
-public: int minCost(vector&lt;int&gt; connect) {
-int n=connect.
+			問題 http://topcoder.bgcoder.com/print.php?id=209 複数の電力源が与えられて、エネルギーの値があらかじめわかっている。 隣り合う２つの電力源について、左側が入力値、右側が出力値をあらわす。
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-196-div1-middle---assemble%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -454,32 +234,7 @@ int n=connect.
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9984
-関数dig(x)が与えられ、x&lt;10のときはx、そうでないときは各桁の和が返される。
-プレイヤーはｘｙ座標の(0,0)にいる。
-最初は北にdig(１)歩進む。
-９０度右に転換する。
-次に与えられたmultiを進む数にかける。
-このステップをＫ回繰り返した時、最後にいる位置を答える。
-解き方 
-dig(x)はある値に収束しそう。
-繰り返してみると、ある配列に収束することがわかる。
-もう少し踏み込んでみると、各桁の和をとるということは、各桁を９で割ったあまりを足すことと同義となる。
-よって、xが10以上の場合は10未満になるまで9を引いてあげればよい。
-次に、配列は最大でも長さ12になることがわかる。
-よってKが12より大きい場合は12で割った余りに、安全に24を足してあげれば同じ座標に収束する。
-最後に、収束する座標は初期値の繰り返しにならないことに注意。
-(0, 0), (0, 1), [(6, 1), (6, -8), (-3, -8), (-3, 1)]
-[]が繰り返し部分であり、(0,1)は一回しか現れないことに注意する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class LocateTreasure {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9984 関数dig(x)が与えられ、x&lt;10のときはx、そうでないときは各桁の和が返される。 プレイヤーはｘｙ座標の(0,0)にいる。 最初
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-427-div1-middle---locatetreasure%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -499,32 +254,7 @@ class LocateTreasure {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=2702
-クイックソートは、配列をサブ集合に分けるときのピボットの選び方によりソートまでのスワップ回数が異なる。
-ある配列が与えられた時、その配列をソートするまでに必要なスワップ回数の期待値を求める。
-解き方 
-すべてのサブ集合のコストを洗い出す、と考えると計算量はオーバーしてしまう。
-ソート済みの配列を考え、その配列の各長さのサブ集合を考える。
-そのサブ集合については、元の配列の要素の順番を守った配列をソートしたスワップ回数と等しくなる。
-これを利用して、サブ集合の長さを２～ｎまでｄｐによって求めればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class QuickSort {
-public: double getEval(vector&lt;int&gt; L) {
-int n=L.size();
-double dp[n+1][n+1];
-memset(dp,0,sizeof(dp));
-vector&lt;int&gt; sorted=L;
-sort(all(sorted));
-FORE(len,2,n+1){
-for(int s=0;s+len&lt;=n;s++){
-int e=s+len;
+			問題 http://topcoder.bgcoder.com/print.php?id=2702 クイックソートは、配列をサブ集合に分けるときのピボットの選び方によりソートまでのスワップ回数が異なる。 ある配列が与えられた時、その配列
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-486-div1-middle---quicksort%E5%BE%A9%E7%BF%92/">Read more…</a>

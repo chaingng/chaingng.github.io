@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM565 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①モンスターの集合が与えられ、各モンスターは怖さの値とコインの値を持つ。
-②プレイヤーは最初から順番にモンスターに遭遇する。
-③このとき、プレイヤーはモンスターにそのコインの値を支払って仲間にすることができる。
-④もしくは、仲間にしたモンスターの怖さの和がそのモンスターの怖さの値以上であれば、何もせずに通り過ぎることができる。それ未満であれば、仲間にしないといけない。
-⑤このとき、すべてのモンスターに遭遇した後に最小のコイン消費枚数を返す。
-＜解き方＞
-まさに動的計画法。
-参照用のvectorをグローバルで宣言してpush_backでコピーしようとしたんですが、
-エラーが出たので引数で渡すことに。
-suztomoさんのページを拝見させていただいたのですが、
-１０＾７以上のループに加え、あまり大きな数を扱ってもダメなのかもしれないです。
-http://topcoder.g.hatena.ne.jp/suztomo/20081208/1228768981
-＜コード＞
-class MonstersValley2 {
-public:
-int f(int cur, double cdread, vector&lt;int&gt; d, vector&lt;int&gt; p){
-int coin=0;
-if(cur==n)return 0;
-if(cdread&lt;d[cur])coin=p[cur]&#43;f(cur&#43;1,cdread&#43;d[cur],d,p);
-else coin=min(f(cur&#43;1,cdread,d,p),f(cur&#43;1,cdread&#43;d[cur],d,p)&#43;p[cur]);
-return coin;
-}
-int minimumPrice(vector&lt;int&gt; dread, vector&lt;int&gt; price) {
-n=dread.size();
-return f(1,dread[0],dread,price)&#43;price[0];
-}
-};
-
- " />
+<meta property="og:description" content="＜問題＞ ①モンスターの集合が与えられ、各モンスターは怖さの値とコインの値を持つ。 ②プレイヤーは最初から順番にモンスターに遭遇する。 ③このとき" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm565-div2--level2/" />
 

@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 145 DIV1 Easy - Bonuses （復習○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=276
-・従業員それぞれに対し、稼いだポイントが与えられる。
-・稼いだポイントに対し、ボーナスの配分を決めたい。
-・ボーナスの配分の割合は、全従業員のポイント数に対する各従業員のポイントとする。ただし、割り切れない場合は切り捨てとする。
-・最後に切り捨てて余った分の割合は、ポイントの多い従業員から順に１％ずつ割り当てる。同じポイントの場合は順番が最初の方に割り当てる。
-解き方 
-余ったポイントの割り当て方だけコーディングできれば簡単に解ける。
-ソートを使いたいところだが、規則が簡単なので割り当て済みかを判定する配列を使ってあげれば簡単に実装できる。
-コード 
-class Bonuses {
-public: vector&lt;int&gt; getDivision(vector&lt;int&gt; points) {
-int n=points.size();
-vector&lt;int&gt; ans(n,0);
-double sum=0;
-FORE(i,0,n)sum&#43;=points[i];
-int score=100;
-FORE(i,0,n){
-int tmp=(points[i]/sum)*100.0;
-ans[i]=tmp;
-score-=tmp;
-}
-vector&lt;int&gt; used(n,0);
-FORE(i,0,score){
-int cmax=-1,idx=-1;
-FORE(j,0,n){
-if(used[j])continue;
-if(cmax&lt;points[j]){
-cmax=points[j];
-idx=j;
-}
-}
-ans[idx]&#43;&#43;;
-used[idx]=1;
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=276 ・従業員それぞれに対し、稼いだポイントが与えられる。 ・稼いだポイントに対し、ボーナスの配分を決めたい。 ・ボーナスの配分の割合は、全従業" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-145-div1-easy---bonuses-%E5%BE%A9%E7%BF%92/" />
 

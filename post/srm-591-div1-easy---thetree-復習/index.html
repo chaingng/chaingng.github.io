@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 591 DIV1 Easy - TheTree (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12746&amp;rd=15703
-グラフの各深さに対する頂点数が与えられる。
-このとき、そのグラフの直径を求める。
-解き方 
-グラフを最大のケースで作ってもよいが、場合分けをすれば簡単に求められる。
-まず、答えの最小は各深さの頂点が１のとき、つまり深さ＋１（要素数）となる。
-次に、直径の長さはその深さにおける頂点数が１もしくは２以上の場合しか影響されない。
-②頂点数が２以上の場合
-折り返し分の直径が増えるので、その値と比較して最大値を更新
-①頂点数が１の場合
-折り返し分はリセットされる。
-リセットされた際の最大値の更新は①で比較済み。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheTree {
-public: int maximumDiameter(vector&lt;int&gt; cnt) {
-int n=cnt.size();
-int ret=n;
-int last=-1,len=0;
-FORE(i,0,n){
-if(cnt[i]==1){
-last=i,len=0;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12746&amp;rd=15703 グラフの各深さに対する頂点数が与えられる。 このとき、そのグラフの直径を求める。 解き方 グラフを最大のケースで作ってもよいが、場合分けをす" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-591-div1-easy---thetree-%E5%BE%A9%E7%BF%92/" />
 

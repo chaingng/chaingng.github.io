@@ -7,38 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 398 DIV1 Easy - CountExpressions ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8157&amp;rd=12170
-解き方 
-O（4! * 3^3）なので全探索可能。
-ｘ２つ、ｙ２つの全ての並べ方、＋、ー、＊の全ての並び方に対して
-valと一致するものの数を数えれば良い。
-next_permutationを使えば重複しない。
-コード 
-class CountExpressions {
-public:
-int calc(int x,int y,int op){
-if(op==0)return x&#43;y;
-if(op==1)return x-y;
-return x*y;
-}
-int calcExpressions(int x, int y, int val) {
-vector&lt;int&gt; num(4,0);
-num[0]=x,num[1]=x,num[2]=y,num[3]=y;
-sort(all(num));
-int ret=0;
-do{
-int cur=0;
-FORE(i,0,3)FORE(j,0,3)FORE(k,0,3){
-cur=calc(num[0],num[1],i);
-cur=calc(cur,num[2],j);
-cur=calc(cur,num[3],k);
-if(cur==val)ret&#43;&#43;;
-}
-}while(next_permutation(all(num)));
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8157&amp;rd=12170 解き方 O（4! * 3^3）なので全探索可能。 ｘ２つ、ｙ２つの全ての並べ方、＋、ー、＊の全ての並び方に対して valと一致するものの数を数え" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-398-div1-easy---countexpressions-/" />
 

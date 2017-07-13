@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM535 DIV2 -Level2" />
-<meta property="og:description" content="＜問題＞
-①整数ＧとＬが与えられる。
-②最大公約数がＧ，かつ最小公倍数がＬである２つの数字の場合の数を返す。
-存在しない場合はー１を返す。
-＜解き方＞
-２つの数字がＸ、Ｙとすると、Ｘ＊Ｙ＝Ｇ＊Ｌとなる。
-このままではＧとＬともに１０＾１２と膨大な数のため計算式を工夫する。
-次に、Ｘ＝a*Gとなるa, Y=b*Gとなるbが必ず存在する。
-ここで、
-(a*G)*(b*G)=G*L
-つまりa*b=L/Gとなるaとbが必ず存在する。
-また、最大公約数がＧであることから、aとbは互いに素でないといけない。
-これによりＯ（１０＾６）で計算可能となる。
-まとめると、
-a*b=L/G かつ aとbは互いに素=最大公約数が1　となる全てのaとbを求めればよい。
-そして裏を返すと、LがGで割り切れない場合は-1を返す。
-＜コード＞
-class FoxAndGCDLCM {
-public:
-long long gcd(long long a,long long b){
-while(b!=0){
-long long c=b;
-b=a%b;
-a=c;
-}
-return a;
-}
-long long get(long long G, long long L) {
-long long ab=L/G,ret=-1;
-if(L%G!=0)return -1;
-for(long long a=1;a&lt;=ab/a;a&#43;&#43;){
-if(ab%a==0 &amp;&amp; gcd(a,ab/a)==1){
-if(ret==-1)ret=G*(a&#43;ab/a);
-else ret=min(ret,G*(a&#43;ab/a));
-}
-}
-return ret;
-}" />
+<meta property="og:description" content="＜問題＞ ①整数ＧとＬが与えられる。 ②最大公約数がＧ，かつ最小公倍数がＬである２つの数字の場合の数を返す。 存在しない場合はー１を返す。 ＜解き方" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm535-div2--level2/" />
 

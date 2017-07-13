@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 364 DIV1 Middle - PowerPlants　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1855
-電気で電源が入る植物があり、電源はＯＮになっている他の植物から共有される。
-各植物同士のＯＮにする電源量はあらかじめわかっている。
-また、現在ＯＮになっている植物もわかっている。
-このとき、numPlants本の植物をＯＮにするのに必要な最小の電源量を求める。
-解き方 
-ｄｐで解く。
-状態として、現在ＯＮになっている植物を持っていればよい。
-植物はすべてで１６本なので計算量も間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class PowerPlants {
-public:
-int f(char ch){
-if(&#39;0&#39;&lt;=ch &amp;&amp; ch&lt;=&#39;9&#39;)return (int)(ch-&#39;0&#39;);
-return (int)(ch-&#39;A&#39;)&#43;10;
-}
-int minCost(vector&lt;string&gt; connectionCost, string plantList, int numPlants) {" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1855 電気で電源が入る植物があり、電源はＯＮになっている他の植物から共有される。 各植物同士のＯＮにする電源量はあらかじめわかっている。 また、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-364-div1-middle---powerplants%E5%BE%A9%E7%BF%92/" />
 

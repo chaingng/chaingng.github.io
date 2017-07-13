@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 212 DIV1 Easy - WinningRecord （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=3003&amp;rd=5858
-あるチームの直近の勝ち負けの結果が与えられる。
-そこから、直近のいつまでがもっとも勝率がよくて、直近のいつまでがもっとも勝率が悪かったかを求める。
-ただし、答えは３ゲーム目以降の結果から比較する。
-解き方 
-直近の１試合前から最後まで勝率を計算しベストとワーストのものを更新していけばよい。
-２ゲーム目までは比較対象にせず、３ゲーム目から更新していく。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class WinningRecord {
-public: vector&lt;int&gt; getBestAndWorst(string games) {
-vector&lt;int&gt; ans(2,0);
-double best=0.0,worst=0.0;
-double wins=0,loses=0;
-FORE(i,0,games.size()){
-if(games[i]==&#39;W&#39;)wins&#43;&#43;;
-else loses&#43;&#43;;
-if(i&lt;2)continue;
-if(best&lt;=wins/(wins&#43;loses)){
-best=wins/(wins&#43;loses);
-ans[0]=i&#43;1;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=3003&amp;rd=5858 あるチームの直近の勝ち負けの結果が与えられる。 そこから、直近のいつまでがもっとも勝率がよくて、直近のいつまでがもっとも勝率が悪かったか" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-212-div1-easy---winningrecord-%E5%BE%A9%E7%BF%92/" />
 

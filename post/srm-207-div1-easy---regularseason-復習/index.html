@@ -7,48 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 207 DIV1 Easy - RegularSeason (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2866&amp;rd=5853
-・複数のチームが総当たりで対戦する。
-・各チームは与えられた対戦数をホーム・アウェーで対戦する。
-・対戦する際の勝率が与えられる。
-・勝つ試合数は勝率＊対戦数の和を最後に四捨五入(round up)したものになる。
-・最後に勝った試合数の降順、同じ場合は四捨五入前の勝った試合数の降順、それも同じ場合はチーム名の昇順で”チーム名　勝った試合数”のフォーマットで返す。
-解き方 
-勝率の求め方が少しわかりにくくて苦労しました。
-最後のソートは構造体のソートを書きましたが、
-四捨五入前の数字があれば勝った試合数の降順は使わなくてもよいことに気づけばもっと単純にかけました。
-計算ごとに１００で割るのではなく、最後に１００で割るのが丸め誤差を防ぐポイント。
-コード 
-class RegularSeason {
-public:
-struct team{
-double points;
-int score;
-string name;
-bool operator&lt;(const team &amp; v)const{
-if(score!=v.score)return score&gt;v.score;
-if(points!=v.points)return points&gt;v.points;
-return name&lt;v.name;
-}
-};
-vector&lt;string&gt; finalStandings(vector&lt;string&gt; teams, int rounds) {
-int n=teams.size();
-vector&lt;team&gt; t(n);
-vector&lt;string&gt; ans(n,&#34;&#34;);
-FORE(i,0,n){
-stringstream out(teams[i]);
-out&gt;&gt;t[i].name;
-FORE(j,0,n){
-double num;
-out&gt;&gt;num;
-if(i==j)continue;
-else{
-t[i].points&#43;=num*rounds;
-t[j].points&#43;=(100-num)*rounds;
-}
-}
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2866&amp;rd=5853 ・複数のチームが総当たりで対戦する。 ・各チームは与えられた対戦数をホーム・アウェーで対戦する。 ・対戦する際の勝率が与えられる。 ・勝つ試" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/" />
 

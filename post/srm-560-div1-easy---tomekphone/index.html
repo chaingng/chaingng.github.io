@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 560 DIV1 Easy - TomekPhone" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12296&amp;rd=15182
-解き方 
-貪欲法で解けば良い。システムテストで落ちないように間違いの少ないような実装を
-するよう気をつける。
-コード 
-class TomekPhone {
-public: int minKeystrokes(vector&lt;int&gt; f, vector&lt;int&gt; key) {
-int n=f.size();
-int cnt=0;
-FORE(i,0,key.size())cnt&#43;=key[i];
-if(n&gt;cnt)return -1;
-int ret=0,p=1;
-while(1){
-int finish=1;
-FORE(i,0,n)if(f[i]!=0)finish=0;
-if(finish)break;
-sort(f.rbegin(),f.rend());
-cnt=0;
-FORE(i,0,key.size()){
-if(key[i]&gt;0)key[i]--,cnt&#43;&#43;;
-}
-FORE(i,0,cnt)if(f[i%n]&gt;0){
-ret&#43;=f[i%n]*p;
-f[i%n]=0;
-}
-p&#43;&#43;;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12296&amp;rd=15182 解き方 貪欲法で解けば良い。システムテストで落ちないように間違いの少ないような実装を するよう気をつける。 コード class TomekPhone { public: int minKeystrokes(vector&lt;int&gt; f, vector&lt;int&gt; key) { int n=f.size(); int" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-560-div1-easy---tomekphone/" />
 

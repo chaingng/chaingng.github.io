@@ -7,50 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 409 DIV1 Easy - OrderedSuperString" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9823&amp;rd=12181
-複数の文字列が与えられる。
-各文字列を順につなげていく。
-ただし、これまでの文字列の後ろ部分と、次につなげる文字列の前部分で一致
-しているところがあれば重ねてつなげることができる。
-また、毎回つなげる位置は、前につなげた位置もしくはそれより後ろで
-なければいけない。
-このとき、最後にできた文字列のうち最小のものの長さを求める。
-解き方 
-貪欲法で解くことができる。
-
-つなげる位置は毎回後ろになっていくため、
-毎回最適なつなぎかたを求めていけばよい。
-コード 
-class OrderedSuperString {
-public:
-string rec(int pos,string s1,string s2){
-int cur=0;
-while(pos&#43;cur&lt;s1.size() &amp;&amp; cur&lt;s2.size()){
-if(s1[pos&#43;cur]!=s2[cur])return &#34;&#34;;
-cur&#43;&#43;;
-}
-if(cur&gt;=s2.size())return s1;
-return s1&#43;s2.substr(cur);
-}
-int getLength(vector&lt;string&gt; words) {
-int n=words.size(),pos=0;
-string str=&#34;&#34;;
-FORE(i,0,n){
-string tmp=&#34;&#34;;
-while(pos&lt;str.size()){
-tmp=rec(pos,str,words[i]);
-if(!tmp.empty()){
-str=tmp;
-break;
-}
-pos&#43;&#43;;
-}
-if(tmp.empty())str&#43;=words[i];
-}
-return str.size();
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9823&amp;rd=12181 複数の文字列が与えられる。 各文字列を順につなげていく。 ただし、これまでの文字列の後ろ部分と、次につなげる文字列の前部分で一致 していると" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-409-div1-easy---orderedsuperstring/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 637 DIV1 Easy - DivisorsPower (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13504&amp;rd=16080
-・1から2Nまで書かれた、2N枚のカードがあり、2人でゲームを行う。
-・このカードが自分と相手それぞれ均等に配られる。
-・2人が一枚ずつカードを出し、大きい数字の方が１ポイント得られる。
-・自分のカードについては、何が配られたかわかっている。
-・相手のカードについては自分のカードから推測できるが、カードを出す順番もわかっている。
-ただし、-1で示されているときは何が出されるかわかっていない。
-・このとき、自分が得ることのできるスコアの最大の期待値を求める。
-解き方 
-・まず、自分のカードから相手のカードを推測し配列に保存する。
-・相手のカードについて、出すものがわかっているものに対しては最適な戦略を取る。
-・つまり、ある相手のわかっているカードについてそれより大きい数のカードがある場合は
-そのうち最小のものを出す。
-・大きい数のカードがない場合は一番小さいカードを出す。
-・残りのカードについては総当たりで計算して期待値を足していけばよい。
-→System Passed
-・もっとシンプルな解き方があるのか他のコードをみてみたが、この方法が一番シンプルそう。
-紙に書いて手順を整理すれば着実に解ける。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class GreaterGame {
-public: double calc(vector&lt;int&gt; hand, vector&lt;int&gt; sothe) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13504&amp;rd=16080 ・1から2Nまで書かれた、2N枚のカードがあり、2人でゲームを行う。 ・このカードが自分と相手それぞれ均等に配られる。 ・2人が一枚ずつカ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-637-div1-easy---divisorspower-/" />
 

@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 402 DIV1 Easy - RandomSort" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8590&amp;rd=12174
-解き方 
-全探索可能。
-配列の状態を持つのでdpではなくmapを利用してDFSで解く。
-コード 
-map&lt;vector&lt;int&gt;,double&gt; m;
-int n;
-class RandomSort {
-public:
-double rec(vector&lt;int&gt; p){
-if(m.find(p)!=m.end())return m[p];
-int cnt=0;
-FORE(i,0,n)FORE(j,i&#43;1,n)if(p[i]&gt;p[j])cnt&#43;&#43;;
-if(cnt==0)return m[p]=0;
-double ret=0;
-FORE(i,0,n)FORE(j,i&#43;1,n){
-if(p[i]&gt;p[j]){
-swap(p[i],p[j]);
-ret&#43;=rec(p)&#43;1;
-swap(p[i],p[j]);
-}
-}
-return m[p]=ret/cnt;
-}
-double getExpected(vector&lt;int&gt; permutation) {
-m.clear();
-n=permutation.size();
-return rec(permutation);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8590&amp;rd=12174 解き方 全探索可能。 配列の状態を持つのでdpではなくmapを利用してDFSで解く。 コード map&lt;vector&lt;int&gt;,double&gt; m; int n; class RandomSort { public: double rec(vector&lt;int&gt; p){ if(m.find(p)!=m.end())return m[p]; int cnt=0; FORE(i,0,n)FORE(j,i&#43;1,n)if(p[i]&gt;p[j])cnt&#43;&#43;; if(cnt==0)return m[p]=0; double ret=0; FORE(i,0,n)FORE(j,i&#43;1,n){ if(p[i]&gt;p[j]){ swap(p[i],p[j]); ret&#43;=rec(p)&#43;1;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-402-div1-easy---randomsort/" />
 

@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 288 DIV1 Middle - CannonBalls　（復習×○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1154
-１個、２個、３個・・・とボールを三角形上に積み重ねていく。
-このときに内部に存在する三角形は１，４、１０個・・・になる。
-Ｎ個を内部に存在する三角形の数の和で現したいとき、
-最低何個の三角形が必要になるか求める。
-解き方 
-まず、内部に存在する三角形の個数をＮまで全て調べる。
-その後ｄｐを利用する。
-今回Ｎは最大３＊１０＾５なので、ｄｐの全探索で間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class CannonBalls {
-public: int fewestPiles(int n) {
-vector&lt;int&gt; p;
-for(int x=0,cur=0,add=0;cur&lt;=n;x&#43;&#43;){
-add&#43;=x;
-cur&#43;=add;
-p.push_back(cur);
-}
-int dp[n&#43;1];
-FORE(i,0,n&#43;1)dp[i]=1e&#43;9;
-dp[0]=0;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1154 １個、２個、３個・・・とボールを三角形上に積み重ねていく。 このときに内部に存在する三角形は１，４、１０個・・・になる。 Ｎ個を内部に存在" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-288-div1-middle---cannonballs%E5%BE%A9%E7%BF%92/" />
 

@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 460 DIV1 Easy - TheQuestionsAndAnswersDivOne" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10768&amp;rd=14146
-解き方 
-数が小さいので全探索可能。
-すでに答えた人の数、YesかNoかを答えたかの情報を持たせて
-答えなくてもよい場合と答えなければならない場合についてDFSを用いる。
-計算量がオーバーしてしまうので、途中で全員答えられないとわかった場合は
-打ち切りを行う。
-コード 
-int n,m;
-int a[60];
-class TheQuestionsAndAnswersDivOne {
-public:
-int rec(int num,int mask,int mask2){
-if(m-num&lt;n-__builtin_popcount(mask))return 0;
-if(num==m)return 1;
-int ret=0;
-FORE(i,0,n){
-if((mask&amp;(1&lt;&lt;i)) &amp;&amp; &nbsp;a[num]!=((mask2&amp;(1&lt;&lt;i))!=0) )continue;
-ret&#43;=rec(num&#43;1,mask|(1&lt;&lt;i),mask2|(a[num]&lt;&lt;i));
-}
-return ret;
-}
-int find(int questions, vector&lt;string&gt; answers) {
-n=questions;
-m=answers.size();
-FORE(i,0,m)a[i]=(answers[i]==&#34;Yes&#34;);
-return rec(0,0,0);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10768&amp;rd=14146 解き方 数が小さいので全探索可能。 すでに答えた人の数、YesかNoかを答えたかの情報を持たせて 答えなくてもよい場合と答えなければならない" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-460-div1-easy---thequestionsandanswersdivone/" />
 

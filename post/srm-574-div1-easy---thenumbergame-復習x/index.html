@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 574 DIV1 Easy - TheNumberGame （復習x）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12474&amp;rd=15494
-２人のプレイヤーが交互に行うゲーム。
-それぞれ正の整数が与えられる。
-各ターンにて、プレイヤーはその数字を１０で割るか、逆にすることができる。
-このとき、最初のプレイヤーの数字を２人目のプレイヤーの数字に一致させることができるかどうかを答える。
-ターン数は最大で１０００。
-解き方 
-２人目のプレイヤーの数字にすることができれば、
-その後の操作は全て一緒にできるので答えは必ずＹＥＳになる。
-仮に一緒にできなければ、２人目のプレイヤーは数字をひっくり返し続けてればよいのでＮＯとなる。
-待ち伏せる場合、２人目のプレイヤーが逆になるのを待ち伏せる場合は逆にできないので例外、と考えがちだが、逆の数字にできるということは最初の数字にもできるということなので問題ない。
-Challenge
-2人の操作で１ターンではなく、１人のプレイヤーの操作が終われば1ターンで、
-そこで判定できることを見逃してしまった。問題文の理解ミスです。
-sprintfはchar型で使うのですが、stringをchar変換しようとしたらうまくいかなかったです。そのままchar型を宣言して使いました。
-コード 
-class TheNumberGame {
-public:
-string determineOutcome(int A, int B) {
-bool win=false;
-char tx[15],ty[15];
-sprintf(tx,&#34;%d&#34;,A);
-sprintf(ty,&#34;%d&#34;,B);
-string x=tx,y=ty;
-if(x.find(y)!=string::npos)win=true;
-reverse(y.begin(),y.end());
-if(x.find(y)!=string::npos)win=true;
-return win ? &#34;Manao wins&#34; :&#34;Manao loses&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12474&amp;rd=15494 ２人のプレイヤーが交互に行うゲーム。 それぞれ正の整数が与えられる。 各ターンにて、プレイヤーはその数字を１０で割るか、逆にすることができ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-574-div1-easy---thenumbergame-%E5%BE%A9%E7%BF%92x/" />
 

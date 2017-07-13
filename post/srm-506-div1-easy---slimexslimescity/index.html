@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 506 DIV1 Easy - SlimeXSlimesCity" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11154&amp;rd=14435
-スライムの島が複数あり、各島ごとに何匹スライムがいるかわかっている。
-各島を１つに統合したい。
-２つの島を統合するとき、もう一つの島にいるスライムの数以上であれば
-その島の名前をつけることができる。
-このとき、最大で何通りの島の数が存在しうるか求める。
-解き方 
-配列をソートし、初期値をその名前を残したい島のスライムの数とする。
-小さい方から統合していき、すべての島を統合できればその名前は残り、
-そうでなければその名前は残らなくなる。
-コード 
-class SlimeXSlimesCity {
-public: int merge(vector&lt;int&gt; population) {
-int n=population.size();
-int ret=0;
-sort(all(population));
-FORE(i,0,n){
-long long sum=population[i];
-int at=0;
-while(at&lt;n){
-if(at==i){
-at&#43;&#43;;
-}
-else if(sum&gt;=population[at]){
-sum&#43;=population[at];
-at&#43;&#43;;
-}
-else break;
-}
-if(at&gt;=n)ret&#43;&#43;;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11154&amp;rd=14435 スライムの島が複数あり、各島ごとに何匹スライムがいるかわかっている。 各島を１つに統合したい。 ２つの島を統合するとき、もう一つの島にいる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-506-div1-easy---slimexslimescity/" />
 

@@ -74,37 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8516&amp;rd=11124
-それぞれ長さの違うボードが連続して並んでおり、すべてのボードにペンキを塗りたい。
-各ボードの長さはあらかじめわかっている。
-また、ペンキを塗るペインターが複数おり、各ペインターが長さ１のボードを塗る速さもわかっている。
-一人のペインターは複数のボードを塗ることができるが、塗るボードは連続していないといけない。
-ボードを塗るペインターの数に制限はなく同時に作業することができるとき、
-すべてのボードを塗るのに必要な最小時間を求める。
-解き方 
-時間を固定することでその条件を満たすかどうか決められそうなので、二分探索が使えそう。
-ただし時間は10^13刻みで探索が必要になる。
-ここで、今回長さの取りうる数はあらかじめわかっているので、
-全ての長さの値と全てのペインターで割った数が今回とりうる値になる。
-そうすると数はn(ボードの数)*n*m(ペインターの数)で5*10^4ほどに削減できる。
-次に長さが決まったとき、ペインターの全ての塗る順番を調べなければいけない。
-Ｏ（2^16）なので計算量は間に合いそう。
-ペインターの数mの全てのビット列を操作し、各ビットが０のペインターから順に選んでいきビット列のｄｐを更新していけば、全てのペインターの塗る順番を調べることができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int sum[100],memo[16][60],n,m,cnt;
-double times[1&lt;&lt;16];
-int dp[1000000];
-vector&lt;int&gt; painter;
-class PaintingBoards {
-public:
-int f(int x,int start,double len){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8516&amp;rd=11124 それぞれ長さの違うボードが連続して並んでおり、すべてのボードにペンキを塗りたい。 各ボードの長さはあらかじめわかっている。 また、ペンキを
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-390-div1-middle---paintingboards%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -124,30 +94,7 @@ int f(int x,int start,double len){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=927
-テレビの番組表があり、各番組ごとに開始時間と終了時間が与えられる。
-できるだけ多くのテレビ番組をみたいが、放送時間が重複しているときは同時にみることができない。
-このとき、できるだけ多くのテレビ番組をみたときのテレビの視聴時間を求める。
-解き方 
-開始時間と終了時間は２４時間単位でループしているので、単純に終了時間のみをみるだけでは正確な答えが求まらない。
-そこでｄｐを用いて、一番最初に見たプログラムと一番最後に見たプログラムを状態数に持つ。まだみていないプログラムについて、最後にみたプログラムの終了時間以降にはじまり、ループして最初にみたプログラムよりも前の時間に終わることができるものについて全ての場合を調べる。
-メモ化しても５０＊５０なので計算量とメモリ量も足りる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][51],from[51],to[51],n;
-vector&lt;pair&lt;int,int&gt; &gt; p;
-class TVWatching {
-public:
-int calc(string str){
-int ret=(str[0]-'0')*600+(str[1]-'0')*60+(str[3]-'0')*10+(str[4]-'0');
-if(ret&gt;=720)ret-=720;
-return str.substr(5,2)=="PM" ? ret+720 : ret;
+			問題 http://topcoder.bgcoder.com/print.php?id=927 テレビの番組表があり、各番組ごとに開始時間と終了時間が与えられる。 できるだけ多くのテレビ番組をみたいが、放送時間が重複しているときは同
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-250-div1-middle---tvwatching%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -167,31 +114,7 @@ return str.substr(5,2)=="PM" ? ret+720 : ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=416
-ある島にある宝を探しにいきたい。
-島のマップが与えられ、陸地の場所と宝の場所がしめされている。
-宝の場所はあいまいであり必ずしも正確ではないが、
-スタート地点からどのように移動すれば宝の位置にたどり着けるかがわかっている。
-スタート地点は海から島にたどり着くため、海に隣接していないといけない。
-このとき、宝の場所がどこにあるかを求める。
-宝の場所が複数存在する場合は、地図の宝の位置とのユークリッド距離が最も近いものになる。ユークリッド距離も同じ場合はもっとも北にあるもの、北の位置も一緒であればもっとも西にあるものになる。
-解き方 
-問題文が長く、スタート位置が海に隣接していなければいけないことを読み落としてしまった。これがわかれば単純に実装するだけ。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-vector&lt;string&gt; island;
-int w,h;
-class TreasureHunt {
-public:
-bool inside(int x,int y){
-return (0&lt;=x&amp;&amp;x&lt;h &amp;&amp; 0&lt;=y&amp;&amp;y&lt;w &amp;&amp; island[x][y]!='.');
-}
+			問題 http://topcoder.bgcoder.com/print.php?id=416 ある島にある宝を探しにいきたい。 島のマップが与えられ、陸地の場所と宝の場所がしめされている。 宝の場所はあいまいであり必ずしも正確ではな
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-173-div1-middle---treasurehunt%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -211,33 +134,7 @@ return (0&lt;=x&amp;&amp;x&lt;h &amp;&amp; 0&lt;=y&amp;&amp;y&lt;w &amp;&amp; is
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6430
-０以上の整数lowerBoundとupperBoundが与えられる。
-ここである数字xのスコアについては、xの各桁の数字の和で表わされる。
-このときlowerBoundからupperBoundまでの全ての数字のスコアの和求める。
-解き方 
-数字は2*10^9であるため全探索では解けない。
-例として、２けたの数字10*x+yを考える。
-ここでyが9のとき、数字のスコアは以下の和であることがわかる。
-１桁目：45(0~9の和)*(x+1)
-２桁目：(1~xの各数字*10の和）
-次に桁数がnのときは(1~xの各数字)について、上記の再帰関数で求めればよいことが分かる。
-またyが8以下のときは、例えば18のときは19のスコアから1+9（各数字の和）を引けばよいので、yが9の場合に変換することができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SumThemAll {
-public:
-long long sum(long long x){
-if(x&lt;10)return x;
-return sum(x/10)+x%10;
-}
-long long calc(long long x){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6430 ０以上の整数lowerBoundとupperBoundが与えられる。 ここである数字xのスコアについては、xの各桁の数字の和で表わされる
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-311-div1-middle---sumthemall-%E5%BE%A9%E7%BF%92xx/">Read more…</a>
@@ -257,29 +154,7 @@ long long calc(long long x){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12976
-座標上に複数の点が与えられる。
-座標上に正方形を描き、その正方形の中に少なくともＫ個以上与えられた点が入っているようににしたい。
-このとき、描くことのできる最小の正方形の面積を求める。
-解き方 
-点の数は１００個なので、単純にすべての点の選び方を全探索しようとすると１００Ｃ５０で間に合わないので違う方法を考える。
-今回ｘ座標は１００個、ｙ座標は１００個とするとすべての始点の選び方は１０＾４となる。
-また、その選んだ始点に対してすべての座標を加えた場合の長さを調べ、
-Ｋ個以上となったときにその中のＫ個目の長さが最小の長さであるので、毎回その長さの正方形の面積と比較して答えを更新する。
-これで計算量は１０＾６となり間に合う。
-始点の選び方は与えられた座標ではなく、ｘ、ｙ座標それぞれの点に対して行うのがポイント。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class MinimumSquare {
-public: long long minArea(vector&lt;int&gt; x, vector&lt;int&gt; y, int K) {
-long long ret=9.2e+18;
-int n=x.size();
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12976 座標上に複数の点が与えられる。 座標上に正方形を描き、その正方形の中に少なくともＫ個以上与えられた点が入っているようににしたい。 このとき
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -299,33 +174,7 @@ int n=x.size();
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9915
-赤いカードがＲ枚、青のカードがＢ枚存在する。
-最初にカードは伏せられており、１枚選んでひっくり返す。
-ひっくり返したカードが赤ならスコアが＋１、青ならー１となる。
-プレイヤーは任意のプレイ回数でプレイをやめてもよい。
-このとき、プレイヤーが得られるスコアの最大の期待値を求める。
-解き方 
-まずはスコアの計算方法を紙に書いて整理してみた。
-現在持っている赤のカード枚数rと青のカード枚数bであるとき
-そのときのスコアdp[r][b]は
-(dp[r-1][b]+1) *r/(r+b) +(dp[r][b-1]-1)*b/(r+b)もしくは0のうち最大のものになる。
-ただし、カード枚数はそれぞれ5000枚なので5000*5000はメモリに保存できない。
-ここで上記の式を考えると
-「dp[r-1][b]＝ひとつ前の配列」と「dp[r][b-1]＝現在の配列」の２つだけを持っているだけでよいので、2*5000となりメモリ量も足りる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-double dp[2][5001];
-class RedIsGood {
-public:
-double getProfit(int R, int B) {
-memset(dp,0,sizeof(dp));
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9915 赤いカードがＲ枚、青のカードがＢ枚存在する。 最初にカードは伏せられており、１枚選んでひっくり返す。 ひっくり返したカードが赤ならスコアが
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-420-div1-middle---redisgood%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -345,34 +194,7 @@ memset(dp,0,sizeof(dp));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11357
-プログラミングコンテストが開催され、複数与えられる問題を時間Ｔ以内に解く。
-各問題について、得られるmaxPointsと1分あたりに引かれるポイント数pointsPerMinute、解くのに必要な時間requiredTimeが与えられる。
-このとき、得られる最大のポイント数を求める。
-解き方 
-問題を解く順番によりポイントが変わるのが問題文から読みとれる。
-問題数は最大５０なので、50!とすると計算量が間に合わない。
-ここで、各問題に与えられる情報からどの順番で問題を解けばよいかがわかる。
-問題jを問題iより先に解いた方がスコアが高いのであれば、
-maxp[i]-pm[i]*rtime[i]+maxp[j]-pm[j]*(rtime[i]+rtime[j])&lt;
-maxp[j]-pm[j]*rtime[j]+maxp[i]-pm[i]*(rtime[i]+rtime[j])
--pm[i]*rtime[i]-pm[j]*(rtime[i]+rtime[j])&lt;-pm[j]*rtime[j]-pm[i]*(rtime[i]+rtime[j])
--pm[i]*rtime[i]-pm[j]*rtime[i]-pm[j]*rtime[j]&lt;-pm[j]*rtime[j]-pm[i]*rtime[i]-pm[i]*rtime[i]
--pm[j]*rtime[i]&lt;-pm[i]*rtime[i]
-pm[j]*rtime[i]&gt;pm[i]*rtime[i]
-よってrequiredTime/pointsPerMinuteが大きい順に並び替え、
-順にdpを適用していき最大のスコアを求めればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TheProgrammingContestDivOne {
-public:
-int find(int T, vector&lt;int&gt; maxp, vector&lt;int&gt; pm, vector&lt;int&gt; rtime) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11357 プログラミングコンテストが開催され、複数与えられる問題を時間Ｔ以内に解く。 各問題について、得られるmaxPointsと1分あたりに引か
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-502-div1-middle---theprogrammingcontestdivone-%E5%BE%A9%E7%BF%92xx/">Read more…</a>
@@ -392,34 +214,7 @@ int find(int T, vector&lt;int&gt; maxp, vector&lt;int&gt; pm, vector&lt;int&gt; 
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=1666
-有効グラフが存在する。
-ある一つのノードについて、starpathがC個以下であればそのノードはstarとみなされる。
-starpathは辺が５本のとき、5C3+5C4+5C5で表わされる。
-このとき、starのうちstarpathが小さいものから大きいものへのパスの最長の長さを求める。
-ただし、無限ループが存在する場合はー１を返す。
-解き方 
-問題文を読み解くのに一苦労。
-はじめにC個以下を満たす最大の辺の数を求め、３以上かつもとめた最大の辺以下のノードを抽出する。
-次に、今回はパスに閉路が存在しうるのでダイクストラ法ではなくベルマンフォード法を利用する。
-閉路がないか判定しつつ、最長の経路を求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class StarsInGraphs {
-public:
-int C(int n,int k){
-double ret=1;
-FORE(i,0,k)ret*=(double)(n-i)/(i+1);
-return (int)ret;
-}
-int calc(int x){
-int ret=0;
+			問題 http://topcoder.bgcoder.com/print.php?id=1666 有効グラフが存在する。 ある一つのノードについて、starpathがC個以下であればそのノードはstarとみなされる。 starpathは
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-350-div1-middle----starsingraphs%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -439,31 +234,7 @@ int ret=0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=1520
-複数の文字列集合が与えられる。
-そこから任意のサブ集合をピックアップして、そのうちのどのペアも接頭辞になっていないようにしたい。
-このとき、そのようなサブ集合は何通りあるか求める。
-解き方 
-支配集合のうち、互いに子でない組み合わせを求める問題。
-漸化式としてｄｐを利用して、それまでの組み合わせ＋そのうち子がいない組み合わせの値を更新していく。
-今回は文字列をソートすることで子である文字列は隣り合わせになるので、シンプルに実装することができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PrefixFreeSubsets {
-public: long long cantPrefFreeSubsets(vector&lt;string&gt; words) {
-int n=words.size();
-long long dp[n+1];
-memset(dp,0,sizeof(dp));
-dp[n]=1;
-sort(all(words));
-for(int i=n-1;i&gt;=0;i--){
-int j=i;
+			問題 http://topcoder.bgcoder.com/print.php?id=1520 複数の文字列集合が与えられる。 そこから任意のサブ集合をピックアップして、そのうちのどのペアも接頭辞になっていないようにしたい。 このとき
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-330-div1-middle---prefixfreesubsets%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -483,33 +254,7 @@ int j=i;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://topcoder.bgcoder.com/print.php?id=1897
-フィールドの長さとして行の数rと列の数cが与えられる。
-rとcの番号は1からスタートする。
-合わせて、行列中の特別なフィールドが、(r,c)の形で順番に与えられる。
-(1,1)からスタートし、下または右にしか移動して(r,c)まで移動する。
-このとき、フィールドを通った回数ごとに、その場合の数を求める。
-ただし、フィールドは与えられた順に通った時にしか通った回数は加算されない。
-例えば、フィールドの順番１を通った後に順番２以降を通ったら回数は加算されるが、
-順番２を通った後に０，１を通っても加算されない。
-解き方 
-格子状の経路の場合の数の求め方の応用。
-ｄｐをどう設計するか。
-行番号、列番号の他に、フィールドを通った回数、さらに以前に通ったフィールドの順番が必要なことがわかる。
-すべての行列で全探索し、
-さらにその中で各長さ、各フィールドの順番の和を求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][51][51][51];
-class CountPaths {
-public:
-vector&lt;int&gt; difPaths(int r, int c, vector&lt;int&gt; fieldrow, vector&lt;int&gt; fieldcol) {
+			問題 http://topcoder.bgcoder.com/print.php?id=1897 フィールドの長さとして行の数rと列の数cが与えられる。 rとcの番号は1からスタートする。 合わせて、行列中の特別なフィールドが、(r,c
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/">Read more…</a>

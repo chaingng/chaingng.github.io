@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 497 DIV1 Easy - PermutationSignature xx" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11115&amp;rd=14426
-解き方 
-配列の数が５０個なのですべての組み合わせは求められないので
-順番が決まるか、貪欲法で求められるはず。
-左から数を調べていくとすると、その数は昇順である方がよいので、
-その点から連続するDの数だけ確保しておけば、そのうち最小の数を
-とってもよいことがわかる。
-よって、そのようにして左側から数を決定していく。l
-コード 
-class PermutationSignature {
-public:
-vector&lt;int&gt; reconstruct(string signature) {
-int n=signature.size()&#43;1;
-int used[n&#43;1];
-memset(used,0,sizeof(used));
-vector&lt;int&gt; ans;
-FORE(i,0,n){
-int cnt=0;
-FORE(j,i,signature.size()){
-if(signature[j]!=&#39;D&#39;)break;
-cnt&#43;&#43;;
-}
-int x=1;
-while(used[x])x&#43;&#43;;
-while(cnt&gt;0){
-x&#43;&#43;;
-if(used[x])continue;
-cnt--;
-}
-ans.push_back(x);
-used[x]=1;
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11115&amp;rd=14426 解き方 配列の数が５０個なのですべての組み合わせは求められないので 順番が決まるか、貪欲法で求められるはず。 左から数を調べていくとすると、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-497-div1-easy---permutationsignature-xx/" />
 

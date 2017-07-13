@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 382 DIV1 Easy - CollectingRiders (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8319&amp;rd=10805
-通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、
-ボード上に配置されている。ボード上の数がＫにあたる。
-このとき、すべてのボード上のナイトが同じセルに到達するまでに必要な最小移動回数の合計を求める。
-そのようなセルが存在しない場合はー１を返す。
-解き方 
-ボードが１０＊１０なので、全探索で解くことができる。
-計算量はＯ（１００００）。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class CollectingRiders {
-public: int minimalMoves(vector&lt;string&gt; board) {
-int w=board[0].size(),h=board.size();
-int dx[]={2,2,1,1,-1,-1,-2,-2};
-int dy[]={1,-1,2,-2,2,-2,1,-1};
-int ret=10000;
-FORE(x,0,h){
-FORE(y,0,w){
-int p[h][w];
-FORE(i,0,h)FORE(j,0,w)p[i][j]=10000;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8319&amp;rd=10805 通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、 ボード上に配置されている。ボード上の数がＫにあたる。 こ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/" />
 

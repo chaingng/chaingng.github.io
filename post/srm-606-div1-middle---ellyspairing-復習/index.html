@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 606 DIV1 Middle - EllysPairing （復習○）" />
-<meta property="og:description" content="問題 ペアプログラミングのコンテストを開催する。
-各大学から複数の参加者がおり、２人組みのペアを作る。
-ペアを作るにあたってどの大学のペアかは関係ないが、同じ名前のもの同士がペアを組まないようにしたい。
-各大学iについて、参加者がcount[i]、一人目の名前がfirst[i]、
-二人目以降の名前は(first[i]&#43;mult[i]&#43;add[i])%Mとなる。
-このとき、最大となるペア数を求める。
-解き方 
-名前の数は10^9となり配列に保存できない。
-参加者数は5*10^7となりこちらも配列に保存できないので、メモリを確保できない。
-そのため、うまくメモリを使う方法を考える必要がある。
-今回、同じ名前が過半数を超えなければ、参加者数／２がペア数になることがわかる。
-そのため、過半数となる名前が存在するかどうかを判定するとよい。
-過半数となる人が存在する可能性があるかどうかを判定するアルゴリズムは、ボイヤー・ムーア法を参考にさせていただきました。
-一度回しただけではその人が過半数となる可能性があるだけで必ず過半数をとっているわけではないので、一度判定し、その後数を数えて確かめる必要がある。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class EllysPairing {
-public: int getMax(int M, vector&lt;int&gt; count, vector&lt;int&gt; first, vector&lt;int&gt; mult, vector&lt;int&gt; add) {" />
+<meta property="og:description" content="問題 ペアプログラミングのコンテストを開催する。 各大学から複数の参加者がおり、２人組みのペアを作る。 ペアを作るにあたってどの大学のペアかは関係" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-606-div1-middle---ellyspairing-%E5%BE%A9%E7%BF%92/" />
 

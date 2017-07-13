@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 664 DIV1 Easy - BearPlays x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13916&amp;rd=16513
-解き方 
-数学的に解くことができるのに気がつけるか。
-A&#43;B=Sとすると、
-A&lt;Bのとき、A=2*A=2A%S
-A&gt;Bのとき、A=A-B=A&#43;(A-(A&#43;B))=A&#43;(A-S)=2A-S=2A%S
-よって常にA*2%Sとなる。
-K回かけるので、かけた後はA*2^k%Sとなり、この値とSからこの値を引いたもののうち
-最小のものが答えになる。
-Kは大きいので繰り返し２乗法を用いる。
-コード 
-class BearPlays {
-public:
-long long modpow(long long a,long long k,long long m){
-if(k==0)return 1;
-if(k%2==0)return modpow((a*a)%m,k/2,m);
-return (a*modpow(a,k-1,m))%m;
-}
-int pileSize(int A, int B, int K) {
-long long a=(A*modpow(2,K,A&#43;B))%(A&#43;B);
-return min(a,A&#43;B-a);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13916&amp;rd=16513 解き方 数学的に解くことができるのに気がつけるか。 A&#43;B=Sとすると、 A&lt;Bのとき、A=2*A=2A%S A&gt;Bのとき、A=A" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-664-div1-easy---bearplays-x/" />
 

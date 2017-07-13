@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 556 DIV1 Middle - LeftRightDigitsGame2　（復習×××）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12198&amp;rd=15178
-ある数字の列が与えられる。
-数字列の左側から順に、空白から始めてその左側もしくは右側に足していって新たな数字の列を作ることができる。
-また、最低限満たしたい数字の列も与えられる。
-このとき、最低限満たしたい数字の列よりも大きく、かつできるだけ小さい数字列を求める。
-ただしそのような数字の列が存在しない場合は””を返す。
-解き方 
-順に考えると手掛かりがないので、逆の操作をすることを考える。
-逆の操作を考えると、最後の文字列はそれまでできた文字列の左側もしくは右側に足すことになる。
-また、最後から２番目の文字列はそれまでにできた文字列の左側、もしくは右側に、、、とｄｐに落とすことができる。
-ｄｐの状態としては、これまで左側に振り分けた文字、右側に振り分けた文字と、それぞれ振り分けた数字と最低限満たしたい文字列との大小関係を保存する。
-大小関係は文字列数分振り分けた後に、最小文字以上かどうかを判定するのに利用する。
-各ｄｐでの判定については、左側に振り分けた文字については左から順に決まっていくので、それまで＝であったときのみ大小関係を新たに判定する。
-右側に振り分けた文字は右側から決まっていくので、毎回大小関係を判定する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int n;
-string digits,lowerbound;
-string dp[60][60][3][3];
-int used[60][60][3][3];
-class LeftRightDigitsGame2 {
-public:
-string rec(int l,int r,int cmpl,int cmpr){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12198&amp;rd=15178 ある数字の列が与えられる。 数字列の左側から順に、空白から始めてその左側もしくは右側に足していって新たな数字の列を作ることができる。 また" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-556-div1-middle---leftrightdigitsgame2%E5%BE%A9%E7%BF%92/" />
 

@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 565 DIV1 Easy - MonstersValley (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12350&amp;rd=15187
-モンスターが複数いる谷を越える。
-各モンスターには恐さとコインの値を持つ。
-プレイヤーは各モンスターに対し、そのコインを払って仲間にするか、
-もしくは仲間の恐さの和がそのモンスター以上であればそのまま通り過ぎることが
-できる。
-このとき、全てのモンスターを越えたときに支払う最小のコインの数を求める。
-解き方 
-モンスターの数が５０のため、Ｏ（２＾５０）となり
-深さ優先探索では求めることができない。
-ここでコインの数は最大でモンスターの数×２となるため、
-モンスターの位置にいるとき所有しているコインの数をパラメータ、
-返り値を恐さの値としたｄｐで解くことができる。
-コード 
-class MonstersValley {
-public:
-int minimumPrice(vector&lt;long long&gt; dread, vector&lt;int&gt; price) {
-int n=dread.size();
-long long maxp[2*n&#43;1][n&#43;1],INF=1e&#43;18;
-FORE(p,0,2*n&#43;1){
-maxp[p][0]=0;
-FORE(j,1,n&#43;1)maxp[p][j]=-INF;
-FORE(j,1,n&#43;1){
-if(p&gt;=price[j-1])maxp[p][j]=maxp[p-price[j-1]][j-1]&#43;dread[j-1];
-if(maxp[p][j-1]&gt;=dread[j-1])maxp[p][j]=max(maxp[p][j],maxp[p][j-1]);
-}
-}
-FORE(i,0,2*n)if(maxp[i][n]&gt;=0)return i;
-return 2*n;;
-}
-};
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c)." />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12350&amp;rd=15187 モンスターが複数いる谷を越える。 各モンスターには恐さとコインの値を持つ。 プレイヤーは各モンスターに対し、そのコインを払って仲間にするか" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-565-div1-easy---monstersvalley-%E5%BE%A9%E7%BF%92/" />
 

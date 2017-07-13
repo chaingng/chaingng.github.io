@@ -7,52 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 428 DIV1 Easy - TheLuckyString (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10180&amp;rd=13519
-ある文字列が与えられる。
-文字列を入れ替えた時、隣り合う文字が同じアルファベットにならない
-場合の数を求める。
-解き方 
-Ｎ＝１０なので全探索できそうだが、
-計算量をきちんとしないとオーバーフローしてしまう。
-全ての順列で10!=3628800=3.6*10^6だが
-その中で全ての順列について10回の判定で3.6*10^7がぎりぎり。
-それ以上、7.2*10^7がエラー境界な感覚なので
-上位の人でもエラーとなっている人が多かったです。
-nextpermutation＆判定文ではなく、
-再帰関数を使うことでO(10!)に近いオーダーで計算することができます。
-コード 
-class TheLuckyString {
-public:
-int N;
-int total;
-string str;
-int have[26];
-void calc(int pos,char prev){
-if(pos==N){
-total&#43;&#43;;
-return;
-}
-for(int ch=&#39;a&#39;;ch&lt;=&#39;z&#39;;ch&#43;&#43;){
-if(ch!=prev &amp;&amp; have[ch-&#39;a&#39;]&gt;0){
-have[ch-&#39;a&#39;]--;
-calc(pos&#43;1,ch);
-have[ch-&#39;a&#39;]&#43;&#43;;
-}
-}
-}
-int count(string s) {
-N=s.size();
-total=0;
-FORE(i,0,26)have[i]=0;
-FORE(i,0,N)have[s[i]-&#39;a&#39;]&#43;&#43;;
-calc(0,&#39; &#39;);
-return total;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10180&amp;rd=13519 ある文字列が与えられる。 文字列を入れ替えた時、隣り合う文字が同じアルファベットにならない 場合の数を求める。 解き方 Ｎ＝１０なので全探索で" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-428-div1-easy---theluckystring-%E5%BE%A9%E7%BF%92/" />
 

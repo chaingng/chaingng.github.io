@@ -7,26 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 389 DIV1 Easy - ApproximateDivision ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6125&amp;rd=11123
-解き方 
-問題分の通りに実装すればよい。
-ただし、c/tの計算はそれぞれc,tをかけてから割り算を行うとオーバーフローするので
-c/tを毎回掛けて計算する必要がある。
-コード 
-class ApproximateDivision {
-public: double quotient(int a, int b, int terms) {
-int t=1;
-while(t&lt;b)t*=2;
-int c=t-b;
-double ret=0,add=1/(double)t;
-FORE(i,0,terms){
-ret&#43;=add;
-add*=c/(double)t;
-}
-return ret*a;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6125&amp;rd=11123 解き方 問題分の通りに実装すればよい。 ただし、c/tの計算はそれぞれc,tをかけてから割り算を行うとオーバーフローするので c/tを毎回掛" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-389-div1-easy---approximatedivision-/" />
 

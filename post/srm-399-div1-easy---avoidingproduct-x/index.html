@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 399 DIV1 Easy - AvoidingProduct x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8758&amp;rd=12171
-解き方 
-zの探索を枝刈りすることによって、ほぼx,yのすべての組み合わせだけ調べればよいので
-O(10^6)で全探索可能。
-調べる範囲として、NGの値の上限は1000のため取りうる値は1001まで
-調べる必要がある。上限値の設定によるエラーケースに注意。
-コード 
-class AvoidingProduct {
-public: vector&lt;int&gt; getTriple(vector&lt;int&gt; a, int n) {
-set&lt;int&gt; s;
-FORE(i,0,a.size())s.insert(a[i]);
-vector&lt;int&gt; ans(3,1001);
-for(int x=1;x&lt;=1001;x&#43;&#43;)if(s.find(x)==s.end()){
-for(int y=x;y&lt;=1001;y&#43;&#43;)if(s.find(y)==s.end()){
-for(int z=y;z&lt;=1001;z&#43;&#43;)if(s.find(z)==s.end()){
-int cur=abs(ans[0]*ans[1]*ans[2]-n);
-if(cur&gt;abs(x*y*z-n)){
-ans[0]=x,ans[1]=y,ans[2]=z;
-}
-if(abs(x*y*z-n)&gt; abs(x*y*(z-1)-n))break;
-}
-}
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8758&amp;rd=12171 解き方 zの探索を枝刈りすることによって、ほぼx,yのすべての組み合わせだけ調べればよいので O(10^6)で全探索可能。 調べる範囲として" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-399-div1-easy---avoidingproduct-x/" />
 

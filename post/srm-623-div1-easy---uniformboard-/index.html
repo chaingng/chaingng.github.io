@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 623 DIV1 Easy - UniformBoard （○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13209&amp;rd=15856
-・N×Nのボードが与えられる。
-・ボードの各セルには空白、apple,pearいずれかが置かれている。
-・また、１回の操作でappleかpearを空白に移すことができる。
-・最大の操作回数はKで、任意の長方形の中のセルがすべてappleであるようなときの
-最大の長方形の面積を求める。
-解き方 
-・すべての長方形で検索すればよさそう。
-・長方形を作ったとき、そもそも全体のappleより大きいセルは作れないので
-最初にすべてのappleの数を調べる必要がある。
-・長方形を作ったときにpearが含まれているとき、空白が一つもないと移せないので
-最初に空白があるかどうかを調べる必要がある。
-・空白は１回の操作でappleを置くことができるが、pearは一回どかしてからappleを置く必要が
-あるので２回の操作が必要。
-・よって任意の長方形を考えた時、セルの数が全体のapple以下かつ、
-pearもしくは空白が含まれていないか、空白の数＋pearの数×２＜＝Kかつ空白が全体に
-存在するときはその長方形をすべてappleにできる。
-→System Passed.
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class UniformBoard {
-public: int getBoard(vector&lt;string&gt; board, int K) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13209&amp;rd=15856 ・N×Nのボードが与えられる。 ・ボードの各セルには空白、apple,pearいずれかが置かれている。 ・また、１回の操作でappleかp" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-623-div1-easy---uniformboard-/" />
 

@@ -7,51 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 546 DIV1 Easy - KleofasTail （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12049&amp;rd=14738
-整数が与えられる。
-整数が偶数のときは２で割り、奇数であれば１を引くことができる。
-整数の範囲とある数が与えられた時、
-その整数の範囲内である数が存在する数が何通りあるか求める。
-解き方 
-数が１０＾１８のため、範囲中の全ての数を全探索で求めることはできない。
-そのため、法則がないか数を列挙してみる。
-ここで状態遷移図を用いてみる。
-１）ｋが偶数のとき
-Ｋ←２Ｋ←２Ｋ＋１←４Ｋ＋２←８Ｋ＋４
-←４Ｋ＋３
-←４Ｋ←８Ｋ←１６Ｋ
-←８Ｋ＋１
-←４Ｋ＋１←８Ｋ＋２
-←Ｋ＋１←２Ｋ＋２←４Ｋ＋４←８Ｋ＋８
-←４Ｋ＋５
-←２Ｋ＋３←４Ｋ＋６→４Ｋ＋７
-２）ｋが奇数のとき
-Ｋ←２Ｋ←２Ｋ＋１←４Ｋ＋２←８Ｋ＋４
-←４Ｋ＋３
-←４Ｋ←８Ｋ←１６Ｋ
-←８Ｋ＋１
-←４Ｋ＋１←８Ｋ＋２
-つまり、以下の法則が導ける。
-ｋが偶数のときは
-Ｋ～Ｋ＋１，２Ｋ～２Ｋ＋３、４Ｋ～４Ｋ＋７
-ｋが奇数のときは
-Ｋ、２Ｋ～２Ｋ＋１、４Ｋ～４Ｋ＋３
-最小はＫの倍数、最大はＫもしくはＫ＋１から始まり２倍＋１となる。
-コード 
-class KleofasTail {
-public:
-long long calc(long long K,long long B){
-long long ans=0,low=K,high=K;
-if(K%2==0)high&#43;&#43;;
-while(low&lt;=B){
-ans&#43;=min(high,B)-low&#43;1;
-low=2*low;
-high=2*high&#43;1;
-}
-return ans;
-}
-long long countGoodSequences(long long K, long long A, long long B) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12049&amp;rd=14738 整数が与えられる。 整数が偶数のときは２で割り、奇数であれば１を引くことができる。 整数の範囲とある数が与えられた時、 その整数の範囲内であ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-546-div1-easy---kleofastail-%E5%BE%A9%E7%BF%92/" />
 

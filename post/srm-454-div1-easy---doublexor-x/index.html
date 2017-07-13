@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 454 DIV1 Easy - DoubleXor x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10706&amp;rd=13908
-＾＾で表される演算がある。
-これは１０進数で表される各桁のXORをとった後にその１０の余りが
-各桁の数になる。
-整数Nが与えられた時、N＾＾（N-1)＾＾（N-2)…^^1の値を求める。
-解き方 
-１からたどっていくと法則のようなものが見つかるが、
-実際は(N^^(N^1))^^(N-1) とN^^((N^1)^^(N-1))は異なるためこの方法では解けない。
-計算量は間に合うので、題意の通り実装して解く。
-コード 
-class DoubleXor {
-public:
-int calc(int x,int y){
-int ret=0;
-for(int p=1;x&gt;0||y&gt;0;x/=10,y/=10,p*=10){
-ret&#43;=(((x%10)^(y%10))%10)*p;
-}
-return ret;
-}
-int calculate(int N) {
-int ret=N;
-for(int i=N-1;i&gt;=1;i--){
-ret=calc(ret,i);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10706&amp;rd=13908 ＾＾で表される演算がある。 これは１０進数で表される各桁のXORをとった後にその１０の余りが 各桁の数になる。 整数Nが与えられた時、N＾＾" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-454-div1-easy---doublexor-x/" />
 

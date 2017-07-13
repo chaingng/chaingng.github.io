@@ -77,36 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433
-N人のクルーが隠れており、そのクルーを見つけたい。
-各クルーについては見つけられる確率が与えられている。
-また、各クルーについて、そのクルーが見つかったときに見つけられるクルーも与えられる。
-このとき、見つけられるクルーの数の期待値を求める。
-解き方 
-期待値なのでｄｐを考えたいが、順序関係を明らかにする必要がある。
-まず期待値の考え方として独立な事象とそうでない事象を考える。
-独立な事象としては、全体で見つかる人数に対して、各クルーが見つかるかどうかは
-独立で考えて和をとればよい。
-そして各クルーについて見つかるかどうかは、その他のクルーが見つかったときにそのクルーも必ず見つかる場合について、そのクルーが全て見つからない事象の積の排他を
-とればよい。
-コード 
-class TheTips {
-public: double solve(vector&lt;string&gt; clues, vector&lt;int&gt; probability) {
-int n=probability.size();
-int d[n][n];
-FORE(i,0,n)FORE(j,0,n)d[i][j]=(clues[i][j]=='Y');
-FORE(i,0,n)d[i][i]=1;
-FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)d[i][j]|=d[i][k]&amp;d[k][j];
-double ret=0.0;
-FORE(i,0,n){
-double p=1.0;
-FORE(j,0,n)if(d[j][i])p*=(1.0-probability[j]*0.01);
-ret+=(1.0-p);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433 N人のクルーが隠れており、そのクルーを見つけたい。 各クルーについては見つけられる確率が与えられている。 また、各クルーについて、そのクル
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/tco-2015-1b-middle---thetips/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -123,40 +97,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12860&amp;rd=15713
-りんごとオレンジが入ったバッグが複数与えられる。
-各バッグについて、りんごとオレンジそれぞれ何個入っているかわかっている。
-ここで、各バッグからX個ずつフルーツを取り出す。
-このとき、取り出し方の総数を求める。
-解き方 
-各バッグから取り出す数は、各バッグのフルーツの総数の最小数Xとなる。
-なので、各バッグから１個ずつ〜X個ずつの各ケースについて場合の数を求める。
-各バッグからX個ずつ取り出すときの総数について
-すべての場合の数を計算していては間に合わない。
-ここで、りんごの取り出し方の最大数とオレンジの取り出し方の最大数さえわかれば
-場合の数は計算できる。
-２種類のフルーツで合計の数がわかっている場合、１種類だけに着目すれば
-もう１種類は計算しなくてもよいのがコツ。
-コード 
-class WinterAndPresents {
-public: long long getNumber(vector&lt;int&gt; apple, vector&lt;int&gt; orange) {
-int n=apple.size();
-int minx=1e+9;
-FORE(i,0,n)minx=min(minx,apple[i]+orange[i]);
-long long ret=0;
-for(int x=1;x&lt;=minx;x++){
-int numa=0,numo=0;
-FORE(i,0,n){
-numa+=min(x,apple[i]);
-numo+=min(x,orange[i]);
-}
-if(numa&lt;numo)swap(numa,numo);
-ret+=numa-(x*n-numo)+1;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12860&amp;rd=15713 りんごとオレンジが入ったバッグが複数与えられる。 各バッグについて、りんごとオレンジそれぞれ何個入っているかわかっている。 ここで、各バッ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-601-div1-easy---winterandpresents/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -173,39 +117,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12946&amp;rd=15836
-有向グラフが与えられる。
-各ノードについてはコストを持つ。
-２人のプレイヤーがゲームを行い、各ターンごとにグラフを２つに分割し、
-好きな方の１つを消すことができる。
-最初のプレイヤーはできるだけ最後に残るノードのコストを大きくしたく、
-２人目のプレイヤーはできるだけ小さくしたい。
-このとき、最後に残るノードの最大コストを求める。
-解き方 
-２人ゲームなので必勝法を考察する。
-今回は間にあるノードを残したくても、相手のターンで必ず消されてしまう。
-逆に端にあるノードは必ず残すことができる。
-よって、端にあるノードのうち最大のものが答えになる。
-コード 
-class MaxMinTreeGame {
-public: int findend(vector&lt;int&gt; edges, vector&lt;int&gt; costs) {
-int n=costs.size();
-int d[n][n];
-memset(d,0,sizeof(d));
-FORE(i,0,edges.size()){
-d[edges[i]][i+1]=1;
-d[i+1][edges[i]]=1;
-}
-int ret=0;
-FORE(i,0,n){
-int cnt=0;
-FORE(j,0,n)if(d[i][j])cnt++;
-if(cnt&lt;=1)ret=max(ret,costs[i]);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12946&amp;rd=15836 有向グラフが与えられる。 各ノードについてはコストを持つ。 ２人のプレイヤーがゲームを行い、各ターンごとにグラフを２つに分割し、 好きな方の
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-603-div1-easy---maxmintreegame/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -222,44 +137,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13437&amp;rd=16188
-・１＊Hの棒が与えられる。
-・この棒を、（２H-1）＊Wのセルに敷き詰める場合の数を求める。
-・WはHの倍数となる。
-解き方 
-WがHの倍数のときにすべて敷き詰めることができる。
-敷き詰め方としては、W＝３、H＝３のとき
----
----
----
----
----
-が必ず１通り存在し、さらに
-||
-||
-||
-と縦に並べる並べ方がH通りあるので合計H＋１通り。
-さらにWが３増えると（H+1）＊H通り＋（H+1）通りになる。
-加えて、WがH+1以上のときは
-上記のようにWをH個のブロック区切りで考える他に、
-区切りの間に敷き詰める方法がある。
-上記の３つについてｄｐを適用させていけば良い。
-コード 
-class PlankTiling {
-public: int sumup(int H, int W) {
-int dp[W+1];
-int MOD=1000000007;
-memset(dp,0,sizeof(dp));
-dp[0]=1;
-for(int i=0;i&lt;W;i++){
-if(i+H&lt;=W)dp[i+H]=(dp[i+H]+dp[i])%MOD;
-if(i%H==0)dp[i+1]=(dp[i+1]+dp[i]*1LL*H)%MOD;
-else dp[i+1]=(dp[i+1]+dp[i])%MOD;
-}
-return dp[W];
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13437&amp;rd=16188 ・１＊Hの棒が与えられる。 ・この棒を、（２H-1）＊Wのセルに敷き詰める場合の数を求める。 ・WはHの倍数となる。 解き方 WがHの倍数のと
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2014-tco-semifinal2-div1-easy---planktiling/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -276,40 +157,7 @@ return dp[W];
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13268&amp;rd=16187
-・複数の動物がおりラベルが付けられている。
-・そのうち番号がlowerからupperまでのラベルの動物を各種類最低１匹ずつ選びたい。
-その他の動物については１匹も選ばないようにしたい。
-・動物の選び方としては隣り合う動物については一つの集合とすることができる。
-・このとき、そのような動物の選び方のうち一番少なくなる集合数を求める。
-そのような選び方がない場合は−１を返す。
-解き方 
-たとえばサンプルから選ぶラベルが２〜６のとき、
-{[3, 4, 3], 1, [6, 2, 5, 7, 5, 2]}が選ぶ集合となる。
-同じラベルの動物は１種類以上であれば問題ないので、
-選ぶだけ選んだ方が集合が少なくなるので存在するものはすべて貪欲に選ぶ。
-このとき、要素数は最大４４なので集合数は最大２２個となる。
-このとき集合の選び方は2^22となり全探索が可能なので、
-すべての選び方に対し、すべてのラベルの動物が含まれているか判定すればよい。
-コード 
-long long dp[2000000];
-class ZooExchangeProgram {
-public: int getNumber(vector&lt;int&gt; label, int lower, int upper) {
-int n=label.size();
-int count=0;
-for(int pos=0;pos&lt;n;pos++){
-while(pos&lt;n &amp;&amp; !(lower&lt;=label[pos] &amp;&amp; label[pos]&lt;=upper))pos++;
-if(pos&gt;=n)break;
-long long mask=0;
-while(pos&lt;n){
-if(lower&lt;=label[pos] &amp;&amp; label[pos]&lt;=upper){
-mask|=(1LL&lt;&lt;label[pos]);
-pos++;
-}
-else break;
-}
-dp[count++]=mask;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13268&amp;rd=16187 ・複数の動物がおりラベルが付けられている。 ・そのうち番号がlowerからupperまでのラベルの動物を各種類最低１匹ずつ選びたい。 その
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/2014-tco-semifinal1-div1-easy---zooexchangeprogram/">Read more…</a>
@@ -329,45 +177,10 @@ dp[count++]=mask;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13527&amp;rd=16191
-・関数F（h,r）が与えられる。その要素は{1,2,3,...h-1,h,h-1...r+1,r}となる。
-（例）F(3,2)={1,2,3,2}
-・関数Fの和があらかじめわかっているとき、その和を構成できる関数Fのうち
-最も少ない要素数を求める。
-そのようなFがない場合は−１を返す。
-解き方 
-和の最大が10^12であるため、n*(n+1)/2&lt;=10^12から
-nは最大でも10^6程度なので全探索できそう。
-まず１から単調増加で和を計算していき、そのような和が構成できれば
-それは最小要素なので答えになる。
-そのような最小要素がなければ、途中で折り返す要素を計算する。
-この場合最悪ケースで10^12になってしまうので、工夫が必要。
-このとき、折り返し分の要素は最大のnからn-1,n-2・・・の和のいずれかであるので
-あらかじめ累積和を計算しておき、二分探索することで
-計算量を20*10^6に収めることができる。
-コード 
-long long dp[1500000];
-class AnEasyProblem {
-public: int solve(long long sum) {
-long long cur=0;
-int n=0;
-while(cur+n+1&lt;=sum){
-n++;
-cur+=n;
-}
-if(cur==sum)return n;
-dp[0]=0;
-for(int i=1;i&lt;=n;i++)dp[i]=dp[i-1]+i;
-for(int x=n;x&gt;=1;x--){
-if(dp[x-1]*2+x&lt;sum)break;
-long long tmp=dp[x-1]-(sum-dp[x]);
-int m = (lower_bound(dp,dp+n,tmp)) - dp ;
-if(dp[m]==tmp)return (x-1)-m+x;
-}
-return -1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13527&amp;rd=16191 ・関数F（h,r）が与えられる。その要素は{1,2,3,...h-1,h,h-1...r+1,r}となる。 （例）F(3,2)={1,2
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/2014-tco-celebrity-match-div1-easy---aneasyproblem/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -384,46 +197,10 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13628&amp;rd=16278
-・２次元の座標が与えられる。
-・（０，０）がスタート地点になり、各ターン上下左右のいずれかに移動することができる。
-・ただし複数の障害物が与えられ、障害物がある方向には移動することができない。
-・Kターン移動するとき、最後に移動することができる最大のｘ座標の値を求める。
-解き方 
-問題文を見るとｋ＝１０００なので前探索できそう。
-ただしマイナスの方向にも移動するので、座標変換が必要。
-今回は最小で−１０００なので、ｘ，ｙ座標ともに１０００を足してあげて、最後の答えから１０００を引けば良い。
-コード 
-int dp[2010][2010];
-class TheGridDivTwo {
-public: int find(vector&lt;int&gt; x, vector&lt;int&gt; y, int k) {
-queue&lt;pair&lt;int,int&gt; &gt; q;
-int dx[]={1,0,-1,0};
-int dy[]={0,1,0,-1};
-memset(dp,0,sizeof(dp));
-FORE(i,0,x.size())dp[x[i]+1000][y[i]+1000]=-1;
-dp[1000][1000]=1;
-q.push(make_pair(1000,1000));
-while(!q.empty()){
-int x=q.front().first;
-int y=q.front().second;
-if(dp[x][y]==k+1)break;
-q.pop();
-FORE(i,0,4){
-int cx=x+dx[i];
-int cy=y+dy[i];
-if(dp[cx][cy]==0){
-dp[cx][cy]=dp[x][y]+1;
-q.push(make_pair(cx,cy));
-}
-}
-}
-int ret=-3000;
-FORE(i,0,2010)FORE(j,0,2010)if(dp[i][j]&gt;0)ret=max(ret,i);
-return ret-1000;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13628&amp;rd=16278 ・２次元の座標が与えられる。 ・（０，０）がスタート地点になり、各ターン上下左右のいずれかに移動することができる。 ・ただし複数の障害物が
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-646-div2-middle---thegriddivtwo/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -440,34 +217,10 @@ return ret-1000;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13309&amp;rd=16084
-・２次元の座標上の点が複数与えられる。
-・このうち選んだ３点がなす三角形が原点を含む場合の数を求める。
-解き方 
-まず３点を選んだ時に、その三角形が原点を含むかの判定をする必要がある。
-これはatan2を使い、２点i,jを選んだときiのatan2+πとjのatan2＋πの間に
-もうひとつの点があれば原点を含む三角形となる。
-次にこのような三角形の選び方は、N=2500のため
-O(2500*2500*2500）では前探索できない。
-ここで2点を選んだ時に残りの１点について２分探索を使うことで、
-O(2500*2500*log2500）で計算量を間に合わせることができる。
-コード 
-class TrianglesContainOrigin {
-public: long long count(vector&lt;int&gt; x, vector&lt;int&gt; y) {
-int n=x.size();
-long long ret=0LL;
-vector&lt;double&gt; p(n);
-FORE(i,0,n)p[i]=atan2((double)x[i],(double)y[i]);
-sort(all(p));
-FORE(i,0,n)FORE(j,i+1,n)if(p[j]-p[i]&lt;PI){
-int e=lower_bound(p.begin(),p.end(),p[j]+PI)-p.begin();
-int s=lower_bound(p.begin(),p.end(),p[i]+PI)-p.begin();
-ret+=e-s;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13309&amp;rd=16084 ・２次元の座標上の点が複数与えられる。 ・このうち選んだ３点がなす三角形が原点を含む場合の数を求める。 解き方 まず３点を選んだ時に、その三
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-641-div1-easy---trianglescontainorigin-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -484,36 +237,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13540&amp;rd=16085
-・バスが複数あり、各バスごとに１周にかかる時間と、そのバスが選ばれる確率が与えられる。
-・スタート時にひとつのバスが与えられた確率で選ばれ、そのバスが戻ってきたときに
-また、そのバスを含むすべてのバスからひとつ選ばれ出発する。
-・あなたが到着する時間が与えられるとき、待ち時間の期待値を求める。
-解き方 
-期待値を求めるのでｄｐが使えそう。
-dp[現在の時刻]と定義する。
-各dp[i]について、すべてのバスjに対してdp[i+time[j]]を更新する。
-このとき、i+time[j]が自分が到着する時間よりも大きければその待ち時間を
-答えの期待値に加えていけば良い。
-コード 
-double dp[100001];
-class WaitingForBus {
-public: double whenWillBusArrive(vector&lt;int&gt; time, vector&lt;int&gt; prob, int s) {
-if(s==0)return 0.0;
-int n=time.size();
-double ret=0.0;
-memset(dp,0,sizeof(dp));
-dp[0]=1.0;
-for(int i=0;i&lt;s;i++){
-FORE(j,0,n){
-if(s&lt;=i+time[j])ret+=(i+time[j]-s)*dp[i]*prob[j]/100.0;
-else dp[i+time[j]]+=dp[i]*prob[j]/100.0;
-}
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13540&amp;rd=16085 ・バスが複数あり、各バスごとに１周にかかる時間と、そのバスが選ばれる確率が与えられる。 ・スタート時にひとつのバスが与えられた確率で選ば
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-642-div1-easy---waitingforbus-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -530,42 +257,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13747&amp;rd=16416
-・N個のパンケーキが与えられ、i番目のパンケーキの幅はi+1になる。
-また、各パンケーキのおいしさの値が与えられる。
-・ここからパンケーキをひとつづつ選び、上に重ねていく。
-ただし、現在積み重ねられている一番上のパンケーキより幅が大きいパンケーキを選んだらそこで終了となる。
-・ランダムにパンケーキが重ねられるとき、パンケーキおおいしさの値の期待値を求める。
-解き方 
-期待値の問題なのでｄｐが使えそう。（SRM607）
-現在積み重ねられているパンケーキについて、
-dp[現在の幅の広さ][現在のパンケーキの数]と定義する。
-このとき、各dp[i][j]についてdp[0〜i][j+1]を更新してあげればよい。
-コード 
-double dp[310][310];
-class RandomPancakeStack {
-public: double expectedDeliciousness(vector&lt;int&gt; d) {
-memset(dp,0,sizeof(dp));
-int n=d.size();
-FORE(i,0,n+1)dp[n][0]=1.0;
-//recurrence
-for(int i=n-1;i&gt;=0;i--){
-for(int j=1;j&lt;=n;j++){
-for(int k=i+1;k&lt;=n;k++)dp[i][j]+=dp[k][j-1]/(n-(j-1));
-}
-}
-//transition
-/*for(int i=n;i&gt;=0;i--){
-for(int j=0;j&lt;n;j++){
-for(int k=0;k&lt;i;k++)dp[k][j+1]+=dp[i][j]/(n-j);
-}
-}*/
-double ret=0.0;
-FORE(i,0,n)FORE(j,0,n+1)ret+=d[i]*dp[i][j];
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13747&amp;rd=16416 ・N個のパンケーキが与えられ、i番目のパンケーキの幅はi+1になる。 また、各パンケーキのおいしさの値が与えられる。 ・ここからパンケーキ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-656-div1-easy---randompancakestack-xx/">Read more…</a>
 		</div>
 	</div>
 </article>

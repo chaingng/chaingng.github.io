@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 592 DIV1 Easy - LittleElephantAndBalls" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12758&amp;rd=15704
-解き方 
-問題文を、最終的にボールを置いた位置の状態にすると勘違いしてしまった。
-ボールが左から順に与えられて、それを任意の位置に配置する、という
-問題になる。
-RGBそれぞれについて最初に出た時は左側に、次に出た時は右側においていけば
-各色についてスコアは最初に出現した時は１、それ以降は２となる。
-コード 
-class LittleElephantAndBalls {
-public: int getNumber(string S) {
-int ret=0;
-int r=0,g=0,b=0;
-FORE(i,0,S.size()){
-ret&#43;=min(r,2)&#43;min(g,2)&#43;min(b,2);
-if(S[i]==&#39;R&#39;)r&#43;&#43;;
-else if(S[i]==&#39;G&#39;)g&#43;&#43;;
-else b&#43;&#43;;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12758&amp;rd=15704 解き方 問題文を、最終的にボールを置いた位置の状態にすると勘違いしてしまった。 ボールが左から順に与えられて、それを任意の位置に配置する、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-592-div1-easy---littleelephantandballs/" />
 

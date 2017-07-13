@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM534 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①１次元の列が与えられ、ランダムな数の石がおかれている。
-②この石は右に１マスもしくは３マス動かすことができる。
-３マス動かす時はその間の石を飛び越すことができる。
-しかし、動かした先に石がある場合は動かすことができない。
-最後のマスに達したときはその石は動かすことはできなく、消えてしまう。
-③２人のプレイヤーが順にこの操作を行う。
-石を動かせなくなった方が負けとなる。
-④このとき、最初のプレイヤーが勝つならＹＥＳ,負けるならＮＯを返す。
-解き方 
-デッドロックが発生する場合を想定すると複雑になりそうに見える。
-しかし、そのように見える場合でも一番右の石は動かすことができるので、
-それぞれの石は独立に考えることができる。
-これがわかれば、動かすことのできるマスが奇数の場合は最初のプレイヤーが勝ち、
-偶数の場合は負けることがわかる。
-コード 
-class EllysCheckers {
-public: string getWinner(string board) {
-int parity=0;
-FORE(i,0,board.size()-1)if(board[i]==&#39;o&#39;)parity&#43;=(board.size()-1-i);
-return parity%2!=0 ? &#34;YES&#34; : &#34;NO&#34; ;
-}
-}; " />
+<meta property="og:description" content="問題 ①１次元の列が与えられ、ランダムな数の石がおかれている。 ②この石は右に１マスもしくは３マス動かすことができる。 ３マス動かす時はその間の石" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm534-div2--level2/" />
 

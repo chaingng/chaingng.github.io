@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 411 DIV1 Middle - HoleCakeCuts　（復習××○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9752&amp;rd=12183
-座標(0,0)を中心として、１辺の長さがcakeLength*2であり、中心の穴がholeLength*2であるケーキが存在する。
-このケーキを、あらかじめ与えられたy軸に平行なカットとx軸に平行なカットを行ったときに最終的に残るカットされたケーキの数を求める。
-解き方 
-(0,0)が中心というのを最初見落としてしまい、時間がかかってしまった。
-(0,0)→(cakeLength,cakeLength)となるように座標変換して
-左上が(0,0)にくるようにして、各カットのまとまりごとにdfsを回して答えを求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int used[200][200],vcut[200],hcut[200],n;
-class HoleCakeCuts {
-public:
-void dfs(int i,int j){
-if(used[i][j])return;
-used[i][j]=1;
-if(i&gt;0&amp;&amp;!vcut[i-1])dfs(i-1,j);
-if(i&lt;n-1&amp;&amp;!vcut[i])dfs(i&#43;1,j);
-if(j&gt;0&amp;&amp;!hcut[j-1])dfs(i,j-1);
-if(j&lt;n-1&amp;&amp;!hcut[j])dfs(i,j&#43;1);
-}
-int cutTheCake(int cake, int hole, vector&lt;int&gt; h, vector&lt;int&gt; v) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9752&amp;rd=12183 座標(0,0)を中心として、１辺の長さがcakeLength*2であり、中心の穴がholeLength*2であるケーキが存在する。 この" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-411-div1-middle---holecakecuts%E5%BE%A9%E7%BF%92/" />
 

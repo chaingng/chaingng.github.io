@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 585 DIV1 Middle - LISNumber （復習x）" />
-<meta property="og:description" content="問題 
-０からiまでの数字のカードが与えられる。
-各数字のカードは、cardsnum[i]枚だけ与えられる。
-このとき、カードを並べた時に左からみて増加列になっているサブ集合がＫだけ存在するようにしたい。
-サブ集合がＫとなるときの場合の数を求める。
-解き方 
-いくつか例を出して考えてみる。
-あるカードが並べられているとき、増加列が増えないときはその数字より小さいところに
-カードを加えたときになる。
-つまりカードの大きさを小さい順に走査したとき、増加列の数Ｌだけ、増加列が増えない置き方が存在する。
-現在のカードの枚数をＸとすると、組み合わせでＬ（Ｃ）Ｘ通りの置き方が存在する。
-このうちＫ枚だけ増加列が増えないように置くとすると、Ｌ（Ｃ)Ｋとなる。
-また増加列が増えるときは、現在置かれているカード枚数をＳＵＭとしたとき、置き方はＳＵＭ＋１通り、
-そこから上記の置き方を引くとＳＵＭ&#43;1－（Ｌ－Ｘ）通りとなる。
-こちらは重複組み合わせになるので、ＳＵＭ＋１－（Ｌ－Ｘ）（Ｈ）（Ｘ－Ｋ）通りとなる。
-上記をｄｐにて実装する。
-また、重複組み合わせはpCq=p&#43;q-1Cqに変換でき、
-組み合わせも以下の式よりｄｐで求めることができる。
-xCy=x-1Cy-1&#43;x-1Cy
-例えば5C3のとき、5枚から3枚を選ぶ組み合わせになる。
-4C3は4枚から3枚選ぶ組み合わせになり、
-さらに残りで選ばれていない1枚＋4枚から2枚選ぶ組み合わせの合計に分解できる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int MOD=1000000007;
-int dp[40][1300];
-long long C[1300][1300];
-class LISNumber {" />
+<meta property="og:description" content="問題 ０からiまでの数字のカードが与えられる。 各数字のカードは、cardsnum[i]枚だけ与えられる。 このとき、カードを並べた時に左からみて" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-585-div1-middle---lisnumber-%E5%BE%A9%E7%BF%92x/" />
 

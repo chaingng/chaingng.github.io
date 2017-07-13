@@ -7,51 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM550 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①大きさがわからない、２次元のセルを飛行機が移動する。
-②また、移動セル数を示す数字の配列が与えられる。
-③最初は右を向いており、最初の移動セル数分だけ右に移動する。
-壁にぶつかるかすでに移動したセルにぶつかると、９０度左を向く。
-そして次の移動セル分だけ移動する。
-④このとき、セルの大きさを求める。
-ただし、②の移動に従わない動きであればー１を返す。
-解き方 
-シミュレーションの問題。
-いかに間違いが少なくなるようにかけるか、できるだけ単純にコーディングする。
-今回は、セルの大きさを求めるシミュレーションと、例外を求めるシミュレーションを分けて実装する。
-まず、セルの大きさは最初の移動をシミュレーションして
-ｘ座標とｙ座標それぞれ最小と最大を求めれば簡単に算出できる。
-次に、求めたｘ座標とｙ座標の最小値と最大値を利用して
-例外ケースではないか判定のシミュレーションを行う。
-コード 
-int cell[110][110];
-class RotatingBot {
-public: int minArea(vector&lt;int&gt; moves) {
-int maxX=55,minX=55,maxY=55,minY=55;
-int dx[]={1,0,-1,0};
-int dy[]={0,1,0,-1};
-int x=55,y=55,dir=0;
-FORE(i,0,moves.size()){
-x&#43;=moves[i]*dx[dir%4];
-y&#43;=moves[i]*dy[dir%4];
-minX=min(minX,x);
-minY=min(minY,y);
-maxX=max(maxX,x);
-maxY=max(maxY,y);
-dir&#43;&#43;;
-}
-FORE(i,0,110)FORE(j,0,110)cell[i][j]=0;
-x=55,y=55,dir=0,cell[y][x]=1;
-FORE(i,0,moves.size()){
-int num=0;
-while(1){
-int tmpx=x&#43;dx[dir%4];
-int tmpy=y&#43;dy[dir%4];
-num&#43;&#43;;
-if(num&gt;moves[i]){
-if(i==moves.size()-1)break;
-if(cell[tmpy][tmpx]==1 || tmpx&gt;maxX || tmpx&lt;minX || tmpy&lt;minY || tmpy&gt;maxY){
-dir&#43;&#43;;" />
+<meta property="og:description" content="問題 ①大きさがわからない、２次元のセルを飛行機が移動する。 ②また、移動セル数を示す数字の配列が与えられる。 ③最初は右を向いており、最初の移動" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm550-div2--level2/" />
 

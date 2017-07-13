@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 407 DIV1 Easy - CorporationSalary（復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9824&amp;rd=12179
-部下とマネージャーからなるサラリーマンの会社がある。
-配列が与えられ、ある人に対してその部下が誰かがわかっている。
-また、ある人の部下の部下は、ある人の部下でもあり、
-あるひとのマネージャーのマネージャーは、ある人のマネージャーでもある。
-ここで、ある人の給料は、その人の部下の給料の合計になる。
-部下がいないひとの給料は１になる。
-このとき、その会社のサラリーマン全員の給料の合計を求める。
-解き方 
-ある人の給料はその人の部下全員の給料の合計であるので、ＤＦＳにて答えを求めてあげればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-long long dp[60];
-vector&lt;string&gt; R;
-class CorporationSalary {
-public:
-long long f(int x){
-if(dp[x]!=-1)return dp[x];
-long long ret=0;
-FORE(i,0,R.size())if(R[x][i]==&#39;Y&#39;)ret&#43;=f(i);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9824&amp;rd=12179 部下とマネージャーからなるサラリーマンの会社がある。 配列が与えられ、ある人に対してその部下が誰かがわかっている。 また、ある人の部下の部" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/" />
 

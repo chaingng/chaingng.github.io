@@ -7,27 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 538 DIV1 Easy - EvenRoute" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11808&amp;rd=14729
-解き方 
-（ｘ，ｙ）の合計が奇数の座標と偶数の座標が存在すれば、どちらにもできるので
-答えは必ずYESになる。
-そうでない場合はそれぞれ奇数のみ、偶数のみのルートとなる。
-コード 
-class EvenRoute {
-public: string isItPossible(vector&lt;int&gt; x, vector&lt;int&gt; y, int wantedParity) {
-int n=x.size();
-int odd=0,even=0;
-FORE(i,0,n){
-if((x[i]&#43;y[i])%2==0)even&#43;&#43;;
-else odd&#43;&#43;;
-}
-if(even &amp;&amp; odd)return &#34;CAN&#34;;
-if(even&gt;0 &amp;&amp; wantedParity==0)return &#34;CAN&#34;;
-if(odd&gt;0 &amp;&amp; wantedParity==1)return &#34;CAN&#34;;
-return &#34;CANNOT&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11808&amp;rd=14729 解き方 （ｘ，ｙ）の合計が奇数の座標と偶数の座標が存在すれば、どちらにもできるので 答えは必ずYESになる。 そうでない場合はそれぞれ奇数の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-538-div1-easy---evenroute/" />
 

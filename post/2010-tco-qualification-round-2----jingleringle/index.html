@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2010 TCO Qualification Round 2 -  JingleRingle" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10896&amp;rd=14277
-・１つの硬貨Jingleをある硬貨Ringleで売るsellerが複数人と、
-１つの硬貨Jingleをある硬貨Ringleで買うbuyerが複数人いる。
-また、buyerに売るときは売るときの硬貨floor(X*tax/100)の税金がかかる。
-・１人のsellerからは１回、１人のbuyerからは１回の取引しかできないとき、
-得られる最大のprofitを求める。
-解き方 
-・貪欲法で解くことができそう。
-・ソートし、一番安いsellerと一番高く売れるbuyerについて税金も含めて利益が出るときは取引し、そうでないときは取引しなければよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class JingleRingle {
-public: int profit(vector&lt;int&gt; buyOffers, vector&lt;int&gt; sellOffers, int tax) {
-int n=buyOffers.size();
-int m=sellOffers.size();
-if(n==0||m==0)return 0;
-sort(all(buyOffers));
-sort(all(sellOffers));" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10896&amp;rd=14277 ・１つの硬貨Jingleをある硬貨Ringleで売るsellerが複数人と、 １つの硬貨Jingleをある硬貨Ringleで買うbuye" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2010-tco-qualification-round-2----jingleringle/" />
 

@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 250 DIV1 Middle - TVWatching　（復習××）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=927
-テレビの番組表があり、各番組ごとに開始時間と終了時間が与えられる。
-できるだけ多くのテレビ番組をみたいが、放送時間が重複しているときは同時にみることができない。
-このとき、できるだけ多くのテレビ番組をみたときのテレビの視聴時間を求める。
-解き方 
-開始時間と終了時間は２４時間単位でループしているので、単純に終了時間のみをみるだけでは正確な答えが求まらない。
-そこでｄｐを用いて、一番最初に見たプログラムと一番最後に見たプログラムを状態数に持つ。まだみていないプログラムについて、最後にみたプログラムの終了時間以降にはじまり、ループして最初にみたプログラムよりも前の時間に終わることができるものについて全ての場合を調べる。
-メモ化しても５０＊５０なので計算量とメモリ量も足りる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[51][51],from[51],to[51],n;
-vector&lt;pair&lt;int,int&gt; &gt; p;
-class TVWatching {
-public:
-int calc(string str){
-int ret=(str[0]-&#39;0&#39;)*600&#43;(str[1]-&#39;0&#39;)*60&#43;(str[3]-&#39;0&#39;)*10&#43;(str[4]-&#39;0&#39;);
-if(ret&gt;=720)ret-=720;
-return str.substr(5,2)==&#34;PM&#34; ? ret&#43;720 : ret;" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=927 テレビの番組表があり、各番組ごとに開始時間と終了時間が与えられる。 できるだけ多くのテレビ番組をみたいが、放送時間が重複しているときは同" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-250-div1-middle---tvwatching%E5%BE%A9%E7%BF%92/" />
 

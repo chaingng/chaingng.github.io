@@ -7,40 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 677 DIV1 Easy - DoubleOrOneEasy x" />
-<meta property="og:description" content="問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=14101&amp;rd=16627
-解き方 
-２倍と１足す動作を単純に全通り試そうとするとオーバーフローしてしまう。
-ここでnewA,newBからa,bを作ることを考えてみる。
-すると、２で割る動作を先にしたほうが最小の答えを得られることがわかる。
-よって、割れるときは２で割る、割れない時は１を引く動作をして
-そのとき、newA-a == newB-bであれば答えにたどりつけるのでこの判定ができるか
-繰り返す。
-１つ、片方が２で割れなく片方が割れるときは１引く動作を続けてしまい計算量がオーバーするのでbreakする必要がある。
-このときの終了判定で、breakする前に答えを判定する必要があるのにミスしてしまった。。
-コード 
-class DoubleOrOneEasy {
-public: int minimalSteps(int a, int b, int newA, int newB) {
-int ret=1e&#43;9;
-int count=0;
-while(a&lt;=newA &amp;&amp; b&lt;=newB){
-if(newA-a==newB-b){
-ret=min(ret,count&#43;newA-a);
-}else if(newA%2==0 &amp;&amp; newB%2==1){
-break;
-}
-if(newA%2==0 &amp;&amp; newB%2==0){
-newA/=2;
-newB/=2;
-}else{
-newA--;
-newB--;
-}
-count&#43;&#43;;
-}
-return ret==1e&#43;9 ? -1 : ret;
-}
-}; " />
+<meta property="og:description" content="問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=14101&amp;rd=16627 解き方 ２倍と１足す動作を単純に全通り試そうとするとオーバーフローしてしまう。 ここでnewA,newBからa,bを作ることを考えてみる。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-677-div1-easy---doubleoroneeasy-x/" />
 

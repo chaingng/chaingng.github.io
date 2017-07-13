@@ -77,46 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10033&amp;rd=13513
-・チームＡとＢがサッカーゲームを行う。
-・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。
-・各セグメントごと、各チームはあらかじめ与えられた確率でゴールする。
-・各セグメントごとのゴール数は０か１となる。
-このとき、ゲームが終わったときＡもしくはＢのスコアが素数となる確率を求める。
-解き方 
-２＾３６となるので全探索では解くことができない。
-ここで、最大が１８なので素数の数は７個に限られる。
-次に、ゴール数をｎ、Ａのゴールする確率がＰのときの確率は
-P^n * (1-P)^(18-n)*18Cnとなる。
-最後に、Aの素数となる確率とＢの素数となる確率で重複が発生する。
-Aのゴール数が素数となる確率をPa、Ｂのゴール数が素数となる確率をPbとすると
-Pa+Pb-Pa*Pbが答えになる。
-コード 
-class PrimeSoccer {
-public:
-double calc(double x){
-int p[]={2,3,5,7,11,13,17};
-double ret=0.0;
-FORE(i,0,7){
-double tmp=1.0;
-for(double n=18.0;n&gt;(double)(18-p[i]);n--)tmp*=n;
-for(double n=1.0;n&lt;=(double)p[i];n++)tmp/=n;
-tmp=tmp*pow(x,p[i])*pow(1.0-x,18-p[i]);
-ret+=tmp;
-}
-return ret;
-}
-double getProbability(int skillOfTeamA, int skillOfTeamB) {
-double Pa=calc((double)skillOfTeamA/100.0);
-double Pb=calc((double)skillOfTeamB/100.0);
-return Pa+Pb-Pa*Pb;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i !
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10033&amp;rd=13513 ・チームＡとＢがサッカーゲームを行う。 ・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。 ・各セグメントごと、各チームはあ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -136,29 +97,10 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10258&amp;rd=13522
-（０，０）の位置からレーザーが発射される。
-レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、ｙ２の範囲は[-2/PI,2/PI]。
-このような（ｘ、ｙ１）（ｘ、ｙ２）が複数与えられるとき、ある点がレーザーに当たる確率を求める。
-解き方 
-全ての点について確率を求めていては間に合わない。
-そのため、各(x,y1)(x,y2)に対しレーザーの当たる範囲の確率を足していけばよい。
-arctanの使い方を忘れていたので、こちらのサイトを拝見させていただきました。
-http://78578203.at.webry.info/201101/article_2.html
-コード 
-class LaserShooting {
-public: double numberOfHits(vector&lt;int&gt; x, vector&lt;int&gt; y1, vector&lt;int&gt; y2) {
-double ret=0.0;
-int n=y1.size();
-FORE(i,0,n){
-double tmp1=atan((double)y1[i]/(double)x[i]);
-double tmp2=atan((double)y2[i]/(double)x[i]);
-ret+=fabs(tmp1-tmp2)/M_PI;
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10258&amp;rd=13522 （０，０）の位置からレーザーが発射される。 レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -175,34 +117,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10957&amp;rd=14548
-１からupperBoundまでの数が与えられる。
-また、a,b,c,dの正の整数が与えられる。
-このとき、a+b*x または c*d^y（x,yは任意の整数）を満たす数がいくつあるか求める。
-解き方 
-「a+b*x」、「c*d^y」は重複する場合があるので、
-重複した場合は１度しか計算しない処理が必要。
-「a+b*x」では、各整数は10^12のため全探索では不可。
-upperBoundがa以上であれば、 (upperBound-a)/b +1が満たす全ての数になる。
-「c*d^y」は全探索が可能。
-各数に対して「a+b*x」でも表わせないか判定し重複を調べる。
-（同じようにa以上かどうかを調べる）
-ただしd=1のときは無限ループになるのでbreak処理が必要。
-Challengeポイント
-階乗が出てくる場合は1の階乗のbreak処理が入っているか？
-数の判定の際は正負の判定が入っているか？
-コード 
-class CountingSeries {
-public: long long countThem(long long a, long long b, long long c, long long d, long long upperBound) {
-long long ans=upperBound&gt;=a ? (upperBound-a)/b+1 :0;
-for(long long x=c;x&lt;=upperBound;x*=d){
-if((x-a)&lt;0||(x-a)%b!=0)ans++;
-if(d&lt;=1)break;
-}
-return ans;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10957&amp;rd=14548 １からupperBoundまでの数が与えられる。 また、a,b,c,dの正の整数が与えられる。 このとき、a+b*x または c*d^y（x,
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -219,32 +137,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11607&amp;rd=14549
-ｎ個のダイヤモンドを運びたい。
-１度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。
-このとき、消滅せずに全てのダイヤを運べる最小の回数を求める。
-解き方 
-ｎが最大１０＾１２のためＤＦＳ等では解くことができない。
-そこで法則がないかシミュレーションしてみる。
-すると、ｎ＝３（３回）のときを除いて、以下がわかる。
-①素数でない場合は、１回で運べる
-②素数の場合は、「素数ー１」個＆「１」個の２回で運べる
-あとは素数判定関数を作って実装するだけでよい。
-コード 
-class MagicDiamonds {
-public:
-bool isprimary(long long x){
-if(x==2)return true;
-if(x==1||x%2==0)return false;
-for(long long i=3;i*i&lt;=x;i+=2)if(x%i==0)return false;
-return true;
-}
-long long minimalTransfer(long long n) {
-if(n==3)return 3;
-return isprimary(n) ? 2 : 1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11607&amp;rd=14549 ｎ個のダイヤモンドを運びたい。 １度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。 このとき、消滅せずに全てのダイヤを運
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -261,52 +157,7 @@ return isprimary(n) ? 2 : 1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12539&amp;rd=15498
-2次元のセルが与えられ、それぞれのセルは鳥がいるかいないかで表わされる。
-鳥はガチョウとアヒルの２種類存在する。
-その鳥がどちらかはわからないが、あるガチョウとマンハッタン距離にある鳥はすべて
-ガチョウとなる。
-このとき、ガチョウの鳥の数が偶数となる場合の数を求める。
-解き方 
-あるガチョウとマンハッタン距離にある鳥は全てガチョウということは、
-マンハッタン距離にある鳥の集合それぞれは、ガチョウかアヒルになるということがわかる。
-つぎにそれぞれの集合に対して、鳥の数が偶数か奇数かに分類する。
-偶数の集合Ｎについては２＾Ｎとなる。
-奇数の集合については、ｎＣ０×ｎＣ２ｘ・・・ｎＣｎ－１となる。
-ここで二項定理により(1+x)^n=(n,0)*x^0+(n,1)*x^1...+(n,n)*x^n
-x=1,-1のとき、
-2^n=(n,0)+(n,1)+...+(n,n)
-0=(n,0)-(n,1)+(n,2)...-(n,n)
-2^n=2(n,0)+2(n,2)...+2(n,n-1)
-2^(n-1)=(n,0)+(n,2)...+(n,n-1)
-よって奇数の集合は2^(n-1)となるので、2^(n-1+N)が答えになる。
-コード 
-int H,W,D;
-int cell[55][55];
-class GooseInZooDivOne {
-public:
-int DFS(int i,int j){
-int ans=1;
-queue&lt;pair&lt;int,int&gt; &gt; q;
-q.push(make_pair(i,j));
-cell[i][j]=1;
-while(!q.empty()){
-int x=q.front().first;
-int y=q.front().second;
-q.pop();
-FORE(i,0,H)FORE(j,0,W)if(cell[i][j]==0&amp;&amp;abs(x-i)+abs(y-j)&lt;=D){
-cell[i][j]=1;
-q.push(make_pair(i,j));
-ans++;
-}
-}
-return ans;
-}
-int count(vector&lt;string&gt; field, int dist) {
-long long MOD=1000000007LL,ans=1LL;
-int even=0,odd=0,cnt=0;
-H=field.size(),W=field[0].size(),D=dist;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12539&amp;rd=15498 2次元のセルが与えられ、それぞれのセルは鳥がいるかいないかで表わされる。 鳥はガチョウとアヒルの２種類存在する。 その鳥がどちらかはわから
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-578-div1-easy---gooseinzoodivone-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -326,51 +177,7 @@ H=field.size(),W=field[0].size(),D=dist;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12049&amp;rd=14738
-整数が与えられる。
-整数が偶数のときは２で割り、奇数であれば１を引くことができる。
-整数の範囲とある数が与えられた時、
-その整数の範囲内である数が存在する数が何通りあるか求める。
-解き方 
-数が１０＾１８のため、範囲中の全ての数を全探索で求めることはできない。
-そのため、法則がないか数を列挙してみる。
-ここで状態遷移図を用いてみる。
-１）ｋが偶数のとき
-Ｋ←２Ｋ←２Ｋ＋１←４Ｋ＋２←８Ｋ＋４
-←４Ｋ＋３
-←４Ｋ←８Ｋ←１６Ｋ
-←８Ｋ＋１
-←４Ｋ＋１←８Ｋ＋２
-←Ｋ＋１←２Ｋ＋２←４Ｋ＋４←８Ｋ＋８
-←４Ｋ＋５
-←２Ｋ＋３←４Ｋ＋６→４Ｋ＋７
-２）ｋが奇数のとき
-Ｋ←２Ｋ←２Ｋ＋１←４Ｋ＋２←８Ｋ＋４
-←４Ｋ＋３
-←４Ｋ←８Ｋ←１６Ｋ
-←８Ｋ＋１
-←４Ｋ＋１←８Ｋ＋２
-つまり、以下の法則が導ける。
-ｋが偶数のときは
-Ｋ～Ｋ＋１，２Ｋ～２Ｋ＋３、４Ｋ～４Ｋ＋７
-ｋが奇数のときは
-Ｋ、２Ｋ～２Ｋ＋１、４Ｋ～４Ｋ＋３
-最小はＫの倍数、最大はＫもしくはＫ＋１から始まり２倍＋１となる。
-コード 
-class KleofasTail {
-public:
-long long calc(long long K,long long B){
-long long ans=0,low=K,high=K;
-if(K%2==0)high++;
-while(low&lt;=B){
-ans+=min(high,B)-low+1;
-low=2*low;
-high=2*high+1;
-}
-return ans;
-}
-long long countGoodSequences(long long K, long long A, long long B) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12049&amp;rd=14738 整数が与えられる。 整数が偶数のときは２で割り、奇数であれば１を引くことができる。 整数の範囲とある数が与えられた時、 その整数の範囲内であ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-546-div1-easy---kleofastail-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -390,47 +197,10 @@ long long countGoodSequences(long long K, long long A, long long B) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①数字が二つ与えられる。
-②プレイヤーは一つ目の数字を１０で割る、もしくは逆にすることができる。
-③上記の操作によって、２つ目の数字にするとき、最小の操作回数を求める。
-２つ目の数字にできないときはー１を返す。
-解き方 
-どのような法則があるか例を出して導く。
-289が求めたい数字のとき、
-元の数字：１２８９　→３回
-２８９１　→１回
-１２８９１　→４回
-つまり、
-・最初から含まれる　→文字数の差
-・途中から含まれる　→文字列の差＋２
-ひっくり返した場合もシミュレーションすると、
-ひっくり返した文字が含まれる　→文字数の差＋１回
-ただ求めたい数字の場合は両方一致するため、
-返す数が少ない方から判定していく。
-コード 
-class TheNumberGameDiv2 {
-public:
-string f(int n){
-string str;
-stringstream out;
-out&lt;&lt;n;
-out&gt;&gt;str;
-return str;
-}
-int minimumMoves(int A, int B) {
-string As=f(A);
-string Bs=f(B);
-int dis=As.size()-Bs.size();
-int flag=0;
-if(As.find(Bs)!=string::npos)flag=1;
-if(As.find(Bs)==0)return dis;
-reverse(Bs.begin(),Bs.end());
-if(As.find(Bs)!=string::npos)return dis+1;
-if(flag==1)return dis+2;
-return -1;
-}
-}; 
+			問題 ①数字が二つ与えられる。 ②プレイヤーは一つ目の数字を１０で割る、もしくは逆にすることができる。 ③上記の操作によって、２つ目の数字にすると
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm574-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -447,34 +217,10 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①整数ＬとＲが与えられる。
-②このとき、ＬからＲまでの間全ての数をＸＯＲした後の値を求める。
-解き方 
-Ｌ，Ｒは４＊１０＾９のため単純なシミュレーションでは解くことができない。
-そのため、数学的解法、法則を見つける。
-法則を見つけるために１からずっとＸＯＲをしたときの値を並べてみると、
-整数ｎを４で割ったときの余りによって以下になることがわかる。
-余り０　→　ｎ
-余り１　→　１
-余り２　→　ｎ　ＸＯＲ　１
-余り３　→　０
-最後に１からスタートしているわけではなくてＬからスタートしなければならない。
-これは１からＲまで求めた答えから、１からＬ－１まで求めた答えを引く、つまりＸＯＲしてあげればよい。
-コード 
-class EllysXors {
-public:
-long long f(long long n){
-long long check=n%4;
-if(check==0)return n;
-if(check==1)return 1;
-if(check==2)return n^1;
-return 0;
-}
-long long getXor(long long L, long long R) {
-return f(R)^f(L-1);
-}
-}; 
+			問題 ①整数ＬとＲが与えられる。 ②このとき、ＬからＲまでの間全ての数をＸＯＲした後の値を求める。 解き方 Ｌ，Ｒは４＊１０＾９のため単純なシミュレ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-543-div1-easy---ellysxors/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -491,40 +237,10 @@ return f(R)^f(L-1);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題
-①数字のペアＡ，Ｂが与えられる。
-このとき、０以上のｐ、ｑに対し、Ａ＊ｐ＋Ｂ＊ｑで数が生成できる。
-②また、新たな数字Ｘが与えられる。
-このとき、Ａ，Ｂで表わせる全てのペアが、Ｘ，Ｙでも表わせるような
-Ｙの場合の数を求める。ただしＹが無限になる場合はー１を返す。
-解き方
-Ｘ，ＹにてＡ，Ｂが表わすことができれば、
-Ａ，Ｂで現すことのできる全ての数はＸ，Ｙで現すことができる。
-Ｙのとりうる数は１～max(A,B) (Xを除く)なので、
-全てのＹに対してＸ，ＹがＡ，Ｂで表わせるかを判定する。
-Ａ＝Ｘ＊ｐ＋Ｙ＊ｑ
-ｑ＝１として、
-pが０からＸ＊ｐがＡになるまで増やしていき、
-Ｙで割ることができるか判定する。
-ｑ＝０の場合も調べるため、ＡがＸで割り切れるかも判定する。
-全て数学的解法に頼らず、全探索との組み合わせで落とし所を探る。
-コード
-class KingXNewCurrency {
-public:
-bool f(int num,int x,int y){
-if(num%x==0)return true;
-for(int i=0;x*i&lt;=num;i++)if((num-x*i)%y==0)return true;
-return false;
-}
-int howMany(int A, int B, int X) {
-if(A%X==0 &amp;&amp; B%X==0)return -1;
-int ans=0;
-for(int n=1;n&lt;=max(A,B);n++)if(X!=n &amp;&amp; f(A,X,n) &amp;&amp; f(B,X,n))ans++;
-return ans;
-}
-};
-
- 
+			問題 ①数字のペアＡ，Ｂが与えられる。 このとき、０以上のｐ、ｑに対し、Ａ＊ｐ＋Ｂ＊ｑで数が生成できる。 ②また、新たな数字Ｘが与えられる。 このと
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm537-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -541,41 +257,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題  ①座標上にある２つの長方形の左下と右上の座標が与えられる。
-②２つの長方形の重なりが四角形の時はrectangle、線で接している場合はsegment、
-点で接している場合はpoint、接していないときはnoneを返す。
-解き方  単純に場合分けで解いてもよいが複雑になり間違えやすくなる＆コードが書きにくくなるので、数学的に簡単にできないか検討する。
-まず２次元の問題ということで、それぞれ1次元の問題に分割できないか検討する。
-今回の場合はｘ軸とｙ軸はそれぞれ影響を与えないので独立に考えられる。
-次に、ｘ軸が線・点を作れるか、ｙ軸も同じように線・点を作れるか
-という考え方ができれば、ｘ軸とｙ軸の組み合わせによってどの重なりになるか
-求めることができる。
-最後に各軸が線・点を作れる場合を考える。
-１つ目の長方形の最左辺と最右辺がa、ｂとすると、
-長方形の中にあるｘ軸の値はa&lt;=x&lt;=bとなる。
-同様に2つ目の最左辺と最右辺をｃ、ｄとすると、
-c&lt;=x&lt;=dとなる。
-ここで２つの条件を合わせると、
-max(a,c)&lt;x&lt;min(b,d)がｘの範囲となる。
-つまりxのとりうる範囲　min(b,d)-max(a,c)が
-複数であれば線、
-１点のみであれば点、
-存在しなければ、どちらも作れないということがわかる。
-これをｙ軸も同じように判定すれば簡単に求められる。
-コード  class TwoRectangles {
-public:
-int f(int x){
-if(x&gt;0)return 1;
-if(x==0)return 0;
-return -1;
-}
-string describeIntersection(vector&lt;int&gt; A, vector&lt;int&gt; B) {
-int checkx=f(min(A[2],B[2])-max(A[0],B[0]));
-int checky=f(min(A[3],B[3])-max(A[1],B[1]));
-if(checkx==1 &amp;&amp; checky==1)return &ldquo;rectangle&rdquo;;
-if(checkx==1 &amp;&amp; checky==0 || checkx==0 &amp;&amp; checky==1)return &ldquo;segment&rdquo;;
-if(checkx==0 &amp;&amp; checky==0)return &ldquo;point&rdquo;;
-return &ldquo;none&rdquo;;
+			問題 ①座標上にある２つの長方形の左下と右上の座標が与えられる。 ②２つの長方形の重なりが四角形の時はrectangle、線で接している場合はs
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm546-div2--level2/">Read more…</a>

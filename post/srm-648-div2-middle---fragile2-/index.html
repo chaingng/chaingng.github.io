@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 648 DIV2 Middle - Fragile2 (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13648&amp;rd=16312
-
-・無向グラフの隣接行列のリストが与えられる。
-・このうち２つの頂点を選び、グラフから消した時に木の集合が増える
-頂点の選び方を全て求める。
-解き方 
-・頂点数は２０なので、頂点の選び方は２０C2となり全探索で解ける。
-・２つの頂点を選んだときにできる木の集合の数を求め、頂点を消さないときよりも
-集合の数が増えるかどうか判定すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int used[30],n;
-vector&lt;string&gt; g;
-class Fragile2 {
-public:
-void dfs(int x){
-used[x]=1;
-FORE(i,0,n)if(!used[i] &amp;&amp; g[x][i]==&#39;Y&#39;)dfs(i);
-}
-int countPairs(vector&lt;string&gt; graph) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13648&amp;rd=16312 ・無向グラフの隣接行列のリストが与えられる。 ・このうち２つの頂点を選び、グラフから消した時に木の集合が増える 頂点の選び方を全て求める。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-648-div2-middle---fragile2-/" />
 

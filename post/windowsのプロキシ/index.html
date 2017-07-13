@@ -7,24 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="Windowsのプロキシ" />
-<meta property="og:description" content="Windowsのプロキシには２種類存在する。
-１つめはInternetExplorerのプロキシサーバー設定、もう一つは主にWindows Updateに使用されるWinhttpのプロキシ設定。
-InternetExplorerはIEのインターネットオプションから設定できるが、
-Winhttpはnetshコマンドにて設定する。
-設定方法としては、直接設定するものとIEの設定をコピーする方法の２つ。
-直接設定する方法
-netsh winhttp set proxy proxy-server=&#34;myProxyServer:8080&#34; bypass-list=&#34;&lt;local&gt;;*.microsoft.com;*.foo.ne&#34;
-IEの設定をコピーする方法
-netsh winhttp import proxy source=ie
-現在の設定は、以下のコマンドで確認できる。
-netsh winhttp show proxy
-また、以下のコマンドで設定をリセット（プロキシなしに）できる。
-netsh winhttp reset proxy
-WindowsUpdateは手動での更新時はIEの設定が利用されるが、
-自動更新時はWinhttpのプロキシ設定が適用されるため、プロキシ環境下で自動更新を行いたいときは必要な設定となる。
-（参考）公式ページ
-http://support.microsoft.com/kb/2894304/ja
- " />
+<meta property="og:description" content="Windowsのプロキシには２種類存在する。 １つめはInternetExplorerのプロキシサーバー設定、もう一つは主にWindows Up" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/windows%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/" />
 

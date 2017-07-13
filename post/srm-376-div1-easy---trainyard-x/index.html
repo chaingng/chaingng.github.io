@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 376 DIV1 Easy - Trainyard x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6555&amp;rd=10796
-解き方 
-実装問題。システムテストで落ちやすい問題なので、すべて条件文をもれなく書かないといけない。
-コード 
-class Trainyard {
-public: int reachableSquares(vector&lt;string&gt; layout, int fuel) {
-int h=layout.size(),w=layout[0].size();
-int dr[]={1,0,-1,0},dc[]={0,1,0,-1};
-int dp[4][10][10];
-FORE(i,0,4)FORE(j,0,10)FORE(k,0,10)dp[i][j][k]=-1;
-queue&lt;pair&lt;int,pair&lt;int,int&gt; &gt; &gt; q;
-FORE(i,0,h)FORE(j,0,w)if(layout[i][j]==&#39;S&#39;){
-FORE(k,0,4){
-dp[k][i][j]=fuel;
-q.push(make_pair(k,make_pair(i,j)));
-}
-}
-while(!q.empty()){
-int r=q.front().second.first;
-int c=q.front().second.second;
-int d=q.front().first;
-int cost=dp[d][r][c];
-q.pop();
-FORE(i,0,4){
-if(layout[r][c]==&#39;|&#39; &amp;&amp; (i==1 || i==3))continue;
-if(layout[r][c]==&#39;-&#39; &amp;&amp; (i==0 || i==2))continue;
-int nr=r&#43;dr[i],nc=c&#43;dc[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; layout[nr][nc]!=&#39;.&#39;){
-if(layout[nr][nc]!=&#39;&#43;&#39;){
-if((abs(d-i)%2)!=0 &amp;&amp; abs(d-i)==2)continue;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6555&amp;rd=10796 解き方 実装問題。システムテストで落ちやすい問題なので、すべて条件文をもれなく書かないといけない。 コード class Trainyard { public: int reachableSquares(vector&lt;string&gt; layout, int fuel) { int h=layout.size(),w=layout[0].size(); int dr[]={1,0,-1,0},dc[]={0,1,0,-1}; int dp[4][10][10];" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-376-div1-easy---trainyard-x/" />
 

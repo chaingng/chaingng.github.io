@@ -77,24 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			Windowsのプロキシには２種類存在する。
-１つめはInternetExplorerのプロキシサーバー設定、もう一つは主にWindows Updateに使用されるWinhttpのプロキシ設定。
-InternetExplorerはIEのインターネットオプションから設定できるが、
-Winhttpはnetshコマンドにて設定する。
-設定方法としては、直接設定するものとIEの設定をコピーする方法の２つ。
-直接設定する方法
-netsh winhttp set proxy proxy-server="myProxyServer:8080" bypass-list="&lt;local&gt;;*.microsoft.com;*.foo.ne"
-IEの設定をコピーする方法
-netsh winhttp import proxy source=ie
-現在の設定は、以下のコマンドで確認できる。
-netsh winhttp show proxy
-また、以下のコマンドで設定をリセット（プロキシなしに）できる。
-netsh winhttp reset proxy
-WindowsUpdateは手動での更新時はIEの設定が利用されるが、
-自動更新時はWinhttpのプロキシ設定が適用されるため、プロキシ環境下で自動更新を行いたいときは必要な設定となる。
-（参考）公式ページ
-http://support.microsoft.com/kb/2894304/ja
- 
+			Windowsのプロキシには２種類存在する。 １つめはInternetExplorerのプロキシサーバー設定、もう一つは主にWindows Up
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/windows%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -111,18 +97,10 @@ http://support.microsoft.com/kb/2894304/ja
 			</div>
 		</header>
 		<div class="list__excerpt">
-			makeにはいくつかの種類がある。
-・GNU make
-&nbsp;gmakeとかいわれる。
-&nbsp;UNIX系で標準的に使われるもので、Windows系ではcygwinとかでも使われている。
-・Microsoft Program Maintenance Utility
-&nbsp;nmakeともいわれる。
-&nbsp;Visual Studio C++などを使うときはこちらでmakeする必要あり。
-・BSD make
-&nbsp;pmakeとも言われる。
-&nbsp;BSD系のUnixではこちらを使う必要がある。
-そのため、利用する環境に応じてmakeする必要があるので注意。
- 
+			makeにはいくつかの種類がある。 ・GNU make &nbsp;gmakeとかいわれる。 &nbsp;UNIX系で標準的に使われるもので、Window
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/make%E3%81%AE%E7%A8%AE%E9%A1%9E/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -139,17 +117,10 @@ http://support.microsoft.com/kb/2894304/ja
 			</div>
 		</header>
 		<div class="list__excerpt">
-			chkconfigを使う。
-ランレベル２～５での自動起動
-chkconfig httpd on
-起動レベルを指定（ランレベル３，５で起動）
-chkconfig httpd on --level 35
-自動起動しているサービス一覧の表示
-chkconfig --list
-ランレベルとはOSが起動するときのシステムの状態。
-現在どのランレベルで起動しているか、以下のコマンドで知ることができる。
-/sbin/runlevel
- 
+			chkconfigを使う。 ランレベル２～５での自動起動 chkconfig httpd on 起動レベルを指定（ランレベル３，５で起動） chkconfig httpd on --level 35 自動起動しているサービス一覧
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%87%AA%E5%8B%95%E8%B5%B7%E5%8B%95/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -166,19 +137,7 @@ chkconfig --list
 			</div>
 		</header>
 		<div class="list__excerpt">
-			catコマンドを使う。
-下記のコマンドで指定したディレクトリ以下の全てのファイルを結合し、
-newfilename.txtにその結果を保存できる。
-cat targetdir/* &gt; newfilename.txt&nbsp;
-ちなみにmanコマンドは以下の通り。
-Concatenate　filesなのでcatコマンド。
-CAT(1) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; User Commands &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CAT(1)
-NAME
-&nbsp; &nbsp; &nbsp; &nbsp;cat - concatenate files and print on the standard output
-SYNOPSIS
-&nbsp; &nbsp; &nbsp; &nbsp;cat [OPTION]... [FILE]...
-DESCRIPTION
-&nbsp; &nbsp; &nbsp; &nbsp;Concatenate FILE(s), or standard input, to standard output.
+			catコマンドを使う。 下記のコマンドで指定したディレクトリ以下の全てのファイルを結合し、 newfilename.txtにその結果を保存できる
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/linux%E3%81%A7%E8%A4%87%E6%95%B0%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%B5%90%E5%90%88/">Read more…</a>
@@ -198,16 +157,10 @@ DESCRIPTION
 			</div>
 		</header>
 		<div class="list__excerpt">
-			プロセッサを支える技術から、RISCとCISCについて整理。
-RISC（Reduced Instruction Set Computer）は固定長の単純な命令を実行する方式のコンピュータ。
-CISC(Complex Instruction Set Computer)は可変長で命令体型が複雑なコンピュータ。
-RISCの命令は４バイト固定長。
-メモリアクセスはロード命令、ストア命令という専用の命令を使う。
-演算命令のオペランドはレジスタに限る。
-CISCはレジスタでもメモリでもオペランドとして使用できる。
-複雑な命令の処理はパイプライン処理は難しく、高機能の命令はコンパイラで有効に利用できない、等の問題点から固定長の命令を高速で実行できるプロセッサの方が高性能。
-ARM等のプロセッサはRISC方式の命令アーキテクチャを使用している。
-Intel、AMDのx86プロセッサはCISC命令をRISCのような内部命令に変換してパイプライン実行を行っている。 
+			プロセッサを支える技術から、RISCとCISCについて整理。 RISC（Reduced Instruction Set Computer）は固定長の単純な命令を実行する方式
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/risc%E3%81%A8cisc/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -224,18 +177,7 @@ Intel、AMDのx86プロセッサはCISC命令をRISCのような内部命令に�
 			</div>
 		</header>
 		<div class="list__excerpt">
-			/etc/wgetrcに、以下の設定を追加してあげればよい。
-use_proxy = on
-proxy_user = user
-proxy_password = passwordhttps_proxy = http://proxy.yoyodyne.com:18023/http_proxy = http://proxy.yoyodyne.com:18023/ftp_proxy = http://proxy.yoyodyne.com:18023/
-ちなみに、ユーザ名とパスワードの設定はwgetrc中に書いていないが、
-"info wget"で以下のように書いてある。
-&nbsp; &nbsp;You may specify your username and password either through the proxy
-URL or through the command-line options. &nbsp;Assuming that the company's
-proxy is located at 'proxy.company.com' at port 8001, a proxy URL
-location containing authorization data might look like this:
-&nbsp; &nbsp; &nbsp;http://hniksic:mypassword@proxy.company.com:8001/
-&nbsp; &nbsp;Alternatively, you may use the 'proxy-user' and 'proxy-password'
+			/etc/wgetrcに、以下の設定を追加してあげればよい。 use_proxy = on proxy_user = user proxy_password = passwordhttps_proxy = http://proxy.yoyodyne.com:18023/http_proxy = http://proxy.yoyodyne.com:18023/ftp_proxy = http://proxy.yoyodyne.com:18023/ ちなみに、ユーザ名とパスワードの設定はwgetrc
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/wget%E3%82%92%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E7%B5%8C%E7%94%B1%E3%81%A7%E5%88%A9%E7%94%A8/">Read more…</a>
@@ -255,43 +197,10 @@ location containing authorization data might look like this:
 			</div>
 		</header>
 		<div class="list__excerpt">
-			windowsでlinuxコマンド等を使うためのcygwin+minttyのインストールメモ。
-Cygwinのインストールまで
-Cygwinのインストールのために以下からsetup.exeをダウンロードして実行。
-https://www.cygwin.com/
-ダウンロードサイトは「ftp://～.jp」のサイトを指定しないとものすごくインストールが遅くなるので
-注意。
-必要なパッケージとして、後述するapt-cygのインストールのために以下は追加しておく。
-Search欄でパッケージ名を入力してチェックすればOK。
-・wget
-・bzip2
-・git
-・gawk
-・tar
-Cygwin+minttyのセットアップ
-インストールが終わったらc\://binの下にmintty.exeが存在するので
-Cygwinの起動は今後こちらから行う。
-ショートカットを作成して、右クリック＞プロパティから以下の設定を行う。
-・管理者で実行するにチェック
-これを行わないと、bin以下のファイルのwrite権限がないなど困ってしまう。
-・ショートカットのリンク先に以下を追加
-これでPATHが通ったりhomeが/usr/binではなくwindowsのhomeとなる。
--i /Cygwin-Terminal.ico -
-・minttyを起動し、Option&gt;TransparencyをHighにすると見やすい
-・minttyを起動し、Option&gt;TextからLocaleja_JP、文字コードをUTF-8に設定
-apt-cygのインストール
-Cygwinで追加でパッケージをインストールしたい場合には、
-インストール時に使ったsetup.exeを使うことになる。
-これをlinuxのyumのようにCLIでパッケージの追加を行うことができるのがapt-cyg。
-以下のコマンドを実行することでインスール完了。
-$ wget&nbsp;https://raw.githubusercontent.com/kou1okada/apt-cyg/master/apt-cyg
-$ chmod +x apt-cyg
-$ mv apt-cyg /usr/bin/$ apt-cyg -X install gnupg
-毎回の更新確認を不要にするために、以下のエイリアスを設定すると使いやすくなる。
-$ alias apt-cyg='apt-cyg -u '
-ちなみに、apt-cygはwgetを利用しているので
-プロキシ設定されたネットワークでの利用するときはwgetのプロキシ設定が必要なことに注意。
- 
+			windowsでlinuxコマンド等を使うためのcygwin+minttyのインストールメモ。 Cygwinのインストールまで Cygwinのイ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/cygwinminttyapt-cyg%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -308,25 +217,10 @@ $ alias apt-cyg='apt-cyg -u '
 			</div>
 		</header>
 		<div class="list__excerpt">
-			業務でandroidのソースコードを読まなければならなかったときに学んだ、
-効率的なソースコードの読み方のメモ。
-動的な解析と静的な解析
-ソースコードの解析には、動的な解析と静的な解析がある。
-動的な解析とはデバッガなどでプログラムを実行させながら流れを解析する方法で、
-静的な解析とは実際のソースコードを読んでいく方法。
-最初は動的な解析からはじめると効率的に読むことができる。
-androidではlogcatと呼ばれるログ出力関数が用意されていて、
-プログラムを実行するとソースコードに埋め込まれたログが出力される。
-また、開発環境ではなく実際の端末で実行されたログであれば、
-以下のadbコマンドでlogcatを取得することができる。
-$adb logcat -v time &gt; logcat.txt
-ただこのlogcatには読みたいプログラム以外にも端末で動いているものの全ての
-ログが出力されるので、grepなどで必要な箇所だけ切り出してあげると見やすくなる。
-まとめると
-まずはプログラムを動かしてみて、出力されるlogcatからそのログが出力されている
-コードの箇所を探していって、流れを組み立てるとよい。
-その後、組み立てられたクラスの流れができるので、そこから静的解析として
-クラスごとにソースを読んでいけば大まかに内容をつかむことができる。 
+			業務でandroidのソースコードを読まなければならなかったときに学んだ、 効率的なソースコードの読み方のメモ。 動的な解析と静的な解析 ソースコ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/android%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -343,25 +237,7 @@ $adb logcat -v time &gt; logcat.txt
 			</div>
 		</header>
 		<div class="list__excerpt">
-			ドットインストールで学んだ、androidアプリの基礎を整理。
-http://dotinstall.com/lessons/basic_android
-AndroidManifest.xml
-app&gt;src&gt;mainの下にあるファイル。
-activityタグにあるaction.MAINがアプリケーションが起動したときの最初のアクションとなる。
-そして、action.MAINに紐づけられたアクティビティ「MyActivity」が起動する。
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
-&nbsp; &nbsp; package="com.example.takatomo.myapp01" &gt;
-&nbsp; &nbsp; &lt;application
-&nbsp; &nbsp; &nbsp; &nbsp; android:allowBackup="true"
-&nbsp; &nbsp; &nbsp; &nbsp; android:icon="@drawable/ic_launcher"
-&nbsp; &nbsp; &nbsp; &nbsp; android:label="@string/app_name"
-&nbsp; &nbsp; &nbsp; &nbsp; android:theme="@style/AppTheme" &gt;
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;activity
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android:name=".MyActivity"
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android:label="@string/app_name" &gt;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;intent-filter&gt;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;action android:name="
+			ドットインストールで学んだ、androidアプリの基礎を整理。 http://dotinstall.com/lessons/basic_android AndroidManifest.xml app&gt;src&gt;mainの下にあるファイル。 activityタ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/android%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Bactionactivity%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88/">Read more…</a>
@@ -381,17 +257,10 @@ activityタグにあるaction.MAINがアプリケーションが起動したと�
 			</div>
 		</header>
 		<div class="list__excerpt">
-			整理用にメモ。
-短縮URLでアクセスできる仕組みは、要はリダイレクトを利用しているだけ。
-サンプルとして、こちらのページで短縮URLを作成してみる。
-https://goo.gl/
-まずhttp://www.yahoo.co.jp/を入力すると、
-http://goo.gl/0wXWlPという短縮URLが作成される。
-この短縮URLにアクセスすると、
-つまりhttp://goo.gl/にある0wXWlPという名前のファイルにアクセスすることになる。
-そして、このファイルにアクセスした場合は
-http://www.yahoo.co.jp/にリダイレクトするという命令を以下のように.htaccessファイルに書いてあげればリダイレクトにより短縮URLによるアクセスが実現できる。
-Redirect /0wXWP http://www.yahoo.co.jp/&nbsp; 
+			整理用にメモ。 短縮URLでアクセスできる仕組みは、要はリダイレクトを利用しているだけ。 サンプルとして、こちらのページで短縮URLを作成してみ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/%E7%9F%AD%E7%B8%AEurl%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/">Read more…</a>
 		</div>
 	</div>
 </article>

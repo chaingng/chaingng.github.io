@@ -7,58 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 310 DIV1 Easy - PyramidOfCubes (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6577&amp;rd=9990
-・１＊１のキューブが任意の数与えられる。
-・キューブを３＊３、２＊２、１＊１のようにピラミッド状に積み重ねていく。
-下より作っていき、足りなければそこで積み重ねを終える。
-このとき、積み重ねたキューブの表面積を求める。
-解き方 
-シミュレーション問題なので、いかに簡単にコーディングするかがポイント。
-表面積の計算は、以下が独立であることが分かる。
-①上下部分
-②左右部分の手前奥部分
-③左右部分の横部分
-①については、一番下のキューブの数によって計算可能。
-②については、残りのキューブの数とそのときの１辺の長さにて計算可能。
-③については、さらに残ったキューブの数により計算可能。
-最後にコーディングの順番を整理する。
-まずはキューブの数と最大となる１辺の長さから①を計算。
-次に②、③について計算。
-土台を作ることができれば②，③は現在の１辺の長さ＊４。
-作ることができなければ、
-②は残りのキューブの数と現在の１辺の長さの小さい方。
-③は１辺の長さを作ることができる数＋余り分となる。
-コード 
-class PyramidOfCubes {
-public: double surface(int K) {
-double ret=0.0;
-int maxlen;
-long long tmp=0LL;
-for(int i=1;;i&#43;&#43;){
-tmp&#43;=i*i;
-if(tmp&gt;=K){
-maxlen=i;
-break;
-}
-}
-if(K&gt;=maxlen*maxlen)ret&#43;=maxlen*maxlen*2;
-else ret&#43;=K*2;
-for(int len=maxlen;len&gt;=1;len--){
-if(K&lt;=0)break;
-if(K&gt;=len*len){
-ret&#43;=len*4;
-K-=len*len;
-continue;
-}
-if(K&gt;=len)ret&#43;=len*2;
-else ret&#43;=K*2;
-while(K&gt;0){
-ret&#43;=2;
-K-=len;
-}
-}
-return ret;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6577&amp;rd=9990 ・１＊１のキューブが任意の数与えられる。 ・キューブを３＊３、２＊２、１＊１のようにピラミッド状に積み重ねていく。 下より作っていき、足り" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-310-div1-easy---pyramidofcubes-%E5%BE%A9%E7%BF%92/" />
 

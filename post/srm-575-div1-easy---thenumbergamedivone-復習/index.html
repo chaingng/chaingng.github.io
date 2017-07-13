@@ -7,51 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 575 DIV1 Easy - TheNumberGameDivOne (復習○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12496&amp;rd=15495
-２人でのゲーム。
-ある数が与えられ、プレイヤーは１とその数自身以外の約数をそこから引くことができる。
-約数を引いたら、次のプレイヤーに交替して進めていく。
-このとき、ある数が与えられたときに最初のプレイヤーが勝つなら”Ｊｏｈｎ”、
-負けるなら”Ｂｒｕｓ”を返す。
-解き方 
-与えられる数の最大は１０＾１８のため、ｄｐでは解くことができない。
-そのため、法則がないか見つける。
-とりあえず「適当な数までサンプル出力し、法則をながめる」ことが１つの手法。
-法則は以下の通り。
-１）２＾ｎ以外の偶数が与えられたら勝ち
-この場合、ｘ＝２ｙ＊２ｚ＝２（ｙ＋ｚ）、
-（ただしｙ＋ｚは２＾ｎではない、つまり奇数の約数を含む）
-で表わすことができる。
-このとき、偶数と奇数の約数が必ず存在するので勝ちとなる。
-２）奇数が与えられたら負け
-奇数は「素数」もしくは「奇数で割る」ことができる。
-奇数で割れるときは、奇数ー奇数のため必ず偶数になる。
-このとき、２＾ｎを含んでいるとすると奇数はｘ＝２＾ｎ＋ｙと表わせるが
-２＾ｎの倍数で割れないため、２＾ｎの偶数ではない。
-つまり、奇数を引いたときは２＾ｎ以外の偶数が現れる。
-２＾ｎ以外の偶数は必ず約数が存在して、
-一方奇数で割ることができなければ負けとなるためこの場合は負けとなる。
-３）２＾ｎの偶数のとき
-たとえば２＾３＝８のときは、２，４で割ることができる。
-２＾１を引くと６となり２＾ｎ以外の偶数が出るので負けとなる。
-そのため、２＾ｎが与えられた時は２＾（ｎ－１）を引くしかないが
-その結果が２、つまりｎが偶数のときは勝ちとなるが
-奇数のときは負けとなる。
-コード 
-class TheNumberGameDivOne {
-public: string find(long long n) {
-int num=0;
-if(n%2)return &#34;Brus&#34;;
-while(n%2==0){
-n/=2;
-num=(num&#43;1)%2;
-}
-if(n!=1)return &#34;John&#34;;
-if(num)return &#34;Brus&#34;;
-return &#34;John&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12496&amp;rd=15495 ２人でのゲーム。 ある数が与えられ、プレイヤーは１とその数自身以外の約数をそこから引くことができる。 約数を引いたら、次のプレイヤーに交替" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-575-div1-easy---thenumbergamedivone-%E5%BE%A9%E7%BF%92/" />
 

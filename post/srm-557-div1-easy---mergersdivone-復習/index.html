@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 557 DIV1 Easy - MergersDivOne (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12195
-山登りをし、スタートの高さとゴールの高さ、ステップ数が与えられる。
-１ステップごとに、１段上がるか下がるかすることができる。
-また、登山の部分列が与えられる。
-このとき、登山にその部分列が存在するときは”ＹＥＳ”、存在しないときは”ＮＯ”を返す。
-解き方 
-まずはその部分列の操作をしたとき、ゴールにたどり着けるかを判定。
-残りのステップ数がゴールへの距離も多い時はＮＯ。
-残りのステップ数を２で割ったときの余りと、ゴールへの距離を２で割ったときの余りが一致しない場合もＮＯ．
-次に、その部分列の操作をしたときに高さが０未満にならないかを判定。
-まず、残りのステップ数からゴールまでのステップ数を引き、その半分は余裕がある。
-また部分列の操作をしたあとに上る操作ならば最初に登っておいてもよいため、
-ゴールまでのステップ数の分も余裕がある。
-Challenge
-登山のため、高さが０未満になることはないことに注意。
-コード 
-class FoxAndMountainEasy {
-public: string possible(int n, int h0, int hn, string history) {
-int x=h0,m=history.size();
-FORE(i,0,history.size()){
-if(history[i]==&#39;U&#39;)x&#43;&#43;;
-else x--;
-}
-int d=hn-x;
-if(d&lt;0)d=-d;
-if(n-m&lt;d)return &#34;NO&#34;;
-if((n-m)%2!=d%2)return &#34;NO&#34;;
-int up=(n-m-d)/2;
-if(x&lt;hn)up&#43;=hn-x;
-x=h0&#43;up;
-FORE(i,0,history.size()){
-if(history[i]==&#39;U&#39;)x&#43;&#43;;
-else x--;
-if(x&lt;0)return &#34;NO&#34;;
-}
-return &#34;YES&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12195 山登りをし、スタートの高さとゴールの高さ、ステップ数が与えられる。 １ステップごとに、１段上がるか下がるかすることができる。 また、登山の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-557-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/" />
 

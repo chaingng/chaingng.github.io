@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 153 DIV1 Easy - Inventory (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1772&amp;rd=4570
-ある製品について、何日間で何個売れるかがわかっている。
-複数の製品について上記の情報が与えられたとき、
-１カ月あたり、つまり３０日あたり平均何個の製品が売れるかを求めたい。
-ただし、情報が０日間であったときはその製品はないものとみなす。
-また、割りきれない場合は誤差1e-9を引いたのちに繰り上げる。
-解き方 
-実装自体はシンプル。
-以下の例外条件をきちんと書けるかがポイント。
-・情報が０日間はカウントしない。（売れる数が０個のときはカウント）
-・誤差の計算（問題文のとおり、1e-9を引く）
-・最後に割り算が来るので、０のときの例外条件を記載
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Inventory {
-public: int monthlyOrder(vector&lt;int&gt; sales, vector&lt;int&gt; daysAvailable) {
-double cnt=0.0,ret=0.0;
-FORE(i,0,sales.size()){
-if(daysAvailable[i]==0)continue;
-ret&#43;=sales[i]*30.0/daysAvailable[i];
-cnt&#43;&#43;;
-}" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1772&amp;rd=4570 ある製品について、何日間で何個売れるかがわかっている。 複数の製品について上記の情報が与えられたとき、 １カ月あたり、つまり３０日あたり平" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-153-div1-easy---inventory-%E5%BE%A9%E7%BF%92/" />
 

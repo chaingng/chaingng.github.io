@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 650 DIV1 Easy - TaroFillingAStringDiv1 (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13669&amp;rd=16314
-・AとBから成る文字列を作りたい。
-・ただし、i番目の文字はAかBか決まっており、最初にその情報が与えられる。
-・また、できるだけAとBが連続しているようにはしたくない。
-・上記の情報が与えられるとき、できるだけAとBが連続しないような文字列の場合の数を
-求める。
-解き方 
-・まず、できるだけAとBが連続しないような文字列を求める。
-与えられた情報の位置でソートし、それぞれの間について考える。
-このとき、それぞれのスペースの数＋両端のAかBの一致か不一致かによって
-AとBがひとつも連続しないか、そうでないかがわかる。
-・次に、そのような場合の数を求める。
-・AとBが連続しないようなケースの場合は1通りしか置き方はない。
-・AとBが連続するようなケースは、スペースの数だけ場合の数が存在する。
-・最後にそれぞれのスペースについての積をとってあげれば答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int MOD=1000000007;
-class TaroFillingAStringDiv1 {
-public: int getNumber(int N, vector&lt;int&gt; position, string value) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13669&amp;rd=16314 ・AとBから成る文字列を作りたい。 ・ただし、i番目の文字はAかBか決まっており、最初にその情報が与えられる。 ・また、できるだけAとBが" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-650-div1-easy---tarofillingastringdiv1-/" />
 

@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2011 TCO Online Round 1 - TripleStrings" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11374&amp;rd=14560
-・○とXからなる配列initがあらかじめ与えられる。
-・この配列を操作して、最終的にはgoalで示される配列にしたい。
-・可能な操作としては、最初に空の配列B,Cがあり、initをAとする。
-・１操作で、Aの最初の１文字をBもしくはCの最後につけることが可能。
-・もしくは１操作で、BもしくはCの最初１文字をAの最後につけることが可能。
-・このとき、必要な最小の操作回数を求める。
-解き方 
-・まず、initの配列の一部を残した方法がありそう。
-・この方法は残りの配列のうち○をすべてBに、×をすべてCに入れることで
-残りの配列＊２が答えになる。
-・他の方法としては、AをBにして・・・等いろいろ考えて行き詰ってしまった。
-→他の人のコードをみる。
-・他の方法は最初に考えた方法に含まれる、つまり最悪ケースで文字列長×２回となる。
-・反省：問題文の読み方と紙に書いたトレースが悪かった。もっと整理が必要。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class TripleStrings {
-public: int getMinimumOperations(string init, string goal) {
-int ret=1e&#43;9;
-int n=init.size();" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11374&amp;rd=14560 ・○とXからなる配列initがあらかじめ与えられる。 ・この配列を操作して、最終的にはgoalで示される配列にしたい。 ・可能な操作として" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2011-tco-online-round-1---triplestrings/" />
 

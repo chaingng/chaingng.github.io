@@ -7,31 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 238 DIV1 Middle - SequenceSync　（復習×）" />
-<meta property="og:description" content="問題 
-オートマトン図が与えられ、各状態について１～４までの数字が与えられた時に遷移する状態が与えられる。
-例）　１行目：１　２　２　３　状態０が１～４を与えられた時に遷移する状態
-すべての要素の初期状態についてわかっていないとき、
-すべての要素が同じ状態になるために必要な最小の遷移回数を求める。
-解き方 
-すべての状態の初期状態が不明なので、最悪の場合、つまり各要素が異なる状態を持っていることを考える。
-要素数は２０なので、各要素の状態数は全探索可能。
-よってメモ化を用いて、ＢＦＳにて答えを求める。
-ＤＦＳの場合は深さ優先探索にて最小の長さを求められないケースも発生しうるので、
-うまくいかない。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[1300000],p[30][4],n,ans;
-class SequenceSync {
-public:
-bool ispossible(int x){
-int cnt=0;
-FORE(i,0,n)if(x&amp;(1&lt;&lt;i))cnt&#43;&#43;;
-return cnt==1;" />
+<meta property="og:description" content="問題 オートマトン図が与えられ、各状態について１～４までの数字が与えられた時に遷移する状態が与えられる。 例） １行目：１ ２ ２ ３ 状態０が１～４を与" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-238-div1-middle---sequencesync%E5%BE%A9%E7%BF%92/" />
 

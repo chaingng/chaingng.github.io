@@ -7,48 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 562 DIV1 Easy - PastingPaintingDivOne （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12317&amp;rd=15184
-長方形の模様が与えられる。
-模様はの各セルはＲ，Ｇ，Ｂのいずれかの色、もしくは．で表わされる透明のセルで
-構成される。
-最初は左上に重なるように模様がスタンプされ、次は左上の座標を右に１、下に１移動させてスタンプする。
-Ｔ回スタンプしたとき、Ｒ，Ｇ，Ｂの数を求める。
-解き方 
-Ｔが１０＾９のため、スタンプごとに全探索しては解けない。
-ここでスタンプされた時のＲＧＢの変化は、
-高さ分の回数スタンプした後は常に一定になることがわかれば
-それ以降の回数×Ｔ×ＲＧＢそれぞれの増加数、で解くことができる。
-コード 
-class PastingPaintingDivOne {
-public: vector&lt;long long&gt; countColors(vector&lt;string&gt; clipboard, int T) {
-char check[200][200];
-vector&lt;long long&gt; ans(3,0);
-int h=clipboard.size(),w=clipboard[0].size();
-long long pr=0,pg=0,pb=0;
-FORE(i,0,200)FORE(j,0,200)check[i][j]=&#39;.&#39;;
-FORE(n,0,h){
-T--;
-FORE(i,n,h&#43;n)FORE(j,n,w&#43;n)if(clipboard[i-n][j-n]!=&#39;.&#39;)check[i][j]=clipboard[i-n][j-n];
-ans[0]=ans[1]=ans[2]=0;
-FORE(i,0,200)FORE(j,0,200){
-if(check[i][j]==&#39;R&#39;)ans[0]&#43;&#43;;
-if(check[i][j]==&#39;G&#39;)ans[1]&#43;&#43;;
-if(check[i][j]==&#39;B&#39;)ans[2]&#43;&#43;;
-}
-if(T==0)return ans;
-}
-FORE(i,h,clipboard.size()&#43;h)FORE(j,h,clipboard[0].size()&#43;h)if(clipboard[i-h][j-h]!=&#39;.&#39;)check[i][j]=clipboard[i-h][j-h];
-FORE(i,0,200)FORE(j,0,200){
-if(check[i][j]==&#39;R&#39;)pr&#43;&#43;;
-if(check[i][j]==&#39;G&#39;)pg&#43;&#43;;
-if(check[i][j]==&#39;B&#39;)pb&#43;&#43;;
-}
-pr-=ans[0],pg-=ans[1],pb-=ans[2];
-ans[0]&#43;=pr*T,ans[1]&#43;=pg*T,ans[2]&#43;=pb*T;
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12317&amp;rd=15184 長方形の模様が与えられる。 模様はの各セルはＲ，Ｇ，Ｂのいずれかの色、もしくは．で表わされる透明のセルで 構成される。 最初は左上に重なるよ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-562-div1-easy---pastingpaintingdivone-%E5%BE%A9%E7%BF%92/" />
 

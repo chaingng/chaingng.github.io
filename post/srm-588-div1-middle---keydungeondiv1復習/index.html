@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 588 DIV1 Middle - KeyDungeonDiv1　（復習×）" />
-<meta property="og:description" content="問題 
-最初に赤い鍵をkey[0]個、緑の鍵をkey[1]個、白い鍵をkey[2]個与えられる。
-ドアが複数存在し、ドアごとに空けるために必要な赤い鍵の数、緑の鍵の数がわかっている。また、ドアを開けた時に得られる各色の鍵の数が与えられる。
-ドアを空けるためには必要な赤い鍵の数、緑の鍵の数を持っていないといけないが、
-白い鍵は赤い鍵もしくは緑の鍵として代用できる。
-ドアを開けたら使った鍵はなくなってしまう。
-またプレイヤーは好きなところでドアを開けるのをやめてもよい。
-このとき、持っている鍵の数が最大となるときの鍵の合計数を求める。
-解き方 
-最初に白い鍵はできるだけ消費しないように貪欲に解けると思ったが、
-空けるドアの順番によって白い鍵の数が変わってしまうため貪欲法では解けない。
-そのため、すでに空けたドアを状態に持つＤＰでは解けない。
-そこで、白い鍵を赤とみなすか、緑とみなすか全ての場合を考えれば全ての鍵の使い方を探索することができる。
-つまり、すでに空けたドアに加え、白い鍵を赤とみなす数を状態に持つＤＰを用いれば解くことができる。
-今回は鍵の数を返り値にもつＤＦＳではなく、グローバルで答えを更新した方が単純なコードになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int n,dp[(1&lt;&lt;12)][131],best;
-vector&lt;int&gt; doorR,doorG,roomR,roomG,roomW,keys;
-class KeyDungeonDiv1 {
-public:
-void dfs(int mask,int w){
-if(dp[mask][w])return;
-dp[mask][w]=1;
-int r=keys[0]&#43;w,g=keys[1]&#43;keys[2]-w;" />
+<meta property="og:description" content="問題 最初に赤い鍵をkey[0]個、緑の鍵をkey[1]個、白い鍵をkey[2]個与えられる。 ドアが複数存在し、ドアごとに空けるために必要な赤" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-588-div1-middle---keydungeondiv1%E5%BE%A9%E7%BF%92/" />
 

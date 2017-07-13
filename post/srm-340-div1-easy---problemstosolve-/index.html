@@ -7,27 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 340 DIV1 Easy - ProblemsToSolve ××○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=7504&amp;rd=10664
-・各問題について、その楽しさの値が与えられる。
-・最初は０番目の問題を解く。その後、次の問題かその次の問題を選んでいく。
-・選んだ問題の楽しさの値の最小と最大の差が、指定された値より大きくなればそこで終了。そうでなければ、全ての問題を解かなければいけない。
-このとき、解かなければならない問題の最小値を求める。
-解き方 
-問題数が最大５０なので、全探索で解けない。
-問題の条件より、ある２つを選んだときその差が指定値より大きければ終了になる。
-そのため全ての２つの組み合わせの中から、その差が指定値より大きくなるもの全てについて最小値を求めて更新していけばよい。
-コード 
-class ProblemsToSolve {
-public: int minNumber(vector&lt;int&gt; p, int variety) {
-int n=p.size();
-int ret=n;
-FORE(i,0,n)FORE(j,i&#43;1,n){
-if(abs(p[j]-p[i])&gt;=variety)ret=min(ret,(i&#43;3)/2&#43;(j-i&#43;1)/2);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=7504&amp;rd=10664 ・各問題について、その楽しさの値が与えられる。 ・最初は０番目の問題を解く。その後、次の問題かその次の問題を選んでいく。 ・選んだ問題の楽" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-340-div1-easy---problemstosolve-/" />
 

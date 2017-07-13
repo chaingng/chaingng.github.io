@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 643 DIV1 Easy - TheKingsFactorization x○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13594&amp;rd=16086
-整数Nを素因数分解したい。
-ただし、Nはとても大きいため、Nを素因数分解したときの答えの
-昇順に1番目、3番目、、と一つ置きの因数が与えられる。
-このとき、すべての因数を求める。
-解き方 
-Nが最大で10^18のため計算量の考慮が必要。
-まず、Nを与えられた素因数で割ってから残りの数を求めようとすると
-{2,(2),2,(10^16)}のときO(10^8)となり計算量オーバー。
-次に、与えられた素因数の間の数prime[i]とprime[i&#43;1]の間を求めていくやり方も
-{2,(2),10^16}のときO(10^16)となり計算量オーバー。
-そこで、両方の判定を加えてあげることで
-{2,(2),10^6,(10^11)}の場合でも、最大でO(10^6)に収められる。
-コード 
-class TheKingsFactorization {
-public: vector&lt;long long&gt; getVector(long long N, vector&lt;long long&gt; primes) {
-int n=primes.size();
-FORE(i,0,n)N/=primes[i];
-vector&lt;long long&gt; ans=primes;
-FORE(i,0,n-1){
-for(long long j=primes[i];j&lt;=primes[i&#43;1] &amp;&amp; j*j&lt;=N;j&#43;&#43;){
-while(N%j==0){
-ans.push_back(j);
-N/=j;
-}
-}
-}
-if(N!=1)ans.push_back(N);
-sort(all(ans));
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13594&amp;rd=16086 整数Nを素因数分解したい。 ただし、Nはとても大きいため、Nを素因数分解したときの答えの 昇順に1番目、3番目、、と一つ置きの因数が与えら" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-643-div1-easy---thekingsfactorization-x/" />
 

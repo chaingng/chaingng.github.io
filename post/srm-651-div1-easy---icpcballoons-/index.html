@@ -7,48 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 651 DIV1 Easy - ICPCBalloons ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12314&amp;rd=15183
-解き方 
-maxAcceptedの数は15個までなので、各問題についてMとLすべての分け方を試すことが
-できる。
-各分け方について、貪欲に風船を割り当てていけば最適解が求まる。
-コード 
-class ICPCBalloons {
-public: int minRepaintings(vector&lt;int&gt; balloonCount, string balloonSize, vector&lt;int&gt; maxAccepted) {
-int n=maxAccepted.size();
-vector&lt;int&gt; m,l;
-int allm=0,alll=0;
-FORE(i,0,balloonCount.size()){
-if(balloonSize[i]==&#39;M&#39;){
-m.push_back(balloonCount[i]);
-allm&#43;=balloonCount[i];
-}else{
-l.push_back(balloonCount[i]);
-alll&#43;=balloonCount[i];
-}
-}
-sort(m.rbegin(),m.rend());
-sort(l.rbegin(),l.rend());
-int ret=1e&#43;9;
-for(int mask=0;mask&lt;(1&lt;&lt;n);mask&#43;&#43;){
-vector&lt;int&gt; cm,cl;
-int cntm=0,cntl=0;
-FORE(i,0,n){
-if(mask&amp;(1&lt;&lt;i)){
-cm.push_back(maxAccepted[i]);
-cntm&#43;=maxAccepted[i];
-}else{
-cl.push_back(maxAccepted[i]);
-cntl&#43;=maxAccepted[i];
-}
-}
-if(allm&lt;cntm || alll&lt;cntl)continue;
-int cost=0;
-sort(cm.rbegin(),cm.rend());
-sort(cl.rbegin(),cl.rend());
-FORE(i,0,cm.size()){
-int cur= i&gt;=m.size() ? 0 : m[i];" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12314&amp;rd=15183 解き方 maxAcceptedの数は15個までなので、各問題についてMとLすべての分け方を試すことが できる。 各分け方について、貪欲に風船" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-651-div1-easy---icpcballoons-/" />
 

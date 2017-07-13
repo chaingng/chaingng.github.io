@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2011 TCO Qualification Round 3 - AllButOneDivisor (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11415&amp;rd=14531
-・ｎ個の数字が与えられる。
-・このうち、n-1個の数字で割ることができ残りの数字で割ることのできない数のうち最小のものを求める。そのような数字がないときは-1を返す。
-解き方 
-・数字の数は最大６個なので全探索できそう。
-・n-1個の数字で割ることができる数、つまりn-1個の数字の最小公倍数がこれを満たす。
-この数字が残りの数字で割ることができなければ解の候補となる。
-逆に残りの数字で割ることができればどのようにとっても割ることができてしまうため満たさない。
-→System Passed
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class AllButOneDivisor {
-public:
-int gcd(int x,int y){
-return y ? gcd(y,x%y) : x;
-}
-int getMinimum(vector&lt;int&gt; divisors) {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11415&amp;rd=14531 ・ｎ個の数字が与えられる。 ・このうち、n-1個の数字で割ることができ残りの数字で割ることのできない数のうち最小のものを求める。そのよう" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2011-tco-qualification-round-3---allbutonedivisor-/" />
 

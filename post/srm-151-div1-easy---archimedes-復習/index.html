@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 151 DIV1 Easy - Archimedes (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=1693&amp;rd=4560
-円周率を正多角形から求めたい。
-円の外周は２＊円周率＊半径の長さで求められる。
-このとき、正ｎ角形を考えた時に計算できる円周率を求める。
-解き方 
-求めたい円周率をx,半径をr、正n角形の外周をyとすると、
-2*x*r=y　...①
-また、正多角形のうち一つの二等辺三角形の底辺dを考えると
-正ｎ角形の外周はy= n*d
-ここで、dの長さは
-sinα=(d/2)/r
-α=(2*Pi)/(n*2)=Pi/nであるため
-d=2*r*sin(Pi/n)
-y=n*2*r*sin(Pi/n)　...②
-①、②より、
-2*x*r=n*2*r*sin(Pi/n)
-x=n*sin(Pi/n)
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Archimedes {
-public: double approximatePi(int numSides) {
-return numSides*sin(M_PI/numSides);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=1693&amp;rd=4560 円周率を正多角形から求めたい。 円の外周は２＊円周率＊半径の長さで求められる。 このとき、正ｎ角形を考えた時に計算できる円周率を求める。 解" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-151-div1-easy---archimedes-%E5%BE%A9%E7%BF%92/" />
 

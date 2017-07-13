@@ -7,43 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2015 TCO Round 2C Easy - YetAnotherCardGame x" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13912&amp;rd=16523
-解き方 
-dpの問題。
-１．どのような順序で処理されるか
-→petr、snukeが順番に１つずつ出していく
-２．前の状態としてどのような状態があればよいか
-→前に出されたカードと、それまでに重ねられたカードの数
-dp[一番上のカードの数字]＝ 重ねられたカードの数の最大値とし、
-毎ターンできるだけ小さな数字でカードを重ねていけば良い。
-問題文中の取ることが出きる動作のうち、１枚カードを食べるというのは
-要はパスしてもよいというのがわかれば上記に帰着できそうだった。
-コード 
-class YetAnotherCardGame {
-public: int maxCards(vector&lt;int&gt; petr, vector&lt;int&gt; snuke) {
-int n=petr.size();
-int dp[101];
-memset(dp,0,sizeof(dp));
-sort(all(petr));
-sort(all(snuke));
-FORE(i,0,n){
-for(int x=100;x&gt;=0;x--){
-FORE(j,0,n)if(petr[j]&gt;x){
-dp[petr[j]]=max(dp[petr[j]],dp[x]&#43;1);
-break;
-}
-}
-for(int x=100;x&gt;=0;x--){
-FORE(j,0,n)if(snuke[j]&gt;x){
-dp[snuke[j]]=max(dp[snuke[j]],dp[x]&#43;1);
-break;
-}
-}
-}
-return *max_element(dp,dp&#43;101);
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13912&amp;rd=16523 解き方 dpの問題。 １．どのような順序で処理されるか →petr、snukeが順番に１つずつ出していく ２．前の状態としてどのような状態があ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2015-tco-round-2c-easy---yetanothercardgame-x/" />
 

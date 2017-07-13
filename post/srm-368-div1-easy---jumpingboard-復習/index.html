@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 368 DIV1 Easy - JumpingBoard (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8245&amp;rd=10936
-あるボードが存在し、その中には１～９までの数字かＨで表わされる穴が存在する。
-まずは一番左上のセルからスタートし、そのセルに書いてある数だけ上下左右に移動する。ボードの外に出たらそこで終了する。
-このとき、ボードの外に出るまでの最大のターン数を求める。
-ただし、ループが可能でボードの外に出なくてもよい場合はー１を返す。
-解き方 
-ＢＦＳに最初見えたがＤＦＳにて全てのルートを探索する必要がある。
-ただし、一度通ったルートはメモ化が可能なのでｄｐが適用できる。
-注意する点はループが発生した場合はー１を返さなければならないので、
-現在探索中のルートはフラグを立てて判定しなければならない。
-今回は以下のように値を割り振ることでコーディング可能。
-セルを超えた時　：０で終了
-すでに探索したルート：０以上で終了（うち、ホールにあたったときは０で終了）
-現在探索中のルート　：ー２で例外値を返し終了
-それ以外　：－１で次のループに進む
-他の方のコードをみましたが、throw&amp;catchしてもよさそうでした。
-http://community.topcoder.com/stat?c=problem_solution&amp;rd=10936&amp;pm=8245&amp;cr=251074
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int dp[60][60];
-int w,h;
-int dx[]={0,1,0,-1},dy[]={1,0,-1,0};
-vector&lt;string&gt; B;
-class JumpingBoard {" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8245&amp;rd=10936 あるボードが存在し、その中には１～９までの数字かＨで表わされる穴が存在する。 まずは一番左上のセルからスタートし、そのセルに書いてある数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-368-div1-easy---jumpingboard-%E5%BE%A9%E7%BF%92/" />
 

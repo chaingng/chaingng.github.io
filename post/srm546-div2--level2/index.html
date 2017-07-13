@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM546 DIV2 -Level2" />
-<meta property="og:description" content="問題  ①座標上にある２つの長方形の左下と右上の座標が与えられる。
-②２つの長方形の重なりが四角形の時はrectangle、線で接している場合はsegment、
-点で接している場合はpoint、接していないときはnoneを返す。
-解き方  単純に場合分けで解いてもよいが複雑になり間違えやすくなる＆コードが書きにくくなるので、数学的に簡単にできないか検討する。
-まず２次元の問題ということで、それぞれ1次元の問題に分割できないか検討する。
-今回の場合はｘ軸とｙ軸はそれぞれ影響を与えないので独立に考えられる。
-次に、ｘ軸が線・点を作れるか、ｙ軸も同じように線・点を作れるか
-という考え方ができれば、ｘ軸とｙ軸の組み合わせによってどの重なりになるか
-求めることができる。
-最後に各軸が線・点を作れる場合を考える。
-１つ目の長方形の最左辺と最右辺がa、ｂとすると、
-長方形の中にあるｘ軸の値はa&lt;=x&lt;=bとなる。
-同様に2つ目の最左辺と最右辺をｃ、ｄとすると、
-c&lt;=x&lt;=dとなる。
-ここで２つの条件を合わせると、
-max(a,c)&lt;x&lt;min(b,d)がｘの範囲となる。
-つまりxのとりうる範囲　min(b,d)-max(a,c)が
-複数であれば線、
-１点のみであれば点、
-存在しなければ、どちらも作れないということがわかる。
-これをｙ軸も同じように判定すれば簡単に求められる。
-コード  class TwoRectangles {
-public:
-int f(int x){
-if(x&gt;0)return 1;
-if(x==0)return 0;
-return -1;
-}
-string describeIntersection(vector&lt;int&gt; A, vector&lt;int&gt; B) {
-int checkx=f(min(A[2],B[2])-max(A[0],B[0]));
-int checky=f(min(A[3],B[3])-max(A[1],B[1]));
-if(checkx==1 &amp;&amp; checky==1)return &ldquo;rectangle&rdquo;;
-if(checkx==1 &amp;&amp; checky==0 || checkx==0 &amp;&amp; checky==1)return &ldquo;segment&rdquo;;
-if(checkx==0 &amp;&amp; checky==0)return &ldquo;point&rdquo;;
-return &ldquo;none&rdquo;;" />
+<meta property="og:description" content="問題 ①座標上にある２つの長方形の左下と右上の座標が与えられる。 ②２つの長方形の重なりが四角形の時はrectangle、線で接している場合はs" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm546-div2--level2/" />
 

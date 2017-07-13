@@ -74,34 +74,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11232&amp;rd=14724
-各ノードごとに、次に変換するノードが与えられる。
-次に変換するノードは１つ以上になる。
-ノード０からスタートするとき、最後に収束するノード数を求める。
-ただし、ノード数が発散するときはー１を返す。
-解き方 
-グラフを利用する。
-次に変換するノードが複数存在するので、
-単純に連結しているかのグラフと次につながるエッジ数を表わす２つのグラフを利用する。
-単純な連結グラフは発散するかの判定に用いワーシャルフロイドをかけて各ノード間の連結を確かめる。
-自分から出るノードが２個以上かつループが存在するときに発散する。
-次につながるエッジ数のグラフは答えを求めるのに用い、
-ノード数分のステップを最低繰り返してノード数を収束させる。
-答えは各ステップごとに各ノードの数を保存し、全回保存したノード数から足していき更新させればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class MonsterFarm {
-public: int numMonsters(vector&lt;string&gt; transforms) {
-int a[55][55]={},b[55][55]={};
-int n=transforms.size(),MOD=1000000007;
-FORE(i,0,n){
-int x;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11232&amp;rd=14724 各ノードごとに、次に変換するノードが与えられる。 次に変換するノードは１つ以上になる。 ノード０からスタートするとき、最後に収束するノード
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-531-div1-middle---monsterfarm%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -121,30 +94,7 @@ int x;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11604&amp;rd=14547
-正の整数a,b,cが与えられる。
-正の整数A,B,Cがa,b,cをそれぞれ増減した値であるとき
-A*B=Cが成り立つ、|A-a|+|B-b|+|C-c|の最小値を求める。
-解き方 
-Cの値の最大値がわからないと手掛かりがないため、まずはCの最大値を求める。
-答えは|A-a|+|B-b|+|C-c|であることから最小である答えが1*1=1であるとき
-答えの最大値はa+b+c-3となる。
-つまり、Cの最大値はc+a+b+c-3となる。
-次に、Aを１から調べていく。
-Ｂも同様に調べることで対称性があるので、ＡはＡ＊Ａ＜＝Ｃの最大値まで調べればよい。
-Ａが決まったとき、Ｂはc/Aの±１の範囲で最適なCが存在するのでそれぞれの場合について|A-a|+|B-b|+|C-c|の最小値を更新していくことで答えが求まる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class CorrectMultiplication {
-public: long long getMinimum(int a, int b, int c) {
-long long ret=1e+18;
-long long maxans=(long long)a+b+c-3;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11604&amp;rd=14547 正の整数a,b,cが与えられる。 正の整数A,B,Cがa,b,cをそれぞれ増減した値であるとき A*B=Cが成り立つ、|A-a|+|B-b
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-522-div1-middle---correctmultiplication%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -164,37 +114,7 @@ long long maxans=(long long)a+b+c-3;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11454&amp;rd=15037
-ワーカーが複数存在し、それぞれのワーカーi について以下がわかっている。
-a[i]:１時間あたりにこなせる仕事の数
-p[i]:仕事あたりにかかるコスト
-今回、ワーカーから複数人選び、同じ時間働くように均等に仕事を割り当てる。
-こなしたい仕事の数がわかっているとき、必要な最小コストを求める。
-解き方 
-サンプル通りの計算だとワーカーiにタスクtを割り当てた時のコストは
-t[i]*3600/a[i]となる。
-ここで時間が均等になるようtを割り当てるのは計算が難しいので
-考え方を変える。
-ｘ時間を均等に割り当てたとき、
-コスト　&nbsp;：x*(a[i]*p[i] + a[j]*p[j]...+3600K)
-タスク数：x*(a[i]+a[j]...)
-単純にするために１時間の場合を考えると
-コスト　&nbsp;：a[i]*p[i] + a[j]*p[j]...+3600K
-タスク数：a[i]+a[j]...
-ここで、求めたい最小のコストansは
-ans/totalwork*(a[i]+a[j]...)&gt;=a[i]*p[i] + a[j]*p[j]...+3600K
-を満たす最小のansとなる。
-ここで１タスクあたりの最小コストM=ans/totalworkとおくと、M*(a[i]+a[j]...)&gt;=a[i]*p[i] + a[j]*p[j]...+3600K
-よって上記式を満たす最小のMを求め、totalWorkをかけてあげればよい。
-Mは２分探索で探すことができ、
-最適なワーカーはa[i]*(M-p[i])の昇順で選ぶことができる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11454&amp;rd=15037 ワーカーが複数存在し、それぞれのワーカーi について以下がわかっている。 a[i]:１時間あたりにこなせる仕事の数 p[i]:仕事あたりにか
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-535-div1-middle---foxandbusiness%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -214,36 +134,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12045&amp;rd=14738
-ある数字が与えられる。
-プレイヤーは好きな数字を２つもっており、それぞれ決められた個数だけ含んでいる数にしたい。
-ある数字以上であり、かつ上記の条件を満たす最小の数字を求める。
-解き方 
-全探索は１０＾１５のためできない。
-まず必要な桁数は、もとの数字の桁数、もしくは好きな数字の数の合計、のいずれか大きい方になる。
-次に例として、好きな数字が９が２つ、７が１つであるときを考える。
-最初の数字を１２３４５６７８とすると、
-４の桁の数字を一つ足すことで１２３５？？？？
-？には好きな数字を入れることができるので、最適な数字を入れることで探索範囲を狭めることができる。
-ここでいう最適な数字とは、以下になることがわかる。
-（０＊？の残りの桁）＋（小さい数字＊必要数）＋（大きい数字＊必要数）
-上記の例では「１２３５０７９９」となる。
-つまり、少ない数字から足していく方法が最初に思い浮かぶが、
-大きい数字から考えるとシンプルに実装することができる。
-あとは元の数字から１を引き、それより大きい数字を左から全て探索する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class FavouriteDigits {
-public:
-string tostring(long long x){
-string str;
-stringstream out;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12045&amp;rd=14738 ある数字が与えられる。 プレイヤーは好きな数字を２つもっており、それぞれ決められた個数だけ含んでいる数にしたい。 ある数字以上であり、かつ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-546-div1-middle---favouritedigits%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -263,35 +154,7 @@ stringstream out;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12198&amp;rd=15178
-ある数字の列が与えられる。
-数字列の左側から順に、空白から始めてその左側もしくは右側に足していって新たな数字の列を作ることができる。
-また、最低限満たしたい数字の列も与えられる。
-このとき、最低限満たしたい数字の列よりも大きく、かつできるだけ小さい数字列を求める。
-ただしそのような数字の列が存在しない場合は””を返す。
-解き方 
-順に考えると手掛かりがないので、逆の操作をすることを考える。
-逆の操作を考えると、最後の文字列はそれまでできた文字列の左側もしくは右側に足すことになる。
-また、最後から２番目の文字列はそれまでにできた文字列の左側、もしくは右側に、、、とｄｐに落とすことができる。
-ｄｐの状態としては、これまで左側に振り分けた文字、右側に振り分けた文字と、それぞれ振り分けた数字と最低限満たしたい文字列との大小関係を保存する。
-大小関係は文字列数分振り分けた後に、最小文字以上かどうかを判定するのに利用する。
-各ｄｐでの判定については、左側に振り分けた文字については左から順に決まっていくので、それまで＝であったときのみ大小関係を新たに判定する。
-右側に振り分けた文字は右側から決まっていくので、毎回大小関係を判定する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int n;
-string digits,lowerbound;
-string dp[60][60][3][3];
-int used[60][60][3][3];
-class LeftRightDigitsGame2 {
-public:
-string rec(int l,int r,int cmpl,int cmpr){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12198&amp;rd=15178 ある数字の列が与えられる。 数字列の左側から順に、空白から始めてその左側もしくは右側に足していって新たな数字の列を作ることができる。 また
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-556-div1-middle---leftrightdigitsgame2%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -311,30 +174,7 @@ string rec(int l,int r,int cmpl,int cmpr){
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12692&amp;rd=15698
-複数の王朝があり、各王朝ごとに皇帝ごとの在位期間がわかっている。
-ただし王朝ごとに年号の割り振り方が違うので、年数は必ずしも一致していない。
-ここで、王朝同士の戦いの記録がある。記録をもとに、王朝同士がどの年数に対応しているかわかるようになっている。
-このとき、王朝同士の戦いのクエリが与えられた時、そのクエリが整合性がとれるものであればＹ，そうでなければＮを返す。
-解き方 
-王朝ごとの年数の一致を全体でとる必要がある。
-今回グローバルの年号を仮に考えたとき、グローバルと各王朝の年数のずれをXと考える。
-つまり、王朝iのグローバルとの年数のずれはX[i]とする。
-次に、戦いがあったときにどの導き出される制約は以下の通り。
-王朝uにおけるa番目の皇帝の始まりの年数をp[u][a]とすると、
-王朝uのa番目の年号と王朝vのb番目の年号との戦いは
-x[u]+p[u][a] ～p[u][a+1]-1 &nbsp; 対 x[v]+p[v][b] ～p[v][b+1]-1
-x[u]+p[u][a+1]-1&gt;=x[v]+p[v][b] かつ x[v]+p[v][b+1]-1&gt;=x[u]+p[u][b]
-x[u]-x[v]&gt;=p[v][b]-p[u][a+1]+1 &nbsp;かつ x[v]-x[u]&gt;=p[u][a]-p[v][b+1]+1　x[v]-x[u]&gt;=p[u][a+1]-p[v][b]-1 &nbsp;かつ x[u]-x[v]&gt;=p[v][b+1]-p[u][a]-1　
-これをワーシャルフロイド法を用いて全体の整合性を取る。最後にクエリを加えたことで矛盾が生じる、つまり負の経路が発生した時はＮを返しそうでなければＹを返せばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12692&amp;rd=15698 複数の王朝があり、各王朝ごとに皇帝ごとの在位期間がわかっている。 ただし王朝ごとに年号の割り振り方が違うので、年数は必ずしも一致していな
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-586-div1-middle---history%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -354,36 +194,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12779&amp;rd=15705
-複数のペットがおり、各ペットごとにトラックを走りきる最小の時間と最大の時間が与えられる。
-ペットを２つのチームに分けてチームごとに競争させ、２つのチームのゴール時間ができるだけ均衡するようにしたい。
-このとき、２チーム間のゴール時間の差の最小を求める。
-解き方 
-２つのチームをそれぞれＳ，Ｔとしたとき、
-Ｓの最小とＴの最大の差、Ｓの最大とＴの最小の差のうち大きい方が答えになる。
-各ペットの最小時間の集合をＡ，最大時間の集合をＢとしたとき、
-Ｓの最小とＴの最大の差は　|ΣA(s)ーΣB(t)|
-(A(sum)-ΣA(t))-ΣB(t)
-A(sum)-Σ(A(t)+B(t))
-よって、Ａの合計からＴチームのA+Bを引いたものになる。
-同様にＳの最大とＴの最小の差は
-|ΣB(s)-ΣA(t)|
-B(sum)-ΣA(s)-ΣA(t)
-B(sum)-Σ(A(s)+A(t))
-よって、Ｂの合計からＴチームのA+Bを引いたものになる。
-あとは、全てのとりうるA+Bに対してAの合計とＢの合計との差を計算し、
-最小の値が答えになる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class MayTheBestPetWin {
-public:
-int calc(vector&lt;int&gt; A, vector&lt;int&gt; B) {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12779&amp;rd=15705 複数のペットがおり、各ペットごとにトラックを走りきる最小の時間と最大の時間が与えられる。 ペットを２つのチームに分けてチームごとに競争さ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-593-div1-middle---maythebestpetwin%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -403,39 +214,7 @@ int calc(vector&lt;int&gt; A, vector&lt;int&gt; B) {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12842&amp;rd=15711
-多角形の外周の長さである、整数Ｌが与えられる。
-多角形の各点はｘ、ｙ座標上になければいけない。
-このとき、考えられる多角形のうち、辺の数が最も少ないものについて
-一番長い辺と一番短い辺の差を求める。
-解き方 
-問題文のままだと全探索を考えるのも難しいので、法則がないか一つ一つ考える。
-１つ目は四角形のとき、Ｌは偶数でなければいけない。
-２つ目に辺の長さが√xのとき、辺の長さの合計であるLは整数にならない。
-よって、辺の長さは整数となる。
-３つ目として三角形のとき、a^2+b^2=c^2を考えると
-a,b,cの組み合わせは(偶、奇、奇)、（偶、偶、偶）、（奇、奇、偶）。
-よって、a+b+cは必ず偶数になるので、Ｌは偶数である。
-これより、答えは四角形以下となる。
-また、Ｌが３未満のときは答えが存在しないので４以上でなければいけない。
-次に解き方として、三角形のときを考える。
-問題を簡単にするために、１点は原点にあると考える。
-各点はｘｙ座標上になければいけないので、原点との距離ｄである（ｘ、ｙ）を考えると
-ｘ＾２＋ｙ＾２＝ｄ＾２かつｘ、ｙ、ｄは整数でなければいけない。
-これを満たす全ての点に対し合計の長さがＬとなるものを求める。
-そのような三角形がなければ、四角形のときを考える。
-Ｌが４で割り切れれば正方形なので答えは０、そうでなければ長い辺が短い辺＋１である長方形が存在するので答えは１になる。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-static const int maxc=2501*2501;
-int A[20000],B[20000],square[maxc+1];
-class FindPolygons {
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12842&amp;rd=15711 多角形の外周の長さである、整数Ｌが与えられる。 多角形の各点はｘ、ｙ座標上になければいけない。 このとき、考えられる多角形のうち、辺の数が
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-599-div1-middle---findpolygons%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -455,34 +234,7 @@ class FindPolygons {
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9943&amp;rd=13508
-ある文字列と、接頭辞と接尾辞が与えられる。
-ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。
-ただし、接頭辞と接尾辞のマッチ数が同じときは接頭辞のマッチ数が大きいものにする。
-また、上記も同じであれば文字の昇順のものにする。
-解き方 
-シミュレーション問題なので、いかにシンプルに実装するか。
-接頭辞の一致に時間がかかってしまったので、例とＦＯＲを回してみて正しく実装してみるか机上で検証してみるのがやはり大事。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-string P,S;
-class TemplateMatching {
-public:
-int prefixes(string str){
-int score=0;
-int n1=str.size(),n2=P.size();
-FOR(i,0,min(n1,n2)){
-string s1=str.substr(0,i+1);
-string s2=P.substr(n2-1-i,i+1);
-if(s1==s2)score=max(score,i+1);
-}
-return score;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9943&amp;rd=13508 ある文字列と、接頭辞と接尾辞が与えられる。 ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。 ただし、接
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -502,31 +254,7 @@ return score;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12784&amp;rd=15705
-５角形のセルからなるボードがあり、任意の場所に石が置いてある。
-石が隣り合うときは、かならず違う色にしなければいけない。
-このとき、全ての石を塗るのに必要な最小の色の数を求める。
-解き方 
-シミュレーションしてみると、色の数は最大３色になることがわかる。
-色が０色のときは石がないとき、１色のときは全て独立したセルであることから簡単に判定できるので、２色と３色のときの判定ができればよい。
-今回は２色でぬろうとしたときに塗れないとき、つまり隣り合うセルが同じ色になってしまうときに３色を返すようにＤＦＳでコーディングする。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-int w,h;
-vector&lt;string&gt; B;
-int dr[]={-1,-1,0,0,1,1};
-int dc[]={0,1,-1,1,-1,0};
-class HexagonalBoard {
-public:
-int dfs(int r,int c,int v){
-if(B[r][c]!='X')return 0;
-int ret=1;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12784&amp;rd=15705 ５角形のセルからなるボードがあり、任意の場所に石が置いてある。 石が隣り合うときは、かならず違う色にしなければいけない。 このとき、全ての
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-593-div1-easy---hexagonalboard-%E5%BE%A9%E7%BF%92/">Read more…</a>

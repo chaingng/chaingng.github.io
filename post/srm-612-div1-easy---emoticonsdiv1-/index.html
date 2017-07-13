@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 612 DIV1 Easy - EmoticonsDiv1 (××○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10543&amp;rd=15845
-・笑顔の顔文字をsmiles分送りたい。
-・最初はsmiles１個分送っている。
-・１回の操作で、現在の送っている数をクリップボードにコピーできる。
-・１回の操作で、クリップボードにコピーしている分の顔文字を送ることができる。
-・１回の操作で、現在送っている数を一つ減らすことができる。
-・このときの最小の操作回数を求める。
-解き方 
-・dpで解けそう
-・パラメータとしては、これまでに送っている顔文字の数、クリップボードにコピーされている顔文字の数で計算量も足りそう
-・サンプルは通った
-→System Failed
-・削除はｄｐの順序が変わるんで単純なｄｐでは解けない
-・なのでBFSで解く必要がある。距離が小さくなればキューに入れて、smiles数分送ったときの距離が答えになる。
-・反省：ｄｐっぽいが、探索の順が一方向でないときは単純に適用できなく、BFSを用いるケースがある。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int d[3001][2001];
-class EmoticonsDiv1 {
-public: int printSmiles(int smiles) {
-FORE(i,0,3001)FORE(j,0,2001)d[i][j]=1e&#43;9;
-d[1][0]=0;
-queue&lt;pair&lt;int,int&gt; &gt; q;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10543&amp;rd=15845 ・笑顔の顔文字をsmiles分送りたい。 ・最初はsmiles１個分送っている。 ・１回の操作で、現在の送っている数をクリップボードにコピ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-612-div1-easy---emoticonsdiv1-/" />
 

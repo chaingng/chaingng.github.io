@@ -7,59 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM539 DIV2 -Level2" />
-<meta property="og:description" content="問題
-①数字の配列が２つ与えられる。
-それぞれの番号は、岩が入るＢＯＸの最小の数と最大の数を表わす。
-②あなたは岩を無数に持っており、選んだＢＯＸに最小の数以上、
-最大の数まで岩を入れることができる。
-③このとき、岩を９００１個以上入れた時に表わすことのできる
-岩の個数の場合の数を返す。
-解き方
-問題文を最初ミスリーディングしてしまったのですが、
-「９００１個以上入れることのできる場合の数」ではなく、
-「表わすことのできる岩の個数の場合の数」になります。
-最初にこのまま全探索しても手掛かりがないため、
-全てのＢＯＸの選び方はＯ（２＾１５＝１０＾３＊３２）で選ぶことができるため
-選んだＢＯＸについて考える。
-そうすることで最小の岩の数と最大の岩の数がわかるため、
-９００１以上の表わせる岩の個数がわかる。
-ただし表わせる岩の個数を配列に保存しようとすると
-次に、岩の数は１０＾６とかなり大きいため、
-Ｏ（１０＾６＊１０＾３＊３２）で計算できない。
-そこで、全て配列に保存するのではなく
-範囲を保存することを考える。
-始点の岩の数の配列を＋１とし、終点の次の配列をー１とすることで、
-＋のときはその間の数は存在することとなる。
-この処理を全て行っていくと、
-配列の数を最初から足していったとき＋１以上のときはその数は存在することとなる。
-Ｃｈａｌｌｅｎｇｅポイント
-配列（ループ）の数を１０＾７＊２だとエラーになってしまいました。
-１０＾６＊１．６だと通ったので、
-１０＾７＊２以上にならないことがＣｈａｌｌｅｎｇｅのポイントになりそうです。
-またケアレスミスをしてしまいましたが
-ビット列計算をするときは＆＆ではなく＆になります。
-コード
-class Over9000Rocks {
-public: int countPossibilities(vector&lt;int&gt; lowerBound, vector&lt;int&gt; upperBound) {
-int n=lowerBound.size(),ans=0;
-vector&lt;int&gt; check(16000000,0);
-for(int select=1;select&lt;(1&lt;&lt;n);select&#43;&#43;){
-int upper=0,lower=0;
-for(int j=0;j&lt;n;j&#43;&#43;){
-if(select&amp;1&lt;&lt;j){
-lower&#43;=lowerBound[j];
-upper&#43;=upperBound[j];
-}
-}
-check[lower]&#43;&#43;;
-check[upper&#43;1]--;
-}
-int parity=0;
-FORE(i,0,(int)check.size()){
-parity&#43;=check[i];
-if(i&gt;9000 &amp;&amp; parity&gt;0)ans&#43;&#43;;
-}
-return ans;" />
+<meta property="og:description" content="問題 ①数字の配列が２つ与えられる。 それぞれの番号は、岩が入るＢＯＸの最小の数と最大の数を表わす。 ②あなたは岩を無数に持っており、選んだＢＯＸ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm539-div2--level2/" />
 

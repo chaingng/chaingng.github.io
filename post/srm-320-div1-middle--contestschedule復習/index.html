@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 320 DIV1 Middle -ContestSchedule　（復習×○）" />
-<meta property="og:description" content="問題 
-http://topcoder.bgcoder.com/print.php?id=1405
-複数のプログラミングコンテストが開催され、各コンテストについて開始時間s、終了時間t、勝率pが与えられる。
-プレイヤーはできるだけ多くのコンテストで勝ちを収めたい。ただし、時間が重複しているコンテストには出ることができない。
-このとき、最も勝ちを収めることができたときの勝数を求める。
-解き方 
-サンプルを見ると、重複していない限りはできるだけ多くのコンテストに出場した方がよいことがわかる。
-開始時間でソートし、該当コンテストにおいて最も勝数が高い場合は、その一つ前までの最適な勝数がわかっていれば求めることができる。
-これを利用して、漸化式でｄｐを解く。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class ContestSchedule {
-public:
-double expectedWinnings(vector&lt;string&gt; contests) {
-int n=contests.size();
-vector&lt;pair&lt;int,pair&lt;int,int&gt; &gt; &gt; p(n);
-FORE(i,0,n){
-stringstream out(contests[i]);
-out&gt;&gt;p[i].first&gt;&gt;p[i].second.first&gt;&gt;p[i].second.second;
-}
-sort(all(p));
-int dp[60];" />
+<meta property="og:description" content="問題 http://topcoder.bgcoder.com/print.php?id=1405 複数のプログラミングコンテストが開催され、各コンテストについて開始時間s、終了時間t、勝率pが与えられる。 プレイヤーはできるだけ多くの" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-320-div1-middle--contestschedule%E5%BE%A9%E7%BF%92/" />
 

@@ -77,45 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11023&amp;rd=14236
-ある小数が与えられる。
-この小数と、接頭辞が最も多く一致する、分母がmaxDen以下の分数と
-それが何桁一致するかを求める。
-そのような分数が複数存在する場合は、最も分母が小さいもの、
-分母が一緒であれば分子が最も小さいものを求める。
-解き方 
-分母の数が１０００なのでO(10^6)となり、全探索で求められる。
-コード 
-class BestApproximationDiv1 {
-public:
-int calc(string s1,string s2){
-int ret=1;
-FORE(i,0,s1.size()){
-if(s1[i]==s2[i])ret++;
-else break;
-}
-return ret;
-}
-string findFraction(int maxDen, string number) {
-int a=1000,b=1000,score=-1;
-for(int i=1;i&lt;=maxDen;i++)for(int j=0;j&lt;i;j++){
-int x=(int)(1000000.0*j/i);
-stringstream out;
-string str;
-out&lt;&lt;x;
-out&gt;&gt;str;
-while(str.size()&lt;6)str='0'+str;
-int tmp=calc(str,number.substr(2));
-if(tmp&gt;score){
-a=j,b=i,score=tmp;
-}
-}
-char ch[100];
-sprintf(ch,"%d/%d has %d exact digits",a,b,score);
-return ch;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11023&amp;rd=14236 ある小数が与えられる。 この小数と、接頭辞が最も多く一致する、分母がmaxDen以下の分数と それが何桁一致するかを求める。 そのような分数
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-483-div1-easy---bestapproximationdiv1-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -132,47 +97,7 @@ return ch;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10992&amp;rd=14239
-ある整数sからtに変換したい。
-変換には＋、＊、ー、／の４つの操作があり、＋は現在の数と同じ数を足し、
-＊は現在の数と同じ数をかけ、ーは現在の数と同じ数を引き、／は同じ数を割る。
-このとき、ｔに変換したときの操作手順を返す。
-複数の操作手順があるときは少ない手順数のものを、同じ手順数であれば
-辞書順で最小のものを返す。
-そのような手順がないときは”:-(”を返す。
-解き方 
-まず、ーにしたときは０となり、答えは１以上であるためーは使用しない。
-次に、＋と＊の操作をしたときは
-操作後の数がtから割れる数にならなければならない。
-このような数について、幅優先探索で調べていく。
-また、／は数を１にして調べていくので、最初に／がある場合も
-一緒に調べればよい。
-コード 
-class OneRegister {
-public: string getProgram(int s, int t) {
-if(s==t)return "";
-map&lt;long long,string&gt; m;
-string ret="";
-queue&lt;pair&lt;long long,string&gt; &gt; q;
-q.push(make_pair(s,""));
-q.push(make_pair(1,"/"));
-while(!q.empty()){
-long long x=q.front().first;
-string str=q.front().second;
-q.pop();
-if(x==t){
-if(ret.empty() || ret.size()&gt;str.size() ||
-(ret.size()==str.size() &amp;&amp; ret&gt;str))ret=str;
-}
-if(t%(x*2)==0){
-q.push(make_pair(x*2,str+'+'));
-}
-if(x!=1 &amp;&amp; t%(x*x)==0){
-q.push(make_pair(x*x,str+'*'));
-}
-}
-return !ret.empty() ?
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10992&amp;rd=14239 ある整数sからtに変換したい。 変換には＋、＊、ー、／の４つの操作があり、＋は現在の数と同じ数を足し、 ＊は現在の数と同じ数をかけ、ーは現
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-486-div1-easy---oneregister/">Read more…</a>
@@ -192,39 +117,10 @@ return !ret.empty() ?
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=9917&amp;rd=13511
-カードが数枚ずつ山になって積まれている。
-各ターン、すべての山から１枚ずつカードをとって、そのカードで
-一つ山を追加する操作を繰り返す。
-この操作を繰り返したとき必ずもとの配列にもどる周期が必ず存在し、
-そのような周期はいくつであるか求める。
-解き方 
-問題の通り実装する。
-各操作ごとにカードの配列を保存し、最初に同じ配列が
-改めて出現した時にそのターン数の差分を飼えしてあげればよい。
-コード 
-class SolitaireSimulation {
-public: int periodLength(vector&lt;int&gt; heaps) {
-map&lt;vector&lt;int&gt;,int&gt; m;
-sort(all(heaps));
-m[heaps]=0;
-int turn=0;
-while(1){
-turn++;
-vector&lt;int&gt; tmp;
-for(int i=0;i&lt;heaps.size();i++){
-if(heaps[i]-1&gt;0)tmp.push_back(heaps[i]-1);
-}
-tmp.push_back(heaps.size());
-sort(all(tmp));
-heaps=tmp;
-if(m.find(heaps)==m.end())m[heaps]=turn;
-else return turn-m[heaps];
-}
-return -1;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=9917&amp;rd=13511 カードが数枚ずつ山になって積まれている。 各ターン、すべての山から１枚ずつカードをとって、そのカードで 一つ山を追加する操作を繰り返す。 こ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-420-div1-easy---solitairesimulation-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -241,41 +137,7 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10484&amp;rd=13898
-白と黒の２種類からなる２次元のセルがある。
-ただし、そのうちのいくつかの黒のセルは折られており、左半分が白、右半分が
-黒になっている。
-ここからUnfoldlimit数だけ折られているセルを黒のセルに戻すことができる。
-このとき、作ることのできる最大の三角形のセルの数を求める。
-ただし、三角形は左上がすべて斜めのセルであり、右辺と下の辺は端、もしくは
-白のセルで区切られており、中のセルはすべて黒のものとなる。
-解き方 
-実装問題。上記の条件をコードに落とし込んでシンプルに実装する。
-コード 
-int h,w;
-class UnfoldingTriangles {
-public:
-bool can(vector&lt;string&gt; grid,int unfoldLimit,int r,int c,int len){
-if(r+1&lt;h)for(int j=c;j&lt;c+len;j++)if(grid[r+1][j]=='#')return false;
-if(c+len&lt;w)for(int i=r;i&gt;=r-len+1;i--)if(grid[i][c+len]=='#')return false;
-for(int j=c;j&lt;c+len;j++)if(grid[r-(j-c)][j]!='/')return false;
-int cnt=0;
-for(int j=c;j&lt;c+len;j++){
-for(int i=r;i&gt;r-(j-c);i--){
-if(grid[i][j]=='/')cnt++;
-if(grid[i][j]=='.')return false;
-}
-}
-return unfoldLimit&gt;=cnt;
-}
-int solve(vector&lt;string&gt; grid, int unfoldLimit) {
-h=grid.size(),w=grid[0].size();
-int ret=-1;
-FORE(i,0,h)FORE(j,0,w){
-for(int len=1;len&lt;=i+1&amp;&amp;len&lt;=w-j;len++){
-if(can(grid,unfoldLimit,i,j,len)){
-int score= len==1 ? 1 : len*(len+1)/2;
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10484&amp;rd=13898 白と黒の２種類からなる２次元のセルがある。 ただし、そのうちのいくつかの黒のセルは折られており、左半分が白、右半分が 黒になっている。 ここ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-444-div1-easy---unfoldingtriangles-/">Read more…</a>
@@ -295,37 +157,10 @@ int score= len==1 ? 1 : len*(len+1)/2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10515&amp;rd=13900
-六面体のキューブがある。
-キューブの各面は３＊３のセルからなり、
-真ん中が緑、その上下左右が青、その他は赤色に塗られている。
-プレイヤーは最初緑のセルからスタートし、いずれかの方向を向いている。
-そこから左に向く、右に向く、前に進むの３種類のコマンドからなる
-行動リストが与えられる。
-このとき、最終的にいる位置のセルの色を求める。
-解き方 
-キューブを展開して無限のセルの集合と考える。
-このとき、最後の位置が最初の位置とｘ座標、ｙ座標ともに３で割り切れれば緑、
-どちらも割り切れないなら赤、どちらでもなければ青色になる。
-コード 
-class CubeWalking {
-public: string finalPosition(string movement) {
-int dx[]={1,0,-1,0},dy[]={0,1,0,-1};
-int dir=0;
-int x=0,y=0;
-FORE(i,0,movement.size()){
-if(movement[i]=='L')dir--;
-else if(movement[i]=='R')dir++;
-else{
-x+=dx[((dir%4)+4)%4],y+=dy[((dir%4)+4)%4];
-}
-}
-if(x%3==0 &amp;&amp; y%3==0)return "GREEN";
-if(x%3!=0 &amp;&amp; y%3!=0)return "RED";
-return "BLUE";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10515&amp;rd=13900 六面体のキューブがある。 キューブの各面は３＊３のセルからなり、 真ん中が緑、その上下左右が青、その他は赤色に塗られている。 プレイヤーは最
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-446-div1-easy---cubewalking-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -342,46 +177,10 @@ return "BLUE";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-H＊Wの大きさである２次元の座標があり、そこにできるだけ多くの
-石を置きたい。
-ただし、それぞれの石の距離についてユークリッド距離が２にならないようにしたい。
-このとき、最も多くおける石の個数を求める。
-解き方 
-ユークリッド距離が２になりうるセルについて、４つの区間に分けることができる。
-この区間はそれぞれどのような石の置かれ方をされてもユークリッド距離が
-２になることはない。
-あとは、各区間について置ける最大の石の個数を求めればよい。
-区間中のセルの数をDFSで求め、その（セルの数＋１）／２が
-置くことができる最大の石の個数となる。
-コード 
-int used[1010][1010];
-int dr[]={2,0,-2,0},dc[]={0,2,0,-2};
-int w,h,cnt;
-class NotTwo {
-public:
-void dfs(int r,int c){
-used[r][c]=1;
-cnt++;
-FORE(i,0,4){
-int nr=r+dr[i],nc=c+dc[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; !used[nr][nc]){
-dfs(nr,nc);
-}
-}
-}
-int maxStones(int width, int height) {
-int ret=0;
-w=width,h=height;
-memset(used,0,sizeof(used));
-FORE(i,0,height)FORE(j,0,width)if(used[i][j]==0){
-cnt=0;
-dfs(i,j);
-ret+=(cnt+1)/2;
-}
-return ret;
-}
-}; 
+			問題 H＊Wの大きさである２次元の座標があり、そこにできるだけ多くの 石を置きたい。 ただし、それぞれの石の距離についてユークリッド距離が２になら
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-452-div1-easy---nottwo-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -398,27 +197,10 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10071&amp;rd=13509
-ｎ個のくじからm個選ぶ。
-相手も同様にm個選ぶ。
-選んだくじのうち、相手がえらんだくじとk個一致していれば勝ちとなる。
-このとき、勝ちとなる確率を求める。
-解き方 
-ｎが８と小さいので、全探索すればよいだけ。
-コード 
-class TwoLotteryGames {
-public: double getHigherChanceGame(int n, int m, int k) {
-double ret=0.0,sum=0.0;
-for(int i=1;i&lt;1&lt;&lt;n;i++)if(__builtin_popcount(i)==m){
-for(int j=1;j&lt;1&lt;&lt;n;j++)if(__builtin_popcount(j)==m){
-sum++;
-if(__builtin_popcount(i&amp;j)&gt;=k)ret++;
-}
-}
-return ret/sum;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10071&amp;rd=13509 ｎ個のくじからm個選ぶ。 相手も同様にm個選ぶ。 選んだくじのうち、相手がえらんだくじとk個一致していれば勝ちとなる。 このとき、勝ちとなる
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-418-div1-easy---twolotterygames-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -435,28 +217,10 @@ return ret/sum;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10190&amp;rd=13904
-Nimを少し変化させたゲームがあり、
-ある山についてそれよりも左の山が存在する時は選ぶことができない。
-山が与えられたとき、２人のうちどちらが勝つか求める。
-解き方 
-左側からしか山を選ぶことができないので、
-その中で法則がないか考察する。
-まず、すべて１のときは選び方が一様なので
-配列数が偶数のときはBob,そうでないときはAliceが勝つ。
-次に、すべて１でないときは最初に２以上の山が当たられた方が
-その後の順番をコントロールできるので、その選択権を持った方が勝ちとなる。
-コード 
-class OrderedNim {
-public: string winner(vector&lt;int&gt; layout) {
-int n=layout.size();
-FORE(i,0,n)if(layout[i]!=1){
-return i%2 ? "Bob" : "Alice";
-}
-return n%2 ? "Alice" : "Bob";
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10190&amp;rd=13904 Nimを少し変化させたゲームがあり、 ある山についてそれよりも左の山が存在する時は選ぶことができない。 山が与えられたとき、２人のうちどち
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-450-div1-easy---orderednim-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -473,33 +237,10 @@ return n%2 ? "Alice" : "Bob";
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10635&amp;rd=13905
-ある整数が与えられ、下のように同じ数が段になって足されているとき、
-そのような元の数の最小値を求める。
-１２
-１２
-ーーー
-１３２
-解き方 
-最後の一桁を固定して、すべての元の数の桁数で全探索して・・・と
-考えたくなるが、段になって足されているということは
-元の数に１１、１１１、１１１１・・・のいずれかの数が
-かけられたものになる。
-よって、１、１１、１１１・・・と割っていき
-割りきれるもののうち最小の商が答えになる。
-コード 
-class MagicalSource {
-public: long long calculate(long long x) {
-long long ret=x;
-long long p=1LL;
-while(p&lt;x){
-p=p*10+1;
-if(x%p==0)ret=min(ret,x/p);
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10635&amp;rd=13905 ある整数が与えられ、下のように同じ数が段になって足されているとき、 そのような元の数の最小値を求める。 １２ １２ ーーー １３２ 解き方 最後の一
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-451-div1-easy---magicalsource-x/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -516,40 +257,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10451&amp;rd=14174
-迷路とプレイヤーが１ターンで移動できる方向のマスが与えられる。
-このとき、プレイヤーがゴールできない位置、もしくはゴールできるときは
-一番遠い位置にゴールを置きたい。
-ゴールできない位置におけるときはー１を、そうでないときは
-もっとも遠いターン数を求める。
-解き方 
-幅優先探索で全探索すればよい。
-幅優先探索なのでセルの値の更新は一度だけでよい。
-コード 
-class MazeMaker {
-public: int longestPath(vector&lt;string&gt; maze, int startRow, int startCol, vector&lt;int&gt; moveRow, vector&lt;int&gt; moveCol) {
-int h=maze.size(),w=maze[0].size(),n=moveRow.size();
-int used[h][w];
-memset(used,-1,sizeof(used));
-queue&lt;pair&lt;int,int&gt; &gt; q;
-q.push(make_pair(startRow,startCol));
-used[startRow][startCol]=0;
-while(!q.empty()){
-int r=q.front().first;
-int c=q.front().second;
-int turn=used[r][c];
-q.pop();
-FORE(i,0,n){
-int nr=r+moveRow[i],nc=c+moveCol[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; maze[nr][nc]!='X' &amp;&amp; used[nr][nc]==-1){
-q.push(make_pair(nr,nc));
-used[nr][nc]=turn+1;
-}
-}
-}
-int ret=0;
-FORE(i,0,h)FORE(j,0,w)if(maze[i][j]=='.'){
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10451&amp;rd=14174 迷路とプレイヤーが１ターンで移動できる方向のマスが与えられる。 このとき、プレイヤーがゴールできない位置、もしくはゴールできるときは 一番
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-453.5-div1-easy---mazemaker/">Read more…</a>

@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 388 DIV1 Easy - SmoothNumbers ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8519&amp;rd=11122
-解き方 
-あらかじめ対象となる全ての数について素数かどうか判定しておけば
-O(sqrt(10^5) * 10^5)=O(3*10^7)なので間に合う。
-素数かどうかの判定にエラトステネスのふるいを使えば
-こちらの計算量も多く見積もってsqrt(10^5)*5*10^4=1.5*10^7程度。
-コード 
-int isprime[100001];
-class SmoothNumbers {
-public: int countSmoothNumbers(int N, int k) {
-FORE(i,0,100001)isprime[i]=1;
-isprime[0]=0,isprime[1]=0;
-for(int i=2;i*i&lt;=100000;i&#43;&#43;)if(isprime[i]){
-for(int j=i*2;j&lt;=100000;j&#43;=i)isprime[j]=0;
-}
-int ret=0;
-for(int i=1;i&lt;=N;i&#43;&#43;){
-int mx=0;
-for(int j=2;j*j&lt;=i;j&#43;&#43;)if(i%j==0){
-if(isprime[j])mx=max(mx,j);
-if(isprime[i/j])mx=max(mx,i/j);
-}
-if(isprime[i])mx=i;
-if(mx&lt;=k)ret&#43;&#43;;
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8519&amp;rd=11122 解き方 あらかじめ対象となる全ての数について素数かどうか判定しておけば O(sqrt(10^5) * 10^5)=O(3*10^7)なので間に合う。 素数かどうかの判" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-388-div1-easy---smoothnumbers-/" />
 

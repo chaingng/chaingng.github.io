@@ -77,51 +77,10 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。
-・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作ることができる。
-・このとき、作ることのできる三角形の最大の面積を求める。
-解き方 
-三角形の求め方がポイント。
-ヘロンの法則を使って求めると、誤差が生じてしまう。
-そのため、２つのベクトルの外積が平行四角形の面積になることを利用して解く。
-コード 
-class FindTriangle {
-public:
-double largestArea(vector&lt;string&gt; points) {
-int n=points.size();
-int c[n],x[n],y[n],z[n];
-FORE(i,0,n){
-stringstream out(points[i]);
-char ch;
-out&gt;&gt;ch&gt;&gt;x[i]&gt;&gt;y[i]&gt;&gt;z[i];
-if(ch=='R')c[i]=1;
-else if(ch=='G')c[i]=2;
-else c[i]=4;
-}
-double ret=0.0;
-FORE(i,0,n){
-FORE(j,i+1,n){
-FORE(k,j+1,n){
-int flag=c[i]|c[j]|c[k];
-if(flag==1||flag==2||flag==4||flag==7){
-double dx1=x[j]-x[i];
-double dy1=y[j]-y[i];
-double dz1=z[j]-z[i];
-double dx2=x[k]-x[i];
-double dy2=y[k]-y[i];
-double dz2=z[k]-z[i];
-double len=(dy1*dz2-dz1*dy2)*(dy1*dz2-dz1*dy2);
-len+=(dz1*dx2-dx1*dz2)*(dz1*dx2-dx1*dz2);
-len+=(dx1*dy2-dy1*dx2)*(dx1*dy2-dy1*dx2);
-ret=max(ret,len);
-}
-}
-}
-}
-return sqrt(ret)/2.0;
-}
-}; 
+			問題 ・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。 ・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作る
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-288-div1-easy---findtriangle/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -138,44 +97,7 @@ return sqrt(ret)/2.0;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=6013&amp;rd=9808
-・２次方程式が与えられる。
-・このとき、ｘ、ｙを求める。
-ただし解がない時は"NO SOLUTIONS"、解が複数あるときは"MULTIPLE SOLUTIONS"を返す。
-解き方 
-シミュレーションの問題なので、いかに簡単に実装するか。
-ポイントは３つ。
-１つめは、文字列から数字を取り出すところ。
-２つめは、解がない時、複数あるときの例外判定。
-３つめは、ｘ、ｙの求め方。
-１つめについては数字の取り出しとかっこの判定を分けることで実装。
-２つめ、３つめについては方程式を
-Ax+ by= c、Dx+ ey= fとしたとき、
-X= ce-bf / ae-bd,　Y= cd-af / bd-ae　となる。
-２つめ、ae-bdが０のとき ce-bfかつcd-afが０であれば解が複数あり、そうでなければ解が存在しない。
-またx,yのすべての係数が０のとき、右の項がすべて０なら解が複数あり、そうでなければ解が存在しない。
-３つめについては上記の式でｘ、ｙを求めればよい。
-コード 
-class TwoEquations {
-public:
-int getnum2(string str){
-string org;
-if(str[0]=='(')org=str.substr(1,2);
-else org=str[0];
-stringstream out(org);
-int ans;
-out&gt;&gt;ans;
-return ans;
-}
-vector&lt;int&gt; getnum(string str){
-stringstream out(str);
-vector&lt;int&gt; ans(3,0);
-string a0,a1,a2,b,c;
-out&gt;&gt;a0&gt;&gt;b&gt;&gt;a1&gt;&gt;c&gt;&gt;a2;
-ans[0]=getnum2(a0);
-ans[1]=getnum2(a1);
-ans[2]=getnum2(a2);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6013&amp;rd=9808 ・２次方程式が与えられる。 ・このとき、ｘ、ｙを求める。 ただし解がない時は"NO SOLUTIONS"、解が複数あるときは"MULTIPL
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -195,33 +117,10 @@ ans[2]=getnum2(a2);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=5891&amp;rd=8083
-・ビンゴゲームを行う。
-・最初に紙には１～７５の数字が書いてあり、その数字がコールされるとその場所をくり抜くことができる。
-・ビンゴゲームが終わったときに、与えられたパターンと同じところがくりぬかれたらそのパターンにおけるスコアを得ることができる。
-・ここで、ゲームが終わった後にもう一つだけ数字をコールしてもらえることを考える。
-・このとき、もう一つ数字をコールしてもらったときに得られる期待値を返す。
-解き方 
-Exampleを読むことで問題のルールを把握することができるので、あとは実装するだけ。
-くり抜かれたパターンが一致するかの関数を作り、くり抜かれていない差が一つかどうかを判定すればあとは簡単。
-コード 
-class ExtraBall {
-public:
-bool match(string a,string b){
-int dif=0;
-FORE(i,0,a.size())if(a[i]=='.'&amp;&amp;b[i]=='X')dif++;
-return dif==1;
-}
-double expectedPayout(vector&lt;int&gt; card, vector&lt;int&gt; balls, vector&lt;string&gt; patterns, vector&lt;int&gt; prizes) {
-string org="";
-FORE(i,0,card.size())org+='.';
-FORE(i,0,card.size())FORE(j,0,balls.size())if(card[i]==balls[j])org[i]='X';
-int cost=0;
-FORE(i,0,patterns.size())if(match(org,patterns[i]))cost+=prizes[i];
-return (double)cost/(double)(75-balls.size());
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=5891&amp;rd=8083 ・ビンゴゲームを行う。 ・最初に紙には１～７５の数字が書いてあり、その数字がコールされるとその場所をくり抜くことができる。 ・ビンゴゲーム
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -238,25 +137,10 @@ return (double)cost/(double)(75-balls.size());
 			</div>
 		</header>
 		<div class="list__excerpt">
-			ハードウェアクロックとシステムクロック
-Linuxには「ハードウェアクロック」と「システムクロックの」２つが存在します。
-「システムクロック」がＯＳで使われている通常の時計であり、ＰＣを立ち上がっているときのみ有効です。メモリ上で管理するためＰＣをシャットダウンすると消えてしまいます。
-上記のシステムクロックの仕組みですと、ＰＣを起動するたびに毎回時刻を設定しなければいけません。
-初期のＰＣは毎回時刻を設定していました。
-ただ現在では、電源が落ちていても内部バッテリーで動くハードウェアクロックが存在します。
-ＰＣを立ち上げると、ハードウェアクロックを１度だけ参照してシステムクロックが設定される仕組みになっています。
-コマンドでの時刻合わせ
-ハードウェアクロックは内部バッテリーで動いているためバッテリーがなくなれば止まってしまい、また時刻のズレも発生してしまいます。時刻合わせにはＮＴＰの設定など色々と方法はありますが、以前手動で設定する必要があったためその方法をメモしておきます。
-
-手動での設定時の注意ですが、
-システムクロックはハードウェアクロックを参照して設定されるため、システムクロックだけ直しても再起動すると無効になってしまいます。
-そのため、ハードウェアクロックの書き換えが必要になります。
-
-最初に、システムクロックを変更# date --set="2014/1/26 19:32"
-次に、システムクロックをハードウェアクロックに書き込み
-# clock -w
-これで、ＰＣを再起動しても変更後の時刻が有効になります。
- 
+			ハードウェアクロックとシステムクロック Linuxには「ハードウェアクロック」と「システムクロックの」２つが存在します。 「システムクロック」が
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/linux%E3%81%AE%E3%82%AF%E3%83%AD%E3%83%83%E3%82%AF/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -273,28 +157,10 @@ Linuxには「ハードウェアクロック」と「システムクロックの
 			</div>
 		</header>
 		<div class="list__excerpt">
-			クローラーを作るのにPythonが使いやすかったので利用したのですが、
-そのときにimportでひっかかってしまったのでメモ。
-importの書き方
-importには２通りの書き方があります。
-１つ目は、importにパッケージ名.モジュール名と書く方法。
-import urllib.request
-こちらの場合はモジュールを使うのにフルパスを書かなければいけないです。
-html = urllib.request.urlopen(x)
-２つ目は、from　パッケージ名　import モジュール名と書く方法。
-from bs4 import BeautifulSoup
-こちらはモジュール名だけ書くだけで使用できるので、こちらの方がすっきりします。
-datas2 = BeautifulSoup(datas).findAll("td", attrs={"class": "tdSearchResultListKanji"})
-import時の注意点
-モジュールを利用するには、その上階層にある全てのパッケージ、サブパッケージ名を指定しなければいけないということ。
-＃エラー
-import urllib
-＃正しい
-import urllib.request
-Ｃに慣れていたので、この書き方にひっかかってしまいました。
-どうやら、サブパッケージを設けることでお互いがお互いの使用モジュールについて気にしなくてもよいからこの書き方をしているとのことです。
-http://docs.python.jp/2.5/tut/node8.html
- 
+			クローラーを作るのにPythonが使いやすかったので利用したのですが、 そのときにimportでひっかかってしまったのでメモ。 importの書
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/python%E3%81%A7%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E6%99%82%E3%81%AE%E6%B3%A8%E6%84%8F/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -311,53 +177,7 @@ http://docs.python.jp/2.5/tut/node8.html
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11146&amp;rd=14238
-・ある数列が与えられる。
-・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。
-このとき、もとの等差数列を求める。
-解き方 
-等差数列の差と、初項が決まれば等差数列になるかどうかは容易に判定できる。
-問題文から数字はintの範囲なので、この範囲で全探索すれば答えが求まる。
-＃もしくは、初項が偶数・奇数、差が偶数、奇数の場合を考えると
-２項目から０項目の差/2、もしくは３項目から１項目の差/2が答えになることがわかる。
-コード 
-class AfraidOfEven {
-public:
-vector&lt;int&gt; calc(vector&lt;int&gt; org,int d){
-int invalid=0;
-FORE(i,1,org.size()){
-while(1){
-if(org[i]!=org[i-1]+d)org[i]*=2;
-else break;
-if(org[i]&lt;1||org[i]&gt;org[i-1]+d){
-invalid=1;
-break;
-}
-}
-if(invalid){
-org[0]=-1;
-return org;
-}
-}
-return org;
-}
-vector&lt;int&gt; restoreProgression(vector&lt;int&gt; seq) {
-vector&lt;int&gt; ans;
-FORE(d,-1000,1001){
-vector&lt;int&gt; cur=seq;
-while(cur[0]&lt;=1e+9){
-vector&lt;int&gt; tmp=calc(cur,d);
-if(tmp[0]!=-1 &amp;&amp; (ans.empty()||ans&gt;tmp))ans=tmp;
-if(cur[0]&gt;1e+8)break;
-cur[0]*=2;
-}
-}
-return ans;
-}
-};
-using namespace std;
-#define all(c) (c).
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11146&amp;rd=14238 ・ある数列が与えられる。 ・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。 このとき、もとの等差数列を求める。 解き方
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -377,53 +197,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11284&amp;rd=14430
-・nA,nB,paramA,paramBが与えられる。
-・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけparamB/1000をかける。それぞれは好きな順番で行ってもよい。
-このとき、最大となる値を求める。
-解き方 
-２つ解き方がある。
-１つ目は、与えられたパラメータによって法則を見つける、場合分けして解く方法。
-きちんと整理すれば解くことはできるが、少し複雑なので時間がかかってしまう。
-２つ目は、dpを利用する方法。
-今回は乗算の際に最大と最小が入れかわる可能性があるので、最大を求める通常のｄｐ１と最小を求めるｄｐ２の２つが必要。
-データ構造と解き方が分かればこちらが確実でコーディングも早い。
-コードは上記がｄｐの方法、コメントアウトしているのが１つめの方法。
-コード 
-class FoxPlayingGame {
-public:
-double theMax(int nA, int nB, int paramA, int paramB) {
-double dp1[60][60]={},dp2[60][60]={};
-FORE(i,0,nA+1){
-FORE(j,0,nB+1){
-if(i+j){
-dp1[i][j]=-1e+100;
-dp2[i][j]=1e+100;
-}
-if(i)dp1[i][j]=max(dp1[i][j],dp1[i-1][j]+0.001*paramA);
-if(j)dp1[i][j]=max(dp1[i][j],max(dp1[i][j-1]*0.001*paramB,dp2[i][j-1]*0.001*paramB));
-if(i)dp2[i][j]=min(dp2[i][j],dp2[i-1][j]+0.001*paramA);
-if(j)dp2[i][j]=min(dp2[i][j],min(dp1[i][j-1]*0.001*paramB,dp2[i][j-1]*0.001*paramB));
-}
-}
-return dp1[nA][nB];
-/*double ret=0.0;
-double pA=paramA/1000.0;
-double pB=paramB/1000.0;
-if(pA&gt;=0){
-if(pB&gt;=1)ret=nA*pA*pow(pB,nB);
-else if(-1&lt;=pB&amp;&amp;pB&lt;1)ret=nA*pA;
-else {
-if(nB%2==1)nB=max(0,nB-1);
-ret=nA*pA*pow(pB,nB);
-}
-}
-else{
-if(pB&gt;=1)ret=nA*pA;
-else if(0&lt;=pB&amp;&amp;pB&lt;1)ret=nA*pA*pow(pB,nB);
-else if(-1&lt;=pB&amp;&amp;pB&lt;0)ret=nA*pA*pow(pB,nB&gt;0);
-else{
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11284&amp;rd=14430 ・nA,nB,paramA,paramBが与えられる。 ・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけpara
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -443,57 +217,10 @@ else{
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11400&amp;rd=14434
-・縦横の長さが異なる四角形がＮ＊Ｍ個与えられる。
-ただし、同じ行にある四角形の縦の長さは同じであり、同じ列にある四角形の横の長さは同じである。
-・最初にそれぞれの四角形について縦横の長さがわかっているもの、わかっていないもののリストが与えられる。
-・わかっていない四角形については質問することで教えてもらうことができる。
-・Ｎ＊Ｍ個の四角形を合わせた全体の面積を求めたいとき、必要な質問の最小回数を求める。
-解き方 
-Exampleより、任意の四角形を作ったときの３辺がわかれば残りの１辺を求めることができる。
-配列全体に対し上記の処理を行う関数を作り、収束するたびに質問を加え、
-関数を再実行することを繰り返していけばよい。
-・反省：Exampleよりすべての面積を求める方法、ととらえてしまった。
-４辺のうち３つがわかると残りの一つがわかる、ととらえられるかがポイントだった。
-コード 
-class RectangleArea {
-public:
-bool calc(){
-FORE(i,0,H){
-FORE(j,0,W){
-FORE(k,1,H-i){
-FORE(l,1,W-j){
-if(dp[i][j]+dp[i][j+l]+dp[i+k][j]+dp[i+k][j+l]==3){
-dp[i][j]=dp[i][j+l]=dp[i+k][j]=dp[i+k][j+l]=1;
-calc();
-return true;
-}
-}
-}
-}
-}
-return false;
-}
-int minimumQueries(vector&lt;string&gt; known) {
-int ret=0;
-W=known[0].size();
-H=known.size();
-memset(dp,0,sizeof(dp));
-FORE(i,0,H)FORE(j,0,W)if(known[i][j]=='Y')dp[i][j]=1;
-calc();
-while(1){
-int finish=1,xidx=0,yidx=0;
-FORE(i,0,H)if(dp[i][0]==0)finish=0,xidx=0,yidx=i;
-FORE(j,0,W)if(dp[0][j]==0)finish=0,xidx=j,yidx=0;
-if(finish)break;
-dp[yidx][xidx]=1;
-ret++;
-calc();
-}
-return ret;
-}
-}; 
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11400&amp;rd=14434 ・縦横の長さが異なる四角形がＮ＊Ｍ個与えられる。 ただし、同じ行にある四角形の縦の長さは同じであり、同じ列にある四角形の横の長さは同じで
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-505-div1-easy---rectanglearea-%E5%BE%A9%E7%BF%92/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -510,41 +237,7 @@ return ret;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12790&amp;rd=15708
-・求める整数の集合が与えられる。
-・オペレーションはひとつの整数を１足すか全ての整数を２かけるかの２種類。
-・各整数は０からスタートし、オペレーションを繰り返して求める整数の集合にする。
-・このとき、必要な最小オペレーション回数を求める。
-解き方 
-全体の積の回数を正しく求められるかがポイント。
-０にかけても０になることを利用できることがわかれば、
-各整数の中で最大の積の回数が配列全体の積の回数と等しいことが導ける。
-各整数の積と和の回数は２進数で考えることで求められる。
-積の回数は２進数にしたときの桁数ー１であり、
-和の回数は２進数にしたときの１の個数になる。
-コード 
-class IncrementAndDoubling {
-public: int getMin(vector&lt;int&gt; desiredArray) {
-int m=1;
-int add=0;
-FORE(i,0,desiredArray.size()){
-int tmp=0;
-while(desiredArray[i]&gt;0){
-tmp++;
-add+=desiredArray[i]%2;
-desiredArray[i]/=2;
-}
-m=max(m,tmp);
-}
-return m-1+add;
-}
-};
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12790&amp;rd=15708 ・求める整数の集合が与えられる。 ・オペレーションはひとつの整数を１足すか全ての整数を２かけるかの２種類。 ・各整数は０からスタートし、オ
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-596-div1-easy---incrementanddoubling-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -564,48 +257,7 @@ using namespace std;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2866&amp;rd=5853
-・複数のチームが総当たりで対戦する。
-・各チームは与えられた対戦数をホーム・アウェーで対戦する。
-・対戦する際の勝率が与えられる。
-・勝つ試合数は勝率＊対戦数の和を最後に四捨五入(round up)したものになる。
-・最後に勝った試合数の降順、同じ場合は四捨五入前の勝った試合数の降順、それも同じ場合はチーム名の昇順で”チーム名　勝った試合数”のフォーマットで返す。
-解き方 
-勝率の求め方が少しわかりにくくて苦労しました。
-最後のソートは構造体のソートを書きましたが、
-四捨五入前の数字があれば勝った試合数の降順は使わなくてもよいことに気づけばもっと単純にかけました。
-計算ごとに１００で割るのではなく、最後に１００で割るのが丸め誤差を防ぐポイント。
-コード 
-class RegularSeason {
-public:
-struct team{
-double points;
-int score;
-string name;
-bool operator&lt;(const team &amp; v)const{
-if(score!=v.score)return score&gt;v.score;
-if(points!=v.points)return points&gt;v.points;
-return name&lt;v.name;
-}
-};
-vector&lt;string&gt; finalStandings(vector&lt;string&gt; teams, int rounds) {
-int n=teams.size();
-vector&lt;team&gt; t(n);
-vector&lt;string&gt; ans(n,"");
-FORE(i,0,n){
-stringstream out(teams[i]);
-out&gt;&gt;t[i].name;
-FORE(j,0,n){
-double num;
-out&gt;&gt;num;
-if(i==j)continue;
-else{
-t[i].points+=num*rounds;
-t[j].points+=(100-num)*rounds;
-}
-}
-}
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2866&amp;rd=5853 ・複数のチームが総当たりで対戦する。 ・各チームは与えられた対戦数をホーム・アウェーで対戦する。 ・対戦する際の勝率が与えられる。 ・勝つ試
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/">Read more…</a>

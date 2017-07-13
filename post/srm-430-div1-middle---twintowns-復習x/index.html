@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 430 DIV1 Middle - TwinTowns （復習x）" />
-<meta property="og:description" content="問題 
-複数の（ｘ、ｙ）で表わされる点が与えられる。
-各点について、maxPartners以下の次数で結びたい。
-また、各点について結ぶ時はminDistance以上の距離がないといけない。
-２点間の距離は|x1-x2|&#43;|y1-y2|で表わされる。
-このとき、できるだけ多くの点で結びたいときの最終的な結ばれた数と、そのときの最小となる距離の合計を求める。
-解き方 
-点の数は最大１０とのことで、なんとなくビットｄｐが利用できそう。
-ただしmaxPartnersは３以下とのことなので単純なビットではいけない。
-今回、各点ｄｘの値を次数とした、ｆ（ｄ１、ｄ２、ｄ３）という関数を考える。
-この値を減らしていきＤＦＳで探索することで最終的な答えを求めることができる。
-ｄｘは最大３となる数であるため、各点ごとに２桁で表わされるビットｄｐを利用する。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-int v[1&lt;&lt;(2*10)],m[1&lt;&lt;(2*10)];
-class TwinTowns {
-public: vector&lt;int&gt; optimalTwinTowns(vector&lt;int&gt; x, vector&lt;int&gt; y, int maxPartners, int minDistance) {
-int n=x.size();" />
+<meta property="og:description" content="問題 複数の（ｘ、ｙ）で表わされる点が与えられる。 各点について、maxPartners以下の次数で結びたい。 また、各点について結ぶ時はminD" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-430-div1-middle---twintowns-%E5%BE%A9%E7%BF%92x/" />
 

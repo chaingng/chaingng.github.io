@@ -7,30 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 669 DIV1 Easy - SubdividedSlimes x" />
-<meta property="og:description" content="問題 
-https://community.topcoder.com/stat?c=problem_statement&amp;pm=13946&amp;rd=16549
-解き方 
-すべての場合の数を考えるとはまってしまう。
-逆に制約条件を考えると、Sが与えられた時、最大まで分割した時は１がS個並ぶ、
-つまり最大でS-1回分割することができる。
-次に、N回分割するとき、その数の最大は均等に分割すると得られる。
-よって、分割数を２〜S-1まで試していき、最大がMを超えたものが答えになる。
-コード 
-class SubdividedSlimes {
-public: int needCut(int S, int M) {
-for(int i=2;i&lt;=S;i&#43;&#43;){
-vector&lt;long long&gt; num;
-FORE(j,0,i)num.push_back(S/i);
-FORE(j,0,S%i)num[j]&#43;&#43;;
-long long total=0;
-FORE(j,0,i)total&#43;=num[j];
-long long sum=0;
-FORE(j,0,i)sum&#43;=num[j]*(total-num[j]);
-if(sum/2&gt;=M)return i-1;
-}
-return -1;
-}
-}; " />
+<meta property="og:description" content="問題 https://community.topcoder.com/stat?c=problem_statement&amp;pm=13946&amp;rd=16549 解き方 すべての場合の数を考えるとはまってしまう。 逆に制約条件を考えると、Sが与えられた時、最大まで分割した時は１がS個並ぶ、 つまり最大" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-669-div1-easy---subdividedslimes-x/" />
 

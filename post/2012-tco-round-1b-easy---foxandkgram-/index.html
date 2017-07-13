@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="2012 TCO Round 1B Easy - FoxAndKgram (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11809&amp;rd=15091
-・複数の長さの棒が与えられ、ここからK-gramを作りたい。
-・K-gramとはK個からなる集合で、
-各要素は長さKの棒もしくは2つの棒を組み合わせて長さK-1のものとなる。
-・与えられた棒から作ることのできるK-gramのうち、最も大きいKのものを求める。
-解き方 
-・棒の個数は最大５０個、長さも最大５０なので全探索ができそう。
-・すべてのKに対してK-gramが作ることができるか判定すればよい。
-・判定の方法としては、棒の長さでソートし１個の棒で成り立つものをカウント後、
-それ以下の長さのペアを左側と右側双方から探索すればよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class FoxAndKgram {
-public: int maxK(vector&lt;int&gt; len) {
-int n=len.size();
-sort(all(len));
-int ret=0;
-FORE(i,1,n&#43;1){
-int l=0,r=n-1,cnt=0;
-while(r&gt;=0 &amp;&amp; len[r]&gt;=i){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11809&amp;rd=15091 ・複数の長さの棒が与えられ、ここからK-gramを作りたい。 ・K-gramとはK個からなる集合で、 各要素は長さKの棒もしくは2つの棒を" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/2012-tco-round-1b-easy---foxandkgram-/" />
 

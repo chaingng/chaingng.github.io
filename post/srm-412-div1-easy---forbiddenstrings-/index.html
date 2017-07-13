@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 412 DIV1 Easy - ForbiddenStrings ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8480&amp;rd=13503
-A,B,Cからなる文字列がある。
-ただし、AとBとCが連続して３つ並ばないようにしたい。
-文字列の長さnが与えられたとき、そのような文字列の総数を求める。
-解き方 
-dpで解けそうな問題。
-前の状態として直前２つの文字が何であったか覚えていればよいので、
-dp[現在位置][２つ前までのAの有無][２つ前までのBの有無][２つ前までのCの有無]
-としてあげればよい。
-コード 
-class ForbiddenStrings {
-public: long long countNotForbidden(int n) {
-long long dp[n&#43;1][4][4][4];
-memset(dp,0,sizeof(dp));
-dp[0][0][0][0]=1;
-FORE(i,0,n)FORE(j,0,4)FORE(k,0,4)FORE(l,0,4){
-int nextj=(j&amp;1)&lt;&lt;1;
-int nextk=(k&amp;1)&lt;&lt;1;
-int nextl=(l&amp;1)&lt;&lt;1;
-if(!(k &amp;&amp; l))dp[i&#43;1][nextj|1][nextk][nextl]&#43;=dp[i][j][k][l];
-if(!(j &amp;&amp; l))dp[i&#43;1][nextj][nextk|1][nextl]&#43;=dp[i][j][k][l];
-if(!(j &amp;&amp; k))dp[i&#43;1][nextj][nextk][nextl|1]&#43;=dp[i][j][k][l];
-}
-long long ret=0;
-FORE(i,0,4)FORE(j,0,4)FORE(k,0,4)ret&#43;=dp[n][i][j][k];
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8480&amp;rd=13503 A,B,Cからなる文字列がある。 ただし、AとBとCが連続して３つ並ばないようにしたい。 文字列の長さnが与えられたとき、そのような文字列" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-412-div1-easy---forbiddenstrings-/" />
 

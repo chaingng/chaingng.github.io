@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 573 DIV1 Easy - TeamContest （復習○）" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12470&amp;rd=15493
-それぞれのプレイヤーの強さが与えられる。
-３人でチームを作り、チームの強さはそのうち最小と最大の強さを足したものになる。
-自分のチームは最初の３人であり、このとき一番数字が大きくなる順位を求める。
-解き方 
-最初の順番は答えに関係ないので、自分のチームの強さを保存した後
-除いたものを昇順にソートする。
-一番左と一番右のindexを用意し、最強のプレイヤーが最弱のプレイヤーとチームを組んだ場合を考える。
-自分のチームより強ければチームを作り、左のインデックスを２つ動かし、右のインデックスを一つ左に動かす。
-自分のチームより弱ければその最弱のプレイヤーはどれと組んでも負けるので、左のインデックスのみ３つ動かす。
-Challenge
-自分のプレイヤーを除いたのにカウントしてしまったミスを最初してしまったので操作には注意する。
-コード 
-class TeamContest {
-public: int worstRank(vector&lt;int&gt; strength) {
-int my=min(strength[0],min(strength[1],strength[2]))&#43;max(strength[0],max(strength[1],strength[2]));
-int rank=1;
-vector&lt;int&gt; v;
-FORE(i,3,strength.size())v.push_back(strength[i]);
-sort(v.begin(),v.end());
-int l=0,r=v.size()-1;
-while(l&lt;r){
-if(v[l]&#43;v[r]&gt;my){
-rank&#43;&#43;;
-l&#43;=2;
-r--;
-}
-else{
-l&#43;=3;
-}
-}
-return rank;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12470&amp;rd=15493 それぞれのプレイヤーの強さが与えられる。 ３人でチームを作り、チームの強さはそのうち最小と最大の強さを足したものになる。 自分のチームは最" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-573-div1-easy---teamcontest-%E5%BE%A9%E7%BF%92/" />
 

@@ -7,39 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 394 DIV1 Easy - RoughStrings ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8594&amp;rd=11128
-解き方 
-文字を消す回数0〜ｎ回までそれぞれについて、
-最も少ない文字を消す回数と頻出する回数すべての場合について全探索する。
-O（50*50*50log50=1.25*10^6*log50）で間に合う。
-コード 
-class RoughStrings {
-public: int minRoughness(string s, int n) {
-int num[26]={};
-FORE(i,0,s.size())num[s[i]-&#39;a&#39;]&#43;&#43;;
-vector&lt;int&gt; vx;
-FORE(i,0,26)if(num[i]&gt;0)vx.push_back(num[i]);
-sort(all(vx));
-int ret=1e&#43;9;
-for(int sum=0;sum&lt;=n;sum&#43;&#43;)for(int right=0;right&lt;=sum;right&#43;&#43;){
-vector&lt;int&gt; cur=vx;
-FORE(j,0,right){
-int pos=0;
-while(cur[pos]==0)pos&#43;&#43;;
-cur[pos]--;
-}
-FORE(j,right,sum){
-cur[cur.size()-1]--;
-sort(all(cur));
-}
-int idx=0;
-while(cur[idx]==0)idx&#43;&#43;;
-ret=min(ret,cur[cur.size()-1]-cur[idx]);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8594&amp;rd=11128 解き方 文字を消す回数0〜ｎ回までそれぞれについて、 最も少ない文字を消す回数と頻出する回数すべての場合について全探索する。 O（50*50" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-394-div1-easy---roughstrings-/" />
 

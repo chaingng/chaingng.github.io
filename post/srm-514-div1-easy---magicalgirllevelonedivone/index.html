@@ -7,29 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 514 DIV1 Easy - MagicalGirlLevelOneDivOne" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11476&amp;rd=14539
-解き方 
-(1,n)と(1,-n)の動作により現在のマスから２つ上下に移動したマスには
-必ず到達することができる。
-ここで、jumpTypesが偶数のとき、（ｘ，ｙ）が
-（偶数、偶数）→上記より可能　（奇数、奇数）→(1,n) (n,1)により可能
-（偶数、奇数）→(n,1)により可能
-よってすべての（ｘ，ｙ）に到達可能。
-jumpTypesが奇数のときは、
-（偶数、偶数）→上記より可能　（奇数、奇数）→(1,n) により可能
-（偶数、奇数）→不可能
-よって（ｘ，ｙ）が（偶数、奇数）のときだけ不可能となる。
-
-コード 
-class MagicalGirlLevelOneDivOne {
-public: string isReachable(vector&lt;int&gt; jumpTypes, int x, int y) {
-int n=jumpTypes.size();
-FORE(i,0,n)if(jumpTypes[i]%2==0)return &#34;YES&#34;;
-if((x&#43;y)%2==0)return &#34;YES&#34;;
-return &#34;NO&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11476&amp;rd=14539 解き方 (1,n)と(1,-n)の動作により現在のマスから２つ上下に移動したマスには 必ず到達することができる。 ここで、jumpTypes" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-514-div1-easy---magicalgirllevelonedivone/" />
 

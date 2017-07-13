@@ -17,29 +17,7 @@
       <pubDate>Sun, 12 Apr 2015 21:35:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-649-div1-easy---decipherability/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13656&amp;amp;rd=16313
-・a～ｚから成る文字列が与えられる。
-・この文字列から、任意のK個の文字を取り除いたとき、それがどの箇所か
-特定できればCertain、特定できなければUncertainを返す。
-解き方 
-どのような文字列が削除されると特定できないかの法則を探す。
-まず、すべての文字列が削除された場合は特定できる。
-次に、文字列の対称性を考えた場合に、a***aの文字列があった場合
-Kが４以上だとaだけを残すことができ、どちらを消したか特定できない。
-このような同じ文字ではさまれたサブ文字列すべてに対して判定を行い
-ひとつでもあてはまれば特定できない文字列となる。
-コード 
-class Decipherability {
-public: string check(string s, int K) {
-int n=s.size();
-if(K==n)return &#34;Certain&#34;;
-FORE(i,0,n)FORE(j,i+1,n)if(s[i]==s[j]){
-if(j-i&amp;lt;=K)return &#34;Uncertain&#34;;
-}
-return &#34;Certain&#34;;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13656&amp;amp;rd=16313 ・a～ｚから成る文字列が与えられる。 ・この文字列から、任意のK個の文字を取り除いたとき、それがどの箇所か 特定できればCertain、特</description>
     </item>
     
     <item>
@@ -48,42 +26,7 @@ return &#34;Certain&#34;;
       <pubDate>Sun, 12 Apr 2015 10:27:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-654-div1-easy---squarescores/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13694&amp;amp;rd=16318
-・ある文字列が与えられる。
-・文字列はaからzのアルファベット、もしくは?から成る。
-・?の場合、aからzの任意の文字列が入る。
-・また、ある文字列が与えられた時、そのスコアは連続する文字列の数となる。
-（例）aaabaのスコア aが４つ,aaが２つ、aaaが1つ、bが１つで8
-・このとき、与えられた文字列のスコアの期待値を求める。
-解き方
-スコアがabc・・ではなく、aaa,bbbなど連続した文字列だけでよいので、
-実は全探索が可能。
-各部分文字列の位置について、aからzのすべての文字列が連続するときの
-期待値を求めてあげて足していけばよい。
-計算量はO(10^3 * 10~3 * 26)=O(10^7*2.6)なので間に合う。
-まずは全探索できないか考える原則にのっとる。
-コード 
-class SquareScores {
-public: double calcexpectation(vector&amp;lt;int&amp;gt; p, string s) {
-int n=s.size(),m=p.size();
-double prob[m];
-double ret=0.0;
-FORE(i,0,n){
-FORE(j,0,m)prob[j]=1.0;
-FORE(j,i,n){
-if(s[j]==&#39;?&#39;){
-FORE(k,0,m)prob[k]*=p[k]*0.01;
-}
-else{
-FORE(k,0,m)if(k!=s[j]-&#39;a&#39;)prob[k]=0.0;
-}
-FORE(k,0,m)ret+=prob[k];
-}
-}
-return ret;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13694&amp;amp;rd=16318 ・ある文字列が与えられる。 ・文字列はaからzのアルファベット、もしくは?から成る。 ・?の場合、aからzの任意の文字列が入る。 ・また、あ</description>
     </item>
     
     <item>
@@ -92,32 +35,7 @@ return ret;
       <pubDate>Wed, 10 Dec 2014 21:40:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-597-div1-easy---littleelephantandstring-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12854&amp;amp;rd=15709
-文字列の長さが同じである、文字列Aと文字列Bが与えられる。
-文字列Aの任意の文字を１つ選んで、先頭に持ってくる動作を繰り返して文字列Bにしたい。
-このとき、必要な最小の操作回数を求める。
-どうしても文字列Bにできないときは-1を返す。
-解き方 
-・文字列Aの先頭からｘ文字と、文字列Bの後ろからｘ文字のうち最長のｘを求め、
-残りの文字列長が答えになる？
-・サンプルをみると、Aの部分文字列のうち間の文字をとることで部分文字列Bにもできるので
-そうではなさそう。
-・間の文字を取れるということは、Aの部分文字列とBの最後からｘ文字の文字列のうち
-最長のｘをとれればよさそう。
-・最長部分文字列の問題なのでｄｐでｘを求める。
-→System Passed
-・AもBも部分文字列であればｄｐだが、Bは固定文字列なので貪欲法でもよかった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class LittleElephantAndString {
-public: int getNumber(string A, string B) {
-int n=A.size();
-int a[26]={},b[26]={};</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12854&amp;amp;rd=15709 文字列の長さが同じである、文字列Aと文字列Bが与えられる。 文字列Aの任意の文字を１つ選んで、先頭に持ってくる動作を繰り返して文字列Bに</description>
     </item>
     
     <item>
@@ -126,33 +44,7 @@ int a[26]={},b[26]={};</description>
       <pubDate>Mon, 10 Nov 2014 19:29:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2011-tco-online-round-1---triplestrings/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11374&amp;amp;rd=14560
-・○とXからなる配列initがあらかじめ与えられる。
-・この配列を操作して、最終的にはgoalで示される配列にしたい。
-・可能な操作としては、最初に空の配列B,Cがあり、initをAとする。
-・１操作で、Aの最初の１文字をBもしくはCの最後につけることが可能。
-・もしくは１操作で、BもしくはCの最初１文字をAの最後につけることが可能。
-・このとき、必要な最小の操作回数を求める。
-解き方 
-・まず、initの配列の一部を残した方法がありそう。
-・この方法は残りの配列のうち○をすべてBに、×をすべてCに入れることで
-残りの配列＊２が答えになる。
-・他の方法としては、AをBにして・・・等いろいろ考えて行き詰ってしまった。
-→他の人のコードをみる。
-・他の方法は最初に考えた方法に含まれる、つまり最悪ケースで文字列長×２回となる。
-・反省：問題文の読み方と紙に書いたトレースが悪かった。もっと整理が必要。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class TripleStrings {
-public: int getMinimumOperations(string init, string goal) {
-int ret=1e+9;
-int n=init.size();</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11374&amp;amp;rd=14560 ・○とXからなる配列initがあらかじめ与えられる。 ・この配列を操作して、最終的にはgoalで示される配列にしたい。 ・可能な操作として</description>
     </item>
     
     <item>
@@ -161,35 +53,7 @@ int n=init.size();</description>
       <pubDate>Sat, 01 Nov 2014 20:31:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12516&amp;amp;rd=16016
-・ある文字列が与えられる。
-・この文字列の２つの場所を選んで、その間の文字列を順番を逆にすることができる。
-・順番を入れ替えた後最も辞書順に小さくすることのできる、入れ替える場所（ｘ、ｙ）を
-求める。
-・ただし同じ文字列が得られるときはｙが小さい方、さらにｙが小さい時はｘが小さい方の場所を
-求める。
-解き方 
-・単純に入れ替えるｘを小さい方から見ていき、より小さくできる場所があればそこが
-最適になりそう。
-・入れ替える先に同じアルファベットが複数存在するときは、一番手前にあれば一番手前の
-場所になるので最適。
-→System Failed.
-・選んだところの文字列をすべて逆順、という一番基本のところを軽くスルーしてしまった。
-・入れ替える先に同じアルファベットが存在するときは、
-入れ替えた後の文字列が小さいものを選ばなければいけない。
-・入れ替えたアルファベットすべてに対して探索しても計算量は
-2.5*10^3*(1250+2500)=2.5*10^3*3.7*10^3=10^7まではいかないので十分に間に合う。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class SubstringReversal {
-public: vector&amp;lt;int&amp;gt; solve(string S) {
-int n=S.size();</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12516&amp;amp;rd=16016 ・ある文字列が与えられる。 ・この文字列の２つの場所を選んで、その間の文字列を順番を逆にすることができる。 ・順番を入れ替えた後最も辞書順</description>
     </item>
     
     <item>
@@ -198,34 +62,7 @@ int n=S.size();</description>
       <pubDate>Tue, 28 Oct 2014 20:47:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/2014-tco-round-1c-easy---unique-/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13067&amp;amp;rd=15958
-・ある文字列が与えられる。
-・そのうち、同じアルファベットは一度しか使わないようにしたい。
-・同じアルファベットが出現する場合、最初のアルファベットのみ残すようにしたときに
-最後に残る文字列を求める。
-解き方 
-単に実装するだけ。
-アルファベットの出現回数を保持する配列を持っておき、
-初めて出現するアルファベットのみ答えに足していけばよい。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&amp;lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class Unique {
-public: string removeDuplicates(string S) {
-string ret=&#34;&#34;;
-int n=S.size();
-int ch[26];
-memset(ch,0,sizeof(ch));
-FORE(i,0,n){
-if(ch[S[i]-&#39;a&#39;]==0){
-ret+=S[i];
-ch[S[i]-&#39;a&#39;]++;
-}</description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13067&amp;amp;rd=15958 ・ある文字列が与えられる。 ・そのうち、同じアルファベットは一度しか使わないようにしたい。 ・同じアルファベットが出現する場合、最初のアル</description>
     </item>
     
     <item>
@@ -234,29 +71,7 @@ ch[S[i]-&#39;a&#39;]++;
       <pubDate>Sun, 13 Oct 2013 10:23:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-518-div1-easy---largestsubsequence-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11471&amp;amp;rd=14543
-ある文字列が与えられる。
-その文字からいくつかの文字を削除したものがそのサブ文字列と定義される。
-このとき、辞書順で最も降順となるサブ文字列を求める。
-解き方 
-現在の文字列で最も降順のアルファベットがサブ文字列の左側にくる。
-次に、選ばれたアルファベット以降の位置から上記の文字を探す。
-この操作を繰り返すことで答えが求められる。
-コード 
-class LargestSubsequence {
-public: string getLargest(string s) {
-string ret;
-int cur=0;
-while(cur!=s.size()+1){
-int tmp=cur;
-FORE(i,cur+1,s.size())if(s[i]&amp;gt;s[tmp])tmp=i;
-ret+=s[tmp];
-cur=tmp+1;
-}
-return ret;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11471&amp;amp;rd=14543 ある文字列が与えられる。 その文字からいくつかの文字を削除したものがそのサブ文字列と定義される。 このとき、辞書順で最も降順となるサブ文字</description>
     </item>
     
     <item>
@@ -265,39 +80,7 @@ return ret;
       <pubDate>Sat, 24 Aug 2013 07:35:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-563-div1-easy---foxandhandle-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12331&amp;amp;rd=15185
-文字列が与えられて、その文字をシャッフルして元の文字にランダムに挿入する。
-挿入後の文字列が与えられた時、元の文字列のうち辞書順に最小のものを求める。
-解き方 
-文字の種類については、与えられた各文字を２で割ったものになる。
-次に文字の順番については、ひとつ選ぶとその前の文字は選べなくなる。
-選ぶべき文字の種類を満たし、かつ辞書順になるよう小さいアルファベットから
-上の判定を繰り返していく。
-コード 
-class FoxAndHandle {
-public: string lexSmallestName(string S) {
-int num[26]={0};
-string ans=&#34;&#34;;
-FORE(i,0,S.size())num[S[i]-&#39;a&#39;]++;
-FORE(i,0,26)num[i]=num[i]/2;
-while(accumulate(num,num+26,0)&amp;gt;0){
-pair&amp;lt;char,int&amp;gt; best=make_pair(&#39;z&#39;+1,-1);
-FORE(i,0,S.size()){
-if(num[S[i]-&#39;a&#39;]==0)continue;
-int count[26]={},invalid=0;
-FORE(j,i,S.size())count[S[j]-&#39;a&#39;]++;
-FORE(j,0,26)if(num[j]&amp;gt;count[j])invalid=1;
-if(invalid)continue;
-best=min(best,make_pair(S[i],i));
-}
-ans+=best.first;
-num[best.first-&#39;a&#39;]--;
-S=S.substr(best.second+1);
-}
-return ans;
-}
-}; </description>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12331&amp;amp;rd=15185 文字列が与えられて、その文字をシャッフルして元の文字にランダムに挿入する。 挿入後の文字列が与えられた時、元の文字列のうち辞書順に最小の</description>
     </item>
     
     <item>
@@ -306,44 +89,7 @@ return ans;
       <pubDate>Sat, 13 Jul 2013 09:00:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm551-div2--level2/</guid>
-      <description>問題 
-①大文字のアルファベットの配列が与えられる。
-②任意の要素をスワップことができるが、スワップ回数の上限も与えられる。
-③このとき、同じアルファベットが隣り合う最大の数を求める。
-解き方 
-最初に全探索をイメージすると、各アルファベットごとに最大の数を求めることがイメージできます。
-次に、スワップについての全探索のイメージを浮かべるのが難しかったです。
-スワップの操作について全探索を考えるのではなく、
-スワップ後の「最終形をイメージ」すると、
-隣り合うアルファベットのサブセット最大数は
-一番左の要素番号ごとに一意に求められることがわかります。
-さらに、並べるのに使うアルファベットも「連続している」ということがわかれば、
-最初に使うアルファベットの数も最も左のものから一つずつインクリメントしていくことで、全探索することができます。
-コード 
-class ColorfulChocolates {
-public: int maximumSpread(string chocolates, int maxSwaps) {
-int ans=0,n=chocolates.size();
-for(char C=&#39;A&#39;;C&amp;lt;=&#39;Z&#39;;C++){
-FORE(i,0,n){
-FORE(j,0,n){
-int left=i,cur=j;
-int swaps=0;
-while(left&amp;lt;n &amp;amp;&amp;amp; cur&amp;lt;n){
-while(cur&amp;lt;n &amp;amp;&amp;amp; chocolates[cur]!=C)cur++;
-if(cur&amp;gt;=n)break;
-int tmp=abs(cur-left);
-if(swaps+tmp&amp;gt;maxSwaps)break;
-swaps+=tmp;
-left++;
-cur++;
-}
-ans=max(ans,left-i);
-}
-}
-}
-return ans;
-}
-}; </description>
+      <description>問題 ①大文字のアルファベットの配列が与えられる。 ②任意の要素をスワップことができるが、スワップ回数の上限も与えられる。 ③このとき、同じアルフ</description>
     </item>
     
   </channel>

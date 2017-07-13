@@ -7,41 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 604 DIV1 Easy - PowerOfThree (復習××)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12917&amp;rd=15837
-ロボットが座標（０，０）からスタートし、４方向に移動する。
-ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。
-移動したい座標（ｘ、ｙ）が与えられた時、その座標に移動できるなら”Possible”、移動できないなら&#34;Impossible&#34;を返す。
-解き方 
-足し引きできる数は３の階乗なので、
-ビット計算に落とし込むことで解くことができる。
-座標の正負は関係ないので正の座標に変換し、
-例としてサンプルの一つを３進数で考えると以下のように変換できる。
-ｘ座標：１＝００１
-ｙ座標：９＝１００
-ここで３の階乗を足していくステップは、
-３進数の右から考えていくと毎回ｘ、ｙのどちらかの数を引くことと同じになる。
-ここでどちらかが１であればよいが、
-どちらも０、もしくはどちらも１であれば”Impossible”になる。
-途中でｘ＝０、ｙ＝０になれば&#34;Possible&#34;で終了になる。
-コード 
-class PowerOfThree {
-public:
-string ableToGet(int x, int y) {
-x=abs(x);
-y=abs(y);
-while(!(x==0&amp;&amp;y==0)){
-if(x%3==0&amp;&amp;y%3==0)return &#34;Impossible&#34;;
-if(x%3!=0&amp;&amp;y%3!=0)return &#34;Impossible&#34;;
-if(x%3==1)x--;
-if(x%3==2)x&#43;&#43;;
-if(y%3==1)y--;
-if(y%3==2)y&#43;&#43;;
-x/=3,y/=3;
-}
-return &#34;Possible&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12917&amp;rd=15837 ロボットが座標（０，０）からスタートし、４方向に移動する。 ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。 移動し" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-604-div1-easy---powerofthree-%E5%BE%A9%E7%BF%92/" />
 

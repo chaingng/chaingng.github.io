@@ -7,36 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 372 DIV1 Easy - RoadConstruction ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8223&amp;rd=10789
-解き方 
-解くだけ。１度一周して確かめるなど、うまく条件を整理するのがポイント。
-コード 
-class RoadConstruction {
-public: int getExitTime(vector&lt;string&gt; lanes) {
-int n=lanes.size();
-int ret=0;
-int flag[n];
-memset(flag,0,sizeof(flag));
-int at=0,prev=-1;
-while(1){
-while(at&lt;n &amp;&amp; lanes[at].empty())at&#43;&#43;;
-if(at&lt;n &amp;&amp; flag[at]==0){
-prev=at;
-flag[at]=1;
-at&#43;&#43;;
-}else{
-if(at&gt;=n)at=prev;
-if(lanes[at][0]==&#39;D&#39;)return ret;
-ret&#43;&#43;;
-lanes[at]=lanes[at].substr(1);
-flag[at]=0;
-at=0,prev=-1;
-}
-}
-return -1;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8223&amp;rd=10789 解き方 解くだけ。１度一周して確かめるなど、うまく条件を整理するのがポイント。 コード class RoadConstruction { public: int getExitTime(vector&lt;string&gt; lanes) { int n=lanes.size(); int ret=0; int flag[n]; memset(flag,0,sizeof(flag)); int at=0,prev=-1; while(1){ while(at&lt;n &amp;&amp; lanes[at].empty())at&#43;&#43;; if(at&lt;n &amp;&amp; flag[at]==0){ prev=at; flag[at]=1;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-372-div1-easy---roadconstruction-/" />
 

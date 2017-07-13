@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 472 DIV1 Easy - PotatoGame (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10759&amp;rd=14154
-・TaroとHanakoの２人がゲームをする。
-・ポテトの数が与えられて、４の階乗分だけ自分のターンのときに食べることができる。
-・ポテトの数が０になったら勝ち。
-・最初はTaroのターン。
-・このとき、勝つ方のプレイヤーの名前を求める。
-解き方 
-１０＾９のため全探索では解くことができない。
-パターンを見つけようとdpで１０００ほど出力させてみると、
-MOD5のとき0もしくは２のときHanakoが勝つことがわかる。
-次に上記の証明。
-4の階乗を引くということは、mod5で考えた時±1していることと同じ。
-例えば、4のときは 4^2 mod5=-1 、16のときは 4^2 mod5=1となる。
-ここで、Taroが勝つポジションを n=1,3,4(mod5)としたとき、
-4^Kを引いた場合に相手に負けるポジションに移動させることができる。
-例外としてN=1,3のときは1を引くことしかできない。
-N=1 のときは1を引くことで勝ちとなるのでＯＫ．
-N=3 のときは1を引いてN=2と負けのポジションに移動させられるのでＯＫ．
-逆に、負けるポジション n=0,2(mod5)にいた場合は
-4^Kを引いても相手を負けるポジションに移動させることができない。
-よって、最初のMOD5のときのポジションで勝ち負けが一意に決まる。
-コード 
-class PotatoGame {
-public: string theWinner(int n) {
-return n%5==0||n%5==2 ? &#34;Hanako&#34; : &#34;Taro&#34;;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10759&amp;rd=14154 ・TaroとHanakoの２人がゲームをする。 ・ポテトの数が与えられて、４の階乗分だけ自分のターンのときに食べることができる。 ・ポテト" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-472-div1-easy---potatogame-%E5%BE%A9%E7%BF%92/" />
 

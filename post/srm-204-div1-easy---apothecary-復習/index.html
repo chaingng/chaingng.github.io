@@ -7,33 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 204 DIV1 Easy - Apothecary (復習×○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=2312&amp;rd=5850
-ある物体の重さを、天秤を使って測りたい。
-天秤の重さは３＾ｘのものが各１つずつ存在する。
-このとき、必要な天秤の重さを昇順にソートして返す。
-解き方 
-重さの最大は10^6なので、各３のべき乗に対し３通りの計算と考えると
-3^14ほどになり計算量がちょっと怪しい。
-※計算
-10^6=3^x log10^6=log3^x x=6/log3≠13
-ここで各３のべき乗xとそこまでのすべてのべき乗の和をsum[x]とすると、
-sum[x-1]&lt;abs(W)&lt;sum[x]のときその数xは使わなければならない。
-逆にsumが超えてしまうとその数を使ってはいけなくなる。
-これをループさせて範囲を狭めていき、答えを求める。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class Apothecary {
-public: vector&lt;int&gt; balance(int W) {
-vector&lt;int&gt; ans;
-int x=1,sum=1;
-while(W!=0){
-if(sum&gt;=abs(W)){" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=2312&amp;rd=5850 ある物体の重さを、天秤を使って測りたい。 天秤の重さは３＾ｘのものが各１つずつ存在する。 このとき、必要な天秤の重さを昇順にソートして返す" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-204-div1-easy---apothecary-%E5%BE%A9%E7%BF%92/" />
 

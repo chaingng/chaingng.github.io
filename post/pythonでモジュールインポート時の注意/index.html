@@ -7,28 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="Pythonでモジュールインポート時の注意" />
-<meta property="og:description" content="クローラーを作るのにPythonが使いやすかったので利用したのですが、
-そのときにimportでひっかかってしまったのでメモ。
-importの書き方
-importには２通りの書き方があります。
-１つ目は、importにパッケージ名.モジュール名と書く方法。
-import urllib.request
-こちらの場合はモジュールを使うのにフルパスを書かなければいけないです。
-html = urllib.request.urlopen(x)
-２つ目は、from　パッケージ名　import モジュール名と書く方法。
-from bs4 import BeautifulSoup
-こちらはモジュール名だけ書くだけで使用できるので、こちらの方がすっきりします。
-datas2 = BeautifulSoup(datas).findAll(&#34;td&#34;, attrs={&#34;class&#34;: &#34;tdSearchResultListKanji&#34;})
-import時の注意点
-モジュールを利用するには、その上階層にある全てのパッケージ、サブパッケージ名を指定しなければいけないということ。
-＃エラー
-import urllib
-＃正しい
-import urllib.request
-Ｃに慣れていたので、この書き方にひっかかってしまいました。
-どうやら、サブパッケージを設けることでお互いがお互いの使用モジュールについて気にしなくてもよいからこの書き方をしているとのことです。
-http://docs.python.jp/2.5/tut/node8.html
- " />
+<meta property="og:description" content="クローラーを作るのにPythonが使いやすかったので利用したのですが、 そのときにimportでひっかかってしまったのでメモ。 importの書" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/python%E3%81%A7%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E6%99%82%E3%81%AE%E6%B3%A8%E6%84%8F/" />
 

@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 484 DIV1 Easy - RabbitNumber (復習×)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11131&amp;rd=14237
-ある数xの平方数yを考えたとき、(x*x=y),
-かつnの各桁の和で表わされるS(n)について、S(x)*S(x)=S(y)が成り立つとき
-その数はRabbit Numberになる。
-このとき、lowからhighまでの間のRabbit Numberの数を求める。
-解き方 
-普通に解くとlow,highともに10^9であるため解くことができない。
-そのため法則がないか考える。
-ここで、ｘの各桁の数が３以下であればRabbit Numberになる可能性がある。
-1*1=1,S(1)*S(1)=1
-2*2=4,S(2)*S(2)=4
-3*3=9,S(3)*S(3)=9　しかし、4以上のとき、つまり桁上がりしてしまうときは決してRabbit Numberにならない。
-4*4=16,S(4)*S(4)=16 (≠7)　5*5=25,S(5)*S(5)=25 (≠7)
-
-つまり、各桁が０～３の全ての数のうち、平方数のS(n)とイコールになるものについて(この中でも２ケタ以上の数では桁上がりは発生しうるので)、lowとhighの間の数をカウントしてあげればよい。　コード 
-class RabbitNumber {
-public:
-int S(long long x){
-int ret=0;
-while(x&gt;0){
-ret&#43;=x%10;
-x/=10;
-}
-return ret;
-}
-int calc(int low,int high,int cur){
-int ret=0;
-FORE(i,0,4){
-int x=10*cur&#43;i;
-if(x==0||S(x)*S(x)!=S((long long)x*x))continue;
-if(low&lt;=x&amp;&amp;x&lt;=high)ret&#43;&#43;;
-if(x&lt;=high/10)ret&#43;=calc(low,high,x);
-}
-return ret;
-}
-int theCount(int low, int high) {
-return calc(low,high,0);" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11131&amp;rd=14237 ある数xの平方数yを考えたとき、(x*x=y), かつnの各桁の和で表わされるS(n)について、S(x)*S(x)=S(y)が成り立つと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/" />
 

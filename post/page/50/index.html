@@ -77,35 +77,7 @@ ga('send', 'pageview');
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=12691&amp;rd=15698
-座標上の点が複数与えられて、それぞれ線で結ぶ。
-このとき、一番多く存在する線上のｙの値について、最大値を求める。
-解き方 すべてのｙに対して値を求めると計算量が間に合わない。
-そこで、「ｙが増えるのは与えられたｙ座標の近辺のみ」ということがわかれば、
-調べる点は少なくてもよいことがわかる。
-ここで与えられたｙ座標のみと最初に考えてしまうが、
-「折れ線のときはその前後の値の方がより多く存在」する。
-つまり、与えられたｙ座標の前後を全て調べて、最大の値を返せばよい。
-Challenge
-例外条件：隣り合う点が平行→全ての点が平行
-「＜」と「＜＝」がかぶらないようにして、同じ点について複数数えないようにする
-コード 
-using namespace std;
-#define FORE(i,d,e) for(int i=d;i&lt;e;i++)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
-#define ISEQ(c) (c).begin(), (c).end()
-class PiecewiseLinearFunction {
-public: int maximumSolutions(vector&lt;int&gt; Y) {
-int ret=0;
-int n=Y.size();
-FORE(i,0,n-1)if(Y[i]==Y[i+1])return -1;
-vector&lt;double&gt; vx;
-FORE(i,0,n){
-vx.push_back(Y[i]-0.5);
-vx.push_back(Y[i]);
-vx.push_back(Y[i]+0.5);
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12691&amp;rd=15698 座標上の点が複数与えられて、それぞれ線で結ぶ。 このとき、一番多く存在する線上のｙの値について、最大値を求める。 解き方 すべてのｙに対して
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm-586-div1-easy---piecewiselinearfunction-%E5%BE%A9%E7%BF%92/">Read more…</a>
@@ -125,49 +97,10 @@ vx.push_back(Y[i]+0.5);
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①複数の地点が与えられて、それぞれの地点に値を持つ。
-②また地点によっては道路で結ばれていて、
-道路として結ばれている２次元配列が与えられる。
-③ユーザは地点０から始まり、地点０のスコアを持つ。
-④地点０から結ばれている地点に何度も行くことができ、
-移動したときのスコアは、今まで持つスコアと移動した地点のスコアのＸＯＲとなる。
-⑤このとき、最大となるスコアを求める。
-解き方 
-ぱっとみたときに何度も同じ地点を行き来することができるので、
-全探索も浮かびにくい。
-手掛かりとなる制約条件がないか例を出してシミュレーションしてみると、
-ある地点に移動したとき、持っているスコアは１度しか現れないことがわかる。
-つまり幅優先探索を行い、
-地点とスコアの2次元配列を作成し
-通ったことがあるかないかを判定すれば収束させることができる。
-計算量はＯ（５０＊５０＊１０２４＝２．５＊１０＾６）なのでＯＫ．
-コード 
-class XorTravelingSalesman {
-public: int maxProfit(vector&lt;int&gt; cityValues, vector&lt;string&gt; roads) {
-int ans=cityValues[0];
-bool visited[50][1023];
-queue&lt; pair&lt;int,int&gt; &gt; q;
-FORE(i,0,50)FORE(j,0,1023)visited[i][j]=false;
-q.push(make_pair(0,cityValues[0]));
-visited[0][cityValues[0]]=true;
-while(!q.empty()){
-int cur=q.front().first;
-int value=q.front().second;
-q.pop();
-FORE(i,0,cityValues.size()){
-if(i==cur)continue;
-int tmpvalue=value^cityValues[i];
-if( (roads[cur][i]=='Y' || roads[i][cur]=='Y') &amp;&amp; !visited[i][tmpvalue]){
-ans=max(ans,tmpvalue);
-visited[i][tmpvalue]=true;
-q.push(make_pair(i,tmpvalue));
-}
-}
-}
-return ans;
-}
-}; 
+			問題 ①複数の地点が与えられて、それぞれの地点に値を持つ。 ②また地点によっては道路で結ばれていて、 道路として結ばれている２次元配列が与えられる
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-556-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -184,37 +117,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①高さを示す配列が与えられる。
-②隣り合う高さについては、倒れた時もぶつからないよう２つのうち最大の高さ分の距離をとらなければならない。
-③このとき、最小の距離となるよう高さを並べ替えるとき、
-並べ替え後の要素の番号の配列を求める。
-解き方 
-高さの要素数が７なので、全探索すればよいです。
-最初は高さに応じてnext_permutationと考えてしまったが、
-このとき同じ距離の配列が存在するときに要素の昇順によってはエラーとなってしまいます。
-ここでもう一つ考えられるかなのですが、
-それでは「高さ」でソートするのではなく、「要素番号」でソートすれば
-昇順で判定するため、上記の問題を解決することができます。
-コード 
-class TheBrickTowerMediumDivTwo {
-public: vector&lt;int&gt; find(vector&lt;int&gt; heights) {
-int ans=500;
-int n=heights.size();
-vector&lt;int&gt; tmp(n,0),tmp2(n,0);
-FORE(i,0,n)tmp[i]=i;
-sort(tmp.begin(),tmp.end());
-do{
-int cost=0;
-FORE(i,0,n-1)cost+=max(heights[tmp[i]],heights[tmp[i+1]]);
-if(cost&lt;ans){
-FORE(i,0,n)tmp2[i]=tmp[i];
-ans=cost;
-}
-}while(next_permutation(tmp.begin(),tmp.end()));
-return tmp2;
-}
-}; 
+			問題 ①高さを示す配列が与えられる。 ②隣り合う高さについては、倒れた時もぶつからないよう２つのうち最大の高さ分の距離をとらなければならない。 ③
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-554-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -231,44 +137,10 @@ return tmp2;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 ①複数のうなぎが川を流れている。
-②各うなぎは毎秒１の速さで進む。
-③各うなぎに対し、最初に到達する時間ｔと、うなぎの長さｌが与えられる。
-④うさぎは２回のｔ時刻だけ、うなぎを捕まえることができる。
-選んだｔに対し、そのときに流れているうなぎを全て捕まえることができる。
-⑤このとき、捕まえることのできるうなぎの最大数を求める。
-解き方 
-最初に全探索で考える。
-各時刻に対しとらえることのできるうなぎの数を洗い出し、
-全ての時刻から２つ時刻を選ぶ方法を全通り試して、最大のうなぎの数を返す。
-しかし今回はうなぎの長さが１０＾９となるため、
-全ての時刻の全探索で解くことができない。
-では、選ぶ時刻の数を少なくすることはできないか？と考える。
-もう少し考えると、うなぎの数が変化するのは頭と尾のときのみということがわかれば、
-高々５０＊２＝１００通りの時刻を調べればよいことがわかる。
-全体の計算量はＯ（１００＊５０＝５０００）なのでこの考え方で解くことができる。
-コード 
-class EelAndRabbit {
-public: int getmax(vector&lt;int&gt; l, vector&lt;int&gt; t) {
-int ans=0;
-vector&lt;int&gt; v;
-v.clear();
-FORE(i,0,t.size()){
-v.push_back(t[i]);
-v.push_back(t[i]+l[i]);
-}
-FORE(i,0,v.size()){
-FORE(j,i+1,v.size()){
-int cur=0;
-FORE(k,0,t.size()){
-if( (t[k]&lt;=t[i] &amp;&amp; t[i]&lt;=t[k]+l[k]) || (t[k]&lt;=t[j] &amp;&amp; t[j]&lt;=t[k]+l[k]))cur++;
-}
-ans=max(ans,cur);
-}
-}
-return ans;
-}
-}; 
+			問題 ①複数のうなぎが川を流れている。 ②各うなぎは毎秒１の速さで進む。 ③各うなぎに対し、最初に到達する時間ｔと、うなぎの長さｌが与えられる。 ④
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm580-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -285,45 +157,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①２次元の配列が与えられる。
-②配列には”Ｘ”で表わされる床が存在する。一番下は全て床になっている。
-③また、コインのある座標が与えられる。
-④ユーザは一番下の床からスタートし、任意の長さの梯子を使って床へ移動し、コインを獲得する。
-⑤このとき、必要となる最小の梯子の長さを求める。
-解き方 
-問題の性質から、２分探索が思い浮かぶ。
-ただ高さの上限が少ないので、単純に小さい数からループさせてもよい。
-Ｃｈａｌｌｅｎｇｅのポイント
-また、移動の判定とキューへのスタックがかなりの計算量になるので、
-一度行ったことのある例外判定をきちんと行う必要がある。
-たとえばコード中の以下など。
-if(check[i][j]==1)continue;
-コード 
-class ArcadeManao {
-public: int shortestLadder(vector&lt;string&gt; level, int coinRow, int coinColumn) {
-int h=level.size(),w=level[0].size();
-int check[h][w];
-int low=0,high=h;
-for(int L=0;L&lt;100;L++){
-queue &lt;pair &lt;int, int&gt; &gt; q;
-q.push(make_pair(coinRow-1,coinColumn-1));
-int flag=0;
-FORE(i,0,h)FORE(j,0,w)check[i][j]=0;
-while(!q.empty()){
-int i=q.front().first;
-int j=q.front().second;
-q.pop();
-if(check[i][j]==1)continue;
-if(i==h-1){
-flag=1;
-break;
-}
-while(j-1&gt;=0 &amp;&amp; level[i][j-1]=='X')j--;
-for(int cur=j;level[i][cur]=='X';cur++){
-check[i][cur]=1;
-for(int up=i;up&gt;=max(0,i-L);up--)
-if(check[up][cur]==0 &amp;&amp; level[up][cur]=='X')q.push(make_pair(up,cur));
+			問題 ①２次元の配列が与えられる。 ②配列には”Ｘ”で表わされる床が存在する。一番下は全て床になっている。 ③また、コインのある座標が与えられる。
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm576-div2--level2/">Read more…</a>
@@ -343,47 +177,10 @@ if(check[up][cur]==0 &amp;&amp; level[up][cur]=='X')q.push(make_pair(up,cur));
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①数字が二つ与えられる。
-②プレイヤーは一つ目の数字を１０で割る、もしくは逆にすることができる。
-③上記の操作によって、２つ目の数字にするとき、最小の操作回数を求める。
-２つ目の数字にできないときはー１を返す。
-解き方 
-どのような法則があるか例を出して導く。
-289が求めたい数字のとき、
-元の数字：１２８９　→３回
-２８９１　→１回
-１２８９１　→４回
-つまり、
-・最初から含まれる　→文字数の差
-・途中から含まれる　→文字列の差＋２
-ひっくり返した場合もシミュレーションすると、
-ひっくり返した文字が含まれる　→文字数の差＋１回
-ただ求めたい数字の場合は両方一致するため、
-返す数が少ない方から判定していく。
-コード 
-class TheNumberGameDiv2 {
-public:
-string f(int n){
-string str;
-stringstream out;
-out&lt;&lt;n;
-out&gt;&gt;str;
-return str;
-}
-int minimumMoves(int A, int B) {
-string As=f(A);
-string Bs=f(B);
-int dis=As.size()-Bs.size();
-int flag=0;
-if(As.find(Bs)!=string::npos)flag=1;
-if(As.find(Bs)==0)return dis;
-reverse(Bs.begin(),Bs.end());
-if(As.find(Bs)!=string::npos)return dis+1;
-if(flag==1)return dis+2;
-return -1;
-}
-}; 
+			問題 ①数字が二つ与えられる。 ②プレイヤーは一つ目の数字を１０で割る、もしくは逆にすることができる。 ③上記の操作によって、２つ目の数字にすると
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm574-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -400,54 +197,10 @@ return -1;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①複数の座標が与えられる。
-それぞれの座標にたいして、ＮＷＳＥの方向が与えられる。
-②それぞれの座標には蟻がいて指定された方向に進む。
-③蟻は他の蟻とぶつかったときにフィールドから消える。
-フィールドの大きさに制限はない。
-④このとき、最後に残る蟻の数を返す。
-解き方 
-単純にシミュレーションすることで解くことができる。
-Ｃｈａｌｌｅｎｇｅ
-このとき、１マスずつシミュレーションすると、
-蟻の距離の差が１マスで方向が互い違いの時すれちがってしまいシステムエラーとなる。
-１マスごとの処理で良いか、「選んだ単位の処理でミスがないか」チェックが必要。
-コード 
-class AntsMeet {
-public: int countAnts(vector&lt;int&gt; x, vector&lt;int&gt; y, string direction) {
-int n=x.size(),ans=0;
-vector&lt;int&gt; check(n,0);
-double cx[n],cy[n];
-FORE(i,0,n){
-cx[i]=x[i];
-cy[i]=y[i];
-}
-FORE(i,0,5000){
-FORE(j,0,n){
-if(check[j]==1)continue;
-if(direction[j]=='N')cy[j]+=0.5;
-if(direction[j]=='W')cx[j]-=0.5;
-if(direction[j]=='E')cx[j]+=0.5;
-if(direction[j]=='S')cy[j]-=0.5;
-}
-FORE(j,0,n){
-int used=0;
-if(check[j]==1)continue;
-FORE(k,j+1,n){
-if(check[k]==1)continue;
-if(cx[j]==cx[k] &amp;&amp; cy[j]==cy[k]){
-check[k]=1;
-used=1;
-}
-}
-if(used==1)check[j]=1;
-}
-}
-FORE(i,0,n)if(check[i]==0)ans++;
-return ans;
-}
-}; 
+			問題 ①複数の座標が与えられる。 それぞれの座標にたいして、ＮＷＳＥの方向が与えられる。 ②それぞれの座標には蟻がいて指定された方向に進む。 ③蟻は
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm541-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -464,51 +217,7 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①大きさがわからない、２次元のセルを飛行機が移動する。
-②また、移動セル数を示す数字の配列が与えられる。
-③最初は右を向いており、最初の移動セル数分だけ右に移動する。
-壁にぶつかるかすでに移動したセルにぶつかると、９０度左を向く。
-そして次の移動セル分だけ移動する。
-④このとき、セルの大きさを求める。
-ただし、②の移動に従わない動きであればー１を返す。
-解き方 
-シミュレーションの問題。
-いかに間違いが少なくなるようにかけるか、できるだけ単純にコーディングする。
-今回は、セルの大きさを求めるシミュレーションと、例外を求めるシミュレーションを分けて実装する。
-まず、セルの大きさは最初の移動をシミュレーションして
-ｘ座標とｙ座標それぞれ最小と最大を求めれば簡単に算出できる。
-次に、求めたｘ座標とｙ座標の最小値と最大値を利用して
-例外ケースではないか判定のシミュレーションを行う。
-コード 
-int cell[110][110];
-class RotatingBot {
-public: int minArea(vector&lt;int&gt; moves) {
-int maxX=55,minX=55,maxY=55,minY=55;
-int dx[]={1,0,-1,0};
-int dy[]={0,1,0,-1};
-int x=55,y=55,dir=0;
-FORE(i,0,moves.size()){
-x+=moves[i]*dx[dir%4];
-y+=moves[i]*dy[dir%4];
-minX=min(minX,x);
-minY=min(minY,y);
-maxX=max(maxX,x);
-maxY=max(maxY,y);
-dir++;
-}
-FORE(i,0,110)FORE(j,0,110)cell[i][j]=0;
-x=55,y=55,dir=0,cell[y][x]=1;
-FORE(i,0,moves.size()){
-int num=0;
-while(1){
-int tmpx=x+dx[dir%4];
-int tmpy=y+dy[dir%4];
-num++;
-if(num&gt;moves[i]){
-if(i==moves.size()-1)break;
-if(cell[tmpy][tmpx]==1 || tmpx&gt;maxX || tmpx&lt;minX || tmpy&lt;minY || tmpy&gt;maxY){
-dir++;
+			問題 ①大きさがわからない、２次元のセルを飛行機が移動する。 ②また、移動セル数を示す数字の配列が与えられる。 ③最初は右を向いており、最初の移動
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/srm550-div2--level2/">Read more…</a>
@@ -528,37 +237,10 @@ dir++;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①それぞれの棒について、最大の高さを表わす配列が与えられる。
-②それぞれの棒について、１～最大の高さまで任意に設定することができる。
-③また、それぞれの棒の距離を示すｗが与えられる。
-④このとき、すべての棒の頂点を結ぶ紐を考えた時、最大となる紐の長さを求める。
-解き方 
-棒Ｎ個の時の最大の長さは、
-Ｎ－１個の棒が１～最大の長さに対するそれまでの最大の紐の長さがわかれば
-すぐに求めることができる。
-また、Ｎ個のときの棒の長さはＮ－１個までの最大の紐の長さに影響を与えないため、
-動的計画法で解くことができる。
-Eclipseで利用した時、&lt;math&gt;でインポートしようとしたのがうまくいかなくて
-&lt;math.h&gt;でなんとかうまくいったのですがかなりひっかかりました。。
-コード 
-class PillarsDivTwo {
-public: double maximalLength(vector&lt;int&gt; height, int w) {
-int n=height.size();
-double dp[n][101],ans=0.0;
-FORE(i,0,n)FORE(j,0,101)dp[i][j]=0.0;
-FORE(i,0,n-1){
-FORE(j,0,height[i+1]){
-FORE(k,0,height[i]){
-double length=sqrt(w*w+(j-k)*(j-k));
-dp[i+1][j]=max(dp[i+1][j],dp[i][k]+length);
-}
-}
-}
-FORE(i,0,101)ans=max(ans,dp[n-1][i]);
-return ans;
-}
-}; 
+			問題 ①それぞれの棒について、最大の高さを表わす配列が与えられる。 ②それぞれの棒について、１～最大の高さまで任意に設定することができる。 ③また
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm547-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -575,44 +257,10 @@ return ans;
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 
-①大文字のアルファベットの配列が与えられる。
-②任意の要素をスワップことができるが、スワップ回数の上限も与えられる。
-③このとき、同じアルファベットが隣り合う最大の数を求める。
-解き方 
-最初に全探索をイメージすると、各アルファベットごとに最大の数を求めることがイメージできます。
-次に、スワップについての全探索のイメージを浮かべるのが難しかったです。
-スワップの操作について全探索を考えるのではなく、
-スワップ後の「最終形をイメージ」すると、
-隣り合うアルファベットのサブセット最大数は
-一番左の要素番号ごとに一意に求められることがわかります。
-さらに、並べるのに使うアルファベットも「連続している」ということがわかれば、
-最初に使うアルファベットの数も最も左のものから一つずつインクリメントしていくことで、全探索することができます。
-コード 
-class ColorfulChocolates {
-public: int maximumSpread(string chocolates, int maxSwaps) {
-int ans=0,n=chocolates.size();
-for(char C='A';C&lt;='Z';C++){
-FORE(i,0,n){
-FORE(j,0,n){
-int left=i,cur=j;
-int swaps=0;
-while(left&lt;n &amp;&amp; cur&lt;n){
-while(cur&lt;n &amp;&amp; chocolates[cur]!=C)cur++;
-if(cur&gt;=n)break;
-int tmp=abs(cur-left);
-if(swaps+tmp&gt;maxSwaps)break;
-swaps+=tmp;
-left++;
-cur++;
-}
-ans=max(ans,left-i);
-}
-}
-}
-return ans;
-}
-}; 
+			問題 ①大文字のアルファベットの配列が与えられる。 ②任意の要素をスワップことができるが、スワップ回数の上限も与えられる。 ③このとき、同じアルフ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm551-div2--level2/">Read more…</a>
 		</div>
 	</div>
 </article>

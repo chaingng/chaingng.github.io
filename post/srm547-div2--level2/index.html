@@ -7,37 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM547 DIV2 -Level2" />
-<meta property="og:description" content="問題 
-①それぞれの棒について、最大の高さを表わす配列が与えられる。
-②それぞれの棒について、１～最大の高さまで任意に設定することができる。
-③また、それぞれの棒の距離を示すｗが与えられる。
-④このとき、すべての棒の頂点を結ぶ紐を考えた時、最大となる紐の長さを求める。
-解き方 
-棒Ｎ個の時の最大の長さは、
-Ｎ－１個の棒が１～最大の長さに対するそれまでの最大の紐の長さがわかれば
-すぐに求めることができる。
-また、Ｎ個のときの棒の長さはＮ－１個までの最大の紐の長さに影響を与えないため、
-動的計画法で解くことができる。
-Eclipseで利用した時、&lt;math&gt;でインポートしようとしたのがうまくいかなくて
-&lt;math.h&gt;でなんとかうまくいったのですがかなりひっかかりました。。
-コード 
-class PillarsDivTwo {
-public: double maximalLength(vector&lt;int&gt; height, int w) {
-int n=height.size();
-double dp[n][101],ans=0.0;
-FORE(i,0,n)FORE(j,0,101)dp[i][j]=0.0;
-FORE(i,0,n-1){
-FORE(j,0,height[i&#43;1]){
-FORE(k,0,height[i]){
-double length=sqrt(w*w&#43;(j-k)*(j-k));
-dp[i&#43;1][j]=max(dp[i&#43;1][j],dp[i][k]&#43;length);
-}
-}
-}
-FORE(i,0,101)ans=max(ans,dp[n-1][i]);
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 ①それぞれの棒について、最大の高さを表わす配列が与えられる。 ②それぞれの棒について、１～最大の高さまで任意に設定することができる。 ③また" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm547-div2--level2/" />
 

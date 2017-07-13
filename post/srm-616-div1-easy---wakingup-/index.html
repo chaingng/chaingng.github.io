@@ -7,32 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 616 DIV1 Easy - WakingUp (○)" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13124&amp;rd=15849
-・Alexは深く眠っており、どれだけ眠りが深いかはわかっていない。
-・ただし、1秒ごとにDずつ眠りが深くなっていく。
-・目覚まし時計が複数あり、最初にどの時刻でなり、１回鳴るごとにへる眠りの深さの値と、何秒周期で鳴るかの情報がわかっている。
-・このとき、Alexがいつか起きるときの最大の眠りの深さの値を求める。
-・ただし、どれだけ眠りが深くてもいつかは目覚めるときは-1を返す。
-解き方 
-・目覚まし時計の数は最大50、間隔は最大10なので全探索で解けそう。
-・各時間において増減する眠さの値を記憶しておけば、いつが最小化がわかり、つまり眠りの最大の深さがわかる。
-・ただし、これだけではいつか目覚めるかどうかはわからない。
-・なので周期を見つけ、次の周期に必ず値が小さくなるなら-1、そうでなければ答えがあることがわかる。
-・周期としては各periodの最小公倍数＋最初に鳴る最大の時刻をとればよさそう。
-→System Passed
-・周期は最小公倍数を計算したが、単に1*2*3...*10=2520と固定してもよさそうだった。
-コード 
-using namespace std;
-#define all(c) (c).begin(),(c).end()
-#define FORE(i,d,e) for(int i=d;i&lt;e;i&#43;&#43;)
-#define FOR(i,s,e) for (int i = int(s); i != int(e); i&#43;&#43;)
-#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i&#43;&#43;)
-#define ISEQ(c) (c).begin(), (c).end()
-class WakingUp {
-public:
-int gcd(int x,int y){
-return y ? gcd(y,x%y) : x;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13124&amp;rd=15849 ・Alexは深く眠っており、どれだけ眠りが深いかはわかっていない。 ・ただし、1秒ごとにDずつ眠りが深くなっていく。 ・目覚まし時計が複数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-616-div1-easy---wakingup-/" />
 

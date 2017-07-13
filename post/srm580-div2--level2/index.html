@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM580 DIV2 -Level2" />
-<meta property="og:description" content="問題 ①複数のうなぎが川を流れている。
-②各うなぎは毎秒１の速さで進む。
-③各うなぎに対し、最初に到達する時間ｔと、うなぎの長さｌが与えられる。
-④うさぎは２回のｔ時刻だけ、うなぎを捕まえることができる。
-選んだｔに対し、そのときに流れているうなぎを全て捕まえることができる。
-⑤このとき、捕まえることのできるうなぎの最大数を求める。
-解き方 
-最初に全探索で考える。
-各時刻に対しとらえることのできるうなぎの数を洗い出し、
-全ての時刻から２つ時刻を選ぶ方法を全通り試して、最大のうなぎの数を返す。
-しかし今回はうなぎの長さが１０＾９となるため、
-全ての時刻の全探索で解くことができない。
-では、選ぶ時刻の数を少なくすることはできないか？と考える。
-もう少し考えると、うなぎの数が変化するのは頭と尾のときのみということがわかれば、
-高々５０＊２＝１００通りの時刻を調べればよいことがわかる。
-全体の計算量はＯ（１００＊５０＝５０００）なのでこの考え方で解くことができる。
-コード 
-class EelAndRabbit {
-public: int getmax(vector&lt;int&gt; l, vector&lt;int&gt; t) {
-int ans=0;
-vector&lt;int&gt; v;
-v.clear();
-FORE(i,0,t.size()){
-v.push_back(t[i]);
-v.push_back(t[i]&#43;l[i]);
-}
-FORE(i,0,v.size()){
-FORE(j,i&#43;1,v.size()){
-int cur=0;
-FORE(k,0,t.size()){
-if( (t[k]&lt;=t[i] &amp;&amp; t[i]&lt;=t[k]&#43;l[k]) || (t[k]&lt;=t[j] &amp;&amp; t[j]&lt;=t[k]&#43;l[k]))cur&#43;&#43;;
-}
-ans=max(ans,cur);
-}
-}
-return ans;
-}
-}; " />
+<meta property="og:description" content="問題 ①複数のうなぎが川を流れている。 ②各うなぎは毎秒１の速さで進む。 ③各うなぎに対し、最初に到達する時間ｔと、うなぎの長さｌが与えられる。 ④" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm580-div2--level2/" />
 

@@ -7,35 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 396 DIV1 Easy - DNAString ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=8584&amp;rd=12168
-解き方 
-間隔が１からmaxPeriodについてそれぞれ最小の変換コストを検索し、
-そのうち最小のものが答えになる。
-コード 
-class DNAString {
-public: int minChanges(int maxPeriod, vector&lt;string&gt; dna) {
-string str=accumulate(all(dna),string());
-int n=str.size();
-int ret=1e&#43;9;
-for(int p=1;p&lt;=maxPeriod;p&#43;&#43;){
-int cost=0;
-for(int i=0;i&lt;p;i&#43;&#43;){
-int a=0,t=0,g=0,c=0;
-for(int j=i;j&lt;n;j&#43;=p){
-if(str[j]==&#39;A&#39;)a&#43;&#43;;
-else if(str[j]==&#39;T&#39;)t&#43;&#43;;
-else if(str[j]==&#39;G&#39;)g&#43;&#43;;
-else c&#43;&#43;;
-}
-int mx=max(max(a,t),max(g,c));
-cost&#43;=a&#43;t&#43;c&#43;g-mx;
-}
-ret=min(ret,cost);
-}
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8584&amp;rd=12168 解き方 間隔が１からmaxPeriodについてそれぞれ最小の変換コストを検索し、 そのうち最小のものが答えになる。 コード class DNAString { public: int minChanges(int maxPeriod, vector&lt;string&gt; dna)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-396-div1-easy---dnastring-/" />
 

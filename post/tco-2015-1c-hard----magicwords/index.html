@@ -7,34 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="TCO 2015 1C Hard  - MagicWords" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=13731&amp;rd=16434
-解き方 
-dpの問題。
-dp[現在調べている桁数][beautifulcountの数][10の連続数]＝そのbeautifulcountの総数
-とすると、前の結果について以下のようになる。
-１：前の結果から１０が連続しないように１桁追加
-→連続数が１になり、beautifulcountが１増える
-２：前の結果から１０が連続するように１桁追加
-→連続数が１増えて、beautifulcountが連続数＋１個増える
-コード 
-class DevuAndBeautifulSubstrings {
-public: long long countBeautifulSubstrings(int n, int cnt) {
-int num=n*(n&#43;1)/2;
-long long dp[n&#43;1][num][n&#43;1];
-memset(dp,0,sizeof(dp));
-dp[1][1][1]=2;
-for(int i=1;i&lt;n;i&#43;&#43;)for(int j=0;j&lt;=num;j&#43;&#43;)for(int prev=0;prev&lt;=n;prev&#43;&#43;){
-if(dp[i][j][prev]!=0){
-dp[i&#43;1][j&#43;1][1]&#43;=dp[i][j][prev];
-dp[i&#43;1][j&#43;1&#43;prev][prev&#43;1]&#43;=dp[i][j][prev];
-}
-}
-long long ret=0LL;
-FORE(i,0,n&#43;1)ret&#43;=dp[n][cnt][i];
-return ret;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=13731&amp;rd=16434 解き方 dpの問題。 dp[現在調べている桁数][beautifulcountの数][10の連続数]＝そのbeautifulcountの総" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/tco-2015-1c-hard----magicwords/" />
 

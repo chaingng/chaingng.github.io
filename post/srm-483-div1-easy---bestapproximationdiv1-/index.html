@@ -7,45 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 483 DIV1 Easy - BestApproximationDiv1 ○" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=11023&amp;rd=14236
-ある小数が与えられる。
-この小数と、接頭辞が最も多く一致する、分母がmaxDen以下の分数と
-それが何桁一致するかを求める。
-そのような分数が複数存在する場合は、最も分母が小さいもの、
-分母が一緒であれば分子が最も小さいものを求める。
-解き方 
-分母の数が１０００なのでO(10^6)となり、全探索で求められる。
-コード 
-class BestApproximationDiv1 {
-public:
-int calc(string s1,string s2){
-int ret=1;
-FORE(i,0,s1.size()){
-if(s1[i]==s2[i])ret&#43;&#43;;
-else break;
-}
-return ret;
-}
-string findFraction(int maxDen, string number) {
-int a=1000,b=1000,score=-1;
-for(int i=1;i&lt;=maxDen;i&#43;&#43;)for(int j=0;j&lt;i;j&#43;&#43;){
-int x=(int)(1000000.0*j/i);
-stringstream out;
-string str;
-out&lt;&lt;x;
-out&gt;&gt;str;
-while(str.size()&lt;6)str=&#39;0&#39;&#43;str;
-int tmp=calc(str,number.substr(2));
-if(tmp&gt;score){
-a=j,b=i,score=tmp;
-}
-}
-char ch[100];
-sprintf(ch,&#34;%d/%d has %d exact digits&#34;,a,b,score);
-return ch;
-}
-}; " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11023&amp;rd=14236 ある小数が与えられる。 この小数と、接頭辞が最も多く一致する、分母がmaxDen以下の分数と それが何桁一致するかを求める。 そのような分数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-483-div1-easy---bestapproximationdiv1-/" />
 

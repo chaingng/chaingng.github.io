@@ -7,42 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 447 DIV1 Easy - KnightsTour" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10577&amp;rd=13901
-解き方 
-問題文の条件をすべて洗い出すのが大事。
-洗い出すことができれば、あとは正確に実装すればよい。
-コード 
-int used[10][10];
-int dr[]={1,1,2,2,-1,-1,-2,-2},dc[]={2,-2,1,-1,2,-2,1,-1};
-int h,w;
-class KnightsTour {
-public:
-int calc(vector&lt;string&gt; board,int r,int c){
-int cnt=0;
-FORE(i,0,8){
-int nr=r&#43;dr[i],nc=c&#43;dc[i];
-if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; used[nr][nc]==0 &amp;&amp; board[nr][nc]!=&#39;*&#39;){
-cnt&#43;&#43;;
-}
-}
-return cnt;
-}
-int visitedPositions(vector&lt;string&gt; board) {
-h=board.size(),w=board[0].size();
-memset(used,0,sizeof(used));
-queue&lt;pair&lt;int,int&gt; &gt; q;
-FORE(i,0,h)FORE(j,0,w)if(board[i][j]==&#39;K&#39;){
-q.push(make_pair(i,j));
-used[i][j]=1;
-}
-int ret=0;
-while(!q.empty()){
-int r=q.front().first;
-int c=q.front().second;
-q.pop();
-ret=max(ret,used[r][c]);
-int nextr=1e&#43;9,nextc=1e&#43;9,cost=1e&#43;9;" />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10577&amp;rd=13901 解き方 問題文の条件をすべて洗い出すのが大事。 洗い出すことができれば、あとは正確に実装すればよい。 コード int used[10][10]; int dr[]={1,1,2,2,-1,-1,-2,-2},dc[]={2,-2,1,-1,2,-2,1,-1}; int h,w; class KnightsTour { public: int calc(vector&lt;string&gt; board,int r,int c){ int" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-447-div1-easy---knightstour/" />
 

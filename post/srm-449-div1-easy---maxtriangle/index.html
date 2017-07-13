@@ -7,44 +7,7 @@
 
 <meta name="generator" content="Hugo 0.25-DEV" />
 <meta property="og:title" content="SRM 449 DIV1 Easy - MaxTriangle" />
-<meta property="og:description" content="問題 
-http://community.topcoder.com/stat?c=problem_statement&amp;pm=10548&amp;rd=13903
-解き方 
-すべての辺は「整数^2&#43;整数^2」になっていなければならない。
-そのような辺を構成するすべての点のペアについて、
-（0,0）、（a,b）、（c,d）からなる三角形の面積が
-|ad-bd|/2であることを利用して最大の面積を求める。
-コード 
-class MaxTriangle {
-public:
-double calculateArea(int A, int B) {
-vector&lt;double&gt; x1,x2,y1,y2;
-for(long long x=0;x*x&lt;=A;x&#43;&#43;){
-long long y=sqrt(A-x*x);
-if(x*x&#43;y*y==A){
-x1.push_back(x),y1.push_back(y);
-x1.push_back(x),y1.push_back(-y);
-x1.push_back(-x),y1.push_back(y);
-x1.push_back(-x),y1.push_back(-y);
-}
-}
-for(long long x=0;x*x&lt;=B;x&#43;&#43;){
-long long y=sqrt(B-x*x);
-if(x*x&#43;y*y==B){
-x2.push_back(x),y2.push_back(y);
-x2.push_back(x),y2.push_back(-y);
-x2.push_back(-x),y2.push_back(y);
-x2.push_back(-x),y2.push_back(-y);
-}
-}
-double ret=-1;
-FORE(i,0,x1.size())FORE(j,0,x2.size()){
-double s=labs(x1[i]*y2[j]-x2[j]*y1[i])/2.0;
-ret=max(ret,s);
-}
-return ret;
-}
-} " />
+<meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=10548&amp;rd=13903 解き方 すべての辺は「整数^2&#43;整数^2」になっていなければならない。 そのような辺を構成するすべての点のペアについて、 （0,0）、（a," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/srm-449-div1-easy---maxtriangle/" />
 
