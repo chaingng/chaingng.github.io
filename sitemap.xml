@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chaingng.github.io/post/git_branch/</loc>
+    <lastmod>2017-07-16T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/shebang_init/</loc>
     <lastmod>2017-07-09T09:22:00+09:00</lastmod>
   </url>
@@ -2756,7 +2761,7 @@
   
   <url>
     <loc>https://chaingng.github.io/post/</loc>
-    <lastmod>2017-07-09T09:22:00+09:00</lastmod>
+    <lastmod>2017-07-16T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2774,7 +2779,7 @@
   
   <url>
     <loc>https://chaingng.github.io/</loc>
-    <lastmod>2017-07-09T09:22:00+09:00</lastmod>
+    <lastmod>2017-07-16T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
