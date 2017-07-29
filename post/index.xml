@@ -6,10 +6,19 @@
     <description>Recent content in Posts on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 16 Jul 2017 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jul 2017 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>crowi用のvagrantを公開しました</title>
+      <link>https://chaingng.github.io/post/vagrant_crowi/</link>
+      <pubDate>Sat, 29 Jul 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/vagrant_crowi/</guid>
+      <description>情報集約用にwikiをいろいろ試していて、crowiを試してみることにした。 いくつかセットアップが必要だったので、vagrantでワンタッチ</description>
+    </item>
     
     <item>
       <title>リモート追跡ブランチ／追跡ブランチ／リモートブランチの違い</title>
