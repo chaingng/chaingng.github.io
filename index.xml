@@ -6,10 +6,19 @@
     <description>Recent content on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Aug 2017 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Aug 2017 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[要約]CodeComplete 15章 条件文の使用</title>
+      <link>https://chaingng.github.io/post/code_complete_15/</link>
+      <pubDate>Fri, 18 Aug 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/code_complete_15/</guid>
+      <description>if文 正常なケースの実行文を先に書いてから、例外的なケースを書く 可読性とパフォーマンスの面で重要 if(){ ##正常ケース } else(){ ##例外ケース } 正常なケ</description>
+    </item>
     
     <item>
       <title>ElasticSearchの導入</title>
@@ -18,15 +27,6 @@
       
       <guid>https://chaingng.github.io/post/elasticsearch_install/</guid>
       <description>動作環境 Ubuntu14.04 インストール Java8が必要 apt-get install -y openjdk-8-jdk その後公式にそってelasticsearchをインストール wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - sudo apt-get install -y apt-transport-https echo &amp;quot;deb https://artifacts.elastic.co/packages/5.x/apt stable</description>
-    </item>
-    
-    <item>
-      <title>[要約]CodeComplete 15章 条件文の使用</title>
-      <link>https://chaingng.github.io/post/code_complete_15/</link>
-      <pubDate>Sat, 29 Jul 2017 10:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/code_complete_15/</guid>
-      <description>if文 正常なケースの実行文を先に書いてから、例外的なケースを書く 可読性とパフォーマンスの面で重要 if(){ ##正常ケース } else(){ ##例外ケース } 正常なケ</description>
     </item>
     
     <item>
