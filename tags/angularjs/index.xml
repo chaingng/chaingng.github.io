@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angularjs on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/angularjs/</link>
+    <description>Recent content in Angularjs on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 27 Aug 2017 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ng-includeで読み込んだパーシャルをキャッシュさせない</title>
+      <link>https://chaingng.github.io/post/ng_include/</link>
+      <pubDate>Sun, 27 Aug 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/ng_include/</guid>
+      <description>angularjsにてhtmlをパーシャルしたい場合は、ng-includeを使う。 &amp;lt;div ng-include=&amp;quot;&#39;views/home/sidebar/_issue_list.html&#39;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; パーシャルが常にcacheされてしまう ただしこの場合</description>
+    </item>
+    
+  </channel>
+</rss>
