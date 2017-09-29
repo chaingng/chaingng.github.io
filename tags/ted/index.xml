@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ted on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/ted/</link>
+    <description>Recent content in Ted on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 29 Sep 2017 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/ted/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to buy happiness</title>
+      <link>https://chaingng.github.io/post/how_to_buy_happiness/</link>
+      <pubDate>Fri, 29 Sep 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/how_to_buy_happiness/</guid>
+      <description>How to buy happiness 幸せをお金で買う方法 多くの人は幸せを買う方法はないと考える。 でも、実は、幸せを買う方法はある。 それは、「他人のためにお金を使うこと」</description>
+    </item>
+    
+  </channel>
+</rss>

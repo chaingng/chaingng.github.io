@@ -6,10 +6,19 @@
     <description>Recent content on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 15 Sep 2017 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 29 Sep 2017 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to buy happiness</title>
+      <link>https://chaingng.github.io/post/how_to_buy_happiness/</link>
+      <pubDate>Fri, 29 Sep 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/how_to_buy_happiness/</guid>
+      <description>How to buy happiness 幸せをお金で買う方法 多くの人は幸せを買う方法はないと考える。 でも、実は、幸せを買う方法はある。 それは、「他人のためにお金を使うこと」</description>
+    </item>
     
     <item>
       <title>[要約]A Better Pip Workflow</title>
