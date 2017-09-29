@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.28-DEV" />
 <meta property="og:title" content="リモート追跡ブランチ／追跡ブランチ／リモートブランチの違い" />
-<meta property="og:description" content="まとめ リモートブランチ - リモートレポジトリに存在するブランチ - (remote)/(branch)で表される リモート追跡ブランチ - リモートブラ" />
+<meta property="og:description" content="まとめ リモートブランチ - リモートレポジトリに存在するブランチ - (remote)/(branch)で表される リモート追跡ブランチ - ローカルに存" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/git_branch/" />
 
@@ -85,8 +85,8 @@ ga('send', 'pageview');
 
 <h2 id="リモート追跡ブランチ">リモート追跡ブランチ</h2>
 
-<pre><code>- リモートブランチの状態を保持するブランチ
-- ローカルに存在
+<pre><code>- ローカルに存在
+- リモートブランチの状態を保持するブランチ
 - リモートへpushすると自動的に作成される
 - fetchで最新化される
 </code></pre>
@@ -213,7 +213,7 @@ Branch serverfix set up to track remote branch serverfix from origin.
 
 <p>このときiss53はorigin/iss53、master、serverfixは追跡ブランチで、testingは追跡ブランチではないことがわかる。</p>
 
-<h2 id="git-pushでブランチ名が省略可能">git pushでブランチ名が省略可能</h2>
+<h2 id="追跡ブランチではgit-pushでブランチ名が省略できる">追跡ブランチではgit pushでブランチ名が省略できる</h2>
 
 <p>追跡ブランチは、<code>git push</code>にてブランチ名が省略可能。<br />
 省略時は追跡しているリモートブランチにpushする。</p>
