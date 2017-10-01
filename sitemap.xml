@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chaingng.github.io/post/logjam/</loc>
+    <lastmod>2017-10-01T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/how_to_buy_happiness/</loc>
     <lastmod>2017-09-29T10:00:00+09:00</lastmod>
   </url>
@@ -2797,13 +2802,19 @@
   
   <url>
     <loc>https://chaingng.github.io/post/</loc>
-    <lastmod>2017-09-29T10:00:00+09:00</lastmod>
+    <lastmod>2017-10-01T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://chaingng.github.io/tags/python/</loc>
     <lastmod>2017-09-15T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chaingng.github.io/tags/security/</loc>
+    <lastmod>2017-10-01T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2827,7 +2838,7 @@
   
   <url>
     <loc>https://chaingng.github.io/</loc>
-    <lastmod>2017-09-29T10:00:00+09:00</lastmod>
+    <lastmod>2017-10-01T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

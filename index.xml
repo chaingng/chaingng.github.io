@@ -6,10 +6,19 @@
     <description>Recent content on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 29 Sep 2017 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Oct 2017 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>logjam攻撃への脆弱性対策</title>
+      <link>https://chaingng.github.io/post/logjam/</link>
+      <pubDate>Sun, 01 Oct 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/logjam/</guid>
+      <description>Weak Diffie-Hellman and the Logjam Attackに詳細が記載されている。 これに従って、詳細を整理しておく。 logjamとは ディフィー・ヘルマン鍵交換における脆弱性を利</description>
+    </item>
     
     <item>
       <title>How to buy happiness(幸せをお金で買う方法)</title>
