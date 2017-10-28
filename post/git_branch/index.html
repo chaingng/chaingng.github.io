@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.31-DEV" />
 <meta property="og:title" content="リモート追跡ブランチ／追跡ブランチ／リモートブランチの違い" />
-<meta property="og:description" content="まとめ リモートブランチ - リモートレポジトリに存在するブランチ - (remote)/(branch)で表される リモート追跡ブランチ - ローカルに存" />
+<meta property="og:description" content="まとめ リモートブランチ リモートレポジトリに存在するブランチ (remote)/(branch)で表される リモート追跡ブランチ ローカルに存在 リモ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/git_branch/" />
 
@@ -78,28 +78,41 @@ ga('send', 'pageview');
 
 <h1 id="まとめ">まとめ</h1>
 
+<p><br></p>
+
 <h2 id="リモートブランチ">リモートブランチ</h2>
 
-<pre><code>- リモートレポジトリに存在するブランチ
-- (remote)/(branch)で表される
-</code></pre>
+<ul>
+<li>リモートレポジトリに存在するブランチ</li>
+<li>(remote)/(branch)で表される</li>
+</ul>
+
+<p><br></p>
 
 <h2 id="リモート追跡ブランチ">リモート追跡ブランチ</h2>
 
-<pre><code>- ローカルに存在
-- リモートブランチの状態を保持するブランチ
-- リモートへpushすると自動的に作成される
-- fetchでローカルのリモート追跡ブランチの状態が最新化される
-</code></pre>
+<ul>
+<li>ローカルに存在</li>
+<li>リモートブランチの状態を保持するブランチ</li>
+<li>リモートへpushすると自動的に作成される</li>
+<li>fetchでローカルのリモート追跡ブランチの状態が最新化される</li>
+</ul>
+
+<p><br></p>
 
 <h2 id="追跡ブランチ">追跡ブランチ</h2>
 
-<pre><code>- リモートブランチと直接のつながりをもつローカルブランチ
-- git branch / git checkoutにて作成可能
-- git push時にブランチ名が省略可能
-</code></pre>
+<ul>
+<li>リモートブランチと直接のつながりをもつローカルブランチ</li>
+<li>git branch / git checkoutにて作成可能</li>
+<li>git push時にブランチ名が省略可能</li>
+</ul>
+
+<p><br><br></p>
 
 <h1 id="リモート追跡ブランチ-1">リモート追跡ブランチ</h1>
+
+<p><br></p>
 
 <h2 id="リモート追跡ブランチの定義">リモート追跡ブランチの定義</h2>
 
@@ -109,6 +122,8 @@ ga('send', 'pageview');
 ローカルに作成される参照ですが、自分で移動することはできません。ネットワーク越しの操作をしたときに自動的に移動します。 
 リモート追跡ブランチは、前回リモートリポジトリに接続したときにブランチがどの場所を指していたかを示すブックマークのようなものです。
 </code></pre>
+
+<p><br></p>
 
 <h2 id="リモート追跡ブランチの表示">リモート追跡ブランチの表示</h2>
 
@@ -125,6 +140,8 @@ ga('send', 'pageview');
 <p>このときremotes/(remote)/(branch)で表されるのがリモート追跡ブランチ。</p>
 
 <p>最後の行はリモートブランチorigin/developがリモート追跡ブランチremotes/origin/HEADに紐付いていることを表す。</p>
+
+<p><br></p>
 
 <h2 id="リモート追跡ブランチの更新">リモート追跡ブランチの更新</h2>
 
@@ -159,7 +176,11 @@ $ git branch -a
   remotes/origin/dev
 </code></pre>
 
+<p><br><br></p>
+
 <h1 id="追跡ブランチ-1">追跡ブランチ</h1>
+
+<p><br></p>
 
 <h2 id="追跡ブランチの定義">追跡ブランチの定義</h2>
 
@@ -170,6 +191,8 @@ $ git branch -a
 追跡ブランチとは、リモートブランチと直接のつながりを持つローカルブランチのことです。 
 追跡ブランチ上で git pull を実行すると、Git は自動的に取得元のサーバーとブランチを判断します。
 </code></pre>
+
+<p><br></p>
 
 <h2 id="追跡ブランチの作成">追跡ブランチの作成</h2>
 
@@ -194,6 +217,8 @@ Branch demo2 set up to track remote branch demo2 from origin.
 Switched to a new branch 'demo2'
 </code></pre>
 
+<p><br></p>
+
 <h2 id="ローカルブランチを追跡ブランチにする">ローカルブランチを追跡ブランチにする</h2>
 
 <p>git branch -u で可能</p>
@@ -201,6 +226,8 @@ Switched to a new branch 'demo2'
 <pre><code>$ git branch -u origin/serverfix
 Branch serverfix set up to track remote branch serverfix from origin.
 </code></pre>
+
+<p><br></p>
 
 <h2 id="ローカルブランチが追跡ブランチか確認">ローカルブランチが追跡ブランチか確認</h2>
 
@@ -214,6 +241,8 @@ Branch serverfix set up to track remote branch serverfix from origin.
 </code></pre>
 
 <p>このときiss53はorigin/iss53、master、serverfixは追跡ブランチで、testingは追跡ブランチではないことがわかる。</p>
+
+<p><br></p>
 
 <h2 id="追跡ブランチではgit-pushでブランチ名が省略できる">追跡ブランチではgit pushでブランチ名が省略できる</h2>
 
