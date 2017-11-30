@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>gitでパスワードを保存する</title>
+      <link>https://chaingng.github.io/post/git_save_pw/</link>
+      <pubDate>Sun, 26 Nov 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/git_save_pw/</guid>
+      <description>httpsアクセスの際、githubへのアクセスにはパスワード or personal access token（二段階認証を設定している場合）が必要になる。 デフォルトでは、</description>
+    </item>
+    
+    <item>
       <title>logjam脆弱性と対策【Referenceのまとめ】</title>
       <link>https://chaingng.github.io/post/logjam/</link>
       <pubDate>Sun, 01 Oct 2017 10:00:00 +0900</pubDate>

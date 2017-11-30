@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/git_save_pw/</loc>
+    <lastmod>2017-11-26T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/logjam/</loc>
     <lastmod>2017-10-01T10:00:00+09:00</lastmod>
   </url>
@@ -2796,6 +2801,12 @@
   <url>
     <loc>https://chaingng.github.io/tags/dp/</loc>
     <lastmod>2015-04-28T21:04:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chaingng.github.io/tags/git/</loc>
+    <lastmod>2017-11-26T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
