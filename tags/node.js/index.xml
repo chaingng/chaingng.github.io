@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node.js on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/node.js/</link>
+    <description>Recent content in Node.js on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Thu, 30 Nov 2017 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>node.jsで環境変数を設定・取得</title>
+      <link>https://chaingng.github.io/post/nodejs_env/</link>
+      <pubDate>Thu, 30 Nov 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/nodejs_env/</guid>
+      <description>node.jsで環境変数を設定・取得するにはprocess.envを使う。 環境変数の一覧を取得 process.envですべての環境変数が取得</description>
+    </item>
+    
+  </channel>
+</rss>
