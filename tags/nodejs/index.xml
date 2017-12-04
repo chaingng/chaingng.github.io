@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/nodejs/</link>
+    <description>Recent content in Nodejs on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 02 Dec 2017 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>foreverでnode.jsアプリケーションをデーモン化</title>
+      <link>https://chaingng.github.io/post/nodejs_forever/</link>
+      <pubDate>Sat, 02 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/nodejs_forever/</guid>
+      <description>foreverを使うことで、nodeまたは任意のスクリプトをデーモン化することができる。 インストール npm install forever -g nodeスクリプトをデーモン起動</description>
+    </item>
+    
+  </channel>
+</rss>

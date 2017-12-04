@@ -6,10 +6,19 @@
     <description>Recent content in Posts on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 30 Nov 2017 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 02 Dec 2017 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>foreverでnode.jsアプリケーションをデーモン化</title>
+      <link>https://chaingng.github.io/post/nodejs_forever/</link>
+      <pubDate>Sat, 02 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/nodejs_forever/</guid>
+      <description>foreverを使うことで、nodeまたは任意のスクリプトをデーモン化することができる。 インストール npm install forever -g nodeスクリプトをデーモン起動</description>
+    </item>
     
     <item>
       <title>node.jsで環境変数を設定・取得</title>
