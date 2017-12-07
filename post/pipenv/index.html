@@ -248,27 +248,6 @@ python_version = &quot;3.6&quot;
 <pre><code>pipenv --update
 </code></pre>
 
-<h2 id="systemでhashのチェック">—systemでhashのチェック</h2>
-
-<pre><code>$ pipenv install --system
-Installing dependencies from Pipfile.lock (f15c0a)…
-An error occurred while installing python-socketio==1.8.3! Will try again.
-An error occurred while installing python-engineio==1.7.0! Will try again.
-An error occurred while installing flask-socketio==2.9.2! Will try again.
-  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 71/71 — 00:00:53
-Installing initially–failed dependencies…
-Collecting python-socketio==1.8.3 ▉▉▉ 0/3 — 00:00:00
-  Using cached python_socketio-1.8.3-py2.py3-none-any.whl
-
-THESE PACKAGES DO NOT MATCH THE HASHES FROM Pipfile.lock!. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.
-    python-socketio==1.8.3 from https://pypi.python.org/packages/54/80/ee4dab6e14c749f8591b6aabc7e503147bac35791c6638626f0fd39cda3f/python_socketio-1.8.3-py2.py3-none-any.whl#md5=ce047feda6041303a2415cc34587ffc1 (from -r /var/folders/6p/wpmhc9b92zv5k8j19djbfqj00000gn/T/pipenv-bjoMqA-requirement.txt (line 1)):
-        Expected sha256 822433bcda86924367bccfc64083bae60bd64c89c8fc07f79530458ce5a6dcea
-             Got        0d4991d2a7424c59ecad492d4c331de26d227aec4d2f49374807ed5c32a46156
-
-
-  ☤  ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/3 — 00:00:00
-</code></pre>
-
 <h2 id="envのlocationを指定">.envのlocationを指定</h2>
 
 <pre><code>$ PIPENV_DOTENV_LOCATION=/path/to/.env pipenv shell
