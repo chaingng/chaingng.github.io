@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pipenvの使い方</title>
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+<meta property="og:title" content="pipenvの使い方" />
+<meta property="og:description" content="pipenvを使うことにより、rubyにおけるGemfileのようにpythonでpackage管理を行うことができる。 いいところ pip と virtualenv が連" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chaingng.github.io/post/pipenv/" />
+
+
+
+<meta property="article:published_time" content="2017-12-07T10:00:00&#43;09:00"/>
+
+<meta property="article:modified_time" content="2017-12-07T10:00:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">pipenvの使い方</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2017-12-07T10:00:00">December 07, 2017</time>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			
+
+<p>pipenvを使うことにより、rubyにおけるGemfileのようにpythonでpackage管理を行うことができる。</p>
+
+<h2 id="いいところ">いいところ</h2>
+
+<ul>
+<li>pip と virtualenv が連係して動作</li>
+<li>requirements.txt ファイルの管理は 問題になり得る ので、代わりにPipenvは来たるべき Pipfile および Pipfile.lock を使う</li>
+<li>パッケージの依存性をグラフで洞察できる(pipenv graph)</li>
+<li>.envファイルを利用して開発ワークフローを効率化できる</li>
+</ul>
+
+<h2 id="特徴">特徴</h2>
+
+<ul>
+<li>pyenvが使える場合は、指定されているpythonバージョンを自動でインストールする</li>
+<li>Pipfileが存在しない場合、自動で生成する</li>
+<li>.envファイルがある場合、自動で読み込む</li>
+<li>既存の仮想環境が存在しないときは、自動で作成
+
+<ul>
+<li>明示的に作る必要がない</li>
+</ul></li>
+<li>install にパラメータが何も渡されないときは、 [packages] に指定された全てのパッケージがインストール
+
+<ul>
+<li>Rubyにおけるbundleと同じ
+<br /></li>
+</ul></li>
+</ul>
+
+<h2 id="インストール">インストール</h2>
+
+<pre><code>pip install pipenv
+</code></pre>
+
+<h2 id="初期化">初期化</h2>
+
+<p>python2系 or ３系を指定する。Pipfileが作成される</p>
+
+<pre><code># python3系
+pipenv —three 
+
+# python2系
+pipenv --two  
+</code></pre>
+
+<h2 id="requirements-txtのインポート">requirements.txtのインポート</h2>
+
+<pre><code>pipenv install --requirements requirements.txt
+</code></pre>
+
+<h2 id="packageのインストール">packageのインストール</h2>
+
+<pre><code>pipenv install [package]
+</code></pre>
+
+<h2 id="pipfile-lockを使用してインストール">Pipfile.lockを使用してインストール</h2>
+
+<pre><code>pipenv install --ignore-pipfile [package]
+</code></pre>
+
+<h2 id="dev-packages-にパッケージをインストール">[dev-packages]にパッケージをインストール</h2>
+
+<pre><code>pipenv install [package] --dev
+</code></pre>
+
+<h2 id="packageのアンインストール">packageのアンインストール</h2>
+
+<pre><code>pipenv uninstall [package]
+</code></pre>
+
+<h2 id="全てのpackageのアンインストール">全てのpackageのアンインストール</h2>
+
+<pre><code>$ pipenv uninstall --all
+No package provided, un-installing all dependencies.
+Found 25 installed package(s), purging...
+...
+Environment now purged and fresh!
+</code></pre>
+
+<h2 id="packageのアップデート">packageのアップデート</h2>
+
+<p>package指定がなければ、で全てのパッケージをアップデート</p>
+
+<pre><code>pipenv update [package]
+</code></pre>
+
+<h2 id="pipfile-lockを作成">Pipfile.lockを作成</h2>
+
+<pre><code>$ pipenv lock
+Locking [dev-packages] dependencies…
+Locking [packages] dependencies…
+Updated Pipfile.lock (58dd91)!
+</code></pre>
+
+<h2 id="packageの依存グラフを確認">packageの依存グラフを確認</h2>
+
+<pre><code>$ pipenv graph
+awscli==1.14.3
+  - botocore [required: ==1.8.7, installed: 1.8.7]
+    - docutils [required: &gt;=0.10, installed: 0.14]
+    - jmespath [required: &lt;1.0.0,&gt;=0.7.1, installed: 0.9.3]
+    - python-dateutil [required: &lt;3.0.0,&gt;=2.1, installed: 2.6.1]
+      - six [required: &gt;=1.5, installed: 1.11.0]
+  - colorama [required: &gt;=0.2.5,&lt;=0.3.7, installed: 0.3.7]
+  - docutils [required: &gt;=0.10, installed: 0.14]
+  - PyYAML [required: &lt;=3.12,&gt;=3.10, installed: 3.12]
+  - rsa [required: &gt;=3.1.2,&lt;=3.5.0, installed: 3.4.2]
+    - pyasn1 [required: &gt;=0.1.3, installed: 0.4.2]
+  - s3transfer [required: &lt;0.2.0,&gt;=0.1.12, installed: 0.1.12]
+    - botocore [required: &lt;2.0.0,&gt;=1.3.0, installed: 1.8.7]
+      - docutils [required: &gt;=0.10, installed: 0.14]
+      - jmespath [required: &lt;1.0.0,&gt;=0.7.1, installed: 0.9.3]
+      - python-dateutil [required: &lt;3.0.0,&gt;=2.1, installed: 2.6.1]
+        - six [required: &gt;=1.5, installed: 1.11.0]
+    - futures [required: &lt;4.0.0,&gt;=2.2.0, installed: 3.2.0]
+boto==2.48.0
+</code></pre>
+
+<h2 id="仮想環境でコマンドを実行">仮想環境でコマンドを実行</h2>
+
+<pre><code>pipenv run [command]
+pipenv run python run.py
+</code></pre>
+
+<h2 id="仮想環境が有効化されたシェルを起動">仮想環境が有効化されたシェルを起動</h2>
+
+<pre><code>$ pipenv shell
+Spawning environment shell (/bin/bash). Use 'exit' to leave.
+source /Users/hondatakatomo/.local/share/virtualenvs/webkadai-_nqIBXqd/bin/activate
+</code></pre>
+
+<h2 id="セキュリティの脆弱性をチェック">セキュリティの脆弱性をチェック</h2>
+
+<p>現在の環境がPEP 508の要求仕様を満たしているかチェック</p>
+
+<pre><code>$ pipenv check
+Checking PEP 508 requirements…
+Passed!
+Checking installed package safety…
+All good!
+</code></pre>
+
+<h2 id="仮想環境の情報を出力">仮想環境の情報を出力</h2>
+
+<pre><code>$ pipenv --venv
+/Users/hondatakatomo/.local/share/virtualenvs/webkadai-_nqIBXqd
+</code></pre>
+
+<h2 id="python-versionを指定">python_versionを指定</h2>
+
+<p>pyenv のインストールと設定が済んでいて、必要とするバージョンのPythonがまだ利用できる状態になっていない場合、Pipenvは自動でそのバージョンのPythonをインストールしたいかどうかを尋ねます</p>
+
+<pre><code>$ cat Pipfile
+[[source]]
+url = &quot;https://pypi.python.org/simple&quot;
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+requests = &quot;*&quot;
+
+[requires]
+python_version = &quot;3.6&quot;
+</code></pre>
+
+<h2 id="pipenvとpipをアップデート">pipenvとpipをアップデート</h2>
+
+<pre><code>pipenv --update
+</code></pre>
+
+<h2 id="systemでhashのチェック">—systemでhashのチェック</h2>
+
+<pre><code>$ pipenv install --system
+Installing dependencies from Pipfile.lock (f15c0a)…
+An error occurred while installing python-socketio==1.8.3! Will try again.
+An error occurred while installing python-engineio==1.7.0! Will try again.
+An error occurred while installing flask-socketio==2.9.2! Will try again.
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 71/71 — 00:00:53
+Installing initially–failed dependencies…
+Collecting python-socketio==1.8.3 ▉▉▉ 0/3 — 00:00:00
+  Using cached python_socketio-1.8.3-py2.py3-none-any.whl
+
+THESE PACKAGES DO NOT MATCH THE HASHES FROM Pipfile.lock!. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.
+    python-socketio==1.8.3 from https://pypi.python.org/packages/54/80/ee4dab6e14c749f8591b6aabc7e503147bac35791c6638626f0fd39cda3f/python_socketio-1.8.3-py2.py3-none-any.whl#md5=ce047feda6041303a2415cc34587ffc1 (from -r /var/folders/6p/wpmhc9b92zv5k8j19djbfqj00000gn/T/pipenv-bjoMqA-requirement.txt (line 1)):
+        Expected sha256 822433bcda86924367bccfc64083bae60bd64c89c8fc07f79530458ce5a6dcea
+             Got        0d4991d2a7424c59ecad492d4c331de26d227aec4d2f49374807ed5c32a46156
+
+
+  ☤  ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/3 — 00:00:00
+</code></pre>
+
+<h2 id="envのlocationを指定">.envのlocationを指定</h2>
+
+<pre><code>$ PIPENV_DOTENV_LOCATION=/path/to/.env pipenv shell
+</code></pre>
+
+<h2 id="envを読み込まない">.envを読み込まない</h2>
+
+<pre><code>$ PIPENV_DONT_LOAD_ENV=1 pipenv shell
+</code></pre>
+
+<h2 id="jumbotron">jumbotron</h2>
+
+<pre><code>$ pipenv --jumbotron
+
+ _______   __                                           __
+/       \ /  |                                         /  |
+$$$$$$$  |$$/   ______    ______   _______   __     __ $$ |
+$$ |__$$ |/  | /      \  /      \ /       \ /  \   /  |$$ |
+$$    $$/ $$ |/$$$$$$  |/$$$$$$  |$$$$$$$  |$$  \ /$$/ $$ |
+$$$$$$$/  $$ |$$ |  $$ |$$    $$ |$$ |  $$ | $$  /$$/  $$/
+$$ |      $$ |$$ |__$$ |$$$$$$$$/ $$ |  $$ |  $$ $$/    __
+$$ |      $$ |$$    $$/ $$       |$$ |  $$ |   $$$/    /  |
+$$/       $$/ $$$$$$$/   $$$$$$$/ $$/   $$/     $/     $$/
+              $$ |
+              $$ |
+              $$/
+</code></pre>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
+	</ul>
+</div>
+
+	</article>
+
+<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-normal" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+	
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/post/nodejs_forever/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">foreverでnode.jsアプリケーションをデーモン化</p></a>
+	</div>
+</nav>
+
+	
+</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Popular Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/git_branch/">リモート追跡ブランチ／追跡ブランチ／リモートブランチの違い</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/pipenv/">pipenvの使い方</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/nodejs_forever/">foreverでnode.jsアプリケーションをデーモン化</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/nodejs_env/">node.jsで環境変数を設定・取得</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/git_save_pw/">gitでパスワードを保存する</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/logjam/">logjam脆弱性と対策【Referenceのまとめ】</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/how_to_buy_happiness/">幸せをお金で買う方法(TED) - まとめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/a_better_pip_workflow/">[要約]A Better Pip Workflow</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ng_include/">ng-includeで読み込んだパーシャルをキャッシュさせない</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/code_complete_15/">[要約]CodeComplete 15章 条件文の使用</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/elasticsearch_install/">ElasticSearchの導入</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/angularjs" title="angularjs">angularjs (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp (35)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/git" title="git">git (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/node.js" title="node.js">node.js (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/nodejs" title="nodejs">nodejs (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/security" title="security">security (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology (24)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ted" title="ted">ted (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー (4)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ (10)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション (7)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット (5)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索 (5)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索 (22)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装 (22)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定 (5)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学 (32)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列 (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移 (11)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率 (6)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動 (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和 (4)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察 (22)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法 (5)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム (8)</a>
+	</div>
+</div>
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>
