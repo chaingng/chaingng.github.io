@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/linux/</link>
+    <description>Recent content in Linux on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 01 Jan 2017 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>公開鍵認証によるsshアクセスの設定</title>
+      <link>https://chaingng.github.io/post/linux_ssh_key/</link>
+      <pubDate>Sun, 01 Jan 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/linux_ssh_key/</guid>
+      <description>ssh-keygenにて公開鍵と秘密鍵を作成 $ ssh-keygen -t rsa -b 2048 Generating public/private rsa key pair. Enter file in which to save the key (/Users/hondatakatomo/.ssh/id_rsa): /Users/hondatakatomo/.ssh/hogefuga Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /Users/hondatakatomo/.ssh/hogefuga. Your public key has been saved in /Users/hondatakatomo/.ssh/hogefuga.pub. The key</description>
+    </item>
+    
+  </channel>
+</rss>
