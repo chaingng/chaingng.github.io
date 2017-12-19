@@ -6,10 +6,19 @@
     <description>Recent content in Technology on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 31 Oct 2014 22:24:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jan 2017 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/technology/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vagrantの使い方</title>
+      <link>https://chaingng.github.io/post/vagrant/</link>
+      <pubDate>Sun, 08 Jan 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/vagrant/</guid>
+      <description>インストール 公式のDownloadページから、対応するOSのパッケージをダウンロードしてインストール VagrantFileの作成 vagrant initを</description>
+    </item>
     
     <item>
       <title>Windowsのプロキシ</title>
