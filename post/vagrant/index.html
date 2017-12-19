@@ -207,14 +207,14 @@ config.vm.network &quot;forwarded_port&quot;, guest: 443, host: 8443
 
 <ul>
 <li>デフォルトでは仮想マシンごとにそれぞれ異なるssh keyが払い出される</li>
-<li>以下の設定を追加することで、すべての仮想マシンで同じssh keyが設定される
-<code>
-Vagrant.configure(&quot;2&quot;) do |config|
-config.ssh.private_key_path = &quot;custom_key_file&quot;
-config.ssh.forward_agent = true
-End
-</code></li>
+<li>以下の設定を追加することで、すべての仮想マシンで同じssh keyが設定される</li>
 </ul>
+
+<pre><code>Vagrant.configure(&quot;2&quot;) do |config|
+    config.ssh.private_key_path = &quot;custom_key_file&quot;
+    config.ssh.forward_agent = true
+End
+</code></pre>
 
 <h3 id="スクリプトを利用して設定を行う">スクリプトを利用して設定を行う</h3>
 
