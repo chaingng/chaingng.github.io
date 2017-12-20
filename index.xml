@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>node.jsで環境変数を設定・取得</title>
-      <link>https://chaingng.github.io/post/nodejs_env/</link>
-      <pubDate>Thu, 30 Nov 2017 10:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/nodejs_env/</guid>
-      <description>node.jsで環境変数を設定・取得するにはprocess.envを使う。 環境変数の一覧を取得 process.envですべての環境変数が取得</description>
-    </item>
-    
-    <item>
       <title>About Me</title>
       <link>https://chaingng.github.io/me/</link>
       <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
@@ -54,6 +45,15 @@
       
       <guid>https://chaingng.github.io/post/hoge/</guid>
       <description>ようこそ， Hugo の世界へ！！</description>
+    </item>
+    
+    <item>
+      <title>node.jsで環境変数を設定・取得</title>
+      <link>https://chaingng.github.io/post/nodejs_env/</link>
+      <pubDate>Sun, 09 Apr 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/nodejs_env/</guid>
+      <description>node.jsで環境変数を設定・取得するにはprocess.envを使う。 環境変数の一覧を取得 process.envですべての環境変数が取得</description>
     </item>
     
     <item>
