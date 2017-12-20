@@ -156,6 +156,15 @@
     </item>
     
     <item>
+      <title>httpにおける適切なステータスコードの選択</title>
+      <link>https://chaingng.github.io/post/http_status_code/</link>
+      <pubDate>Sun, 15 Jan 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/http_status_code/</guid>
+      <description>このフローチャートをみれば全て解決。 http://racksburg.com/choosing-an-http-status-code/ 日本語版 http://postd.cc/choosing-an-http-status-code/</description>
+    </item>
+    
+    <item>
       <title>vagrantの使い方</title>
       <link>https://chaingng.github.io/post/vagrant/</link>
       <pubDate>Sun, 08 Jan 2017 10:00:00 +0900</pubDate>

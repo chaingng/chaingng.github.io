@@ -83,6 +83,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/http_status_code/</loc>
+    <lastmod>2017-01-15T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/vagrant/</loc>
     <lastmod>2017-01-08T10:00:00+09:00</lastmod>
   </url>
@@ -2827,6 +2832,12 @@
   <url>
     <loc>https://chaingng.github.io/tags/git/</loc>
     <lastmod>2017-11-26T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chaingng.github.io/tags/http/</loc>
+    <lastmod>2017-01-15T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
