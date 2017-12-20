@@ -111,21 +111,21 @@
     </item>
     
     <item>
-      <title>リモート追跡ブランチ／追跡ブランチ／リモートブランチの違い</title>
-      <link>https://chaingng.github.io/post/git_branch/</link>
-      <pubDate>Sun, 16 Jul 2017 00:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/git_branch/</guid>
-      <description>まとめ リモートブランチ リモートレポジトリに存在するブランチ (remote)/(branch)で表される リモート追跡ブランチ ローカルに存在 リモ</description>
-    </item>
-    
-    <item>
       <title>hugo first post</title>
       <link>https://chaingng.github.io/post/hoge/</link>
       <pubDate>Wed, 05 Jul 2017 10:21:23 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/hoge/</guid>
       <description>ようこそ， Hugo の世界へ！！</description>
+    </item>
+    
+    <item>
+      <title>リモート追跡ブランチ／追跡ブランチ／リモートブランチの違い</title>
+      <link>https://chaingng.github.io/post/git_branch/</link>
+      <pubDate>Sun, 05 Feb 2017 00:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/git_branch/</guid>
+      <description>まとめ リモートブランチ リモートレポジトリに存在するブランチ (remote)/(branch)で表される リモート追跡ブランチ ローカルに存在 リモ</description>
     </item>
     
     <item>
