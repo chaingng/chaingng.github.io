@@ -6,7 +6,7 @@
     <description>Recent content in Python on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 07 Dec 2017 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 26 Apr 2017 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>pipenvの使い方</title>
       <link>https://chaingng.github.io/post/pipenv/</link>
-      <pubDate>Thu, 07 Dec 2017 10:00:00 +0900</pubDate>
+      <pubDate>Wed, 26 Apr 2017 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/pipenv/</guid>
       <description>pipenvを使うことにより、rubyにおけるGemfileのようにpythonでpackage管理を行うことができる。 いいところ pip と virtualenv が連</description>
