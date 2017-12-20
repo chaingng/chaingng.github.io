@@ -120,15 +120,6 @@
     </item>
     
     <item>
-      <title>shebangから理解するUNIXの仕組み</title>
-      <link>https://chaingng.github.io/post/shebang_init/</link>
-      <pubDate>Sun, 09 Jul 2017 09:22:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/shebang_init/</guid>
-      <description>unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。</description>
-    </item>
-    
-    <item>
       <title>About Me</title>
       <link>https://chaingng.github.io/me/</link>
       <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
@@ -144,6 +135,15 @@
       
       <guid>https://chaingng.github.io/post/hoge/</guid>
       <description>ようこそ， Hugo の世界へ！！</description>
+    </item>
+    
+    <item>
+      <title>shebangから理解するUNIXの仕組み</title>
+      <link>https://chaingng.github.io/post/shebang_init/</link>
+      <pubDate>Sun, 29 Jan 2017 09:22:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/shebang_init/</guid>
+      <description>unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。</description>
     </item>
     
     <item>
