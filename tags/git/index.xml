@@ -6,7 +6,7 @@
     <description>Recent content in Git on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Nov 2017 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Apr 2017 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>gitでパスワードを保存する</title>
       <link>https://chaingng.github.io/post/git_save_pw/</link>
-      <pubDate>Sun, 26 Nov 2017 10:00:00 +0900</pubDate>
+      <pubDate>Sun, 02 Apr 2017 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/git_save_pw/</guid>
       <description>httpsアクセスの際、githubへのアクセスにはパスワード or personal access token（二段階認証を設定している場合）が必要になる。 デフォルトでは、</description>
