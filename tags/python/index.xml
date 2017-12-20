@@ -23,7 +23,7 @@
     <item>
       <title>[要約]A Better Pip Workflow</title>
       <link>https://chaingng.github.io/post/a_better_pip_workflow/</link>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 12 Mar 2017 00:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/a_better_pip_workflow/</guid>
       <description>requirements.txtを使うのには問題があるよ、という話。 典型的なrequirements.txtの使い方 １．A list of top-level dependencies a project has, often without</description>

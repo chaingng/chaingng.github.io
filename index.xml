@@ -66,15 +66,6 @@
     </item>
     
     <item>
-      <title>[要約]A Better Pip Workflow</title>
-      <link>https://chaingng.github.io/post/a_better_pip_workflow/</link>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/a_better_pip_workflow/</guid>
-      <description>requirements.txtを使うのには問題があるよ、という話。 典型的なrequirements.txtの使い方 １．A list of top-level dependencies a project has, often without</description>
-    </item>
-    
-    <item>
       <title>About Me</title>
       <link>https://chaingng.github.io/me/</link>
       <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
@@ -90,6 +81,15 @@
       
       <guid>https://chaingng.github.io/post/hoge/</guid>
       <description>ようこそ， Hugo の世界へ！！</description>
+    </item>
+    
+    <item>
+      <title>[要約]A Better Pip Workflow</title>
+      <link>https://chaingng.github.io/post/a_better_pip_workflow/</link>
+      <pubDate>Sun, 12 Mar 2017 00:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/a_better_pip_workflow/</guid>
+      <description>requirements.txtを使うのには問題があるよ、という話。 典型的なrequirements.txtの使い方 １．A list of top-level dependencies a project has, often without</description>
     </item>
     
     <item>

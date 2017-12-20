@@ -33,11 +33,6 @@
   </url>
   
   <url>
-    <loc>https://chaingng.github.io/post/a_better_pip_workflow/</loc>
-    <lastmod>2017-09-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chaingng.github.io/me/</loc>
     <lastmod>2017-07-08T00:00:00+00:00</lastmod>
   </url>
@@ -45,6 +40,11 @@
   <url>
     <loc>https://chaingng.github.io/post/hoge/</loc>
     <lastmod>2017-07-05T10:21:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chaingng.github.io/post/a_better_pip_workflow/</loc>
+    <lastmod>2017-03-12T00:00:00+09:00</lastmod>
   </url>
   
   <url>
