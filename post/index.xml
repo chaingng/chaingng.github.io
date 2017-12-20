@@ -140,7 +140,7 @@
     <item>
       <title>防御的プログラミング(CodeCompleteのまとめ)</title>
       <link>https://chaingng.github.io/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
-      <pubDate>Sun, 25 Jun 2017 12:04:00 +0000</pubDate>
+      <pubDate>Sun, 22 Jan 2017 12:04:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/%E9%98%B2%E5%BE%A1%E7%9A%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</guid>
       <description>CodeComplete 第8章防御的プログラミングのまとめ。 防御的プログラミングとは、「そうなるはずだ」と決めつけないこと、 防御運転にヒントを得たものである。 無効</description>
