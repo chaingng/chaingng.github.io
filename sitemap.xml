@@ -28,11 +28,6 @@
   </url>
   
   <url>
-    <loc>https://chaingng.github.io/post/how_to_buy_happiness/</loc>
-    <lastmod>2017-09-29T10:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chaingng.github.io/me/</loc>
     <lastmod>2017-07-08T00:00:00+00:00</lastmod>
   </url>
@@ -40,6 +35,11 @@
   <url>
     <loc>https://chaingng.github.io/post/hoge/</loc>
     <lastmod>2017-07-05T10:21:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chaingng.github.io/post/how_to_buy_happiness/</loc>
+    <lastmod>2017-03-19T10:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -2897,7 +2897,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/ted/</loc>
-    <lastmod>2017-09-29T10:00:00+09:00</lastmod>
+    <lastmod>2017-03-19T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
