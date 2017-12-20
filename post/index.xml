@@ -93,9 +93,18 @@
     </item>
     
     <item>
+      <title>hugo first post</title>
+      <link>https://chaingng.github.io/post/hoge/</link>
+      <pubDate>Wed, 05 Jul 2017 10:21:23 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/hoge/</guid>
+      <description>ようこそ， Hugo の世界へ！！</description>
+    </item>
+    
+    <item>
       <title>ElasticSearchの導入</title>
       <link>https://chaingng.github.io/post/elasticsearch_install/</link>
-      <pubDate>Mon, 07 Aug 2017 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 19 Feb 2017 00:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/elasticsearch_install/</guid>
       <description>動作環境 Ubuntu14.04 インストール Java8が必要 apt-get install -y openjdk-8-jdk その後公式にそってelasticsearchをインストール wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - sudo apt-get install -y apt-transport-https echo &amp;quot;deb https://artifacts.elastic.co/packages/5.x/apt stable</description>
@@ -104,19 +113,10 @@
     <item>
       <title>crowi用のvagrantを公開しました</title>
       <link>https://chaingng.github.io/post/vagrant_crowi/</link>
-      <pubDate>Sat, 29 Jul 2017 10:00:00 +0900</pubDate>
+      <pubDate>Sun, 12 Feb 2017 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/vagrant_crowi/</guid>
       <description>情報集約用にwikiをいろいろ試していて、crowiを試してみることにした。 いくつかセットアップが必要だったので、vagrantでワンタッチ</description>
-    </item>
-    
-    <item>
-      <title>hugo first post</title>
-      <link>https://chaingng.github.io/post/hoge/</link>
-      <pubDate>Wed, 05 Jul 2017 10:21:23 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/hoge/</guid>
-      <description>ようこそ， Hugo の世界へ！！</description>
     </item>
     
     <item>
