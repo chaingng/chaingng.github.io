@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>python string文字列の使い方</title>
+      <link>https://chaingng.github.io/post/python_string/</link>
+      <pubDate>Sun, 30 Apr 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_string/</guid>
+      <description>連続して並んでいる文字を連結する &amp;gt;&amp;gt;&amp;gt; &#39;Py&#39; &#39;thon&#39; &#39;Python&#39; 負のindexを指定 &amp;gt;&amp;gt;&amp;gt; word = &#39;Python&#39; &amp;gt;&amp;gt;&amp;gt; word[-1] # last character &#39;n&#39; &amp;gt;&amp;gt;&amp;gt; word[-2] # second-last character &#39;o&#39; &amp;gt;&amp;gt;&amp;gt; word[-6] &#39;P&#39; スライス &amp;gt;&amp;gt;&amp;gt; word[:2] # character from the beginning to position 2 (excluded) &#39;Py&#39; &amp;gt;&amp;gt;&amp;gt; word[4:] # characters from</description>
+    </item>
+    
+    <item>
       <title>pipenvの使い方</title>
       <link>https://chaingng.github.io/post/pipenv/</link>
       <pubDate>Sun, 23 Apr 2017 10:00:00 +0900</pubDate>

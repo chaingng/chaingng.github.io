@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-07-24T16:43:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-07-24T17:07:00&#43;00:00"/>
 
 
 
@@ -62,6 +62,26 @@ ga('send', 'pageview');
 		<div class="wrapper clearfix">
 
 	<div class="main-content list content" role="main">
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-393-div1-easy---instantrunoffvoting-/" rel="bookmark">SRM 393 DIV1 Easy - InstantRunoffVoting ○</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-393-div1-easy---instantrunoffvoting-/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-393-div1-easy---instantrunoffvoting-/" alt="はてなブックマーク - SRM 393 DIV1 Easy - InstantRunoffVoting ○" title="はてなブックマーク - SRM 393 DIV1 Easy - InstantRunoffVoting ○">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-07-24T17:07:00">July 24, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8607&amp;rd=11127 解き方 問題分の通り実装し、収束するまで繰り返せば良い。 コード class InstantRunoffVoting { public: int winner(vector&lt;string&gt; voters) { int n=voters.size(),m=voters[0].size(); int used[10],v[10]; memset(used,0,sizeof(used)); while(1){ memset(v,0,sizeof(v)); int finish=1; FORE(i,0,m)if(used[i]==0)finish=0; if(finish)break; FORE(i,0,n){ int idx=0; while(used[voters[i][idx]-'0']==1)idx++; v[voters[i][idx]-'0']++; } FORE(i,0,m)if(v[i]&gt;n*0.5)return i; int mx=100; FORE(i,0,m)if(used[i]==0)mx=min(mx,v[i]); FORE(i,0,m)if(v[i]==mx)used[i]=1; } return -1; } };
+		</div>
+	</div>
+</article>
+
 				<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
@@ -269,29 +289,6 @@ ga('send', 'pageview');
 	</div>
 </article>
 
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/srm-589-div1-easy---goosetattarrattatdiv1-/" rel="bookmark">SRM 589 DIV1 Easy - GooseTattarrattatDiv1 ○</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-589-div1-easy---goosetattarrattatdiv1-/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-589-div1-easy---goosetattarrattatdiv1-/" alt="はてなブックマーク - SRM 589 DIV1 Easy - GooseTattarrattatDiv1 ○" title="はてなブックマーク - SRM 589 DIV1 Easy - GooseTattarrattatDiv1 ○">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-05-31T13:39:00">May 31, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12730&amp;rd=15701 解き方 回文にするために一致させなければならアルファベットの集合を考えた時、 もっとも出現回数の大きいものだけを残して、他を変換するのが 一
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-589-div1-easy---goosetattarrattatdiv1-/">Read more…</a>
-		</div>
-	</div>
-</article>
-
 		
 
 		
@@ -417,8 +414,9 @@ ga('send', 'pageview');
 			<ul class="widget__list">
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/nodejs_forever/">foreverでnode.jsアプリケーションをデーモン化</a></li>
 			</ul>
-		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python (3)</a>
 			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_string/">python string文字列の使い方</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/pipenv/">pipenvの使い方</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/a_better_pip_workflow/">[要約]A Better Pip Workflow</a></li>
 			</ul>
