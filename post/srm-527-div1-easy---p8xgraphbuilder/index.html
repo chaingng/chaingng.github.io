@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SRM 527 DIV1 Easy - P8XGraphBuilder</title>
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.33-DEV" />
 <meta property="og:title" content="SRM 527 DIV1 Easy - P8XGraphBuilder" />
 <meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11308&amp;rd=14552 解き方 ｄｐで解く。最終的に２＊ｎ−２個のエッジが発生する。 コード class P8XGraphBuilder { public: int solve(vector&lt;int&gt; scores) { int n=scores.size()&#43;1; int dp[n&#43;1][2*n-1]; FORE(i,0,n&#43;1)FORE(j,0,2*n-1)dp[i][j]=-(1e&#43;9); dp[0][0]=0; for(int i=0;i&lt;n;i&#43;&#43;)for(int j=i;j&lt;2*n-2;j&#43;&#43;){ for(int k=0;k&lt;n-1&amp;&amp;j&#43;k&#43;1&lt;=2*n-2;k&#43;&#43;){ dp[i&#43;1][j&#43;k&#43;1]=max(dp[i&#43;1][j&#43;k&#43;1],dp[i][j]&#43;scores[k]); } } return dp[n][2*n-2]; } };" />
 <meta property="og:type" content="article" />
@@ -187,8 +187,9 @@ ga('send', 'pageview');
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm547-div2--level2/">SRM547 DIV2 -Level2</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm565-div2--level2/">SRM565 DIV2 -Level2</a></li>
 			</ul>
-		<a class="widget__link widget__link--taglist" href="/tags/git" title="git">git (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/git" title="git">git (2)</a>
 			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/git_reset/">gitで特定のコミットの状態に戻す</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/git_save_pw/">gitでパスワードを保存する</a></li>
 			</ul>
 		<a class="widget__link widget__link--taglist" href="/tags/http" title="http">http (1)</a>
@@ -547,7 +548,7 @@ ga('send', 'pageview');
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2017 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+				<p class="footer__copyright">&copy; 2018 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
 			</div>
 		</footer>
 	</div>
