@@ -6,10 +6,19 @@
     <description>Recent content in Posts on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 01 Jan 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jan 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWSの認証情報はshared credential fileで管理する</title>
+      <link>https://chaingng.github.io/post/aws_credential_file/</link>
+      <pubDate>Mon, 08 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/aws_credential_file/</guid>
+      <description>様々なAWSサービスを使っていると複数のcredential情報を使い分けることが多くなる。 プログラムに直接credentialを書きたくな</description>
+    </item>
     
     <item>
       <title>gitで特定のコミットの状態に戻す</title>
