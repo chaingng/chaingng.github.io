@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>pythonデータ型ごとのビット数</title>
+      <title>pythonデータ型ごとのメモリサイズ</title>
       <link>https://chaingng.github.io/post/python_type_bits/</link>
       <pubDate>Mon, 15 Jan 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/python_type_bits/</guid>
-      <description>int intはデフォルトで28bit &amp;gt;&amp;gt;&amp;gt; import sys &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1) 28 超えると自動で拡張される &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1&amp;lt;&amp;lt;32) 32 &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1&amp;lt;&amp;lt;60) 36 &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1 &amp;lt;&amp;lt; 10000) 1360 浮動小数 デフォルトで24bit &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(0.1) 24 ## 増やしても変</description>
+      <description>int intはデフォルトで28bit &amp;gt;&amp;gt;&amp;gt; import sys &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1) 28 超えると自動で拡張される &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1&amp;lt;&amp;lt;32) 32 &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1&amp;lt;&amp;lt;60) 36 &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1 &amp;lt;&amp;lt; 10000) 1360 Python3.0をみると、整数型の上限が廃止され</description>
     </item>
     
     <item>
