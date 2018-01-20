@@ -6,10 +6,19 @@
     <description>Recent content in Python on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 30 Apr 2017 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jan 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>pythonデータ型ごとのビット数</title>
+      <link>https://chaingng.github.io/post/python_type_bits/</link>
+      <pubDate>Mon, 15 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_type_bits/</guid>
+      <description>int intはデフォルトで28bit &amp;gt;&amp;gt;&amp;gt; import sys &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1) 28 超えると自動で拡張される &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1&amp;lt;&amp;lt;32) 32 &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1&amp;lt;&amp;lt;60) 36 &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(1 &amp;lt;&amp;lt; 10000) 1360 浮動小数 デフォルトで24bit &amp;gt;&amp;gt;&amp;gt; sys.getsizeof(0.1) 24 ## 増やしても変</description>
+    </item>
     
     <item>
       <title>python string文字列の使い方</title>
