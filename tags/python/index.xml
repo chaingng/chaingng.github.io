@@ -6,10 +6,19 @@
     <description>Recent content in Python on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Jan 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jan 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[python]__repr__と__str__の違い</title>
+      <link>https://chaingng.github.io/post/python_repr/</link>
+      <pubDate>Mon, 22 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_repr/</guid>
+      <description>Referenceによると以下の通り。 __str__(self) オブジェクトの「非公式の (informal)」あるいは表示に適した文字列表現を計算するために呼ばれる</description>
+    </item>
     
     <item>
       <title>pythonデータ型ごとのメモリサイズ</title>
