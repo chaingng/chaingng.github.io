@@ -6,10 +6,21 @@
     <description>Recent content in Posts on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 22 Jan 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jan 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wi-Fi multicast that realizes simultaneous broadcast distribution service to a large number</title>
+      <link>https://chaingng.github.io/post/wifi_multicast/</link>
+      <pubDate>Tue, 23 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/wifi_multicast/</guid>
+      <description>This is an English version of my written technical article
+Wi-Fi multicast By using Wi-Fi multicast technology, multimedia contents such as movies etc. can be delivered simultaneously to all terminals where Wi-Fi can reach.
+Two distribution methods As delivery modes of Wi-Fi multicast technology, there are two types of real-time viewing services by live streaming and two patterns of accumulating files on the terminal by file cast delivery. By making good use of these two forms, it is possible to realize a shift time viewing service that can be viewed anytime and anywhere.</description>
+    </item>
     
     <item>
       <title>[python]__repr__と__str__の違い</title>
