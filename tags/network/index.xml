@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/network/</link>
+    <description>Recent content in Network on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 23 Jan 2018 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IP datacast solution</title>
+      <link>https://chaingng.github.io/post/ip_datacast/</link>
+      <pubDate>Tue, 23 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/ip_datacast/</guid>
+      <description>This is an English version of my written technical article. (Please see original URL for reference figures)
+IP datacast (IPDC: IP Data Cast) is a technology for carrying multimedia file data by broadcasting IP packets on broadcasting and communication to various device terminals simultaneously. NTT DATA is working on the development and standardization of IP datacast technology that realizes new services in broadcasting and communications fields. Here we introduce the technical overview and features of IPDC, application examples, latest technologies under development and future prospects.</description>
+    </item>
+    
+  </channel>
+</rss>

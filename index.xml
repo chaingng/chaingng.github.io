@@ -23,6 +23,16 @@ As an engineer I always wanted to creating things with my own hands - First of a
     </item>
     
     <item>
+      <title>IP datacast solution</title>
+      <link>https://chaingng.github.io/post/ip_datacast/</link>
+      <pubDate>Tue, 23 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/ip_datacast/</guid>
+      <description>This is an English version of my written technical article. (Please see original URL for reference figures)
+IP datacast (IPDC: IP Data Cast) is a technology for carrying multimedia file data by broadcasting IP packets on broadcasting and communication to various device terminals simultaneously. NTT DATA is working on the development and standardization of IP datacast technology that realizes new services in broadcasting and communications fields. Here we introduce the technical overview and features of IPDC, application examples, latest technologies under development and future prospects.</description>
+    </item>
+    
+    <item>
       <title>Wi-Fi multicast that realizes simultaneous broadcast distribution service to a large number</title>
       <link>https://chaingng.github.io/post/wifi_multicast/</link>
       <pubDate>Tue, 23 Jan 2018 10:00:00 +0900</pubDate>

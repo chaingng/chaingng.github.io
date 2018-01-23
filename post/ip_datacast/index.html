@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IP datacast solution</title>
+
+<meta name="generator" content="Hugo 0.33-DEV" />
+<meta property="og:title" content="IP datacast solution" />
+<meta property="og:description" content="This is an English version of my written technical article. (Please see original URL for reference figures)
+IP datacast (IPDC: IP Data Cast) is a technology for carrying multimedia file data by broadcasting IP packets on broadcasting and communication to various device terminals simultaneously. NTT DATA is working on the development and standardization of IP datacast technology that realizes new services in broadcasting and communications fields. Here we introduce the technical overview and features of IPDC, application examples, latest technologies under development and future prospects." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chaingng.github.io/post/ip_datacast/" />
+
+
+
+<meta property="article:published_time" content="2018-01-23T10:00:00&#43;09:00"/>
+
+<meta property="article:modified_time" content="2018-01-23T10:00:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-87677188-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="takatomo&#39;s blog" rel="home">
+						<h1 class="logo__title">takatomo&#39;s blog</h1>
+						
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/me/">ABOUT ME</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">IP datacast solution</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2018-01-23T10:00:00">January 23, 2018</time>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			
+
+<p>This is an English version of <a href="http://www.ntt.co.jp/journal/1404/files/jn201404040.pdf">my written technical article</a>.
+(Please see original URL for reference figures)</p>
+
+<p>IP datacast (IPDC: IP Data Cast) is a technology for carrying multimedia file data by broadcasting IP packets on broadcasting and communication to various device terminals simultaneously. NTT DATA is working on the development and standardization of IP datacast technology that realizes new services in broadcasting and communications fields. Here we introduce the technical overview and features of IPDC, application examples, latest technologies under development and future prospects.</p>
+
+<h2 id="background">Background</h2>
+
+<p>New business beyond the traditional broadcasting and communication service framework such as multimedia broadcasting for mobile terminals that utilizes the free bandwidth accompanying digitization of broadcasting and dissemination of video content distribution for smartphones and tablet terminals by wireless broadband communication By deployment, cooperation between broadcasting and communication is accelerating. Against this backdrop, NTT DATA is actively working on the development and standardization of IP datacast (IPDC: IP DataCast) as one means of realizing a new service in which broadcasting and communication cooperate . Here we introduce IPDC technical overview and features, NOTTV&rsquo;s application to shift time broadcasting, distribution of disaster prevention / disaster information and live streaming.</p>
+
+<h2 id="technical-overview-and-characteristics-of-ipdc">Technical overview and characteristics of IPDC</h2>
+
+<p>IPDC is a technology to transmit multimedia files (text, images, sounds, images, etc.) simultaneously by broadcasting IP packets for broadcasting and communication to various device terminals. By using such simultaneous broadcasting technology, even if the number of terminals increases, there is an advantage that congestion at traffic concentration can be avoided. Also, in the case of broadcast waves, it is possible to deliver a large variety of large files than digital broadcast data broadcasts.</p>
+
+<p>Utilizing the features of this technology, multimedia content distribution in corporate / media fields, simultaneous broadcasting of emergency bulletins in the event of a disaster and simultaneous distribution of regional administrative information, distribution of control programs to vending machines and the like Usage scenes in the M2M (Machine to Machine) field that performs device control itself are assumed (Fig. 1).</p>
+
+<p>The IPDC&rsquo;s protocol stack is shown in Figure 2. In IPDC, it is necessary to deliver the file to the terminal completely in one direction. In order to realize this, in addition to the repeated transmission by the FLUTE (File Delivery over Unidirectional Transport: RFC 3926) protocol, AL - FEC (Application Layer Forward Error Correction) , We have established a mechanism that allows files to be delivered to terminals even if packets are lost during transmission. LDPC-Staircase (Low Density Parity Check: RFC 5170) is often used for AL-FEC.</p>
+
+<p>Figure 3 shows the procedure for sending and receiving data by IPDC. After dividing the file into units called source symbols of about 1 KB, FEC symbols for error correction are generated from the combination of symbols and transmitted together with the source symbols. This makes it possible to restore the missing source symbols from the computation of the received symbol combination even if all source symbols do not arrive due to the break of the broadcast wave or loss of the communication packet.</p>
+
+<h2 id="solution-to-smartphone-broadcast-station-nottv">Solution to smartphone broadcast station &ldquo;NOTTV&rdquo;</h2>
+
+<p>In the multimedia broadcast &ldquo;NOTTV&rdquo; for smartphones started in April 2012, contents such as images and newspapers are distributed as &ldquo;shift time broadcasting service&rdquo;. This service is realized by IPDC, and NTT DATA has commercialized the server which simultaneously sends large capacity files of up to 4 GB in multiple sessions and the receiving client in the world for the first time.</p>
+
+<p>Figure 4 shows the transmission / reception mechanism of the shift time broadcasting service. &ldquo;IPDC transmission server&rdquo; sends metadata describing information on video / e-book / game / content by FLUTE / ALFEC technology. There is also a function to convert IP packets into data to be placed on broadcast waves. &ldquo;IPDC Receiving Engine&rdquo; receives content transmitted by broadcast waves and restores it in a form that subscribers can view. There is also a mechanism to complement the missing part by communication when content can not be completely received by the broadcast wave. &ldquo;Metadata management&rdquo; creates and manages metadata related to contents, and provides a mechanism for subscribers to search. In addition, we provide content protection based on viewer&rsquo;s information as other mechanisms, as well as contractor management.</p>
+
+<h2 id="demonstration-experiment-of-disaster-information-distribution-by-v-low-multimedia-broadcasting">Demonstration experiment of disaster information distribution by V-Low multimedia broadcasting</h2>
+
+<p>The V - Low (VHF - Low) multimedia broadcasting is scheduled to start service around the summer of 2014. In that case, broadcasting will be done in units of 7 regional blocks nationwide. In addition to radio audio broadcasting, it is considered to provide services such as distribution of radio program-linked contents using IPDC, distribution of traffic information, distribution of advertisements and e-books in limited areas.</p>
+
+<p>V-Low multimedia broadcasting is attracting attention as a new medium for information distribution in emergencies, such as disasters, due to the Great East Japan Earthquake. Disaster management radio in municipalities is a common way of communicating information in emergencies, but it is difficult to hear depending on location and weather, information can not be confirmed later, etc. There are problems. In order to compensate for this drawback, the use of IPDC is being studied, so that IPDC can send the file of disaster information, evacuation order, evacuation life information at the time of emergency to the user&rsquo;s terminal, so that the terminal can confirm the information at any time It becomes (Figure 5). NTT DATA developed an IPDC solution for emergency information distribution and conducted a demonstration experiment using radio waves of V-Low multimedia broadcasting in the coastal area of ​​Miyagi prefecture in FY2012.</p>
+
+<p>In the field trials, we measured data transmission time assuming three types of emergency information. The results are shown in the table. The time from the input of data at the IPDC transmission server to the display of information at the receiving terminal was measured for information such as emergency earthquake early warning and evacuation order with high urgency, the average of 14 times was 6.9 seconds. According to the standard of disaster prevention administrative radio, it is supposed to be within 8 seconds from the operation console to the ringing of the outdoor speaker, so it is considered possible to substitute.</p>
+
+<h2 id="development-of-ipdc-live-streaming-by-mpeg-dash-technology">Development of IPDC live streaming by MPEG-DASH technology</h2>
+
+<p>MPEG-DASH (Dynamic Adaptive Streaming over HTTP) is the latest international standard that realizes streaming delivery of moving pictures and sound by HTTP protocol for various device terminals. NTT DATA has developed a solution that realizes live streaming by sending and receiving movies and sound files in segment format of several seconds supported by MPEG - DASH via IPDC. Furthermore, in order to develop this technology, LDGM (Low Density Generator Matrix) code which is AL-FEC technology being developed at NTT Future Net Innovation Laboratories is implemented on the IPDC live streaming server and client terminal and evaluated . In addition, we are also evaluating receiving NTT docomo HEVC (High Efficiency Video Coding) decoding software compliant with H.265 standard, which is the next generation video compression technology.</p>
+
+<p>Figure 6 shows the mechanism of IPDC live streaming transmission and reception. The live image from the camera is compressed by dividing it into segment files in seconds by the encoder · segmenter. The IPDC live streaming server converts the segment file to the source / FEC symbol by FLUTE / AL-FEC technology and sends it. The IPDC live streaming client restores the segment file from the received source · FEC symbol and accumulates it in the HTTP server. The player sequentially retrieves the video you want to play from the HTTP server, retrieves the segment file and plays the video. In the experimental environment of NTT data, it is expected to be able to transmit and receive with a delay of about 6 seconds when distributing the full HD picture quality in H.264 format</p>
+
+<h2 id="wi-fi-area-broadcast-content-delivery-system">Wi-Fi Area Broadcast Content Delivery System</h2>
+
+<p>NTT DATA is developing an area broadcast type content distribution solution using Wi-Fi and IPDC of the wireless LAN standard. It is not a one-to-one PULL type (pseudo PUSH) distribution by conventional unicast, but realizes a one-to-many complete PUSH type multicast broadcasting type content delivery service with no congestion. This makes it possible for O2O (Online to Offline) * applications such as relaying live images at stadiums and event sites, disaster prevention such as evacuation guidance at disasters, discount coupon delivery at restaurants, Content delivery can be realized.</p>
+
+<p>NTT DATA plans to carry out field trials in collaboration with local governments to evaluate the usefulness of simultaneous data distribution of local information and disaster prevention information from local governments to local residents by Wi-Fi multicast.</p>
+
+<h2 id="future-prospect-for-creating-next-generation-broadcasting-and-communication-services">Future prospect for creating next-generation broadcasting and communication services</h2>
+
+<p>LTE enhanced MIMMS (enhanced Multimedia Broadcast Multicast Service) has been standardized as a service that realizes simultaneous multicast delivery of large volume data to a large number of users using a mobile phone network, and demonstration experiments in Verizon, Korea Has begun. There is no such movement in each mobile carrier in the country, but it is expected to be realized by big event, live broadcast at the stadium and contents distribution. eMBMS
+Is adopting FLUTE / AL-FEC technology as well as IPDC, it has high technology affinity, so NTT DATA is paying attention to trends as a future solution deployment destination.</p>
+
+<p>In multiscreen broadcasting, services that transmit program related contents via IPDC in synchronization with the progress of TV broadcast programs and display them automatically on smartphones and tablet terminals are being studied. There is also a move to adopt IPDC for data transmission even in the next generation version of area broadcasting service. NTT DATA will continue to promote the standardization of IPDC technology and plan and develop new services and solutions in both broadcasting and communication fields.</p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/network/" rel="tag">network</a></li>
+	</ul>
+</div>
+
+	</article>
+
+<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-normal" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+	
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/post/wifi_multicast/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Wi-Fi multicast that realizes simultaneous broadcast distribution service to a large number</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next col-1-2">
+		<a class="post-nav__link" href="/post/career_interview/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">I want to keep creating valuable things with my own hands - a turning point that I grasped with dev-sumi and a resolve as an engineer</p></a>
+	</div>
+</nav>
+
+	
+</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://chaingng.github.io" />
+	</form>
+</div>
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/takatomo.honda" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/takatm0103" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/takatomo-honda-2b7479b0" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/chaingng" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tag</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/angularjs" title="angularjs">angularjs (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/ng_include/">ng-includeで読み込んだパーシャルをキャッシュさせない</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/aws" title="aws">aws (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/aws_credential_file/">AWSの認証情報はshared credential fileで管理する</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/career" title="career">career (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/career_interview/">I want to keep creating valuable things with my own hands - a turning point that I grasped with dev-sumi and a resolve as an engineer</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/dp" title="dp">dp (35)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-401-div1-easy---fielddiagrams/">SRM 401 DIV1 Easy - FIELDDiagrams</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-642-div1-easy---waitingforbus-x/">SRM 642 DIV1 Easy - WaitingForBus x</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-656-div1-easy---randompancakestack-xx/">SRM 656 DIV1 Easy - RandomPancakeStack xx</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-653-div1-easy---countrygrouphard/">SRM 653 DIV1 Easy - CountryGroupHard</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-612-div2-middle---emoticonsdiv2-/">SRM 612 DIV2 Middle - EmoticonsDiv2 (○○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-619-div2-middle---choosethebestone-/">SRM 619 DIV2 Middle - ChooseTheBestOne (×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-596-div2-middle---colorfulroad-/">SRM 596 DIV2 Middle - ColorfulRoad (○○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-621-div2-middle---numberschallenge-/">SRM 621 DIV2 Middle - NumbersChallenge (○○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-598-div1-easy---binpacking-/">SRM 598 DIV1 Easy - BinPacking (○×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-612-div1-easy---emoticonsdiv1-/">SRM 612 DIV1 Easy - EmoticonsDiv1 (××○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2013-tco-round-2a-easy---thelargeststring-/">2013 TCO Round 2A Easy - TheLargestString (××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-159-div1-middle----thepriceisright%E5%BE%A9%E7%BF%92/">SRM 159 DIV1 Middle -  ThePriceIsRight　（復習××）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/">SRM 331 DIV1 Easy - CarolsSinging (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/">SRM 199 DIV1 Easy - TriangleCount （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/">SRM 488 DIV1 Easy - TheBoredomDivOne (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-289-div1-easy---fallingball/">SRM 289 DIV1 Easy - FallingBall</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/">SRM 501 DIV1 Easy - FoxPlayingGame (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/">SRM 249 DIV1 Easy - TableSeating (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-296-div1-easy---newalbum-%E5%BE%A9%E7%BF%92/">SRM 296 DIV1 Easy - NewAlbum (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/">SRM 304 DIV1 Easy - PolyMove (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/">SRM 325 DIV1 Easy - FenceRepairing （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/">SRM 327 DIV1 Easy - NiceOrUgly (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-352-div1-easy---numberoffibocalls-%E5%BE%A9%E7%BF%92/">SRM 352 DIV1 Easy - NumberofFiboCalls （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-366-div1-easy---changingsounds-%E5%BE%A9%E7%BF%92/">SRM 366 DIV1 Easy - ChangingSounds （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-411-div1-easy---sentencedecomposition-%E5%BE%A9%E7%BF%92/">SRM 411 DIV1 Easy - SentenceDecomposition （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-594-div1-easy---astronomicalrecords-%E5%BE%A9%E7%BF%92/">SRM 594 DIV1 Easy - AstronomicalRecords (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-602-div1-easy---typocoderdiv1-%E5%BE%A9%E7%BF%92/">SRM 602 DIV1 Easy - TypoCoderDiv1 (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/">SRM 517 DIV1 Easy - CompositeSmash （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-531-div1-easy---norepeatplaylist-%E5%BE%A9%E7%BF%92/">SRM 531 DIV1 Easy - NoRepeatPlaylist (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-533-div1-easy---casketofstar-%E5%BE%A9%E7%BF%92/">SRM 533 DIV1 Easy - CasketOfStar (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-565-div1-easy---monstersvalley-%E5%BE%A9%E7%BF%92/">SRM 565 DIV1 Easy - MonstersValley (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-585-div1-easy---trafficcongestion-%E5%BE%A9%E7%BF%92/">SRM 585 DIV1 Easy - TrafficCongestion (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-556-div2--level2/">SRM 556 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm547-div2--level2/">SRM547 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm565-div2--level2/">SRM565 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/git" title="git">git (2)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/git_reset/">gitで特定のコミットの状態に戻す</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/git_save_pw/">gitでパスワードを保存する</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/http" title="http">http (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/http_status_code/">httpにおける適切なステータスコードの選択</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/linux" title="linux">linux (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/linux_ssh_key/">公開鍵によるsshアクセスの設定</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/math" title="math">math (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/%E6%95%B0%E5%AD%A6a%E3%81%AE%E9%A0%86%E5%88%97%EF%BC%91/">数学Aの順列（１）</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/network" title="network">network (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/ip_datacast/">IP datacast solution</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/node.js" title="node.js">node.js (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/nodejs_env/">node.jsで環境変数を設定・取得</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/nodejs" title="nodejs">nodejs (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/nodejs_forever/">foreverでnode.jsアプリケーションをデーモン化</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python (5)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_repr/">[python]__repr__と__str__の違い</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_type_bits/">pythonデータ型ごとのメモリサイズ</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_string/">python string文字列の使い方</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/pipenv/">pipenvの使い方</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/a_better_pip_workflow/">[要約]A Better Pip Workflow</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/security" title="security">security (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/logjam/">logjam脆弱性と対策</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/technology" title="technology">technology (25)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/vagrant/">vagrantの使い方</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/windows%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/">Windowsのプロキシ</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/make%E3%81%AE%E7%A8%AE%E9%A1%9E/">makeの種類</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%87%AA%E5%8B%95%E8%B5%B7%E5%8B%95/">サービスの自動起動</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/linux%E3%81%A7%E8%A4%87%E6%95%B0%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%B5%90%E5%90%88/">linuxで複数のファイルを結合</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/risc%E3%81%A8cisc/">RISCとCISC</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/wget%E3%82%92%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E7%B5%8C%E7%94%B1%E3%81%A7%E5%88%A9%E7%94%A8/">wgetをプロキシ経由で利用</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/cygwinminttyapt-cyg%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/">cygwin&#43;mintty&#43;apt-cygのインストール</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/android%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/">androidのコードリーディング</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/android%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Bactionactivity%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88/">androidにおけるaction／Activity／レイアウト</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/%E7%9F%AD%E7%B8%AEurl%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF/">短縮URLの仕組み</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/%E5%9C%B0%E4%B8%8A%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%94%BE%E9%80%81%E3%82%92%E9%8C%B2%E7%94%BB%E3%81%97%E3%81%9F%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%A8%E5%86%8D%E7%94%9F%E6%96%B9%E6%B3%95/">地上デジタル放送を録画したメディアと再生方法</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/android-studio%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A/">android studioのプロキシ設定</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/gigabitethernet%E8%A6%8F%E6%A0%BC%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E3%81%BE%E3%81%A8%E3%82%81/">GigabitEthernet規格の簡単なまとめ</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/android-studio%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/">android studioのインストール</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/yum%E3%82%92%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%A7%E4%BD%BF%E3%81%86%E5%A0%B4%E5%90%88%E3%81%AE%E3%83%AC%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E8%A8%AD%E5%AE%9A/">yumをローカルで使う場合のレポジトリ設定</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/jdk%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/">JDKのインストール</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/">gitのインストール</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/yum%E3%82%92%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9/">yumをローカルで使用する場合のエイリアス</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/adb%E3%82%92wi-fi%E7%B5%8C%E7%94%B1%E3%81%A7%E5%88%A9%E7%94%A8/">adbをWi-Fi経由で利用</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/">LinuxでCPUやメモリ使用状況のログを取る方法</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/">ブートローダー</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/beautifulsoup%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9/">BeautifulSoupの第一歩</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/linux%E3%81%AE%E3%82%AF%E3%83%AD%E3%83%83%E3%82%AF/">Linuxのクロック</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python%E3%81%A7%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E6%99%82%E3%81%AE%E6%B3%A8%E6%84%8F/">Pythonでモジュールインポート時の注意</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/ted" title="ted">ted (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/how_to_buy_happiness/">幸せをお金で買う方法(TED) - まとめ</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/wifi" title="wifi">wifi (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/wifi_multicast/">Wi-Fi multicast that realizes simultaneous broadcast distribution service to a large number</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%83%90%e3%83%bc" title="カバー">カバー (4)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-623-div1-easy---uniformboard-/">SRM 623 DIV1 Easy - UniformBoard （○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-629-div1-easy---rectanglecovering-/">SRM 629 DIV1 Easy - RectangleCovering (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/">SRM 614 DIV1 Easy - MinimumSquare　（復習××）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-530-div1-easy---gogoxcake-%E5%BE%A9%E7%BF%92/">SRM 530 DIV1 Easy - GogoXCake （復習○）</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95" title="グラフ">グラフ (10)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-648-div2-middle---fragile2-/">SRM 648 DIV2 Middle - Fragile2 (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-640-div1-easy---christmastreedecoration-/">SRM 640 DIV1 Easy - ChristmasTreeDecoration (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-618-div1-easy---family-%E5%BE%A9%E7%BF%92/">SRM 618 DIV1 Easy - Family (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-622-div1-easy---buildingroutes-/">SRM 622 DIV1 Easy - BuildingRoutes ××○</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-630-div1-easy---egalitarianism3-/">SRM 630 DIV1 Easy - Egalitarianism3 (××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/">SRM 410 DIV1 Easy - AddElectricalWires (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/">SRM 435 DIV1 Easy - CellRemoval （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-591-div1-easy---thetree-%E5%BE%A9%E7%BF%92/">SRM 591 DIV1 Easy - TheTree (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/">SRM 407 DIV1 Easy - CorporationSalary（復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-584-div1-easy---egalitarianism-%E5%BE%A9%E7%BF%92/">SRM 584 DIV1 Easy - Egalitarianism （復習○）</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%9f%e3%83%a5%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3" title="シミュレーション">シミュレーション (7)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-182-div1-easy---slayingdeer-%E5%BE%A9%E7%BF%92/">SRM 182 DIV1 Easy - SlayingDeer （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-310-div1-easy---pyramidofcubes-%E5%BE%A9%E7%BF%92/">SRM 310 DIV1 Easy - PyramidOfCubes (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-532-div1-easy---dengklekmakingchains-%E5%BE%A9%E7%BF%92/">SRM 532 DIV1 Easy - DengklekMakingChains (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-577-div1--level1/">SRM 577 DIV1 -Level1</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-557-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/">SRM 557 DIV1 Easy - MergersDivOne (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm541-div2--level2/">SRM541 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm570-div2--level2/">SRM570 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%93%e3%83%83%e3%83%88" title="ビット">ビット (5)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-round-3b---intothematrix/">2014 TCO Round 3B - IntoTheMatrix</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-632-div1-easy---potentialarithmeticsequence-/">SRM 632 DIV1 Easy - PotentialArithmeticSequence (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/">SRM 439 DIV1 Easy - PouringWater （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-596-div1-easy---incrementanddoubling-%E5%BE%A9%E7%BF%92/">SRM 596 DIV1 Easy - IncrementAndDoubling (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/">SRM 519 DIV1 Easy - BinaryCards (復習××)</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%82%a2" title="ペア">ペア (2)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2013-tco-round-1b-easy---ellyspairs-/">2013 TCO Round 1B Easy - EllysPairs (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-573-div1-easy---teamcontest-%E5%BE%A9%E7%BF%92/">SRM 573 DIV1 Easy - TeamContest （復習○）</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%b8%e3%83%a7%e3%83%aa%e3%83%86%e3%82%a3" title="マジョリティ">マジョリティ (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-627-div1-easy----happyletterdiv1-/">SRM 627 DIV1 Easy -  HappyLetterDiv1 (××)</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ab%e3%83%bc%e3%83%97" title="ループ">ループ (9)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-652-div1-easy---thepermutationgame/">SRM 652 DIV1 Easy - ThePermutationGame </a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-616-div1-easy---wakingup-/">SRM 616 DIV1 Easy - WakingUp (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/">SRM 172 DIV1 Easy - BadClock （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-181-div1-easy---combinationlock-%E5%BE%A9%E7%BF%92/">SRM 181 DIV1 Easy - CombinationLock (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-247-div1-easy---musical-%E5%BE%A9%E7%BF%92/">SRM 247 DIV1 Easy - Musical (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/">SRM 441 DIV1 Easy - PerfectPermutation (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-572-div1-easy---newarenapassword-%E5%BE%A9%E7%BF%92/">SRM 572 DIV1 Easy - NewArenaPassword （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-583-div1-easy---travelonmars-%E5%BE%A9%E7%BF%92x/">SRM 583 DIV1 Easy - TravelOnMars （復習x）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm566-div2--level2/">SRM566 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%b8%ad%e9%96%93%e7%82%b9" title="中間点">中間点 (2)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-609-div1-easy---magicalstringdiv1-/">SRM 609 DIV1 Easy - MagicalStringDiv1 (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-613-div1-easy---tarofriends-%E5%BE%A9%E7%BF%92/">SRM 613 DIV1 Easy - TaroFriends (復習○)</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2" title="二分探索">二分探索 (5)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-657-div1-easy---problemsets-x/">SRM 657 DIV1 Easy - ProblemSets x</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/">SRM 230 DIV1 Easy - SortEstimate （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/">SRM 440 DIV1 Easy - IncredibleMachine (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/">SRM 258 DIV1 Easy - AutoLoan (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-582-div1-easy---spacewardiv1-%E5%BE%A9%E7%BF%92/">SRM 582 DIV1 Easy - SpaceWarDiv1 (復習×○)</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%8e%a2%e7%b4%a2" title="全探索">全探索 (22)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-400-div1-easy---strongprimepower/">SRM 400 DIV1 Easy - StrongPrimePower</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-semifinal1-div1-easy---zooexchangeprogram/">2014 TCO Semifinal1 DIV1 Easy - ZooExchangeProgram</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-646-div2-middle---thegriddivtwo/">SRM 646 DIV2 Middle - TheGridDivTwo</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2015-tco-round-1a-easy---similars/">2015 TCO Round 1A Easy - Similars</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2012-tco-algorithm-round-1c-easy---passwordxguessing/">2012 TCO Algorithm Round 1C Easy - PasswordXGuessing　(×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-628-div1-easy---divisorspower-/">SRM 628 DIV1 Easy - DivisorsPower (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2011-tco-qualification-round-2---blackwhitemagic/">2011 TCO Qualification Round 2 - BlackWhiteMagic</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2012-tco-round-1a-easy---ellysjuice-/">2012 TCO Round 1A Easy - EllysJuice (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2012-tco-round-1b-easy---foxandkgram-/">2012 TCO Round 1B Easy - FoxAndKgram (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2011-tco-qualification-round-1---minimumliars/">2011 TCO Qualification Round 1 - MinimumLiars</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2010-tco-qualification-round-1---girlsandboys/">2010 TCO Qualification Round 1 - GirlsAndBoys</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2013-tco-round-1a-easy---housebuilding-/">2013 TCO Round 1A Easy - HouseBuilding (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-634-div1-easy---shoppingsurveydiv1-/">SRM 634 DIV1 Easy - ShoppingSurveyDiv1 (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/">SRM 397 DIV1 Easy - SortingGame （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-150-div1-easy---interestingdigits-%E5%BE%A9%E7%BF%92/">SRM 150 DIV1 Easy - InterestingDigits (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-284-div1-easy---tricount-%E5%BE%A9%E7%BF%92/">SRM 284 DIV1 Easy - TriCount (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-606-div1-easy---ellysnumberguessing-%E5%BE%A9%E7%BF%92/">SRM 606 DIV1 Easy - EllysNumberGuessing （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-482-div1-easy---lockersdivone-%E5%BE%A9%E7%BF%92/">SRM 482 DIV1 Easy - LockersDivOne （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-428-div1-easy---theluckystring-%E5%BE%A9%E7%BF%92/">SRM 428 DIV1 Easy - TheLuckyString (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-554-div2--level2/">SRM 554 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm533-div2--level2/">SRM533 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm568-div2--level2/">SRM568 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e6%96%87" title="回文">回文 (2)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-625-div1-easy---palindromepermutations-/">SRM 625 DIV1 Easy - PalindromePermutations (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-607-div1-easy---palindromicsubstringsdiv1-xx/">SRM 607 DIV1 Easy - PalindromicSubstringsDiv1 xx</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装 (22)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-648-div1-easy---ab-/">SRM 648 DIV1 Easy - AB (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-637-div1-easy---divisorspower-/">SRM 637 DIV1 Easy - DivisorsPower (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/">SRM 417 DIV1 Easy - TemplateMatching （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/">SRM 382 DIV1 Easy - CollectingRiders (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/">SRM 242 DIV1 Easy - GuessCard (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-157-div1-easy---salary-%E5%BE%A9%E7%BF%92/">SRM 157 DIV1 Easy - Salary (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-153-div1-easy---inventory-%E5%BE%A9%E7%BF%92/">SRM 153 DIV1 Easy - Inventory (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-159-div1-easy---fryinghamburgers-%E5%BE%A9%E7%BF%92/">SRM 159 DIV1 Easy - FryingHamburgers （復習×○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-204-div1-easy---apothecary-%E5%BE%A9%E7%BF%92/">SRM 204 DIV1 Easy - Apothecary (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-221-div1-easy---terribleencryption-%E5%BE%A9%E7%BF%92/">SRM 221 DIV1 Easy - TerribleEncryption (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/">SRM 245 DIV1 Easy - Flush (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-265-div1-easy---schedulestrength-%E5%BE%A9%E7%BF%92/">SRM 265 DIV1 Easy - ScheduleStrength (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/">SRM 333 DIV1 Easy - BirthNumbersValidator (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/">SRM 184 DIV1 Easy - RaceCalculator (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-288-div1-easy---findtriangle/">SRM 288 DIV1 Easy - FindTriangle</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/">SRM 287 DIV1 Easy - TwoEquations (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/">SRM 485 DIV1 Easy - AfraidOfEven (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/">SRM 207 DIV1 Easy - RegularSeason (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-145-div1-easy---bonuses-%E5%BE%A9%E7%BF%92/">SRM 145 DIV1 Easy - Bonuses （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-171-div1-easy---crosscountry-%E5%BE%A9%E7%BF%92/">SRM 171 DIV1 Easy - CrossCountry (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-529-div1-easy---kingsort-%E5%BE%A9%E7%BF%92/">SRM 529 DIV1 Easy - KingSort (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm576-div2--level2/">SRM576 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%b1%b1" title="山">山 (2)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-647-div1-easy---buildingtowerseasy-x/">SRM 647 DIV1 Easy - BuildingTowersEasy x</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2013-tco-round-1c-easy---thearray-/">2013 TCO Round 1C Easy - TheArray (×○)</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%bd%a9%e8%89%b2%e6%95%b0" title="彩色数">彩色数 (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-593-div1-easy---hexagonalboard-%E5%BE%A9%E7%BF%92/">SRM 593 DIV1 Easy - HexagonalBoard (復習××)</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%8e%a2%e7%b4%a2%e7%ae%87%e6%89%80%e9%99%90%e5%ae%9a" title="探索箇所限定">探索箇所限定 (5)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-615-div1-easy---amebadiv1-/">SRM 615 DIV1 Easy - AmebaDiv1 (×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-177-div1-easy---ticktick-%E5%BE%A9%E7%BF%92/">SRM 177 DIV1 Easy - TickTick (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-421-div1-easy---equilibriumpoints-%E5%BE%A9%E7%BF%92/">SRM 421 DIV1 Easy - EquilibriumPoints (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-528-div1-easy---cut-%E5%BE%A9%E7%BF%92/">SRM 528 DIV1 Easy - Cut （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm580-div2--level2/">SRM580 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%95%b0%e5%ad%a6" title="数学">数学 (32)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-641-div1-easy---trianglescontainorigin-x/">SRM 641 DIV1 Easy - TrianglesContainOrigin x</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-643-div1-easy---thekingsfactorization-x/">SRM 643 DIV1 Easy - TheKingsFactorization x○</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-639-div2-middle---alicegameeasy-/">SRM 639 DIV2 Middle - AliceGameEasy (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-633-div1-easy---periodicjumping-/">SRM 633 DIV1 Easy - PeriodicJumping (×××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-611-div1-easy---lcmset-/">SRM 611 DIV1 Easy - LCMSet (××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2011-tco-qualification-round-3---allbutonedivisor-/">2011 TCO Qualification Round 3 - AllButOneDivisor (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2013-tco-round-2b-easy---fruittrees-/">2013 TCO Round 2B Easy - FruitTrees (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-620-div1-easy---pairgame-/">SRM 620 DIV1 Easy - PairGame (××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-635-div1-easy---similarratinggraph-/">SRM 635 DIV1 Easy - SimilarRatingGraph (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-534-div1-middle---ellysnumbers%E5%BE%A9%E7%BF%92/">SRM 534 DIV1 Middle - EllysNumbers　（復習×××）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/">SRM 302 DIV1 Easy - DivisorInc （復習××○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-151-div1-easy---archimedes-%E5%BE%A9%E7%BF%92/">SRM 151 DIV1 Easy - Archimedes (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/">SRM 188 DIV1 Easy - Percents (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/">SRM 189 DIV1 Easy - Display (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/">SRM 490 DIV1 Easy - Starport (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-599-div1-easy---bigfatinteger-%E5%BE%A9%E7%BF%92/">SRM 599 DIV1 Easy - BigFatInteger (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-436-div1-easy---bestview-%E5%BE%A9%E7%BF%92/">SRM 436 DIV1 Easy - BestView （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/">SRM 427 DIV1 Easy - DesignCalendar （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/">SRM 416 DIV1 Easy - NextNumber （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-226-div1-easy---manhattanmovement-%E5%BE%A9%E7%BF%92/">SRM 226 DIV1 Easy - ManhattanMovement (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/">SRM 422 DIV1 Easy - PrimeSoccer (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/">SRM 431 DIV1 Easy - LaserShooting (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/">SRM 523 DIV1 Easy - CountingSeries (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/">SRM 524 DIV1 Easy - MagicDiamonds (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-578-div1-easy---gooseinzoodivone-%E5%BE%A9%E7%BF%92/">SRM 578 DIV1 Easy - GooseInZooDivOne (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-546-div1-easy---kleofastail-%E5%BE%A9%E7%BF%92/">SRM 546 DIV1 Easy - KleofasTail （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm574-div2--level2/">SRM574 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-543-div1-easy---ellysxors/">SRM 543 DIV1 Easy - EllysXors</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm537-div2--level2/">SRM537 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm546-div2--level2/">SRM546 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm535-div2--level2/">SRM535 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm567-div2--level2/">SRM567 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%96%87%e5%ad%97%e5%88%97" title="文字列">文字列 (9)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-649-div1-easy---decipherability/">SRM 649 DIV1 Easy - Decipherability</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-654-div1-easy---squarescores/">SRM 654 DIV1 Easy - SquareScores</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-597-div1-easy---littleelephantandstring-/">SRM 597 DIV1 Easy - LittleElephantAndString (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2011-tco-online-round-1---triplestrings/">2011 TCO Online Round 1 - TripleStrings</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/">2014 TCO Round 2C Easy - SubstringReversal (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-round-1c-easy---unique-/">2014 TCO Round 1C Easy - Unique (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-518-div1-easy---largestsubsequence-%E5%BE%A9%E7%BF%92/">SRM 518 DIV1 Easy - LargestSubsequence （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-563-div1-easy---foxandhandle-%E5%BE%A9%E7%BF%92/">SRM 563 DIV1 Easy - FoxAndHandle (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm551-div2--level2/">SRM551 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%8a%b6%e6%85%8b%e9%81%b7%e7%a7%bb" title="状態遷移">状態遷移 (11)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-655-div1-easy---bichromepainting/">SRM 655 DIV1 Easy - BichromePainting</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-642-div2-middle---lightswitchingpuzzle-/">SRM 642 DIV2 Middle - LightSwitchingPuzzle (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-595-div1-easy---littleelephantandintervalsdiv1-/">SRM 595 DIV1 Easy - LittleElephantAndIntervalsDiv1 (×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2013-tco-round-2c-easy---dancingfoxes-/">2013 TCO Round 2C Easy - DancingFoxes (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/">2014 TCO Round 2B Easy - SwitchingGame (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-round-1b-easy---spamchecker-/">2014 TCO Round 1B Easy - SpamChecker (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-round-1a-easy---ellyssortingtrimmer-/">2014 TCO Round 1A Easy - EllysSortingTrimmer (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-round-3a-easy---brightlamps-/">2014 TCO Round 3A Easy - BrightLamps (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-212-div1-easy---winningrecord-%E5%BE%A9%E7%BF%92/">SRM 212 DIV1 Easy - WinningRecord （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-489-div1-easy---ballsconverter-%E5%BE%A9%E7%BF%92/">SRM 489 DIV1 Easy - BallsConverter (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/">SRM 521 DIV1 Easy - MissingParentheses （復習○）</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a2%ba%e7%8e%87" title="確率">確率 (6)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-650-div1-easy---tarofillingastringdiv1-/">SRM 650 DIV1 Easy - TaroFillingAStringDiv1 (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-626-div1-easy---fixeddicegamediv1-/">SRM 626 DIV1 Easy - FixedDiceGameDiv1 (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-156-div1-easy---bombsweeper-%E5%BE%A9%E7%BF%92/">SRM 156 DIV1 Easy - BombSweeper （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/">SRM 174 DIV1 Easy - BirthdayOdds (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-293-div1-easy---scrabblebet-%E5%BE%A9%E7%BF%92/">SRM 293 DIV1 Easy - ScrabbleBet （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/">SRM 286 DIV1 Easy - ExtraBall (復習×○)</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%bb%e5%8b%95" title="移動">移動 (9)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-368-div1-easy---jumpingboard-%E5%BE%A9%E7%BF%92/">SRM 368 DIV1 Easy - JumpingBoard (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-303-div1-easy---spiralnumbers-%E5%BE%A9%E7%BF%92/">SRM 303 DIV1 Easy - SpiralNumbers (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-604-div1-easy---powerofthree-%E5%BE%A9%E7%BF%92/">SRM 604 DIV1 Easy - PowerOfThree (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/">SRM 525 DIV1 Easy - DropCoins （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/">SRM 526 DIV1 Easy - DucksAlignment （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-564-div1-easy---knightcircuit2-%E5%BE%A9%E7%BF%92/">SRM 564 DIV1 Easy - KnightCircuit2 （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-570-div1-easy---robotherb-%E5%BE%A9%E7%BF%92/">SRM 570 DIV1 Easy - RobotHerb (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm550-div2--level2/">SRM550 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm563-div2--level2/">SRM563 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%b4%af%e7%a9%8d%e5%92%8c" title="累積和">累積和 (4)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-celebrity-match-div1-easy---aneasyproblem/">2014 TCO Celebrity Match DIV1 Easy - AnEasyProblem</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-610-div1-easy---thematrix-/">SRM 610 DIV1 Easy - TheMatrix (×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-624-div1-easy---buildingheights-/">SRM 624 DIV1 Easy - BuildingHeights (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-636-div1-easy---chocolatedividingeasy-/">SRM 636 DIV1 Easy - ChocolateDividingEasy (×)</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%80%83%e5%af%9f" title="考察">考察 (22)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-semifinal2-div1-easy---planktiling/">2014 TCO Semifinal2 DIV1 Easy - PlankTiling</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-617-div1-easy---mylongcake-/">SRM 617 DIV1 Easy - MyLongCake (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/">2014 TCO Round 2A Easy - SixteenBricks (×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-631-div1-easy---tarojirogrid-%E5%BE%A9%E7%BF%92/">SRM 631 DIV1 Easy - TaroJiroGrid (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-168-div1-easy---numberguesser-%E5%BE%A9%E7%BF%92/">SRM 168 DIV1 Easy - NumberGuesser (復習××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-281-div1-easy---integergenerator-%E5%BE%A9%E7%BF%92/">SRM 281 DIV1 Easy - IntegerGenerator (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-608-div1-easy---mysticandcandies-%E5%BE%A9%E7%BF%92/">SRM 608 DIV1 Easy - MysticAndCandies (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/">SRM 484 DIV1 Easy - RabbitNumber (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-505-div1-easy---rectanglearea-%E5%BE%A9%E7%BF%92/">SRM 505 DIV1 Easy - RectangleArea (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-340-div1-easy---problemstosolve-/">SRM 340 DIV1 Easy - ProblemsToSolve ××○</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/">SRM 503 DIV1 Easy - ToastXToast (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-571-div1-easy---foxandmp3-%E5%BE%A9%E7%BF%92/">SRM 571 DIV1 Easy - FoxAndMp3 (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-562-div1-easy---pastingpaintingdivone-%E5%BE%A9%E7%BF%92/">SRM 562 DIV1 Easy - PastingPaintingDivOne （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-536-div1-easy---mergersdivone-%E5%BE%A9%E7%BF%92/">SRM 536 DIV1 Easy - MergersDivOne （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-554-div1-easy---thebricktowereasydivone-%E5%BE%A9%E7%BF%92/">SRM 554 DIV1 Easy - TheBrickTowerEasyDivOne （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-547-div1-easy---pillars-%E5%BE%A9%E7%BF%92/">SRM 547 DIV1 Easy - Pillars (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-586-div1-easy---piecewiselinearfunction-%E5%BE%A9%E7%BF%92/">SRM 586 DIV1 Easy - PiecewiseLinearFunction （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm539-div2--level2/">SRM539 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm536-div2--level2/">SRM536 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm564-div2--level2/">SRM564 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm569-div2--level2/">SRM569 DIV2 -Level2</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm544-div2--level2/">SRM544 DIV2 -Level2</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b2%aa%e6%ac%b2%e6%b3%95" title="貪欲法">貪欲法 (5)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-647-div2-middle---travellingsalesmaneasy-/">SRM 647 DIV2 Middle - TravellingSalesmanEasy (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-605-div1-easy---alienandhamburgers-/">SRM 605 DIV1 Easy - AlienAndHamburgers (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/2010-tco-qualification-round-2----jingleringle/">2010 TCO Qualification Round 2 -  JingleRingle</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/">SRM 426 DIV1 Easy - ShufflingMachine (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-520-div1-easy---srmcodingphase-%E5%BE%A9%E7%BF%92/">SRM 520 DIV1 Easy - SRMCodingPhase （復習○）</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%80%a3%e7%b5%90" title="連結">連結 (2)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-645-div2-middle---connectingcars-/">SRM 645 DIV2 Middle - ConnectingCars (○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-646-div1-easy---theconsecutiveintegersdivone-x/">SRM 646 DIV1 Easy - TheConsecutiveIntegersDivOne x○</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%86%e5%90%88" title="集合">集合 (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-645-div1-easy---januszthebusinessman/">SRM 645 DIV1 Easy - JanuszTheBusinessman</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/%ef%bc%92%e4%ba%ba%e3%82%b2%e3%83%bc%e3%83%a0" title="２人ゲーム">２人ゲーム (8)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-603-div1-easy---maxmintreegame/">SRM 603 DIV1 Easy - MaxMinTreeGame</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-619-div1-easy---splitstonegame-/">SRM 619 DIV1 Easy - SplitStoneGame (××)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/">SRM 493 DIV1 Easy - StonesGame (復習×)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-472-div1-easy---potatogame-%E5%BE%A9%E7%BF%92/">SRM 472 DIV1 Easy - PotatoGame (復習×○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/">SRM 522 DIV1 Easy - RowAndCoins （復習○）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-574-div1-easy---thenumbergame-%E5%BE%A9%E7%BF%92x/">SRM 574 DIV1 Easy - TheNumberGame （復習x）</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-575-div1-easy---thenumbergamedivone-%E5%BE%A9%E7%BF%92/">SRM 575 DIV1 Easy - TheNumberGameDivOne (復習○)</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm534-div2--level2/">SRM534 DIV2 -Level2</a></li>
+			</ul>
+	</div>
+</div>
+
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2018 takatomo&#39;s blog. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>
