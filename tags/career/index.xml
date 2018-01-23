@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Career on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/career/</link>
+    <description>Recent content in Career on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 23 Jan 2018 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I want to keep creating valuable things with my own hands - a turning point that I grasped with dev-sumi and a resolve as an engineer</title>
+      <link>https://chaingng.github.io/post/career_interview/</link>
+      <pubDate>Tue, 23 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/career_interview/</guid>
+      <description>This is an English version of my career interview
+Developers&amp;rsquo; event &amp;ldquo;Developers Summit&amp;rdquo; to be held in Meguro Gajyo every February, so-called &amp;ldquo;dev-sami&amp;rdquo;. Various sessions will be held, but how can we use what we got there? This time I talked to Mr. Takatomo Honda of freee Co., Ltd., which had a career turning point as a result of participation in Developers Summit 2016.
+As an engineer I always wanted to creating things with my own hands - First of all I will ask about my career.</description>
+    </item>
+    
+  </channel>
+</rss>
