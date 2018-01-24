@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/django/</link>
+    <description>Recent content in Django on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 24 Jan 2018 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>csrf対策</title>
+      <link>https://chaingng.github.io/post/csrf/</link>
+      <pubDate>Wed, 24 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/csrf/</guid>
+      <description>CSRFとは Cross Site Request Forgeryの略。 ユーザーがWebアプリケーションにログインすると、CookieにSessionIDがセットされる。 その</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chaingng.github.io/post/csrf/</loc>
+    <lastmod>2018-01-24T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/career_interview/</loc>
     <lastmod>2018-01-23T10:00:00+09:00</lastmod>
   </url>
@@ -2876,6 +2881,12 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/tags/django/</loc>
+    <lastmod>2018-01-24T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/tags/dp/</loc>
     <lastmod>2015-04-28T21:04:00+00:00</lastmod>
     <priority>0</priority>
@@ -2925,7 +2936,7 @@
   
   <url>
     <loc>https://chaingng.github.io/post/</loc>
-    <lastmod>2018-01-23T10:00:00+09:00</lastmod>
+    <lastmod>2018-01-24T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2967,7 +2978,7 @@
   
   <url>
     <loc>https://chaingng.github.io/</loc>
-    <lastmod>2018-01-23T10:00:00+09:00</lastmod>
+    <lastmod>2018-01-24T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
