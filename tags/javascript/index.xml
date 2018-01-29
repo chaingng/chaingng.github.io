@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 29 Jan 2018 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>assetsの読み込み前にDOMの制御をしたい場合はDOMContentLoadedを使う</title>
+      <link>https://chaingng.github.io/post/wait_dom_load/</link>
+      <pubDate>Mon, 29 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/wait_dom_load/</guid>
+      <description>すべてのCSSや画像などのassetsの読み込みまで待つのは時間がかかってしまうので避けたい。 しかしDOMの制御をするためにDOMの読み込み</description>
+    </item>
+    
+  </channel>
+</rss>

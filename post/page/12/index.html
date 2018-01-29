@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-05-10T12:55:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-05-10T12:57:00&#43;00:00"/>
 
 
 
@@ -65,6 +65,29 @@ ga('send', 'pageview');
 		<header class="page-header">
 			<h1 class="page-header__title">Posts</h1>
 		</header>
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-515-div1-easy---rotatedclock/" rel="bookmark">SRM 515 DIV1 Easy - RotatedClock</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/" alt="はてなブックマーク - SRM 515 DIV1 Easy - RotatedClock" title="はてなブックマーク - SRM 515 DIV1 Easy - RotatedClock">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-05-10T12:57:00">May 10, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11329&amp;rd=14540 解き方 ３０度ずつ回転させることが可能なので、全探索して 有効な数字の時の値を更新すればよい。 コード class RotatedClock { public: string getEarliest(int hourHand, int minuteHand) { string ret=""; for(int i=0;i&lt;=360;i+=30){ int h=(hourHand+i)%360; int m=(minuteHand+i)%360; if((h%30)*12==m){
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-515-div1-easy---rotatedclock/">Read more…</a>
+		</div>
+	</div>
+</article>
+
 				<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
@@ -272,29 +295,6 @@ ga('send', 'pageview');
 	</div>
 </article>
 
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/srm-504-div1-easy---mathcontest/" rel="bookmark">SRM 504 DIV1 Easy - MathContest</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-504-div1-easy---mathcontest/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-504-div1-easy---mathcontest/" alt="はてなブックマーク - SRM 504 DIV1 Easy - MathContest" title="はてなブックマーク - SRM 504 DIV1 Easy - MathContest">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-05-09T17:22:00">May 09, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11233&amp;rd=14433 解き方 キューが連続的になっているということに気をつければ、 現在左から見るか右から見るかの情報、 ひっくり返っているかそうでないかの情報を
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-504-div1-easy---mathcontest/">Read more…</a>
-		</div>
-	</div>
-</article>
-
 
 		
 <div class="pagination clearfix">
@@ -420,6 +420,10 @@ ga('send', 'pageview');
 		<a class="widget__link widget__link--taglist" href="/tags/http" title="http">http (1)</a>
 			<ul class="widget__list">
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/http_status_code/">httpにおける適切なステータスコードの選択</a></li>
+			</ul>
+		<a class="widget__link widget__link--taglist" href="/tags/javascript" title="javascript">javascript (1)</a>
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/wait_dom_load/">assetsの読み込み前にDOMの制御をしたい場合はDOMContentLoadedを使う</a></li>
 			</ul>
 		<a class="widget__link widget__link--taglist" href="/tags/linux" title="linux">linux (1)</a>
 			<ul class="widget__list">

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chaingng.github.io/post/wait_dom_load/</loc>
+    <lastmod>2018-01-29T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/local_smartphone/</loc>
     <lastmod>2018-01-26T10:00:00+09:00</lastmod>
   </url>
@@ -2921,6 +2926,12 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/tags/javascript/</loc>
+    <lastmod>2018-01-29T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/tags/linux/</loc>
     <lastmod>2017-01-01T10:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -2952,7 +2963,7 @@
   
   <url>
     <loc>https://chaingng.github.io/post/</loc>
-    <lastmod>2018-01-26T10:00:00+09:00</lastmod>
+    <lastmod>2018-01-29T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2994,7 +3005,7 @@
   
   <url>
     <loc>https://chaingng.github.io/</loc>
-    <lastmod>2018-01-26T10:00:00+09:00</lastmod>
+    <lastmod>2018-01-29T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
