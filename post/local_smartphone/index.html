@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.33-DEV" />
 <meta property="og:title" content="android/iphoneでローカルサーバに接続する" />
-<meta property="og:description" content="1.ローカルサーバを立ち上げているPCとスマートフォンを同じwifiに接続 2. PCのIPアドレスを確認 macであればシステム環境設定＞ネットワ" />
+<meta property="og:description" content="1.ローカルサーバを立ち上げているPCとスマートフォンを同じwifiに接続 2. Internet共有を有効にする macであればシステム環境設定＞" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/local_smartphone/" />
 
@@ -78,13 +78,19 @@ ga('send', 'pageview');
 
 <h3 id="1-ローカルサーバを立ち上げているpcとスマートフォンを同じwifiに接続">1.ローカルサーバを立ち上げているPCとスマートフォンを同じwifiに接続</h3>
 
-<h3 id="2-pcのipアドレスを確認">2. PCのIPアドレスを確認</h3>
+<h3 id="2-internet共有を有効にする">2. Internet共有を有効にする</h3>
+
+<p>macであれば<code>システム環境設定＞共有</code>から図のとおり設定</p>
+
+<p><img width="650" alt="2018-01-29 10 52 53" src="https://user-images.githubusercontent.com/3523368/35490409-d2a36fda-04e2-11e8-854b-1b6ddfad86e5.png"></p>
+
+<h3 id="3-pcのipアドレスを確認">3. PCのIPアドレスを確認</h3>
 
 <p>macであれば<code>システム環境設定＞ネットワーク</code>から確認できる</p>
 
 <p><img width="663" alt="2018-01-25 14 33 16" src="https://user-images.githubusercontent.com/3523368/35439234-398d66ea-02dd-11e8-9fbc-c383cf44f335.png"></p>
 
-<h3 id="3-確認したipアドレスを指定して接続可能">3.確認したIPアドレスを指定して接続可能</h3>
+<h3 id="4-確認したipアドレスを指定して接続可能">4.確認したIPアドレスを指定して接続可能</h3>
 
 <p>上記の例であれば、 <code>http://192.168.10.199:8080</code>で接続できる（ポート名は立ち上げているサーバに合わせて変える）</p>
 
