@@ -6,10 +6,19 @@
     <description>Recent content on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 29 Jan 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jan 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>pythonの比較におけるisと==の違い</title>
+      <link>https://chaingng.github.io/post/python_is/</link>
+      <pubDate>Tue, 30 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_is/</guid>
+      <description>referenceによると、以下の通り。 - ==はオブジェクトの値が同一か比較する。基本はこちらを使う。 - isは同じオブジェクトがどうか比較す</description>
+    </item>
     
     <item>
       <title>assetsの読み込み前にDOMの制御をしたい場合はDOMContentLoadedを使う</title>
