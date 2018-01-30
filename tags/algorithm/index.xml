@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on takatomo&#39;s blog</title>
+    <link>https://chaingng.github.io/tags/algorithm/</link>
+    <description>Recent content in Algorithm on takatomo&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 29 Jan 2018 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>5Lと3Lのボトルで4Lの水を計る</title>
+      <link>https://chaingng.github.io/post/prime_water/</link>
+      <pubDate>Mon, 29 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/prime_water/</guid>
+      <description>水の移し方 ３Lの水をくんで、５Lのボトルに移す。 その後５Lのボトルをいっぱいにしても捨てなければいけないので、 常に３Lの水をくんで５Lの水に</description>
+    </item>
+    
+  </channel>
+</rss>
