@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.33-DEV" />
 <meta property="og:title" content="pythonの比較におけるisと==の違い" />
-<meta property="og:description" content="referenceによると、以下の通り。 - ==はオブジェクトの値が同一か比較する。基本はこちらを使う。 - isは同じオブジェクトがどうか比較す" />
+<meta property="og:description" content="referenceによると、以下の通り。 ==とis ==はオブジェクトの値が同一か比較する。基本はこちらを使う。 isは同じオブジェクトがどうか" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/python_is/" />
 
@@ -76,9 +76,14 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
-<p><a href="https://docs.python.jp/3/reference/expressions.html#comparisons">reference</a>によると、以下の通り。
-- <code>==</code>はオブジェクトの値が同一か比較する。基本はこちらを使う。
-- <code>is</code>は同じオブジェクトがどうか比較する。比較にはid()の値を使う。</p>
+<p><a href="https://docs.python.jp/3/reference/expressions.html#comparisons">reference</a>によると、以下の通り。</p>
+
+<h2 id="とis">==とis</h2>
+
+<ul>
+<li>==はオブジェクトの値が同一か比較する。基本はこちらを使う。</li>
+<li>isは同じオブジェクトがどうか比較する。比較にはid()の値を使う。</li>
+</ul>
 
 <h2 id="例">例</h2>
 
