@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SRM 541 DIV1 Easy - AntsMeet</title>
 
-<meta name="generator" content="Hugo 0.33-DEV" />
+<meta name="generator" content="Hugo 0.38-DEV" />
 <meta property="og:title" content="SRM 541 DIV1 Easy - AntsMeet" />
 <meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11887&amp;rd=14733 解き方 0.5単位のターンでぶつからないか試せば良い。 試す数の最大値に注意。 コード class AntsMeet { public: int countAnts(vector&lt;int&gt; x, vector&lt;int&gt; y, string direction) { int n=x.size(); double dx[]={1,0,-1,0},dy[]={0,1,0,-1}; int d[n]; FORE(i,0,n){ if(direction[i]==&#39;E&#39;)d[i]=0; if(direction[i]==&#39;N&#39;)d[i]=1; if(direction[i]==&#39;W&#39;)d[i]=2; if(direction[i]==&#39;S&#39;)d[i]=3; } double px[n],py[n]; FORE(i,0,n){" />
 <meta property="og:type" content="article" />

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SRM 550 DIV1 Easy - RotatingBot</title>
 
-<meta name="generator" content="Hugo 0.33-DEV" />
+<meta name="generator" content="Hugo 0.38-DEV" />
 <meta property="og:title" content="SRM 550 DIV1 Easy - RotatingBot" />
 <meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12033&amp;rd=15172 解き方 メモリも計算量も足りるので、正しく間違えないように実装すればよい。 コード int p[1300][1300]; class RotatingBot { public: int minArea(vector&lt;int&gt; moves) { int n=moves.size(); int dx[]={1,0,-1,0},dy[]={0,1,0,-1}; memset(p,0,sizeof(p)); int minx=650,miny=650,maxx=650,maxy=650; int x=650,y=650,d=0; FORE(i,0,n){ FORE(j,0,moves[i]){ int nx=x&#43;dx[d],ny=y&#43;dy[d]; x=nx,y=ny; minx=min(minx,x); maxx=max(maxx,x); miny=min(miny,y); maxy=max(maxy,y);" />
 <meta property="og:type" content="article" />

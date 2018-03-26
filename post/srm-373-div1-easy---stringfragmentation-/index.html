@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SRM 373 DIV1 Easy - StringFragmentation ○</title>
 
-<meta name="generator" content="Hugo 0.33-DEV" />
+<meta name="generator" content="Hugo 0.38-DEV" />
 <meta property="og:title" content="SRM 373 DIV1 Easy - StringFragmentation ○" />
 <meta property="og:description" content="問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8087&amp;rd=10791 解き方 全探索可能なので解くだけ。 コード class StringFragmentation { public: int largestFontSize(string text, int width, int height) { vector&lt;int&gt; vx; stringstream out(text); for(string str;out&gt;&gt;str;){ vx.push_back(str.size()); } int n=vx.size(); for(int i=5000;i&gt;=8;i--){ int at=0,lines=0; while(at&lt;n){ int cur=0; if(vx[at]*(i&#43;2)&lt;=width){ cur&#43;=vx[at]*(i&#43;2); }else break; while(at&#43;1&lt;n &amp;&amp; cur&#43;(vx[at&#43;1]&#43;1)*(i&#43;2)&lt;=width){ cur&#43;=(vx[at&#43;1]&#43;1)*(i&#43;2); at&#43;&#43;; } lines&#43;&#43;; at&#43;&#43;; } if(at&gt;=n &amp;&amp; lines*2*i&lt;=height)return i; } return" />
 <meta property="og:type" content="article" />
