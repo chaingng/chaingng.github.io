@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11485&amp;rd=14536" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11485&amp;rd=14536</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />動物数がN匹であれば、各動物が（０匹，N匹）〜（N匹、０匹）までの<br />すべての場合が考えられる。<br /><br />各場合について、動物が答えている数が一致しているか判定し、<br />有効であればmin（うさぎの数、猫の数）^2がその場合の総数になる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class Zoo {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: long long theCount(vector&lt;int&gt; answers) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>long long ret=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=answers.size();<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>map&lt;int,int&gt; m;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n)m[answers[i]]++;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int l=0;l&lt;=n;l++){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int r=n-l;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int cnt=0,valid=1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int i=0;i&lt;min(l,r);i++){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(m[i]!=2)valid=0;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>cnt+=m[i];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int i=min(l,r);i&lt;max(l,r);i++){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(m[i]!=1)valid=0;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>cnt+=m[i];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(cnt!=n)valid=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(valid){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>ret+=pow(2,min(l,r));<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

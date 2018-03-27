@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><br />最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">BootLoaderとは</h3><br />起動直後のコンピュータはハードディスクからＯＳを読み込むことができない。<br />そのため、ＯＳを起動させるためにＢＩＯＳが読み込む小さなプログラムがブートローダーになる。<br /><br />ただ、ブートローダーは通常はハードディスク等の先頭部分に５１２バイト分しか存在しないため、ＯＳを呼び出すことができない。<br /><br />そこで、ブートローダーは各パーティションの先頭にあるブートマネージャー（２次ブートローダー）を起動させる。<br /><br />ブートマネージャーは設定された内容に従って、指定されたパーティションにあるＯＳを起動する。<br /><br />ここでブートマネージャーの設定ファイルに複数のＯＳ情報を記載することによって、<br />複数のＯＳの起動を選択することができる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">Bootloaderのアンロック</h3><br />ブートローダーにはシステムのアップデート機能もあり、特定の場所にイメージを置いておくとアップデートすることができる。<br /><br />ただし、電子署名された特定のイメージしかアップデートできないようにメーカーが設定している場合もある。<br /><br />このとき独自のイメージを焼きたいときに、ブートローダーのアンロックが必要になる。<br /><br /><br /><h3 style="border-bottom-color: rgb(106, 90, 205); border-bottom-style: solid; border-bottom-width: 2px; border-left-color: navy; border-left-style: solid; border-left-width: 8px; padding: 0px 0px 1px 5px;">リカバリーにBootloaderのアンロックが必要</h3><br />Androidにはboot,system,recoveryの３つのパーティションがある。<br /><br />通常はsystemが起動するが、アップデートの際は起動できないのでrecoveryを起動してアップデートする必要がある。また、boot領域はシステムが壊れても最低限の起動をするのに必要なもの。<br /><br />Bootloaderのアンロックをすることで、recovery領域のアップデート（カスタムリカバリー）も可能になる。<br /><div><br /></div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

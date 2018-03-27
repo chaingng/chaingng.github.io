@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=13716&amp;rd=16433</a><br /><br />N人のクルーが隠れており、そのクルーを見つけたい。<br /><br />各クルーについては見つけられる確率が与えられている。<br />また、各クルーについて、そのクルーが見つかったときに見つけられるクルーも与えられる。<br /><br />このとき、見つけられるクルーの数の期待値を求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />期待値なのでｄｐを考えたいが、順序関係を明らかにする必要がある。<br /><br />まず期待値の考え方として独立な事象とそうでない事象を考える。<br /><br />独立な事象としては、全体で見つかる人数に対して、各クルーが見つかるかどうかは<br />独立で考えて和をとればよい。<br /><br />そして各クルーについて見つかるかどうかは、その他のクルーが見つかったときにそのクルーも必ず見つかる場合について、そのクルーが全て見つからない事象の積の排他を<br />とればよい。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class TheTips {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: double solve(vector&lt;string&gt; clues, vector&lt;int&gt; probability) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=probability.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int d[n][n];<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n)FORE(j,0,n)d[i][j]=(clues[i][j]=='Y');<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n)d[i][i]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(k,0,n)FORE(i,0,n)FORE(j,0,n)d[i][j]|=d[i][k]&amp;d[k][j];<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>double ret=0.0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>double p=1.0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,n)if(d[j][i])p*=(1.0-probability[j]*0.01);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ret+=(1.0-p);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

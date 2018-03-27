@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on">＜問題＞<br />①２つの整数ＮとＭが与えられる。<br />②１＜＝Ａ＜＝Ｎ、１＜＝Ｂ＜＝Ｍである、(sqrt(A)+sqrt(B))^2が整数であるＸが存在するとき、ＡとＢの組み合わせの数を返す。<br /><br />＜解き方＞<br />Ａが１のとき、Ｂ＝１，４，９，１６・・・<br />Ａが２のとき、Ｂ＝２＊１、２＊９、２＊１６・・・であることがわかります。<br />そのため、Ａを１からＮまでループさせ、<br />ＢをＡ＊１＾２、Ａ＊２＾２・・・と繰り返して数を足してあげて<br />最後にその和をかえしてあげればよいです。<br />Ｏ（８００００＊９００＝７２００００００＝７＊１０＾７）なので微妙。<br /><br />もう少し計算量を削減するには、<br />Ａが２で選ばれるＢの数と、<br />Ａが２＊２＾２、２＊３＾２・・・で選ばれるＢの数は一緒であることが分かります。<br />そこでＡもまとめて計算することで計算量が削減できます。<br />おおまかですがＯ（９００＊９００＝８１００００＝８＊１０＾５）ぐらい。<br /><br />＜コード＞<br />class TheSquareRootDilemma {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int countPairs(int N, int M) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>vector&lt;int&gt; check(77778,0);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ans=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,1,M+1){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(check[i]==1)continue;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int x=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int j=1;j*j*i&lt;=M;j++){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(check[i*j*j]==1)continue;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>check[i*j*j]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>x++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int y=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int j=1;j*j*i&lt;=N;j++)y++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ans+=(x*y);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ans;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};<br /><br /></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

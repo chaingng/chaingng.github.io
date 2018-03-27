@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://topcoder.bgcoder.com/print.php?id=2146" target="_blank">http://topcoder.bgcoder.com/print.php?id=2146</a><br /><br />0と１からなる文字列が２つ与えられ、１つ目の文字列を２つ目の文字列に変換したい。<br />変換する方法として、文字列のi番目とj番目を選ぶことでそのサブ文字列を反対にすることができる。<br />このとき、文字列を変換するのに最小の変換回数を求める。<br />ただし、変換できないときはー１を返す。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />文字列の最初と最後に着目し、そこが同じであればその場所については交換しなくてもよい。<br />つまり、ｄｆｓを用いて最初が一緒のときはその文字を削除し次の走査に入り、<br />最後の文字についても同様。<br /><br />どちらのケースもない場合は交換が必要だが、上記に当てはまらない場合は文字をすべてひっくり返すしか選択しはない。そのためすべてひっくり返し、上記の場合を調べる。<br /><br />ｄｐの状態はサブ文字列とした箇所とひっくり返したかどうかなので、メモ化することで計算量も間に合う。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">using namespace std;<br /><br />#define all(c) (c).begin(),(c).end()<br />#define FORE(i,d,e) for(int i=d;i&lt;e;i++)<br />#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)<br />#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)<br />#define ISEQ(c) (c).begin(), (c).end()<br /><br />map&lt;string,int&gt; m;<br /><br />class ReversalChain {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int calc(string init,string goal){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(init==goal)return 0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=init.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>string str=init+' '+goal;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(m.find(str)!=m.end())return m[str];<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ret=10000;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(init[0]==goal[0])ret=min(ret,calc(init.substr(1),goal.substr(1)));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(init[n-1]==goal[n-1])ret=min(ret,calc(init.substr(0,n-1),goal.substr(0,n-1)));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int i=0;i&lt;n-1-i;i++)swap(init[i],init[n-1-i]);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(init[0]==goal[0])ret=min(ret,1+calc(init.substr(1),goal.substr(1)));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(init[n-1]==goal[n-1])ret=min(ret,1+calc(init.substr(0,n-1),goal.substr(0,n-1)));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return m[str]=ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int minReversal(string init, string goal) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>m.clear();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ret=calc(init,goal);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret==10000 ? -1 : ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

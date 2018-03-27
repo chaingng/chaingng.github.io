@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><br />業務でandroidのソースコードを読まなければならなかったときに学んだ、<br />効率的なソースコードの読み方のメモ。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">動的な解析と静的な解析</h3><br />ソースコードの解析には、動的な解析と静的な解析がある。<br /><br />動的な解析とはデバッガなどでプログラムを実行させながら流れを解析する方法で、<br />静的な解析とは実際のソースコードを読んでいく方法。<br /><br />最初は動的な解析からはじめると効率的に読むことができる。<br /><br />androidではlogcatと呼ばれるログ出力関数が用意されていて、<br />プログラムを実行するとソースコードに埋め込まれたログが出力される。<br /><br />また、開発環境ではなく実際の端末で実行されたログであれば、<br />以下のadbコマンドでlogcatを取得することができる。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">$adb logcat -v time &gt; logcat.txt</div><br />ただこのlogcatには読みたいプログラム以外にも端末で動いているものの全ての<br />ログが出力されるので、grepなどで必要な箇所だけ切り出してあげると見やすくなる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">まとめると</h3><br />まずはプログラムを動かしてみて、出力されるlogcatからそのログが出力されている<br />コードの箇所を探していって、流れを組み立てるとよい。<br /><br />その後、組み立てられたクラスの流れができるので、そこから静的解析として<br />クラスごとにソースを読んでいけば大まかに内容をつかむことができる。</div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

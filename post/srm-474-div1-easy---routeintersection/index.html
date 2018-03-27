@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=10804&amp;rd=14185" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=10804&amp;rd=14185</a><br /><br />N個の次元があり、最初はすべての次元について位置０からスタートする。<br />各ステップについて、どの次元の座標を＋ーするか与えられる。<br /><br />このとき、ステップ中にすでに通った道に戻るときはInvalidを、<br />そうでないときはvalidを返す。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />Nが大きく配列に保存できないため、必要な配列だけを保存する。<br />同じ場所にもどってくるかどうかは、ある地点を基準にして<br />各エリアの＋ーがすべて０になったときとなる。<br /><br />上記ついてすべての地点で判定してあげれば良い。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class RouteIntersection {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: string isValid(int N, vector&lt;int&gt; coords, string moves) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int len=coords.size();<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,len){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>map&lt;int,int&gt; m;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,i,len){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(moves[j]=='+')m[coords[j]]++;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>else m[coords[j]]--;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">    </span>int invalid=1;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>for(map&lt;int,int&gt;::iterator it=m.begin();it!=m.end();it++){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>if(it-&gt;second!=0)invalid=0;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(invalid)return "NOT VALID";<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return "VALID";<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

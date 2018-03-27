@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=8223&amp;rd=10789" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=8223&amp;rd=10789</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />解くだけ。１度一周して確かめるなど、うまく条件を整理するのがポイント。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class RoadConstruction {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int getExitTime(vector&lt;string&gt; lanes) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=lanes.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ret=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int flag[n];<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(flag,0,sizeof(flag));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int at=0,prev=-1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(1){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>while(at&lt;n &amp;&amp; lanes[at].empty())at++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(at&lt;n &amp;&amp; flag[at]==0){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>prev=at;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>flag[at]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>at++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}else{<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(at&gt;=n)at=prev;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(lanes[at][0]=='D')return ret;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>ret++;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>lanes[at]=lanes[at].substr(1);<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>flag[at]=0;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>at=0,prev=-1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return -1;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on">＜問題＞<br />①文字数ｎが与えられる。<br />②最小文字列minStrが与えられる。<br />③文字列s中の順番i&lt;jでs[i]&gt;s[j]となるとき、inversionが１となるとき、<br />　最小のinversion minInvが与えられる。<br />④このとき、文字数nでminStrより大きく、かつminInv以上の中で<br />　最も辞書順で小さい文字列を求める。<br />　そのような文字列が存在しなければ””を返す。<br />　また、文字列には同じ文字が入らないとする。<br /><br />＜解き方＞<br />まずは全探索で考えると、文字数nの全てに対してminInv,minStrの判定を行い<br />その中で最も辞書順で小さい文字列を探索することになる。<br />単純に検索するとO(26Pn=26!/(26-n)!)のため計算量を超えてしまう。<br /><br />次に貪欲法でできないか考える。<br />文字の後ろから計算するとオーバーしてしまうので、最初の文字から決定していく。<br />このとき、求めるのは辞書順最小であるためaから順に調べていく。<br />aの後に続く文字は、そのケースのstr,invの最大を考えることでaなのか<br />b以上なのか判定できる。<br />（例）n=5のとき、afdcbを考え、minInv以下、もしくはminStr以下であれば<br />　　　最初の文字はa以上となる。<br />この場合だとO(26*n)のため計算量に収まる。<br /><br />あと、条件に一致しなければ""を返すため、答えの初期値を""とする。<br />その文字を使ったか使っていないかの判定はused[]配列を用いてもよいが、<br />ビット計算でもよい。<br /><br />redcoderの人の回答を参考に書いたままです。<br /><br />&lt;コード&gt;<br />class StrIIRec {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: string recovstr(int n, int minInv, string minStr) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>string ans="";<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int used=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(used&amp;(1&lt;&lt;j))continue;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>string s=ans;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>s+=(j+'a');<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>for(int k=n-1;k&gt;=0;k--)if(!(used&amp;(1&lt;&lt;k)) &amp;&amp; k!=j)s+=(k+'a');<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(s&lt;minStr)continue;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>int inv=0;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>FORE(k,0,n)FORE(l,k+1,n)if(s[k]&gt;s[l])inv++;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(inv&lt;minInv)continue;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>ans+=(j+'a');<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>used|=(1&lt;&lt;j);<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>break;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ans;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

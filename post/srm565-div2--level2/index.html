@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on">＜問題＞<br />①モンスターの集合が与えられ、各モンスターは怖さの値とコインの値を持つ。<br />②プレイヤーは最初から順番にモンスターに遭遇する。<br />③このとき、プレイヤーはモンスターにそのコインの値を支払って仲間にすることができる。<br />④もしくは、仲間にしたモンスターの怖さの和がそのモンスターの怖さの値以上であれば、何もせずに通り過ぎることができる。それ未満であれば、仲間にしないといけない。<br />⑤このとき、すべてのモンスターに遭遇した後に最小のコイン消費枚数を返す。<br /><br />＜解き方＞<br />まさに動的計画法。<br /><br />参照用のvectorをグローバルで宣言してpush_backでコピーしようとしたんですが、<br />エラーが出たので引数で渡すことに。<br /><br />suztomoさんのページを拝見させていただいたのですが、<br />１０＾７以上のループに加え、あまり大きな数を扱ってもダメなのかもしれないです。<br /><a href="http://topcoder.g.hatena.ne.jp/suztomo/20081208/1228768981">http://topcoder.g.hatena.ne.jp/suztomo/20081208/1228768981</a><br /><br />＜コード＞<br />class MonstersValley2 {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int f(int cur, double cdread, vector&lt;int&gt; d, vector&lt;int&gt; p){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int coin=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(cur==n)return 0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(cdread&lt;d[cur])coin=p[cur]+f(cur+1,cdread+d[cur],d,p);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>else coin=min(f(cur+1,cdread,d,p),f(cur+1,cdread+d[cur],d,p)+p[cur]);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return coin;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int minimumPrice(vector&lt;int&gt; dread, vector&lt;int&gt; price) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>n=dread.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return f(1,dread[0],dread,price)+price[0];<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};<br /><div><br /></div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

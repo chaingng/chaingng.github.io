@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11855&amp;rd=14731" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11855&amp;rd=14731</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />９０００以上となる数をすべて保存しては間に合わないので、<br />その始点と終点のみ保存してあげて、その間の範囲を計算していくことで<br />メモリ、計算量ともに制限内で解くことができる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">pair&lt;int,int&gt; p[1000000];<br /><br />class Over9000Rocks {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int countPossibilities(vector&lt;int&gt; lowerBound, vector&lt;int&gt; upperBound) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=lowerBound.size();<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int m=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int mask=1;mask&lt;(1&lt;&lt;n);mask++){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int minx=0,maxx=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,n)if(mask&amp;(1&lt;&lt;i)){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>minx+=lowerBound[i];<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>maxx+=upperBound[i];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>minx=max(minx,9001);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(minx&lt;=maxx){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>p[m++]=make_pair(minx,1);<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>p[m++]=make_pair(maxx+1,-1);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>sort(p,p+m);<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ret=0,cur=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,m){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>cur+=p[i].second;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(cur!=0)ret+=p[i+1].first-p[i].first;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=8758&amp;rd=12171" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=8758&amp;rd=12171</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />zの探索を枝刈りすることによって、ほぼx,yのすべての組み合わせだけ調べればよいので<br />O(10^6)で全探索可能。<br /><br />調べる範囲として、NGの値の上限は1000のため取りうる値は1001まで<br />調べる必要がある。上限値の設定によるエラーケースに注意。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class AvoidingProduct {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: vector&lt;int&gt; getTriple(vector&lt;int&gt; a, int n) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>set&lt;int&gt; s;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,a.size())s.insert(a[i]);<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>vector&lt;int&gt; ans(3,1001);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int x=1;x&lt;=1001;x++)if(s.find(x)==s.end()){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int y=x;y&lt;=1001;y++)if(s.find(y)==s.end()){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>for(int z=y;z&lt;=1001;z++)if(s.find(z)==s.end()){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>int cur=abs(ans[0]*ans[1]*ans[2]-n);<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>if(cur&gt;abs(x*y*z-n)){<br /><span class="Apple-tab-span" style="white-space: pre;">      </span>ans[0]=x,ans[1]=y,ans[2]=z;<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>if(abs(x*y*z-n)&gt; abs(x*y*(z-1)-n))break;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ans;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

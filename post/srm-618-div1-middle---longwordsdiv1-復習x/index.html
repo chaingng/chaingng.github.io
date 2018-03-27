@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br />ｎ種類の文字が与えられる。<br />これを、以下の条件にあてはまらないようにできるだけ長い文字列を作成する。<br />（１）同じ文字が２つ連続しないこと<br />（２）ｘｙｘｙとなるような部分文字列が存在しないこと<br /><br />このとき、最長の文字列は何通りあるか求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />文字列に法則がないか考える。<br />今回は最長の文字数は、以下のパターンになるので2n-1であることがわかる。<br />（１）aXYZYXa<br />　　aは一つのアルファベット、XYZYXはaを除いたアルファベットの種類数n-1における最長の文字列 (n-1)+(n-2)=2n-3<br />（２）aMNaXYa　<br />　　aは一つのアルファベット、MN、XYはaを除いた、お互いに同じアルファベットを含まない種類数<br />&nbsp; &nbsp; で構成される。MNに含まれる種類をＰ,ＸＹに含まれる種類をQとすると<br />　　MNの長さは2P-1,XYの長さは2Q-1, P+Q=n-1から<br />　　2P-1+2Q-1=2(P+Q)-2=2(n-1)-2=2x-4<br />&nbsp; &nbsp; よって全体の長さは2n-1となる。<br /><br />上記について長さが1のときからnの時までdpで回してあげ、<br />最後にアルファベットの種類数分だけの順列が生じるのでn!をかけてあげればよい。<br /><br />最初は最長の文字列が一意に決まると考え着かなかったので、もっと問題を洞察する必要があった。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">using namespace std;<br /><br />#define all(c) (c).begin(),(c).end()<br />#define FORE(i,d,e) for(int i=d;i&lt;e;i++)<br />#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)<br />#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)<br />#define ISEQ(c) (c).begin(), (c).end()<br /><br />long long dp[5010];<br />int MOD=1000000007;<br /><br />class LongWordsDiv1 {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>long long rec(long long x){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>long long ret=1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,1,x+1)ret=(ret*i)%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int count(int n) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(dp,0,sizeof(dp));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>dp[1]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,2,n+1){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>dp[i]=dp[i-1];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int p=1;i-1-p&gt;0;p++){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dp[i]=(dp[i]+dp[p]*dp[i-1-p])%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return (dp[n]*rec(n))%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=14010&amp;rd=16551" target="_blank">https://community.topcoder.com/stat?c=problem_statement&amp;pm=14010&amp;rd=16551</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />固定できる条件はなさそう。<br />ある値でソーティングして貪欲にも解けなさそうなのでｄｐを考える。<br /><br />dp[現在の位置][;があって_がない絵文字][;があって_がある絵文字]=現在の位置の一つ前までの状態数と考えると、200*200*200=8*10^6で間に合う。<br /><br />dp[n][0][0]が最終的な答えになる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">long long dp[202][202][202];<br /><br />class BearCries {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int count(string message) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=message.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int MOD=1000000007;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(dp,0,sizeof(dp));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>dp[0][0][0]=1;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,201)FORE(k,0,201){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(message[i]=='_'){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>if(j)dp[i+1][j-1][k+1]=(dp[i+1][j-1][k+1]+dp[i][j][k]*j)%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>dp[i+1][j][k]=(dp[i+1][j][k]+dp[i][j][k]*k)%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}else{<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>if(k)dp[i+1][j][k-1]=(dp[i+1][j][k-1]+dp[i][j][k]*k)%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>dp[i+1][j+1][k]=(dp[i+1][j+1][k]+dp[i][j][k])%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return dp[n][0][0];<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

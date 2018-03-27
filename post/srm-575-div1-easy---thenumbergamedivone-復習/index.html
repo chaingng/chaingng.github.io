@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=12496&amp;rd=15495" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=12496&amp;rd=15495</a><br /><br />２人でのゲーム。<br />ある数が与えられ、プレイヤーは１とその数自身以外の約数をそこから引くことができる。<br />約数を引いたら、次のプレイヤーに交替して進めていく。<br />このとき、ある数が与えられたときに最初のプレイヤーが勝つなら”Ｊｏｈｎ”、<br />負けるなら”Ｂｒｕｓ”を返す。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />与えられる数の最大は１０＾１８のため、ｄｐでは解くことができない。<br />そのため、法則がないか見つける。<br /><br />とりあえず「適当な数までサンプル出力し、法則をながめる」ことが１つの手法。<br />法則は以下の通り。<br />１）２＾ｎ以外の偶数が与えられたら勝ち<br />　この場合、ｘ＝２ｙ＊２ｚ＝２（ｙ＋ｚ）、<br />　（ただしｙ＋ｚは２＾ｎではない、つまり奇数の約数を含む）<br />　で表わすことができる。<br />　このとき、偶数と奇数の約数が必ず存在するので勝ちとなる。<br /><br />２）奇数が与えられたら負け<br />　奇数は「素数」もしくは「奇数で割る」ことができる。<br />　奇数で割れるときは、奇数ー奇数のため必ず偶数になる。<br />　このとき、２＾ｎを含んでいるとすると奇数はｘ＝２＾ｎ＋ｙと表わせるが<br />　２＾ｎの倍数で割れないため、２＾ｎの偶数ではない。<br />　つまり、奇数を引いたときは２＾ｎ以外の偶数が現れる。<br />　２＾ｎ以外の偶数は必ず約数が存在して、<br />　一方奇数で割ることができなければ負けとなるためこの場合は負けとなる。<br /><br />３）２＾ｎの偶数のとき<br />　たとえば２＾３＝８のときは、２，４で割ることができる。<br />　２＾１を引くと６となり２＾ｎ以外の偶数が出るので負けとなる。<br />　そのため、２＾ｎが与えられた時は２＾（ｎ－１）を引くしかないが<br />　その結果が２、つまりｎが偶数のときは勝ちとなるが<br />　奇数のときは負けとなる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class TheNumberGameDivOne {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: string find(long long n) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int num=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(n%2)return "Brus";<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(n%2==0){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>n/=2;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>num=(num+1)%2;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(n!=1)return "John";<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(num)return "Brus";<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return "John";<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

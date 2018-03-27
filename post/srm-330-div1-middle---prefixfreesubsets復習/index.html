@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://topcoder.bgcoder.com/print.php?id=1520" target="_blank">http://topcoder.bgcoder.com/print.php?id=1520</a><br /><br />複数の文字列集合が与えられる。<br />そこから任意のサブ集合をピックアップして、そのうちのどのペアも接頭辞になっていないようにしたい。<br /><br />このとき、そのようなサブ集合は何通りあるか求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />支配集合のうち、互いに子でない組み合わせを求める問題。<br />漸化式としてｄｐを利用して、それまでの組み合わせ＋そのうち子がいない組み合わせの値を更新していく。<br /><br />今回は文字列をソートすることで子である文字列は隣り合わせになるので、シンプルに実装することができる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">using namespace std;<br /><br />#define all(c) (c).begin(),(c).end()<br />#define FORE(i,d,e) for(int i=d;i&lt;e;i++)<br />#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)<br />#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)<br />#define ISEQ(c) (c).begin(), (c).end()<br /><br />class PrefixFreeSubsets {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: long long cantPrefFreeSubsets(vector&lt;string&gt; words) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=words.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>long long dp[n+1];<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(dp,0,sizeof(dp));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>dp[n]=1;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>sort(all(words));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int i=n-1;i&gt;=0;i--){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int j=i;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int len=words[i].size();<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>while(j&lt;n){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(len&gt;words[j].size() || words[i]!=words[j].substr(0,len))break;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>j++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>dp[i]=dp[i+1]+dp[j];<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return dp[0];<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

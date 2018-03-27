@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on">&lt;問題&gt;<br />①数字の順列が与えられる。<br />②魔法の数字Ｌを使うことで、それぞれの数字からＬを引く、または足すことができる。<br />③このとき、与えられた数字の順列を昇順にするために必要な最小のＬを返す。<br /><br />&lt;解き方&gt;<br />二分探索で解けることがわかれば、の問題でした。<br /><br />終了条件の設定を間違えると無限ループが続いてしまったり、<br />答えがlowかhighのどちらかの判定を加えなければいけなくなります。<br /><br />そこで答えを満たす時はmidを範囲に加えて、<br />満たさないときはlow=mid+1とmidを範囲に加えないことで<br />low&lt;highの条件で収束することができます。<br /><br />&lt;コード&gt;<br />class KingdomAndTrees {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>bool f(vector&lt;int&gt; h, int x){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int prev=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,(int)h.size()){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(h[i]+x&lt;=prev)return false;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>prev=max(prev+1,h[i]-x);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return true;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int minLevel(vector&lt;int&gt; heights) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int low=0,high=1000000000;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(high-low&gt;0){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int mid=(low+high)/2;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(f(heights,mid))high=mid;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else low=mid+1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return high;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />};</div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

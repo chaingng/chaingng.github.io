@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=14081&amp;rd=16616" target="_blank">https://community.topcoder.com/stat?c=problem_statement&amp;pm=14081&amp;rd=16616</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />w[0]について各組み合わせを決めることで、最大にならければならないスコアが決まる。<br />あとは残りについて、その数を超えないように全ての組み合わせ数を求める。<br /><br />ここで各兵士について、乗ることができる馬の数を考える。<br />この数でソートすることで、i番目の兵士は、「乗ることのできる馬の数-(i-1)」が選ぶことのできる数であり、よって組み合わせていく順番が一意に決まる。<br /><br />ある値（最大スコア）を固定することで、残りを貪欲法で選ぶことができないか、選ぶことのできる観点（各兵士について乗ることのできる馬の数）がないか考える。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class BearCavalry {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int countAssignments(vector&lt;int&gt; warriors, vector&lt;int&gt; horses) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>long long ret=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=warriors.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int MOD=1000000007;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int value=warriors[0]*horses[i];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int cur[n-1];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>memset(cur,0,sizeof(cur));<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,n-1)FORE(k,0,n)if(k!=i &amp;&amp; warriors[j+1]*horses[k]&lt;value)cur[j]++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>sort(cur,cur+n-1);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>long long tmp=1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,n-1)tmp=(tmp*max(0,cur[j]-j))%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ret+=tmp;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};<br /><div><br /></div></div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

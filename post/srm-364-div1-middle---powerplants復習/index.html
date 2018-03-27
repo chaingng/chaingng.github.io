@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://topcoder.bgcoder.com/print.php?id=1855" target="_blank">http://topcoder.bgcoder.com/print.php?id=1855</a><br /><br />電気で電源が入る植物があり、電源はＯＮになっている他の植物から共有される。<br />各植物同士のＯＮにする電源量はあらかじめわかっている。<br />また、現在ＯＮになっている植物もわかっている。<br /><br />このとき、numPlants本の植物をＯＮにするのに必要な最小の電源量を求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />ｄｐで解く。<br />状態として、現在ＯＮになっている植物を持っていればよい。<br />植物はすべてで１６本なので計算量も間に合う。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">using namespace std;<br /><br />#define all(c) (c).begin(),(c).end()<br />#define FORE(i,d,e) for(int i=d;i&lt;e;i++)<br />#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)<br />#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)<br />#define ISEQ(c) (c).begin(), (c).end()<br /><br /><br />class PowerPlants {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int f(char ch){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if('0'&lt;=ch &amp;&amp; ch&lt;='9')return (int)(ch-'0');<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return (int)(ch-'A')+10;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int minCost(vector&lt;string&gt; connectionCost, string plantList, int numPlants) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int p[16][16];<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=connectionCost.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ret=1e+9;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n)FORE(j,0,n)p[i][j]=f(connectionCost[i][j]);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int dp[1&lt;&lt;16],s=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n)if(plantList[i]=='Y')s|=(1&lt;&lt;i);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,1&lt;&lt;16)dp[i]=1e+9;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>dp[s]=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,1,1&lt;&lt;n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,n)if(i&amp;(1&lt;&lt;j))FORE(k,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dp[i|(1&lt;&lt;k)]=min(dp[i|(1&lt;&lt;k)],dp[i]+p[j][k]);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(__builtin_popcount(i)&gt;=numPlants)ret=min(ret,dp[i]);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

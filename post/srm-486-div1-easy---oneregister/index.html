@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=10992&amp;rd=14239" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=10992&amp;rd=14239</a><br /><br />ある整数sからtに変換したい。<br />変換には＋、＊、ー、／の４つの操作があり、＋は現在の数と同じ数を足し、<br />＊は現在の数と同じ数をかけ、ーは現在の数と同じ数を引き、／は同じ数を割る。<br /><br />このとき、ｔに変換したときの操作手順を返す。<br />複数の操作手順があるときは少ない手順数のものを、同じ手順数であれば<br />辞書順で最小のものを返す。<br />そのような手順がないときは”:-(”を返す。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />まず、ーにしたときは０となり、答えは１以上であるためーは使用しない。<br /><br />次に、＋と＊の操作をしたときは<br />操作後の数がtから割れる数にならなければならない。<br />このような数について、幅優先探索で調べていく。<br /><br />また、／は数を１にして調べていくので、最初に／がある場合も<br />一緒に調べればよい。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class OneRegister {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: string getProgram(int s, int t) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(s==t)return "";<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>map&lt;long long,string&gt; m;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>string ret="";<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>queue&lt;pair&lt;long long,string&gt; &gt; q;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>q.push(make_pair(s,""));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>q.push(make_pair(1,"/"));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(!q.empty()){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>long long x=q.front().first;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>string str=q.front().second;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>q.pop();<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(x==t){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(ret.empty() || ret.size()&gt;str.size() ||<br /><span class="Apple-tab-span" style="white-space: pre;">      </span>(ret.size()==str.size() &amp;&amp; ret&gt;str))ret=str;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(t%(x*2)==0){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>q.push(make_pair(x*2,str+'+'));<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(x!=1 &amp;&amp; t%(x*x)==0){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>q.push(make_pair(x*x,str+'*'));<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return !ret.empty() ? ret : ":-(";<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

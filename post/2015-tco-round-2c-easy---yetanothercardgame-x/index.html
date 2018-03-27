@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=13912&amp;rd=16523" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=13912&amp;rd=16523</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />dpの問題。<br />１．どのような順序で処理されるか<br />　→petr、snukeが順番に１つずつ出していく<br />２．前の状態としてどのような状態があればよいか<br />　→前に出されたカードと、それまでに重ねられたカードの数<br /><br />dp[一番上のカードの数字]＝ 重ねられたカードの数の最大値とし、<br />毎ターンできるだけ小さな数字でカードを重ねていけば良い。<br /><br />問題文中の取ることが出きる動作のうち、１枚カードを食べるというのは<br />要はパスしてもよいというのがわかれば上記に帰着できそうだった。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class YetAnotherCardGame {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int maxCards(vector&lt;int&gt; petr, vector&lt;int&gt; snuke) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=petr.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int dp[101];<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(dp,0,sizeof(dp));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>sort(all(petr));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>sort(all(snuke));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int x=100;x&gt;=0;x--){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>FORE(j,0,n)if(petr[j]&gt;x){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>dp[petr[j]]=max(dp[petr[j]],dp[x]+1);<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>break;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int x=100;x&gt;=0;x--){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>FORE(j,0,n)if(snuke[j]&gt;x){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>dp[snuke[j]]=max(dp[snuke[j]],dp[x]+1);<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>break;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return *max_element(dp,dp+101);<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

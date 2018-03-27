@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=10719&amp;rd=14179" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=10719&amp;rd=14179</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />ｄｐを利用して、ある長方形を考えた時<br />その内部にある長方形のうち最大のものか、<br />それより内部にある長方形＋現在の長方形のうち最大のものを求めていく。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">int dp[55][55][55][55];<br /><br />class DonutsOnTheGridEasy {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int calc(vector&lt;string&gt; grid) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int h=grid.size(),w=grid[0].size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(dp,0,sizeof(dp));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int hh=3;hh&lt;=h;hh++)for(int ww=3;ww&lt;=w;ww++){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int i=0;i+hh-1&lt;h;i++)for(int j=0;j+ww-1&lt;w;j++){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>int u=i+hh-1,v=j+ww-1;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>int ok=1;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">    </span>FORE(k,0,ww){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>if(grid[i][j+k]!='0' || grid[u][j+k]!='0')ok=0;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>FORE(k,0,hh){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>if(grid[i+k][j]!='0' || grid[i+k][v]!='0')ok=0;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dp[i][j][u][v]=ok;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dp[i][j][u][v]=max(dp[i][j][u][v],dp[i+1][j][u][v]);<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dp[i][j][u][v]=max(dp[i][j][u][v],dp[i][j+1][u][v]);<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dp[i][j][u][v]=max(dp[i][j][u][v],dp[i][j][u-1][v]);<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dp[i][j][u][v]=max(dp[i][j][u][v],dp[i][j][u][v-1]);<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dp[i][j][u][v]=max(dp[i][j][u][v],dp[i+1][j+1][u-1][v-1]+ok);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return dp[0][0][h-1][w-1];<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

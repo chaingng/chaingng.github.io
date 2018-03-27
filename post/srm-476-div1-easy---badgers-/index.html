@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=10797&amp;rd=14186" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=10797&amp;rd=14186</a><br /><br />動物BadgersがN匹おり、できるだけ多く飼いたい。<br />ただし１日に与えられる餌がtotalFoodしかないため、この餌の中で<br />できるだけ多くの動物を飼うようにしたい。<br /><br />各Badgersは一人でいるときに必要な餌の数hungerと、複数匹飼われたときに<br />追加で必要な餌greedが与えられる。<br />例えば４匹飼われた際はhunger+greed*3の餌が必要になる。<br /><br />このとき、最大で何匹のBadgersが飼えるか求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />Nは50のため、すべての組み合わせは確かめられない。<br />ここで、何匹買うかの情報を固定すると、そのときに必要な餌の量は<br />固定値となるため、貪欲法で求めることができる。<br /><br />よって、飼う匹数を１〜Nまで固定して、<br />それぞれについて貪欲法で選んだ時にtotalFoodに収まる<br />最大の匹数を求めればよい。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class Badgers {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int feedMost(vector&lt;int&gt; hunger, vector&lt;int&gt; greed, int totalFood) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=hunger.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ret=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int num=1;num&lt;=n;num++){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>vector&lt;int&gt; vx;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>int cost=hunger[i]+greed[i]*(num-1);<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>vx.push_back(cost);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>sort(all(vx));<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int sum=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,num)sum+=vx[i];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(totalFood&gt;=sum)ret=max(ret,num);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

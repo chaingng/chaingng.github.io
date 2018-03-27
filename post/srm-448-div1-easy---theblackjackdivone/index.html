@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=10615&amp;rd=13902" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=10615&amp;rd=13902</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />探索箇所が少ないので全探索可能。<br />各カードについて既に使ったかどうかの情報が必要なので、<br />その情報を更新しつつDFSを用いればよい。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">int s[]={0,11,2,3,4,5,6,7,8,9,10,10,10,10};<br />int c[14];<br /><br />class TheBlackJackDivOne {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>double rec(int cur){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(cur&gt;=21)return 0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int sum=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>double ret=0.0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,14)sum+=c[i];<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,14)if(c[i]!=0){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>c[i]--;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ret+=(1+rec(s[i]+cur))*(c[i]+1)/sum;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>c[i]++;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>double expected(vector&lt;string&gt; cards) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int score=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,14)c[i]=4;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>c[0]=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,cards.size()){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(cards[i][0]=='A')c[1]--,score+=11;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else if(cards[i][0]=='T')c[10]--,score+=10;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else if(cards[i][0]=='J')c[11]--,score+=10;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else if(cards[i][0]=='Q')c[12]--,score+=10;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else if(cards[i][0]=='K')c[13]--,score+=10;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else c[cards[i][0]-'0']--,score+=cards[i][0]-'0';<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return rec(score);<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

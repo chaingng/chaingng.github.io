@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11706&amp;rd=14762" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11706&amp;rd=14762</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />普通に計算していては間に合わない。<br />例えば２０個のキャンディーからは<br />20-4=16→16-4=12→12-3=9→9-3=6→6-2=4→4-2=2→2-1=1となり、<br />この操作を逆にたどれば計算量が間に合う。<br /><br />つまり、ある数からそのsqrtを引かれると次の数になる計算式を<br />逆にたどっていけばよい。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class MagicCandy {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int rec(int n){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(n==1)return 1;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int candy=rec(n-(int)sqrt(n));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int low=1,high=n;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(low&lt;high){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int mid=(low+high)/2;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(mid-(int)sqrt(mid)&gt;=candy)high=mid;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else low=mid+1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return high;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int whichOne(int n) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return rec(n);<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

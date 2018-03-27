@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><br />Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">①CPU使用率とメモリ使用状況の表示</h3><br />vmstatを使うことでCPU・メモリ使用率のログが取ることができる。<br />5秒間隔で３回ログを取りたいときは、以下のように引数を指定する。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">$vmstat 5 3</div><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">②時刻情報の表示</h3><br />使用率の分析にはいつ出力されたかが知りたいと思うので、時刻と紐づけたいことが多いと思う。これはpipとawkを使うことで実現する。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">vmstat 1 | awk '{ print strftime("%Y/%m/%d %H:%M:%S"), $0 }'</div><br />awkで時刻情報を出力させた後、現在の行(vmstat)を出力させている。<br />これで１秒間隔で、年／月／日　hh:mm:sssの時刻情報と紐づけて出力することができる。<br /><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">③ログへの出力</h3><br />実は上記のコマンドの標準出力をログに出そうとしても出力されない。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">vmstat 1 | awk '{ print strftime("%Y/%m/%d %H:%M:%S"), $0 }'　&gt;&gt; sample.log</div><br />これは、pipの後ろの処理が終了してからバッファに保存してある情報をファイルに書き込みむため。<br />そのため、system()関数を用いてバッファをリフレッシュする。<br /><br /><br /><div style="background-color: #e3f2fb; border: 1px dotted rgb(204, 204, 204); padding: 5px;">vmstat 1 | awk '{ print strftime("%Y/%m/%d %H:%M:%S"), $0 } {system("")}'　&gt;&gt; sample.log</div><br />こちらに詳細な解説が。<br /><a href="http://www.kt.rim.or.jp/~kbk/gawk-30/gawk_13.html" target="_blank">http://www.kt.rim.or.jp/~kbk/gawk-30/gawk_13.html</a><br /><br />これでやっと、途中でコマンドを終了させてもログに書き込まれているようになる。<br /><br /><br /></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

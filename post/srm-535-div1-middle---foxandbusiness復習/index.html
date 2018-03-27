@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11454&amp;rd=15037" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11454&amp;rd=15037</a><br /><br />ワーカーが複数存在し、それぞれのワーカーi について以下がわかっている。<br />a[i]:１時間あたりにこなせる仕事の数<br />p[i]:仕事あたりにかかるコスト<br /><br />今回、ワーカーから複数人選び、同じ時間働くように均等に仕事を割り当てる。<br />こなしたい仕事の数がわかっているとき、必要な最小コストを求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />サンプル通りの計算だとワーカーiにタスクtを割り当てた時のコストは<br />t[i]*3600/a[i]となる。<br />ここで時間が均等になるようtを割り当てるのは計算が難しいので<br />考え方を変える。<br /><br />ｘ時間を均等に割り当てたとき、<br />コスト　 &nbsp;：x*(a[i]*p[i] + a[j]*p[j]...+3600K)<br />タスク数：x*(a[i]+a[j]...)<br /><br />単純にするために１時間の場合を考えると<br />コスト　 &nbsp;：a[i]*p[i] + a[j]*p[j]...+3600K<br />タスク数：a[i]+a[j]...<br /><br />ここで、求めたい最小のコストansは<br />ans/totalwork*(a[i]+a[j]...)&gt;=a[i]*p[i] + a[j]*p[j]...+3600K<br /><div>を満たす最小のansとなる。</div><div><br /></div><div>ここで１タスクあたりの最小コストM=ans/totalworkとおくと、</div><div>M*(a[i]+a[j]...)&gt;=a[i]*p[i] + a[j]*p[j]...+3600K</div><div><br /></div><div>よって上記式を満たす最小のMを求め、totalWorkをかけてあげればよい。</div><div><br /></div>Mは２分探索で探すことができ、<br />最適なワーカーはa[i]*(M-p[i])の昇順で選ぶことができる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">using namespace std;<br /><br />#define all(c) (c).begin(),(c).end()<br />#define FORE(i,d,e) for(int i=d;i&lt;e;i++)<br />#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)<br />#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)<br />#define ISEQ(c) (c).begin(), (c).end()<br /><br />class FoxAndBusiness {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: double minimumCost(int K, int totalWork, vector&lt;int&gt; a, vector&lt;int&gt; p) {<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=a.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>double low=0.0,high=1e+20;<br /><br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(x,0,1000){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>double mid=(high+low)/2;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>vector&lt;double&gt; vx;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,n)vx.push_back(a[i]*(p[i]-mid));<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>sort(all(vx));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>double sum=K*3600;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,K)sum+=vx[i];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(sum&lt;=0)high=mid;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else low=mid;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return high*totalWork;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

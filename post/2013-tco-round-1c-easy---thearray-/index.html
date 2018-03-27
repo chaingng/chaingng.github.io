@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=12455&amp;rd=15585" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=12455&amp;rd=15585</a><br /><br />・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。<br />・スタート位置からn回移動し、最後に最後の位置に到達している必要があるとき、<br />　途中で到達しうる最大の高さを求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />・問題として２分探索が使えそう。<br />・ある位置を考えた時、スタート位置から到達するために必要なターン数と、そこから最後の位置に到達するためのターン数の和がｎ以下であればよさそう。<br />・２分探索の最小値はスタート位置もしくは最後の位置のうち小さいもの、最後に得られた値と小喜一のうち最大のものが答えになる。<br /><br />→System Passed<br /><br />・他の解き方、というか一番わかりやすい解き方として、nは10^6で全探索できるので<br />　各ターンにおいて最初の位置から到達しうる高さ、最後の位置から到達しうる高さのうち最小の　<br />　ものを取り、そのうち最大のものを求めれば簡単。<br /><br />・反省：全探索できる変数、探索を考えてみる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">using namespace std;<br /><br />#define all(c) (c).begin(),(c).end()<br />#define FORE(i,d,e) for(int i=d;i&lt;e;i++)<br />#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)<br />#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)<br />#define ISEQ(c) (c).begin(), (c).end()<br /><br />class TheArray {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int find(int n, int d, int first, int last) {<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(d==0)return max(first,last);<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>long long low=min(first,last),high=1e+9;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(high-low&gt;1){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>long long mid=(low+high)/2;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>long long cnt=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>cnt+=(labs(mid-first)+d-1)/d;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>cnt+=(labs(mid-last)+d-1)/d;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(cnt&gt;=n)high=mid;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else low=mid;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return max((int)low,max(first,last));<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

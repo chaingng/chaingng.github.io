@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on"><br />windowsでlinuxコマンド等を使うためのcygwin+minttyのインストールメモ。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">Cygwinのインストールまで</h3><br />Cygwinのインストールのために以下からsetup.exeをダウンロードして実行。<br /><a href="https://www.cygwin.com/" target="_blank">https://www.cygwin.com/</a><br /><br />ダウンロードサイトは「ftp://～.jp」のサイトを指定しないとものすごくインストールが遅くなるので<br />注意。<br /><br />必要なパッケージとして、後述するapt-cygのインストールのために以下は追加しておく。<br />Search欄でパッケージ名を入力してチェックすればOK。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">・wget<br />・bzip2<br />・git<br />・gawk<br />・tar</div><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">Cygwin+minttyのセットアップ</h3><br />インストールが終わったらc\://binの下にmintty.exeが存在するので<br />Cygwinの起動は今後こちらから行う。<br /><br />ショートカットを作成して、右クリック＞プロパティから以下の設定を行う。<br /><br />・管理者で実行するにチェック<br />　これを行わないと、bin以下のファイルのwrite権限がないなど困ってしまう。<br /><br />・ショートカットのリンク先に以下を追加<br />　これでPATHが通ったりhomeが/usr/binではなくwindowsのhomeとなる。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted rgb(204, 204, 204); padding: 5px;">-i /Cygwin-Terminal.ico -</div><br />・minttyを起動し、Option&gt;TransparencyをHighにすると見やすい<br /><br />・minttyを起動し、Option&gt;TextからLocaleja_JP、文字コードをUTF-8に設定<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">apt-cygのインストール</h3><br />Cygwinで追加でパッケージをインストールしたい場合には、<br />インストール時に使ったsetup.exeを使うことになる。<br /><br />これをlinuxのyumのようにCLIでパッケージの追加を行うことができるのがapt-cyg。<br /><br />以下のコマンドを実行することでインスール完了。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">$ wget&nbsp;https://raw.githubusercontent.com/kou1okada/apt-cyg/master/apt-cyg<br />$ chmod +x apt-cyg<br /><div>$ mv apt-cyg /usr/bin/</div><div>$ apt-cyg -X install gnupg</div></div><br />毎回の更新確認を不要にするために、以下のエイリアスを設定すると使いやすくなる。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">$ alias apt-cyg='apt-cyg -u '</div></div><br />ちなみに、apt-cygはwgetを利用しているので<br />プロキシ設定されたネットワークでの利用するときはwgetのプロキシ設定が必要なことに注意。<br /><br /></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

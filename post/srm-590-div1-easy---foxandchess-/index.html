@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=12725&amp;rd=15702" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=12725&amp;rd=15702</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />左にある要素から順に、<br />①アルファベットが一致するか<br />②Lならばbeginの方が右側にあるか<br />③Rならばbeginの方が左側にあるか<br />を調べていき、すべて満たすかどうかを判定すれば良い。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class FoxAndChess {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: string ableToMove(string begin, string target) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=begin.size();<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(1){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int finish=1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,n)if(begin[i]!='.' || target[i]!='.')finish=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(finish)break;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int idx1=-1,idx2=-1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>char ch1='*',ch2='*';<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,n)if(begin[i]!='.'){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>ch1=begin[i],idx1=i;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>break;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,n)if(target[i]!='.'){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>ch2=target[i],idx2=i;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>break;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(ch1!=ch2)return "Impossible";<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(ch1=='L' &amp;&amp; idx1&lt;idx2)return "Impossible";<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(ch1=='R' &amp;&amp; idx1&gt;idx2)return "Impossible";<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>begin[idx1]='.',target[idx2]='.';<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return "Possible";<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

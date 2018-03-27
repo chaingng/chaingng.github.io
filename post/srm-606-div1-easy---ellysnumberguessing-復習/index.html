@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=12975&amp;rd=15839" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=12975&amp;rd=15839</a><br /><br />・２人でゲームを行い、一人は１～１０＾９までの数を思い浮かべ、<br />　もう一人が言った数との絶対値を答える。<br />・このターンを何度か繰り返したとき、最後に思い浮かべた数を返す。<br />　ただし、そのような数が存在しないときはー２、複数存在するときは－１を返す。<br /><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />各ターンごとに存在しうる数字についてＡＮＤをとり、最後に残ったものが答えになる。<br /><br />具体的には最初のターンで存在しうる２通りの数について、各ターンごとに現れるのであれば残し、なければfalseとして最後に判定すればよい。<br /><br />また、最初に１～１０＾９内にある数か判定してあげればその後は毎回判定しなくてもよい。<br /><br />単純に数を数えるコーディングや、同じセットが複数存在するときにエラーとなるコーディングではひっかかるので上記のように問題にシンプルに従って実装する。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class EllysNumberGuessing {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int getNumber(vector&lt;int&gt; guesses, vector&lt;int&gt; answers) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int num1=guesses[0]+answers[0];<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int num2=guesses[0]-answers[0];<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int flag1=0,flag2=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(1&lt;=num1&amp;&amp;num1&lt;=1000000000)flag1=1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(1&lt;=num2&amp;&amp;num2&lt;=1000000000)flag2=1;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,guesses.size()){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(guesses[i]+answers[i]!=num1&amp;&amp;guesses[i]-answers[i]!=num1)flag1=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(guesses[i]+answers[i]!=num2&amp;&amp;guesses[i]-answers[i]!=num2)flag2=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(flag1&amp;&amp;flag2)return -1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(!flag1&amp;&amp;!flag2)return -2;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(flag1)return num1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return num2;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

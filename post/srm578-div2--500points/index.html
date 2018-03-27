@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on">＜問題＞<br /><br />①四角形のフィールドとマンハッタン距離が与えられる。<br />　各セルに鳥が入れば「v」、いなければ「.」で表わされる。<br /><br />②鳥はガチョウかアヒルだがフィールドだけ見てもわからない。<br /><br />③ガチョウは少なくとも１匹存在する。<br /><br />④ガチョウとマンハッタン距離以内にある鳥は必ずガチョウになる。<br /><br />⑤このとき、ガチョウとアヒルの位置について場合の数を返す。<br />　<br />＜関数＞<br />座標を保管するテンプレート。<br />queue &lt;pair &lt;int,int &gt; &gt; q;<br />q.push(make_pair(x,y)); 　で(x,y)の座標を保管できます。<br />i=q.front().first; 　　　　　　でxを取り出し、<br />j=q.front().second;　　　　　でyを取り出せます。<br /><br />＜考え方＞<br />あるガチョウとマンハッタン距離以内にある鳥は全てガチョウということは<br />逆を返すと、あるアヒルとマンハッタン距離以内にある鳥は全てアヒルになる。<br /><br />つまり、マンハッタン距離にある鳥同士は全てガチョウ、もしくは全てアヒルになるということがわかる。<br /><br />これがわかれば、<br />「マンハッタン距離にある鳥の集合の数＊２」が場合の数にあることが導ける。<br /><br />ただし、それだとガチョウがいない場合が存在するので、最後に１を引く必要がある。<br /><br /><br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int count(vector&lt;string&gt; field, int dist) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int h=field.size(),w=field[0].size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ans=1,MOD=1000000007;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>queue &lt;pair &lt;int, int&gt; &gt; q;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int i=0;i&lt;h;i++){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int j=0;j&lt;w;j++){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(field[i][j]!='v')continue;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>q.push(make_pair(i,j));<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>field[i][j]='.';<br /><br /><span class="Apple-tab-span" style="white-space: pre;">    </span>while(!q.empty()){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>int x=q.front().first;<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>int y=q.front().second;<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>q.pop();<br /><br /><span class="Apple-tab-span" style="white-space: pre;">     </span>for(int k=0;k&lt;h;k++)<br /><span class="Apple-tab-span" style="white-space: pre;">      </span>for(int l=0;l&lt;w;l++)<br /><span class="Apple-tab-span" style="white-space: pre;">       </span>if(field[k][l]=='v' &amp;&amp; (abs(k-x)+abs(l-y))&lt;=dist){<br /><span class="Apple-tab-span" style="white-space: pre;">        </span>q.push(make_pair(k,l));<br /><span class="Apple-tab-span" style="white-space: pre;">        </span>field[k][l]='.';<br /><span class="Apple-tab-span" style="white-space: pre;">       </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>ans*=2;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>ans%=MOD;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return (ans-1)%MOD;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

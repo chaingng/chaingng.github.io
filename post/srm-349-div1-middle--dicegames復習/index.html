@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://topcoder.bgcoder.com/print.php?id=1669" target="_blank">http://topcoder.bgcoder.com/print.php?id=1669</a><br /><br />サイコロが複数与えられる。<br />各サイコロは、いくつまでの目をもっているかあらかじめわかっている。<br />このとき、すべてのサイコロの目の出方の組み合わせは何通りあるか求める。<br />ただし、サイコロの区別はしない。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />サイコロを、もつ目の数の昇順にソートする。<br />左から、１から始まりそれ以降の組み合わせをその数以上、としてｄｐで回せば重複なく答えが求められる。<br /><br />メモ化が必要なので、現在のサイコロの場所と前のサイコロの目を状態としてもてば計算量は間に合う。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">using namespace std;<br /><br />#define all(c) (c).begin(),(c).end()<br />#define FORE(i,d,e) for(int i=d;i&lt;e;i++)<br />#define FOR(i,s,e) for (int i = int(s); i != int(e); i++)<br />#define FORIT(i,c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)<br />#define ISEQ(c) (c).begin(), (c).end()<br /><br />int n;<br />vector&lt;int&gt; sides;<br />long long dp[40][40];<br /><br />class DiceGames {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>long long rec(int pos,int cnt){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(pos==n)return 1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(dp[pos][cnt]!=-1)return dp[pos][cnt];<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>long long ret=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,cnt,sides[pos]+1)ret+=rec(pos+1,i);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return dp[pos][cnt]=ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>long long countFormations(vector&lt;int&gt; sides_) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>sides=sides_;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>n=sides.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>sort(all(sides));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(dp,-1,sizeof(dp));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return rec(0,1);<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

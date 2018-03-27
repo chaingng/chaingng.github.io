@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=13743&amp;rd=16434" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=13743&amp;rd=16434</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />２つ行があるが、追加する木については上下のどちらに追加しても変わらないので<br />片方だけを考える。<br /><br />すでに存在する木によって追加できるスペースはいくつかに区切られるが、<br />各区切りごとのセルの連続数によって、追加できる木の数が決まる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class DevuAndPlantingTrees {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int maximumTreesDevuCanGrow(vector&lt;string&gt; garden) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=garden[0].size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int used[n];<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ret=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(used,0,sizeof(used));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,2)FORE(j,0,n)if(garden[i][j]=='*'){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(j-1&gt;=0)used[j-1]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(j+1&lt;n)used[j+1]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>used[j]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ret++;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int at=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(1){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>while(at&lt;n &amp;&amp; used[at])at++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(at&gt;=n)break;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int l=at;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>at++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>while(at&lt;n &amp;&amp; !used[at+1])at++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ret+=(at-l+2)/2;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>at++;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11327&amp;rd=14428" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11327&amp;rd=14428</a><br /><br />様々な種類のうさぎがいる。<br />そのうちいくつかのうさぎに質問し、自分以外に同じ種類のうさぎが何匹いるか<br />答えている。<br /><br />このとき、うさぎの総数について、矛盾しないような最小の数を求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />同じ数xを答えたうさぎについて、x＋１匹まで同じ種類二まとめられる。<br />答えたすべての数xについて、上記から計算できる最小のうさぎの総数を<br />求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class ColorfulRabbits {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int getMinimum(vector&lt;int&gt; replies) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=replies.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int used[n];<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(used,0,sizeof(used));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>long long ret=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n)if(!used[i]){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int cnt=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,n)if(replies[i]==replies[j]){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>cnt++;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>used[j]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>long long x=replies[i]+1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ret+=x*((cnt+x-1)/x);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

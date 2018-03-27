@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=13922&amp;rd=16512" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=13922&amp;rd=16512</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />initialからtargetを生成するよう順に解いていき、部分列が存在しないようなら<br />打ち切ることで、候補数は限られるので時間内に解くことができる。<br />targetからinitialに戻せるか試しても良い。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class ABBADiv1 {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>string rev(string str){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>string ret="";<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int i=str.size()-1;i&gt;=0;i--)ret+=str[i];<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>bool dfs(string cur,string target){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(cur.size()&gt;target.size())return false;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(cur.size()==target.size()){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>return cur==target;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>bool valid=false;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>string s1=cur+'A';<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(target.find(s1)!=string::npos || target.find(rev(s1))!=string::npos){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>valid|=dfs(s1,target);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>string s2=cur+'B';<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(target.find(s2)!=string::npos || target.find(rev(s2))!=string::npos){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>valid|=dfs(rev(s2),target);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return valid;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>string canObtain(string initial, string target) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return dfs(initial,target) ? "Possible" : "Impossible";<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11310&amp;rd=14423" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11310&amp;rd=14423</a><br /><br />白いボードが与えられる。<br />これをN＊Nの黒いスタンプによって、与えられた絵を作りたい。<br />できるだけ大きいスタンプで与えられた絵を作りたいとき、<br />その最大の大きさを求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />スタンプを押す順番は関係ないので、各スタンプの大きさについて<br />スタンプが押せる位置のとき、スタンプを押してしまう。<br />押したスタンプのセルを？とし、最後にWと？だけが残れば<br />その大きさのスタンプで絵を作ることができる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class Painting {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int largestBrush(vector&lt;string&gt; picture) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int h=picture.size(),w=picture[0].size();<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(int len=min(w,h);len&gt;=2;len--){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>vector&lt;string&gt; p=picture;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>while(1){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>int finish=1;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>for(int i=0;i+len-1&lt;h;i++)for(int j=0;j+len-1&lt;w;j++){<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>int valid=1;<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>for(int k=i;k&lt;i+len;k++)for(int l=j;l&lt;j+len;l++){<br /><span class="Apple-tab-span" style="white-space: pre;">      </span>if(p[k][l]=='W')valid=0;<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>if(valid){<br /><span class="Apple-tab-span" style="white-space: pre;">      </span>for(int k=i;k&lt;i+len;k++)for(int l=j;l&lt;j+len;l++){<br /><span class="Apple-tab-span" style="white-space: pre;">       </span>if(p[k][l]=='B')finish=0;<br /><span class="Apple-tab-span" style="white-space: pre;">       </span>p[k][l]='?';<br /><span class="Apple-tab-span" style="white-space: pre;">      </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">     </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(finish)break;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int flag=1;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,h)FORE(j,0,w)if(p[i][j]=='B')flag=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(flag)return len;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return 1;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

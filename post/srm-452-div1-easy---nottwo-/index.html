@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br />H＊Wの大きさである２次元の座標があり、そこにできるだけ多くの<br />石を置きたい。<br /><br />ただし、それぞれの石の距離についてユークリッド距離が２にならないようにしたい。<br /><br />このとき、最も多くおける石の個数を求める。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />ユークリッド距離が２になりうるセルについて、４つの区間に分けることができる。<br /><br />この区間はそれぞれどのような石の置かれ方をされてもユークリッド距離が<br />２になることはない。<br /><br />あとは、各区間について置ける最大の石の個数を求めればよい。<br />区間中のセルの数をDFSで求め、その（セルの数＋１）／２が<br />置くことができる最大の石の個数となる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">int used[1010][1010];<br />int dr[]={2,0,-2,0},dc[]={0,2,0,-2};<br />int w,h,cnt;<br /><br />class NotTwo {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>void dfs(int r,int c){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>used[r][c]=1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>cnt++;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,4){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int nr=r+dr[i],nc=c+dc[i];<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(0&lt;=nr &amp;&amp; nr&lt;h &amp;&amp; 0&lt;=nc &amp;&amp; nc&lt;w &amp;&amp; !used[nr][nc]){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dfs(nr,nc);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int maxStones(int width, int height) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ret=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>w=width,h=height;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>memset(used,0,sizeof(used));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,height)FORE(j,0,width)if(used[i][j]==0){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>cnt=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>dfs(i,j);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ret+=(cnt+1)/2;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

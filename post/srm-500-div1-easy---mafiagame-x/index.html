@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11342&amp;rd=14429" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11342&amp;rd=14429</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />投票数が一番多い人が最後に残る候補となる。<br />よってそれがX人だとすると、最後に１人残るのであれば<br />確率は1/Xとなる。<br /><br />最後に一人残るかどうかの判定は、NをX人で割った余りを更新していき<br />割り切れるのであれば全員消滅してしまうので答えは０になる。<br />最後に１人残れば上記の確率を返す。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class MafiaGame {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: double probabilityToLose(int N, vector&lt;int&gt; decisions) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>map&lt;int,int&gt; m;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,decisions.size())m[decisions[i]]++;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int mx=0,cnt=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(map&lt;int,int&gt;::iterator it=m.begin();it!=m.end();it++){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>mx=max(mx,it-&gt;second);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>for(map&lt;int,int&gt;::iterator it=m.begin();it!=m.end();it++){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(mx==it-&gt;second)cnt++;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(mx==1)return 0.0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>double ret=1.0/cnt;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(cnt&gt;1){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(N%cnt==0)return 0.0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>cnt=N%cnt;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ret;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>

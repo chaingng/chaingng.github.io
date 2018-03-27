@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on">問題<br />①数字の配列が与えられ、それぞれの配列は重さを表わす。<br />②最初と最後以外の要素を任意で選ぶことができ、選んだ要素の前と後の重さの積がスコアにプラスされる。<br />　選ばれた要素は消去される。<br />③このとき、最大となるスコアを求める。<br /><br />解き方<br />配列の数は最大で１０のため<br />全ての場合の数を求めてもＯ（８！＝４０３２０）となるので全探索可能。<br /><br />コード<br /><br />class CasketOfStarEasy {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int f(vector&lt;int&gt; &amp;w){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(w.size()==2)return 0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int score=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,1,w.size()-1){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>vector&lt;int&gt; tmp;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,w.size())if(j!=i)tmp.push_back(w[j]);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>score=max(score,w[i-1]*w[i+1]+f(tmp));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return score;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int maxEnergy(vector&lt;int&gt; weight) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return f(weight);<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />};<br /><div><br /></div></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>

@@ -87,18 +87,7 @@ ga('send', 'pageview');
 			<div dir="ltr" style="text-align: left;" trbidi="on">&lt;問題&gt;<br />①数字の列が与えられる。数字の数はそれぞれの人のプログラミング能力の強さを表す。<br />②そのうち３人一組でチームを作り、チームの強さは３人のうち強い方から２人の強さの和となる。<br />③自分のチームは数字の列の最初から３人で構成される。<br />④このとき、様々なチームの組み合わせのうち、最も自分のチームの順位が低くなるときの順位を返す。<br /><br />＜解き方＞<br />自分のチームは最初の３人なので、それを省いて考えると最大でＮ＝４5。<br />全探索で考えると、Ｏ（４５Ｃ３×４２Ｃ3）．．．となり難しそう。<br /><br />次に貪欲法で考える。<br />まずは数字列をソートすることで、小さい順に並べることで大きい数だけを扱えばよいことは思いつく。<br /><br />このとき、「チームの強さは３人のうち強い方から２人の強さの和」から<br />「一番弱い一人は考えなくてよい」ので、<br />最初のN/3より小さい数は考えなくてよいことがわかる。<br />そのため、Ｎ／３～Ｎ－１番までの２人の組み合わせについて考えればよい。<br />ここまででＯ（３０Ｃ２×２８Ｃ２・・・）。まだ足りない。<br /><br />次に、Ｎ／３番から始まる昇順で数字をindex1、Ｎ－１から降順で始まる数字をindex2とすると、<br />仮にindex1=Ｎ／３のとき<br />①index2=N-1の数字の和が自分のチームより大きければ<br />　→index1は自分よりも強いチームに所属（答えを＋）<br />②小さい場合<br />　→index1は自分よりも弱いチームに所属（次のindex1に移動）<br />することになる。<br /><br />最後に貪欲法で抜けがないか確認。<br />index2=N-1がＯＫのとき、N-1未満の値でもチームが作れたとしても、<br />それ以上のindex1の場合は常にindex=N-1の値はそれ以上に強いチームの値になるので<br />必ず使われることになる。<br />そのため単純に strength[index1]+strength[index2]の和を試し、<br />自分のチーム以上であればindex1++,index2--,答えを+し、<br />それ以下であればindex++のみでよいことがわかる。<br /><br />Challengeのポイント<br />最初、判定後に要素を取り除いていなかったので<br />きちんと要素を取り除いているかを確認する。<br /><br />＜コード＞<br />class TeamContestEasy {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int worstRank(vector&lt;int&gt; st) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int my=st[0]+st[1]+st[2]-min(st[0],min(st[1],st[2]));<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int rank=1;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>sort(st.begin()+3,st.end());<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int low=3+(st.size()-3)/3,high=st.size()-1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(low&lt;high){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(st[low]+st[high]&gt;my){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>low++;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>high--;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>rank++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else low++;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return rank;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};<br /><br /></div>
 
 		</div>
-		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		
-		<ins class="adsbygoogle"
-     			style="display:block"
-     			data-ad-client="ca-pub-1093886507944474"
-     			data-ad-slot="6308827449"
-     			data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
+				
 		
 
 	</article>
