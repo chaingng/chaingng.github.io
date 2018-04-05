@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2013-05-19T23:25:00">May 19, 2013</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on">＜問題＞<br />①複数の単語が与えられる。<br />②ディスプレイ・入力画面、ＵＮＤＯ領域の３つが与えられる。<br />③キー入力は入力画面に現れ、ＥＮＴＥＲボタンを１回クリックでディスプレイに表示。<br />④一度入力した文字は２回の操作でＵＮＤOから呼び出せる。<br />⑤与えられた単語を順にディスプレイに表示するとき、最小の操作回数を返す。<br /><br />＜関数＞<br />line[i].substr(0,line[i-1])<br />単語の一致判定に部分文字列を利用<br /><br />for(k=0;k&lt;min((int)lines[i].size(), (int)lines[j].size());k++)<br />単語の判定でループを回す際は、終了条件に単語の長さを考慮<br /><br />＜考え方＞<br />①単語ごとにＥＮＴＥＲボタン１回は必ず必要。<br />②次の単語を入力する際の方法は３通り。<br />　１．ＵＮＤＯで””を呼び出してから、新しい単語を１から入力<br />　２．ＵＮＤＯで”ｔｐ”など次の単語の一部を呼び出してから残りの文字を入力<br />　３．前の単語から文字を足すだけで次の単語になる場合は、そのまま続けて入力<br /><br />この操作をそのままプログラムにします。<br /><br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int minPresses(vector&lt;string&gt; lines) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=lines.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ans=lines[0].size()+1;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,1,n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int cost=lines[i].size()+1+2;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(j,0,i){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>int k;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>for(k=0;k&lt;min((int)lines[i].size(), (int)lines[j].size());k++)<br /><span class="Apple-tab-span" style="white-space: pre;">      </span>if(lines[i][k]!=lines[j][k])break;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>cost=min(cost, (int)lines[i].size()-k+1+2);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(lines[i].substr(0,lines[i-1].size())==lines[i-1])<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>cost=min(cost,(int)lines[i].size()-(int)lines[i-1].size()+1);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>ans+=cost;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ans;<br /></div>
 

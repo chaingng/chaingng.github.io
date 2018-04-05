@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2014-10-15T22:08:00">October 15, 2014</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on"><br />windowsでlinuxコマンド等を使うためのcygwin+minttyのインストールメモ。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">Cygwinのインストールまで</h3><br />Cygwinのインストールのために以下からsetup.exeをダウンロードして実行。<br /><a href="https://www.cygwin.com/" target="_blank">https://www.cygwin.com/</a><br /><br />ダウンロードサイトは「ftp://～.jp」のサイトを指定しないとものすごくインストールが遅くなるので<br />注意。<br /><br />必要なパッケージとして、後述するapt-cygのインストールのために以下は追加しておく。<br />Search欄でパッケージ名を入力してチェックすればOK。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">・wget<br />・bzip2<br />・git<br />・gawk<br />・tar</div><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">Cygwin+minttyのセットアップ</h3><br />インストールが終わったらc\://binの下にmintty.exeが存在するので<br />Cygwinの起動は今後こちらから行う。<br /><br />ショートカットを作成して、右クリック＞プロパティから以下の設定を行う。<br /><br />・管理者で実行するにチェック<br />　これを行わないと、bin以下のファイルのwrite権限がないなど困ってしまう。<br /><br />・ショートカットのリンク先に以下を追加<br />　これでPATHが通ったりhomeが/usr/binではなくwindowsのhomeとなる。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted rgb(204, 204, 204); padding: 5px;">-i /Cygwin-Terminal.ico -</div><br />・minttyを起動し、Option&gt;TransparencyをHighにすると見やすい<br /><br />・minttyを起動し、Option&gt;TextからLocaleja_JP、文字コードをUTF-8に設定<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">apt-cygのインストール</h3><br />Cygwinで追加でパッケージをインストールしたい場合には、<br />インストール時に使ったsetup.exeを使うことになる。<br /><br />これをlinuxのyumのようにCLIでパッケージの追加を行うことができるのがapt-cyg。<br /><br />以下のコマンドを実行することでインスール完了。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">$ wget&nbsp;https://raw.githubusercontent.com/kou1okada/apt-cyg/master/apt-cyg<br />$ chmod +x apt-cyg<br /><div>$ mv apt-cyg /usr/bin/</div><div>$ apt-cyg -X install gnupg</div></div><br />毎回の更新確認を不要にするために、以下のエイリアスを設定すると使いやすくなる。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">$ alias apt-cyg='apt-cyg -u '</div></div><br />ちなみに、apt-cygはwgetを利用しているので<br />プロキシ設定されたネットワークでの利用するときはwgetのプロキシ設定が必要なことに注意。<br /><br /></div>
 

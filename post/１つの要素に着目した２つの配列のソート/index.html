@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2013-06-16T23:08:00">June 16, 2013</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on">c++での方法ですが、<br />２つの配列の各要素が関係しているとき、<br />ひとつの配列の要素順に両方をソートする方法です。<br /><br />まずはペア型のコンテナを宣言。<br /><span class="Apple-tab-span" style="background-color: white; color: #666666; font-size: 13px; line-height: 18px; white-space: pre;">  </span><span style="background-color: white; color: #666666; font-size: 13px; line-height: 18px;">vector &lt;pair &lt;int, int&gt; &gt; enemy;</span><br /><br />次に２つの配列の要素を格納。<br />このとき、ソートしたい要素の配列を最初に格納する。<br /><span class="Apple-tab-span" style="background-color: white; color: #666666; font-size: 13px; line-height: 18px; white-space: pre;">  </span><span style="background-color: white; color: #666666; font-size: 13px; line-height: 18px;">FORE(i,0,eS.size())enemy.push_back(make_pair(eS[i],eC[i]));</span><br /><br />あとは普通にソートしてあげるだけで、1つ目の要素順にソートされます。<br /><span class="Apple-tab-span" style="background-color: white; color: #666666; font-size: 13px; line-height: 18px; white-space: pre;">  </span><span style="background-color: white; color: #666666; font-size: 13px; line-height: 18px;">sort(enemy.begin(),enemy.end());</span><br /><br />このように、使いたい要素は以下のように使えます。<br /><span class="Apple-tab-span" style="background-color: white; color: #666666; font-size: 13px; line-height: 18px; white-space: pre;">   </span><span style="background-color: white; color: #666666; font-size: 13px; line-height: 18px;">if(mS[curg]&gt;=enemy[cure].first)</span><br /><span class="Apple-tab-span" style="background-color: white; color: #666666; font-size: 13px; line-height: 18px; white-space: pre;">  </span><span style="background-color: white; color: #666666; font-size: 13px; line-height: 18px;">FORE(i,0,enemy.size())n+=enemy[i].second;</span><br /><br />ときどき役に立つのでメモしておきました。</div>
 

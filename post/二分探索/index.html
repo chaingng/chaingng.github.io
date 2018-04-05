@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2013-06-07T09:20:00">June 07, 2013</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on">二分探索について考えたいと思います。<br /><br />■適用できそうな問題<br />　・最長・最短というキーワードがあること。<br />　・Ｃ（ｘ)を満たすという条件があること。<br />　・全てのｘ’がＣ（ｘ’）を満たすこと。<br /><br />■計算量<br />　O(log N)<br />　log Nというのが今までイメージしにくかったのですが、<br />　N=8であれば8/2→4/2→2/2→1となるので例を出すと納得。<br /><br />■終了条件<br />　整数を返すのであればhigh-low&gt;1で可能だが、<br />　double型のときは注意が必要。<br /><br />　特に1e-9以下の誤差で求めるというときは<br />　high-low&gt;1e-9(10^-9)とすると丸め誤差で収束しないというエラーが起きる。<br />　対処方法は以下の２つ。<br /><br />&nbsp; &nbsp;①high-low&gt;1e-9 || (high-low)/high &gt;1e-9と<br />　絶対誤差と相対誤差の２つで判定する。<br />　ただ、highで割るときは０にならないような注意が必要。 <br /><br />　②for(int i=0;i&lt;100;i++)のように100回程度ループを回すことで<br />　2^-100→(2^10)^-10→10^-30倍となり<br />　1e-9以下とすることができる。<br /><br />■ＳＴＬ<br />　lower_bound(num.begin(),num.end(),7)<br />　指定した値「以上」の要素が最初に現れる位置を返す<br /><br /></div>
 

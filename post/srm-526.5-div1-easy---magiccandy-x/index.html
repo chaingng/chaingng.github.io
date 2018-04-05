@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2015-05-13T09:39:00">May 13, 2015</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 <br /></h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11706&amp;rd=14762" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11706&amp;rd=14762</a><br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />普通に計算していては間に合わない。<br />例えば２０個のキャンディーからは<br />20-4=16→16-4=12→12-3=9→9-3=6→6-2=4→4-2=2→2-1=1となり、<br />この操作を逆にたどれば計算量が間に合う。<br /><br />つまり、ある数からそのsqrtを引かれると次の数になる計算式を<br />逆にたどっていけばよい。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class MagicCandy {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public:<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int rec(int n){<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>if(n==1)return 1;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int candy=rec(n-(int)sqrt(n));<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int low=1,high=n;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(low&lt;high){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int mid=(low+high)/2;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(mid-(int)sqrt(mid)&gt;=candy)high=mid;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else low=mid+1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return high;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>int whichOne(int n) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return rec(n);<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 

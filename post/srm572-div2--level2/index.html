@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2013-06-11T22:23:00">June 11, 2013</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on">&lt;問題&gt;<br />①２つの文字列が与えられる。<br />②それぞれの文字は、1回につきprevCostで前の文字に変えることができる。(aを除く)<br />③それぞれの文字は、1回につきnextCostで次の文字に変えることができる。(zを除く)<br />④このとき、最初の文字列から２つ目の文字列に変換するのにかかる最小のコストを返す。ただし、いつでも文字列中に同じ文字が存在してはならない。変えることができない場合はー１を返す。<br /><br />＜解き方＞<br />シミュレーションを全探索で考えるのは難しいので効率のよい探索を考える。<br />まず、同じ文字が存在するかしないかは、２つの文字を相対的に見ればよい。<br />次に、どのケースのとき同じ文字列が存在するかを考える。<br />①２つが同じ順番のとき<br />　（小さい文字から大きい文字に変換）<br />　startが比較対象のstartより大きいかつ、goalが比較対象のgoalより小さいとＮＧ<br />　（大きい文字から小さい文字に変換）<br />　startが比較対象のstartより小さいかつ、goalが比較対象のgoalより大きいとＮＧ<br />②逆の順番のとき<br />　startが比較対象の文字より小さいかつ、goalが比較対象のgoalより大きいとＮＧ<br />　もしくは<br />　startが比較対象の文字より大きいかつ、goalが比較対象のgoalより小さいとＮＧ<br />　（より、と書きましたが＝も含みます）<br /><br />上記でもＯＫですが、<br />２つの文字の比較は上下が変わっても相対的に見れば同じことがわかれば<br />まとめることができます。<br />つまり、(start[i]-start[j])*(goal[i]-goal[j])&lt;=0のときは-1を返してやればいいです。<br /><br />あとはコストは常に移動の最小となるので、同じ文字が存在するときはー１、そうでなければ移動の最小コストを返してあげればＯＫです。<br /><br />＜コード＞<br />class NextOrPrev {<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int getMinimum(int nextCost, int prevCost, string start, string goal) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int ans=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=start.size();<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(start[i]==goal[i])continue;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(start[i]&lt;goal[i])ans+=(abs(start[i]-goal[i])*nextCost);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>else ans+=(abs(start[i]-goal[i])*prevCost);<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(i,0,n)FORE(j,i+1,n)if((start[i]-start[j])*(goal[i]-goal[j])&lt;=0)return -1;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return ans;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />};<br /><br /><br /><br /></div>
 

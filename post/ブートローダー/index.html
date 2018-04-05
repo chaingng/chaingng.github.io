@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2014-02-09T18:34:00">February 09, 2014</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on"><br />最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">BootLoaderとは</h3><br />起動直後のコンピュータはハードディスクからＯＳを読み込むことができない。<br />そのため、ＯＳを起動させるためにＢＩＯＳが読み込む小さなプログラムがブートローダーになる。<br /><br />ただ、ブートローダーは通常はハードディスク等の先頭部分に５１２バイト分しか存在しないため、ＯＳを呼び出すことができない。<br /><br />そこで、ブートローダーは各パーティションの先頭にあるブートマネージャー（２次ブートローダー）を起動させる。<br /><br />ブートマネージャーは設定された内容に従って、指定されたパーティションにあるＯＳを起動する。<br /><br />ここでブートマネージャーの設定ファイルに複数のＯＳ情報を記載することによって、<br />複数のＯＳの起動を選択することができる。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">Bootloaderのアンロック</h3><br />ブートローダーにはシステムのアップデート機能もあり、特定の場所にイメージを置いておくとアップデートすることができる。<br /><br />ただし、電子署名された特定のイメージしかアップデートできないようにメーカーが設定している場合もある。<br /><br />このとき独自のイメージを焼きたいときに、ブートローダーのアンロックが必要になる。<br /><br /><br /><h3 style="border-bottom-color: rgb(106, 90, 205); border-bottom-style: solid; border-bottom-width: 2px; border-left-color: navy; border-left-style: solid; border-left-width: 8px; padding: 0px 0px 1px 5px;">リカバリーにBootloaderのアンロックが必要</h3><br />Androidにはboot,system,recoveryの３つのパーティションがある。<br /><br />通常はsystemが起動するが、アップデートの際は起動できないのでrecoveryを起動してアップデートする必要がある。また、boot領域はシステムが壊れても最低限の起動をするのに必要なもの。<br /><br />Bootloaderのアンロックをすることで、recovery領域のアップデート（カスタムリカバリー）も可能になる。<br /><div><br /></div></div>
 

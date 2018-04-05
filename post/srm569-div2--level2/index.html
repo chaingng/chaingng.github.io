@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2013-06-14T09:11:00">June 14, 2013</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on">＜問題＞<br />①０と１で構成される2次元配列が与えられる。<br />②各ビット列の任意の２つに対し、それぞれＯＲかＸＯＲかＡＮＤ演算をするデバイスがビット列分存在する。<br />③各ビット列に対しどの操作をするか決まっているが、それがどれかはわかっていない。<br />④このとき、各デバイスがどの操作をするか確かめることができれば”ＹＥＳ”、できなければ”ＮＯ”を返す。<br /><br />＜解き方＞<br />各ビット列に対し、特定の数字が含まれていればデバイスの操作を確かめることができる。<br />ＯＲとＡＮＤの場合<br />０，１→ＯＲだと１、ＡＮＤだと０<br />ＯＲとＸＯＲの場合<br />１，１→ＯＲだと１、ＸＯＲだと０<br />ＡＮＤとＸＯＲの場合<br />０，１→ＡＮＤだと０、ＸＯＲだと１<br />１，１→ＡＮＤだと１、ＸＯＲだと０<br /><br />この３つを判定するには、１が２つ、０が１つ最低あればよいことになる。<br />各ビット列に対し１が２つ、０が１つ以上あるか判定し、<br />なければＮＯ，あればＹＥＳを返す。<br /><br />＜コード＞<br />class TheDeviceDiv2 {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: string identify(vector&lt;string&gt; plates) {<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(j,0,(int)plates[0].size()){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>int one=0,zero=0;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,(int)plates.size()){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(plates[i][j]=='1')one++;<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>else zero++;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>if(!(one&gt;=2 &amp;&amp; zero&gt;=1))return "NO";<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return "YES";<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div>
 

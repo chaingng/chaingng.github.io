@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2014-10-31T22:24:00">October 31, 2014</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on">Windowsのプロキシには２種類存在する。<br /><br />１つめはInternetExplorerのプロキシサーバー設定、もう一つは主にWindows Updateに使用されるWinhttpのプロキシ設定。<br /><br />InternetExplorerはIEのインターネットオプションから設定できるが、<br />Winhttpはnetshコマンドにて設定する。<br /><br />設定方法としては、直接設定するものとIEの設定をコピーする方法の２つ。<br /><br />直接設定する方法<br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">netsh winhttp set proxy proxy-server="myProxyServer:8080" bypass-list="&lt;local&gt;;*.microsoft.com;*.foo.ne"</div></div><br />IEの設定をコピーする方法<br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">netsh winhttp import proxy source=ie</div><br />現在の設定は、以下のコマンドで確認できる。<br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">netsh winhttp show proxy</div><br />また、以下のコマンドで設定をリセット（プロキシなしに）できる。<br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">netsh winhttp reset proxy</div><br />WindowsUpdateは手動での更新時はIEの設定が利用されるが、<br />自動更新時はWinhttpのプロキシ設定が適用されるため、プロキシ環境下で自動更新を行いたいときは必要な設定となる。<br /><br />（参考）公式ページ<br /><a href="http://support.microsoft.com/kb/2894304/ja" target="_blank">http://support.microsoft.com/kb/2894304/ja</a><br /><br /></div>
 

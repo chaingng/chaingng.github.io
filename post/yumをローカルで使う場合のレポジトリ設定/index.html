@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2014-10-05T22:10:00">October 05, 2014</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on"><br />最初にCDをマウントして、ローカルにデータをコピー。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">mkdir -p /mnt/cdrom<br />mount /dev/cdrom /mnt/cdrom<br />mkdir /opt/redhat<br />cp -rp /mnt/cdrom/* /opt/redhat/<br />umount /mnt/cdrom</div><br />次に、必要なrpmパッケージをインストール。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">rpm -ivh /opt/redhat/Packages/*.rpm</div><br />レポジトリを作成するディレクトリを指定。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">createrepo /opt/redhat/<br />yum clean all</div><br />最後に、適当な名前（ここではfile.repo）でレポジトリを作成すれば完了。<br /><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">vi /etc/yum.repos.d/file.repo</div><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">[rhel-redhat]<br />name = Red Hat Enterprise Linux $releasever - $basearch<br />baseurl=file:///opt/redhat<br />enabled=1<br />gpgcheck=0</div></div>
 

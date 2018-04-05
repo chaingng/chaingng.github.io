@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2015-04-29T22:23:00">April 29, 2015</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on"><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">問題 </h3><br /><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=8467&amp;rd=12180" target="_blank">http://community.topcoder.com/stat?c=problem_statement&amp;pm=8467&amp;rd=12180</a><br /><br />キャンドルが複数与えられ、それぞれの高さがわかっている。<br />１日目は１つ、2日めは２つ、、、とキャンドルをつけていき、<br />最大何日目までキャンドルをつけられるか求める。<br /><br />ただし、つけられたキャンドルは１日につき高さが１減り、０となると消滅してしまう。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">解き方 </h3><br />要素数が５０であることから最大値は５０になる。<br /><br />よって、毎回ソートしてもO(50*50*50log50)=O(1.25*10^5log50)となり<br />貪欲法で全探索しても間に合う。<br /><br /><h3 style="border-bottom: 2px solid slateblue; border-left: 8px solid navy; color: black; padding: 0px 0px 1px 5px;">コード </h3><br /><div style="background-color: #e3f2fb; border: 1px dotted #CCCCCC; padding: 5px;">class OlympicCandles {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int numberOfNights(vector&lt;int&gt; candles) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int n=candles.size();<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int turn=0;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>while(turn&lt;n){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>sort(candles.rbegin(),candles.rend());<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int i=0;i&lt;turn+1;i++){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(candles[i]&lt;=0)return turn;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>for(int i=0;i&lt;turn+1;i++)candles[i]--;<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>turn++;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return turn;<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div></div>
 

@@ -83,6 +83,14 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2013-06-12T23:21:00">June 12, 2013</time>
 			</p>
 		</header>
+		
+		<div style="padding-bottom: 10px">
+    			<a href="https://px.a8.net/svt/ejp?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" target="_blank" rel="nofollow">
+        		<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=180405347776&wid=001&eno=01&mid=s00000001642001057000&mc=1"></a>
+        		<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEPNN+CU0E7M+CO4+6AJV5" alt="">
+    		</div>
+
+		
 		<div class="post__content clearfix">
 			<div dir="ltr" style="text-align: left;" trbidi="on">&lt;問題&gt;<br />①数字の順列が与えられる。<br />②各数字に対して、ロボットはその数字の分前に進む。進んだ後は右に９０度回転する。<br />③最後の数字まで進む処理をＴ回繰り返す。<br />④このとき、最初と最後の位置のマンハッタン距離を返す。<br /><br />＜解き方＞<br />数字の数は最大５０個、Ｔは最大１００回なので最大の場合でもＯ（５０００）。<br />計算量が余裕で間に合うので純粋にシミュレーションを実装する。<br /><br />＜コード＞<br />class RobotHerbDiv2 {<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>public: int getdist(int T, vector&lt;int&gt; a) {<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>int x=0,y=0,dir=0;<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>FORE(h,0,T){<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>FORE(i,0,a.size()){<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(dir%4==0)y+=a[i];<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(dir%4==1)x+=a[i];<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(dir%4==2)y-=a[i];<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>if(dir%4==3)x-=a[i];<br /><span class="Apple-tab-span" style="white-space: pre;">    </span>dir+=(a[i]%4);<br /><span class="Apple-tab-span" style="white-space: pre;">   </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>}<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>return abs(x)+abs(y);<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>}<br /><br />};</div>
 
