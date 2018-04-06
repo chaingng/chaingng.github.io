@@ -2941,6 +2941,10 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/mac_ftp/</loc>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/tags/http/</loc>
     <lastmod>2017-01-15T10:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -2955,6 +2959,11 @@
   <url>
     <loc>https://chaingng.github.io/tags/linux/</loc>
     <lastmod>2017-01-01T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chaingng.github.io/tags/mac/</loc>
     <priority>0</priority>
   </url>
   

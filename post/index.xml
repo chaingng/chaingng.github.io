@@ -5207,5 +5207,14 @@ SRM579 250points&amp;nbsp;550points
       <description>英語の学習方法について自分の経験からまとめてみます。 最初はＴＯＥＩＣで９９０点を目指して頑張りました。 始めた当初はは５００点ほどでしたが、２</description>
     </item>
     
+    <item>
+      <title>High Sierra以降のmacはftpとtelnetが使えない。使うには、inetutilsをインストールする。</title>
+      <link>https://chaingng.github.io/post/mac_ftp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/mac_ftp/</guid>
+      <description>こちらの公式Q&amp;amp;Aにあるとおり、 High Sierra以降のmacではセキュリティを担保するために、ftpとtelnetがデフォルトで使えな</description>
+    </item>
+    
   </channel>
 </rss>
