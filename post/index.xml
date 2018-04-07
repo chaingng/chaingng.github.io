@@ -2726,15 +2726,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 250 DIV1 Middle - TVWatching　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-250-div1-middle---tvwatching%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 30 Mar 2014 21:26:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-250-div1-middle---tvwatching%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=927 テレビの番組表があり、各番組ごとに開始時間と終了時間が与えられる。 できるだけ多くのテレビ番組をみたいが、放送時間が重複しているときは同</description>
-    </item>
-    
-    <item>
       <title>SRM 311 DIV1 Middle - SumThemAll （復習xx）</title>
       <link>https://chaingng.github.io/post/srm-311-div1-middle---sumthemall-%E5%BE%A9%E7%BF%92xx/</link>
       <pubDate>Sun, 30 Mar 2014 10:47:00 +0000</pubDate>
@@ -2948,15 +2939,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
       <description>Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。 ①CPU使用率とメモ</description>
-    </item>
-    
-    <item>
-      <title>SRM 253 DIV1 Middle - AlphabetCount　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-253-div1-middle---alphabetcount%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 12 Mar 2014 08:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-253-div1-middle---alphabetcount%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=975 アルファベットＡ～Ｚからなる配列が与えられる。 長さlengthが与えられ、このときAを長さ1とし、B,C,,,と長さ分の連続したアルフ</description>
     </item>
     
     <item>
