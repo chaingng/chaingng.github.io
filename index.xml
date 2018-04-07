@@ -3122,24 +3122,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 302 DIV1 Easy - DivisorInc （復習××○）</title>
-      <link>https://chaingng.github.io/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 21:09:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6186&amp;amp;rd=9823 ある整数から、ある整数へ変換したい。 ある整数からの変換は、１とその数以外の、その整数で割りきれる数を足すことができる。 このとき、最小の</description>
-    </item>
-    
-    <item>
-      <title>SRM 303 DIV1 Easy - SpiralNumbers (復習××)</title>
-      <link>https://chaingng.github.io/post/srm-303-div1-easy---spiralnumbers-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 16:51:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-303-div1-easy---spiralnumbers-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6093&amp;amp;rd=9824 座標上に１から始まり、らせん上に数が増えていく。 この座標の１の場所を（０，０）として右側を正のｘ座標、下側を正のｙ座標としたときに与え</description>
-    </item>
-    
-    <item>
       <title>ブートローダー</title>
       <link>https://chaingng.github.io/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/</link>
       <pubDate>Sun, 09 Feb 2014 18:34:00 +0000</pubDate>
@@ -3398,15 +3380,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8576&amp;amp;rd=13507 ・整数Ｎが与えられる。 ・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。 解き方 法則が少し複雑。 サンプルを見</description>
-    </item>
-    
-    <item>
-      <title>SRM 304 DIV1 Easy - PolyMove (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 22 Jan 2014 23:36:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6190&amp;amp;rd=9825 ・ある多角形が与えられる。 ・多角形のうち複数の点を１だけ動かすことができる。 ・ただし、１度動かした点と隣り合う点は動かすことができない</description>
     </item>
     
     <item>
