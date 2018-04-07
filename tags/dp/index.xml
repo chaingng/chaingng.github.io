@@ -120,15 +120,6 @@
     </item>
     
     <item>
-      <title>SRM 352 DIV1 Easy - NumberofFiboCalls （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-352-div1-easy---numberoffibocalls-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 18 Jan 2014 09:29:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-352-div1-easy---numberoffibocalls-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2292&amp;amp;rd=10709 フィボナッチ数の計算が再帰プログラムで書かれている。 このとき、ある整数ｎのフィボナッチ数を求めるときに再帰プログラムにて１と０が出力さ</description>
-    </item>
-    
-    <item>
       <title>SRM 366 DIV1 Easy - ChangingSounds （復習○）</title>
       <link>https://chaingng.github.io/post/srm-366-div1-easy---changingsounds-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Fri, 17 Jan 2014 22:24:00 +0000</pubDate>
