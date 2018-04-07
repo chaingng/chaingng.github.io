@@ -57,6 +57,24 @@
     </item>
     
     <item>
+      <title>SRM 288 DIV1 Easy - FindTriangle</title>
+      <link>https://chaingng.github.io/post/srm-288-div1-easy---findtriangle/</link>
+      <pubDate>Thu, 30 Jan 2014 08:05:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-288-div1-easy---findtriangle/</guid>
+      <description>問題 ・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。 ・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作る</description>
+    </item>
+    
+    <item>
+      <title>SRM 287 DIV1 Easy - TwoEquations (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 28 Jan 2014 08:38:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6013&amp;amp;rd=9808 ・２次方程式が与えられる。 ・このとき、ｘ、ｙを求める。 ただし解がない時は&#34;NO SOLUTIONS&#34;、解が複数あるときは&#34;MULTIPL</description>
+    </item>
+    
+    <item>
       <title>SRM 485 DIV1 Easy - AfraidOfEven (復習×)</title>
       <link>https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 26 Jan 2014 13:28:00 +0000</pubDate>

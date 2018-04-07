@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>SRM 284 DIV1 Easy - TriCount (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-284-div1-easy---tricount-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 08 Feb 2014 19:47:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-284-div1-easy---tricount-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4811&amp;amp;rd=8081 １辺の最小の長さと、最大の長さが与えられる。 このとき、とりうる三角形の数を求める。 ただし、回転して同じ三角形になる場合は同じものとみな</description>
+    </item>
+    
+    <item>
       <title>SRM 606 DIV1 Easy - EllysNumberGuessing （復習○）</title>
       <link>https://chaingng.github.io/post/srm-606-div1-easy---ellysnumberguessing-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Thu, 30 Jan 2014 19:19:00 +0000</pubDate>

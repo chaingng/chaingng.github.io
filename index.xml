@@ -2906,6 +2906,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 275 DIV1 Middle -Horoscope　（復習○）</title>
+      <link>https://chaingng.github.io/post/srm-275-div1-middle--horoscope%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 14 Mar 2014 07:41:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-275-div1-middle--horoscope%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=1090 占い師がうらなった、今後数日間の良い日、悪い日のリストがある。 リストは配列で与えられ、良い日は&#39;G&#39;、悪い日は&#39;B&#39;で表わされる。 しか</description>
+    </item>
+    
+    <item>
       <title>LinuxでCPUやメモリ使用状況のログを取る方法</title>
       <link>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 12 Mar 2014 19:55:00 +0000</pubDate>
@@ -3212,6 +3221,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 284 DIV1 Easy - TriCount (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-284-div1-easy---tricount-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 08 Feb 2014 19:47:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-284-div1-easy---tricount-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4811&amp;amp;rd=8081 １辺の最小の長さと、最大の長さが与えられる。 このとき、とりうる三角形の数を求める。 ただし、回転して同じ三角形になる場合は同じものとみな</description>
+    </item>
+    
+    <item>
+      <title>SRM 281 DIV1 Easy - IntegerGenerator (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-281-div1-easy---integergenerator-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 08 Feb 2014 11:01:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-281-div1-easy---integergenerator-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6093&amp;amp;rd=9824 有効な一ケタの数字一覧と、現在の数字が与えられる。 現在の数字より大きく、かつ有効な数字のみで構成された数を求める。 ただし無効である場合</description>
+    </item>
+    
+    <item>
       <title>SRM 608 DIV1 Easy - MysticAndCandies (復習×○)</title>
       <link>https://chaingng.github.io/post/srm-608-div1-easy---mysticandcandies-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 08 Feb 2014 09:23:00 +0000</pubDate>
@@ -3407,6 +3434,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-606-div1-easy---ellysnumberguessing-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12975&amp;amp;rd=15839 ・２人でゲームを行い、一人は１～１０＾９までの数を思い浮かべ、 もう一人が言った数との絶対値を答える。 ・このターンを何度か繰り返したとき</description>
+    </item>
+    
+    <item>
+      <title>SRM 288 DIV1 Easy - FindTriangle</title>
+      <link>https://chaingng.github.io/post/srm-288-div1-easy---findtriangle/</link>
+      <pubDate>Thu, 30 Jan 2014 08:05:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-288-div1-easy---findtriangle/</guid>
+      <description>問題 ・３次元座標上に、ＲＧＢのうち１つの色を持つ座標が複数与えられる。 ・そのうち同じ色の３点、もしくは全て異なる色の３点を選んで三角形を作る</description>
+    </item>
+    
+    <item>
+      <title>SRM 287 DIV1 Easy - TwoEquations (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 28 Jan 2014 08:38:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-287-div1-easy---twoequations-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6013&amp;amp;rd=9808 ・２次方程式が与えられる。 ・このとき、ｘ、ｙを求める。 ただし解がない時は&#34;NO SOLUTIONS&#34;、解が複数あるときは&#34;MULTIPL</description>
     </item>
     
     <item>
