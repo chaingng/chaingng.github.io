@@ -57,15 +57,6 @@
     </item>
     
     <item>
-      <title>SRM 397 DIV1 Easy - SortingGame （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 17 Feb 2014 21:21:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8745&amp;amp;rd=12169 １～ｎまでの数字からなる配列が与えられる。 また、ｋ個の連続した数字を逆順に並び変えることができる。 このとき、元の配列を昇順にソートする</description>
-    </item>
-    
-    <item>
       <title>SRM 606 DIV1 Easy - EllysNumberGuessing （復習○）</title>
       <link>https://chaingng.github.io/post/srm-606-div1-easy---ellysnumberguessing-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Thu, 30 Jan 2014 19:19:00 +0000</pubDate>

@@ -422,30 +422,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 396 DIV1 Easy - DNAString ○</title>
-      <link>https://chaingng.github.io/post/srm-396-div1-easy---dnastring-/</link>
-      <pubDate>Fri, 24 Jul 2015 15:36:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-396-div1-easy---dnastring-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8584&amp;amp;rd=12168 解き方 間隔が１からmaxPeriodについてそれぞれ最小の変換コストを検索し、 そのうち最小のものが答えになる。 コード class DNAString { public: int minChanges(int maxPeriod, vector&amp;lt;string&amp;gt; dna)</description>
-    </item>
-    
-    <item>
       <title>SRM 399 DIV1 Easy - AvoidingProduct x</title>
       <link>https://chaingng.github.io/post/srm-399-div1-easy---avoidingproduct-x/</link>
       <pubDate>Fri, 24 Jul 2015 15:23:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-399-div1-easy---avoidingproduct-x/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8758&amp;amp;rd=12171 解き方 zの探索を枝刈りすることによって、ほぼx,yのすべての組み合わせだけ調べればよいので O(10^6)で全探索可能。 調べる範囲として</description>
-    </item>
-    
-    <item>
-      <title>SRM 398 DIV1 Easy - CountExpressions ○</title>
-      <link>https://chaingng.github.io/post/srm-398-div1-easy---countexpressions-/</link>
-      <pubDate>Fri, 24 Jul 2015 14:42:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-398-div1-easy---countexpressions-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8157&amp;amp;rd=12170 解き方 O（4! * 3^3）なので全探索可能。 ｘ２つ、ｙ２つの全ての並べ方、＋、ー、＊の全ての並び方に対して valと一致するものの数を数え</description>
     </item>
     
     <item>
@@ -2483,15 +2465,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 398 DIV1 Middle - CountPaths　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 26 Mar 2014 21:45:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=1897 フィールドの長さとして行の数rと列の数cが与えられる。 rとcの番号は1からスタートする。 合わせて、行列中の特別なフィールドが、(r,c</description>
-    </item>
-    
-    <item>
       <title>SRM 499 DIV1 Middle - WhiteSpaceEditing　（復習×○）</title>
       <link>https://chaingng.github.io/post/srm-499-div1-middle---whitespaceediting%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Wed, 26 Mar 2014 00:21:00 +0000</pubDate>
@@ -2696,15 +2669,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10275&amp;amp;rd=13697 有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。 ただし、根のノードはー１が入っている。 この有向グラフに、あ</description>
-    </item>
-    
-    <item>
-      <title>SRM 397 DIV1 Easy - SortingGame （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 17 Feb 2014 21:21:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8745&amp;amp;rd=12169 １～ｎまでの数字からなる配列が与えられる。 また、ｋ個の連続した数字を逆順に並び変えることができる。 このとき、元の配列を昇順にソートする</description>
     </item>
     
     <item>
