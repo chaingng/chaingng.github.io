@@ -386,15 +386,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 381 DIV1 Easy - TheDiceGame x</title>
-      <link>https://chaingng.github.io/post/srm-381-div1-easy---thedicegame-x/</link>
-      <pubDate>Wed, 05 Aug 2015 10:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-381-div1-easy---thedicegame-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8414&amp;amp;rd=10804 解き方 dpで解く。 前の状態から現在の状態までに行ける全ての場合について和をとっていく。 前の状態から＋１回かつサイコロなので1/6を掛け</description>
-    </item>
-    
-    <item>
       <title>SRM 663 DIV1 Easy - ABBADiv1 ○</title>
       <link>https://chaingng.github.io/post/srm-663-div1-easy---abbadiv1-/</link>
       <pubDate>Wed, 05 Aug 2015 09:39:00 +0000</pubDate>
@@ -410,15 +401,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-664-div1-easy---bearplays-x/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13916&amp;amp;rd=16513 解き方 数学的に解くことができるのに気がつけるか。 A+B=Sとすると、 A&amp;lt;Bのとき、A=2*A=2A%S A&amp;gt;Bのとき、A=A</description>
-    </item>
-    
-    <item>
-      <title>SRM 380 DIV1 Easy - LameKnight ○</title>
-      <link>https://chaingng.github.io/post/srm-380-div1-easy---lameknight-/</link>
-      <pubDate>Tue, 04 Aug 2015 06:31:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-380-div1-easy---lameknight-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8183&amp;amp;rd=10802 解き方 条件より、すべての４方向にいける場合とそれ以外を場合分けする。 次に高さの値によって場合分けできることがわかる。 高さが３以上ある場</description>
     </item>
     
     <item>
