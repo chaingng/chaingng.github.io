@@ -2123,15 +2123,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2012 TCO Algorithm Round 1C Easy - PasswordXGuessing　(×○)</title>
-      <link>https://chaingng.github.io/post/2012-tco-algorithm-round-1c-easy---passwordxguessing/</link>
-      <pubDate>Thu, 13 Nov 2014 18:33:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2012-tco-algorithm-round-1c-easy---passwordxguessing/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11867&amp;amp;rd=15092 ・数字で表わされるあるパスワードがある。 ・そのパスワードを忘れてしまったが、複数の人がどのパスワードであったか答えてくれる。 ・ただし、</description>
-    </item>
-    
-    <item>
       <title>SRM 615 DIV1 Easy - AmebaDiv1 (×○)</title>
       <link>https://chaingng.github.io/post/srm-615-div1-easy---amebadiv1-/</link>
       <pubDate>Wed, 12 Nov 2014 19:57:00 +0000</pubDate>
@@ -2309,24 +2300,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/2013-tco-round-2a-easy---thelargeststring-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12494&amp;amp;rd=15594 ・文字列sと、文字列tが与えられる。 ・sとtは同じ長さ。 ・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合</description>
-    </item>
-    
-    <item>
-      <title>2012 TCO Round 1A Easy - EllysJuice (×)</title>
-      <link>https://chaingng.github.io/post/2012-tco-round-1a-easy---ellysjuice-/</link>
-      <pubDate>Thu, 30 Oct 2014 11:10:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2012-tco-round-1a-easy---ellysjuice-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11843&amp;amp;rd=15090 ・アップルジュースとオレンジジュースが１ガロンずつある。 ・プレイヤーは順番に交互のジュースを半分ずつ飲んでいく。 ・ここで、プレイヤーの</description>
-    </item>
-    
-    <item>
-      <title>2012 TCO Round 1B Easy - FoxAndKgram (○)</title>
-      <link>https://chaingng.github.io/post/2012-tco-round-1b-easy---foxandkgram-/</link>
-      <pubDate>Wed, 29 Oct 2014 19:31:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2012-tco-round-1b-easy---foxandkgram-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11809&amp;amp;rd=15091 ・複数の長さの棒が与えられ、ここからK-gramを作りたい。 ・K-gramとはK個からなる集合で、 各要素は長さKの棒もしくは2つの棒を</description>
     </item>
     
     <item>

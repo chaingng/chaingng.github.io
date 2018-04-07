@@ -48,39 +48,12 @@
     </item>
     
     <item>
-      <title>2012 TCO Algorithm Round 1C Easy - PasswordXGuessing　(×○)</title>
-      <link>https://chaingng.github.io/post/2012-tco-algorithm-round-1c-easy---passwordxguessing/</link>
-      <pubDate>Thu, 13 Nov 2014 18:33:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2012-tco-algorithm-round-1c-easy---passwordxguessing/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11867&amp;amp;rd=15092 ・数字で表わされるあるパスワードがある。 ・そのパスワードを忘れてしまったが、複数の人がどのパスワードであったか答えてくれる。 ・ただし、</description>
-    </item>
-    
-    <item>
       <title>SRM 628 DIV1 Easy - DivisorsPower (×)</title>
       <link>https://chaingng.github.io/post/srm-628-div1-easy---divisorspower-/</link>
       <pubDate>Fri, 07 Nov 2014 21:28:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-628-div1-easy---divisorspower-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13241&amp;amp;rd=16009 ・ある正の整数nを考えた時、その約数の数である関数d(n)とh(n)=n*d(n)を考える。 ・nが与えられた時、h(x)を満たす最も小</description>
-    </item>
-    
-    <item>
-      <title>2012 TCO Round 1A Easy - EllysJuice (×)</title>
-      <link>https://chaingng.github.io/post/2012-tco-round-1a-easy---ellysjuice-/</link>
-      <pubDate>Thu, 30 Oct 2014 11:10:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2012-tco-round-1a-easy---ellysjuice-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11843&amp;amp;rd=15090 ・アップルジュースとオレンジジュースが１ガロンずつある。 ・プレイヤーは順番に交互のジュースを半分ずつ飲んでいく。 ・ここで、プレイヤーの</description>
-    </item>
-    
-    <item>
-      <title>2012 TCO Round 1B Easy - FoxAndKgram (○)</title>
-      <link>https://chaingng.github.io/post/2012-tco-round-1b-easy---foxandkgram-/</link>
-      <pubDate>Wed, 29 Oct 2014 19:31:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2012-tco-round-1b-easy---foxandkgram-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11809&amp;amp;rd=15091 ・複数の長さの棒が与えられ、ここからK-gramを作りたい。 ・K-gramとはK個からなる集合で、 各要素は長さKの棒もしくは2つの棒を</description>
     </item>
     
     <item>
