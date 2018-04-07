@@ -1070,15 +1070,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2015 TCO Round 1C Easy - DevuAndPlantingTrees</title>
-      <link>https://chaingng.github.io/post/2015-tco-round-1c-easy---devuandplantingtrees/</link>
-      <pubDate>Sun, 10 May 2015 10:33:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2015-tco-round-1c-easy---devuandplantingtrees/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13743&amp;amp;rd=16434 解き方 ２つ行があるが、追加する木については上下のどちらに追加しても変わらないので 片方だけを考える。 すでに存在する木によって追加できるス</description>
-    </item>
-    
-    <item>
       <title>TCO 2015 1C Hard  - MagicWords</title>
       <link>https://chaingng.github.io/post/tco-2015-1c-hard----magicwords/</link>
       <pubDate>Sun, 10 May 2015 10:28:00 +0000</pubDate>
@@ -1814,15 +1805,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-645-div1-easy---januszthebusinessman/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13603&amp;amp;rd=16277 ホテルに複数の人が宿泊に訪れる。 各ゲストについて到着日と出発日がわかっている。 ここで、ホテルでプロモーションを行うことができ、プロモー</description>
-    </item>
-    
-    <item>
-      <title>2015 TCO Round 1A Easy - Similars</title>
-      <link>https://chaingng.github.io/post/2015-tco-round-1a-easy---similars/</link>
-      <pubDate>Sun, 19 Apr 2015 10:46:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2015-tco-round-1a-easy---similars/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13714&amp;amp;rd=16432 ある数字ｘとｙが与えられた時、０〜９のうち同じ数字が存在する数だけSimilarityの値が高くなる。 （例）ｘ＝１１２４、ｙ＝１１２２</description>
     </item>
     
     <item>
