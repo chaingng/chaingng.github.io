@@ -413,69 +413,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 384 DIV1 Easy - Library ○</title>
-      <link>https://chaingng.github.io/post/srm-384-div1-easy---library-/</link>
-      <pubDate>Tue, 28 Jul 2015 04:01:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-384-div1-easy---library-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7659&amp;amp;rd=10808 解き方 解くだけ。 setを使えば重複の考慮も不要で、条件を満たしているかも簡単に判断できる。 コード class Library { public: int documentAccess(vector&amp;lt;string&amp;gt; records, vector&amp;lt;string&amp;gt; userGroups, vector&amp;lt;string&amp;gt; roomRights) { set&amp;lt;string&amp;gt; user,room; FORE(i,0,userGroups.size())user.insert(userGroups[i]); FORE(i,0,roomRights.size())room.insert(roomRights[i]); set&amp;lt;string&amp;gt; ans; FORE(i,0,records.size()){</description>
-    </item>
-    
-    <item>
-      <title>SRM 385 DIV1 Easy - UnderscoreJustification ○</title>
-      <link>https://chaingng.github.io/post/srm-385-div1-easy---underscorejustification-/</link>
-      <pubDate>Mon, 27 Jul 2015 20:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-385-div1-easy---underscorejustification-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8482&amp;amp;rd=10810 解き方 各スペースに挿入するアンダースコアの数の差は最大１なので、 スペースの数と挿入できるアンダースコアの数がわかれば 答えは一意に定まる</description>
-    </item>
-    
-    <item>
-      <title>SRM 386 DIV1 Easy - CandidateKeys △</title>
-      <link>https://chaingng.github.io/post/srm-386-div1-easy---candidatekeys-/</link>
-      <pubDate>Sun, 26 Jul 2015 04:58:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-386-div1-easy---candidatekeys-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8444&amp;amp;rd=11120 解き方 ビット列ですべての組み合わせについて調べれば良い。 ただし、その部分集合で満たすものがあれば偽になるので これまで調べたビット列で真</description>
-    </item>
-    
-    <item>
-      <title>SRM 387 DIV1 Easy - FoxesOfTheRoundTable △</title>
-      <link>https://chaingng.github.io/post/srm-387-div1-easy---foxesoftheroundtable-/</link>
-      <pubDate>Sat, 25 Jul 2015 06:48:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-387-div1-easy---foxesoftheroundtable-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8527&amp;amp;rd=11121 解き方 全てのjoker boxの選び方について全探索する。 joker box以外の箱について２色以上入っている箱は必ず動かさなければいけない。 その</description>
-    </item>
-    
-    <item>
-      <title>SRM 388 DIV1 Easy - SmoothNumbers ○</title>
-      <link>https://chaingng.github.io/post/srm-388-div1-easy---smoothnumbers-/</link>
-      <pubDate>Sat, 25 Jul 2015 05:21:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-388-div1-easy---smoothnumbers-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8519&amp;amp;rd=11122 解き方 あらかじめ対象となる全ての数について素数かどうか判定しておけば O(sqrt(10^5) * 10^5)=O(3*10^7)なので間に合う。 素数かどうかの判</description>
-    </item>
-    
-    <item>
-      <title>SRM 389 DIV1 Easy - ApproximateDivision ○</title>
-      <link>https://chaingng.github.io/post/srm-389-div1-easy---approximatedivision-/</link>
-      <pubDate>Sat, 25 Jul 2015 05:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-389-div1-easy---approximatedivision-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6125&amp;amp;rd=11123 解き方 問題分の通りに実装すればよい。 ただし、c/tの計算はそれぞれc,tをかけてから割り算を行うとオーバーフローするので c/tを毎回掛</description>
-    </item>
-    
-    <item>
-      <title>SRM 390 DIV1 Easy - ConcatenateNumber ○</title>
-      <link>https://chaingng.github.io/post/srm-390-div1-easy---concatenatenumber-/</link>
-      <pubDate>Sat, 25 Jul 2015 04:40:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-390-div1-easy---concatenatenumber-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8589&amp;amp;rd=11124 解き方 そのままの整数でシミュレーションすると計算量が間に合わないが MODにして計算してあげるとシンプルになる。 MOD後の数を保存してお</description>
-    </item>
-    
-    <item>
       <title>SRM 391 DIV1 Easy - IsomorphicWords ○</title>
       <link>https://chaingng.github.io/post/srm-391-div1-easy---isomorphicwords-/</link>
       <pubDate>Fri, 24 Jul 2015 18:14:00 +0000</pubDate>
@@ -2483,15 +2420,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 387 DIV1 Middle - IntervalSubsets　（復習×）</title>
-      <link>https://chaingng.github.io/post/srm-387-div1-middle---intervalsubsets%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 03 May 2014 10:57:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-387-div1-middle---intervalsubsets%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 複数の区間が与えられ、始まりの数字start[i]と終わりの数字finish[i]がわかっている。 この区間を、サブセット集合にまとめたい</description>
-    </item>
-    
-    <item>
       <title>SRM 610 DIV1 Middle - AlbertoTheAviator　（復習×）</title>
       <link>https://chaingng.github.io/post/srm-610-div1-middle---albertotheaviator%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Fri, 02 May 2014 20:11:00 +0000</pubDate>
@@ -2564,15 +2492,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 390 DIV1 Middle - PaintingBoards　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-390-div1-middle---paintingboards%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 02 Apr 2014 20:52:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-390-div1-middle---paintingboards%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8516&amp;amp;rd=11124 それぞれ長さの違うボードが連続して並んでおり、すべてのボードにペンキを塗りたい。 各ボードの長さはあらかじめわかっている。 また、ペンキを</description>
-    </item>
-    
-    <item>
       <title>SRM 614 DIV1 Easy - MinimumSquare　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 30 Mar 2014 08:45:00 +0000</pubDate>
@@ -2606,15 +2525,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://topcoder.bgcoder.com/print.php?id=1897 フィールドの長さとして行の数rと列の数cが与えられる。 rとcの番号は1からスタートする。 合わせて、行列中の特別なフィールドが、(r,c</description>
-    </item>
-    
-    <item>
-      <title>SRM 388 DIV1 Middle - InformFriends　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-388-div1-middle---informfriends%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 26 Mar 2014 19:46:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-388-div1-middle---informfriends%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=2031 無向グラフが与えられる。 入力となるノード（人）を選んで噂を流したとき、そこからつながるノードへ噂を伝搬することができる。 このとき、全て</description>
     </item>
     
     <item>
