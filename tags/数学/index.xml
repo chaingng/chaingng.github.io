@@ -102,24 +102,6 @@
     </item>
     
     <item>
-      <title>SRM 188 DIV1 Easy - Percents (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 17:25:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2386&amp;amp;rd=4760 あるアンケートに対して、yesと答えた人の割合が％で与えられる。 このとき、その割合になるときに必要なアンケート人数の母数を求める。 ただ</description>
-    </item>
-    
-    <item>
-      <title>SRM 189 DIV1 Easy - Display (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 15:39:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2295&amp;amp;rd=4765 縦横が-10^6～10^6の間にあるｘ、ｙ座標上の点を、 0～10^3の座標上に変換したい。 このとき、変換後の座標を求める。 解き方 Exa</description>
-    </item>
-    
-    <item>
       <title>SRM 490 DIV1 Easy - Starport (復習○)</title>
       <link>https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 02 Feb 2014 18:34:00 +0000</pubDate>

@@ -2717,15 +2717,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 196 DIV1 Middle - Assemble　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-196-div1-middle---assemble%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 11 Apr 2014 21:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-196-div1-middle---assemble%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=209 複数の電力源が与えられて、エネルギーの値があらかじめわかっている。 隣り合う２つの電力源について、左側が入力値、右側が出力値をあらわす。</description>
-    </item>
-    
-    <item>
       <title>SRM 427 DIV1 Middle - LocateTreasure　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-427-div1-middle---locatetreasure%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Thu, 10 Apr 2014 07:51:00 +0000</pubDate>
@@ -3365,24 +3356,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 188 DIV1 Easy - Percents (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 17:25:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2386&amp;amp;rd=4760 あるアンケートに対して、yesと答えた人の割合が％で与えられる。 このとき、その割合になるときに必要なアンケート人数の母数を求める。 ただ</description>
-    </item>
-    
-    <item>
-      <title>SRM 189 DIV1 Easy - Display (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 15:39:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2295&amp;amp;rd=4765 縦横が-10^6～10^6の間にあるｘ、ｙ座標上の点を、 0～10^3の座標上に変換したい。 このとき、変換後の座標を求める。 解き方 Exa</description>
-    </item>
-    
-    <item>
       <title>SRM 199 DIV1 Easy - TriangleCount （復習○）</title>
       <link>https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 09 Feb 2014 14:59:00 +0000</pubDate>
@@ -3668,15 +3641,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/beautifulsoup%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9/</guid>
       <description>クローラーで取ってきたHTMLを解析するのにBeautifulSoupが使いやすそうだったので使ってみました。以下は簡単な使い方のメモ。 バー</description>
-    </item>
-    
-    <item>
-      <title>SRM 184 DIV1 Easy - RaceCalculator (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 31 Jan 2014 23:05:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2250&amp;amp;rd=4740 ・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。 ・同じペースで走ることができ、予想される</description>
     </item>
     
     <item>
