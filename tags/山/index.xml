@@ -20,14 +20,5 @@
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13634&amp;amp;rd=16279 ・N個の建物を建てたい。 ・建物は１からNまですべて連続していなければならなく、隣合う建物の高さの差は １以内でなければならない。 ・また、</description>
     </item>
     
-    <item>
-      <title>2013 TCO Round 1C Easy - TheArray (×○)</title>
-      <link>https://chaingng.github.io/post/2013-tco-round-1c-easy---thearray-/</link>
-      <pubDate>Sat, 08 Nov 2014 11:57:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2013-tco-round-1c-easy---thearray-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12455&amp;amp;rd=15585 ・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。 ・スタート位置からn回移動</description>
-    </item>
-    
   </channel>
 </rss>

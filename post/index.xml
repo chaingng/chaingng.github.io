@@ -2150,15 +2150,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2013 TCO Round 1C Easy - TheArray (×○)</title>
-      <link>https://chaingng.github.io/post/2013-tco-round-1c-easy---thearray-/</link>
-      <pubDate>Sat, 08 Nov 2014 11:57:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2013-tco-round-1c-easy---thearray-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12455&amp;amp;rd=15585 ・最初のスタート位置firstと最後の位置last、移動できる回数nと一度に移動できる最大数dが与えられる。 ・スタート位置からn回移動</description>
-    </item>
-    
-    <item>
       <title>SRM 628 DIV1 Easy - DivisorsPower (×)</title>
       <link>https://chaingng.github.io/post/srm-628-div1-easy---divisorspower-/</link>
       <pubDate>Fri, 07 Nov 2014 21:28:00 +0000</pubDate>
@@ -2285,15 +2276,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2013 TCO Round 2A Easy - TheLargestString (××)</title>
-      <link>https://chaingng.github.io/post/2013-tco-round-2a-easy---thelargeststring-/</link>
-      <pubDate>Thu, 30 Oct 2014 11:35:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2013-tco-round-2a-easy---thelargeststring-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12494&amp;amp;rd=15594 ・文字列sと、文字列tが与えられる。 ・sとtは同じ長さ。 ・好きな位置を選択し、そこから構成されるsとtのサブ文字列を作り、sとtを結合</description>
-    </item>
-    
-    <item>
       <title>2011 TCO Qualification Round 1 - MinimumLiars</title>
       <link>https://chaingng.github.io/post/2011-tco-qualification-round-1---minimumliars/</link>
       <pubDate>Wed, 29 Oct 2014 18:43:00 +0000</pubDate>
@@ -2318,24 +2300,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996 ・正方形に並べられた１６個のマスがある。 ・各マスに、高さheightが分かっているタワーを置く。 ・このとき、見えている表面積が最も高く</description>
-    </item>
-    
-    <item>
-      <title>2013 TCO Round 1B Easy - EllysPairs (○)</title>
-      <link>https://chaingng.github.io/post/2013-tco-round-1b-easy---ellyspairs-/</link>
-      <pubDate>Wed, 29 Oct 2014 16:16:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2013-tco-round-1b-easy---ellyspairs-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12450&amp;amp;rd=15580 ・生徒が複数存在し、それぞれの生徒のknowledgeの値がわかっている。 ・生徒が２人ずつのペアを作る。このとき、ペアのknowled</description>
-    </item>
-    
-    <item>
-      <title>2013 TCO Round 2C Easy - DancingFoxes (×)</title>
-      <link>https://chaingng.github.io/post/2013-tco-round-2c-easy---dancingfoxes-/</link>
-      <pubDate>Wed, 29 Oct 2014 15:45:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2013-tco-round-2c-easy---dancingfoxes-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12548&amp;amp;rd=15656 ・友達が複数存在し、互いに誰と誰が友達であるかがわかっている。 ・パーティにて、ダンスが任意の回数行われる。ダンスは２人ペアで行われる。</description>
     </item>
     
     <item>
