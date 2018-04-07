@@ -404,15 +404,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 383 DIV1 Easy - Planks ○</title>
-      <link>https://chaingng.github.io/post/srm-383-div1-easy---planks-/</link>
-      <pubDate>Thu, 30 Jul 2015 10:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-383-div1-easy---planks-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8396&amp;amp;rd=10806 解き方 １つの木の長さを１〜１００００のそれぞれに固定して考える。 あとは、与えられた木がその長さで割った時、値がプラスなら足していき 最大</description>
-    </item>
-    
-    <item>
       <title>SRM 384 DIV1 Easy - Library ○</title>
       <link>https://chaingng.github.io/post/srm-384-div1-easy---library-/</link>
       <pubDate>Tue, 28 Jul 2015 04:01:00 +0000</pubDate>
@@ -2474,15 +2465,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 381 DIV1 Middle - TheHomework　（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-381-div1-middle---thehomework%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Thu, 15 May 2014 08:38:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-381-div1-middle---thehomework%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 数字の配列が与えられ、最初の配列からもう一つの配列へ変換したい。 可能な操作は以下の３通り。 ・追加：最大で元の配列の分だけ、好きな数字を追</description>
-    </item>
-    
-    <item>
       <title>SRM 548 DIV1 Middle - KingdomAndDice　（復習○）</title>
       <link>https://chaingng.github.io/post/srm-548-div1-middle---kingdomanddice%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Tue, 13 May 2014 23:06:00 +0000</pubDate>
@@ -2507,15 +2489,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-610-div1-middle---albertotheaviator%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 車を運転しており、最初に持っている燃料Fが与えられる。 また、複数の給油ポイントがあり、そこまでにいくのに必要な燃料durationと給油</description>
-    </item>
-    
-    <item>
-      <title>SRM 383 DIV1 Middle - FloorBoards　（復習×）</title>
-      <link>https://chaingng.github.io/post/srm-383-div1-middle---floorboards%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 02 May 2014 08:38:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-383-div1-middle---floorboards%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 ２次元のセルで示される天井が存在し、すべてにすきまなく屋根を作りたい。 屋根を作るのに必要な板は幅が１であり、高さは好きに決めてもよい。 ま</description>
     </item>
     
     <item>
@@ -2840,15 +2813,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10275&amp;amp;rd=13697 有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。 ただし、根のノードはー１が入っている。 この有向グラフに、あ</description>
-    </item>
-    
-    <item>
-      <title>SRM 382 DIV1 Easy - CollectingRiders (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 19 Feb 2014 21:28:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8319&amp;amp;rd=10805 通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、 ボード上に配置されている。ボード上の数がＫにあたる。 こ</description>
     </item>
     
     <item>

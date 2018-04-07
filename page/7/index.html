@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-05-31T13:51:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-05-31T13:49:00&#43;00:00"/>
 
 
 
@@ -72,29 +72,6 @@ ga('send', 'pageview');
 
 
 	<div class="main-content list content" role="main">
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/srm-588-div1-easy---gumiandsongsdiv1/" rel="bookmark">SRM 588 DIV1 Easy - GUMIAndSongsDiv1</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-588-div1-easy---gumiandsongsdiv1/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-588-div1-easy---gumiandsongsdiv1/" alt="はてなブックマーク - SRM 588 DIV1 Easy - GUMIAndSongsDiv1" title="はてなブックマーク - SRM 588 DIV1 Easy - GUMIAndSongsDiv1">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-05-31T13:51:00">May 31, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=12706&amp;rd=15700 解き方 どの範囲のトーンを利用するか、という情報がわかれば あとはその範囲内のトーンについてdurationが小さい順に選んでいけばよい。
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-588-div1-easy---gumiandsongsdiv1/">Read more…</a>
-		</div>
-	</div>
-</article>
-
 				<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
@@ -295,6 +272,29 @@ ga('send', 'pageview');
 		</header>
 		<div class="list__excerpt">
 			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11308&amp;rd=14552 解き方 ｄｐで解く。最終的に２＊ｎ−２個のエッジが発生する。 コード class P8XGraphBuilder { public: int solve(vector&lt;int&gt; scores) { int n=scores.size()+1; int dp[n+1][2*n-1]; FORE(i,0,n+1)FORE(j,0,2*n-1)dp[i][j]=-(1e+9); dp[0][0]=0; for(int i=0;i&lt;n;i++)for(int j=i;j&lt;2*n-2;j++){ for(int k=0;k&lt;n-1&amp;&amp;j+k+1&lt;=2*n-2;k++){ dp[i+1][j+k+1]=max(dp[i+1][j+k+1],dp[i][j]+scores[k]); } } return dp[n][2*n-2]; } };
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-539-div1-easy---over9000rocks/" rel="bookmark">SRM 539 DIV1 Easy - Over9000Rocks</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-539-div1-easy---over9000rocks/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-539-div1-easy---over9000rocks/" alt="はてなブックマーク - SRM 539 DIV1 Easy - Over9000Rocks" title="はてなブックマーク - SRM 539 DIV1 Easy - Over9000Rocks">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-05-27T16:42:00">May 27, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=11855&amp;rd=14731 解き方 ９０００以上となる数をすべて保存しては間に合わないので、 その始点と終点のみ保存してあげて、その間の範囲を計算していくことで メモリ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-539-div1-easy---over9000rocks/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -616,12 +616,11 @@ ga('send', 'pageview');
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-625-div1-easy---palindromepermutations-/">SRM 625 DIV1 Easy - PalindromePermutations (×)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-607-div1-easy---palindromicsubstringsdiv1-xx/">SRM 607 DIV1 Easy - PalindromicSubstringsDiv1 xx</a></li>
 			</ul>
-		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装 (7)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装 (6)</a>
 			<ul class="widget__list">
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-648-div1-easy---ab-/">SRM 648 DIV1 Easy - AB (×)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-637-div1-easy---divisorspower-/">SRM 637 DIV1 Easy - DivisorsPower (○)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/">SRM 417 DIV1 Easy - TemplateMatching （復習○）</a></li>
-				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/">SRM 382 DIV1 Easy - CollectingRiders (復習×○)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/">SRM 485 DIV1 Easy - AfraidOfEven (復習×)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-529-div1-easy---kingsort-%E5%BE%A9%E7%BF%92/">SRM 529 DIV1 Easy - KingSort (復習×○)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm576-div2--level2/">SRM576 DIV2 -Level2</a></li>
