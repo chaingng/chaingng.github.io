@@ -1772,15 +1772,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2014 TCO Celebrity Match DIV1 Easy - AnEasyProblem</title>
-      <link>https://chaingng.github.io/post/2014-tco-celebrity-match-div1-easy---aneasyproblem/</link>
-      <pubDate>Wed, 22 Apr 2015 15:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-celebrity-match-div1-easy---aneasyproblem/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13527&amp;amp;rd=16191 ・関数F（h,r）が与えられる。その要素は{1,2,3,...h-1,h,h-1...r+1,r}となる。 （例）F(3,2)={1,2</description>
-    </item>
-    
-    <item>
       <title>SRM 646 DIV2 Middle - TheGridDivTwo</title>
       <link>https://chaingng.github.io/post/srm-646-div2-middle---thegriddivtwo/</link>
       <pubDate>Tue, 21 Apr 2015 17:08:00 +0000</pubDate>
@@ -2291,51 +2282,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux%E3%81%A7%E8%A4%87%E6%95%B0%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%B5%90%E5%90%88/</guid>
       <description>catコマンドを使う。 下記のコマンドで指定したディレクトリ以下の全てのファイルを結合し、 newfilename.txtにその結果を保存できる</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 2A Easy - SixteenBricks (×)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</link>
-      <pubDate>Wed, 29 Oct 2014 18:11:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996 ・正方形に並べられた１６個のマスがある。 ・各マスに、高さheightが分かっているタワーを置く。 ・このとき、見えている表面積が最も高く</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 2B Easy - SwitchingGame (○)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/</link>
-      <pubDate>Tue, 28 Oct 2014 22:14:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996 ・ONとOFFができるスイッチが複数与えられる。 ・最初は全てOFFの状態。 ・複数スイッチの状態が与えられ、順番にその状態に変化させてい</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 1B Easy - SpamChecker (○)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-1b-easy---spamchecker-/</link>
-      <pubDate>Tue, 28 Oct 2014 20:52:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-1b-easy---spamchecker-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13119&amp;amp;rd=15950 ・与えられたe-mailがスパムかどうかチェックしたい。 ・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であ</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 1C Easy - Unique (○)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-1c-easy---unique-/</link>
-      <pubDate>Tue, 28 Oct 2014 20:47:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-1c-easy---unique-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13067&amp;amp;rd=15958 ・ある文字列が与えられる。 ・そのうち、同じアルファベットは一度しか使わないようにしたい。 ・同じアルファベットが出現する場合、最初のアル</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 1A Easy - EllysSortingTrimmer (○)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-1a-easy---ellyssortingtrimmer-/</link>
-      <pubDate>Tue, 28 Oct 2014 20:40:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-1a-easy---ellyssortingtrimmer-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12971&amp;amp;rd=15942 ・ある文字列Sが与えられる。 ・パラメータLが与えられ、Sから長さL分の文字列を選んで順番をひっくり返すことができる。 また、操作後選んだ</description>
     </item>
     
     <item>

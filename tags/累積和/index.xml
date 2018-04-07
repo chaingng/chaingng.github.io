@@ -6,19 +6,10 @@
     <description>Recent content in 累積和 on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 22 Apr 2015 15:34:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Nov 2014 08:57:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/%E7%B4%AF%E7%A9%8D%E5%92%8C/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>2014 TCO Celebrity Match DIV1 Easy - AnEasyProblem</title>
-      <link>https://chaingng.github.io/post/2014-tco-celebrity-match-div1-easy---aneasyproblem/</link>
-      <pubDate>Wed, 22 Apr 2015 15:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-celebrity-match-div1-easy---aneasyproblem/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13527&amp;amp;rd=16191 ・関数F（h,r）が与えられる。その要素は{1,2,3,...h-1,h,h-1...r+1,r}となる。 （例）F(3,2)={1,2</description>
-    </item>
     
     <item>
       <title>SRM 610 DIV1 Easy - TheMatrix (×○)</title>

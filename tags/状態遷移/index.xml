@@ -39,33 +39,6 @@
     </item>
     
     <item>
-      <title>2014 TCO Round 2B Easy - SwitchingGame (○)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/</link>
-      <pubDate>Tue, 28 Oct 2014 22:14:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996 ・ONとOFFができるスイッチが複数与えられる。 ・最初は全てOFFの状態。 ・複数スイッチの状態が与えられ、順番にその状態に変化させてい</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 1B Easy - SpamChecker (○)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-1b-easy---spamchecker-/</link>
-      <pubDate>Tue, 28 Oct 2014 20:52:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-1b-easy---spamchecker-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13119&amp;amp;rd=15950 ・与えられたe-mailがスパムかどうかチェックしたい。 ・e-mailの各行のうち、スパムな文字列でないときは○、スパムなときは×であ</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 1A Easy - EllysSortingTrimmer (○)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-1a-easy---ellyssortingtrimmer-/</link>
-      <pubDate>Tue, 28 Oct 2014 20:40:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-1a-easy---ellyssortingtrimmer-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12971&amp;amp;rd=15942 ・ある文字列Sが与えられる。 ・パラメータLが与えられ、Sから長さL分の文字列を選んで順番をひっくり返すことができる。 また、操作後選んだ</description>
-    </item>
-    
-    <item>
       <title>2014 TCO Round 3A Easy - BrightLamps (×)</title>
       <link>https://chaingng.github.io/post/2014-tco-round-3a-easy---brightlamps-/</link>
       <pubDate>Mon, 20 Oct 2014 20:44:00 +0000</pubDate>
