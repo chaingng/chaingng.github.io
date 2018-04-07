@@ -30,6 +30,24 @@
     </item>
     
     <item>
+      <title>SRM 172 DIV1 Easy - BadClock （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 08:09:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1969&amp;amp;rd=4665 正確な時計と、１時間あたり必ずｘ分ズレる時計がある。 各時計は１～１２時までの表示になる。 正確な時計とズレる時計の現在時刻が与えられた時</description>
+    </item>
+    
+    <item>
+      <title>SRM 181 DIV1 Easy - CombinationLock (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-181-div1-easy---combinationlock-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 20:34:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-181-div1-easy---combinationlock-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1945&amp;amp;rd=4725 数字を合わせてロックを空ける回転式の鍵がある。 合わせるのに必要な数字の一覧が順に与えられ、数字の数も与えられる。 ロックを解除する操作は</description>
+    </item>
+    
+    <item>
       <title>SRM 247 DIV1 Easy - Musical (復習○)</title>
       <link>https://chaingng.github.io/post/srm-247-div1-easy---musical-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 08 Feb 2014 22:33:00 +0000</pubDate>

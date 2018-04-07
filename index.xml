@@ -2717,6 +2717,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 196 DIV1 Middle - Assemble　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-196-div1-middle---assemble%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 11 Apr 2014 21:06:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-196-div1-middle---assemble%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=209 複数の電力源が与えられて、エネルギーの値があらかじめわかっている。 隣り合う２つの電力源について、左側が入力値、右側が出力値をあらわす。</description>
+    </item>
+    
+    <item>
       <title>SRM 427 DIV1 Middle - LocateTreasure　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-427-div1-middle---locatetreasure%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Thu, 10 Apr 2014 07:51:00 +0000</pubDate>
@@ -2750,6 +2759,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-250-div1-middle---tvwatching%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://topcoder.bgcoder.com/print.php?id=927 テレビの番組表があり、各番組ごとに開始時間と終了時間が与えられる。 できるだけ多くのテレビ番組をみたいが、放送時間が重複しているときは同</description>
+    </item>
+    
+    <item>
+      <title>SRM 173 DIV1 Middle - TreasureHunt　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-173-div1-middle---treasurehunt%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 30 Mar 2014 16:01:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-173-div1-middle---treasurehunt%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=416 ある島にある宝を探しにいきたい。 島のマップが与えられ、陸地の場所と宝の場所がしめされている。 宝の場所はあいまいであり必ずしも正確ではな</description>
     </item>
     
     <item>
@@ -3347,12 +3365,75 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 177 DIV1 Easy - TickTick (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-177-div1-easy---ticktick-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 15:18:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-177-div1-easy---ticktick-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1609&amp;amp;rd=4690 ＰＣのクロックが１ｍｓごとに時間を刻む。 また、ＰＣの中では複数のプログラムが順に動いており、一つのプログラムが終わったらすぐに次のプロ</description>
+    </item>
+    
+    <item>
+      <title>SRM 172 DIV1 Easy - BadClock （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 08:09:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1969&amp;amp;rd=4665 正確な時計と、１時間あたり必ずｘ分ズレる時計がある。 各時計は１～１２時までの表示になる。 正確な時計とズレる時計の現在時刻が与えられた時</description>
+    </item>
+    
+    <item>
+      <title>SRM 174 DIV1 Easy - BirthdayOdds (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 00:24:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1848&amp;amp;rd=4675 何人かのグループを考えた時、ある割合で同じ誕生日の人が存在する。 同じ誕生日の人がいる確率が与えられ、また誕生日となりうる日数が与えられ</description>
+    </item>
+    
+    <item>
+      <title>SRM 181 DIV1 Easy - CombinationLock (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-181-div1-easy---combinationlock-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 20:34:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-181-div1-easy---combinationlock-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1945&amp;amp;rd=4725 数字を合わせてロックを空ける回転式の鍵がある。 合わせるのに必要な数字の一覧が順に与えられ、数字の数も与えられる。 ロックを解除する操作は</description>
+    </item>
+    
+    <item>
       <title>ブートローダー</title>
       <link>https://chaingng.github.io/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/</link>
       <pubDate>Sun, 09 Feb 2014 18:34:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/</guid>
       <description>最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。 BootLoaderとは 起動直後のコンピュータはハー</description>
+    </item>
+    
+    <item>
+      <title>SRM 182 DIV1 Easy - SlayingDeer （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-182-div1-easy---slayingdeer-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 17:52:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-182-div1-easy---slayingdeer-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2308&amp;amp;rd=4730 鹿を追いかけて捕まえたい。 プレイヤーは速度Ａ，鹿は速度Ｂ，距離はＣで与えられる。 ただし、鹿は３０分走ったあと１５分休憩する。 このとき、</description>
+    </item>
+    
+    <item>
+      <title>SRM 188 DIV1 Easy - Percents (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 17:25:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2386&amp;amp;rd=4760 あるアンケートに対して、yesと答えた人の割合が％で与えられる。 このとき、その割合になるときに必要なアンケート人数の母数を求める。 ただ</description>
+    </item>
+    
+    <item>
+      <title>SRM 189 DIV1 Easy - Display (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 15:39:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2295&amp;amp;rd=4765 縦横が-10^6～10^6の間にあるｘ、ｙ座標上の点を、 0～10^3の座標上に変換したい。 このとき、変換後の座標を求める。 解き方 Exa</description>
     </item>
     
     <item>
@@ -3641,6 +3722,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/beautifulsoup%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9/</guid>
       <description>クローラーで取ってきたHTMLを解析するのにBeautifulSoupが使いやすそうだったので使ってみました。以下は簡単な使い方のメモ。 バー</description>
+    </item>
+    
+    <item>
+      <title>SRM 184 DIV1 Easy - RaceCalculator (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 31 Jan 2014 23:05:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2250&amp;amp;rd=4740 ・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。 ・同じペースで走ることができ、予想される</description>
     </item>
     
     <item>

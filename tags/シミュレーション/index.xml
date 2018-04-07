@@ -6,10 +6,19 @@
     <description>Recent content in シミュレーション on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 25 Jan 2014 18:34:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2014 17:52:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM 182 DIV1 Easy - SlayingDeer （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-182-div1-easy---slayingdeer-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 17:52:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-182-div1-easy---slayingdeer-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2308&amp;amp;rd=4730 鹿を追いかけて捕まえたい。 プレイヤーは速度Ａ，鹿は速度Ｂ，距離はＣで与えられる。 ただし、鹿は３０分走ったあと１５分休憩する。 このとき、</description>
+    </item>
     
     <item>
       <title>SRM 310 DIV1 Easy - PyramidOfCubes (復習○)</title>
