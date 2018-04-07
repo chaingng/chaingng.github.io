@@ -2573,6 +2573,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 339 DIV1 Middle - TestBettingStrategy　（復習○）</title>
+      <link>https://chaingng.github.io/post/srm-339-div1-middle---testbettingstrategy%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Thu, 15 May 2014 22:30:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-339-div1-middle---testbettingstrategy%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 最初にコインをinitSum個持っており、goalSum個まで増やしたい。 rounds回のラウンドがあり、最初のラウンドはコインを１個か</description>
+    </item>
+    
+    <item>
       <title>SRM 381 DIV1 Middle - TheHomework　（復習○）</title>
       <link>https://chaingng.github.io/post/srm-381-div1-middle---thehomework%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Thu, 15 May 2014 08:38:00 +0000</pubDate>
@@ -2699,6 +2708,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 311 DIV1 Middle - SumThemAll （復習xx）</title>
+      <link>https://chaingng.github.io/post/srm-311-div1-middle---sumthemall-%E5%BE%A9%E7%BF%92xx/</link>
+      <pubDate>Sun, 30 Mar 2014 10:47:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-311-div1-middle---sumthemall-%E5%BE%A9%E7%BF%92xx/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6430 ０以上の整数lowerBoundとupperBoundが与えられる。 ここである数字xのスコアについては、xの各桁の数字の和で表わされる</description>
+    </item>
+    
+    <item>
       <title>SRM 614 DIV1 Easy - MinimumSquare　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 30 Mar 2014 08:45:00 +0000</pubDate>
@@ -2732,6 +2750,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-350-div1-middle----starsingraphs%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://topcoder.bgcoder.com/print.php?id=1666 有効グラフが存在する。 ある一つのノードについて、starpathがC個以下であればそのノードはstarとみなされる。 starpathは</description>
+    </item>
+    
+    <item>
+      <title>SRM 330 DIV1 Middle - PrefixFreeSubsets　（復習×○）</title>
+      <link>https://chaingng.github.io/post/srm-330-div1-middle---prefixfreesubsets%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 29 Mar 2014 08:25:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-330-div1-middle---prefixfreesubsets%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=1520 複数の文字列集合が与えられる。 そこから任意のサブ集合をピックアップして、そのうちのどのペアも接頭辞になっていないようにしたい。 このとき</description>
     </item>
     
     <item>
@@ -2789,6 +2816,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 338 DIV1 Middle - RandomSwaps　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-338-div1-middle---randomswaps%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 16 Mar 2014 18:27:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-338-div1-middle---randomswaps%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=1540 ある文字列の長さarrayLengthが与えられ、その文字列の任意の２つを選んでswapすることをswapCount数繰り返す。 swa</description>
+    </item>
+    
+    <item>
       <title>SRM 400 DIV1 Middle -ReversalChain　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-400-div1-middle--reversalchain%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 16 Mar 2014 17:16:00 +0000</pubDate>
@@ -2816,6 +2852,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 320 DIV1 Middle -ContestSchedule　（復習×○）</title>
+      <link>https://chaingng.github.io/post/srm-320-div1-middle--contestschedule%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 15 Mar 2014 09:26:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-320-div1-middle--contestschedule%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=1405 複数のプログラミングコンテストが開催され、各コンテストについて開始時間s、終了時間t、勝率pが与えられる。 プレイヤーはできるだけ多くの</description>
+    </item>
+    
+    <item>
       <title>LinuxでCPUやメモリ使用状況のログを取る方法</title>
       <link>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 12 Mar 2014 19:55:00 +0000</pubDate>
@@ -2840,6 +2885,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-477-div1-middle---pythtriplets%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10766&amp;amp;rd=14157 以下の条件を満たす３角形を考える。 ・３辺a,b,cがすべて整数 ・a^2+b^2=c^2 ・a,bの最大公約数が1 また辺の集合が与えられ、</description>
+    </item>
+    
+    <item>
+      <title>SRM 312 DIV1 Middle - AntarcticaPolice　（復習××○）</title>
+      <link>https://chaingng.github.io/post/srm-312-div1-middle---antarcticapolice%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Mar 2014 09:00:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-312-div1-middle---antarcticapolice%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6501&amp;amp;rd=9992 都市Antarcticaにポリスステーションを建てたい。 Antarcticaには複数の町があり、それぞれの町にポリスステーションを建て</description>
     </item>
     
     <item>
@@ -2996,6 +3050,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 331 DIV1 Easy - CarolsSinging (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 21 Feb 2014 10:02:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7280&amp;amp;rd=10011 一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。 このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。 解</description>
+    </item>
+    
+    <item>
       <title>SRM 368 DIV1 Easy - JumpingBoard (復習×○)</title>
       <link>https://chaingng.github.io/post/srm-368-div1-easy---jumpingboard-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Fri, 21 Feb 2014 00:19:00 +0000</pubDate>
@@ -3047,6 +3110,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9824&amp;amp;rd=12179 部下とマネージャーからなるサラリーマンの会社がある。 配列が与えられ、ある人に対してその部下が誰かがわかっている。 また、ある人の部下の部</description>
+    </item>
+    
+    <item>
+      <title>SRM 302 DIV1 Easy - DivisorInc （復習××○）</title>
+      <link>https://chaingng.github.io/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 21:09:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-302-div1-easy---divisorinc-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6186&amp;amp;rd=9823 ある整数から、ある整数へ変換したい。 ある整数からの変換は、１とその数以外の、その整数で割りきれる数を足すことができる。 このとき、最小の</description>
+    </item>
+    
+    <item>
+      <title>SRM 303 DIV1 Easy - SpiralNumbers (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-303-div1-easy---spiralnumbers-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 16:51:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-303-div1-easy---spiralnumbers-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6093&amp;amp;rd=9824 座標上に１から始まり、らせん上に数が増えていく。 この座標の１の場所を（０，０）として右側を正のｘ座標、下側を正のｙ座標としたときに与え</description>
     </item>
     
     <item>
@@ -3167,6 +3248,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 333 DIV1 Easy - BirthNumbersValidator (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 17:06:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7291&amp;amp;rd=10657 誕生日を表わす１０桁の数字が与えられる。 その数字を&#34;YYMMDDCCCC&#34;とすると、以下で表わされる。 ＹＹが１９０７～２００６までの西</description>
+    </item>
+    
+    <item>
       <title>SRM 421 DIV1 Easy - EquilibriumPoints (復習○)</title>
       <link>https://chaingng.github.io/post/srm-421-div1-easy---equilibriumpoints-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 01 Feb 2014 16:46:00 +0000</pubDate>
@@ -3284,12 +3374,48 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 310 DIV1 Easy - PyramidOfCubes (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-310-div1-easy---pyramidofcubes-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 25 Jan 2014 18:34:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-310-div1-easy---pyramidofcubes-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6577&amp;amp;rd=9990 ・１＊１のキューブが任意の数与えられる。 ・キューブを３＊３、２＊２、１＊１のようにピラミッド状に積み重ねていく。 下より作っていき、足り</description>
+    </item>
+    
+    <item>
       <title>SRM 416 DIV1 Easy - NextNumber （復習○）</title>
       <link>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 25 Jan 2014 17:40:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8576&amp;amp;rd=13507 ・整数Ｎが与えられる。 ・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。 解き方 法則が少し複雑。 サンプルを見</description>
+    </item>
+    
+    <item>
+      <title>SRM 304 DIV1 Easy - PolyMove (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 22 Jan 2014 23:36:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-304-div1-easy---polymove-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6190&amp;amp;rd=9825 ・ある多角形が与えられる。 ・多角形のうち複数の点を１だけ動かすことができる。 ・ただし、１度動かした点と隣り合う点は動かすことができない</description>
+    </item>
+    
+    <item>
+      <title>SRM 325 DIV1 Easy - FenceRepairing （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 22 Jan 2014 07:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6827&amp;amp;rd=10005 ・穴のあいたフェンスがある。 ・フェンスを修理するには、sqrt(選んだ長さ)のコストが必要になる。 このとき、フェンスを修理するのに最小</description>
+    </item>
+    
+    <item>
+      <title>SRM 327 DIV1 Easy - NiceOrUgly (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 20 Jan 2014 20:47:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6871&amp;amp;rd=10007 ・？を含んだ文字列が与えられる。 ・母音が３つ連続する、または子音が５つ連続したらその文字列はＵＧＬYであり、そうでなければＮＩＣＥであ</description>
     </item>
     
     <item>
