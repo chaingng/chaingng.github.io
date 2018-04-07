@@ -6,19 +6,10 @@
     <description>Recent content in 移動 on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 21 Feb 2014 00:19:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2014 10:03:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/%E7%A7%BB%E5%8B%95/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>SRM 368 DIV1 Easy - JumpingBoard (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-368-div1-easy---jumpingboard-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 21 Feb 2014 00:19:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-368-div1-easy---jumpingboard-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8245&amp;amp;rd=10936 あるボードが存在し、その中には１～９までの数字かＨで表わされる穴が存在する。 まずは一番左上のセルからスタートし、そのセルに書いてある数</description>
-    </item>
     
     <item>
       <title>SRM 604 DIV1 Easy - PowerOfThree (復習××)</title>
