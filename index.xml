@@ -413,6 +413,96 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 389 DIV1 Easy - ApproximateDivision ○</title>
+      <link>https://chaingng.github.io/post/srm-389-div1-easy---approximatedivision-/</link>
+      <pubDate>Sat, 25 Jul 2015 05:00:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-389-div1-easy---approximatedivision-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6125&amp;amp;rd=11123 解き方 問題分の通りに実装すればよい。 ただし、c/tの計算はそれぞれc,tをかけてから割り算を行うとオーバーフローするので c/tを毎回掛</description>
+    </item>
+    
+    <item>
+      <title>SRM 390 DIV1 Easy - ConcatenateNumber ○</title>
+      <link>https://chaingng.github.io/post/srm-390-div1-easy---concatenatenumber-/</link>
+      <pubDate>Sat, 25 Jul 2015 04:40:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-390-div1-easy---concatenatenumber-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8589&amp;amp;rd=11124 解き方 そのままの整数でシミュレーションすると計算量が間に合わないが MODにして計算してあげるとシンプルになる。 MOD後の数を保存してお</description>
+    </item>
+    
+    <item>
+      <title>SRM 391 DIV1 Easy - IsomorphicWords ○</title>
+      <link>https://chaingng.github.io/post/srm-391-div1-easy---isomorphicwords-/</link>
+      <pubDate>Fri, 24 Jul 2015 18:14:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-391-div1-easy---isomorphicwords-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8175&amp;amp;rd=11125 解き方 全ての文字について、可能な限り昇順になるように変換する。 変換後、一致する文字列群について組み合わせを計算してあげればよい。 コード</description>
+    </item>
+    
+    <item>
+      <title>SRM 392 DIV1 Easy - TwoStringMasks x</title>
+      <link>https://chaingng.github.io/post/srm-392-div1-easy---twostringmasks-x/</link>
+      <pubDate>Fri, 24 Jul 2015 18:02:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-392-div1-easy---twostringmasks-x/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8706&amp;amp;rd=11126 解き方 仮の文字列を作る。 ＊にあたる共通の部分は？で埋めて、s1とs2について同じ長さの２つの文字列を作る。 各文字について一致していれば</description>
+    </item>
+    
+    <item>
+      <title>SRM 393 DIV1 Easy - InstantRunoffVoting ○</title>
+      <link>https://chaingng.github.io/post/srm-393-div1-easy---instantrunoffvoting-/</link>
+      <pubDate>Fri, 24 Jul 2015 17:07:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-393-div1-easy---instantrunoffvoting-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8607&amp;amp;rd=11127 解き方 問題分の通り実装し、収束するまで繰り返せば良い。 コード class InstantRunoffVoting { public: int winner(vector&amp;lt;string&amp;gt; voters) { int n=voters.size(),m=voters[0].size(); int used[10],v[10]; memset(used,0,sizeof(used)); while(1){ memset(v,0,sizeof(v)); int finish=1; FORE(i,0,m)if(used[i]==0)finish=0; if(finish)break; FORE(i,0,n){ int idx=0; while(used[voters[i][idx]-&#39;0&#39;]==1)idx++; v[voters[i][idx]-&#39;0&#39;]++; } FORE(i,0,m)if(v[i]&amp;gt;n*0.5)return i; int mx=100; FORE(i,0,m)if(used[i]==0)mx=min(mx,v[i]); FORE(i,0,m)if(v[i]==mx)used[i]=1; } return -1; } };</description>
+    </item>
+    
+    <item>
+      <title>SRM 394 DIV1 Easy - RoughStrings ○</title>
+      <link>https://chaingng.github.io/post/srm-394-div1-easy---roughstrings-/</link>
+      <pubDate>Fri, 24 Jul 2015 16:43:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-394-div1-easy---roughstrings-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8594&amp;amp;rd=11128 解き方 文字を消す回数0〜ｎ回までそれぞれについて、 最も少ない文字を消す回数と頻出する回数すべての場合について全探索する。 O（50*50</description>
+    </item>
+    
+    <item>
+      <title>SRM 395 DIV1 Easy - StreetWalking ○</title>
+      <link>https://chaingng.github.io/post/srm-395-div1-easy---streetwalking-/</link>
+      <pubDate>Fri, 24 Jul 2015 16:14:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-395-div1-easy---streetwalking-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8464&amp;amp;rd=11129 解き方 以下の３通りのうち、最小のものが答えになる。 １．すべて直線で移動（直線移動のコストが小さい時に有効） ２．できるだけ斜めに移動して</description>
+    </item>
+    
+    <item>
+      <title>SRM 396 DIV1 Easy - DNAString ○</title>
+      <link>https://chaingng.github.io/post/srm-396-div1-easy---dnastring-/</link>
+      <pubDate>Fri, 24 Jul 2015 15:36:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-396-div1-easy---dnastring-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8584&amp;amp;rd=12168 解き方 間隔が１からmaxPeriodについてそれぞれ最小の変換コストを検索し、 そのうち最小のものが答えになる。 コード class DNAString { public: int minChanges(int maxPeriod, vector&amp;lt;string&amp;gt; dna)</description>
+    </item>
+    
+    <item>
+      <title>SRM 399 DIV1 Easy - AvoidingProduct x</title>
+      <link>https://chaingng.github.io/post/srm-399-div1-easy---avoidingproduct-x/</link>
+      <pubDate>Fri, 24 Jul 2015 15:23:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-399-div1-easy---avoidingproduct-x/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8758&amp;amp;rd=12171 解き方 zの探索を枝刈りすることによって、ほぼx,yのすべての組み合わせだけ調べればよいので O(10^6)で全探索可能。 調べる範囲として</description>
+    </item>
+    
+    <item>
+      <title>SRM 398 DIV1 Easy - CountExpressions ○</title>
+      <link>https://chaingng.github.io/post/srm-398-div1-easy---countexpressions-/</link>
+      <pubDate>Fri, 24 Jul 2015 14:42:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-398-div1-easy---countexpressions-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8157&amp;amp;rd=12170 解き方 O（4! * 3^3）なので全探索可能。 ｘ２つ、ｙ２つの全ての並べ方、＋、ー、＊の全ての並び方に対して valと一致するものの数を数え</description>
+    </item>
+    
+    <item>
       <title>SRM 662 DIV1 Easy - FoxesOfTheRoundTable △</title>
       <link>https://chaingng.github.io/post/srm-662-div1-easy---foxesoftheroundtable-/</link>
       <pubDate>Sun, 12 Jul 2015 15:18:00 +0000</pubDate>
@@ -2366,6 +2456,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 399 DIV1 Middle - BinarySum （復習x）</title>
+      <link>https://chaingng.github.io/post/srm-399-div1-middle---binarysum-%E5%BE%A9%E7%BF%92x/</link>
+      <pubDate>Sun, 27 Apr 2014 13:11:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-399-div1-middle---binarysum-%E5%BE%A9%E7%BF%92x/</guid>
+      <description>問題 整数a,b,cが与えられる。 a,b,cを２進数に変換し、a+b=cとなるように２進数の1の位置を変化させる。 このとき、式が成立する最小の</description>
+    </item>
+    
+    <item>
       <title>SRM 617 DIV1 Middle - PieOrDolphin　（復習×）</title>
       <link>https://chaingng.github.io/post/srm-617-div1-middle---pieordolphin%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 26 Apr 2014 23:20:00 +0000</pubDate>
@@ -2411,6 +2510,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 390 DIV1 Middle - PaintingBoards　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-390-div1-middle---paintingboards%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 02 Apr 2014 20:52:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-390-div1-middle---paintingboards%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8516&amp;amp;rd=11124 それぞれ長さの違うボードが連続して並んでおり、すべてのボードにペンキを塗りたい。 各ボードの長さはあらかじめわかっている。 また、ペンキを</description>
+    </item>
+    
+    <item>
       <title>SRM 614 DIV1 Easy - MinimumSquare　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 30 Mar 2014 08:45:00 +0000</pubDate>
@@ -2435,6 +2543,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-502-div1-middle---theprogrammingcontestdivone-%E5%BE%A9%E7%BF%92xx/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11357 プログラミングコンテストが開催され、複数与えられる問題を時間Ｔ以内に解く。 各問題について、得られるmaxPointsと1分あたりに引か</description>
+    </item>
+    
+    <item>
+      <title>SRM 398 DIV1 Middle - CountPaths　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 26 Mar 2014 21:45:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=1897 フィールドの長さとして行の数rと列の数cが与えられる。 rとcの番号は1からスタートする。 合わせて、行列中の特別なフィールドが、(r,c</description>
+    </item>
+    
+    <item>
+      <title>SRM 388 DIV1 Middle - InformFriends　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-388-div1-middle---informfriends%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 26 Mar 2014 19:46:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-388-div1-middle---informfriends%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=2031 無向グラフが与えられる。 入力となるノード（人）を選んで噂を流したとき、そこからつながるノードへ噂を伝搬することができる。 このとき、全て</description>
     </item>
     
     <item>
@@ -2642,6 +2768,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10275&amp;amp;rd=13697 有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。 ただし、根のノードはー１が入っている。 この有向グラフに、あ</description>
+    </item>
+    
+    <item>
+      <title>SRM 397 DIV1 Easy - SortingGame （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 17 Feb 2014 21:21:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8745&amp;amp;rd=12169 １～ｎまでの数字からなる配列が与えられる。 また、ｋ個の連続した数字を逆順に並び変えることができる。 このとき、元の配列を昇順にソートする</description>
     </item>
     
     <item>
