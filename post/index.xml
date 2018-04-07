@@ -2213,15 +2213,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2014 TCO Round 2C Easy - SubstringReversal (復習×)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Nov 2014 20:31:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12516&amp;amp;rd=16016 ・ある文字列が与えられる。 ・この文字列の２つの場所を選んで、その間の文字列を順番を逆にすることができる。 ・順番を入れ替えた後最も辞書順</description>
-    </item>
-    
-    <item>
       <title>SRM 619 DIV1 Easy - SplitStoneGame (××)</title>
       <link>https://chaingng.github.io/post/srm-619-div1-easy---splitstonegame-/</link>
       <pubDate>Sat, 01 Nov 2014 09:58:00 +0000</pubDate>
@@ -2282,15 +2273,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux%E3%81%A7%E8%A4%87%E6%95%B0%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%B5%90%E5%90%88/</guid>
       <description>catコマンドを使う。 下記のコマンドで指定したディレクトリ以下の全てのファイルを結合し、 newfilename.txtにその結果を保存できる</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 3A Easy - BrightLamps (×)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-3a-easy---brightlamps-/</link>
-      <pubDate>Mon, 20 Oct 2014 20:44:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-3a-easy---brightlamps-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13343&amp;amp;rd=16050 ・複数のランプがあり、現在ついているかどうかの情報が与えられる。 ・各ランプについて、ついているときの明るさの値が与えられる。 ・連続K個</description>
     </item>
     
     <item>
