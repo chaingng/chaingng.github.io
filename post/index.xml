@@ -521,15 +521,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2015 TCO Round 2C Easy - YetAnotherCardGame x</title>
-      <link>https://chaingng.github.io/post/2015-tco-round-2c-easy---yetanothercardgame-x/</link>
-      <pubDate>Sun, 26 Jul 2015 05:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2015-tco-round-2c-easy---yetanothercardgame-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13912&amp;amp;rd=16523 解き方 dpの問題。 １．どのような順序で処理されるか →petr、snukeが順番に１つずつ出していく ２．前の状態としてどのような状態があ</description>
-    </item>
-    
-    <item>
       <title>SRM 386 DIV1 Easy - CandidateKeys △</title>
       <link>https://chaingng.github.io/post/srm-386-div1-easy---candidatekeys-/</link>
       <pubDate>Sun, 26 Jul 2015 04:58:00 +0000</pubDate>
@@ -653,15 +644,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-662-div1-easy---foxesoftheroundtable-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13858&amp;amp;rd=16511 解き方 Dが1000までなので、Dを固定することで解けそう。 ただ、Dをできるだけ小さくするということは、並べ方は以下の通り 一意に定まる。</description>
-    </item>
-    
-    <item>
-      <title>2015 TCO Round 2B Easy - Bitwisdom </title>
-      <link>https://chaingng.github.io/post/2015-tco-round-2b-easy---bitwisdom/</link>
-      <pubDate>Sun, 12 Jul 2015 09:59:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2015-tco-round-2b-easy---bitwisdom/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13778&amp;amp;rd=16500 解き方 dpで解く。 dp[現在の位置][現在が1か0か][1が最初から連続しているかのフラグ]とする。 現在のビット０になったとき、 １が最</description>
     </item>
     
     <item>
@@ -1067,15 +1049,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13746&amp;amp;rd=16434 解き方 木のルートからDFSでたどっていってパスの数を足していけば良い。 ルート０に直接つながっているノードについて、 さらにその下にノード</description>
-    </item>
-    
-    <item>
-      <title>2015 TCO Round 1C Easy - DevuAndPlantingTrees</title>
-      <link>https://chaingng.github.io/post/2015-tco-round-1c-easy---devuandplantingtrees/</link>
-      <pubDate>Sun, 10 May 2015 10:33:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2015-tco-round-1c-easy---devuandplantingtrees/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13743&amp;amp;rd=16434 解き方 ２つ行があるが、追加する木については上下のどちらに追加しても変わらないので 片方だけを考える。 すでに存在する木によって追加できるス</description>
     </item>
     
     <item>
@@ -1754,24 +1727,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2014 TCO Semifinal2 DIV1 Easy - PlankTiling</title>
-      <link>https://chaingng.github.io/post/2014-tco-semifinal2-div1-easy---planktiling/</link>
-      <pubDate>Wed, 22 Apr 2015 22:02:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-semifinal2-div1-easy---planktiling/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13437&amp;amp;rd=16188 ・１＊Hの棒が与えられる。 ・この棒を、（２H-1）＊Wのセルに敷き詰める場合の数を求める。 ・WはHの倍数となる。 解き方 WがHの倍数のと</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Semifinal1 DIV1 Easy - ZooExchangeProgram</title>
-      <link>https://chaingng.github.io/post/2014-tco-semifinal1-div1-easy---zooexchangeprogram/</link>
-      <pubDate>Wed, 22 Apr 2015 15:53:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-semifinal1-div1-easy---zooexchangeprogram/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13268&amp;amp;rd=16187 ・複数の動物がおりラベルが付けられている。 ・そのうち番号がlowerからupperまでのラベルの動物を各種類最低１匹ずつ選びたい。 その</description>
-    </item>
-    
-    <item>
       <title>SRM 646 DIV2 Middle - TheGridDivTwo</title>
       <link>https://chaingng.github.io/post/srm-646-div2-middle---thegriddivtwo/</link>
       <pubDate>Tue, 21 Apr 2015 17:08:00 +0000</pubDate>
@@ -1823,15 +1778,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-645-div1-easy---januszthebusinessman/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13603&amp;amp;rd=16277 ホテルに複数の人が宿泊に訪れる。 各ゲストについて到着日と出発日がわかっている。 ここで、ホテルでプロモーションを行うことができ、プロモー</description>
-    </item>
-    
-    <item>
-      <title>2015 TCO Round 1A Easy - Similars</title>
-      <link>https://chaingng.github.io/post/2015-tco-round-1a-easy---similars/</link>
-      <pubDate>Sun, 19 Apr 2015 10:46:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2015-tco-round-1a-easy---similars/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13714&amp;amp;rd=16432 ある数字ｘとｙが与えられた時、０〜９のうち同じ数字が存在する数だけSimilarityの値が高くなる。 （例）ｘ＝１１２４、ｙ＝１１２２</description>
     </item>
     
     <item>
@@ -2213,15 +2159,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2014 TCO Round 2C Easy - SubstringReversal (復習×)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Nov 2014 20:31:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-2c-easy---substringreversal-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12516&amp;amp;rd=16016 ・ある文字列が与えられる。 ・この文字列の２つの場所を選んで、その間の文字列を順番を逆にすることができる。 ・順番を入れ替えた後最も辞書順</description>
-    </item>
-    
-    <item>
       <title>SRM 619 DIV1 Easy - SplitStoneGame (××)</title>
       <link>https://chaingng.github.io/post/srm-619-div1-easy---splitstonegame-/</link>
       <pubDate>Sat, 01 Nov 2014 09:58:00 +0000</pubDate>
@@ -2282,33 +2219,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux%E3%81%A7%E8%A4%87%E6%95%B0%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%B5%90%E5%90%88/</guid>
       <description>catコマンドを使う。 下記のコマンドで指定したディレクトリ以下の全てのファイルを結合し、 newfilename.txtにその結果を保存できる</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 2A Easy - SixteenBricks (×)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</link>
-      <pubDate>Wed, 29 Oct 2014 18:11:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996 ・正方形に並べられた１６個のマスがある。 ・各マスに、高さheightが分かっているタワーを置く。 ・このとき、見えている表面積が最も高く</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 2B Easy - SwitchingGame (○)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/</link>
-      <pubDate>Tue, 28 Oct 2014 22:14:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-2b-easy---switchinggame-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996 ・ONとOFFができるスイッチが複数与えられる。 ・最初は全てOFFの状態。 ・複数スイッチの状態が与えられ、順番にその状態に変化させてい</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 3A Easy - BrightLamps (×)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-3a-easy---brightlamps-/</link>
-      <pubDate>Mon, 20 Oct 2014 20:44:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-3a-easy---brightlamps-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13343&amp;amp;rd=16050 ・複数のランプがあり、現在ついているかどうかの情報が与えられる。 ・各ランプについて、ついているときの明るさの値が与えられる。 ・連続K個</description>
     </item>
     
     <item>
@@ -2489,15 +2399,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/adb%E3%82%92wi-fi%E7%B5%8C%E7%94%B1%E3%81%A7%E5%88%A9%E7%94%A8/</guid>
       <description>端末が増えてくるとそれぞれusb接続してadbコマンドを打つと大変になった。 そこで、usbに接続しなくとも無線LAN経由にてadbを利用する</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 3B - IntoTheMatrix</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-3b---intothematrix/</link>
-      <pubDate>Sat, 20 Sep 2014 08:49:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-3b---intothematrix/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13066&amp;amp;rd=16058 N種類のピルがあり、どれがマジックピルかを判別したい。 判別するのに友人に協力してもらうことができ、マジックピルを飲んだ友人は消えてしま</description>
     </item>
     
     <item>
@@ -3005,15 +2906,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 149 DIV1 Middle -MessageMess　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-149-div1-middle--messagemess%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 16 Mar 2014 10:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-149-div1-middle--messagemess%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=218 ある文字列を、与えられた辞書中の文字に分割したい。 ただし、分割の方法が複数ある場合は&#34;AMBIGOUS!&#34;、ない場合は&#34;IMPOSSI</description>
-    </item>
-    
-    <item>
       <title>SRM 294 DIV1 Middle -Palindromist　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-294-div1-middle--palindromist%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 16 Mar 2014 09:32:00 +0000</pubDate>
@@ -3479,15 +3371,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-177-div1-easy---ticktick-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1609&amp;amp;rd=4690 ＰＣのクロックが１ｍｓごとに時間を刻む。 また、ＰＣの中では複数のプログラムが順に動いており、一つのプログラムが終わったらすぐに次のプロ</description>
-    </item>
-    
-    <item>
-      <title>SRM 150 DIV1 Easy - InterestingDigits (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-150-div1-easy---interestingdigits-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 11:41:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-150-div1-easy---interestingdigits-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1523&amp;amp;rd=4555 ３の倍数はその各桁の数の和も同じく３の倍数になる。 上記に対し、ｘ進数のときにも同じ法則が成り立つ倍数を求める。 解き方 ｘ進数を考えた時、</description>
     </item>
     
     <item>

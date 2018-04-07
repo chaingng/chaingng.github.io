@@ -6,19 +6,10 @@
     <description>Recent content in 考察 on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 22 Apr 2015 22:02:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Nov 2014 19:35:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/%E8%80%83%E5%AF%9F/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>2014 TCO Semifinal2 DIV1 Easy - PlankTiling</title>
-      <link>https://chaingng.github.io/post/2014-tco-semifinal2-div1-easy---planktiling/</link>
-      <pubDate>Wed, 22 Apr 2015 22:02:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-semifinal2-div1-easy---planktiling/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13437&amp;amp;rd=16188 ・１＊Hの棒が与えられる。 ・この棒を、（２H-1）＊Wのセルに敷き詰める場合の数を求める。 ・WはHの倍数となる。 解き方 WがHの倍数のと</description>
-    </item>
     
     <item>
       <title>SRM 617 DIV1 Easy - MyLongCake (○)</title>
@@ -27,15 +18,6 @@
       
       <guid>https://chaingng.github.io/post/srm-617-div1-easy---mylongcake-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13137&amp;amp;rd=15850 ・ある長さｎのケーキがある。 ・人が何人訪れるかわかっていないが、ｎの約数の人数だけ人が訪れる可能性がある。 ・１人人が現れた時、あらかじ</description>
-    </item>
-    
-    <item>
-      <title>2014 TCO Round 2A Easy - SixteenBricks (×)</title>
-      <link>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</link>
-      <pubDate>Wed, 29 Oct 2014 18:11:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-round-2a-easy---sixteenbricks-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13110&amp;amp;rd=15996 ・正方形に並べられた１６個のマスがある。 ・各マスに、高さheightが分かっているタワーを置く。 ・このとき、見えている表面積が最も高く</description>
     </item>
     
     <item>
