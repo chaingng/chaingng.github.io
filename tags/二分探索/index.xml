@@ -21,30 +21,12 @@
     </item>
     
     <item>
-      <title>SRM 230 DIV1 Easy - SortEstimate （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 08:53:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3561&amp;amp;rd=6519 ソートアルゴリズムの計算量を計算したい。 計算量はc*n*log2(n)で表わされ、これをtime以下でかつ最大となるときのｎを求めたい</description>
-    </item>
-    
-    <item>
       <title>SRM 440 DIV1 Easy - IncredibleMachine (復習××)</title>
       <link>https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Wed, 05 Feb 2014 19:41:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10310&amp;amp;rd=13748 ある惑星上にて（ｘ、ｙ）からなる点が複数与えられる。 その惑星の重力ｇは不明だが、すべての点を順番に通った時の合計時間Tはわかっている。</description>
-    </item>
-    
-    <item>
-      <title>SRM 258 DIV1 Easy - AutoLoan (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 09:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3970&amp;amp;rd=7993 ・車をローンで購入する。 ・車の費用はあらかじめわかっており、ディーラーは月額の固定支払額と払い終わるまでの月数を教えてくれる。 ・ただし</description>
     </item>
     
     <item>

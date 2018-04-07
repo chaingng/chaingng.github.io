@@ -2690,30 +2690,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 238 DIV1 Middle - SequenceSync　（復習×）</title>
-      <link>https://chaingng.github.io/post/srm-238-div1-middle---sequencesync%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 15 Apr 2014 08:31:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-238-div1-middle---sequencesync%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 オートマトン図が与えられ、各状態について１～４までの数字が与えられた時に遷移する状態が与えられる。 例） １行目：１ ２ ２ ３ 状態０が１～４を与</description>
-    </item>
-    
-    <item>
       <title>SRM 511 DIV1 Middle - FiveHundredEleven　（復習×）</title>
       <link>https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Mon, 14 Apr 2014 23:32:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 ０～５１１の間である数字の配列が与えられ、2人でゲームを行う。 最初はFoxの番から始まり、次はToastmanの番になる。 ゲームは配列か</description>
-    </item>
-    
-    <item>
-      <title>SRM 196 DIV1 Middle - Assemble　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-196-div1-middle---assemble%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 11 Apr 2014 21:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-196-div1-middle---assemble%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=209 複数の電力源が与えられて、エネルギーの値があらかじめわかっている。 隣り合う２つの電力源について、左側が入力値、右側が出力値をあらわす。</description>
     </item>
     
     <item>
@@ -2741,24 +2723,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-390-div1-middle---paintingboards%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8516&amp;amp;rd=11124 それぞれ長さの違うボードが連続して並んでおり、すべてのボードにペンキを塗りたい。 各ボードの長さはあらかじめわかっている。 また、ペンキを</description>
-    </item>
-    
-    <item>
-      <title>SRM 250 DIV1 Middle - TVWatching　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-250-div1-middle---tvwatching%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 30 Mar 2014 21:26:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-250-div1-middle---tvwatching%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=927 テレビの番組表があり、各番組ごとに開始時間と終了時間が与えられる。 できるだけ多くのテレビ番組をみたいが、放送時間が重複しているときは同</description>
-    </item>
-    
-    <item>
-      <title>SRM 173 DIV1 Middle - TreasureHunt　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-173-div1-middle---treasurehunt%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 30 Mar 2014 16:01:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-173-div1-middle---treasurehunt%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=416 ある島にある宝を探しにいきたい。 島のマップが与えられ、陸地の場所と宝の場所がしめされている。 宝の場所はあいまいであり必ずしも正確ではな</description>
     </item>
     
     <item>
@@ -2870,15 +2834,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 254 DIV1 Middle - Piglets　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-254-div1-middle---piglets%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 22 Mar 2014 11:05:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-254-div1-middle---piglets%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=466 豚小屋があり、すでに豚が入っていない小屋に入っていく。 両端を豚にはさまれるのを嫌がるので、できるだけ避けて入りたい。 左端か右端が空いて</description>
-    </item>
-    
-    <item>
       <title>SRM 364 DIV1 Middle - PowerPlants　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-364-div1-middle---powerplants%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Tue, 18 Mar 2014 08:24:00 +0000</pubDate>
@@ -2942,24 +2897,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 248 DIV1 Middle -ContractWork　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-248-div1-middle--contractwork%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 15 Mar 2014 14:12:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-248-div1-middle--contractwork%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=795 プレイヤーはこなさなければいけない、複数の仕事をかかえている。 この仕事を外部の会社に委託してすべてこなしたい。 それぞれの会社は各タスク</description>
-    </item>
-    
-    <item>
-      <title>SRM 228 DIV1 Middle -BagsOfGold　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-228-div1-middle--bagsofgold%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 15 Mar 2014 13:49:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-228-div1-middle--bagsofgold%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=768 ゴールドの山が順に並んでいる。 あらかじめ、それぞれの山にどれだけゴールドがあるかわかっている。 ２人でこのゴールドの山の取りあいを行い、</description>
-    </item>
-    
-    <item>
       <title>SRM 320 DIV1 Middle -ContestSchedule　（復習×○）</title>
       <link>https://chaingng.github.io/post/srm-320-div1-middle--contestschedule%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 15 Mar 2014 09:26:00 +0000</pubDate>
@@ -2978,15 +2915,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 229 DIV1 Middle -BusinessPlan　（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-229-div1-middle--businessplan%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 14 Mar 2014 08:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-229-div1-middle--businessplan%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 様々な商品が存在し、各商品についてexpenseの金額を投資するとptime後にrevenueの収入が得られることがわかっている。 最初に</description>
-    </item>
-    
-    <item>
       <title>SRM 275 DIV1 Middle -Horoscope　（復習○）</title>
       <link>https://chaingng.github.io/post/srm-275-div1-middle--horoscope%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Fri, 14 Mar 2014 07:41:00 +0000</pubDate>
@@ -3002,15 +2930,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
       <description>Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。 ①CPU使用率とメモ</description>
-    </item>
-    
-    <item>
-      <title>SRM 253 DIV1 Middle - AlphabetCount　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-253-div1-middle---alphabetcount%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 12 Mar 2014 08:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-253-div1-middle---alphabetcount%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=975 アルファベットＡ～Ｚからなる配列が与えられる。 長さlengthが与えられ、このときAを長さ1とし、B,C,,,と長さ分の連続したアルフ</description>
     </item>
     
     <item>
@@ -3050,24 +2969,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 212 DIV1 Middle - SumOfSquareRoots　（復習×○）</title>
-      <link>https://chaingng.github.io/post/srm-212-div1-middle---sumofsquareroots%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Mar 2014 17:58:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-212-div1-middle---sumofsquareroots%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2943&amp;amp;rd=5858 正の整数の集合が与えられ、この数の平方根を考える。 この平方根に対して足すことができるものを全てまとめて、最後に昇順にして返す。 解き方 全</description>
-    </item>
-    
-    <item>
-      <title>SRM 205 DIV1 Middle - HexagonalSums　（復習××○）</title>
-      <link>https://chaingng.github.io/post/srm-205-div1-middle---hexagonalsums%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Mar 2014 17:16:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-205-div1-middle---hexagonalsums%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2921&amp;amp;rd=5851 ６面体を左下が重なるように順に大きいものを重ねていく。 そのときの点の数は１、６，１８，２５，４５，６６・・・となる。 また、正の整数Ｎが</description>
-    </item>
-    
-    <item>
       <title>SRM 477 DIV1 Middle - PythTriplets　（復習×××）</title>
       <link>https://chaingng.github.io/post/srm-477-div1-middle---pythtriplets%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 09 Mar 2014 11:37:00 +0000</pubDate>
@@ -3092,15 +2993,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-223-div1-middle---primeanagrams%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 数字の文字列が与えられる。 そこから全ての数字を好きに組み合わせて、３つの素数を作る。 ３つの素数が複数通り作れるのであれば、その積が最も小</description>
-    </item>
-    
-    <item>
-      <title>SRM 227 DIV1 Middle - TreeSpreading　（復習×○）</title>
-      <link>https://chaingng.github.io/post/srm-227-div1-middle---treespreading%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 08 Mar 2014 20:53:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-227-div1-middle---treespreading%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 a,b,c,dの４種類の木を並べて植えたい。 ただし、隣り合う木は必ず別の種類にしたい。 それぞれの植えられる木の本数が与えられるとき、木の</description>
     </item>
     
     <item>
@@ -3347,147 +3239,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 242 DIV1 Easy - GuessCard (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 16:09:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4490&amp;amp;rd=7217 行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。 ここで、ある数字を思い浮かべたとき、その数字が何列目に</description>
-    </item>
-    
-    <item>
-      <title>SRM 177 DIV1 Easy - TickTick (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-177-div1-easy---ticktick-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 15:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-177-div1-easy---ticktick-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1609&amp;amp;rd=4690 ＰＣのクロックが１ｍｓごとに時間を刻む。 また、ＰＣの中では複数のプログラムが順に動いており、一つのプログラムが終わったらすぐに次のプロ</description>
-    </item>
-    
-    <item>
-      <title>SRM 172 DIV1 Easy - BadClock （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 08:09:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1969&amp;amp;rd=4665 正確な時計と、１時間あたり必ずｘ分ズレる時計がある。 各時計は１～１２時までの表示になる。 正確な時計とズレる時計の現在時刻が与えられた時</description>
-    </item>
-    
-    <item>
-      <title>SRM 174 DIV1 Easy - BirthdayOdds (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 00:24:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1848&amp;amp;rd=4675 何人かのグループを考えた時、ある割合で同じ誕生日の人が存在する。 同じ誕生日の人がいる確率が与えられ、また誕生日となりうる日数が与えられ</description>
-    </item>
-    
-    <item>
-      <title>SRM 181 DIV1 Easy - CombinationLock (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-181-div1-easy---combinationlock-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 20:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-181-div1-easy---combinationlock-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1945&amp;amp;rd=4725 数字を合わせてロックを空ける回転式の鍵がある。 合わせるのに必要な数字の一覧が順に与えられ、数字の数も与えられる。 ロックを解除する操作は</description>
-    </item>
-    
-    <item>
       <title>ブートローダー</title>
       <link>https://chaingng.github.io/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/</link>
       <pubDate>Sun, 09 Feb 2014 18:34:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/</guid>
       <description>最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。 BootLoaderとは 起動直後のコンピュータはハー</description>
-    </item>
-    
-    <item>
-      <title>SRM 182 DIV1 Easy - SlayingDeer （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-182-div1-easy---slayingdeer-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 17:52:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-182-div1-easy---slayingdeer-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2308&amp;amp;rd=4730 鹿を追いかけて捕まえたい。 プレイヤーは速度Ａ，鹿は速度Ｂ，距離はＣで与えられる。 ただし、鹿は３０分走ったあと１５分休憩する。 このとき、</description>
-    </item>
-    
-    <item>
-      <title>SRM 188 DIV1 Easy - Percents (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 17:25:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-188-div1-easy---percents-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2386&amp;amp;rd=4760 あるアンケートに対して、yesと答えた人の割合が％で与えられる。 このとき、その割合になるときに必要なアンケート人数の母数を求める。 ただ</description>
-    </item>
-    
-    <item>
-      <title>SRM 189 DIV1 Easy - Display (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 15:39:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-189-div1-easy---display-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2295&amp;amp;rd=4765 縦横が-10^6～10^6の間にあるｘ、ｙ座標上の点を、 0～10^3の座標上に変換したい。 このとき、変換後の座標を求める。 解き方 Exa</description>
-    </item>
-    
-    <item>
-      <title>SRM 199 DIV1 Easy - TriangleCount （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 14:59:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2889&amp;amp;rd=5074 １辺の長さが与えられる。 各辺の長さが１の三角形を組み合わせて、１辺の長さが与えられた長さになるよう 三角形を作る。 このとき、１辺が１～与</description>
-    </item>
-    
-    <item>
-      <title>SRM 204 DIV1 Easy - Apothecary (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-204-div1-easy---apothecary-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 14:24:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-204-div1-easy---apothecary-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2312&amp;amp;rd=5850 ある物体の重さを、天秤を使って測りたい。 天秤の重さは３＾ｘのものが各１つずつ存在する。 このとき、必要な天秤の重さを昇順にソートして返す</description>
-    </item>
-    
-    <item>
-      <title>SRM 212 DIV1 Easy - WinningRecord （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-212-div1-easy---winningrecord-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 10:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-212-div1-easy---winningrecord-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3003&amp;amp;rd=5858 あるチームの直近の勝ち負けの結果が与えられる。 そこから、直近のいつまでがもっとも勝率がよくて、直近のいつまでがもっとも勝率が悪かったか</description>
-    </item>
-    
-    <item>
-      <title>SRM 221 DIV1 Easy - TerribleEncryption (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-221-div1-easy---terribleencryption-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 09:58:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-221-div1-easy---terribleencryption-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1924&amp;amp;rd=5867 暗号化された文字列があり、それを復号したい。 あらかじめ暗号化された文字pool、配列data,keysが与えられる。 復号後の文字列のi</description>
-    </item>
-    
-    <item>
-      <title>SRM 230 DIV1 Easy - SortEstimate （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 08:53:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3561&amp;amp;rd=6519 ソートアルゴリズムの計算量を計算したい。 計算量はc*n*log2(n)で表わされ、これをtime以下でかつ最大となるときのｎを求めたい</description>
-    </item>
-    
-    <item>
-      <title>SRM 245 DIV1 Easy - Flush (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 00:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4487&amp;amp;rd=7220 ４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。 Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlus</description>
-    </item>
-    
-    <item>
-      <title>SRM 247 DIV1 Easy - Musical (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-247-div1-easy---musical-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 08 Feb 2014 22:33:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-247-div1-easy---musical-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4495&amp;amp;rd=7222 椅子取りゲームを行う。 プレイヤーはｎ人、椅子はn-1個で等間隔でサークル上に置かれる。 プレイヤーはＡが椅子の横、Ｂがその次に続き、Ｃが</description>
     </item>
     
     <item>
@@ -3689,15 +3446,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 258 DIV1 Easy - AutoLoan (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 09:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-258-div1-easy---autoloan-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3970&amp;amp;rd=7993 ・車をローンで購入する。 ・車の費用はあらかじめわかっており、ディーラーは月額の固定支払額と払い終わるまでの月数を教えてくれる。 ・ただし</description>
-    </item>
-    
-    <item>
       <title>SRM 289 DIV1 Easy - FallingBall</title>
       <link>https://chaingng.github.io/post/srm-289-div1-easy---fallingball/</link>
       <pubDate>Sat, 01 Feb 2014 08:44:00 +0000</pubDate>
@@ -3713,15 +3461,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/beautifulsoup%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9/</guid>
       <description>クローラーで取ってきたHTMLを解析するのにBeautifulSoupが使いやすそうだったので使ってみました。以下は簡単な使い方のメモ。 バー</description>
-    </item>
-    
-    <item>
-      <title>SRM 184 DIV1 Easy - RaceCalculator (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 31 Jan 2014 23:05:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2250&amp;amp;rd=4740 ・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。 ・同じペースで走ることができ、予想される</description>
     </item>
     
     <item>
@@ -3815,15 +3554,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 207 DIV1 Easy - RegularSeason (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 25 Jan 2014 20:56:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2866&amp;amp;rd=5853 ・複数のチームが総当たりで対戦する。 ・各チームは与えられた対戦数をホーム・アウェーで対戦する。 ・対戦する際の勝率が与えられる。 ・勝つ試</description>
-    </item>
-    
-    <item>
       <title>SRM 310 DIV1 Easy - PyramidOfCubes (復習○)</title>
       <link>https://chaingng.github.io/post/srm-310-div1-easy---pyramidofcubes-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 25 Jan 2014 18:34:00 +0000</pubDate>
@@ -3839,24 +3569,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8576&amp;amp;rd=13507 ・整数Ｎが与えられる。 ・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。 解き方 法則が少し複雑。 サンプルを見</description>
-    </item>
-    
-    <item>
-      <title>SRM 226 DIV1 Easy - ManhattanMovement (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-226-div1-easy---manhattanmovement-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 25 Jan 2014 11:27:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-226-div1-easy---manhattanmovement-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3498&amp;amp;rd=6515 ・直線ax+by=1、スタート位置（x0,y0）が与えられる。 ・スタート位置から直線上の点まで移動する。 ・ただし、ｘ軸に平行、もしくは</description>
-    </item>
-    
-    <item>
-      <title>SRM 249 DIV1 Easy - TableSeating (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 25 Jan 2014 10:51:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4616&amp;amp;rd=7224 ・テーブルが複数存在する。 ・各グループ人数ごとに来店する確率が与えられる。 来店する回数に制限はない。 ・グループがきたときに、空いている</description>
     </item>
     
     <item>

@@ -48,42 +48,6 @@
     </item>
     
     <item>
-      <title>SRM 242 DIV1 Easy - GuessCard (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 16:09:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4490&amp;amp;rd=7217 行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。 ここで、ある数字を思い浮かべたとき、その数字が何列目に</description>
-    </item>
-    
-    <item>
-      <title>SRM 204 DIV1 Easy - Apothecary (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-204-div1-easy---apothecary-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 14:24:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-204-div1-easy---apothecary-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2312&amp;amp;rd=5850 ある物体の重さを、天秤を使って測りたい。 天秤の重さは３＾ｘのものが各１つずつ存在する。 このとき、必要な天秤の重さを昇順にソートして返す</description>
-    </item>
-    
-    <item>
-      <title>SRM 221 DIV1 Easy - TerribleEncryption (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-221-div1-easy---terribleencryption-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 09:58:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-221-div1-easy---terribleencryption-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1924&amp;amp;rd=5867 暗号化された文字列があり、それを復号したい。 あらかじめ暗号化された文字pool、配列data,keysが与えられる。 復号後の文字列のi</description>
-    </item>
-    
-    <item>
-      <title>SRM 245 DIV1 Easy - Flush (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 00:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4487&amp;amp;rd=7220 ４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。 Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlus</description>
-    </item>
-    
-    <item>
       <title>SRM 265 DIV1 Easy - ScheduleStrength (復習○)</title>
       <link>https://chaingng.github.io/post/srm-265-div1-easy---schedulestrength-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 08 Feb 2014 10:02:00 +0000</pubDate>
@@ -99,15 +63,6 @@
       
       <guid>https://chaingng.github.io/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7291&amp;amp;rd=10657 誕生日を表わす１０桁の数字が与えられる。 その数字を&#34;YYMMDDCCCC&#34;とすると、以下で表わされる。 ＹＹが１９０７～２００６までの西</description>
-    </item>
-    
-    <item>
-      <title>SRM 184 DIV1 Easy - RaceCalculator (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 31 Jan 2014 23:05:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-184-div1-easy---racecalculator-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2250&amp;amp;rd=4740 ・人がある道を走るシチュエーションで、通過した距離とその時点での時間が任意の地点分与えられる。 ・同じペースで走ることができ、予想される</description>
     </item>
     
     <item>
@@ -135,15 +90,6 @@
       
       <guid>https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11146&amp;amp;rd=14238 ・ある数列が与えられる。 ・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。 このとき、もとの等差数列を求める。 解き方</description>
-    </item>
-    
-    <item>
-      <title>SRM 207 DIV1 Easy - RegularSeason (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 25 Jan 2014 20:56:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-207-div1-easy---regularseason-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2866&amp;amp;rd=5853 ・複数のチームが総当たりで対戦する。 ・各チームは与えられた対戦数をホーム・アウェーで対戦する。 ・対戦する際の勝率が与えられる。 ・勝つ試</description>
     </item>
     
     <item>

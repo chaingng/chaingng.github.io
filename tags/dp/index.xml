@@ -111,15 +111,6 @@
     </item>
     
     <item>
-      <title>SRM 199 DIV1 Easy - TriangleCount （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 14:59:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-199-div1-easy---trianglecount-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=2889&amp;amp;rd=5074 １辺の長さが与えられる。 各辺の長さが１の三角形を組み合わせて、１辺の長さが与えられた長さになるよう 三角形を作る。 このとき、１辺が１～与</description>
-    </item>
-    
-    <item>
       <title>SRM 488 DIV1 Easy - TheBoredomDivOne (復習××)</title>
       <link>https://chaingng.github.io/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 01 Feb 2014 14:05:00 +0000</pubDate>
@@ -144,15 +135,6 @@
       
       <guid>https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11284&amp;amp;rd=14430 ・nA,nB,paramA,paramBが与えられる。 ・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけpara</description>
-    </item>
-    
-    <item>
-      <title>SRM 249 DIV1 Easy - TableSeating (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 25 Jan 2014 10:51:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-249-div1-easy---tableseating-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4616&amp;amp;rd=7224 ・テーブルが複数存在する。 ・各グループ人数ごとに来店する確率が与えられる。 来店する回数に制限はない。 ・グループがきたときに、空いている</description>
     </item>
     
     <item>
