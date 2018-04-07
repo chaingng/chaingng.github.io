@@ -2744,15 +2744,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 330 DIV1 Middle - PrefixFreeSubsets　（復習×○）</title>
-      <link>https://chaingng.github.io/post/srm-330-div1-middle---prefixfreesubsets%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 29 Mar 2014 08:25:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-330-div1-middle---prefixfreesubsets%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=1520 複数の文字列集合が与えられる。 そこから任意のサブ集合をピックアップして、そのうちのどのペアも接頭辞になっていないようにしたい。 このとき</description>
-    </item>
-    
-    <item>
       <title>SRM 398 DIV1 Middle - CountPaths　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Wed, 26 Mar 2014 21:45:00 +0000</pubDate>
@@ -3023,15 +3014,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 331 DIV1 Easy - CarolsSinging (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 21 Feb 2014 10:02:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-331-div1-easy---carolssinging-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7280&amp;amp;rd=10011 一つの歌をみんなで歌いたいが、それぞれの人で覚えている箇所が違う。 このとき、みんなが少なくとも１箇所歌える最小の歌詞の長さを求める。 解</description>
-    </item>
-    
-    <item>
       <title>SRM 368 DIV1 Easy - JumpingBoard (復習×○)</title>
       <link>https://chaingng.github.io/post/srm-368-div1-easy---jumpingboard-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Fri, 21 Feb 2014 00:19:00 +0000</pubDate>
@@ -3200,15 +3182,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10196&amp;amp;rd=13517 カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。 シャッフル方法についてプレイヤーは知っている。 プレイヤ</description>
-    </item>
-    
-    <item>
-      <title>SRM 333 DIV1 Easy - BirthNumbersValidator (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 17:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-333-div1-easy---birthnumbersvalidator-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7291&amp;amp;rd=10657 誕生日を表わす１０桁の数字が与えられる。 その数字を&#34;YYMMDDCCCC&#34;とすると、以下で表わされる。 ＹＹが１９０７～２００６までの西</description>
     </item>
     
     <item>
