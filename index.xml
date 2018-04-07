@@ -2582,15 +2582,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 339 DIV1 Middle - TestBettingStrategy　（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-339-div1-middle---testbettingstrategy%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Thu, 15 May 2014 22:30:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-339-div1-middle---testbettingstrategy%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 最初にコインをinitSum個持っており、goalSum個まで増やしたい。 rounds回のラウンドがあり、最初のラウンドはコインを１個か</description>
-    </item>
-    
-    <item>
       <title>SRM 381 DIV1 Middle - TheHomework　（復習○）</title>
       <link>https://chaingng.github.io/post/srm-381-div1-middle---thehomework%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Thu, 15 May 2014 08:38:00 +0000</pubDate>
@@ -2744,15 +2735,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 350 DIV1 Middle -  StarsInGraphs　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-350-div1-middle----starsingraphs%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 29 Mar 2014 09:45:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-350-div1-middle----starsingraphs%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=1666 有効グラフが存在する。 ある一つのノードについて、starpathがC個以下であればそのノードはstarとみなされる。 starpathは</description>
-    </item>
-    
-    <item>
       <title>SRM 398 DIV1 Middle - CountPaths　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-398-div1-middle---countpaths%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Wed, 26 Mar 2014 21:45:00 +0000</pubDate>
@@ -2807,15 +2789,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 338 DIV1 Middle - RandomSwaps　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-338-div1-middle---randomswaps%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 16 Mar 2014 18:27:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-338-div1-middle---randomswaps%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=1540 ある文字列の長さarrayLengthが与えられ、その文字列の任意の２つを選んでswapすることをswapCount数繰り返す。 swa</description>
-    </item>
-    
-    <item>
       <title>SRM 400 DIV1 Middle -ReversalChain　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-400-div1-middle--reversalchain%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 16 Mar 2014 17:16:00 +0000</pubDate>
@@ -2831,15 +2804,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-407-div1-middle--pointsgame%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://topcoder.bgcoder.com/print.php?id=2209 (x,y)座標の点が複数存在し、２人のプレイヤーが交互に選んでいく。 最初は自分からスタートし、選んだ点を赤に塗る。次は相手の番に移り、</description>
-    </item>
-    
-    <item>
-      <title>SRM 349 DIV1 Middle -DiceGames　（復習×○）</title>
-      <link>https://chaingng.github.io/post/srm-349-div1-middle--dicegames%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 15 Mar 2014 16:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-349-div1-middle--dicegames%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=1669 サイコロが複数与えられる。 各サイコロは、いくつまでの目をもっているかあらかじめわかっている。 このとき、すべてのサイコロの目の出方の組み</description>
     </item>
     
     <item>
@@ -3317,15 +3281,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8576&amp;amp;rd=13507 ・整数Ｎが与えられる。 ・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。 解き方 法則が少し複雑。 サンプルを見</description>
-    </item>
-    
-    <item>
-      <title>SRM 340 DIV1 Easy - ProblemsToSolve ××○</title>
-      <link>https://chaingng.github.io/post/srm-340-div1-easy---problemstosolve-/</link>
-      <pubDate>Mon, 20 Jan 2014 19:09:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-340-div1-easy---problemstosolve-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7504&amp;amp;rd=10664 ・各問題について、その楽しさの値が与えられる。 ・最初は０番目の問題を解く。その後、次の問題かその次の問題を選んでいく。 ・選んだ問題の楽</description>
     </item>
     
     <item>
