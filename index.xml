@@ -2699,15 +2699,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 238 DIV1 Middle - SequenceSync　（復習×）</title>
-      <link>https://chaingng.github.io/post/srm-238-div1-middle---sequencesync%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 15 Apr 2014 08:31:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-238-div1-middle---sequencesync%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 オートマトン図が与えられ、各状態について１～４までの数字が与えられた時に遷移する状態が与えられる。 例） １行目：１ ２ ２ ３ 状態０が１～４を与</description>
-    </item>
-    
-    <item>
       <title>SRM 511 DIV1 Middle - FiveHundredEleven　（復習×）</title>
       <link>https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Mon, 14 Apr 2014 23:32:00 +0000</pubDate>
@@ -2957,15 +2948,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-299-div1-middle--palindromepartition%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://topcoder.bgcoder.com/print.php?id=1160 A~Zからなる文字列がある。 これをサブ文字列に分割して各サブ文字列が回文になるようにしたい。 このときの最小のサブ文字列の数を求める。 解</description>
-    </item>
-    
-    <item>
-      <title>SRM 229 DIV1 Middle -BusinessPlan　（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-229-div1-middle--businessplan%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 14 Mar 2014 08:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-229-div1-middle--businessplan%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 様々な商品が存在し、各商品についてexpenseの金額を投資するとptime後にrevenueの収入が得られることがわかっている。 最初に</description>
     </item>
     
     <item>
@@ -3317,15 +3299,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/</guid>
       <description>最近Androidのrootを取るのにbootloaderのアンロックを行ったのでメモ。 BootLoaderとは 起動直後のコンピュータはハー</description>
-    </item>
-    
-    <item>
-      <title>SRM 230 DIV1 Easy - SortEstimate （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 08:53:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-230-div1-easy---sortestimate-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=3561&amp;amp;rd=6519 ソートアルゴリズムの計算量を計算したい。 計算量はc*n*log2(n)で表わされ、これをtime以下でかつ最大となるときのｎを求めたい</description>
     </item>
     
     <item>
