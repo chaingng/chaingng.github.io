@@ -102,121 +102,6 @@ ga('send', 'pageview');
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
-				<a href="/post/srm-372-div1-easy---roadconstruction-/" rel="bookmark">SRM 372 DIV1 Easy - RoadConstruction ○</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-372-div1-easy---roadconstruction-/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-372-div1-easy---roadconstruction-/" alt="はてなブックマーク - SRM 372 DIV1 Easy - RoadConstruction ○" title="はてなブックマーク - SRM 372 DIV1 Easy - RoadConstruction ○">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-08-10T09:45:00">August 10, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8223&amp;rd=10789 解き方 解くだけ。１度一周して確かめるなど、うまく条件を整理するのがポイント。 コード class RoadConstruction { public: int getExitTime(vector&lt;string&gt; lanes) { int n=lanes.size(); int ret=0; int flag[n]; memset(flag,0,sizeof(flag)); int at=0,prev=-1; while(1){ while(at&lt;n &amp;&amp; lanes[at].empty())at++; if(at&lt;n &amp;&amp; flag[at]==0){ prev=at; flag[at]=1;
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-372-div1-easy---roadconstruction-/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/srm-373-div1-easy---stringfragmentation-/" rel="bookmark">SRM 373 DIV1 Easy - StringFragmentation ○</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-373-div1-easy---stringfragmentation-/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-373-div1-easy---stringfragmentation-/" alt="はてなブックマーク - SRM 373 DIV1 Easy - StringFragmentation ○" title="はてなブックマーク - SRM 373 DIV1 Easy - StringFragmentation ○">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-08-09T20:42:00">August 09, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8087&amp;rd=10791 解き方 全探索可能なので解くだけ。 コード class StringFragmentation { public: int largestFontSize(string text, int width, int height) { vector&lt;int&gt; vx; stringstream out(text); for(string str;out&gt;&gt;str;){ vx.push_back(str.size()); } int n=vx.size(); for(int i=5000;i&gt;=8;i--){ int at=0,lines=0; while(at&lt;n){ int cur=0; if(vx[at]*(i+2)&lt;=width){ cur+=vx[at]*(i+2); }else break; while(at+1&lt;n &amp;&amp; cur+(vx[at+1]+1)*(i+2)&lt;=width){ cur+=(vx[at+1]+1)*(i+2); at++; } lines++; at++; } if(at&gt;=n &amp;&amp; lines*2*i&lt;=height)return i; } return
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-373-div1-easy---stringfragmentation-/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/srm-374-div1-easy---syllablesorting-x/" rel="bookmark">SRM 374 DIV1 Easy - SyllableSorting x</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-374-div1-easy---syllablesorting-x/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-374-div1-easy---syllablesorting-x/" alt="はてなブックマーク - SRM 374 DIV1 Easy - SyllableSorting x" title="はてなブックマーク - SRM 374 DIV1 Easy - SyllableSorting x">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-08-08T06:42:00">August 08, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8374&amp;rd=10793 解き方 文字列操作の問題。 問題文の最後の比較条件を見落としてしまった。。 コード class SyllableSorting { public: bool ispossible(char cur){ char ch[]={'a','e','i','o','u'}; FORE(i,0,5)if(cur==ch[i])return false; return true; } vector&lt;string&gt; calc(string w){ int n=w.size(); vector&lt;string&gt; ans; int at=0; while(at&lt;n){ string str=""; int flag=0; while(at&lt;n){
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-374-div1-easy---syllablesorting-x/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/srm-375-div1-easy---divisiblebydigits-/" rel="bookmark">SRM 375 DIV1 Easy - DivisibleByDigits ○</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-375-div1-easy---divisiblebydigits-/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-375-div1-easy---divisiblebydigits-/" alt="はてなブックマーク - SRM 375 DIV1 Easy - DivisibleByDigits ○" title="はてなブックマーク - SRM 375 DIV1 Easy - DivisibleByDigits ○">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-08-07T13:44:00">August 07, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8318&amp;rd=10794 解き方 2~9すべての最大公約数は2520なので 答えは最大でもn+5桁程度であり、全探索が可能。 コード class DivisibleByDigits { public: bool ispossible(long long x,vector&lt;int&gt; vx){ FORE(i,0,vx.size())if(x%vx[i]!=0)return false; return true; } long long getContinuation(int
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-375-div1-easy---divisiblebydigits-/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/srm-381-div1-easy---thedicegame-x/" rel="bookmark">SRM 381 DIV1 Easy - TheDiceGame x</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-381-div1-easy---thedicegame-x/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-381-div1-easy---thedicegame-x/" alt="はてなブックマーク - SRM 381 DIV1 Easy - TheDiceGame x" title="はてなブックマーク - SRM 381 DIV1 Easy - TheDiceGame x">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-08-05T10:04:00">August 05, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8414&amp;rd=10804 解き方 dpで解く。 前の状態から現在の状態までに行ける全ての場合について和をとっていく。 前の状態から＋１回かつサイコロなので1/6を掛け
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-381-div1-easy---thedicegame-x/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
 				<a href="/post/srm-663-div1-easy---abbadiv1-/" rel="bookmark">SRM 663 DIV1 Easy - ABBADiv1 ○</a>
 				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-663-div1-easy---abbadiv1-/">
 					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-663-div1-easy---abbadiv1-/" alt="はてなブックマーク - SRM 663 DIV1 Easy - ABBADiv1 ○" title="はてなブックマーク - SRM 663 DIV1 Easy - ABBADiv1 ○">
@@ -263,21 +148,21 @@ ga('send', 'pageview');
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
-				<a href="/post/srm-380-div1-easy---lameknight-/" rel="bookmark">SRM 380 DIV1 Easy - LameKnight ○</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-380-div1-easy---lameknight-/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-380-div1-easy---lameknight-/" alt="はてなブックマーク - SRM 380 DIV1 Easy - LameKnight ○" title="はてなブックマーク - SRM 380 DIV1 Easy - LameKnight ○">
+				<a href="/post/srm-385-div1-easy---underscorejustification-/" rel="bookmark">SRM 385 DIV1 Easy - UnderscoreJustification ○</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-385-div1-easy---underscorejustification-/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-385-div1-easy---underscorejustification-/" alt="はてなブックマーク - SRM 385 DIV1 Easy - UnderscoreJustification ○" title="はてなブックマーク - SRM 385 DIV1 Easy - UnderscoreJustification ○">
 				</a>
 			</h3>
 			<div class="list__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-08-04T06:31:00">August 04, 2015</time>
+				<time class="list__meta-date" datetime="2015-07-27T20:18:00">July 27, 2015</time>
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8183&amp;rd=10802 解き方 条件より、すべての４方向にいける場合とそれ以外を場合分けする。 次に高さの値によって場合分けできることがわかる。 高さが３以上ある場
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8482&amp;rd=10810 解き方 各スペースに挿入するアンダースコアの数の差は最大１なので、 スペースの数と挿入できるアンダースコアの数がわかれば 答えは一意に定まる
 		</div>
 		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-380-div1-easy---lameknight-/">Read more…</a>
+			<a class="list__footer-readmore btn" href="/post/srm-385-div1-easy---underscorejustification-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -286,21 +171,136 @@ ga('send', 'pageview');
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
-				<a href="/post/srm-379-div1-easy---sellingproducts-/" rel="bookmark">SRM 379 DIV1 Easy - SellingProducts ○</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-379-div1-easy---sellingproducts-/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-379-div1-easy---sellingproducts-/" alt="はてなブックマーク - SRM 379 DIV1 Easy - SellingProducts ○" title="はてなブックマーク - SRM 379 DIV1 Easy - SellingProducts ○">
+				<a href="/post/srm-386-div1-easy---candidatekeys-/" rel="bookmark">SRM 386 DIV1 Easy - CandidateKeys △</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-386-div1-easy---candidatekeys-/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-386-div1-easy---candidatekeys-/" alt="はてなブックマーク - SRM 386 DIV1 Easy - CandidateKeys △" title="はてなブックマーク - SRM 386 DIV1 Easy - CandidateKeys △">
 				</a>
 			</h3>
 			<div class="list__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-08-04T06:23:00">August 04, 2015</time>
+				<time class="list__meta-date" datetime="2015-07-26T04:58:00">July 26, 2015</time>
 			</div>
 		</header>
 		<div class="list__excerpt">
-			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8440&amp;rd=10800 解き方 一見すべての価格について調べる必要があり、10^6なのでそれでも解けそう。 ただし少し考えると各顧客の最大購入価格が一番利益を得る
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8444&amp;rd=11120 解き方 ビット列ですべての組み合わせについて調べれば良い。 ただし、その部分集合で満たすものがあれば偽になるので これまで調べたビット列で真
 		</div>
 		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/srm-379-div1-easy---sellingproducts-/">Read more…</a>
+			<a class="list__footer-readmore btn" href="/post/srm-386-div1-easy---candidatekeys-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-387-div1-easy---foxesoftheroundtable-/" rel="bookmark">SRM 387 DIV1 Easy - FoxesOfTheRoundTable △</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-387-div1-easy---foxesoftheroundtable-/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-387-div1-easy---foxesoftheroundtable-/" alt="はてなブックマーク - SRM 387 DIV1 Easy - FoxesOfTheRoundTable △" title="はてなブックマーク - SRM 387 DIV1 Easy - FoxesOfTheRoundTable △">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-07-25T06:48:00">July 25, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8527&amp;rd=11121 解き方 全てのjoker boxの選び方について全探索する。 joker box以外の箱について２色以上入っている箱は必ず動かさなければいけない。 その
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-387-div1-easy---foxesoftheroundtable-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-388-div1-easy---smoothnumbers-/" rel="bookmark">SRM 388 DIV1 Easy - SmoothNumbers ○</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-388-div1-easy---smoothnumbers-/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-388-div1-easy---smoothnumbers-/" alt="はてなブックマーク - SRM 388 DIV1 Easy - SmoothNumbers ○" title="はてなブックマーク - SRM 388 DIV1 Easy - SmoothNumbers ○">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-07-25T05:21:00">July 25, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8519&amp;rd=11122 解き方 あらかじめ対象となる全ての数について素数かどうか判定しておけば O(sqrt(10^5) * 10^5)=O(3*10^7)なので間に合う。 素数かどうかの判
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-388-div1-easy---smoothnumbers-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-389-div1-easy---approximatedivision-/" rel="bookmark">SRM 389 DIV1 Easy - ApproximateDivision ○</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-389-div1-easy---approximatedivision-/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-389-div1-easy---approximatedivision-/" alt="はてなブックマーク - SRM 389 DIV1 Easy - ApproximateDivision ○" title="はてなブックマーク - SRM 389 DIV1 Easy - ApproximateDivision ○">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-07-25T05:00:00">July 25, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=6125&amp;rd=11123 解き方 問題分の通りに実装すればよい。 ただし、c/tの計算はそれぞれc,tをかけてから割り算を行うとオーバーフローするので c/tを毎回掛
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-389-div1-easy---approximatedivision-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-390-div1-easy---concatenatenumber-/" rel="bookmark">SRM 390 DIV1 Easy - ConcatenateNumber ○</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-390-div1-easy---concatenatenumber-/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-390-div1-easy---concatenatenumber-/" alt="はてなブックマーク - SRM 390 DIV1 Easy - ConcatenateNumber ○" title="はてなブックマーク - SRM 390 DIV1 Easy - ConcatenateNumber ○">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-07-25T04:40:00">July 25, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8589&amp;rd=11124 解き方 そのままの整数でシミュレーションすると計算量が間に合わないが MODにして計算してあげるとシンプルになる。 MOD後の数を保存してお
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-390-div1-easy---concatenatenumber-/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/srm-391-div1-easy---isomorphicwords-/" rel="bookmark">SRM 391 DIV1 Easy - IsomorphicWords ○</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/srm-391-div1-easy---isomorphicwords-/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/srm-391-div1-easy---isomorphicwords-/" alt="はてなブックマーク - SRM 391 DIV1 Easy - IsomorphicWords ○" title="はてなブックマーク - SRM 391 DIV1 Easy - IsomorphicWords ○">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-07-24T18:14:00">July 24, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			問題 http://community.topcoder.com/stat?c=problem_statement&amp;pm=8175&amp;rd=11125 解き方 全ての文字について、可能な限り昇順になるように変換する。 変換後、一致する文字列群について組み合わせを計算してあげればよい。 コード
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/srm-391-div1-easy---isomorphicwords-/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -309,7 +309,7 @@ ga('send', 'pageview');
 		
 <div class="pagination clearfix">
 	<a class="pagination__item pagination__item--prev" href="/post/page/4/">«</a>
-	<span class="pagination__item pagination__item--current">5/46</span>
+	<span class="pagination__item pagination__item--current">5/45</span>
 	<a class="pagination__item pagination__item--next" href="/post/page/6/">»</a>
 </div>
 
@@ -621,12 +621,11 @@ ga('send', 'pageview');
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-625-div1-easy---palindromepermutations-/">SRM 625 DIV1 Easy - PalindromePermutations (×)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-607-div1-easy---palindromicsubstringsdiv1-xx/">SRM 607 DIV1 Easy - PalindromicSubstringsDiv1 xx</a></li>
 			</ul>
-		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装 (7)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%ae%9f%e8%a3%85" title="実装">実装 (6)</a>
 			<ul class="widget__list">
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-648-div1-easy---ab-/">SRM 648 DIV1 Easy - AB (×)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-637-div1-easy---divisorspower-/">SRM 637 DIV1 Easy - DivisorsPower (○)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/">SRM 417 DIV1 Easy - TemplateMatching （復習○）</a></li>
-				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/">SRM 382 DIV1 Easy - CollectingRiders (復習×○)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/">SRM 485 DIV1 Easy - AfraidOfEven (復習×)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm-529-div1-easy---kingsort-%E5%BE%A9%E7%BF%92/">SRM 529 DIV1 Easy - KingSort (復習×○)</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/srm576-div2--level2/">SRM576 DIV2 -Level2</a></li>

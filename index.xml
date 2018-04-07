@@ -395,51 +395,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 372 DIV1 Easy - RoadConstruction ○</title>
-      <link>https://chaingng.github.io/post/srm-372-div1-easy---roadconstruction-/</link>
-      <pubDate>Mon, 10 Aug 2015 09:45:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-372-div1-easy---roadconstruction-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8223&amp;amp;rd=10789 解き方 解くだけ。１度一周して確かめるなど、うまく条件を整理するのがポイント。 コード class RoadConstruction { public: int getExitTime(vector&amp;lt;string&amp;gt; lanes) { int n=lanes.size(); int ret=0; int flag[n]; memset(flag,0,sizeof(flag)); int at=0,prev=-1; while(1){ while(at&amp;lt;n &amp;amp;&amp;amp; lanes[at].empty())at++; if(at&amp;lt;n &amp;amp;&amp;amp; flag[at]==0){ prev=at; flag[at]=1;</description>
-    </item>
-    
-    <item>
-      <title>SRM 373 DIV1 Easy - StringFragmentation ○</title>
-      <link>https://chaingng.github.io/post/srm-373-div1-easy---stringfragmentation-/</link>
-      <pubDate>Sun, 09 Aug 2015 20:42:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-373-div1-easy---stringfragmentation-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8087&amp;amp;rd=10791 解き方 全探索可能なので解くだけ。 コード class StringFragmentation { public: int largestFontSize(string text, int width, int height) { vector&amp;lt;int&amp;gt; vx; stringstream out(text); for(string str;out&amp;gt;&amp;gt;str;){ vx.push_back(str.size()); } int n=vx.size(); for(int i=5000;i&amp;gt;=8;i--){ int at=0,lines=0; while(at&amp;lt;n){ int cur=0; if(vx[at]*(i+2)&amp;lt;=width){ cur+=vx[at]*(i+2); }else break; while(at+1&amp;lt;n &amp;amp;&amp;amp; cur+(vx[at+1]+1)*(i+2)&amp;lt;=width){ cur+=(vx[at+1]+1)*(i+2); at++; } lines++; at++; } if(at&amp;gt;=n &amp;amp;&amp;amp; lines*2*i&amp;lt;=height)return i; } return</description>
-    </item>
-    
-    <item>
-      <title>SRM 374 DIV1 Easy - SyllableSorting x</title>
-      <link>https://chaingng.github.io/post/srm-374-div1-easy---syllablesorting-x/</link>
-      <pubDate>Sat, 08 Aug 2015 06:42:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-374-div1-easy---syllablesorting-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8374&amp;amp;rd=10793 解き方 文字列操作の問題。 問題文の最後の比較条件を見落としてしまった。。 コード class SyllableSorting { public: bool ispossible(char cur){ char ch[]={&#39;a&#39;,&#39;e&#39;,&#39;i&#39;,&#39;o&#39;,&#39;u&#39;}; FORE(i,0,5)if(cur==ch[i])return false; return true; } vector&amp;lt;string&amp;gt; calc(string w){ int n=w.size(); vector&amp;lt;string&amp;gt; ans; int at=0; while(at&amp;lt;n){ string str=&#34;&#34;; int flag=0; while(at&amp;lt;n){</description>
-    </item>
-    
-    <item>
-      <title>SRM 375 DIV1 Easy - DivisibleByDigits ○</title>
-      <link>https://chaingng.github.io/post/srm-375-div1-easy---divisiblebydigits-/</link>
-      <pubDate>Fri, 07 Aug 2015 13:44:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-375-div1-easy---divisiblebydigits-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8318&amp;amp;rd=10794 解き方 2~9すべての最大公約数は2520なので 答えは最大でもn+5桁程度であり、全探索が可能。 コード class DivisibleByDigits { public: bool ispossible(long long x,vector&amp;lt;int&amp;gt; vx){ FORE(i,0,vx.size())if(x%vx[i]!=0)return false; return true; } long long getContinuation(int</description>
-    </item>
-    
-    <item>
-      <title>SRM 381 DIV1 Easy - TheDiceGame x</title>
-      <link>https://chaingng.github.io/post/srm-381-div1-easy---thedicegame-x/</link>
-      <pubDate>Wed, 05 Aug 2015 10:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-381-div1-easy---thedicegame-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8414&amp;amp;rd=10804 解き方 dpで解く。 前の状態から現在の状態までに行ける全ての場合について和をとっていく。 前の状態から＋１回かつサイコロなので1/6を掛け</description>
-    </item>
-    
-    <item>
       <title>SRM 663 DIV1 Easy - ABBADiv1 ○</title>
       <link>https://chaingng.github.io/post/srm-663-div1-easy---abbadiv1-/</link>
       <pubDate>Wed, 05 Aug 2015 09:39:00 +0000</pubDate>
@@ -455,60 +410,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-664-div1-easy---bearplays-x/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13916&amp;amp;rd=16513 解き方 数学的に解くことができるのに気がつけるか。 A+B=Sとすると、 A&amp;lt;Bのとき、A=2*A=2A%S A&amp;gt;Bのとき、A=A</description>
-    </item>
-    
-    <item>
-      <title>SRM 380 DIV1 Easy - LameKnight ○</title>
-      <link>https://chaingng.github.io/post/srm-380-div1-easy---lameknight-/</link>
-      <pubDate>Tue, 04 Aug 2015 06:31:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-380-div1-easy---lameknight-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8183&amp;amp;rd=10802 解き方 条件より、すべての４方向にいける場合とそれ以外を場合分けする。 次に高さの値によって場合分けできることがわかる。 高さが３以上ある場</description>
-    </item>
-    
-    <item>
-      <title>SRM 379 DIV1 Easy - SellingProducts ○</title>
-      <link>https://chaingng.github.io/post/srm-379-div1-easy---sellingproducts-/</link>
-      <pubDate>Tue, 04 Aug 2015 06:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-379-div1-easy---sellingproducts-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8440&amp;amp;rd=10800 解き方 一見すべての価格について調べる必要があり、10^6なのでそれでも解けそう。 ただし少し考えると各顧客の最大購入価格が一番利益を得る</description>
-    </item>
-    
-    <item>
-      <title>SRM 378 DIV1 Easy - TrueStatements ○</title>
-      <link>https://chaingng.github.io/post/srm-378-div1-easy---truestatements-/</link>
-      <pubDate>Tue, 04 Aug 2015 06:20:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-378-div1-easy---truestatements-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8390&amp;amp;rd=10798 解き方 正しいことを言っている人数を０〜５０までのすべてについて調べ、 矛盾しないもののうち最大の人数が答えになる。 コード class TrueStatements { public: int numberTrue(vector&amp;lt;int&amp;gt; statements) {</description>
-    </item>
-    
-    <item>
-      <title>SRM 376 DIV1 Easy - Trainyard x</title>
-      <link>https://chaingng.github.io/post/srm-376-div1-easy---trainyard-x/</link>
-      <pubDate>Tue, 04 Aug 2015 06:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-376-div1-easy---trainyard-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6555&amp;amp;rd=10796 解き方 実装問題。システムテストで落ちやすい問題なので、すべて条件文をもれなく書かないといけない。 コード class Trainyard { public: int reachableSquares(vector&amp;lt;string&amp;gt; layout, int fuel) { int h=layout.size(),w=layout[0].size(); int dr[]={1,0,-1,0},dc[]={0,1,0,-1}; int dp[4][10][10];</description>
-    </item>
-    
-    <item>
-      <title>SRM 383 DIV1 Easy - Planks ○</title>
-      <link>https://chaingng.github.io/post/srm-383-div1-easy---planks-/</link>
-      <pubDate>Thu, 30 Jul 2015 10:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-383-div1-easy---planks-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8396&amp;amp;rd=10806 解き方 １つの木の長さを１〜１００００のそれぞれに固定して考える。 あとは、与えられた木がその長さで割った時、値がプラスなら足していき 最大</description>
-    </item>
-    
-    <item>
-      <title>SRM 384 DIV1 Easy - Library ○</title>
-      <link>https://chaingng.github.io/post/srm-384-div1-easy---library-/</link>
-      <pubDate>Tue, 28 Jul 2015 04:01:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-384-div1-easy---library-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=7659&amp;amp;rd=10808 解き方 解くだけ。 setを使えば重複の考慮も不要で、条件を満たしているかも簡単に判断できる。 コード class Library { public: int documentAccess(vector&amp;lt;string&amp;gt; records, vector&amp;lt;string&amp;gt; userGroups, vector&amp;lt;string&amp;gt; roomRights) { set&amp;lt;string&amp;gt; user,room; FORE(i,0,userGroups.size())user.insert(userGroups[i]); FORE(i,0,roomRights.size())room.insert(roomRights[i]); set&amp;lt;string&amp;gt; ans; FORE(i,0,records.size()){</description>
     </item>
     
     <item>
@@ -2564,30 +2465,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 381 DIV1 Middle - TheHomework　（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-381-div1-middle---thehomework%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Thu, 15 May 2014 08:38:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-381-div1-middle---thehomework%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 数字の配列が与えられ、最初の配列からもう一つの配列へ変換したい。 可能な操作は以下の３通り。 ・追加：最大で元の配列の分だけ、好きな数字を追</description>
-    </item>
-    
-    <item>
       <title>SRM 548 DIV1 Middle - KingdomAndDice　（復習○）</title>
       <link>https://chaingng.github.io/post/srm-548-div1-middle---kingdomanddice%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Tue, 13 May 2014 23:06:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-548-div1-middle---kingdomanddice%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 サイコロが２つあり、２人のプレイヤーがそれぞれ１つのサイコロを振って出た目が大きい方が勝つゲームを行う。 ゲームはできるだけ公平にしたいの</description>
-    </item>
-    
-    <item>
-      <title>SRM 375 DIV1 Middle - DateFieldCorrection　（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-375-div1-middle---datefieldcorrection%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 12 May 2014 23:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-375-div1-middle---datefieldcorrection%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 キーボードで「”月” ”日”」を打ちたいが、タイプミスをしばしば起こしてしまう。 タイプミスはキーボードの隣り合う文字についてはコスト１、ス</description>
     </item>
     
     <item>
@@ -2606,15 +2489,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-610-div1-middle---albertotheaviator%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 車を運転しており、最初に持っている燃料Fが与えられる。 また、複数の給油ポイントがあり、そこまでにいくのに必要な燃料durationと給油</description>
-    </item>
-    
-    <item>
-      <title>SRM 383 DIV1 Middle - FloorBoards　（復習×）</title>
-      <link>https://chaingng.github.io/post/srm-383-div1-middle---floorboards%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 02 May 2014 08:38:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-383-div1-middle---floorboards%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 ２次元のセルで示される天井が存在し、すべてにすきまなく屋根を作りたい。 屋根を作るのに必要な板は幅が１であり、高さは好きに決めてもよい。 ま</description>
     </item>
     
     <item>
@@ -2798,15 +2672,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 371 DIV1 Middle - ChessMatchup　（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-371-div1-middle---chessmatchup%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 08 Mar 2014 15:38:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-371-div1-middle---chessmatchup%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=1718 それぞれN人で構成される2つのチームが、団体戦でチェスの試合を行う。 試合はＮ回行われ、各試合は各チームのメンバ１対１で行われる。 各メン</description>
-    </item>
-    
-    <item>
       <title>SRM 411 DIV1 Middle - HoleCakeCuts　（復習××○）</title>
       <link>https://chaingng.github.io/post/srm-411-div1-middle---holecakecuts%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 08 Mar 2014 14:36:00 +0000</pubDate>
@@ -2948,15 +2813,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10275&amp;amp;rd=13697 有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。 ただし、根のノードはー１が入っている。 この有向グラフに、あ</description>
-    </item>
-    
-    <item>
-      <title>SRM 382 DIV1 Easy - CollectingRiders (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 19 Feb 2014 21:28:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-382-div1-easy---collectingriders-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8319&amp;amp;rd=10805 通常のチェスのナイトの動きを１度にＫ回まで動くことのできるＫ－ナイトをが存在し、 ボード上に配置されている。ボード上の数がＫにあたる。 こ</description>
     </item>
     
     <item>
