@@ -404,24 +404,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 393 DIV1 Easy - InstantRunoffVoting ○</title>
-      <link>https://chaingng.github.io/post/srm-393-div1-easy---instantrunoffvoting-/</link>
-      <pubDate>Fri, 24 Jul 2015 17:07:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-393-div1-easy---instantrunoffvoting-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8607&amp;amp;rd=11127 解き方 問題分の通り実装し、収束するまで繰り返せば良い。 コード class InstantRunoffVoting { public: int winner(vector&amp;lt;string&amp;gt; voters) { int n=voters.size(),m=voters[0].size(); int used[10],v[10]; memset(used,0,sizeof(used)); while(1){ memset(v,0,sizeof(v)); int finish=1; FORE(i,0,m)if(used[i]==0)finish=0; if(finish)break; FORE(i,0,n){ int idx=0; while(used[voters[i][idx]-&#39;0&#39;]==1)idx++; v[voters[i][idx]-&#39;0&#39;]++; } FORE(i,0,m)if(v[i]&amp;gt;n*0.5)return i; int mx=100; FORE(i,0,m)if(used[i]==0)mx=min(mx,v[i]); FORE(i,0,m)if(v[i]==mx)used[i]=1; } return -1; } };</description>
-    </item>
-    
-    <item>
-      <title>SRM 399 DIV1 Easy - AvoidingProduct x</title>
-      <link>https://chaingng.github.io/post/srm-399-div1-easy---avoidingproduct-x/</link>
-      <pubDate>Fri, 24 Jul 2015 15:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-399-div1-easy---avoidingproduct-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8758&amp;amp;rd=12171 解き方 zの探索を枝刈りすることによって、ほぼx,yのすべての組み合わせだけ調べればよいので O(10^6)で全探索可能。 調べる範囲として</description>
-    </item>
-    
-    <item>
       <title>SRM 662 DIV1 Easy - FoxesOfTheRoundTable △</title>
       <link>https://chaingng.github.io/post/srm-662-div1-easy---foxesoftheroundtable-/</link>
       <pubDate>Sun, 12 Jul 2015 15:18:00 +0000</pubDate>
@@ -2372,15 +2354,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-469-div1-middle---themoviesleveltwodivone%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 プレイヤーは複数存在するホラー映画を観る。 各ホラー映画について、映画の長さlengthと恐いシーンが出現するときの映画開始からの長さsc</description>
-    </item>
-    
-    <item>
-      <title>SRM 399 DIV1 Middle - BinarySum （復習x）</title>
-      <link>https://chaingng.github.io/post/srm-399-div1-middle---binarysum-%E5%BE%A9%E7%BF%92x/</link>
-      <pubDate>Sun, 27 Apr 2014 13:11:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-399-div1-middle---binarysum-%E5%BE%A9%E7%BF%92x/</guid>
-      <description>問題 整数a,b,cが与えられる。 a,b,cを２進数に変換し、a+b=cとなるように２進数の1の位置を変化させる。 このとき、式が成立する最小の</description>
     </item>
     
     <item>
