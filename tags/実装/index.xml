@@ -48,6 +48,24 @@
     </item>
     
     <item>
+      <title>SRM 242 DIV1 Easy - GuessCard (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Tue, 11 Feb 2014 16:09:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-242-div1-easy---guesscard-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4490&amp;amp;rd=7217 行と列の長さが与えられ、最初は１行目から順に１，２、３・・・と数字が入っている。 ここで、ある数字を思い浮かべたとき、その数字が何列目に</description>
+    </item>
+    
+    <item>
+      <title>SRM 245 DIV1 Easy - Flush (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 09 Feb 2014 00:04:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-245-div1-easy---flush-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=4487&amp;amp;rd=7220 ４種類の絵柄のトランプあり、それぞれの絵柄についてカード数が与えられる。 Ｎ枚のカードを引いたとき、最も多い同じ絵柄のカード数がFlus</description>
+    </item>
+    
+    <item>
       <title>SRM 265 DIV1 Easy - ScheduleStrength (復習○)</title>
       <link>https://chaingng.github.io/post/srm-265-div1-easy---schedulestrength-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 08 Feb 2014 10:02:00 +0000</pubDate>
