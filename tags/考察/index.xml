@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>SRM 168 DIV1 Easy - NumberGuesser (復習××)</title>
-      <link>https://chaingng.github.io/post/srm-168-div1-easy---numberguesser-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 09:52:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-168-div1-easy---numberguesser-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1869&amp;amp;rd=4645 １～９９９８までの数字を考える。 （例）４３２１ 各桁の数を入れ替えて、元の数字より小さければ入れ替えた数を引く。 （例）４３２１－１２３４</description>
-    </item>
-    
-    <item>
       <title>SRM 281 DIV1 Easy - IntegerGenerator (復習○)</title>
       <link>https://chaingng.github.io/post/srm-281-div1-easy---integergenerator-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 08 Feb 2014 11:01:00 +0000</pubDate>

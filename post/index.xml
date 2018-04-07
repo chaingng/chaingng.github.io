@@ -1727,15 +1727,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>2014 TCO Semifinal1 DIV1 Easy - ZooExchangeProgram</title>
-      <link>https://chaingng.github.io/post/2014-tco-semifinal1-div1-easy---zooexchangeprogram/</link>
-      <pubDate>Wed, 22 Apr 2015 15:53:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2014-tco-semifinal1-div1-easy---zooexchangeprogram/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13268&amp;amp;rd=16187 ・複数の動物がおりラベルが付けられている。 ・そのうち番号がlowerからupperまでのラベルの動物を各種類最低１匹ずつ選びたい。 その</description>
-    </item>
-    
-    <item>
       <title>SRM 646 DIV2 Middle - TheGridDivTwo</title>
       <link>https://chaingng.github.io/post/srm-646-div2-middle---thegriddivtwo/</link>
       <pubDate>Tue, 21 Apr 2015 17:08:00 +0000</pubDate>
@@ -2915,15 +2906,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 149 DIV1 Middle -MessageMess　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-149-div1-middle--messagemess%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 16 Mar 2014 10:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-149-div1-middle--messagemess%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=218 ある文字列を、与えられた辞書中の文字に分割したい。 ただし、分割の方法が複数ある場合は&#34;AMBIGOUS!&#34;、ない場合は&#34;IMPOSSI</description>
-    </item>
-    
-    <item>
       <title>SRM 294 DIV1 Middle -Palindromist　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-294-div1-middle--palindromist%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 16 Mar 2014 09:32:00 +0000</pubDate>
@@ -3011,15 +2993,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-275-div1-middle--horoscope%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://topcoder.bgcoder.com/print.php?id=1090 占い師がうらなった、今後数日間の良い日、悪い日のリストがある。 リストは配列で与えられ、良い日は&#39;G&#39;、悪い日は&#39;B&#39;で表わされる。 しか</description>
-    </item>
-    
-    <item>
-      <title>SRM 159 DIV1 Middle -  ThePriceIsRight　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-159-div1-middle----thepriceisright%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 14 Mar 2014 00:05:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-159-div1-middle----thepriceisright%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=328 商品の価格の一覧が与えられる。 最初はすべて伏せられていて金額がいくらかわからない。 ここで、プレイヤーは任意の数だけ伏せられている数をめ</description>
     </item>
     
     <item>
@@ -3392,42 +3365,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 150 DIV1 Easy - InterestingDigits (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-150-div1-easy---interestingdigits-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 11:41:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-150-div1-easy---interestingdigits-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1523&amp;amp;rd=4555 ３の倍数はその各桁の数の和も同じく３の倍数になる。 上記に対し、ｘ進数のときにも同じ法則が成り立つ倍数を求める。 解き方 ｘ進数を考えた時、</description>
-    </item>
-    
-    <item>
-      <title>SRM 156 DIV1 Easy - BombSweeper （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-156-div1-easy---bombsweeper-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 10:11:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-156-div1-easy---bombsweeper-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1778&amp;amp;rd=4585 マリンスイーパーを解く。 最初に好きな場所を選ぶ。 ①そこにボムがあれば負け ②ボムがなくても周りにボムがあれば違うセルを選ぶ ③ボムがなくて</description>
-    </item>
-    
-    <item>
-      <title>SRM 168 DIV1 Easy - NumberGuesser (復習××)</title>
-      <link>https://chaingng.github.io/post/srm-168-div1-easy---numberguesser-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 09:52:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-168-div1-easy---numberguesser-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1869&amp;amp;rd=4645 １～９９９８までの数字を考える。 （例）４３２１ 各桁の数を入れ替えて、元の数字より小さければ入れ替えた数を引く。 （例）４３２１－１２３４</description>
-    </item>
-    
-    <item>
-      <title>SRM 151 DIV1 Easy - Archimedes (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-151-div1-easy---archimedes-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 09:25:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-151-div1-easy---archimedes-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1693&amp;amp;rd=4560 円周率を正多角形から求めたい。 円の外周は２＊円周率＊半径の長さで求められる。 このとき、正ｎ角形を考えた時に計算できる円周率を求める。 解</description>
-    </item>
-    
-    <item>
       <title>SRM 172 DIV1 Easy - BadClock （復習○）</title>
       <link>https://chaingng.github.io/post/srm-172-div1-easy---badclock-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Tue, 11 Feb 2014 08:09:00 +0000</pubDate>
@@ -3443,33 +3380,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1848&amp;amp;rd=4675 何人かのグループを考えた時、ある割合で同じ誕生日の人が存在する。 同じ誕生日の人がいる確率が与えられ、また誕生日となりうる日数が与えられ</description>
-    </item>
-    
-    <item>
-      <title>SRM 157 DIV1 Easy - Salary (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-157-div1-easy---salary-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 10 Feb 2014 23:42:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-157-div1-easy---salary-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1786&amp;amp;rd=4590 サラリーマンは出社したときと退社した時にスタンプカードを押し、その時間がわかっている。ただし、退社した時の時間は仕事時間に含まれない。</description>
-    </item>
-    
-    <item>
-      <title>SRM 153 DIV1 Easy - Inventory (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-153-div1-easy---inventory-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 10 Feb 2014 22:57:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-153-div1-easy---inventory-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1772&amp;amp;rd=4570 ある製品について、何日間で何個売れるかがわかっている。 複数の製品について上記の情報が与えられたとき、 １カ月あたり、つまり３０日あたり平</description>
-    </item>
-    
-    <item>
-      <title>SRM 159 DIV1 Easy - FryingHamburgers （復習×○）</title>
-      <link>https://chaingng.github.io/post/srm-159-div1-easy---fryinghamburgers-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Feb 2014 22:32:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-159-div1-easy---fryinghamburgers-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1517&amp;amp;rd=4600 指定された数のハンバーガーを両面焼きたい。 両面焼くのには、片面ずつ、各５分必要となる。 また、フライパンが与えられ、一度に何枚のハンバー</description>
     </item>
     
     <item>

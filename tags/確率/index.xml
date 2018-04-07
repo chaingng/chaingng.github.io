@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>SRM 156 DIV1 Easy - BombSweeper （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-156-div1-easy---bombsweeper-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Tue, 11 Feb 2014 10:11:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-156-div1-easy---bombsweeper-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=1778&amp;amp;rd=4585 マリンスイーパーを解く。 最初に好きな場所を選ぶ。 ①そこにボムがあれば負け ②ボムがなくても周りにボムがあれば違うセルを選ぶ ③ボムがなくて</description>
-    </item>
-    
-    <item>
       <title>SRM 174 DIV1 Easy - BirthdayOdds (復習×○)</title>
       <link>https://chaingng.github.io/post/srm-174-div1-easy---birthdayodds-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Tue, 11 Feb 2014 00:24:00 +0000</pubDate>
