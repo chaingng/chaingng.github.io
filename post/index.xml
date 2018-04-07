@@ -2708,15 +2708,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 311 DIV1 Middle - SumThemAll （復習xx）</title>
-      <link>https://chaingng.github.io/post/srm-311-div1-middle---sumthemall-%E5%BE%A9%E7%BF%92xx/</link>
-      <pubDate>Sun, 30 Mar 2014 10:47:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-311-div1-middle---sumthemall-%E5%BE%A9%E7%BF%92xx/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6430 ０以上の整数lowerBoundとupperBoundが与えられる。 ここである数字xのスコアについては、xの各桁の数字の和で表わされる</description>
-    </item>
-    
-    <item>
       <title>SRM 614 DIV1 Easy - MinimumSquare　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 30 Mar 2014 08:45:00 +0000</pubDate>
@@ -2852,15 +2843,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 320 DIV1 Middle -ContestSchedule　（復習×○）</title>
-      <link>https://chaingng.github.io/post/srm-320-div1-middle--contestschedule%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 15 Mar 2014 09:26:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-320-div1-middle--contestschedule%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=1405 複数のプログラミングコンテストが開催され、各コンテストについて開始時間s、終了時間t、勝率pが与えられる。 プレイヤーはできるだけ多くの</description>
-    </item>
-    
-    <item>
       <title>LinuxでCPUやメモリ使用状況のログを取る方法</title>
       <link>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 12 Mar 2014 19:55:00 +0000</pubDate>
@@ -2885,15 +2867,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-477-div1-middle---pythtriplets%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10766&amp;amp;rd=14157 以下の条件を満たす３角形を考える。 ・３辺a,b,cがすべて整数 ・a^2+b^2=c^2 ・a,bの最大公約数が1 また辺の集合が与えられ、</description>
-    </item>
-    
-    <item>
-      <title>SRM 312 DIV1 Middle - AntarcticaPolice　（復習××○）</title>
-      <link>https://chaingng.github.io/post/srm-312-div1-middle---antarcticapolice%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Mar 2014 09:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-312-div1-middle---antarcticapolice%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6501&amp;amp;rd=9992 都市Antarcticaにポリスステーションを建てたい。 Antarcticaには複数の町があり、それぞれの町にポリスステーションを建て</description>
     </item>
     
     <item>
@@ -3362,24 +3335,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8576&amp;amp;rd=13507 ・整数Ｎが与えられる。 ・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。 解き方 法則が少し複雑。 サンプルを見</description>
-    </item>
-    
-    <item>
-      <title>SRM 325 DIV1 Easy - FenceRepairing （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 22 Jan 2014 07:55:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6827&amp;amp;rd=10005 ・穴のあいたフェンスがある。 ・フェンスを修理するには、sqrt(選んだ長さ)のコストが必要になる。 このとき、フェンスを修理するのに最小</description>
-    </item>
-    
-    <item>
-      <title>SRM 327 DIV1 Easy - NiceOrUgly (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 20 Jan 2014 20:47:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6871&amp;amp;rd=10007 ・？を含んだ文字列が与えられる。 ・母音が３つ連続する、または子音が５つ連続したらその文字列はＵＧＬYであり、そうでなければＮＩＣＥであ</description>
     </item>
     
     <item>

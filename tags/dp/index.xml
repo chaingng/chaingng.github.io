@@ -129,24 +129,6 @@
     </item>
     
     <item>
-      <title>SRM 325 DIV1 Easy - FenceRepairing （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 22 Jan 2014 07:55:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-325-div1-easy---fencerepairing-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6827&amp;amp;rd=10005 ・穴のあいたフェンスがある。 ・フェンスを修理するには、sqrt(選んだ長さ)のコストが必要になる。 このとき、フェンスを修理するのに最小</description>
-    </item>
-    
-    <item>
-      <title>SRM 327 DIV1 Easy - NiceOrUgly (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 20 Jan 2014 20:47:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-327-div1-easy---niceorugly-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6871&amp;amp;rd=10007 ・？を含んだ文字列が与えられる。 ・母音が３つ連続する、または子音が５つ連続したらその文字列はＵＧＬYであり、そうでなければＮＩＣＥであ</description>
-    </item>
-    
-    <item>
       <title>SRM 352 DIV1 Easy - NumberofFiboCalls （復習○）</title>
       <link>https://chaingng.github.io/post/srm-352-div1-easy---numberoffibocalls-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 18 Jan 2014 09:29:00 +0000</pubDate>
