@@ -2609,15 +2609,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 298 DIV1 Middle - OrderDoesMatter　（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-298-div1-middle---orderdoesmatter%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 12 May 2014 08:32:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-298-div1-middle---orderdoesmatter%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 複数のN[i]とM[i]の行列が与えられ、積の計算を行う。 行列計算はAxB、CxDにおいてB=CであればAxDの値と等しくなる。 また、計</description>
-    </item>
-    
-    <item>
       <title>SRM 387 DIV1 Middle - IntervalSubsets　（復習×）</title>
       <link>https://chaingng.github.io/post/srm-387-div1-middle---intervalsubsets%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 03 May 2014 10:57:00 +0000</pubDate>
@@ -2867,15 +2858,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-320-div1-middle--contestschedule%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://topcoder.bgcoder.com/print.php?id=1405 複数のプログラミングコンテストが開催され、各コンテストについて開始時間s、終了時間t、勝率pが与えられる。 プレイヤーはできるだけ多くの</description>
-    </item>
-    
-    <item>
-      <title>SRM 299 DIV1 Middle -PalindromePartition　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-299-div1-middle--palindromepartition%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 15 Mar 2014 08:33:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-299-div1-middle--palindromepartition%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=1160 A~Zからなる文字列がある。 これをサブ文字列に分割して各サブ文字列が回文になるようにしたい。 このときの最小のサブ文字列の数を求める。 解</description>
     </item>
     
     <item>
@@ -3356,15 +3338,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 286 DIV1 Easy - ExtraBall (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 27 Jan 2014 21:50:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=5891&amp;amp;rd=8083 ・ビンゴゲームを行う。 ・最初に紙には１～７５の数字が書いてあり、その数字がコールされるとその場所をくり抜くことができる。 ・ビンゴゲーム</description>
-    </item>
-    
-    <item>
       <title>Linuxのクロック</title>
       <link>https://chaingng.github.io/post/linux%E3%81%AE%E3%82%AF%E3%83%AD%E3%83%83%E3%82%AF/</link>
       <pubDate>Sun, 26 Jan 2014 19:37:00 +0000</pubDate>
@@ -3434,15 +3407,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-416-div1-easy---nextnumber-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8576&amp;amp;rd=13507 ・整数Ｎが与えられる。 ・整数Ｎを２進数にしたときの１の数が同じで、かつＮより大きい最小の数を求める。 解き方 法則が少し複雑。 サンプルを見</description>
-    </item>
-    
-    <item>
-      <title>SRM 296 DIV1 Easy - NewAlbum (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-296-div1-easy---newalbum-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 24 Jan 2014 00:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-296-div1-easy---newalbum-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=6085&amp;amp;rd=9817 ・与えられた曲を全てＣＤに収録したい。 ・曲の長さは全て同じ秒数。 ・１つのＣＤに入れられる秒数も決められている。 ・ＣＤに収録する際、曲の</description>
     </item>
     
     <item>

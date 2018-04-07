@@ -29,14 +29,5 @@
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13239&amp;amp;rd=15859 ・AliceとBobでゲームを行う。 ・Aliceはa個b面あるサイコロを投げ、Bobはc個d面あるサイコロを投げる。 ・b面あるサイコロ</description>
     </item>
     
-    <item>
-      <title>SRM 286 DIV1 Easy - ExtraBall (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 27 Jan 2014 21:50:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-286-div1-easy---extraball-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=5891&amp;amp;rd=8083 ・ビンゴゲームを行う。 ・最初に紙には１～７５の数字が書いてあり、その数字がコールされるとその場所をくり抜くことができる。 ・ビンゴゲーム</description>
-    </item>
-    
   </channel>
 </rss>
