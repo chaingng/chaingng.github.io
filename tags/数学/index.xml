@@ -111,24 +111,6 @@
     </item>
     
     <item>
-      <title>SRM 427 DIV1 Easy - DesignCalendar （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 20:08:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10155&amp;amp;rd=13518 １日あたりの日数Ｄと１年あたりの日数Ｙが与えられる。 １年あたりの日数が１日あたりの日数で割り切れるのに必要な年数を求める。 解き方 問題文</description>
-    </item>
-    
-    <item>
-      <title>SRM 431 DIV1 Easy - LaserShooting (復習××)</title>
-      <link>https://chaingng.github.io/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 19 Oct 2013 07:36:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10258&amp;amp;rd=13522 （０，０）の位置からレーザーが発射される。 レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、</description>
-    </item>
-    
-    <item>
       <title>SRM 523 DIV1 Easy - CountingSeries (復習××)</title>
       <link>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 13 Oct 2013 07:55:00 +0000</pubDate>
