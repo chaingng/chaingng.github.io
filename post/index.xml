@@ -764,6 +764,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 495 DIV1 Easy - ColorfulCards xx</title>
+      <link>https://chaingng.github.io/post/srm-495-div1-easy---colorfulcards-xx/</link>
+      <pubDate>Sun, 10 May 2015 10:52:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-495-div1-easy---colorfulcards-xx/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11302&amp;amp;rd=14424 解き方 すべての状態について、満たすすべての整数を調べていっては コード量が大変になってしまう。 そこで各状態について、とりうる最小の整数と</description>
+    </item>
+    
+    <item>
       <title>TCO 2015 1C Middle - UnrelatedPaths</title>
       <link>https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/</link>
       <pubDate>Sun, 10 May 2015 10:37:00 +0000</pubDate>
@@ -788,6 +797,69 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-504-div1-easy---mathcontest/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11233&amp;amp;rd=14433 解き方 キューが連続的になっているということに気をつければ、 現在左から見るか右から見るかの情報、 ひっくり返っているかそうでないかの情報を</description>
+    </item>
+    
+    <item>
+      <title>SRM 492 DIV1 Easy - TimeTravellingGardener</title>
+      <link>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</link>
+      <pubDate>Sat, 09 May 2015 16:40:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11060&amp;amp;rd=14245 解き方 ２つの木のペアのいずれかの傾きが、最適な傾きになることがわかる。 このうち、切らなくてもよい木が一番少なく、かつ地面より下に木がい</description>
+    </item>
+    
+    <item>
+      <title>SRM 491 DIV1 Easy - FoxMakingDice</title>
+      <link>https://chaingng.github.io/post/srm-491-div1-easy---foxmakingdice/</link>
+      <pubDate>Sat, 09 May 2015 16:29:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-491-div1-easy---foxmakingdice/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11234&amp;amp;rd=14244 解き方 Kを固定することで、そのKを作ることのできる組み合わせの数を 求めることができる。 よって、すべてのKについて作ることのできるサイコ</description>
+    </item>
+    
+    <item>
+      <title>SRM 497 DIV1 Easy - PermutationSignature xx</title>
+      <link>https://chaingng.github.io/post/srm-497-div1-easy---permutationsignature-xx/</link>
+      <pubDate>Sat, 09 May 2015 16:27:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-497-div1-easy---permutationsignature-xx/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11115&amp;amp;rd=14426 解き方 配列の数が５０個なのですべての組み合わせは求められないので 順番が決まるか、貪欲法で求められるはず。 左から数を調べていくとすると、</description>
+    </item>
+    
+    <item>
+      <title>SRM 498 DIV1 Easy - FoxSequence</title>
+      <link>https://chaingng.github.io/post/srm-498-div1-easy---foxsequence/</link>
+      <pubDate>Sat, 09 May 2015 16:23:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-498-div1-easy---foxsequence/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11219&amp;amp;rd=14427 解き方 システムテストで落ちないような実装の正確性が求められる問題。 共通処理は関数化し、各区間について点の不等号がどうであるか 正しく実装</description>
+    </item>
+    
+    <item>
+      <title>SRM 499 DIV1 Easy - ColorfulRabbits ○</title>
+      <link>https://chaingng.github.io/post/srm-499-div1-easy---colorfulrabbits-/</link>
+      <pubDate>Sat, 09 May 2015 16:18:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-499-div1-easy---colorfulrabbits-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11327&amp;amp;rd=14428 様々な種類のうさぎがいる。 そのうちいくつかのうさぎに質問し、自分以外に同じ種類のうさぎが何匹いるか 答えている。 このとき、うさぎの総数に</description>
+    </item>
+    
+    <item>
+      <title>SRM 496 DIV1 Easy - ColoredStrokes ○</title>
+      <link>https://chaingng.github.io/post/srm-496-div1-easy---coloredstrokes-/</link>
+      <pubDate>Sat, 09 May 2015 16:11:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-496-div1-easy---coloredstrokes-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11306&amp;amp;rd=14425 青を縦に塗ることができるブラシと、赤を横に塗ることができるブラシが 与えられる。 また青と赤が交わったセルは緑色になる。 最初は真っ白なボー</description>
+    </item>
+    
+    <item>
+      <title>SRM 494 DIV1 Easy - Painting ○</title>
+      <link>https://chaingng.github.io/post/srm-494-div1-easy---painting-/</link>
+      <pubDate>Sat, 09 May 2015 16:06:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-494-div1-easy---painting-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11310&amp;amp;rd=14423 白いボードが与えられる。 これをN＊Nの黒いスタンプによって、与えられた絵を作りたい。 できるだけ大きいスタンプで与えられた絵を作りたいと</description>
     </item>
     
     <item>
@@ -833,6 +905,33 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-658-div2-hard---oddeventreehard/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13784&amp;amp;rd=16461 Div1 Easyでノード間の情報が？となっている場合が追加されている。 解き方 まずは以下について判定し、有効な木か判定する。 ・自分のノードへの</description>
+    </item>
+    
+    <item>
+      <title>SRM 488 DIV1 Easy - OddEvenTree x</title>
+      <link>https://chaingng.github.io/post/srm-488-div1-easy---oddeventree-x/</link>
+      <pubDate>Wed, 06 May 2015 12:30:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-488-div1-easy---oddeventree-x/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13759&amp;amp;rd=16461 N個のノード、N-1のエッジからなる木がある。 どのノードとエッジが接続しているかわからないが、各ノード間の距離が 偶数ならE,奇数ならO</description>
+    </item>
+    
+    <item>
+      <title>SRM 487 DIV1 Easy - BunnyComputer x</title>
+      <link>https://chaingng.github.io/post/srm-487-div1-easy---bunnycomputer-x/</link>
+      <pubDate>Tue, 05 May 2015 23:30:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-487-div1-easy---bunnycomputer-x/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11157&amp;amp;rd=14240 Bコンピュータをすべてのうさぎが使いたい。 ただしBコンピュータは１台しかないため、１度に１匹のうさぎしか使えない。 うさぎがタスクをこな</description>
+    </item>
+    
+    <item>
+      <title>SRM 486 DIV1 Easy - OneRegister</title>
+      <link>https://chaingng.github.io/post/srm-486-div1-easy---oneregister/</link>
+      <pubDate>Tue, 05 May 2015 19:03:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-486-div1-easy---oneregister/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10992&amp;amp;rd=14239 ある整数sからtに変換したい。 変換には＋、＊、ー、／の４つの操作があり、＋は現在の数と同じ数を足し、 ＊は現在の数と同じ数をかけ、ーは現</description>
     </item>
     
     <item>
@@ -1727,6 +1826,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 486 DIV1 Middle - QuickSort　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-486-div1-middle---quicksort%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Thu, 03 Apr 2014 08:08:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-486-div1-middle---quicksort%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=2702 クイックソートは、配列をサブ集合に分けるときのピボットの選び方によりソートまでのスワップ回数が異なる。 ある配列が与えられた時、その配列</description>
+    </item>
+    
+    <item>
       <title>SRM 614 DIV1 Easy - MinimumSquare　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 30 Mar 2014 08:45:00 +0000</pubDate>
@@ -1907,6 +2015,33 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 489 DIV1 Easy - BallsConverter (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-489-div1-easy---ballsconverter-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 02 Feb 2014 20:45:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-489-div1-easy---ballsconverter-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11211&amp;amp;rd=14242 ２つのボールを捨てて、新しくボールを作るマシーンがある。２つのボールのタイプがi、jとすると、 新しく作られるボールはパターンc[i][</description>
+    </item>
+    
+    <item>
+      <title>SRM 490 DIV1 Easy - Starport (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 02 Feb 2014 18:34:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11227&amp;amp;rd=14243 Ｍ秒間隔でスペースシャトルが到着し、Ｎ秒間隔でテレポートが始まる。 スペースシャトルが到着したときにテレポート間隔とぴったりでなければ、</description>
+    </item>
+    
+    <item>
+      <title>SRM 493 DIV1 Easy - StonesGame (復習×)</title>
+      <link>https://chaingng.github.io/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 02 Feb 2014 14:23:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11292&amp;amp;rd=14422 番号が１から始まる長さＮの列に、ひとつだけ白い石が置かれている。 そのほかの場所には黒い石が置かれている。 ここで２人のプレイヤーでゲーム</description>
+    </item>
+    
+    <item>
       <title>SRM 599 DIV1 Easy - BigFatInteger (復習○)</title>
       <link>https://chaingng.github.io/post/srm-599-div1-easy---bigfatinteger-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 02 Feb 2014 11:04:00 +0000</pubDate>
@@ -1922,6 +2057,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-604-div1-easy---powerofthree-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12917&amp;amp;rd=15837 ロボットが座標（０，０）からスタートし、４方向に移動する。 ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。 移動し</description>
+    </item>
+    
+    <item>
+      <title>SRM 488 DIV1 Easy - TheBoredomDivOne (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 14:05:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-488-div1-easy---theboredomdivone-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11193&amp;amp;rd=14241 友人が複数いて、既に飽きている友人と飽きていない友人がいる。 毎回その中から２人を選んで、握手させる。握手した友人は飽きてしまう。 このと</description>
     </item>
     
     <item>
