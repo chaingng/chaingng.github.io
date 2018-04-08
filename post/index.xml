@@ -1385,15 +1385,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 406 DIV1 Easy - SymmetricPie ○</title>
-      <link>https://chaingng.github.io/post/srm-406-div1-easy---symmetricpie-/</link>
-      <pubDate>Wed, 29 Apr 2015 22:17:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-406-div1-easy---symmetricpie-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8784&amp;amp;rd=12178 パイチャートを作り、各要素が全体の何％を占めるかわかっている。 このパイチャートを作るにあたって、できるだけ区切りの線が真ん中を 横断する</description>
-    </item>
-    
-    <item>
       <title>SRM 403 DIV1 Easy - TheLuckyNumbers ○</title>
       <link>https://chaingng.github.io/post/srm-403-div1-easy---theluckynumbers-/</link>
       <pubDate>Wed, 29 Apr 2015 22:04:00 +0000</pubDate>
@@ -2570,15 +2561,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-591-div1-easy---thetree-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12746&amp;amp;rd=15703 グラフの各深さに対する頂点数が与えられる。 このとき、そのグラフの直径を求める。 解き方 グラフを最大のケースで作ってもよいが、場合分けをす</description>
-    </item>
-    
-    <item>
-      <title>SRM 407 DIV1 Easy - CorporationSalary（復習○）</title>
-      <link>https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Thu, 13 Feb 2014 14:38:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9824&amp;amp;rd=12179 部下とマネージャーからなるサラリーマンの会社がある。 配列が与えられ、ある人に対してその部下が誰かがわかっている。 また、ある人の部下の部</description>
     </item>
     
     <item>
