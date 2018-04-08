@@ -1034,15 +1034,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 413 DIV1 Easy - ArithmeticProgression</title>
-      <link>https://chaingng.github.io/post/srm-413-div1-easy---arithmeticprogression/</link>
-      <pubDate>Sat, 09 May 2015 15:30:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-413-div1-easy---arithmeticprogression/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9839&amp;amp;rd=13504 整数の数列が与えられる。 与えられた数列は、ある実数が公差である数列について小数点以下の数を 切り捨てたものになる。 このとき、公差がいくつ</description>
-    </item>
-    
-    <item>
       <title>SRM 658 DIV2 Hard - OddEvenTreeHard</title>
       <link>https://chaingng.github.io/post/srm-658-div2-hard---oddeventreehard/</link>
       <pubDate>Wed, 06 May 2015 12:40:00 +0000</pubDate>
@@ -2354,15 +2345,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
       <description>Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。 ①CPU使用率とメモ</description>
-    </item>
-    
-    <item>
-      <title>SRM 413 DIV1 Middle - InfiniteSequence2　（復習×○）</title>
-      <link>https://chaingng.github.io/post/srm-413-div1-middle---infinitesequence2%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 10 Mar 2014 20:12:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-413-div1-middle---infinitesequence2%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9922&amp;amp;rd=13504 X[n]=X[n/p-x]+X[n/q-y]となる関数がある。 ただし、n&amp;lt;=0のときX[n]=1となる。 ｎが与えられたとき、X[</description>
     </item>
     
     <item>
