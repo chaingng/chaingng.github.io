@@ -980,15 +980,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 457 DIV1 Easy - TheTriangleBothDivs</title>
-      <link>https://chaingng.github.io/post/srm-457-div1-easy---thetrianglebothdivs/</link>
-      <pubDate>Mon, 04 May 2015 21:48:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-457-div1-easy---thetrianglebothdivs/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10696&amp;amp;rd=14144 ”17:45 GMT-4”と時刻を表す時計がある。 ただし時計の一部が壊れており、その箇所は？になっている。 このとき、考えられる昇順で一番</description>
-    </item>
-    
-    <item>
       <title>SRM 470 DIV1 Easy - DoorsGame ○</title>
       <link>https://chaingng.github.io/post/srm-470-div1-easy---doorsgame-/</link>
       <pubDate>Mon, 04 May 2015 21:43:00 +0000</pubDate>
@@ -1049,33 +1040,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-479-div1-easy---thecoffeetimedivone/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11028&amp;amp;rd=14158 1列の席に座っている客にコーヒーか紅茶を提供したい。 １番めの席の横にサーブマシンがあり、そこで紅茶かコーヒーを７人分 入れることができる</description>
-    </item>
-    
-    <item>
-      <title>SRM 456 DIV1 Easy - SilverDistance x</title>
-      <link>https://chaingng.github.io/post/srm-456-div1-easy---silverdistance-x/</link>
-      <pubDate>Sun, 03 May 2015 22:39:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-456-div1-easy---silverdistance-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10699&amp;amp;rd=13909 銀の動きをする駒がある。 ２次元のセル上でスタート位置とゴール位置が与えられた時、 ゴールにたどりつくまでの最小のターン数を求める。 解き方</description>
-    </item>
-    
-    <item>
-      <title>SRM 458 DIV1 Easy - BouncingBalls</title>
-      <link>https://chaingng.github.io/post/srm-458-div1-easy---bouncingballs/</link>
-      <pubDate>Sun, 03 May 2015 22:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-458-div1-easy---bouncingballs/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10726&amp;amp;rd=14180 １直線上に複数のボールが置かれている。 ボールの置かれている位置はあらかじめわかっている。 各ボールを同時に、それぞれ左右のどちらかに転が</description>
-    </item>
-    
-    <item>
-      <title>SRM 459 DIV1 Easy - Inequalities</title>
-      <link>https://chaingng.github.io/post/srm-459-div1-easy---inequalities/</link>
-      <pubDate>Sun, 03 May 2015 22:17:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-459-div1-easy---inequalities/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10682&amp;amp;rd=14145 不等式は複数与えられる。 与えられた不等式をできるだけ多く満たすような実数に対し その満たす不等式の最大数を求める。 解き方 不等式の数Xは０</description>
     </item>
     
     <item>
