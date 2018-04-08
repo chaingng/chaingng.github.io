@@ -39,30 +39,12 @@
     </item>
     
     <item>
-      <title>2011 TCO Qualification Round 1 - MinimumLiars</title>
-      <link>https://chaingng.github.io/post/2011-tco-qualification-round-1---minimumliars/</link>
-      <pubDate>Wed, 29 Oct 2014 18:43:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2011-tco-qualification-round-1---minimumliars/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11414&amp;amp;rd=14524 ・複数の人が存在し、それぞれそのグループに何人以上嘘つきがいるかと言っているかの &amp;nbsp;liarの値がわかっている。 ・誰が嘘つきか</description>
-    </item>
-    
-    <item>
       <title>SRM 634 DIV1 Easy - ShoppingSurveyDiv1 (×)</title>
       <link>https://chaingng.github.io/post/srm-634-div1-easy---shoppingsurveydiv1-/</link>
       <pubDate>Mon, 13 Oct 2014 13:51:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-634-div1-easy---shoppingsurveydiv1-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13455&amp;amp;rd=16077 ・N人の客がいて、各商品を多くて１つ買うことができる。 ・また、K種類以上の商品を買うBig Shopperがいる。 ・商品iを買った人数s</description>
-    </item>
-    
-    <item>
-      <title>SRM 397 DIV1 Easy - SortingGame （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 17 Feb 2014 21:21:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-397-div1-easy---sortinggame-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8745&amp;amp;rd=12169 １～ｎまでの数字からなる配列が与えられる。 また、ｋ個の連続した数字を逆順に並び変えることができる。 このとき、元の配列を昇順にソートする</description>
     </item>
     
     <item>
