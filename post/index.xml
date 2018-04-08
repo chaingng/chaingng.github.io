@@ -467,15 +467,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 514 DIV1 Easy - MagicalGirlLevelOneDivOne</title>
-      <link>https://chaingng.github.io/post/srm-514-div1-easy---magicalgirllevelonedivone/</link>
-      <pubDate>Fri, 29 May 2015 22:28:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-514-div1-easy---magicalgirllevelonedivone/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11476&amp;amp;rd=14539 解き方 (1,n)と(1,-n)の動作により現在のマスから２つ上下に移動したマスには 必ず到達することができる。 ここで、jumpTypes</description>
-    </item>
-    
-    <item>
       <title>SRM 540 DIV1 Easy - ImportantSequence</title>
       <link>https://chaingng.github.io/post/srm-540-div1-easy---importantsequence/</link>
       <pubDate>Wed, 27 May 2015 20:40:00 +0000</pubDate>
@@ -692,30 +683,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 512 DIV1 Easy - MysteriousRestaurant</title>
-      <link>https://chaingng.github.io/post/srm-512-div1-easy---mysteriousrestaurant/</link>
-      <pubDate>Sun, 10 May 2015 13:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-512-div1-easy---mysteriousrestaurant/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11295&amp;amp;rd=14537 解き方 何日目まで訪れることができるかを固定することで貪欲法で解くことができる。 N日目まで訪れるとすると、１日目＋７の倍数・・・６日目＋</description>
-    </item>
-    
-    <item>
       <title>SRM 515 DIV1 Easy - RotatedClock</title>
       <link>https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/</link>
       <pubDate>Sun, 10 May 2015 12:57:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11329&amp;amp;rd=14540 解き方 ３０度ずつ回転させることが可能なので、全探索して 有効な数字の時の値を更新すればよい。 コード class RotatedClock { public: string getEarliest(int hourHand, int minuteHand) { string ret=&#34;&#34;; for(int i=0;i&amp;lt;=360;i+=30){ int h=(hourHand+i)%360; int m=(minuteHand+i)%360; if((h%30)*12==m){</description>
-    </item>
-    
-    <item>
-      <title>SRM 513 DIV1 Easy - YetAnotherIncredibleMachine</title>
-      <link>https://chaingng.github.io/post/srm-513-div1-easy---yetanotherincrediblemachine/</link>
-      <pubDate>Sun, 10 May 2015 12:55:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-513-div1-easy---yetanotherincrediblemachine/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11502&amp;amp;rd=14538 解き方 各プラットフォームについて有効な場所の総数を、それぞれかけていけばよい。 あるプラットフォームについて有効な場所かどうかの判定は、</description>
     </item>
     
     <item>
@@ -1616,15 +1589,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-588-div1-middle---keydungeondiv1%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 最初に赤い鍵をkey[0]個、緑の鍵をkey[1]個、白い鍵をkey[2]個与えられる。 ドアが複数存在し、ドアごとに空けるために必要な赤</description>
-    </item>
-    
-    <item>
-      <title>SRM 511 DIV1 Middle - FiveHundredEleven　（復習×）</title>
-      <link>https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 14 Apr 2014 23:32:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 ０～５１１の間である数字の配列が与えられ、2人でゲームを行う。 最初はFoxの番から始まり、次はToastmanの番になる。 ゲームは配列か</description>
     </item>
     
     <item>
