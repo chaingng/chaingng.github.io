@@ -6,19 +6,10 @@
     <description>Recent content in Dp on takatomo&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 28 Apr 2015 21:04:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2015 16:12:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>SRM 401 DIV1 Easy - FIELDDiagrams</title>
-      <link>https://chaingng.github.io/post/srm-401-div1-easy---fielddiagrams/</link>
-      <pubDate>Tue, 28 Apr 2015 21:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-401-div1-easy---fielddiagrams/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8776&amp;amp;rd=12173 整数fieldDiagramが与えられて、fieldDiagram行からなるBOXを作る。 各行0,1,2,...において、長さはそれぞ</description>
-    </item>
     
     <item>
       <title>SRM 642 DIV1 Easy - WaitingForBus x</title>

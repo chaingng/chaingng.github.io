@@ -1430,15 +1430,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 401 DIV1 Easy - FIELDDiagrams</title>
-      <link>https://chaingng.github.io/post/srm-401-div1-easy---fielddiagrams/</link>
-      <pubDate>Tue, 28 Apr 2015 21:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-401-div1-easy---fielddiagrams/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8776&amp;amp;rd=12173 整数fieldDiagramが与えられて、fieldDiagram行からなるBOXを作る。 各行0,1,2,...において、長さはそれぞ</description>
-    </item>
-    
-    <item>
       <title>SRM 657 DIV1 Easy - ProblemSets x</title>
       <link>https://chaingng.github.io/post/srm-657-div1-easy---problemsets-x/</link>
       <pubDate>Tue, 28 Apr 2015 20:26:00 +0000</pubDate>
@@ -2417,15 +2408,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-408-div1-middle---candygame%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8462 有効グラフが存在し、そのノードにコインが２枚以上あれば1枚を消費し、１枚を隣へ移すことができる。 プレイヤーがゲームを行い、ターゲットと</description>
-    </item>
-    
-    <item>
-      <title>SRM 400 DIV1 Middle -ReversalChain　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-400-div1-middle--reversalchain%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 16 Mar 2014 17:16:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-400-div1-middle--reversalchain%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=2146 0と１からなる文字列が２つ与えられ、１つ目の文字列を２つ目の文字列に変換したい。 変換する方法として、文字列のi番目とj番目を選ぶことで</description>
     </item>
     
     <item>
