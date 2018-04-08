@@ -845,15 +845,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 445 DIV1 Easy - TheNewHouseDivOne</title>
-      <link>https://chaingng.github.io/post/srm-445-div1-easy---thenewhousedivone/</link>
-      <pubDate>Sat, 09 May 2015 16:58:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-445-div1-easy---thenewhousedivone/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10512&amp;amp;rd=13899 解き方 元となる点はすべて座標上の点なので、 すべての実数上の点を調べなくても、0.5単位ですべての位置を調べればよい。 コード class TheNewHouseDivOne { public: double distance(vector&amp;lt;int&amp;gt;</description>
-    </item>
-    
-    <item>
       <title>SRM 448 DIV1 Easy - TheBlackJackDivOne</title>
       <link>https://chaingng.github.io/post/srm-448-div1-easy---theblackjackdivone/</link>
       <pubDate>Sat, 09 May 2015 16:53:00 +0000</pubDate>
@@ -1031,15 +1022,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-486-div1-easy---oneregister/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10992&amp;amp;rd=14239 ある整数sからtに変換したい。 変換には＋、＊、ー、／の４つの操作があり、＋は現在の数と同じ数を足し、 ＊は現在の数と同じ数をかけ、ーは現</description>
-    </item>
-    
-    <item>
-      <title>SRM 446 DIV1 Easy - CubeWalking ○</title>
-      <link>https://chaingng.github.io/post/srm-446-div1-easy---cubewalking-/</link>
-      <pubDate>Tue, 05 May 2015 18:15:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-446-div1-easy---cubewalking-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10515&amp;amp;rd=13900 六面体のキューブがある。 キューブの各面は３＊３のセルからなり、 真ん中が緑、その上下左右が青、その他は赤色に塗られている。 プレイヤーは最</description>
     </item>
     
     <item>
