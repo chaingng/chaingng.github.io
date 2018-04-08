@@ -1619,15 +1619,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 522 DIV1 Middle - CorrectMultiplication　（復習×××）</title>
-      <link>https://chaingng.github.io/post/srm-522-div1-middle---correctmultiplication%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Mar 2014 14:16:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-522-div1-middle---correctmultiplication%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11604&amp;amp;rd=14547 正の整数a,b,cが与えられる。 正の整数A,B,Cがa,b,cをそれぞれ増減した値であるとき A*B=Cが成り立つ、|A-a|+|B-b</description>
-    </item>
-    
-    <item>
       <title>SRM 535 DIV1 Middle - FoxAndBusiness　（復習×××）</title>
       <link>https://chaingng.github.io/post/srm-535-div1-middle---foxandbusiness%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 01 Mar 2014 11:26:00 +0000</pubDate>
@@ -1814,60 +1805,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/%E4%BF%BA%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%83%81/</guid>
       <description>用事があって表参道に行ったところ、通りがかりに俺のフレンチがあったので行ってきました。 俺のフレンチの中でも一番大きい店舗らしく、すぐに入るこ</description>
-    </item>
-    
-    <item>
-      <title>SRM 521 DIV1 Easy - MissingParentheses （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 08:27:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10943&amp;amp;rd=14546 カッコの並びが与えられる。 カッコがきちんと閉じた形になるために、追加で必要なカッコの数を求める。 解き方 左カッコが出てきたら＋１、右カッ</description>
-    </item>
-    
-    <item>
-      <title>SRM 522 DIV1 Easy - RowAndCoins （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 08:19:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11566&amp;amp;rd=14547 AliceとBobの２人で行うゲーム。 一行のマスの並びが与えられて、各マスにはＡかＢのどちらかが書かれている。 ゲームはAliceから始</description>
-    </item>
-    
-    <item>
-      <title>SRM 523 DIV1 Easy - CountingSeries (復習××)</title>
-      <link>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 07:55:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10957&amp;amp;rd=14548 １からupperBoundまでの数が与えられる。 また、a,b,c,dの正の整数が与えられる。 このとき、a+b*x または c*d^y（x,</description>
-    </item>
-    
-    <item>
-      <title>SRM 524 DIV1 Easy - MagicDiamonds (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 07:42:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11607&amp;amp;rd=14549 ｎ個のダイヤモンドを運びたい。 １度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。 このとき、消滅せずに全てのダイヤを運</description>
-    </item>
-    
-    <item>
-      <title>SRM 525 DIV1 Easy - DropCoins （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 12 Oct 2013 14:19:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11665&amp;amp;rd=14550 四角形のセルに複数コインがある。 １回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。 コインの数Ｋ</description>
-    </item>
-    
-    <item>
-      <title>SRM 526 DIV1 Easy - DucksAlignment （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 12 Oct 2013 14:08:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11667&amp;amp;rd=14551 四角形のマスにダチョウが複数存在する。 ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。 解き方 縦に並べるときと横に並べると</description>
     </item>
     
     <item>
