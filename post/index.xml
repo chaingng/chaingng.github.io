@@ -1808,33 +1808,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 520 DIV1 Easy - SRMCodingPhase （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-520-div1-easy---srmcodingphase-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 08:45:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-520-div1-easy---srmcodingphase-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11381&amp;amp;rd=14545 SRMの３問の問題を７５分以内で解く。 各問題については、最大獲得ポイントと解くのにかかる時間が与えられる。 各３問については、解いたとき</description>
-    </item>
-    
-    <item>
-      <title>SRM 521 DIV1 Easy - MissingParentheses （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 08:27:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10943&amp;amp;rd=14546 カッコの並びが与えられる。 カッコがきちんと閉じた形になるために、追加で必要なカッコの数を求める。 解き方 左カッコが出てきたら＋１、右カッ</description>
-    </item>
-    
-    <item>
-      <title>SRM 522 DIV1 Easy - RowAndCoins （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 08:19:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11566&amp;amp;rd=14547 AliceとBobの２人で行うゲーム。 一行のマスの並びが与えられて、各マスにはＡかＢのどちらかが書かれている。 ゲームはAliceから始</description>
-    </item>
-    
-    <item>
       <title>SRM 523 DIV1 Easy - CountingSeries (復習××)</title>
       <link>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 13 Oct 2013 07:55:00 +0000</pubDate>
