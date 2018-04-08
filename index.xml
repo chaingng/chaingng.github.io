@@ -2366,15 +2366,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 408 DIV1 Middle - CandyGame　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-408-div1-middle---candygame%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 22 Mar 2014 11:47:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-408-div1-middle---candygame%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8462 有効グラフが存在し、そのノードにコインが２枚以上あれば1枚を消費し、１枚を隣へ移すことができる。 プレイヤーがゲームを行い、ターゲットと</description>
-    </item>
-    
-    <item>
       <title>LinuxでCPUやメモリ使用状況のログを取る方法</title>
       <link>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 12 Mar 2014 19:55:00 +0000</pubDate>
@@ -2525,15 +2516,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-593-div1-easy---hexagonalboard-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12784&amp;amp;rd=15705 ５角形のセルからなるボードがあり、任意の場所に石が置いてある。 石が隣り合うときは、かならず違う色にしなければいけない。 このとき、全ての</description>
-    </item>
-    
-    <item>
-      <title>SRM 410 DIV1 Easy - AddElectricalWires (復習××)</title>
-      <link>https://chaingng.github.io/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 22 Feb 2014 07:54:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8817&amp;amp;rd=12182 ノードが複数存在し、任意のノード同士がつながっている。 また、任意のノードが電力源につながっている。ただし、複数の電力源につながってはい</description>
     </item>
     
     <item>
