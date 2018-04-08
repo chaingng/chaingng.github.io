@@ -854,15 +854,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 448 DIV1 Easy - TheBlackJackDivOne</title>
-      <link>https://chaingng.github.io/post/srm-448-div1-easy---theblackjackdivone/</link>
-      <pubDate>Sat, 09 May 2015 16:53:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-448-div1-easy---theblackjackdivone/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10615&amp;amp;rd=13902 解き方 探索箇所が少ないので全探索可能。 各カードについて既に使ったかどうかの情報が必要なので、 その情報を更新しつつDFSを用いればよい。</description>
-    </item>
-    
-    <item>
       <title>SRM 478 DIV1 Easy - CarrotJumping x</title>
       <link>https://chaingng.github.io/post/srm-478-div1-easy---carrotjumping-x/</link>
       <pubDate>Sat, 09 May 2015 16:48:00 +0000</pubDate>
@@ -878,15 +869,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11060&amp;amp;rd=14245 解き方 ２つの木のペアのいずれかの傾きが、最適な傾きになることがわかる。 このうち、切らなくてもよい木が一番少なく、かつ地面より下に木がい</description>
-    </item>
-    
-    <item>
-      <title>SRM 447 DIV1 Easy - KnightsTour</title>
-      <link>https://chaingng.github.io/post/srm-447-div1-easy---knightstour/</link>
-      <pubDate>Sat, 09 May 2015 16:33:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-447-div1-easy---knightstour/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10577&amp;amp;rd=13901 解き方 問題文の条件をすべて洗い出すのが大事。 洗い出すことができれば、あとは正確に実装すればよい。 コード int used[10][10]; int dr[]={1,1,2,2,-1,-1,-2,-2},dc[]={2,-2,1,-1,2,-2,1,-1}; int h,w; class KnightsTour { public: int calc(vector&amp;lt;string&amp;gt; board,int r,int c){ int</description>
     </item>
     
     <item>
