@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on takatomo&#39;s blog</title>
+    <title>Git on Hack Engineering</title>
     <link>https://chaingng.github.io/tags/git/</link>
-    <description>Recent content in Git on takatomo&#39;s blog</description>
+    <description>Recent content in Git on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 01 Jan 2018 10:00:00 +0900</lastBuildDate>

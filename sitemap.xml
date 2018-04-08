@@ -220,6 +220,12 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/</loc>
+    <lastmod>2018-02-01T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/mac_ftp/</loc>
   </url>
   
@@ -303,12 +309,6 @@
   <url>
     <loc>https://chaingng.github.io/tags/wifi/</loc>
     <lastmod>2018-01-23T10:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaingng.github.io/</loc>
-    <lastmod>2018-02-01T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
