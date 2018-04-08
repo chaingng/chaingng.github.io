@@ -29,5 +29,14 @@
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12790&amp;amp;rd=15708 ・求める整数の集合が与えられる。 ・オペレーションはひとつの整数を１足すか全ての整数を２かけるかの２種類。 ・各整数は０からスタートし、オ</description>
     </item>
     
+    <item>
+      <title>SRM 519 DIV1 Easy - BinaryCards (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 10:17:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11552&amp;amp;rd=14544 正の整数ＡとＢが与えられる。 ＡからＢを得るには、２進数で表わされたＡから各ビットを返していく。 この操作を行ったとき、途中で現れる最大の</description>
+    </item>
+    
   </channel>
 </rss>

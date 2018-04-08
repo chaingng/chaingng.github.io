@@ -93,6 +93,24 @@
     </item>
     
     <item>
+      <title>SRM 523 DIV1 Easy - CountingSeries (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 07:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10957&amp;amp;rd=14548 １からupperBoundまでの数が与えられる。 また、a,b,c,dの正の整数が与えられる。 このとき、a+b*x または c*d^y（x,</description>
+    </item>
+    
+    <item>
+      <title>SRM 524 DIV1 Easy - MagicDiamonds (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 07:42:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11607&amp;amp;rd=14549 ｎ個のダイヤモンドを運びたい。 １度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。 このとき、消滅せずに全てのダイヤを運</description>
+    </item>
+    
+    <item>
       <title>SRM 578 DIV1 Easy - GooseInZooDivOne (復習×)</title>
       <link>https://chaingng.github.io/post/srm-578-div1-easy---gooseinzoodivone-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Wed, 21 Aug 2013 08:23:00 +0000</pubDate>
