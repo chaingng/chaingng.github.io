@@ -800,24 +800,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 492 DIV1 Easy - TimeTravellingGardener</title>
-      <link>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</link>
-      <pubDate>Sat, 09 May 2015 16:40:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11060&amp;amp;rd=14245 解き方 ２つの木のペアのいずれかの傾きが、最適な傾きになることがわかる。 このうち、切らなくてもよい木が一番少なく、かつ地面より下に木がい</description>
-    </item>
-    
-    <item>
-      <title>SRM 491 DIV1 Easy - FoxMakingDice</title>
-      <link>https://chaingng.github.io/post/srm-491-div1-easy---foxmakingdice/</link>
-      <pubDate>Sat, 09 May 2015 16:29:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-491-div1-easy---foxmakingdice/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11234&amp;amp;rd=14244 解き方 Kを固定することで、そのKを作ることのできる組み合わせの数を 求めることができる。 よって、すべてのKについて作ることのできるサイコ</description>
-    </item>
-    
-    <item>
       <title>SRM 497 DIV1 Easy - PermutationSignature xx</title>
       <link>https://chaingng.github.io/post/srm-497-div1-easy---permutationsignature-xx/</link>
       <pubDate>Sat, 09 May 2015 16:27:00 +0000</pubDate>
