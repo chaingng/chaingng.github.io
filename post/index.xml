@@ -1034,15 +1034,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 444 DIV1 Easy - UnfoldingTriangles ○</title>
-      <link>https://chaingng.github.io/post/srm-444-div1-easy---unfoldingtriangles-/</link>
-      <pubDate>Tue, 05 May 2015 18:20:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-444-div1-easy---unfoldingtriangles-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10484&amp;amp;rd=13898 白と黒の２種類からなる２次元のセルがある。 ただし、そのうちのいくつかの黒のセルは折られており、左半分が白、右半分が 黒になっている。 ここ</description>
-    </item>
-    
-    <item>
       <title>SRM 446 DIV1 Easy - CubeWalking ○</title>
       <link>https://chaingng.github.io/post/srm-446-div1-easy---cubewalking-/</link>
       <pubDate>Tue, 05 May 2015 18:15:00 +0000</pubDate>
@@ -2366,15 +2357,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 440 DIV1 Easy - IncredibleMachine (復習××)</title>
-      <link>https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 05 Feb 2014 19:41:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10310&amp;amp;rd=13748 ある惑星上にて（ｘ、ｙ）からなる点が複数与えられる。 その惑星の重力ｇは不明だが、すべての点を順番に通った時の合計時間Tはわかっている。</description>
-    </item>
-    
-    <item>
       <title>SRM 489 DIV1 Easy - BallsConverter (復習○)</title>
       <link>https://chaingng.github.io/post/srm-489-div1-easy---ballsconverter-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 02 Feb 2014 20:45:00 +0000</pubDate>
@@ -2417,15 +2399,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-604-div1-easy---powerofthree-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12917&amp;amp;rd=15837 ロボットが座標（０，０）からスタートし、４方向に移動する。 ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。 移動し</description>
-    </item>
-    
-    <item>
-      <title>SRM 441 DIV1 Easy - PerfectPermutation (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 14:59:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10463&amp;amp;rd=13749 ある０～n-1の数がランダムに並べられた、長さｎの配列が与えられる。 このとき、childpermutation Bは、 B[0]=0, B[i]=B[A</description>
     </item>
     
     <item>
