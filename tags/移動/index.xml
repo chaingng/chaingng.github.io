@@ -21,6 +21,24 @@
     </item>
     
     <item>
+      <title>SRM 525 DIV1 Easy - DropCoins （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 12 Oct 2013 14:19:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11665&amp;amp;rd=14550 四角形のセルに複数コインがある。 １回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。 コインの数Ｋ</description>
+    </item>
+    
+    <item>
+      <title>SRM 526 DIV1 Easy - DucksAlignment （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 12 Oct 2013 14:08:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11667&amp;amp;rd=14551 四角形のマスにダチョウが複数存在する。 ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。 解き方 縦に並べるときと横に並べると</description>
+    </item>
+    
+    <item>
       <title>SRM 564 DIV1 Easy - KnightCircuit2 （復習○）</title>
       <link>https://chaingng.github.io/post/srm-564-div1-easy---knightcircuit2-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 18 Aug 2013 16:36:00 +0000</pubDate>

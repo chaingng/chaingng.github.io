@@ -467,6 +467,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 514 DIV1 Easy - MagicalGirlLevelOneDivOne</title>
+      <link>https://chaingng.github.io/post/srm-514-div1-easy---magicalgirllevelonedivone/</link>
+      <pubDate>Fri, 29 May 2015 22:28:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-514-div1-easy---magicalgirllevelonedivone/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11476&amp;amp;rd=14539 解き方 (1,n)と(1,-n)の動作により現在のマスから２つ上下に移動したマスには 必ず到達することができる。 ここで、jumpTypes</description>
+    </item>
+    
+    <item>
       <title>SRM 540 DIV1 Easy - ImportantSequence</title>
       <link>https://chaingng.github.io/post/srm-540-div1-easy---importantsequence/</link>
       <pubDate>Wed, 27 May 2015 20:40:00 +0000</pubDate>
@@ -674,6 +683,69 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 516 DIV1 Easy - NetworkXOneTimePad</title>
+      <link>https://chaingng.github.io/post/srm-516-div1-easy---networkxonetimepad/</link>
+      <pubDate>Mon, 11 May 2015 23:05:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-516-div1-easy---networkxonetimepad/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10846&amp;amp;rd=14541 解き方 すべての暗号前の文字と暗号後の文字の組み合わせで、候補となる キーがすべて作成できる。 あるキーについて、暗号後の文字を復号した時に</description>
+    </item>
+    
+    <item>
+      <title>SRM 509 DIV1 Easy - LuckyRemainder</title>
+      <link>https://chaingng.github.io/post/srm-509-div1-easy---luckyremainder/</link>
+      <pubDate>Sun, 10 May 2015 20:58:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-509-div1-easy---luckyremainder/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11138&amp;amp;rd=14438 解き方 各桁の数は与えられた整数の桁数をNとすると、それぞれ2^(N-1)回 足されることになる。 この数を９で割った余りが答えになる。 コー</description>
+    </item>
+    
+    <item>
+      <title>SRM 512 DIV1 Easy - MysteriousRestaurant</title>
+      <link>https://chaingng.github.io/post/srm-512-div1-easy---mysteriousrestaurant/</link>
+      <pubDate>Sun, 10 May 2015 13:06:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-512-div1-easy---mysteriousrestaurant/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11295&amp;amp;rd=14537 解き方 何日目まで訪れることができるかを固定することで貪欲法で解くことができる。 N日目まで訪れるとすると、１日目＋７の倍数・・・６日目＋</description>
+    </item>
+    
+    <item>
+      <title>SRM 511 DIV1 Easy - Zoo</title>
+      <link>https://chaingng.github.io/post/srm-511-div1-easy---zoo/</link>
+      <pubDate>Sun, 10 May 2015 13:03:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-511-div1-easy---zoo/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11485&amp;amp;rd=14536 解き方 動物数がN匹であれば、各動物が（０匹，N匹）〜（N匹、０匹）までの すべての場合が考えられる。 各場合について、動物が答えている数が</description>
+    </item>
+    
+    <item>
+      <title>SRM 510 DIV1 Easy - TheAlmostLuckyNumbersDivOne</title>
+      <link>https://chaingng.github.io/post/srm-510-div1-easy---thealmostluckynumbersdivone/</link>
+      <pubDate>Sun, 10 May 2015 13:00:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-510-div1-easy---thealmostluckynumbersdivone/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11461&amp;amp;rd=14439 解き方 ４か７以外の数字は最大ひとつしか含めてはいけないので、 １つ含んでいる場合とひとつも含んでいない場合で場合分けすれば すべての数字を</description>
+    </item>
+    
+    <item>
+      <title>SRM 515 DIV1 Easy - RotatedClock</title>
+      <link>https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/</link>
+      <pubDate>Sun, 10 May 2015 12:57:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11329&amp;amp;rd=14540 解き方 ３０度ずつ回転させることが可能なので、全探索して 有効な数字の時の値を更新すればよい。 コード class RotatedClock { public: string getEarliest(int hourHand, int minuteHand) { string ret=&#34;&#34;; for(int i=0;i&amp;lt;=360;i+=30){ int h=(hourHand+i)%360; int m=(minuteHand+i)%360; if((h%30)*12==m){</description>
+    </item>
+    
+    <item>
+      <title>SRM 513 DIV1 Easy - YetAnotherIncredibleMachine</title>
+      <link>https://chaingng.github.io/post/srm-513-div1-easy---yetanotherincrediblemachine/</link>
+      <pubDate>Sun, 10 May 2015 12:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-513-div1-easy---yetanotherincrediblemachine/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11502&amp;amp;rd=14538 解き方 各プラットフォームについて有効な場所の総数を、それぞれかけていけばよい。 あるプラットフォームについて有効な場所かどうかの判定は、</description>
+    </item>
+    
+    <item>
       <title>TCO 2015 1C Middle - UnrelatedPaths</title>
       <link>https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/</link>
       <pubDate>Sun, 10 May 2015 10:37:00 +0000</pubDate>
@@ -689,6 +761,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/tco-2015-1c-hard----magicwords/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13731&amp;amp;rd=16434 解き方 dpの問題。 dp[現在調べている桁数][beautifulcountの数][10の連続数]＝そのbeautifulcountの総</description>
+    </item>
+    
+    <item>
+      <title>SRM 508 DIV1 Easy - DivideAndShift</title>
+      <link>https://chaingng.github.io/post/srm-508-div1-easy---divideandshift/</link>
+      <pubDate>Sat, 09 May 2015 15:47:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-508-div1-easy---divideandshift/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11434&amp;amp;rd=14437 数字の列と、現在の位置が与えられる。 ２つの操作のいずれかによって、位置を１番目に移動させたい。 ・位置を右か左に移動 ・現在の列数の素数で</description>
     </item>
     
     <item>
@@ -1529,6 +1610,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 509 DIV1 Middle - PalindromizationDiv1　（復習×）</title>
+      <link>https://chaingng.github.io/post/srm-509-div1-middle---palindromizationdiv1%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 19 May 2014 21:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-509-div1-middle---palindromizationdiv1%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 ある文字列が与えられ、それを回文にしたい。 回文にするために複数のアルファベットの追加、削除、変換式が与えられ、各変換式について必要なコス</description>
+    </item>
+    
+    <item>
       <title>SRM 578 DIV1 Middle - WolfInZooDivOne （復習x）</title>
       <link>https://chaingng.github.io/post/srm-578-div1-middle---wolfinzoodivone-%E5%BE%A9%E7%BF%92x/</link>
       <pubDate>Sun, 18 May 2014 15:04:00 +0000</pubDate>
@@ -1574,6 +1664,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 511 DIV1 Middle - FiveHundredEleven　（復習×）</title>
+      <link>https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 14 Apr 2014 23:32:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 ０～５１１の間である数字の配列が与えられ、2人でゲームを行う。 最初はFoxの番から始まり、次はToastmanの番になる。 ゲームは配列か</description>
+    </item>
+    
+    <item>
       <title>SRM 614 DIV1 Easy - MinimumSquare　（復習××）</title>
       <link>https://chaingng.github.io/post/srm-614-div1-easy---minimumsquare%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 30 Mar 2014 08:45:00 +0000</pubDate>
@@ -1592,6 +1691,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 510 DIV1 Middle - TheLuckyGameDivOne　（復習×××）</title>
+      <link>https://chaingng.github.io/post/srm-510-div1-middle---theluckygamedivone%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 05 Mar 2014 08:37:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-510-div1-middle---theluckygamedivone%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11463 4と７からなる数字をluckynumberと呼ぶ。 数字の範囲a&amp;lt;=x&amp;lt;=bであるa,bが最初に与えられ、JohnとBrus</description>
+    </item>
+    
+    <item>
+      <title>SRM 515 DIV1 Middle - NewItemShop　（復習×××）</title>
+      <link>https://chaingng.github.io/post/srm-515-div1-middle---newitemshop%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Mon, 03 Mar 2014 22:44:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-515-div1-middle---newitemshop%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11508&amp;amp;rd=14540 売り物である剣を任意の数持っており、複数の顧客が訪れる。 各顧客について、&#34;時間、買う値段、来る確率&#34;で表わされる情報が複数個与えられる</description>
+    </item>
+    
+    <item>
       <title>SRM 534 DIV1 Middle - EllysNumbers　（復習×××）</title>
       <link>https://chaingng.github.io/post/srm-534-div1-middle---ellysnumbers%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 02 Mar 2014 23:13:00 +0000</pubDate>
@@ -1607,6 +1724,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-531-div1-middle---monsterfarm%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11232&amp;amp;rd=14724 各ノードごとに、次に変換するノードが与えられる。 次に変換するノードは１つ以上になる。 ノード０からスタートするとき、最後に収束するノード</description>
+    </item>
+    
+    <item>
+      <title>SRM 522 DIV1 Middle - CorrectMultiplication　（復習×××）</title>
+      <link>https://chaingng.github.io/post/srm-522-div1-middle---correctmultiplication%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Mar 2014 14:16:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-522-div1-middle---correctmultiplication%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11604&amp;amp;rd=14547 正の整数a,b,cが与えられる。 正の整数A,B,Cがa,b,cをそれぞれ増減した値であるとき A*B=Cが成り立つ、|A-a|+|B-b</description>
     </item>
     
     <item>
@@ -1796,6 +1922,96 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/%E4%BF%BA%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%83%81/</guid>
       <description>用事があって表参道に行ったところ、通りがかりに俺のフレンチがあったので行ってきました。 俺のフレンチの中でも一番大きい店舗らしく、すぐに入るこ</description>
+    </item>
+    
+    <item>
+      <title>SRM 517 DIV1 Easy - CompositeSmash （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 10:58:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11535&amp;amp;rd=14542 正の整数Ｎとtargetが与えられる。 Ｎはスマッシュするとx*y=N（x,yは整数）となるｘとｙに分割することができる。 このとき、どう</description>
+    </item>
+    
+    <item>
+      <title>SRM 518 DIV1 Easy - LargestSubsequence （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-518-div1-easy---largestsubsequence-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 10:23:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-518-div1-easy---largestsubsequence-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11471&amp;amp;rd=14543 ある文字列が与えられる。 その文字からいくつかの文字を削除したものがそのサブ文字列と定義される。 このとき、辞書順で最も降順となるサブ文字</description>
+    </item>
+    
+    <item>
+      <title>SRM 519 DIV1 Easy - BinaryCards (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 10:17:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-519-div1-easy---binarycards-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11552&amp;amp;rd=14544 正の整数ＡとＢが与えられる。 ＡからＢを得るには、２進数で表わされたＡから各ビットを返していく。 この操作を行ったとき、途中で現れる最大の</description>
+    </item>
+    
+    <item>
+      <title>SRM 520 DIV1 Easy - SRMCodingPhase （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-520-div1-easy---srmcodingphase-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 08:45:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-520-div1-easy---srmcodingphase-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11381&amp;amp;rd=14545 SRMの３問の問題を７５分以内で解く。 各問題については、最大獲得ポイントと解くのにかかる時間が与えられる。 各３問については、解いたとき</description>
+    </item>
+    
+    <item>
+      <title>SRM 521 DIV1 Easy - MissingParentheses （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 08:27:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10943&amp;amp;rd=14546 カッコの並びが与えられる。 カッコがきちんと閉じた形になるために、追加で必要なカッコの数を求める。 解き方 左カッコが出てきたら＋１、右カッ</description>
+    </item>
+    
+    <item>
+      <title>SRM 522 DIV1 Easy - RowAndCoins （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 08:19:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-522-div1-easy---rowandcoins-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11566&amp;amp;rd=14547 AliceとBobの２人で行うゲーム。 一行のマスの並びが与えられて、各マスにはＡかＢのどちらかが書かれている。 ゲームはAliceから始</description>
+    </item>
+    
+    <item>
+      <title>SRM 523 DIV1 Easy - CountingSeries (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 07:55:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-523-div1-easy---countingseries-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10957&amp;amp;rd=14548 １からupperBoundまでの数が与えられる。 また、a,b,c,dの正の整数が与えられる。 このとき、a+b*x または c*d^y（x,</description>
+    </item>
+    
+    <item>
+      <title>SRM 524 DIV1 Easy - MagicDiamonds (復習×○)</title>
+      <link>https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 07:42:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-524-div1-easy---magicdiamonds-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11607&amp;amp;rd=14549 ｎ個のダイヤモンドを運びたい。 １度に最大ｎ個運ぶことができるが、ｎが素数だった場合消滅してしまう。 このとき、消滅せずに全てのダイヤを運</description>
+    </item>
+    
+    <item>
+      <title>SRM 525 DIV1 Easy - DropCoins （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 12 Oct 2013 14:19:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-525-div1-easy---dropcoins-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11665&amp;amp;rd=14550 四角形のセルに複数コインがある。 １回の操作で上下左右に全てのコインを移動させることができ、四角形から外れたコインは落ちる。 コインの数Ｋ</description>
+    </item>
+    
+    <item>
+      <title>SRM 526 DIV1 Easy - DucksAlignment （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 12 Oct 2013 14:08:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-526-div1-easy---ducksalignment-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11667&amp;amp;rd=14551 四角形のマスにダチョウが複数存在する。 ダチョウを縦か横に一列に並べるとき、必要な最小移動数を求める。 解き方 縦に並べるときと横に並べると</description>
     </item>
     
     <item>
