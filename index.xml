@@ -710,15 +710,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 511 DIV1 Easy - Zoo</title>
-      <link>https://chaingng.github.io/post/srm-511-div1-easy---zoo/</link>
-      <pubDate>Sun, 10 May 2015 13:03:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-511-div1-easy---zoo/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11485&amp;amp;rd=14536 解き方 動物数がN匹であれば、各動物が（０匹，N匹）〜（N匹、０匹）までの すべての場合が考えられる。 各場合について、動物が答えている数が</description>
-    </item>
-    
-    <item>
       <title>SRM 515 DIV1 Easy - RotatedClock</title>
       <link>https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/</link>
       <pubDate>Sun, 10 May 2015 12:57:00 +0000</pubDate>
