@@ -854,15 +854,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 437 DIV1 Easy - TheSwap</title>
-      <link>https://chaingng.github.io/post/srm-437-div1-easy---theswap/</link>
-      <pubDate>Sat, 09 May 2015 17:14:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-437-div1-easy---theswap/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10369&amp;amp;rd=13699 解き方 全探索可能な問題。 setとvectorを利用して、各繰り返し回数で生成される数を更新していく。 コード class TheSwap { public: int findMax(int n, int k) { set&amp;lt;int&amp;gt; cur,next; cur.insert(n); FORE(i,0,k){</description>
-    </item>
-    
-    <item>
       <title>SRM 445 DIV1 Easy - TheNewHouseDivOne</title>
       <link>https://chaingng.github.io/post/srm-445-div1-easy---thenewhousedivone/</link>
       <pubDate>Sat, 09 May 2015 16:58:00 +0000</pubDate>
@@ -1256,15 +1247,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-463-div1-easy---rabbitnumbering-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10697&amp;amp;rd=14148 複数のうさぎが存在し、すべてのうさぎに番号をつけたい。 それぞれのうさぎは違う番号をつける。 各うさぎはつけて欲しい番号の最大数を持ってお</description>
-    </item>
-    
-    <item>
-      <title>SRM 438 DIV1 Easy - UnluckyIntervals</title>
-      <link>https://chaingng.github.io/post/srm-438-div1-easy---unluckyintervals/</link>
-      <pubDate>Sat, 02 May 2015 22:45:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-438-div1-easy---unluckyintervals/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10356&amp;amp;rd=13803 luckyである整数の集合が与えられる。 また、unluckyな区間の取り方が定義される。 unluckyな区間とは、[A B]となるA&amp;l</description>
     </item>
     
     <item>
@@ -2444,15 +2426,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-604-div1-easy---powerofthree-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12917&amp;amp;rd=15837 ロボットが座標（０，０）からスタートし、４方向に移動する。 ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。 移動し</description>
-    </item>
-    
-    <item>
-      <title>SRM 439 DIV1 Easy - PouringWater （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 23:32:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10408&amp;amp;rd=13747 N個のボトルがあり、最初は１Ｌだけ水が入っている。 ここで同じ量だけ水が入っているボトルを選んで、一つのボトルに水をまとめることができる</description>
     </item>
     
     <item>
