@@ -692,15 +692,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 515 DIV1 Easy - RotatedClock</title>
-      <link>https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/</link>
-      <pubDate>Sun, 10 May 2015 12:57:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-515-div1-easy---rotatedclock/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11329&amp;amp;rd=14540 解き方 ３０度ずつ回転させることが可能なので、全探索して 有効な数字の時の値を更新すればよい。 コード class RotatedClock { public: string getEarliest(int hourHand, int minuteHand) { string ret=&#34;&#34;; for(int i=0;i&amp;lt;=360;i+=30){ int h=(hourHand+i)%360; int m=(minuteHand+i)%360; if((h%30)*12==m){</description>
-    </item>
-    
-    <item>
       <title>TCO 2015 1C Middle - UnrelatedPaths</title>
       <link>https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/</link>
       <pubDate>Sun, 10 May 2015 10:37:00 +0000</pubDate>
@@ -1616,15 +1607,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
       <description>Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。 ①CPU使用率とメモ</description>
-    </item>
-    
-    <item>
-      <title>SRM 515 DIV1 Middle - NewItemShop　（復習×××）</title>
-      <link>https://chaingng.github.io/post/srm-515-div1-middle---newitemshop%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Mon, 03 Mar 2014 22:44:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-515-div1-middle---newitemshop%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11508&amp;amp;rd=14540 売り物である剣を任意の数持っており、複数の顧客が訪れる。 各顧客について、&#34;時間、買う値段、来る確率&#34;で表わされる情報が複数個与えられる</description>
     </item>
     
     <item>
