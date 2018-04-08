@@ -323,42 +323,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>TCO 2015 1C Middle - UnrelatedPaths</title>
-      <link>https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/</link>
-      <pubDate>Sun, 10 May 2015 10:37:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13746&amp;amp;rd=16434 解き方 木のルートからDFSでたどっていってパスの数を足していけば良い。 ルート０に直接つながっているノードについて、 さらにその下にノード</description>
-    </item>
-    
-    <item>
-      <title>TCO 2015 1C Hard  - MagicWords</title>
-      <link>https://chaingng.github.io/post/tco-2015-1c-hard----magicwords/</link>
-      <pubDate>Sun, 10 May 2015 10:28:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/tco-2015-1c-hard----magicwords/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13731&amp;amp;rd=16434 解き方 dpの問題。 dp[現在調べている桁数][beautifulcountの数][10の連続数]＝そのbeautifulcountの総</description>
-    </item>
-    
-    <item>
-      <title>TCO 2015 1A Middle - Autogame</title>
-      <link>https://chaingng.github.io/post/tco-2015-1a-middle---autogame/</link>
-      <pubDate>Mon, 27 Apr 2015 22:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/tco-2015-1a-middle---autogame/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13716&amp;amp;rd=16433 ノード数Nの有向グラフが与えられる。 エッジの数は最大Nであり、各ノードから出るエッジはひとつだけになる。 このグラフで最初に任意のノード</description>
-    </item>
-    
-    <item>
-      <title>TCO 2015 1B Middle - TheTips</title>
-      <link>https://chaingng.github.io/post/tco-2015-1b-middle---thetips/</link>
-      <pubDate>Mon, 27 Apr 2015 08:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/tco-2015-1b-middle---thetips/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13716&amp;amp;rd=16433 N人のクルーが隠れており、そのクルーを見つけたい。 各クルーについては見つけられる確率が与えられている。 また、各クルーについて、そのクル</description>
-    </item>
-    
-    <item>
       <title>Windowsのプロキシ</title>
       <link>https://chaingng.github.io/post/windows%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/</link>
       <pubDate>Fri, 31 Oct 2014 22:24:00 +0000</pubDate>
