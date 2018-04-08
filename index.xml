@@ -1007,6 +1007,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 419 DIV1 Easy - Undo ○</title>
+      <link>https://chaingng.github.io/post/srm-419-div1-easy---undo-/</link>
+      <pubDate>Sat, 09 May 2015 15:41:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-419-div1-easy---undo-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10054&amp;amp;rd=13510 ２つの操作の列が与えられる。 操作は以下の２種類。 ・type a 与えられたアルファベット（ここではa）をタイプする ・undo x x秒前までの</description>
+    </item>
+    
+    <item>
       <title>SRM 423 DIV1 Easy - TheTower x</title>
       <link>https://chaingng.github.io/post/srm-423-div1-easy---thetower-x/</link>
       <pubDate>Sat, 09 May 2015 15:38:00 +0000</pubDate>
@@ -1121,6 +1130,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-452-div1-easy---nottwo-/</guid>
       <description>問題 H＊Wの大きさである２次元の座標があり、そこにできるだけ多くの 石を置きたい。 ただし、それぞれの石の距離についてユークリッド距離が２になら</description>
+    </item>
+    
+    <item>
+      <title>SRM 418 DIV1 Easy - TwoLotteryGames ○</title>
+      <link>https://chaingng.github.io/post/srm-418-div1-easy---twolotterygames-/</link>
+      <pubDate>Tue, 05 May 2015 18:02:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-418-div1-easy---twolotterygames-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10071&amp;amp;rd=13509 ｎ個のくじからm個選ぶ。 相手も同様にm個選ぶ。 選んだくじのうち、相手がえらんだくじとk個一致していれば勝ちとなる。 このとき、勝ちとなる</description>
     </item>
     
     <item>
@@ -1319,6 +1337,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-438-div1-easy---unluckyintervals/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10356&amp;amp;rd=13803 luckyである整数の集合が与えられる。 また、unluckyな区間の取り方が定義される。 unluckyな区間とは、[A B]となるA&amp;l</description>
+    </item>
+    
+    <item>
+      <title>SRM 416 DIV1 Easy - ShipLoading</title>
+      <link>https://chaingng.github.io/post/srm-416-div1-easy---shiploading/</link>
+      <pubDate>Thu, 30 Apr 2015 08:12:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-416-div1-easy---shiploading/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9933&amp;amp;rd=13506 複数のクレーンがあり、それぞれが運ぶことのできる最大の重さがわかっている。 また複数の積荷があり、これをすべて運びたい。 クレーンは同時に</description>
     </item>
     
     <item>
@@ -2426,6 +2453,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-599-div1-middle---findpolygons%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12842&amp;amp;rd=15711 多角形の外周の長さである、整数Ｌが与えられる。 多角形の各点はｘ、ｙ座標上になければいけない。 このとき、考えられる多角形のうち、辺の数が</description>
+    </item>
+    
+    <item>
+      <title>SRM 417 DIV1 Easy - TemplateMatching （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 22 Feb 2014 09:50:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9943&amp;amp;rd=13508 ある文字列と、接頭辞と接尾辞が与えられる。 ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。 ただし、接</description>
     </item>
     
     <item>
