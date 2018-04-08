@@ -809,24 +809,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 492 DIV1 Easy - TimeTravellingGardener</title>
-      <link>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</link>
-      <pubDate>Sat, 09 May 2015 16:40:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11060&amp;amp;rd=14245 解き方 ２つの木のペアのいずれかの傾きが、最適な傾きになることがわかる。 このうち、切らなくてもよい木が一番少なく、かつ地面より下に木がい</description>
-    </item>
-    
-    <item>
-      <title>SRM 491 DIV1 Easy - FoxMakingDice</title>
-      <link>https://chaingng.github.io/post/srm-491-div1-easy---foxmakingdice/</link>
-      <pubDate>Sat, 09 May 2015 16:29:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-491-div1-easy---foxmakingdice/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11234&amp;amp;rd=14244 解き方 Kを固定することで、そのKを作ることのできる組み合わせの数を 求めることができる。 よって、すべてのKについて作ることのできるサイコ</description>
-    </item>
-    
-    <item>
       <title>SRM 497 DIV1 Easy - PermutationSignature xx</title>
       <link>https://chaingng.github.io/post/srm-497-div1-easy---permutationsignature-xx/</link>
       <pubDate>Sat, 09 May 2015 16:27:00 +0000</pubDate>
@@ -1985,24 +1967,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-607-div1-easy---palindromicsubstringsdiv1-xx/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12964&amp;amp;rd=15840 ある文字列が与えられる。 文字列はアルファベットと、？からなり、？には任意の文字を入れることができる。 ？に任意の文字が入れられたとき、 そ</description>
-    </item>
-    
-    <item>
-      <title>SRM 490 DIV1 Easy - Starport (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 02 Feb 2014 18:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-490-div1-easy---starport-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11227&amp;amp;rd=14243 Ｍ秒間隔でスペースシャトルが到着し、Ｎ秒間隔でテレポートが始まる。 スペースシャトルが到着したときにテレポート間隔とぴったりでなければ、</description>
-    </item>
-    
-    <item>
-      <title>SRM 493 DIV1 Easy - StonesGame (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 02 Feb 2014 14:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-493-div1-easy---stonesgame-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11292&amp;amp;rd=14422 番号が１から始まる長さＮの列に、ひとつだけ白い石が置かれている。 そのほかの場所には黒い石が置かれている。 ここで２人のプレイヤーでゲーム</description>
     </item>
     
     <item>
