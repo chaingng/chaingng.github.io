@@ -323,6 +323,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>android studioのプロキシ設定</title>
+      <link>https://chaingng.github.io/post/android-studio%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A/</link>
+      <pubDate>Wed, 08 Oct 2014 20:44:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/android-studio%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A/</guid>
+      <description>android studioのプロキシ設定のメモ。 HTTP Proxy File&amp;gt;Setting&amp;gt;HTTP Proxyから Manual Proxy Settingを選んで設定。 設定後、「Check Connection」ボタンで正</description>
+    </item>
+    
+    <item>
       <title>hulu</title>
       <link>https://chaingng.github.io/post/hulu/</link>
       <pubDate>Sun, 21 Apr 2013 20:21:00 +0000</pubDate>
