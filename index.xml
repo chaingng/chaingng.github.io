@@ -935,15 +935,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 475 DIV1 Easy - RabbitStepping</title>
-      <link>https://chaingng.github.io/post/srm-475-div1-easy---rabbitstepping/</link>
-      <pubDate>Tue, 05 May 2015 23:44:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-475-div1-easy---rabbitstepping/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10878&amp;amp;rd=14156 １次元のセルがあり、赤、白、黒のいずれかの色が塗られている。 またセルのうちいくつかにうさぎがいる。 各ターンごとに、うさぎはそのセルの色</description>
-    </item>
-    
-    <item>
       <title>SRM 487 DIV1 Easy - BunnyComputer x</title>
       <link>https://chaingng.github.io/post/srm-487-div1-easy---bunnycomputer-x/</link>
       <pubDate>Tue, 05 May 2015 23:30:00 +0000</pubDate>
@@ -968,24 +959,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-486-div1-easy---oneregister/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10992&amp;amp;rd=14239 ある整数sからtに変換したい。 変換には＋、＊、ー、／の４つの操作があり、＋は現在の数と同じ数を足し、 ＊は現在の数と同じ数をかけ、ーは現</description>
-    </item>
-    
-    <item>
-      <title>SRM 470 DIV1 Easy - DoorsGame ○</title>
-      <link>https://chaingng.github.io/post/srm-470-div1-easy---doorsgame-/</link>
-      <pubDate>Mon, 04 May 2015 21:43:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-470-div1-easy---doorsgame-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10915&amp;amp;rd=14153 AからPまでの16色のいずれかの色がついたドアがある。 Johnは最初左端におり、Brusは最初右端にいる。 Johnからスタートし、交互</description>
-    </item>
-    
-    <item>
-      <title>SRM 474 DIV1 Easy - RouteIntersection</title>
-      <link>https://chaingng.github.io/post/srm-474-div1-easy---routeintersection/</link>
-      <pubDate>Mon, 04 May 2015 21:36:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-474-div1-easy---routeintersection/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10804&amp;amp;rd=14185 N個の次元があり、最初はすべての次元について位置０からスタートする。 各ステップについて、どの次元の座標を＋ーするか与えられる。 このとき</description>
     </item>
     
     <item>
@@ -1040,15 +1013,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-409-div1-easy---orderedsuperstring/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9823&amp;amp;rd=12181 複数の文字列が与えられる。 各文字列を順につなげていく。 ただし、これまでの文字列の後ろ部分と、次につなげる文字列の前部分で一致 していると</description>
-    </item>
-    
-    <item>
-      <title>SRM 403 DIV1 Easy - TheLuckyNumbers ○</title>
-      <link>https://chaingng.github.io/post/srm-403-div1-easy---theluckynumbers-/</link>
-      <pubDate>Wed, 29 Apr 2015 22:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-403-div1-easy---theluckynumbers-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8568&amp;amp;rd=12175 整数aとbが与えられる。 a以上かつb以下の整数のうち、4と7からなる整数の総数を求める。 解き方 a,bは10^9でありすべて全探索しては</description>
     </item>
     
     <item>
@@ -1925,15 +1889,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 469 DIV1 Middle - TheMoviesLevelTwoDivOne　（復習×）</title>
-      <link>https://chaingng.github.io/post/srm-469-div1-middle---themoviesleveltwodivone%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Thu, 01 May 2014 21:47:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-469-div1-middle---themoviesleveltwodivone%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 プレイヤーは複数存在するホラー映画を観る。 各ホラー映画について、映画の長さlengthと恐いシーンが出現するときの映画開始からの長さsc</description>
-    </item>
-    
-    <item>
       <title>SRM 617 DIV1 Middle - PieOrDolphin　（復習×）</title>
       <link>https://chaingng.github.io/post/srm-617-div1-middle---pieordolphin%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 26 Apr 2014 23:20:00 +0000</pubDate>
@@ -2219,15 +2174,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11131&amp;amp;rd=14237 ある数xの平方数yを考えたとき、(x*x=y), かつnの各桁の和で表わされるS(n)について、S(x)*S(x)=S(y)が成り立つと</description>
-    </item>
-    
-    <item>
-      <title>SRM 472 DIV1 Easy - PotatoGame (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-472-div1-easy---potatogame-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 11:26:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-472-div1-easy---potatogame-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10759&amp;amp;rd=14154 ・TaroとHanakoの２人がゲームをする。 ・ポテトの数が与えられて、４の階乗分だけ自分のターンのときに食べることができる。 ・ポテト</description>
     </item>
     
     <item>
