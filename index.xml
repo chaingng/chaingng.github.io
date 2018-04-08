@@ -701,30 +701,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 500 DIV1 Easy - MafiaGame x</title>
-      <link>https://chaingng.github.io/post/srm-500-div1-easy---mafiagame-x/</link>
-      <pubDate>Sun, 10 May 2015 21:08:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-500-div1-easy---mafiagame-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11342&amp;amp;rd=14429 解き方 投票数が一番多い人が最後に残る候補となる。 よってそれがX人だとすると、最後に１人残るのであれば 確率は1/Xとなる。 最後に一人残る</description>
-    </item>
-    
-    <item>
       <title>SRM 509 DIV1 Easy - LuckyRemainder</title>
       <link>https://chaingng.github.io/post/srm-509-div1-easy---luckyremainder/</link>
       <pubDate>Sun, 10 May 2015 20:58:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-509-div1-easy---luckyremainder/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11138&amp;amp;rd=14438 解き方 各桁の数は与えられた整数の桁数をNとすると、それぞれ2^(N-1)回 足されることになる。 この数を９で割った余りが答えになる。 コー</description>
-    </item>
-    
-    <item>
-      <title>SRM 502 DIV1 Easy - TheLotteryBothDivs x</title>
-      <link>https://chaingng.github.io/post/srm-502-div1-easy---thelotterybothdivs-x/</link>
-      <pubDate>Sun, 10 May 2015 15:56:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-502-div1-easy---thelotterybothdivs-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11359&amp;amp;rd=14431 解き方 初期配列のままで各文字列ペアについて包含しているかで判定すると ３つ以上の要素が互いに関係する場合にただしく計算できない。 そのため</description>
     </item>
     
     <item>
@@ -773,15 +755,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 495 DIV1 Easy - ColorfulCards xx</title>
-      <link>https://chaingng.github.io/post/srm-495-div1-easy---colorfulcards-xx/</link>
-      <pubDate>Sun, 10 May 2015 10:52:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-495-div1-easy---colorfulcards-xx/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11302&amp;amp;rd=14424 解き方 すべての状態について、満たすすべての整数を調べていっては コード量が大変になってしまう。 そこで各状態について、とりうる最小の整数と</description>
-    </item>
-    
-    <item>
       <title>TCO 2015 1C Middle - UnrelatedPaths</title>
       <link>https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/</link>
       <pubDate>Sun, 10 May 2015 10:37:00 +0000</pubDate>
@@ -797,78 +770,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/tco-2015-1c-hard----magicwords/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13731&amp;amp;rd=16434 解き方 dpの問題。 dp[現在調べている桁数][beautifulcountの数][10の連続数]＝そのbeautifulcountの総</description>
-    </item>
-    
-    <item>
-      <title>SRM 504 DIV1 Easy - MathContest</title>
-      <link>https://chaingng.github.io/post/srm-504-div1-easy---mathcontest/</link>
-      <pubDate>Sat, 09 May 2015 17:22:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-504-div1-easy---mathcontest/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11233&amp;amp;rd=14433 解き方 キューが連続的になっているということに気をつければ、 現在左から見るか右から見るかの情報、 ひっくり返っているかそうでないかの情報を</description>
-    </item>
-    
-    <item>
-      <title>SRM 497 DIV1 Easy - PermutationSignature xx</title>
-      <link>https://chaingng.github.io/post/srm-497-div1-easy---permutationsignature-xx/</link>
-      <pubDate>Sat, 09 May 2015 16:27:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-497-div1-easy---permutationsignature-xx/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11115&amp;amp;rd=14426 解き方 配列の数が５０個なのですべての組み合わせは求められないので 順番が決まるか、貪欲法で求められるはず。 左から数を調べていくとすると、</description>
-    </item>
-    
-    <item>
-      <title>SRM 498 DIV1 Easy - FoxSequence</title>
-      <link>https://chaingng.github.io/post/srm-498-div1-easy---foxsequence/</link>
-      <pubDate>Sat, 09 May 2015 16:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-498-div1-easy---foxsequence/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11219&amp;amp;rd=14427 解き方 システムテストで落ちないような実装の正確性が求められる問題。 共通処理は関数化し、各区間について点の不等号がどうであるか 正しく実装</description>
-    </item>
-    
-    <item>
-      <title>SRM 499 DIV1 Easy - ColorfulRabbits ○</title>
-      <link>https://chaingng.github.io/post/srm-499-div1-easy---colorfulrabbits-/</link>
-      <pubDate>Sat, 09 May 2015 16:18:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-499-div1-easy---colorfulrabbits-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11327&amp;amp;rd=14428 様々な種類のうさぎがいる。 そのうちいくつかのうさぎに質問し、自分以外に同じ種類のうさぎが何匹いるか 答えている。 このとき、うさぎの総数に</description>
-    </item>
-    
-    <item>
-      <title>SRM 496 DIV1 Easy - ColoredStrokes ○</title>
-      <link>https://chaingng.github.io/post/srm-496-div1-easy---coloredstrokes-/</link>
-      <pubDate>Sat, 09 May 2015 16:11:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-496-div1-easy---coloredstrokes-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11306&amp;amp;rd=14425 青を縦に塗ることができるブラシと、赤を横に塗ることができるブラシが 与えられる。 また青と赤が交わったセルは緑色になる。 最初は真っ白なボー</description>
-    </item>
-    
-    <item>
-      <title>SRM 494 DIV1 Easy - Painting ○</title>
-      <link>https://chaingng.github.io/post/srm-494-div1-easy---painting-/</link>
-      <pubDate>Sat, 09 May 2015 16:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-494-div1-easy---painting-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11310&amp;amp;rd=14423 白いボードが与えられる。 これをN＊Nの黒いスタンプによって、与えられた絵を作りたい。 できるだけ大きいスタンプで与えられた絵を作りたいと</description>
-    </item>
-    
-    <item>
-      <title>SRM 504.5 DIV1 Easy - TheNumbersWithLuckyLastDigit</title>
-      <link>https://chaingng.github.io/post/srm-504.5-div1-easy---thenumberswithluckylastdigit/</link>
-      <pubDate>Sat, 09 May 2015 16:02:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-504.5-div1-easy---thenumberswithluckylastdigit/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11096&amp;amp;rd=14514 下１桁が４または７である数はラッキーナンバーとなる。 ある整数Nが与えられたとき、その数をラッキーナンバーの和で表したい。 ラッキーナンバ</description>
-    </item>
-    
-    <item>
-      <title>SRM 506 DIV1 Easy - SlimeXSlimesCity</title>
-      <link>https://chaingng.github.io/post/srm-506-div1-easy---slimexslimescity/</link>
-      <pubDate>Sat, 09 May 2015 15:55:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-506-div1-easy---slimexslimescity/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11154&amp;amp;rd=14435 スライムの島が複数あり、各島ごとに何匹スライムがいるかわかっている。 各島を１つに統合したい。 ２つの島を統合するとき、もう一つの島にいる</description>
     </item>
     
     <item>
@@ -1799,24 +1700,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 502 DIV1 Middle - TheProgrammingContestDivOne （復習xx）</title>
-      <link>https://chaingng.github.io/post/srm-502-div1-middle---theprogrammingcontestdivone-%E5%BE%A9%E7%BF%92xx/</link>
-      <pubDate>Sat, 29 Mar 2014 11:49:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-502-div1-middle---theprogrammingcontestdivone-%E5%BE%A9%E7%BF%92xx/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11357 プログラミングコンテストが開催され、複数与えられる問題を時間Ｔ以内に解く。 各問題について、得られるmaxPointsと1分あたりに引か</description>
-    </item>
-    
-    <item>
-      <title>SRM 499 DIV1 Middle - WhiteSpaceEditing　（復習×○）</title>
-      <link>https://chaingng.github.io/post/srm-499-div1-middle---whitespaceediting%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 26 Mar 2014 00:21:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-499-div1-middle---whitespaceediting%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://topcoder.bgcoder.com/print.php?id=2810 スペースと改行からなる文字列がある。 最初は改行のみ入力されている。 このとき、与えられた配列が(3,2,2)であるなら space space space 改行 space space 改行</description>
-    </item>
-    
-    <item>
       <title>LinuxでCPUやメモリ使用状況のログを取る方法</title>
       <link>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 12 Mar 2014 19:55:00 +0000</pubDate>
@@ -2024,24 +1907,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 501 DIV1 Easy - FoxPlayingGame (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 26 Jan 2014 10:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11284&amp;amp;rd=14430 ・nA,nB,paramA,paramBが与えられる。 ・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけpara</description>
-    </item>
-    
-    <item>
-      <title>SRM 505 DIV1 Easy - RectangleArea (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-505-div1-easy---rectanglearea-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 26 Jan 2014 08:58:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-505-div1-easy---rectanglearea-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11400&amp;amp;rd=14434 ・縦横の長さが異なる四角形がＮ＊Ｍ個与えられる。 ただし、同じ行にある四角形の縦の長さは同じであり、同じ列にある四角形の横の長さは同じで</description>
-    </item>
-    
-    <item>
       <title>SRM 596 DIV1 Easy - IncrementAndDoubling (復習○)</title>
       <link>https://chaingng.github.io/post/srm-596-div1-easy---incrementanddoubling-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 26 Jan 2014 00:08:00 +0000</pubDate>
@@ -2075,15 +1940,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/%E4%BF%BA%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%83%81/</guid>
       <description>用事があって表参道に行ったところ、通りがかりに俺のフレンチがあったので行ってきました。 俺のフレンチの中でも一番大きい店舗らしく、すぐに入るこ</description>
-    </item>
-    
-    <item>
-      <title>SRM 503 DIV1 Easy - ToastXToast (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 19 Oct 2013 08:26:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11204&amp;amp;rd=14432 様々な種類のトーストがあり、ある焼き時間になるとポッピングシャワーとなるが その時間未満だと生焼け、その時間を過ぎると焼きすぎになる。 ポ</description>
     </item>
     
     <item>
