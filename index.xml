@@ -1007,33 +1007,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 419 DIV1 Easy - Undo ○</title>
-      <link>https://chaingng.github.io/post/srm-419-div1-easy---undo-/</link>
-      <pubDate>Sat, 09 May 2015 15:41:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-419-div1-easy---undo-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10054&amp;amp;rd=13510 ２つの操作の列が与えられる。 操作は以下の２種類。 ・type a 与えられたアルファベット（ここではa）をタイプする ・undo x x秒前までの</description>
-    </item>
-    
-    <item>
-      <title>SRM 423 DIV1 Easy - TheTower x</title>
-      <link>https://chaingng.github.io/post/srm-423-div1-easy---thetower-x/</link>
-      <pubDate>Sat, 09 May 2015 15:38:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-423-div1-easy---thetower-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9976&amp;amp;rd=13514 （x、y）の点がN個与えられる。 この点を１個～N個までそれぞれ同じ位置にあるよう移動させるときの、 それぞれの最小移動数を求める。 解き方</description>
-    </item>
-    
-    <item>
-      <title>SRM 424 DIV1 Easy - ProductOfDigits x</title>
-      <link>https://chaingng.github.io/post/srm-424-div1-easy---productofdigits-x/</link>
-      <pubDate>Sat, 09 May 2015 15:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-424-div1-easy---productofdigits-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10177&amp;amp;rd=13515 ある整数Nが与えられる。 各桁の数の積がNになる整数について、 その最小の桁数を求める。 解き方 Nを９から１で順番に割れるか確かめていって、</description>
-    </item>
-    
-    <item>
       <title>SRM 658 DIV2 Hard - OddEvenTreeHard</title>
       <link>https://chaingng.github.io/post/srm-658-div2-hard---oddeventreehard/</link>
       <pubDate>Wed, 06 May 2015 12:40:00 +0000</pubDate>
@@ -1097,15 +1070,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 420 DIV1 Easy - SolitaireSimulation ○</title>
-      <link>https://chaingng.github.io/post/srm-420-div1-easy---solitairesimulation-/</link>
-      <pubDate>Tue, 05 May 2015 18:54:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-420-div1-easy---solitairesimulation-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9917&amp;amp;rd=13511 カードが数枚ずつ山になって積まれている。 各ターン、すべての山から１枚ずつカードをとって、そのカードで 一つ山を追加する操作を繰り返す。 こ</description>
-    </item>
-    
-    <item>
       <title>SRM 444 DIV1 Easy - UnfoldingTriangles ○</title>
       <link>https://chaingng.github.io/post/srm-444-div1-easy---unfoldingtriangles-/</link>
       <pubDate>Tue, 05 May 2015 18:20:00 +0000</pubDate>
@@ -1130,15 +1094,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-452-div1-easy---nottwo-/</guid>
       <description>問題 H＊Wの大きさである２次元の座標があり、そこにできるだけ多くの 石を置きたい。 ただし、それぞれの石の距離についてユークリッド距離が２になら</description>
-    </item>
-    
-    <item>
-      <title>SRM 418 DIV1 Easy - TwoLotteryGames ○</title>
-      <link>https://chaingng.github.io/post/srm-418-div1-easy---twolotterygames-/</link>
-      <pubDate>Tue, 05 May 2015 18:02:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-418-div1-easy---twolotterygames-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10071&amp;amp;rd=13509 ｎ個のくじからm個選ぶ。 相手も同様にm個選ぶ。 選んだくじのうち、相手がえらんだくじとk個一致していれば勝ちとなる。 このとき、勝ちとなる</description>
     </item>
     
     <item>
@@ -1337,15 +1292,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-438-div1-easy---unluckyintervals/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10356&amp;amp;rd=13803 luckyである整数の集合が与えられる。 また、unluckyな区間の取り方が定義される。 unluckyな区間とは、[A B]となるA&amp;l</description>
-    </item>
-    
-    <item>
-      <title>SRM 416 DIV1 Easy - ShipLoading</title>
-      <link>https://chaingng.github.io/post/srm-416-div1-easy---shiploading/</link>
-      <pubDate>Thu, 30 Apr 2015 08:12:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-416-div1-easy---shiploading/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9933&amp;amp;rd=13506 複数のクレーンがあり、それぞれが運ぶことのできる最大の重さがわかっている。 また複数の積荷があり、これをすべて運びたい。 クレーンは同時に</description>
     </item>
     
     <item>
@@ -2312,15 +2258,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 420 DIV1 Middle - RedIsGood　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-420-div1-middle---redisgood%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 30 Mar 2014 00:19:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-420-div1-middle---redisgood%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9915 赤いカードがＲ枚、青のカードがＢ枚存在する。 最初にカードは伏せられており、１枚選んでひっくり返す。 ひっくり返したカードが赤ならスコアが</description>
-    </item>
-    
-    <item>
       <title>SRM 502 DIV1 Middle - TheProgrammingContestDivOne （復習xx）</title>
       <link>https://chaingng.github.io/post/srm-502-div1-middle---theprogrammingcontestdivone-%E5%BE%A9%E7%BF%92xx/</link>
       <pubDate>Sat, 29 Mar 2014 11:49:00 +0000</pubDate>
@@ -2456,15 +2393,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 417 DIV1 Easy - TemplateMatching （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 22 Feb 2014 09:50:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-417-div1-easy---templatematching-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9943&amp;amp;rd=13508 ある文字列と、接頭辞と接尾辞が与えられる。 ある文字列のサブ文字列について、接頭辞と接尾辞ができるだけマッチするものを求める。 ただし、接</description>
-    </item>
-    
-    <item>
       <title>SRM 593 DIV1 Easy - HexagonalBoard (復習××)</title>
       <link>https://chaingng.github.io/post/srm-593-div1-easy---hexagonalboard-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 22 Feb 2014 08:52:00 +0000</pubDate>
@@ -2591,33 +2519,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 427 DIV1 Easy - DesignCalendar （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 20:08:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10155&amp;amp;rd=13518 １日あたりの日数Ｄと１年あたりの日数Ｙが与えられる。 １年あたりの日数が１日あたりの日数で割り切れるのに必要な年数を求める。 解き方 問題文</description>
-    </item>
-    
-    <item>
-      <title>SRM 426 DIV1 Easy - ShufflingMachine (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 19:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10196&amp;amp;rd=13517 カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。 シャッフル方法についてプレイヤーは知っている。 プレイヤ</description>
-    </item>
-    
-    <item>
-      <title>SRM 421 DIV1 Easy - EquilibriumPoints (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-421-div1-easy---equilibriumpoints-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 16:46:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-421-div1-easy---equilibriumpoints-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10104&amp;amp;rd=13512 直線状に複数の点とその点にある球の数が与えられる。 ある点を考えた時、その点と点ｘの距離をｄ、点ｘの球の数をｍとすると Ｆ＝Ｇ＊ｍ１＊ｍ２</description>
-    </item>
-    
-    <item>
       <title>SRM 441 DIV1 Easy - PerfectPermutation (復習○)</title>
       <link>https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 01 Feb 2014 14:59:00 +0000</pubDate>
@@ -2723,15 +2624,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-596-div1-easy---incrementanddoubling-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12790&amp;amp;rd=15708 ・求める整数の集合が与えられる。 ・オペレーションはひとつの整数を１足すか全ての整数を２かけるかの２種類。 ・各整数は０からスタートし、オ</description>
-    </item>
-    
-    <item>
-      <title>SRM 422 DIV1 Easy - PrimeSoccer (復習○)</title>
-      <link>https://chaingng.github.io/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 18 Jan 2014 09:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10033&amp;amp;rd=13513 ・チームＡとＢがサッカーゲームを行う。 ・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。 ・各セグメントごと、各チームはあ</description>
     </item>
     
     <item>
