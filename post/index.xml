@@ -1376,6 +1376,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 408 DIV1 Easy - OlympicCandles ○</title>
+      <link>https://chaingng.github.io/post/srm-408-div1-easy---olympiccandles-/</link>
+      <pubDate>Wed, 29 Apr 2015 22:23:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-408-div1-easy---olympiccandles-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8467&amp;amp;rd=12180 キャンドルが複数与えられ、それぞれの高さがわかっている。 １日目は１つ、2日めは２つ、、、とキャンドルをつけていき、 最大何日目までキャン</description>
+    </item>
+    
+    <item>
+      <title>SRM 406 DIV1 Easy - SymmetricPie ○</title>
+      <link>https://chaingng.github.io/post/srm-406-div1-easy---symmetricpie-/</link>
+      <pubDate>Wed, 29 Apr 2015 22:17:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-406-div1-easy---symmetricpie-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8784&amp;amp;rd=12178 パイチャートを作り、各要素が全体の何％を占めるかわかっている。 このパイチャートを作るにあたって、できるだけ区切りの線が真ん中を 横断する</description>
+    </item>
+    
+    <item>
       <title>SRM 403 DIV1 Easy - TheLuckyNumbers ○</title>
       <link>https://chaingng.github.io/post/srm-403-div1-easy---theluckynumbers-/</link>
       <pubDate>Wed, 29 Apr 2015 22:04:00 +0000</pubDate>
@@ -2357,6 +2375,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 408 DIV1 Middle - CandyGame　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-408-div1-middle---candygame%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 22 Mar 2014 11:47:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-408-div1-middle---candygame%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8462 有効グラフが存在し、そのノードにコインが２枚以上あれば1枚を消費し、１枚を隣へ移すことができる。 プレイヤーがゲームを行い、ターゲットと</description>
+    </item>
+    
+    <item>
+      <title>SRM 407 DIV1 Middle -PointsGame　（復習××）</title>
+      <link>https://chaingng.github.io/post/srm-407-div1-middle--pointsgame%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 16 Mar 2014 08:42:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-407-div1-middle--pointsgame%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://topcoder.bgcoder.com/print.php?id=2209 (x,y)座標の点が複数存在し、２人のプレイヤーが交互に選んでいく。 最初は自分からスタートし、選んだ点を赤に塗る。次は相手の番に移り、</description>
+    </item>
+    
+    <item>
       <title>LinuxでCPUやメモリ使用状況のログを取る方法</title>
       <link>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 12 Mar 2014 19:55:00 +0000</pubDate>
@@ -2381,6 +2417,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-477-div1-middle---pythtriplets%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10766&amp;amp;rd=14157 以下の条件を満たす３角形を考える。 ・３辺a,b,cがすべて整数 ・a^2+b^2=c^2 ・a,bの最大公約数が1 また辺の集合が与えられ、</description>
+    </item>
+    
+    <item>
+      <title>SRM 411 DIV1 Middle - HoleCakeCuts　（復習××○）</title>
+      <link>https://chaingng.github.io/post/srm-411-div1-middle---holecakecuts%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 08 Mar 2014 14:36:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-411-div1-middle---holecakecuts%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9752&amp;amp;rd=12183 座標(0,0)を中心として、１辺の長さがcakeLength*2であり、中心の穴がholeLength*2であるケーキが存在する。 この</description>
     </item>
     
     <item>
@@ -2501,6 +2546,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 410 DIV1 Easy - AddElectricalWires (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 22 Feb 2014 07:54:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-410-div1-easy---addelectricalwires-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8817&amp;amp;rd=12182 ノードが複数存在し、任意のノード同士がつながっている。 また、任意のノードが電力源につながっている。ただし、複数の電力源につながってはい</description>
+    </item>
+    
+    <item>
       <title>SRM 435 DIV1 Easy - CellRemoval （復習○）</title>
       <link>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Wed, 19 Feb 2014 21:53:00 +0000</pubDate>
@@ -2516,6 +2570,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-591-div1-easy---thetree-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12746&amp;amp;rd=15703 グラフの各深さに対する頂点数が与えられる。 このとき、そのグラフの直径を求める。 解き方 グラフを最大のケースで作ってもよいが、場合分けをす</description>
+    </item>
+    
+    <item>
+      <title>SRM 407 DIV1 Easy - CorporationSalary（復習○）</title>
+      <link>https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Thu, 13 Feb 2014 14:38:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-407-div1-easy---corporationsalary%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9824&amp;amp;rd=12179 部下とマネージャーからなるサラリーマンの会社がある。 配列が与えられ、ある人に対してその部下が誰かがわかっている。 また、ある人の部下の部</description>
     </item>
     
     <item>
@@ -2768,6 +2831,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-422-div1-easy---primesoccer-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10033&amp;amp;rd=13513 ・チームＡとＢがサッカーゲームを行う。 ・ゲームは９０分あり、５分ごと、１８回のセグメントに分けられる。 ・各セグメントごと、各チームはあ</description>
+    </item>
+    
+    <item>
+      <title>SRM 411 DIV1 Easy - SentenceDecomposition （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-411-div1-easy---sentencedecomposition-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Fri, 17 Jan 2014 08:27:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-411-div1-easy---sentencedecomposition-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8692&amp;amp;rd=12183 ・ある文と、単語の一覧が与えられる。 ・ある文を、与えられた単語を使って変換したい。 ・与えられた単語の順番を変えることで、ある文の一部と</description>
     </item>
     
     <item>
