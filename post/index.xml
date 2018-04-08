@@ -926,24 +926,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 483 DIV1 Easy - BestApproximationDiv1 ○</title>
-      <link>https://chaingng.github.io/post/srm-483-div1-easy---bestapproximationdiv1-/</link>
-      <pubDate>Tue, 05 May 2015 19:07:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-483-div1-easy---bestapproximationdiv1-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11023&amp;amp;rd=14236 ある小数が与えられる。 この小数と、接頭辞が最も多く一致する、分母がmaxDen以下の分数と それが何桁一致するかを求める。 そのような分数</description>
-    </item>
-    
-    <item>
-      <title>SRM 486 DIV1 Easy - OneRegister</title>
-      <link>https://chaingng.github.io/post/srm-486-div1-easy---oneregister/</link>
-      <pubDate>Tue, 05 May 2015 19:03:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-486-div1-easy---oneregister/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10992&amp;amp;rd=14239 ある整数sからtに変換したい。 変換には＋、＊、ー、／の４つの操作があり、＋は現在の数と同じ数を足し、 ＊は現在の数と同じ数をかけ、ーは現</description>
-    </item>
-    
-    <item>
       <title>SRM 657 DIV1 Easy - ProblemSets x</title>
       <link>https://chaingng.github.io/post/srm-657-div1-easy---problemsets-x/</link>
       <pubDate>Tue, 28 Apr 2015 20:26:00 +0000</pubDate>
@@ -2078,15 +2060,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 484 DIV1 Easy - RabbitNumber (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 12:17:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11131&amp;amp;rd=14237 ある数xの平方数yを考えたとき、(x*x=y), かつnの各桁の和で表わされるS(n)について、S(x)*S(x)=S(y)が成り立つと</description>
-    </item>
-    
-    <item>
       <title>BeautifulSoupの第一歩</title>
       <link>https://chaingng.github.io/post/beautifulsoup%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9/</link>
       <pubDate>Fri, 31 Jan 2014 23:22:00 +0000</pubDate>
@@ -2120,15 +2093,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/python%E3%81%A7%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E6%99%82%E3%81%AE%E6%B3%A8%E6%84%8F/</guid>
       <description>クローラーを作るのにPythonが使いやすかったので利用したのですが、 そのときにimportでひっかかってしまったのでメモ。 importの書</description>
-    </item>
-    
-    <item>
-      <title>SRM 485 DIV1 Easy - AfraidOfEven (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 26 Jan 2014 13:28:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-485-div1-easy---afraidofeven-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11146&amp;amp;rd=14238 ・ある数列が与えられる。 ・その数列は等差数列だが、偶数の数字は奇数になるまで２で割られている。 このとき、もとの等差数列を求める。 解き方</description>
     </item>
     
     <item>
@@ -2192,15 +2156,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-503-div1-easy---toastxtoast-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11204&amp;amp;rd=14432 様々な種類のトーストがあり、ある焼き時間になるとポッピングシャワーとなるが その時間未満だと生焼け、その時間を過ぎると焼きすぎになる。 ポ</description>
-    </item>
-    
-    <item>
-      <title>SRM 482 DIV1 Easy - LockersDivOne （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-482-div1-easy---lockersdivone-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Fri, 18 Oct 2013 08:44:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-482-div1-easy---lockersdivone-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11110&amp;amp;rd=14235 N個のドアがある。 最初は一つおきにドアを開けていく。 次は空いているドアはないとみなして、２つおきにドアをあけていく。 次は３つおき・・・</description>
     </item>
     
     <item>

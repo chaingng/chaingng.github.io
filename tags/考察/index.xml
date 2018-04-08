@@ -39,15 +39,6 @@
     </item>
     
     <item>
-      <title>SRM 484 DIV1 Easy - RabbitNumber (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 12:17:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-484-div1-easy---rabbitnumber-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11131&amp;amp;rd=14237 ある数xの平方数yを考えたとき、(x*x=y), かつnの各桁の和で表わされるS(n)について、S(x)*S(x)=S(y)が成り立つと</description>
-    </item>
-    
-    <item>
       <title>SRM 505 DIV1 Easy - RectangleArea (復習×○)</title>
       <link>https://chaingng.github.io/post/srm-505-div1-easy---rectanglearea-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 26 Jan 2014 08:58:00 +0000</pubDate>
