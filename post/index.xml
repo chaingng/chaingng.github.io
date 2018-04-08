@@ -485,15 +485,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 464 DIV1 Easy - ColorfulStrings xx</title>
-      <link>https://chaingng.github.io/post/srm-464-div1-easy---colorfulstrings-xx/</link>
-      <pubDate>Wed, 27 May 2015 20:19:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-464-div1-easy---colorfulstrings-xx/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10724&amp;amp;rd=14149 解き方 Nは５０だが、同じ数字が２度出現すると条件を満たさないので N=10までであれば全探索可能。 DFSでこれまで出現した数字をカウント</description>
-    </item>
-    
-    <item>
       <title>SRM 527 DIV1 Easy - P8XGraphBuilder</title>
       <link>https://chaingng.github.io/post/srm-527-div1-easy---p8xgraphbuilder/</link>
       <pubDate>Wed, 27 May 2015 20:01:00 +0000</pubDate>
@@ -725,15 +716,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-502-div1-easy---thelotterybothdivs-x/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11359&amp;amp;rd=14431 解き方 初期配列のままで各文字列ペアについて包含しているかで判定すると ３つ以上の要素が互いに関係する場合にただしく計算できない。 そのため</description>
-    </item>
-    
-    <item>
-      <title>SRM 460 DIV1 Easy - TheQuestionsAndAnswersDivOne</title>
-      <link>https://chaingng.github.io/post/srm-460-div1-easy---thequestionsandanswersdivone/</link>
-      <pubDate>Sun, 10 May 2015 13:45:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-460-div1-easy---thequestionsandanswersdivone/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10768&amp;amp;rd=14146 解き方 数が小さいので全探索可能。 すでに答えた人の数、YesかNoかを答えたかの情報を持たせて 答えなくてもよい場合と答えなければならない</description>
     </item>
     
     <item>
@@ -1043,48 +1025,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 461 DIV1 Easy - ColoringRectangle ○</title>
-      <link>https://chaingng.github.io/post/srm-461-div1-easy---coloringrectangle-/</link>
-      <pubDate>Sun, 03 May 2015 22:11:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-461-div1-easy---coloringrectangle-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10731&amp;amp;rd=14181 長方形を、与えられた赤と青の円で覆いたい。 各円について、その直径が与えられる。 また、円の中心は長方形を横１線に分割する線上にあるように</description>
-    </item>
-    
-    <item>
-      <title>SRM 462 DIV1 Easy - AgeEncoding</title>
-      <link>https://chaingng.github.io/post/srm-462-div1-easy---ageencoding/</link>
-      <pubDate>Sun, 03 May 2015 22:05:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-462-div1-easy---ageencoding/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10589&amp;amp;rd=14147 １と０からなる数が与えられ、これをｘ進数にすることでｎを表したい。 ｘは整数でなくても良いとき、ｘを求める。 ただしそのようなｘが存在しな</description>
-    </item>
-    
-    <item>
       <title>SRM 469 DIV1 Easy - TheMoviesLevelOneDivOne</title>
       <link>https://chaingng.github.io/post/srm-469-div1-easy---themovieslevelonedivone/</link>
       <pubDate>Sun, 03 May 2015 21:59:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-469-div1-easy---themovieslevelonedivone/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10898&amp;amp;rd=14152 ２人が座席に横並びで座りたい。 座席はn個の行だけ与えられる。 座席は各行、m個の席が横並びになっている。 また、すでに予約されている席もわ</description>
-    </item>
-    
-    <item>
-      <title>SRM 465 DIV1 Easy - TurretPlacement</title>
-      <link>https://chaingng.github.io/post/srm-465-div1-easy---turretplacement/</link>
-      <pubDate>Sun, 03 May 2015 21:51:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-465-div1-easy---turretplacement/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10840&amp;amp;rd=14182 ２次元座標上の複数の点が与えられる。 ここから２つの点を選び、それぞれ各点が中心となるように正方形をそれぞれ １つずつ設置したい。 正方形の</description>
-    </item>
-    
-    <item>
-      <title>SRM 463 DIV1 Easy - RabbitNumbering ○</title>
-      <link>https://chaingng.github.io/post/srm-463-div1-easy---rabbitnumbering-/</link>
-      <pubDate>Sun, 03 May 2015 21:44:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-463-div1-easy---rabbitnumbering-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10697&amp;amp;rd=14148 複数のうさぎが存在し、すべてのうさぎに番号をつけたい。 それぞれのうさぎは違う番号をつける。 各うさぎはつけて欲しい番号の最大数を持ってお</description>
     </item>
     
     <item>
