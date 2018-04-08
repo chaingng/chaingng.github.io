@@ -1439,15 +1439,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 400 DIV1 Easy - StrongPrimePower</title>
-      <link>https://chaingng.github.io/post/srm-400-div1-easy---strongprimepower/</link>
-      <pubDate>Tue, 28 Apr 2015 20:55:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-400-div1-easy---strongprimepower/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=8763&amp;amp;rd=12172 ある整数ｎが与えられる。 このｎが素数の階乗で表せるならその素数と階乗数を返す。 そのように表せられなければ空の文字列を返す。 解き方 nの最</description>
-    </item>
-    
-    <item>
       <title>SRM 657 DIV1 Easy - ProblemSets x</title>
       <link>https://chaingng.github.io/post/srm-657-div1-easy---problemsets-x/</link>
       <pubDate>Tue, 28 Apr 2015 20:26:00 +0000</pubDate>
@@ -1895,15 +1886,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-624-div1-easy---buildingheights-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13211&amp;amp;rd=15857 ・様々な高さを持つ建物が与えられる。 ・建物の高さを１変えるのにコストが１かかる。 ・同じ建物がｍ個必ずあるようにしたい。 ・建物の数をｎと</description>
-    </item>
-    
-    <item>
-      <title>2013 TCO Round 2B Easy - FruitTrees (×)</title>
-      <link>https://chaingng.github.io/post/2013-tco-round-2b-easy---fruittrees-/</link>
-      <pubDate>Sun, 02 Nov 2014 22:33:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/2013-tco-round-2b-easy---fruittrees-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12520&amp;amp;rd=15633 ・appleとkiwi、grapeがあり、それぞれ与えられた間隔で一定に置いていく。 ・このとき、２つの果物間の最短距離が最も大きくなる</description>
     </item>
     
     <item>
