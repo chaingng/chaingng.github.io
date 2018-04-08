@@ -800,15 +800,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 498 DIV1 Easy - FoxSequence</title>
-      <link>https://chaingng.github.io/post/srm-498-div1-easy---foxsequence/</link>
-      <pubDate>Sat, 09 May 2015 16:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-498-div1-easy---foxsequence/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11219&amp;amp;rd=14427 解き方 システムテストで落ちないような実装の正確性が求められる問題。 共通処理は関数化し、各区間について点の不等号がどうであるか 正しく実装</description>
-    </item>
-    
-    <item>
       <title>SRM 499 DIV1 Easy - ColorfulRabbits ○</title>
       <link>https://chaingng.github.io/post/srm-499-div1-easy---colorfulrabbits-/</link>
       <pubDate>Sat, 09 May 2015 16:18:00 +0000</pubDate>
