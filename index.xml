@@ -710,15 +710,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 502 DIV1 Easy - TheLotteryBothDivs x</title>
-      <link>https://chaingng.github.io/post/srm-502-div1-easy---thelotterybothdivs-x/</link>
-      <pubDate>Sun, 10 May 2015 15:56:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-502-div1-easy---thelotterybothdivs-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11359&amp;amp;rd=14431 解き方 初期配列のままで各文字列ペアについて包含しているかで判定すると ３つ以上の要素が互いに関係する場合にただしく計算できない。 そのため</description>
-    </item>
-    
-    <item>
       <title>SRM 512 DIV1 Easy - MysteriousRestaurant</title>
       <link>https://chaingng.github.io/post/srm-512-div1-easy---mysteriousrestaurant/</link>
       <pubDate>Sun, 10 May 2015 13:06:00 +0000</pubDate>
@@ -1949,15 +1940,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/python%E3%81%A7%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E6%99%82%E3%81%AE%E6%B3%A8%E6%84%8F/</guid>
       <description>クローラーを作るのにPythonが使いやすかったので利用したのですが、 そのときにimportでひっかかってしまったのでメモ。 importの書</description>
-    </item>
-    
-    <item>
-      <title>SRM 501 DIV1 Easy - FoxPlayingGame (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 26 Jan 2014 10:06:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-501-div1-easy---foxplayinggame-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11284&amp;amp;rd=14430 ・nA,nB,paramA,paramBが与えられる。 ・最初は０から始まり、nA回だけparamA/1000を足し、nB回だけpara</description>
     </item>
     
     <item>
