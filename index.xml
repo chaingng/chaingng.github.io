@@ -683,15 +683,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 516 DIV1 Easy - NetworkXOneTimePad</title>
-      <link>https://chaingng.github.io/post/srm-516-div1-easy---networkxonetimepad/</link>
-      <pubDate>Mon, 11 May 2015 23:05:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-516-div1-easy---networkxonetimepad/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10846&amp;amp;rd=14541 解き方 すべての暗号前の文字と暗号後の文字の組み合わせで、候補となる キーがすべて作成できる。 あるキーについて、暗号後の文字を復号した時に</description>
-    </item>
-    
-    <item>
       <title>TCO 2015 1C Middle - UnrelatedPaths</title>
       <link>https://chaingng.github.io/post/tco-2015-1c-middle---unrelatedpaths/</link>
       <pubDate>Sun, 10 May 2015 10:37:00 +0000</pubDate>
@@ -1823,24 +1814,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/%E4%BF%BA%E3%81%AE%E3%83%95%E3%83%AC%E3%83%B3%E3%83%81/</guid>
       <description>用事があって表参道に行ったところ、通りがかりに俺のフレンチがあったので行ってきました。 俺のフレンチの中でも一番大きい店舗らしく、すぐに入るこ</description>
-    </item>
-    
-    <item>
-      <title>SRM 517 DIV1 Easy - CompositeSmash （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 10:58:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-517-div1-easy---compositesmash-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11535&amp;amp;rd=14542 正の整数Ｎとtargetが与えられる。 Ｎはスマッシュするとx*y=N（x,yは整数）となるｘとｙに分割することができる。 このとき、どう</description>
-    </item>
-    
-    <item>
-      <title>SRM 518 DIV1 Easy - LargestSubsequence （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-518-div1-easy---largestsubsequence-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 13 Oct 2013 10:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-518-div1-easy---largestsubsequence-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11471&amp;amp;rd=14543 ある文字列が与えられる。 その文字からいくつかの文字を削除したものがそのサブ文字列と定義される。 このとき、辞書順で最も降順となるサブ文字</description>
     </item>
     
     <item>
