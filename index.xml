@@ -2357,15 +2357,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 435 DIV1 Easy - CellRemoval （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 19 Feb 2014 21:53:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-435-div1-easy---cellremoval-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10275&amp;amp;rd=13697 有向グラフが存在し、各ノードに対しどのノードが親であるかの情報が与えられる。 ただし、根のノードはー１が入っている。 この有向グラフに、あ</description>
-    </item>
-    
-    <item>
       <title>SRM 591 DIV1 Easy - TheTree (復習×○)</title>
       <link>https://chaingng.github.io/post/srm-591-div1-easy---thetree-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Thu, 13 Feb 2014 15:08:00 +0000</pubDate>
@@ -2462,15 +2453,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10408&amp;amp;rd=13747 N個のボトルがあり、最初は１Ｌだけ水が入っている。 ここで同じ量だけ水が入っているボトルを選んで、一つのボトルに水をまとめることができる</description>
-    </item>
-    
-    <item>
-      <title>SRM 436 DIV1 Easy - BestView （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-436-div1-easy---bestview-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 21:51:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-436-div1-easy---bestview-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10341&amp;amp;rd=13698 間隔１で一列に高層ビルが並んでいる。 高層ビルの上から他のビルをできるだけ多く見渡したい。 他のビルを見渡すには、そのビルと他のビルの屋上</description>
     </item>
     
     <item>
