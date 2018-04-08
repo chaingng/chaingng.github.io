@@ -800,15 +800,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 478 DIV1 Easy - CarrotJumping x</title>
-      <link>https://chaingng.github.io/post/srm-478-div1-easy---carrotjumping-x/</link>
-      <pubDate>Sat, 09 May 2015 16:48:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-478-div1-easy---carrotjumping-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11022&amp;amp;rd=14187 解き方 ４x＊３を３回繰り返したときに８x＋７の２回繰り替えしたものと一致するため 探索回数は最大３０００００回となる。 この回数であれば全</description>
-    </item>
-    
-    <item>
       <title>SRM 492 DIV1 Easy - TimeTravellingGardener</title>
       <link>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</link>
       <pubDate>Sat, 09 May 2015 16:40:00 +0000</pubDate>
@@ -1913,15 +1904,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux%E3%81%A7cpu%E3%82%84%E3%83%A1%E3%83%A2%E3%83%AA%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%B3%81%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
       <description>Linux(使っているのはRedhat Enterprise Linux 6.3)でCPU負荷とメモリ使用状況のログを取る必要があったので使い方をメモ。 ①CPU使用率とメモ</description>
-    </item>
-    
-    <item>
-      <title>SRM 477 DIV1 Middle - PythTriplets　（復習×××）</title>
-      <link>https://chaingng.github.io/post/srm-477-div1-middle---pythtriplets%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sun, 09 Mar 2014 11:37:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-477-div1-middle---pythtriplets%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10766&amp;amp;rd=14157 以下の条件を満たす３角形を考える。 ・３辺a,b,cがすべて整数 ・a^2+b^2=c^2 ・a,bの最大公約数が1 また辺の集合が与えられ、</description>
     </item>
     
     <item>
