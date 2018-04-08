@@ -971,15 +971,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 476 DIV1 Easy - Badgers ○</title>
-      <link>https://chaingng.github.io/post/srm-476-div1-easy---badgers-/</link>
-      <pubDate>Mon, 04 May 2015 21:23:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-476-div1-easy---badgers-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10797&amp;amp;rd=14186 動物BadgersがN匹おり、できるだけ多く飼いたい。 ただし１日に与えられる餌がtotalFoodしかないため、この餌の中で できるだけ</description>
-    </item>
-    
-    <item>
       <title>SRM 481 DIV1 Easy - ChickenOracle △</title>
       <link>https://chaingng.github.io/post/srm-481-div1-easy---chickenoracle-/</link>
       <pubDate>Mon, 04 May 2015 21:17:00 +0000</pubDate>
@@ -1004,15 +995,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-479-div1-easy---thecoffeetimedivone/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11028&amp;amp;rd=14158 1列の席に座っている客にコーヒーか紅茶を提供したい。 １番めの席の横にサーブマシンがあり、そこで紅茶かコーヒーを７人分 入れることができる</description>
-    </item>
-    
-    <item>
-      <title>SRM 409 DIV1 Easy - OrderedSuperString</title>
-      <link>https://chaingng.github.io/post/srm-409-div1-easy---orderedsuperstring/</link>
-      <pubDate>Wed, 29 Apr 2015 22:30:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-409-div1-easy---orderedsuperstring/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9823&amp;amp;rd=12181 複数の文字列が与えられる。 各文字列を順につなげていく。 ただし、これまでの文字列の後ろ部分と、次につなげる文字列の前部分で一致 していると</description>
     </item>
     
     <item>
@@ -1859,15 +1841,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-578-div1-middle---wolfinzoodivone-%E5%BE%A9%E7%BF%92x/</guid>
       <description>問題 Ｎ個のセクションに区切られた道路を渡りたい。 ただし、各セクションには多くて１匹の狼がいるので注意して歩かなくてはいけない。 今回上記に加え</description>
-    </item>
-    
-    <item>
-      <title>SRM 434 DIV1 Middle - HexatridecimalSum （復習x）</title>
-      <link>https://chaingng.github.io/post/srm-434-div1-middle---hexatridecimalsum-%E5%BE%A9%E7%BF%92x/</link>
-      <pubDate>Sat, 17 May 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-434-div1-middle---hexatridecimalsum-%E5%BE%A9%E7%BF%92x/</guid>
-      <description>問題 0～9、A～Zの36種類のアルファベットで表わされる36進数の数字を考える。 最初に、複数の36進数の数字が与えられる。 このうち、任意のk</description>
     </item>
     
     <item>
