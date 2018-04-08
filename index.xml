@@ -1007,24 +1007,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 423 DIV1 Easy - TheTower x</title>
-      <link>https://chaingng.github.io/post/srm-423-div1-easy---thetower-x/</link>
-      <pubDate>Sat, 09 May 2015 15:38:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-423-div1-easy---thetower-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9976&amp;amp;rd=13514 （x、y）の点がN個与えられる。 この点を１個～N個までそれぞれ同じ位置にあるよう移動させるときの、 それぞれの最小移動数を求める。 解き方</description>
-    </item>
-    
-    <item>
-      <title>SRM 424 DIV1 Easy - ProductOfDigits x</title>
-      <link>https://chaingng.github.io/post/srm-424-div1-easy---productofdigits-x/</link>
-      <pubDate>Sat, 09 May 2015 15:34:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-424-div1-easy---productofdigits-x/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10177&amp;amp;rd=13515 ある整数Nが与えられる。 各桁の数の積がNになる整数について、 その最小の桁数を求める。 解き方 Nを９から１で順番に割れるか確かめていって、</description>
-    </item>
-    
-    <item>
       <title>SRM 658 DIV2 Hard - OddEvenTreeHard</title>
       <link>https://chaingng.github.io/post/srm-658-div2-hard---oddeventreehard/</link>
       <pubDate>Wed, 06 May 2015 12:40:00 +0000</pubDate>
@@ -1049,15 +1031,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-475-div1-easy---rabbitstepping/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10878&amp;amp;rd=14156 １次元のセルがあり、赤、白、黒のいずれかの色が塗られている。 またセルのうちいくつかにうさぎがいる。 各ターンごとに、うさぎはそのセルの色</description>
-    </item>
-    
-    <item>
-      <title>SRM 432 DIV1 Easy - LampsGrid ○</title>
-      <link>https://chaingng.github.io/post/srm-432-div1-easy---lampsgrid-/</link>
-      <pubDate>Tue, 05 May 2015 23:35:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-432-div1-easy---lampsgrid-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10154&amp;amp;rd=13694 １と０からなるランプが複数並べられている。 各ランプは１行から成り、すべてのランプが一列に並べられている。 ランプの値がすべて１となったと</description>
     </item>
     
     <item>
@@ -2159,15 +2132,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 430 DIV1 Middle - TwinTowns （復習x）</title>
-      <link>https://chaingng.github.io/post/srm-430-div1-middle---twintowns-%E5%BE%A9%E7%BF%92x/</link>
-      <pubDate>Tue, 20 May 2014 21:04:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-430-div1-middle---twintowns-%E5%BE%A9%E7%BF%92x/</guid>
-      <description>問題 複数の（ｘ、ｙ）で表わされる点が与えられる。 各点について、maxPartners以下の次数で結びたい。 また、各点について結ぶ時はminD</description>
-    </item>
-    
-    <item>
       <title>SRM 509 DIV1 Middle - PalindromizationDiv1　（復習×）</title>
       <link>https://chaingng.github.io/post/srm-509-div1-middle---palindromizationdiv1%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Mon, 19 May 2014 21:55:00 +0000</pubDate>
@@ -2246,15 +2210,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-511-div1-middle---fivehundredeleven%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 ０～５１１の間である数字の配列が与えられ、2人でゲームを行う。 最初はFoxの番から始まり、次はToastmanの番になる。 ゲームは配列か</description>
-    </item>
-    
-    <item>
-      <title>SRM 427 DIV1 Middle - LocateTreasure　（復習××）</title>
-      <link>https://chaingng.github.io/post/srm-427-div1-middle---locatetreasure%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Thu, 10 Apr 2014 07:51:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-427-div1-middle---locatetreasure%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=9984 関数dig(x)が与えられ、x&amp;lt;10のときはx、そうでないときは各桁の和が返される。 プレイヤーはｘｙ座標の(0,0)にいる。 最初</description>
     </item>
     
     <item>
@@ -2537,24 +2492,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 427 DIV1 Easy - DesignCalendar （復習○）</title>
-      <link>https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 20:08:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-427-div1-easy---designcalendar-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10155&amp;amp;rd=13518 １日あたりの日数Ｄと１年あたりの日数Ｙが与えられる。 １年あたりの日数が１日あたりの日数で割り切れるのに必要な年数を求める。 解き方 問題文</description>
-    </item>
-    
-    <item>
-      <title>SRM 426 DIV1 Easy - ShufflingMachine (復習×)</title>
-      <link>https://chaingng.github.io/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 01 Feb 2014 19:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-426-div1-easy---shufflingmachine-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10196&amp;amp;rd=13517 カードをシャッフルして配るゲームがあり、最初は０からＮ－１まで順番に並んでいる。 シャッフル方法についてプレイヤーは知っている。 プレイヤ</description>
-    </item>
-    
-    <item>
       <title>SRM 441 DIV1 Easy - PerfectPermutation (復習○)</title>
       <link>https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sat, 01 Feb 2014 14:59:00 +0000</pubDate>
@@ -2699,30 +2636,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 431 DIV1 Easy - LaserShooting (復習××)</title>
-      <link>https://chaingng.github.io/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Sat, 19 Oct 2013 07:36:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-431-div1-easy---lasershooting-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10258&amp;amp;rd=13522 （０，０）の位置からレーザーが発射される。 レーザーは（ｘ、ｙ１）（ｘ、ｙ２）の二つの値が与えられ、その間を通るように発射される。ｙ１、</description>
-    </item>
-    
-    <item>
       <title>SRM 482 DIV1 Easy - LockersDivOne （復習○）</title>
       <link>https://chaingng.github.io/post/srm-482-div1-easy---lockersdivone-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Fri, 18 Oct 2013 08:44:00 +0000</pubDate>
       
       <guid>https://chaingng.github.io/post/srm-482-div1-easy---lockersdivone-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11110&amp;amp;rd=14235 N個のドアがある。 最初は一つおきにドアを開けていく。 次は空いているドアはないとみなして、２つおきにドアをあけていく。 次は３つおき・・・</description>
-    </item>
-    
-    <item>
-      <title>SRM 428 DIV1 Easy - TheLuckyString (復習×○)</title>
-      <link>https://chaingng.github.io/post/srm-428-div1-easy---theluckystring-%E5%BE%A9%E7%BF%92/</link>
-      <pubDate>Wed, 16 Oct 2013 20:48:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-428-div1-easy---theluckystring-%E5%BE%A9%E7%BF%92/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10180&amp;amp;rd=13519 ある文字列が与えられる。 文字列を入れ替えた時、隣り合う文字が同じアルファベットにならない 場合の数を求める。 解き方 Ｎ＝１０なので全探索で</description>
     </item>
     
     <item>
