@@ -827,15 +827,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>SRM 433 DIV1 Easy - MagicWords xx</title>
-      <link>https://chaingng.github.io/post/srm-433-div1-easy---magicwords-xx/</link>
-      <pubDate>Sat, 09 May 2015 17:40:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-433-div1-easy---magicwords-xx/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10195&amp;amp;rd=13695 解き方 ある文字列がずらすことで何通り同じ文字列が現れるかは、 その文字列で割りきれるサブ文字列がいくつつながっているかでわかる。 例えば長</description>
-    </item>
-    
-    <item>
       <title>SRM 449 DIV1 Easy - MaxTriangle</title>
       <link>https://chaingng.github.io/post/srm-449-div1-easy---maxtriangle/</link>
       <pubDate>Sat, 09 May 2015 17:29:00 +0000</pubDate>
@@ -1022,15 +1013,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-475-div1-easy---rabbitstepping/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10878&amp;amp;rd=14156 １次元のセルがあり、赤、白、黒のいずれかの色が塗られている。 またセルのうちいくつかにうさぎがいる。 各ターンごとに、うさぎはそのセルの色</description>
-    </item>
-    
-    <item>
-      <title>SRM 432 DIV1 Easy - LampsGrid ○</title>
-      <link>https://chaingng.github.io/post/srm-432-div1-easy---lampsgrid-/</link>
-      <pubDate>Tue, 05 May 2015 23:35:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-432-div1-easy---lampsgrid-/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10154&amp;amp;rd=13694 １と０からなるランプが複数並べられている。 各ランプは１行から成り、すべてのランプが一列に並べられている。 ランプの値がすべて１となったと</description>
     </item>
     
     <item>
@@ -1265,15 +1247,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-463-div1-easy---rabbitnumbering-/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10697&amp;amp;rd=14148 複数のうさぎが存在し、すべてのうさぎに番号をつけたい。 それぞれのうさぎは違う番号をつける。 各うさぎはつけて欲しい番号の最大数を持ってお</description>
-    </item>
-    
-    <item>
-      <title>SRM 434 DIV1 Easy - FindingSquareInTable</title>
-      <link>https://chaingng.github.io/post/srm-434-div1-easy---findingsquareintable/</link>
-      <pubDate>Sat, 02 May 2015 22:52:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/srm-434-div1-easy---findingsquareintable/</guid>
-      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10268&amp;amp;rd=13696 1桁の数字がかかれた２次元のセルが与えられる。 各列、行番号についてそれぞれ等差数列になるように任意の数字を連結させることができる。 連結</description>
     </item>
     
     <item>
