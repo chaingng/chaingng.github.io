@@ -38,5 +38,14 @@
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12822&amp;amp;rd=15707 M個のボールがあり、１からMまで順番に番号がついている。 ボールの色は最初は白。 複数のステージが与えられ、各ステージiについてL[i]番</description>
     </item>
     
+    <item>
+      <title>SRM 521 DIV1 Easy - MissingParentheses （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sun, 13 Oct 2013 08:27:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-521-div1-easy---missingparentheses-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10943&amp;amp;rd=14546 カッコの並びが与えられる。 カッコがきちんと閉じた形になるために、追加で必要なカッコの数を求める。 解き方 左カッコが出てきたら＋１、右カッ</description>
+    </item>
+    
   </channel>
 </rss>
