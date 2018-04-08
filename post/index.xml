@@ -845,6 +845,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 445 DIV1 Easy - TheNewHouseDivOne</title>
+      <link>https://chaingng.github.io/post/srm-445-div1-easy---thenewhousedivone/</link>
+      <pubDate>Sat, 09 May 2015 16:58:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-445-div1-easy---thenewhousedivone/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10512&amp;amp;rd=13899 解き方 元となる点はすべて座標上の点なので、 すべての実数上の点を調べなくても、0.5単位ですべての位置を調べればよい。 コード class TheNewHouseDivOne { public: double distance(vector&amp;lt;int&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>SRM 448 DIV1 Easy - TheBlackJackDivOne</title>
+      <link>https://chaingng.github.io/post/srm-448-div1-easy---theblackjackdivone/</link>
+      <pubDate>Sat, 09 May 2015 16:53:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-448-div1-easy---theblackjackdivone/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10615&amp;amp;rd=13902 解き方 探索箇所が少ないので全探索可能。 各カードについて既に使ったかどうかの情報が必要なので、 その情報を更新しつつDFSを用いればよい。</description>
+    </item>
+    
+    <item>
       <title>SRM 478 DIV1 Easy - CarrotJumping x</title>
       <link>https://chaingng.github.io/post/srm-478-div1-easy---carrotjumping-x/</link>
       <pubDate>Sat, 09 May 2015 16:48:00 +0000</pubDate>
@@ -860,6 +878,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-492-div1-easy---timetravellinggardener/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11060&amp;amp;rd=14245 解き方 ２つの木のペアのいずれかの傾きが、最適な傾きになることがわかる。 このうち、切らなくてもよい木が一番少なく、かつ地面より下に木がい</description>
+    </item>
+    
+    <item>
+      <title>SRM 447 DIV1 Easy - KnightsTour</title>
+      <link>https://chaingng.github.io/post/srm-447-div1-easy---knightstour/</link>
+      <pubDate>Sat, 09 May 2015 16:33:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-447-div1-easy---knightstour/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10577&amp;amp;rd=13901 解き方 問題文の条件をすべて洗い出すのが大事。 洗い出すことができれば、あとは正確に実装すればよい。 コード int used[10][10]; int dr[]={1,1,2,2,-1,-1,-2,-2},dc[]={2,-2,1,-1,2,-2,1,-1}; int h,w; class KnightsTour { public: int calc(vector&amp;lt;string&amp;gt; board,int r,int c){ int</description>
     </item>
     
     <item>
@@ -1004,6 +1031,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-486-div1-easy---oneregister/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10992&amp;amp;rd=14239 ある整数sからtに変換したい。 変換には＋、＊、ー、／の４つの操作があり、＋は現在の数と同じ数を足し、 ＊は現在の数と同じ数をかけ、ーは現</description>
+    </item>
+    
+    <item>
+      <title>SRM 444 DIV1 Easy - UnfoldingTriangles ○</title>
+      <link>https://chaingng.github.io/post/srm-444-div1-easy---unfoldingtriangles-/</link>
+      <pubDate>Tue, 05 May 2015 18:20:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-444-div1-easy---unfoldingtriangles-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10484&amp;amp;rd=13898 白と黒の２種類からなる２次元のセルがある。 ただし、そのうちのいくつかの黒のセルは折られており、左半分が白、右半分が 黒になっている。 ここ</description>
+    </item>
+    
+    <item>
+      <title>SRM 446 DIV1 Easy - CubeWalking ○</title>
+      <link>https://chaingng.github.io/post/srm-446-div1-easy---cubewalking-/</link>
+      <pubDate>Tue, 05 May 2015 18:15:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-446-div1-easy---cubewalking-/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10515&amp;amp;rd=13900 六面体のキューブがある。 キューブの各面は３＊３のセルからなり、 真ん中が緑、その上下左右が青、その他は赤色に塗られている。 プレイヤーは最</description>
     </item>
     
     <item>
@@ -2321,6 +2366,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>SRM 440 DIV1 Easy - IncredibleMachine (復習××)</title>
+      <link>https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Wed, 05 Feb 2014 19:41:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-440-div1-easy---incrediblemachine-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10310&amp;amp;rd=13748 ある惑星上にて（ｘ、ｙ）からなる点が複数与えられる。 その惑星の重力ｇは不明だが、すべての点を順番に通った時の合計時間Tはわかっている。</description>
+    </item>
+    
+    <item>
       <title>SRM 489 DIV1 Easy - BallsConverter (復習○)</title>
       <link>https://chaingng.github.io/post/srm-489-div1-easy---ballsconverter-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Sun, 02 Feb 2014 20:45:00 +0000</pubDate>
@@ -2363,6 +2417,24 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/srm-604-div1-easy---powerofthree-%E5%BE%A9%E7%BF%92/</guid>
       <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=12917&amp;amp;rd=15837 ロボットが座標（０，０）からスタートし、４方向に移動する。 ステップ０からスタートし、各ステップ３＾Ｋだけ指定した方向に移動する。 移動し</description>
+    </item>
+    
+    <item>
+      <title>SRM 439 DIV1 Easy - PouringWater （復習○）</title>
+      <link>https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 23:32:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-439-div1-easy---pouringwater-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10408&amp;amp;rd=13747 N個のボトルがあり、最初は１Ｌだけ水が入っている。 ここで同じ量だけ水が入っているボトルを選んで、一つのボトルに水をまとめることができる</description>
+    </item>
+    
+    <item>
+      <title>SRM 441 DIV1 Easy - PerfectPermutation (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 14:59:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10463&amp;amp;rd=13749 ある０～n-1の数がランダムに並べられた、長さｎの配列が与えられる。 このとき、childpermutation Bは、 B[0]=0, B[i]=B[A</description>
     </item>
     
     <item>

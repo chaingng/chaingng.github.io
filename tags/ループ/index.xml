@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>SRM 441 DIV1 Easy - PerfectPermutation (復習○)</title>
+      <link>https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/</link>
+      <pubDate>Sat, 01 Feb 2014 14:59:00 +0000</pubDate>
+      
+      <guid>https://chaingng.github.io/post/srm-441-div1-easy---perfectpermutation-%E5%BE%A9%E7%BF%92/</guid>
+      <description>問題 http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=10463&amp;amp;rd=13749 ある０～n-1の数がランダムに並べられた、長さｎの配列が与えられる。 このとき、childpermutation Bは、 B[0]=0, B[i]=B[A</description>
+    </item>
+    
+    <item>
       <title>SRM 572 DIV1 Easy - NewArenaPassword （復習○）</title>
       <link>https://chaingng.github.io/post/srm-572-div1-easy---newarenapassword-%E5%BE%A9%E7%BF%92/</link>
       <pubDate>Tue, 20 Aug 2013 08:09:00 +0000</pubDate>
