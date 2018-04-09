@@ -120,7 +120,8 @@ ga('send', 'pageview');
 
 <h2 id="プログラムによるアクセスに対して-特定のバケットに対するread-write権限を付与する">プログラムによるアクセスに対して、特定のバケットに対するRead/Write権限を付与する</h2>
 
-<p>プログラムによるアクセスを許可する場合には、以下のように設定する</p>
+<p>boto3では<code>s3:GetBucketLocation</code>,　<code>s3:ListAllMyBuckets</code>も必要なので、
+プログラムによるアクセスを許可する場合には以下のように設定する</p>
 
 <pre><code>{
    &quot;Version&quot;: &quot;2012-10-17&quot;,
