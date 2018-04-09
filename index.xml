@@ -6,10 +6,19 @@
     <description>Recent content on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 01 Feb 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Apr 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>spacemacsでクリップボード共有を行う</title>
+      <link>https://chaingng.github.io/post/spacemacs_clipboard/</link>
+      <pubDate>Mon, 09 Apr 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/spacemacs_clipboard/</guid>
+      <description>spacemacsでコピーしたデータは、デフォルトの設定だとspacemacs外ではペーストできない。 コピーしたデータをクリップボードにも共</description>
+    </item>
     
     <item>
       <title>文字コードとは</title>
