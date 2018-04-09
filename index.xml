@@ -161,6 +161,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>pythonでユーザ用にランダムな英数字パスワードを生成する</title>
+      <link>https://chaingng.github.io/post/python_random_user_password/</link>
+      <pubDate>Mon, 01 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_random_user_password/</guid>
+      <description>英数字8文字のランダムパスワードを生成 &amp;gt;&amp;gt;&amp;gt; import random, string &amp;gt;&amp;gt;&amp;gt; &#39;&#39;.join([random.choice(string.ascii_letters + string.digits) for i in range(8)]) &#39;8GkJXlpr&#39; 数字だけの場合はstring.digitsのみにし、長さを変更したい場合は8</description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>https://chaingng.github.io/me/</link>
       <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
