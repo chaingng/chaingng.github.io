@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-01-08T10:00:00&#43;09:00"/>
+<meta property="og:updated_time" content="2018-04-02T10:00:00&#43;09:00"/>
 
 
 
@@ -75,6 +75,29 @@ ga('send', 'pageview');
 		<header class="page-header">
 			<h1 class="page-header__title">Aws</h1>
 		</header>
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/aws_s3_iam_policy/" rel="bookmark">特定のs3バケットにのみアクセス権限を与えるiamポリシー</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/aws_s3_iam_policy/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/aws_s3_iam_policy/" alt="はてなブックマーク - 特定のs3バケットにのみアクセス権限を与えるiamポリシー" title="はてなブックマーク - 特定のs3バケットにのみアクセス権限を与えるiamポリシー">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2018-04-02T10:00:00">April 02, 2018</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			公式を参考に、以下のように設定すればよい。 特定のバケットに対するRead/Writeを権限を付与する { &quot;Version&quot;: &quot;2012-10-17&quot;, &quot;Statement&quot;: [ { &quot;Effect&quot;: &quot;Allow&quot;, &quot;Action&quot;: [&quot;s3:ListBucket&quot;], &quot;Resource&quot;: [&quot;arn:aws:s3:::&lt;BUCKET-NAME&gt;&quot;] }, { &quot;Effect&quot;: &quot;Allow&quot;, &quot;Action&quot;: [ &quot;s3:PutObject&quot;, &quot;s3:GetObject&quot;
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/aws_s3_iam_policy/">Read more…</a>
+		</div>
+	</div>
+</article>
+
 				<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
@@ -195,8 +218,9 @@ ga('send', 'pageview');
 			<ul class="widget__list">
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/ng_include/">ng-includeで読み込んだパーシャルをキャッシュさせない</a></li>
 			</ul>
-		<a class="widget__link widget__link--taglist" href="/tags/aws" title="aws">aws (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/aws" title="aws">aws (2)</a>
 			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/aws_s3_iam_policy/">特定のs3バケットにのみアクセス権限を与えるiamポリシー</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/aws_credential_file/">AWSの認証情報はshared credential fileで管理する</a></li>
 			</ul>
 		<a class="widget__link widget__link--taglist" href="/tags/career" title="career">career (1)</a>

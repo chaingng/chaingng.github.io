@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/aws_s3_iam_policy/</loc>
+    <lastmod>2018-04-02T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/charset/</loc>
     <lastmod>2018-02-01T10:00:00+09:00</lastmod>
   </url>
@@ -201,7 +206,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/aws/</loc>
-    <lastmod>2018-01-08T10:00:00+09:00</lastmod>
+    <lastmod>2018-04-02T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
