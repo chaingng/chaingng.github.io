@@ -20,5 +20,14 @@
       <description>水の移し方 ３Lの水をくんで、５Lのボトルに移す。 その後５Lのボトルをいっぱいにしても捨てなければいけないので、 常に３Lの水をくんで５Lの水に</description>
     </item>
     
+    <item>
+      <title>Hash Tables</title>
+      <link>https://chaingng.github.io/post/hash/</link>
+      <pubDate>Mon, 08 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/hash/</guid>
+      <description>overview 挿入、削除、参照がO(1) 衝突に対する実装が必要 linked-listを使うなど 衝突が発生すると、O(1+n/m)に増えていく（m:配列の</description>
+    </item>
+    
   </channel>
 </rss>
