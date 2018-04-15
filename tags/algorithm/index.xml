@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>sorting overview</title>
+      <link>https://chaingng.github.io/post/sorting/</link>
+      <pubDate>Mon, 15 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/sorting/</guid>
+      <description>overview ソートは検索を早くするプリプロセスとして使われる 似ているアイテムを探すのにも使われる ヒープソート in-placeだが安定でない マージソート</description>
+    </item>
+    
+    <item>
       <title>Hash Tables</title>
       <link>https://chaingng.github.io/post/hash/</link>
       <pubDate>Mon, 08 Jan 2018 10:00:00 +0900</pubDate>
