@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>動的計画法の基礎</title>
+      <link>https://chaingng.github.io/post/dynamic_programming/</link>
+      <pubDate>Mon, 22 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/dynamic_programming/</guid>
+      <description>overview DPはいつでも解法の１つになりえる 特にサブ問題に関連する問題に適用できる 分割統治との違いは、同じサブ問題が何度も起こり得ること。そのため、</description>
+    </item>
+    
+    <item>
       <title>SQLの基礎</title>
       <link>https://chaingng.github.io/post/sql/</link>
       <pubDate>Mon, 15 Jan 2018 10:00:00 +0900</pubDate>
