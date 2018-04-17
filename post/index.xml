@@ -134,6 +134,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>再帰の基礎</title>
+      <link>https://chaingng.github.io/post/recursion/</link>
+      <pubDate>Mon, 22 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/recursion/</guid>
+      <description>overview 部分的により小さいソリューションに分解できる問題 検索、列挙、分割統治、複雑な問題の分解は再帰を適用できる可能性がある 再帰関数はベースケース</description>
+    </item>
+    
+    <item>
       <title>SQLの基礎</title>
       <link>https://chaingng.github.io/post/sql/</link>
       <pubDate>Mon, 15 Jan 2018 10:00:00 +0900</pubDate>

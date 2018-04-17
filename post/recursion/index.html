@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>python string文字列の使い方</title>
+<title>再帰の基礎</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="python string文字列の使い方" />
-<meta property="og:description" content="連続して並んでいる文字を連結する &gt;&gt;&gt; &#39;Py&#39; &#39;thon&#39; &#39;Python&#39; 負のindexを指定 &gt;&gt;&gt; word = &#39;Python&#39; &gt;&gt;&gt; word[-1] # last character &#39;n&#39; &gt;&gt;&gt; word[-2] # second-last character &#39;o&#39; &gt;&gt;&gt; word[-6] &#39;P&#39; スライス &gt;&gt;&gt; word[:2] # character from the beginning to position 2 (excluded) &#39;Py&#39; &gt;&gt;&gt; word[4:] # characters from" />
+<meta property="og:title" content="再帰の基礎" />
+<meta property="og:description" content="overview 部分的により小さいソリューションに分解できる問題 検索、列挙、分割統治、複雑な問題の分解は再帰を適用できる可能性がある 再帰関数はベースケース" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/python_string/" />
+<meta property="og:url" content="https://chaingng.github.io/post/recursion/" />
 
 
 
-<meta property="article:published_time" content="2017-04-30T10:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2018-01-22T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2017-04-30T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2018-01-22T10:00:00&#43;09:00"/>
 
 
 
@@ -77,10 +77,10 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">python string文字列の使い方</h1>
+			<h1 class="post__title">再帰の基礎</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-04-30T10:00:00">April 30, 2017</time>
+				<time class="post__meta-date" datetime="2018-01-22T10:00:00">January 22, 2018</time>
 			</p>
 		</header>
 		
@@ -90,57 +90,47 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
-<h3 id="連続して並んでいる文字を連結する">連続して並んでいる文字を連結する</h3>
+<h2 id="overview">overview</h2>
 
-<pre><code>&gt;&gt;&gt; 'Py' 'thon'
-'Python'
-</code></pre>
+<ul>
+<li>部分的により小さいソリューションに分解できる問題</li>
+<li>検索、列挙、分割統治、複雑な問題の分解は再帰を適用できる可能性がある</li>
+<li>再帰関数はベースケースと、同じ関数を異なる引数で呼び出すことで構成される</li>
+<li>ベースケースを明らかにすることと、そこからソリューションに至るプロセスを確認することが解くために大事</li>
+<li>入力が再帰を使って表現できるとき、特に適している</li>
+<li>再帰は検索、列挙、分割統治に対してよい選択肢</li>
+<li>同じ引数が現れるときはcacheが有効</li>
+</ul>
 
-<h3 id="負のindexを指定">負のindexを指定</h3>
+<h2 id="bootcamp">bootcamp</h2>
 
-<pre><code>&gt;&gt;&gt; word = 'Python'
-&gt;&gt;&gt; word[-1]  # last character
-'n'
-&gt;&gt;&gt; word[-2]  # second-last character
-'o'
-&gt;&gt;&gt; word[-6]
-'P'
-</code></pre>
+<ul>
+<li>GCDを求める</li>
+<li>GCD(y,x) == GCD(x, y-x)</li>
+<li>time O(n) n: number of bits</li>
+<li>space O(n)</li>
+</ul>
 
-<h3 id="スライス">スライス</h3>
+<h2 id="15-1-the-towers-of-hanoi-problem">15.1 The Towers of Hanoi Problem</h2>
 
-<pre><code>&gt;&gt;&gt; word[:2]   # character from the beginning to position 2 (excluded)
-'Py'
-&gt;&gt;&gt; word[4:]   # characters from position 4 (included) to the end
-'on'
-&gt;&gt;&gt; word[-2:]  # characters from the second-last (included) to the end
-'on'
-</code></pre>
+<ul>
+<li>P0にすべての塔があり、P1,P2は空。P1にすべて移したい</li>
+<li>一番下以外をP2に移し、一番下をP1に移す。その後、P2のものをP1に移す</li>
+<li>time O(2^n)</li>
+</ul>
 
-<h3 id="大きすぎるindexを指定するとエラー">大きすぎるindexを指定するとエラー</h3>
+<pre><code>def compute_tower_hanoi(num_strings):
+  def compute_tower_hanoi_steps(num_rings_to_move, from_peg, to_peg, use_peg):
+    if num_rings_to_move &gt; 0:
+      compute_tower_hanoi_steps(num_rings_to_move-1, from_peg, use_peg, to_peg)
+      peg[to_peg].append(pegs[from_peg].pop())
+      result.append([from_peg, to_peg])
+      compute_tower_hanoi_steps(num_rings_to_move-1, use_peg, to_peg, from_peg)
 
-<pre><code>&gt;&gt;&gt; word[42]  # the word only has 6 characters
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-IndexError: string index out of range
-</code></pre>
-
-<h3 id="大きすぎるスライスを指定した際はエラーにならない">大きすぎるスライスを指定した際はエラーにならない</h3>
-
-<pre><code>&gt;&gt;&gt; word[4:42]
-'on'
-&gt;&gt;&gt; word[42:]
-''
-</code></pre>
-
-<h3 id="文字列は不変-immutable">文字列は不変(immutable)</h3>
-
-<pre><code>&gt;&gt;&gt; word[0] = 'J'
-  ...
-TypeError: 'str' object does not support item assignment
-&gt;&gt;&gt; word[2:] = 'py'
-  ...
-TypeError: 'str' object does not support item assignment
+  result = []
+  pegs = [list(reversed(range(1, num_rings+1)))] + [[] for _ in range(1, NUM_PEGS)]
+  compute_tower_hanoi_steps(num_rings, 0, 1, 2)
+  return result
 </code></pre>
 
 		</div>
@@ -158,7 +148,7 @@ TypeError: 'str' object does not support item assignment
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
 	</ul>
 </div>
 
@@ -170,10 +160,10 @@ TypeError: 'str' object does not support item assignment
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/pipenv/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">pipenvの使い方</p></a>
+		<a class="post-nav__link" href="/post/sql/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">SQLの基礎</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/hoge/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">hugo first post</p></a>
+		<a class="post-nav__link" href="/post/python_repr/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">[python]__repr__と__str__の違い</p></a>
 	</div>
 </nav>
 
