@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/mac_ftp/</loc>
+    <lastmod>2018-04-06T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/aws_s3_iam_policy/</loc>
     <lastmod>2018-04-02T10:00:00+09:00</lastmod>
   </url>
@@ -115,11 +120,6 @@
   <url>
     <loc>https://chaingng.github.io/me/</loc>
     <lastmod>2017-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chaingng.github.io/post/hoge/</loc>
-    <lastmod>2017-07-05T10:21:23+09:00</lastmod>
   </url>
   
   <url>
@@ -261,10 +261,6 @@
   </url>
   
   <url>
-    <loc>https://chaingng.github.io/post/mac_ftp/</loc>
-  </url>
-  
-  <url>
     <loc>https://chaingng.github.io/tags/http/</loc>
     <lastmod>2017-01-15T10:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -284,6 +280,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/mac/</loc>
+    <lastmod>2018-04-06T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

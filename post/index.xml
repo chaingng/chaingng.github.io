@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>High Sierra以降のmacはftpとtelnetが使えない。使うには、inetutilsをインストールする。</title>
+      <link>https://chaingng.github.io/post/mac_ftp/</link>
+      <pubDate>Fri, 06 Apr 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/mac_ftp/</guid>
+      <description>こちらの公式Q&amp;amp;Aにあるとおり、 High Sierra以降のmacではセキュリティを担保するために、ftpとtelnetがデフォルトで使えな</description>
+    </item>
+    
+    <item>
       <title>特定のs3バケットにのみアクセス権限を与えるiamポリシー</title>
       <link>https://chaingng.github.io/post/aws_s3_iam_policy/</link>
       <pubDate>Mon, 02 Apr 2018 10:00:00 +0900</pubDate>
@@ -215,15 +224,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>hugo first post</title>
-      <link>https://chaingng.github.io/post/hoge/</link>
-      <pubDate>Wed, 05 Jul 2017 10:21:23 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/hoge/</guid>
-      <description>ようこそ， Hugo の世界へ！！</description>
-    </item>
-    
-    <item>
       <title>python string文字列の使い方</title>
       <link>https://chaingng.github.io/post/python_string/</link>
       <pubDate>Sun, 30 Apr 2017 10:00:00 +0900</pubDate>
@@ -374,15 +374,6 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       
       <guid>https://chaingng.github.io/post/linux_ssh_key/</guid>
       <description>ssh-keygenにて公開鍵と秘密鍵を作成 $ ssh-keygen -t rsa -b 2048 Generating public/private rsa key pair. Enter file in which to save the key (/Users/hondatakatomo/.ssh/id_rsa): /Users/hondatakatomo/.ssh/hogefuga Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /Users/hondatakatomo/.ssh/hogefuga. Your public key has been saved in /Users/hondatakatomo/.ssh/hogefuga.pub. The key</description>
-    </item>
-    
-    <item>
-      <title>High Sierra以降のmacはftpとtelnetが使えない。使うには、inetutilsをインストールする。</title>
-      <link>https://chaingng.github.io/post/mac_ftp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chaingng.github.io/post/mac_ftp/</guid>
-      <description>こちらの公式Q&amp;amp;Aにあるとおり、 High Sierra以降のmacではセキュリティを担保するために、ftpとtelnetがデフォルトで使えな</description>
     </item>
     
   </channel>
