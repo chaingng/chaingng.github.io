@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>vagrantの使い方</title>
+<title>Primitive Typesの基礎</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="vagrantの使い方" />
-<meta property="og:description" content="インストール 公式のDownloadページから、対応するOSのパッケージをダウンロードしてインストール VagrantFileの作成 vagrant initを" />
+<meta property="og:title" content="Primitive Typesの基礎" />
+<meta property="og:description" content="overview bit操作に慣れ親しんでおく(特にXOR) -16 &gt;&gt; 2 == -4 maskについて理解する 最下位ビットを０にクリアする方法を知る 15 &amp; ~1 brute-for" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/vagrant/" />
+<meta property="og:url" content="https://chaingng.github.io/post/primitive_types/" />
 
 
 
-<meta property="article:published_time" content="2017-01-08T10:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2018-02-05T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2017-01-08T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2018-02-05T10:00:00&#43;09:00"/>
 
 
 
@@ -77,10 +77,10 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">vagrantの使い方</h1>
+			<h1 class="post__title">Primitive Typesの基礎</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-01-08T10:00:00">January 08, 2017</time>
+				<time class="post__meta-date" datetime="2018-02-05T10:00:00">February 05, 2018</time>
 			</p>
 		</header>
 		
@@ -88,151 +88,105 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
-<h3 id="インストール">インストール</h3>
-
-<p>公式の<a href="https://www.vagrantup.com/downloads.html">Download</a>ページから、対応するOSのパッケージをダウンロードしてインストール</p>
-
-<h3 id="vagrantfileの作成">VagrantFileの作成</h3>
-
-<p>vagrant initを実行すると、VagrantFileがない場合は作成される</p>
-
-<pre><code>vagrant init
-</code></pre>
-
-<p>box nameが指定されたら config.vm.boxがセットされる</p>
-
-<pre><code>vagrant init [box name]
-</code></pre>
-
-<p>Box urlが指定されたらvm.box_urlがセットされる</p>
-
-<pre><code>vagrant init [box url]
-</code></pre>
-
-<h3 id="boxの追加">boxの追加</h3>
-
-<p><a href="http://www.vagrantbox.es/">ここ</a>から欲しいBOXを検索し、以下のコマンドで追加</p>
-
-<pre><code>vagrant box add ubuntu1604 https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-vagrant.box
-</code></pre>
-
-<h3 id="現在取得済みのboxを確認">現在取得済みのboxを確認</h3>
-
-<pre><code>$ vagrant box list
-centos7    (virtualbox, 0)
-ubuntu1604 (virtualbox, 0)
-</code></pre>
-
-<h3 id="起動">起動</h3>
-
-<p>VagrantFileの内容が実行されて仮想マシンが起動</p>
-
-<pre><code>vagrant up
-</code></pre>
-
-<h3 id="ssh接続">ssh接続</h3>
-
-<pre><code>vagrant ssh
-</code></pre>
-
-<p>Ctrl + Dで終了</p>
-
-<h3 id="ssh接続情報の確認">ssh接続情報の確認</h3>
-
-<pre><code>$ vagrant ssh-config
-Host default
-  HostName 127.0.0.1
-  User ubuntu
-  Port 2222
-  UserKnownHostsFile /dev/null
-  StrictHostKeyChecking no
-  PasswordAuthentication no
-  IdentityFile /Users/hondatakatomo/github/studies/playbooks/.vagrant/machines/default/virtualbox/private_key
-  IdentitiesOnly yes
-  LogLevel FATAL
-</code></pre>
-
-<p>この情報を利用して、vagrant sshではなく通常のsshコマンドでも接続できる</p>
-
-<pre><code>ssh -i /Users/hondatakatomo/github/studies/playbooks/.vagrant/machines/default/virtualbox/private_key ubuntu@127.0.0.1 -p 2222
-</code></pre>
-
-<h3 id="vagrantfileの変更を反映">VagrantFileの変更を反映</h3>
-
-<pre><code>vagrant provision
-</code></pre>
-
-<p>すでに仮想マシンが起動中で反映させたいとき</p>
-
-<pre><code>vagrant reload --provision
-</code></pre>
-
-<h3 id="仮想マシンの状態を確認">仮想マシンの状態を確認</h3>
-
-<pre><code>$ vagrant status
-Current machine states:
-
-vagrant1                  running (virtualbox)
-vagrant2                  running (virtualbox)
-vagrant3                  running (virtualbox)
-
-This environment represents multiple VMs. The VMs are all listed
-above with their current state. For more information about a specific
-VM, run `vagrant status NAME`.
-</code></pre>
-
-<h3 id="仮想マシンを一時停止">仮想マシンを一時停止</h3>
-
-<pre><code>vagrant suspend
-</code></pre>
-
-<h3 id="一時停止からの再開">一時停止からの再開</h3>
-
-<pre><code>vagrant resume
-</code></pre>
-
-<h3 id="仮想マシンの停止">仮想マシンの停止</h3>
-
-<pre><code>vagrant halt
-</code></pre>
-
-<h3 id="仮想マシンの削除">仮想マシンの削除</h3>
-
-<p>boxは残る</p>
-
-<pre><code>vagrant destroy
-</code></pre>
-
-<h3 id="ポートフォワーディング">ポートフォワーディング</h3>
+<h2 id="overview">overview</h2>
 
 <ul>
-<li>ホストから8080でアクセスすると、ゲスト（仮想マシン）の80番ポートに接続</li>
-<li>ホストから8443でアクセスすると、ゲスト（仮想マシン）の443番ポートに接続
+<li>bit操作に慣れ親しんでおく(特にXOR)
+
+<ul>
+<li><code>-16 &gt;&gt; 2 == -4</code></li>
+</ul></li>
+<li>maskについて理解する</li>
+<li>最下位ビットを０にクリアする方法を知る
+
+<ul>
+<li>15 &amp; ~1</li>
+</ul></li>
+<li>brute-forceでは小さい出力についてキャッシュするのも有効<br /></li>
+</ul>
+
+<h2 id="bootcamp">bootcamp</h2>
+
+<ul>
+<li>整数のビット数を数える</li>
+<li>time O(n) n:number of bits</li>
+</ul>
+
+<pre><code>def count_bits(x):
+  num_bits = 0
+  while x:
+    num_bits += x &amp; 1
+    x &gt;&gt;= 1
+  return num_bits
+</code></pre>
+
+<h2 id="know-primitive-types">know primitive types</h2>
+
+<ul>
+<li>sys.maxsize - wordに格納されうる最大の整数を返す</li>
+<li>float(&lsquo;inf&rsquo;), float(&lsquo;-inf&rsquo;)はintegerの最大・最小値に使える</li>
+<li>math.isclose()はfloatの比較に使える</li>
+<li>randomについて知る
 <code>
-Vagrant.configure(&quot;2&quot;) do |config|
-config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080
-config.vm.network &quot;forwarded_port&quot;, guest: 443, host: 8443
+&gt;&gt;&gt; import random
+&gt;&gt;&gt; random.randrange(28)
+16
+&gt;&gt;&gt; random.randint(8,28)
+25
+&gt;&gt;&gt; random.random()
+0.7538346882963276
+&gt;&gt;&gt; A = [0, 1, 2, 3]
+&gt;&gt;&gt; random.shuffle(A)
+&gt;&gt;&gt; A
+[2, 3, 1, 0]
+&gt;&gt;&gt; random.choice(A)
+1
 </code></li>
 </ul>
 
-<h3 id="複数の仮想マシンで同じssh-keyを使いたいとき">複数の仮想マシンで同じssh keyを使いたいとき</h3>
+<h2 id="4-1-computing-the-parity-of-a-word">4.1 Computing the parity of a word</h2>
 
 <ul>
-<li>デフォルトでは仮想マシンごとにそれぞれ異なるssh keyが払い出される</li>
-<li>以下の設定を追加することで、すべての仮想マシンで同じssh keyが設定される</li>
+<li>ある文字列のparityを調べる</li>
+<li>ビットの１の数の合計が偶数なら0,奇数なら1を返す</li>
 </ul>
 
-<pre><code>Vagrant.configure(&quot;2&quot;) do |config|
-    config.ssh.private_key_path = &quot;custom_key_file&quot;
-    config.ssh.forward_agent = true
-End
-</code></pre>
+<h3 id="solution-1">solution 1</h3>
 
-<h3 id="スクリプトを利用して設定を行う">スクリプトを利用して設定を行う</h3>
+<ul>
+<li>1bitずつ順に調べていく</li>
+<li>time O(n) n:number of bits</li>
+</ul>
 
-<pre><code>Vagrant.configure(&quot;2&quot;) do |config|
-  config.vm.provision &quot;shell&quot;, path: &quot;script.sh&quot;
-end
+<h3 id="solution-2">solution 2</h3>
+
+<ul>
+<li>X XOR (X-1)が最下位ビットを0にすることを利用する</li>
+<li>time O(k) k: number of 1 bits</li>
+</ul>
+
+<h3 id="solution-3">solution 3</h3>
+
+<ul>
+<li>16ビットまでの結果をキャッシュして、64ビットを16ビットずつ分けて計算してXORをとる</li>
+<li>time O(n/L) L:width of words cached</li>
+</ul>
+
+<h3 id="solution-4">solution 4</h3>
+
+<ul>
+<li>64bitを半分ずつXORしていく</li>
+<li>O(logn)</li>
+</ul>
+
+<pre><code>def parity(x):
+  x ^= x &gt;&gt; 32
+  x ^= x &gt;&gt; 16
+  x ^= x &gt;&gt; 8
+  x ^= x &gt;&gt; 4
+  x ^= x &gt;&gt; 2
+  x ^= x &gt;&gt; 1
+  return x &amp; 1
 </code></pre>
 
 		</div>
@@ -243,7 +197,7 @@ end
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/technology/" rel="tag">technology</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
 	</ul>
 </div>
 
@@ -255,10 +209,10 @@ end
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/linux_ssh_key/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">公開鍵によるsshアクセスの設定</p></a>
+		<a class="post-nav__link" href="/post/charset/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">文字コードとは</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/http_status_code/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">httpにおける適切なステータスコードの選択</p></a>
+		<a class="post-nav__link" href="/post/aws_s3_iam_policy/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">特定のs3バケットにのみアクセス権限を与えるiamポリシー</p></a>
 	</div>
 </nav>
 

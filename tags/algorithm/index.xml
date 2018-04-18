@@ -6,10 +6,19 @@
     <description>Recent content in Algorithm on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 29 Jan 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Primitive Typesの基礎</title>
+      <link>https://chaingng.github.io/post/primitive_types/</link>
+      <pubDate>Mon, 05 Feb 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/primitive_types/</guid>
+      <description>overview bit操作に慣れ親しんでおく(特にXOR) -16 &amp;gt;&amp;gt; 2 == -4 maskについて理解する 最下位ビットを０にクリアする方法を知る 15 &amp;amp; ~1 brute-for</description>
+    </item>
     
     <item>
       <title>5Lと3Lのボトルで4Lの水を計る</title>
