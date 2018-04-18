@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5Lと3Lのボトルで4Lの水を計る</title>
+<title>貪欲法の基礎</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="5Lと3Lのボトルで4Lの水を計る" />
-<meta property="og:description" content="水の移し方 ３Lの水をくんで、５Lのボトルに移す。 その後５Lのボトルをいっぱいにしても捨てなければいけないので、 常に３Lの水をくんで５Lの水に" />
+<meta property="og:title" content="貪欲法の基礎" />
+<meta property="og:description" content="overview 各ステップにおいて、局所的な最適な決定を繰り返すソリューション 必ずしも最適解を導くわけではない bootcamp 1,5,10,25,50,100セントを使" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/prime_water/" />
+<meta property="og:url" content="https://chaingng.github.io/post/greedy/" />
 
 
 
@@ -77,7 +77,7 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">5Lと3Lのボトルで4Lの水を計る</h1>
+			<h1 class="post__title">貪欲法の基礎</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
 				<time class="post__meta-date" datetime="2018-01-29T10:00:00">January 29, 2018</time>
@@ -88,66 +88,52 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
-<h2 id="水の移し方">水の移し方</h2>
+<h2 id="overview">overview</h2>
 
-<p>３Lの水をくんで、５Lのボトルに移す。</p>
+<ul>
+<li>各ステップにおいて、局所的な最適な決定を繰り返すソリューション</li>
+<li>必ずしも最適解を導くわけではない</li>
+</ul>
 
-<p>その後５Lのボトルをいっぱいにしても捨てなければいけないので、
-常に３Lの水をくんで５Lの水に移し、いっぱいになったら５Lの水を空にして、と片方向でのやりとりに限定できる。</p>
+<h2 id="bootcamp">bootcamp</h2>
 
-<h2 id="計ることのできる水">計ることのできる水</h2>
+<ul>
+<li>1,5,10,25,50,100セントを使って、ある金額をできるだけ少ない硬貨で払う</li>
+</ul>
 
-<p>そうすると、計ることのできる水は以下のようになる。</p>
-
-<pre><code>３，6,9,12,15,18,21,24,27,30
+<pre><code>def change_making(cents):
+  COINS = [100, 50, 25, 10, 5, 1]
+  num_coins = 0
+  for coin in COINS:
+    num_coins += cents // coin
+    cents %= coin
+  return num_coins
 </code></pre>
 
-<p>ただし5Lの水がいっぱいになったら捨てていくから、計ることのできる水は以下になる。</p>
+<h2 id="17-1-compute-an-optimum-assignment-of-tasks">17.1 Compute an Optimum Assignment of Tasks</h2>
 
-<pre><code>3,1,4,2,0,3,1,4,2,0,3
+<ul>
+<li>タスクが複数あり、完了までにかかる時間がわかっている。</li>
+<li>１人に対し２つのタスクを割り当てる。１つのタスクが終了したら、次のタスクを実行する</li>
+<li>このとき、すべてのタスクを終了させるのにかかる最短時間を求める</li>
+</ul>
+
+<h3 id="solution">solution</h3>
+
+<ul>
+<li>sortし、最小と最大の時間がかかるタスクをペアにしていく</li>
+<li>O(nlogn)</li>
+</ul>
+
+<pre><code>PairedTasks = collections.namedtuple('PairedTasks', ('task_1', 'task_2'))
+
+def optimum_task_assignment(task_durations):
+  task_durations.sort()
+  return [
+    PairedTasks(task_durations[i], task_durations[~i])
+    for i in range(len(task_durations) // 2)
+  ]
 </code></pre>
-
-<p>3,1,4,2,0のループが続き、4L以下の水であればすべて計れることがわかる。</p>
-
-<h2 id="4lと6lのボトルの場合">4Lと6Lのボトルの場合</h2>
-
-<p>次に、4Lと６Lのボトルで考える。
-くめる水は以下のようになり、</p>
-
-<pre><code>4,8,12,16,20,24
-</code></pre>
-
-<p>6L以上は捨てられていくから、</p>
-
-<pre><code>4,2,0,4,2,0
-</code></pre>
-
-<p>4,2,0が続くようになる。</p>
-
-<h2 id="一般化">一般化</h2>
-
-<p>ここで、問題を一般化してみる。</p>
-
-<p>mLのボトルとnLのボトルがあり（m&lt;n）、</p>
-
-<p>常にmLの水をくんで、nLの水に移し、いっぱいになったらnLの水を空になるので、</p>
-
-<p>計ることのできる水xは以下のようになる。</p>
-
-<pre><code>x = a*m-b*n
-</code></pre>
-
-<p>ここでaとbの最大公約数をkとすると、
-a=a1*k, b=b1*kと置き換えることができ、</p>
-
-<pre><code>x = a1*k*m - b1*k*n
-x = k(a1*k - b1*n)
-</code></pre>
-
-<p>よって、m&lt;nのとき、n以下でかつmとnの最小公倍数の倍数の数だけ水をはかることができることがわかる。</p>
-
-<p>上記式より、3Lと5Lのとき、0,1,2,3,4Lの水がはかれ、
-4Lと6Lのとき、0,2,4Lの水がはかることができる。</p>
 
 		</div>
 					
@@ -169,10 +155,10 @@ x = k(a1*k - b1*n)
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/wait_dom_load/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">assetsの読み込み前にDOMの制御をしたい場合はDOMContentLoadedを使う</p></a>
+		<a class="post-nav__link" href="/post/local_smartphone/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">android/iphoneでローカルサーバに接続する</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/python_is/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">pythonの比較におけるisと==の違い</p></a>
+		<a class="post-nav__link" href="/post/wait_dom_load/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">assetsの読み込み前にDOMの制御をしたい場合はDOMContentLoadedを使う</p></a>
 	</div>
 </nav>
 

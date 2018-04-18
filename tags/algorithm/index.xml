@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>貪欲法の基礎</title>
+      <link>https://chaingng.github.io/post/greedy/</link>
+      <pubDate>Mon, 29 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/greedy/</guid>
+      <description>overview 各ステップにおいて、局所的な最適な決定を繰り返すソリューション 必ずしも最適解を導くわけではない bootcamp 1,5,10,25,50,100セントを使</description>
+    </item>
+    
+    <item>
       <title>再帰の基礎</title>
       <link>https://chaingng.github.io/post/recursion/</link>
       <pubDate>Mon, 22 Jan 2018 10:00:00 +0900</pubDate>
