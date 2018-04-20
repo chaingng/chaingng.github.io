@@ -346,7 +346,7 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       <pubDate>Sun, 19 Feb 2017 00:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/elasticsearch_install/</guid>
-      <description>動作環境 Ubuntu14.04 インストール Java8が必要 apt-get install -y openjdk-8-jdk その後公式にそってelasticsearchをインストール wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - sudo apt-get install -y apt-transport-https echo &amp;quot;deb https://artifacts.elastic.co/packages/5.x/apt stable</description>
+      <description>目次 動作環境 インストール 自動起動設定 プラグインのインストール 起動確認 動かないとき 動作環境 Ubuntu14.04 インストール Java8が必要 apt-get install -y openjdk-8-jdk その後公式にそ</description>
     </item>
     
     <item>
