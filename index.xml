@@ -283,7 +283,7 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       <pubDate>Sun, 09 Apr 2017 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/nodejs_env/</guid>
-      <description>node.jsで環境変数を設定・取得するにはprocess.envを使う。 環境変数の一覧を取得 process.envですべての環境変数が取得</description>
+      <description>node.jsで環境変数を設定・取得するにはprocess.envを使う。 目次 環境変数の一覧を取得 特定の環境変数を取得 環境変数の設定と変更 環</description>
     </item>
     
     <item>
