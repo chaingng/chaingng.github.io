@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>マージソートの実装</title>
+      <link>https://chaingng.github.io/post/merge_sort_code/</link>
+      <pubDate>Fri, 09 Feb 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/merge_sort_code/</guid>
+      <description># https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%BC%E3%83%88 # http://www.ics.kagoshima-u.ac.jp/~fuchida/edu/algorithm/sort-algorithm/merge-sort.html def merge_sort(array): # 配列の長さが１ならソート不要なので返す if len(array) &amp;lt;= 1: return array # それより長いなら半分に分割してそれぞれにマージソートを適用する mid = len(array) // 2 left</description>
+    </item>
+    
+    <item>
       <title>Primitive Typesの基礎</title>
       <link>https://chaingng.github.io/post/primitive_types/</link>
       <pubDate>Mon, 05 Feb 2018 10:00:00 +0900</pubDate>

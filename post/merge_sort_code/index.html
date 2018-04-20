@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>リモート追跡ブランチ・追跡ブランチ・リモートブランチの違い</title>
+<title>マージソートの実装</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="リモート追跡ブランチ・追跡ブランチ・リモートブランチの違い" />
-<meta property="og:description" content="まとめ リモートブランチ リモートレポジトリに存在するブランチ (remote)/(branch)で表される リモート追跡ブランチ ローカルに存在 リモ" />
+<meta property="og:title" content="マージソートの実装" />
+<meta property="og:description" content="# https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%BC%E3%83%88 # http://www.ics.kagoshima-u.ac.jp/~fuchida/edu/algorithm/sort-algorithm/merge-sort.html def merge_sort(array): # 配列の長さが１ならソート不要なので返す if len(array) &lt;= 1: return array # それより長いなら半分に分割してそれぞれにマージソートを適用する mid = len(array) // 2 left" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/git_branch/" />
+<meta property="og:url" content="https://chaingng.github.io/post/merge_sort_code/" />
 
 
 
-<meta property="article:published_time" content="2017-02-05T00:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2018-02-09T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2017-02-05T00:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2018-02-09T10:00:00&#43;09:00"/>
 
 
 
@@ -77,219 +77,58 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">リモート追跡ブランチ・追跡ブランチ・リモートブランチの違い</h1>
+			<h1 class="post__title">マージソートの実装</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-02-05T00:00:00">February 05, 2017</time>
+				<time class="post__meta-date" datetime="2018-02-09T10:00:00">February 09, 2018</time>
 			</p>
 		</header>
 		
 		
 		<div class="post__content clearfix">
-			
+			<pre><code># https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%BC%E3%83%88
+# http://www.ics.kagoshima-u.ac.jp/~fuchida/edu/algorithm/sort-algorithm/merge-sort.html
 
-<h1 id="まとめ">まとめ</h1>
 
-<p><br></p>
+def merge_sort(array):
+    # 配列の長さが１ならソート不要なので返す
+    if len(array) &lt;= 1:
+        return array
 
-<h2 id="リモートブランチ">リモートブランチ</h2>
+    # それより長いなら半分に分割してそれぞれにマージソートを適用する
+    mid = len(array) // 2
+    left = merge_sort(array[:mid])
+    right = merge_sort(array[mid:])
 
-<ul>
-<li>リモートレポジトリに存在するブランチ</li>
-<li>(remote)/(branch)で表される</li>
-</ul>
+    # 半分に分割した左と右について統合を行う
+    return merge_array(left, right)
 
-<p><br></p>
 
-<h2 id="リモート追跡ブランチ">リモート追跡ブランチ</h2>
+def merge_array(left, right):
+    array = []
+    left_idx = 0
+    right_idx = 0
+    while left_idx &lt; len(left) and right_idx &lt; len(right):
+        if left[left_idx] &lt; right[right_idx]:
+            array.append(left[left_idx])
+            left_idx += 1
+        else:
+            array.append(right[right_idx])
+            right_idx += 1
 
-<ul>
-<li>ローカルに存在</li>
-<li>リモートブランチの状態を保持するブランチ</li>
-<li>remotes/(remote)/(branch)で表される</li>
-<li>リモートへpushすると自動的に作成される</li>
-<li>fetchすることにより、ローカルのリモート追跡ブランチの状態が最新化される</li>
-</ul>
+    if left_idx &lt; len(left):
+        array.extend(left[left_idx:])
+    if right_idx &lt; len(right):
+        array.extend(right[right_idx:])
 
-<p><br></p>
+    return array
 
-<h2 id="追跡ブランチ">追跡ブランチ</h2>
 
-<ul>
-<li>リモートブランチと直接のつながりをもつローカルブランチ</li>
-<li>git branch / git checkoutにて作成可能</li>
-<li>追跡ブランチであれば、git push時にブランチ名が省略可能になる</li>
-</ul>
+array = [1, 5, 65, 23, 57, 1232, -1, -5, -2, 242, 100,
+         4, 423, 2, 564, 9, 0, 10, 43, 64, 32, 1, 999]
+print(array)
+print(merge_sort(array))
 
-<p><br><br></p>
-
-<h1 id="目次">目次</h1>
-
-<ul>
-<li><a href="#リモート追跡ブランチ">リモート追跡ブランチ</a>
-
-<ul>
-<li><a href="#リモート追跡ブランチの定義">リモート追跡ブランチの定義</a></li>
-<li><a href="#リモート追跡ブランチの表示">リモート追跡ブランチの表示</a></li>
-<li><a href="#リモート追跡ブランチの更新">リモート追跡ブランチの更新</a></li>
-</ul></li>
-<li><a href="#追跡ブランチ">追跡ブランチ</a>
-
-<ul>
-<li><a href="#追跡ブランチの定義">追跡ブランチの定義</a></li>
-<li><a href="#追跡ブランチの作成">追跡ブランチの作成</a></li>
-<li><a href="#ローカルブランチを追跡ブランチにする">ローカルブランチを追跡ブランチにする</a></li>
-<li><a href="#ローカルブランチが追跡ブランチか確認">ローカルブランチが追跡ブランチか確認</a></li>
-</ul></li>
-</ul>
-
-<h1 id="リモート追跡ブランチ-1">リモート追跡ブランチ</h1>
-
-<p><br></p>
-
-<h2 id="リモート追跡ブランチの定義">リモート追跡ブランチの定義</h2>
-
-<p><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81">3.5 Git のブランチ機能 - リモートブランチ</a>より、リモートブランチの状態を持つ参照状態であることがわかる</p>
-
-<pre><code>リモート追跡ブランチは、リモートブランチの状態を保持する参照です。 
-ローカルに作成される参照ですが、自分で移動することはできません。ネットワーク越しの操作をしたときに自動的に移動します。 
-リモート追跡ブランチは、前回リモートリポジトリに接続したときにブランチがどの場所を指していたかを示すブックマークのようなものです。
-</code></pre>
-
-<p><br></p>
-
-<h2 id="リモート追跡ブランチの表示">リモート追跡ブランチの表示</h2>
-
-<p><code>git branch -a</code>でリモート追跡ブランチを含むブランチを表示する。</p>
-
-<pre><code>$ git branch -a
-* develop
-  remotes/origin/demo
-  remotes/origin/demo2
-  remotes/origin/demo3
-  remotes/origin/HEAD -&gt; origin/develop
-</code></pre>
-
-<p>このときremotes/(remote)/(branch)で表されるのがリモート追跡ブランチ。</p>
-
-<p>最後の行はリモートブランチorigin/developがリモート追跡ブランチremotes/origin/HEADに紐付いていることを表す。</p>
-
-<p><br></p>
-
-<h2 id="リモート追跡ブランチの更新">リモート追跡ブランチの更新</h2>
-
-<p><a href="https://git-scm.com/docs/git-fetch">git-fetch</a>より、<code>git fetch</code>でリモート追跡ブランチが最新化されると書いてある。</p>
-
-<pre><code>Fetch branches and/or tags (collectively, &quot;refs&quot;) from one or more other repositories, 
-along with the objects necessary to complete their histories. 
-Remote-tracking branches are updated (see the description of &lt;refspec&gt; below for ways to control this behavior).
-</code></pre>
-
-<p>以下の例では前回fetchしてから誰かがorigin/devを作成し、  
-新しくremotes/origin/devがリモート追跡ブランチとして追加されていることがわかる。</p>
-
-<pre><code>$ git branch -a
-* demo2
-  demo3
-  develop
-  remotes/origin/DEV-475
-  remotes/origin/demo
-  remotes/origin/demo2
-  remotes/origin/demo3
-
-$ git fetch
-$ git branch -a
-* demo2
-  demo3
-  develop
-  remotes/origin/DEV-475
-  remotes/origin/demo
-  remotes/origin/demo2
-  remotes/origin/demo3
-  remotes/origin/dev
-</code></pre>
-
-<p><br><br></p>
-
-<h1 id="追跡ブランチ-1">追跡ブランチ</h1>
-
-<p><br></p>
-
-<h2 id="追跡ブランチの定義">追跡ブランチの定義</h2>
-
-<p><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81">3.5 Git のブランチ機能 - リモートブランチ</a>より、リモートブランチと直接のつながりをもつブランチであることがわかる。</p>
-
-<pre><code>リモート追跡ブランチからローカルブランチにチェックアウトすると、
-“追跡ブランチ” というブランチが自動的に作成されます(そしてそれが追跡するブランチを`‘上流ブランチ’'といいます)。
-追跡ブランチとは、リモートブランチと直接のつながりを持つローカルブランチのことです。 
-追跡ブランチ上で git pull を実行すると、Git は自動的に取得元のサーバーとブランチを判断します。
-</code></pre>
-
-<p><br></p>
-
-<h2 id="追跡ブランチの作成">追跡ブランチの作成</h2>
-
-<p><code>git branch (branch) (remote tracking branch)</code>で追跡ブランチを作成<br />
-リモート追跡ブランチを選択する。　</p>
-
-<pre><code>$ git branch demo3 origin/demo3
-Branch demo3 set up to track remote branch demo3 from origin.
-</code></pre>
-
-<p>checkoutも同時に行いたいとき</p>
-
-<pre><code>$ git checkout -b demo2 origin/demo2
-Branch demo2 set up to track remote branch demo2 from origin.
-Switched to a new branch 'demo2'
-</code></pre>
-
-<p>以下でも同じ</p>
-
-<pre><code>$ git checkout --track origin/demo2
-Branch demo2 set up to track remote branch demo2 from origin.
-Switched to a new branch 'demo2'
-</code></pre>
-
-<p><br></p>
-
-<h2 id="ローカルブランチを追跡ブランチにする">ローカルブランチを追跡ブランチにする</h2>
-
-<p>git branch -u で可能</p>
-
-<pre><code>$ git branch -u origin/serverfix
-Branch serverfix set up to track remote branch serverfix from origin.
-</code></pre>
-
-<p><br></p>
-
-<h2 id="ローカルブランチが追跡ブランチか確認">ローカルブランチが追跡ブランチか確認</h2>
-
-<p>git branch -vvを使う</p>
-
-<pre><code>$ git branch -vv
-  iss53 7e424c3 [origin/iss53: ahead 2] forgot the brackets
-  master 1ae2a45 [origin/master] deploying index fix
-* serverfix f8674d9 [teamone/server-fix-good: ahead 3, behind 1] this should do it
-  testing 5ea463a trying something new
-</code></pre>
-
-<p>このときiss53はorigin/iss53、master、serverfixは追跡ブランチで、testingは追跡ブランチではないことがわかる。</p>
-
-<p><br></p>
-
-<h2 id="追跡ブランチでは-git-push-でブランチ名が省略できる">追跡ブランチでは<code>git push</code>でブランチ名が省略できる</h2>
-
-<p>追跡ブランチは、<code>git push</code>にてブランチ名が省略可能。<br />
-省略時は追跡しているリモートブランチにpushする。</p>
-
-<pre><code>$ git push origin
-Counting objects: 3, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 306 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To github.com:xxx/xxx.git
-  0d66e69..ee7b38f  demo2 -&gt; demo2
 </code></pre>
 
 		</div>
@@ -297,6 +136,12 @@ To github.com:xxx/xxx.git
 		
 		
 		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+	</ul>
+</div>
 
 	</article>
 
@@ -306,10 +151,10 @@ To github.com:xxx/xxx.git
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/shebang_init/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">shebangから理解するUNIXの仕組み</p></a>
+		<a class="post-nav__link" href="/post/primitive_types/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Primitive Typesの基礎</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/vagrant_crowi/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">crowi用のvagrantを公開しました</p></a>
+		<a class="post-nav__link" href="/post/bubble_sort_code/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">バブルソートの実装</p></a>
 	</div>
 </nav>
 
