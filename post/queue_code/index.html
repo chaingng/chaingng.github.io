@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.38-DEV" />
 <meta property="og:title" content="キューの実装" />
-<meta property="og:description" content="# queueのベースクラスを作成 # isEmpty, lenメソッド, 全nodeの一覧を持つ class AbstractQueue: def __init__(self): self.top = 0 def isEmpty(self): return self.top == 0 def __len__(self): return self.top def __str__(self): result = &#39;------\n&#39; for element in self: result &#43;= str(element) &#43; &#39;\n&#39; return result[:-1]" />
+<meta property="og:description" content="scratch # queueのベースクラスを作成 # isEmpty, lenメソッド, 全nodeの一覧を持つ class AbstractQueue: def __init__(self): self.top = 0 def isEmpty(self): return self.top == 0 def __len__(self): return self.top def __str__(self): result = &#39;------\n&#39; for element in self: result &#43;= str(element) &#43; &#39;\n&#39; return" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/queue_code/" />
 
@@ -86,7 +86,11 @@ ga('send', 'pageview');
 		
 		
 		<div class="post__content clearfix">
-			<pre><code># queueのベースクラスを作成 
+			
+
+<h2 id="scratch">scratch</h2>
+
+<pre><code># queueのベースクラスを作成 
 # isEmpty, lenメソッド, 全nodeの一覧を持つ
 class AbstractQueue:
     def __init__(self):
@@ -164,6 +168,20 @@ q.enqueue(3)
 q.dequeue()
 print(str(q))
 
+</code></pre>
+
+<h2 id="pythonic">pythonic</h2>
+
+<pre><code>&gt;&gt;&gt; from collections import deque
+&gt;&gt;&gt; queue = deque([&quot;Eric&quot;, &quot;John&quot;, &quot;Michael&quot;])
+&gt;&gt;&gt; queue.append(&quot;Terry&quot;)           # Terry arrives
+&gt;&gt;&gt; queue.append(&quot;Graham&quot;)          # Graham arrives
+&gt;&gt;&gt; queue.popleft()                 # The first to arrive now leaves
+'Eric'
+&gt;&gt;&gt; queue.popleft()                 # The second to arrive now leaves
+'John'
+&gt;&gt;&gt; queue                           # Remaining queue in order of arrival
+deque(['Michael', 'Terry', 'Graham'])
 </code></pre>
 
 		</div>
