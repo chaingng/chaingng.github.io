@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>ハッシュテーブルの実装</title>
+      <link>https://chaingng.github.io/post/hash_code/</link>
+      <pubDate>Fri, 09 Mar 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/hash_code/</guid>
+      <description>class Item(object): def __init__(self, key, value): self.key = key self.value = value class HashTable(object): def __init__(self, size=10): self.size = size self.array = [[] for _ in range(self.size)] def _hash_function(self, key): return key % self.size def set(self, key, value): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: node.value = value return self.array[hash_index].append(Item(key, value)) def get(self, key): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: return node.</description>
+    </item>
+    
+    <item>
       <title>ヒープの実装</title>
       <link>https://chaingng.github.io/post/heap_code/</link>
       <pubDate>Fri, 02 Mar 2018 10:00:00 +0900</pubDate>
