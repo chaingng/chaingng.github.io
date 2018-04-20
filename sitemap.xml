@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/bubble_sort_code/</loc>
+    <lastmod>2018-02-12T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/primitive_types/</loc>
     <lastmod>2018-02-05T10:00:00+09:00</lastmod>
   </url>
@@ -219,7 +224,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/algorithm/</loc>
-    <lastmod>2018-02-05T10:00:00+09:00</lastmod>
+    <lastmod>2018-02-12T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -338,7 +343,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/</loc>
-    <lastmod>2018-02-05T10:00:00+09:00</lastmod>
+    <lastmod>2018-02-12T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
