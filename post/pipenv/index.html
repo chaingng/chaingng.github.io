@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.38-DEV" />
 <meta property="og:title" content="pipenvの使い方" />
-<meta property="og:description" content="pipenvを使うことにより、rubyにおけるGemfileのようにpythonでpackage管理を行うことができる。 いいところ pip と virtualenv が連" />
+<meta property="og:description" content="pipenvを使うことにより、rubyにおけるGemfileのようにpythonでpackage管理を行うことができる。 目次 利点 特徴 インスト" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/pipenv/" />
 
@@ -90,7 +90,34 @@ ga('send', 'pageview');
 
 <p>pipenvを使うことにより、rubyにおけるGemfileのようにpythonでpackage管理を行うことができる。</p>
 
-<h2 id="いいところ">いいところ</h2>
+<h2 id="目次">目次</h2>
+
+<ul>
+<li><a href="#利点">利点</a></li>
+<li><a href="#特徴">特徴</a></li>
+<li><a href="#インストール">インストール</a></li>
+<li><a href="#初期化">初期化</a></li>
+<li><a href="#requirementsのインポート">requirements.txtのインポート</a></li>
+<li><a href="#packageのインストール">packageのインストール</a></li>
+<li><a href="#Pipfilelockを使用してインストール">Pipfile.lockを使用してインストール</a></li>
+<li><a href="#dev-packagesにパッケージをインストール">dev-packagesにパッケージをインストール</a></li>
+<li><a href="#packageのアンインストール">packageのアンインストール</a></li>
+<li><a href="#全てのpackageのアンインストール">全てのpackageのアンインストール</a></li>
+<li><a href="#packageのアップデート">packageのアップデート</a></li>
+<li><a href="#Pipfilelockを作成">Pipfile.lockを作成</a></li>
+<li><a href="#packageの依存グラフを確認">packageの依存グラフを確認</a></li>
+<li><a href="#仮想環境でコマンドを実行">仮想環境でコマンドを実行</a></li>
+<li><a href="#仮想環境が有効化されたシェルを起動">仮想環境が有効化されたシェルを起動</a></li>
+<li><a href="#セキュリティの脆弱性をチェック">セキュリティの脆弱性をチェック</a></li>
+<li><a href="#仮想環境の情報を出力">仮想環境の情報を出力</a></li>
+<li><a href="#python_versionを指定">python_versionを指定</a></li>
+<li><a href="#pipenvとpipをアップデート">pipenvとpipをアップデート</a></li>
+<li><a href=".envのlocationを指定">.envのlocationを指定</a></li>
+<li><a href=".envを読み込まない">.envを読み込まない</a></li>
+<li><a href="#jumbotron">jumbotron</a></li>
+</ul>
+
+<h2 id="利点">利点</h2>
 
 <ul>
 <li>pip と virtualenv が連係して動作</li>
@@ -134,7 +161,7 @@ pipenv —three
 pipenv --two  
 </code></pre>
 
-<h2 id="requirements-txtのインポート">requirements.txtのインポート</h2>
+<h2 id="requirementsのインポート">requirementsのインポート</h2>
 
 <pre><code>pipenv install --requirements requirements.txt
 </code></pre>
@@ -144,12 +171,12 @@ pipenv --two
 <pre><code>pipenv install [package]
 </code></pre>
 
-<h2 id="pipfile-lockを使用してインストール">Pipfile.lockを使用してインストール</h2>
+<h2 id="pipfilelockを使用してインストール">Pipfilelockを使用してインストール</h2>
 
 <pre><code>pipenv install --ignore-pipfile [package]
 </code></pre>
 
-<h2 id="dev-packages-にパッケージをインストール">[dev-packages]にパッケージをインストール</h2>
+<h2 id="dev-packagesにパッケージをインストール">dev-packagesにパッケージをインストール</h2>
 
 <pre><code>pipenv install [package] --dev
 </code></pre>
@@ -175,7 +202,7 @@ Environment now purged and fresh!
 <pre><code>pipenv update [package]
 </code></pre>
 
-<h2 id="pipfile-lockを作成">Pipfile.lockを作成</h2>
+<h2 id="pipfilelockを作成">Pipfilelockを作成</h2>
 
 <pre><code>$ pipenv lock
 Locking [dev-packages] dependencies…

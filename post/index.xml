@@ -256,7 +256,7 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       <pubDate>Sun, 23 Apr 2017 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/pipenv/</guid>
-      <description>pipenvを使うことにより、rubyにおけるGemfileのようにpythonでpackage管理を行うことができる。 いいところ pip と virtualenv が連</description>
+      <description>pipenvを使うことにより、rubyにおけるGemfileのようにpythonでpackage管理を行うことができる。 目次 利点 特徴 インスト</description>
     </item>
     
     <item>
