@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[要約]A Better Pip Workflow</title>
+<title>ヒープの実装</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="[要約]A Better Pip Workflow" />
-<meta property="og:description" content="requirements.txtを使うのには問題があるよ、という話。 典型的なrequirements.txtの使い方 １．A list of top-level dependencies a project has, often without" />
+<meta property="og:title" content="ヒープの実装" />
+<meta property="og:description" content="class MinHeap(object): def __init__(self): self.array = [] def __len__(self): return len(self.array) def extract_min(self): if not self.array: return None if len(self.array) == 1: return self.array.pop(0) minimum = self.array[0] self.array[0] = self.array.pop(-1) self._bubble_down(index=0) return minimum def peek_min(self): return self.array[0] if self.array else None def insert(self, key): if key is None: raise TypeError(&#39;key cannot be none&#39;) self.array.append(key) self._bubble_up(index=len(self.array) - 1) def _bubble_down(self, index): min_child_index = self._find_smaller_child(index) if min_child_index == -1: return if self." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/a_better_pip_workflow/" />
+<meta property="og:url" content="https://chaingng.github.io/post/heap_code/" />
 
 
 
-<meta property="article:published_time" content="2017-03-12T00:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2018-03-02T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2017-03-12T00:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2018-03-02T10:00:00&#43;09:00"/>
 
 
 
@@ -77,126 +77,89 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">[要約]A Better Pip Workflow</h1>
+			<h1 class="post__title">ヒープの実装</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-03-12T00:00:00">March 12, 2017</time>
+				<time class="post__meta-date" datetime="2018-03-02T10:00:00">March 02, 2018</time>
 			</p>
 		</header>
 		
 		
 		<div class="post__content clearfix">
-			
+			<pre><code>
+class MinHeap(object):
+    def __init__(self):
+        self.array = []
 
-<p>requirements.txtを使うのには問題があるよ、という話。</p>
+    def __len__(self):
+        return len(self.array)
 
-<h3 id="典型的なrequirements-txtの使い方">典型的なrequirements.txtの使い方</h3>
+    def extract_min(self):
+        if not self.array:
+            return None
+        if len(self.array) == 1:
+            return self.array.pop(0)
 
-<h4 id="１-a-list-of-top-level-dependencies-a-project-has-often-without-versions-specified">１．A list of top-level dependencies a project has, often without versions specified.</h4>
+        minimum = self.array[0]
+        self.array[0] = self.array.pop(-1)
+        self._bubble_down(index=0)
+        return minimum
 
-<p>PJのトップレベル依存リストとして、バージョン指定なしで使う</p>
+    def peek_min(self):
+        return self.array[0] if self.array else None
 
-<pre><code>$ cat requirements.txt
-requests[security]
-flask
-gunicorn==19.4.5
+    def insert(self, key):
+        if key is None:
+            raise TypeError('key cannot be none')
+        self.array.append(key)
+        self._bubble_up(index=len(self.array) - 1)
+
+    def _bubble_down(self, index):
+        min_child_index = self._find_smaller_child(index)
+        if min_child_index == -1:
+            return
+        if self.array[index] &gt; self.array[min_child_index]:
+            self.array[index], self.array[min_child_index] = self.array[min_child_index], self.array[index]
+            self._bubble_down(min_child_index)
+
+    def _bubble_up(self, index):
+        if index == 0:
+            return
+        index_parent = (index - 1) // 2
+        if self.array[index] &lt; self.array[index_parent]:
+            self.array[index], self.array[index_parent] = self.array[index_parent], self.array[index]
+            self._bubble_up(index_parent)
+
+    def _find_smaller_child(self, index):
+        left_child_index = index * 2 + 1
+        right_child_index = index * 2 + 2
+        if right_child_index &gt;= len(self.array):
+            if left_child_index &gt;= len(self.array):
+                return -1
+            else:
+                return left_child_index
+        else:
+            if self.array[left_child_index] &lt; self.array[right_child_index]:
+                return left_child_index
+            else:
+                return right_child_index
+
+
+heap = MinHeap()
+print(heap.peek_min())
+heap.insert(20)
+print(heap.array[0])
+heap.insert(5)
+heap.insert(15)
+heap.insert(22)
+heap.insert(3)
+print(heap.peek_min())
+mins = []
+while heap:
+    mins.append(heap.extract_min())
+print(mins)
+
 </code></pre>
-
-<ul>
-<li>シンプルな使い方</li>
-<li>productionで使おうとすると、予期せぬ結果が起こりうる</li>
-<li>理由はバージョン指定をしていないからで、日々起こる結果がかわってしまう</li>
-</ul>
-
-<h4 id="２-a-complete-list-of-all-dependencies-a-project-has-each-with-exact-versions-specified">２．A complete list of all dependencies a project has, each with exact versions specified.</h4>
-
-<p>プロジェクトの完全なのdependencies listとしてバージョン指定をして使う</p>
-
-<pre><code>$ cat requirements.txt
-cffi==1.5.2
-cryptography==1.2.2
-enum34==1.1.2
-Flask==0.10.1
-gunicorn==19.4.5
-idna==2.0
-ipaddress==1.0.16
-itsdangerous==0.24
-Jinja2==2.8
-MarkupSafe==0.23
-ndg-httpsclient==0.4.0
-pyasn1==0.1.9
-pycparser==2.14
-pyOpenSSL==0.15.1
-requests==2.9.1
-six==1.10.0
-Werkzeug==0.11.4
-</code></pre>
-
-<ul>
-<li>アプリケーションのデプロイとしてはベストプラクティス</li>
-<li>すべてのdependenciesはsub-dependenciesも含めてリストされる</li>
-<li>このタイプは現在のアプリケーション実行環境からpip freezeによって生成されたリスト</li>
-<li>でもちょっとcumbersome（やっかい）</li>
-<li>すべてのパッケージについてまとめて<code>pip install --upgrade</code>をやろうとしたときに簡単ではない</li>
-<li>１つ１つリストをみながら<code>$ pip install requests[security] flask --upgrade</code>とやっていく必要がある</li>
-</ul>
-
-<h2 id="ベターなworkflow">ベターなWorkFlow</h2>
-
-<h4 id="２つファイルを用意する">２つファイルを用意する</h4>
-
-<pre><code>requirements-to-freeze.txt
-requirements.txt
-</code></pre>
-
-<p>requirements-to-freeze.txtはこんな感じ</p>
-
-<pre><code>$cat requirements-to-freeze.txt
-requests[security]
-flask
-gunicorn==19.4.5
-</code></pre>
-
-<p>requirements.txtはこんな感じ</p>
-
-<pre><code>$cat requirements.txt
-cffi==1.5.2
-cryptography==1.2.2
-enum34==1.1.2
-Flask==0.10.1
-gunicorn==19.4.5
-idna==2.0
-ipaddress==1.0.16
-itsdangerous==0.24
-Jinja2==2.8
-MarkupSafe==0.23
-ndg-httpsclient==0.4.0
-pyasn1==0.1.9
-pycparser==2.14
-pyOpenSSL==0.15.1
-requests==2.9.1
-six==1.10.0
-Werkzeug==0.11.4
-</code></pre>
-
-<h4 id="workflow">Workflow</h4>
-
-<p>requirements-to-freeze.txtはメソッド１として使い、
-requirements.txtはメソッド２で使う</p>
-
-<h4 id="使用例">使用例</h4>
-
-<pre><code>$ cd project-repo
-
-$ pip install -r requirements-to-freeze.txt --upgrade
-Installing collected packages: six, enum34, ipaddress, ...
-
-$ pip freeze &gt; requirements.txt
-</code></pre>
-
-<h3 id="所感">所感</h3>
-
-<p>このように２つworkflowもあるけれど、著者のPipenvを使う裏付けとして理解しておきたい</p>
 
 		</div>
 					
@@ -206,7 +169,7 @@ $ pip freeze &gt; requirements.txt
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
 	</ul>
 </div>
 
@@ -218,10 +181,10 @@ $ pip freeze &gt; requirements.txt
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/ng_include/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">ng-includeで読み込んだパーシャルをキャッシュさせない</p></a>
+		<a class="post-nav__link" href="/post/queue_code/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">キューの実装</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/how_to_buy_happiness/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">幸せをお金で買う方法(TED) - まとめ</p></a>
+		<a class="post-nav__link" href="/post/aws_s3_iam_policy/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">特定のs3バケットにのみアクセス権限を与えるiamポリシー</p></a>
 	</div>
 </nav>
 

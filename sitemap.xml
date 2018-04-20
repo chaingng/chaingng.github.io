@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/heap_code/</loc>
+    <lastmod>2018-03-02T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/queue_code/</loc>
     <lastmod>2018-02-23T10:00:00+09:00</lastmod>
   </url>
@@ -244,7 +249,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/algorithm/</loc>
-    <lastmod>2018-02-23T10:00:00+09:00</lastmod>
+    <lastmod>2018-03-02T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -363,7 +368,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/</loc>
-    <lastmod>2018-02-23T10:00:00+09:00</lastmod>
+    <lastmod>2018-03-02T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
