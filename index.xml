@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>トライ木の実装</title>
+      <link>https://chaingng.github.io/post/tri_code/</link>
+      <pubDate>Fri, 23 Mar 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/tri_code/</guid>
+      <description>import collections class TriNode(object): def __init__(self): self.children = collections.defaultdict(TriNode) self.is_word = False class TriTree: def __init__(self): self.root = TriNode() def insert(self, word): current = self.root for letter in word: current = current.children[letter] current.is_word = True def search(self, word): current = self.root for letter in word: current = current.children[letter] if current is None: return False return current.is_word def startswith(self, prefix): current = self.root for letter in prefix: current = current.children[letter] if current is None: return False return True t = TriTree() t.</description>
+    </item>
+    
+    <item>
       <title>優先度付きキューの実装</title>
       <link>https://chaingng.github.io/post/priority_queue/</link>
       <pubDate>Fri, 16 Mar 2018 10:00:00 +0900</pubDate>
