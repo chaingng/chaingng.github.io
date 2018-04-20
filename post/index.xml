@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>クイックソートの実装</title>
+      <link>https://chaingng.github.io/post/quick_sort_code/</link>
+      <pubDate>Fri, 16 Feb 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/quick_sort_code/</guid>
+      <description># https://ja.wikipedia.org/wiki/%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%82%BD%E3%83%BC%E3%83%88 # http://www.ics.kagoshima-u.ac.jp/~fuchida/edu/algorithm/sort-algorithm/quick-sort.html def quick_sort(array, first, last): # あるpivotをもとに、そこから左だけはpivot以下の値だけに、右はpivot以上の値だけにする # 左と右の配列に対してq</description>
+    </item>
+    
+    <item>
       <title>バブルソートの実装</title>
       <link>https://chaingng.github.io/post/bubble_sort_code/</link>
       <pubDate>Mon, 12 Feb 2018 10:00:00 +0900</pubDate>
