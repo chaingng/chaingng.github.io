@@ -29,14 +29,5 @@
       <description>httpsアクセスの際、githubへのアクセスにはパスワード or personal access token（二段階認証を設定している場合）が必要になる。 デフォルトでは、</description>
     </item>
     
-    <item>
-      <title>リモート追跡ブランチ・追跡ブランチ・リモートブランチの違い</title>
-      <link>https://chaingng.github.io/post/git_branch/</link>
-      <pubDate>Sun, 05 Feb 2017 00:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/git_branch/</guid>
-      <description>まとめ リモートブランチ リモートレポジトリに存在するブランチ (remote)/(branch)で表される リモート追跡ブランチ ローカルに存在 リモ</description>
-    </item>
-    
   </channel>
 </rss>
