@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Library on Hack Engineering</title>
+    <link>https://chaingng.github.io/tags/library/</link>
+    <description>Recent content in Library on Hack Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 19 Feb 2017 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chaingng.github.io/tags/library/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ElasticSearchの導入</title>
+      <link>https://chaingng.github.io/post/elasticsearch_install/</link>
+      <pubDate>Sun, 19 Feb 2017 00:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/elasticsearch_install/</guid>
+      <description>目次 動作環境 インストール 自動起動設定 プラグインのインストール 起動確認 動かないとき 動作環境 Ubuntu14.04 インストール Java8が必要 apt-get install -y openjdk-8-jdk その後公式にそ</description>
+    </item>
+    
+    <item>
+      <title>crowi用のvagrantを公開しました</title>
+      <link>https://chaingng.github.io/post/vagrant_crowi/</link>
+      <pubDate>Sun, 12 Feb 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/vagrant_crowi/</guid>
+      <description>情報集約用にwikiをいろいろ試していて、crowiを試してみることにした。 いくつかセットアップが必要だったので、vagrantでワンタッチ</description>
+    </item>
+    
+  </channel>
+</rss>
