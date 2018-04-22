@@ -384,15 +384,15 @@ ROLLBACK;
 <li>SQLの観点から見るとテーブルと同じ</li>
 <li>ただし実際のデータは保存していない</li>
 <li>ビューが保存しているのはSELECT文</li>
-<li>実際のデータを保存しなくてよいので容量が節約できる
-<code>
-CREATE VIEW ShohinSum (shohin_bunrui, cnt_shohin)
+<li>実際のデータを保存しなくてよいので容量が節約できる</li>
+</ul>
+
+<pre><code>CREATE VIEW ShohinSum (shohin_bunrui, cnt_shohin)
 AS
 SELECT shohin_bunrui, COUNT(*)
-FROM Shohin
+    FROM Shohin
 GROUP BY shohin_bunrui;
-</code></li>
-</ul>
+</code></pre>
 
 <p>その後、ビュー名はテーブル名の用に使える</p>
 
@@ -433,13 +433,13 @@ GROUP BY shohin_bunrui;
 <ul>
 <li>必ず１行１列だけの戻り値を返す</li>
 <li>つまり、この結果を＝や＜＞などに使うこと</li>
-<li>定数や列名を書けるところすべてに使える
-<code>
-SELECT shihin_id
-FROM Shohin
-WHERE hanbai_tanka &gt; (SELECT AVG(hanbai_tanka) FROM Shohin);   
-</code></li>
+<li>定数や列名を書けるところすべてに使える</li>
 </ul>
+
+<pre><code>SELECT shihin_id
+    FROM Shohin
+WHERE hanbai_tanka &gt; (SELECT AVG(hanbai_tanka) FROM Shohin);   
+</code></pre>
 
 <h2 id="相関サブクエリ">相関サブクエリ</h2>
 
@@ -492,15 +492,15 @@ WHERE str LIKE ‘%ddd’;
 <li>常に相関サブクエリを引数にとる</li>
 <li>レコードの存在有無しか見ないため、SELECTでどんな列が返されるか気にしない</li>
 <li><code>SELECT　*</code>と書くのは慣習
--TRUEかFALSEだけ返す
-<code>
-SELECT shohin_mei
-FROM Shohin AS S
-WHERE EXISTS (SELECT * 
-            FROM TenpoShohinn AS TS
-            WHERE TS.tenpo_id = ‘00C’ AND TS.shohin_id = S.shohin_id);
-</code></li>
+-TRUEかFALSEだけ返す</li>
 </ul>
+
+<pre><code>SELECT shohin_mei
+    FROM Shohin AS S
+WHERE EXISTS (SELECT * 
+                FROM TenpoShohinn AS TS
+                WHERE TS.tenpo_id = ‘00C’ AND TS.shohin_id = S.shohin_id);
+</code></pre>
 
 <h2 id="case">CASE</h2>
 
@@ -575,13 +575,13 @@ SELECT shohin_id, shohin_mei
 
 <ul>
 <li>JOINは列の結合</li>
-<li>INNER JOINは両方に存在するレコードのみ出力される
-<code>
-SELECT TS.tenpo_id, TS.tenpo_mei, TS.shohin_id, S.shohin_mei, S.hanbai_tanka
-FROM TenpoShohin AS TS INNER JOIN Shohin AS S
-    ON TS.shohin_id = S.shohin_id;
-</code></li>
+<li>INNER JOINは両方に存在するレコードのみ出力される</li>
 </ul>
+
+<pre><code>SELECT TS.tenpo_id, TS.tenpo_mei, TS.shohin_id, S.shohin_mei, S.hanbai_tanka
+    FROM TenpoShohin AS TS INNER JOIN Shohin AS S
+        ON TS.shohin_id = S.shohin_id;
+</code></pre>
 
 <p>最後にWHEREを書いて、表示レコードに条件をつけることもできる</p>
 
@@ -589,14 +589,14 @@ FROM TenpoShohin AS TS INNER JOIN Shohin AS S
 
 <ul>
 <li>片方のみに存在するレコードも出力される</li>
-<li>OUTERは元のテーブルにない情報を結果に持ってくる、という意味
-<code>
-SELECT TS.tenpo_id, TS.tenpo_mei, TS.shohin_id, S.shohin_mei, S.hanbai_tanka
-FROM TenpoShohin AS TS RIGHT OUTER JOIN Shohin AS S
-    ON TS.shohin_id = S.shohin_id;
-FROM Shohin
-</code></li>
+<li>OUTERは元のテーブルにない情報を結果に持ってくる、という意味</li>
 </ul>
+
+<pre><code>SELECT TS.tenpo_id, TS.tenpo_mei, TS.shohin_id, S.shohin_mei, S.hanbai_tanka
+    FROM TenpoShohin AS TS RIGHT OUTER JOIN Shohin AS S
+        ON TS.shohin_id = S.shohin_id;
+    FROM Shohin
+</code></pre>
 
 <p>マスターにする方をLEFTもしくはRIGHTで指定できる</p>
 
