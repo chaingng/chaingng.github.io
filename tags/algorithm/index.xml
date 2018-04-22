@@ -183,6 +183,15 @@
     </item>
     
     <item>
+      <title>Stackの基礎</title>
+      <link>https://chaingng.github.io/post/queue_stack/</link>
+      <pubDate>Sun, 17 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/queue_stack/</guid>
+      <description>概要 pushとpopが基本動作。LIFO time O(1) 配列で実装可能 peek操作もある（要素の山椒の実で取り出さない） 8.1 MAX値を返せるStackの実</description>
+    </item>
+    
+    <item>
       <title>二分探索木の基礎</title>
       <link>https://chaingng.github.io/post/binary_search_tree/</link>
       <pubDate>Sun, 17 Dec 2017 10:00:00 +0900</pubDate>
