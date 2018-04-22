@@ -173,5 +173,14 @@
       <description>概要 片方向リスト、双方向リスト、循環リストがある 挿入と削除がO(1) 検索がO(n) 配列と比較したトレードオフ 追加の場合、配列は限界がありフラ</description>
     </item>
     
+    <item>
+      <title>連結リストの実装</title>
+      <link>https://chaingng.github.io/post/linked_list_code/</link>
+      <pubDate>Sun, 24 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/linked_list_code/</guid>
+      <description>class DoublyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None self.prev = None class SinglyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None  </description>
+    </item>
+    
   </channel>
 </rss>

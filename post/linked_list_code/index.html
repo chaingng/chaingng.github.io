@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>djangoでのloggerの使い方</title>
+<title>連結リストの実装</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="djangoでのloggerの使い方" />
-<meta property="og:description" content="djangoでloggerを使うには、loggerの要素（formatters、loggers、filters、handlers）とログレベ" />
+<meta property="og:title" content="連結リストの実装" />
+<meta property="og:description" content="class DoublyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None self.prev = None class SinglyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/django_logger/" />
+<meta property="og:url" content="https://chaingng.github.io/post/linked_list_code/" />
 
 
 
-<meta property="article:published_time" content="2018-01-25T10:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2017-12-24T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2018-01-25T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-12-24T10:00:00&#43;09:00"/>
 
 
 
@@ -77,193 +77,26 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">djangoでのloggerの使い方</h1>
+			<h1 class="post__title">連結リストの実装</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-01-25T10:00:00">January 25, 2018</time>
+				<time class="post__meta-date" datetime="2017-12-24T10:00:00">December 24, 2017</time>
 			</p>
 		</header>
 		
 		
 		<div class="post__content clearfix">
-			
+			<pre><code>class DoublyLinkedListNode(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.prev = None
 
-<p>djangoでloggerを使うには、loggerの要素（formatters、loggers、filters、handlers）とログレベル、settingsにおける設定について理解する必要がある。</p>
 
-<h2 id="目次">目次</h2>
-
-<ul>
-<li><a href="#ログレベル">ログレベル</a></li>
-<li><a href="#settingsでの設定">settingsでの設定</a></li>
-<li><a href="#formatters">formatters</a></li>
-<li><a href="#filters">filters</a></li>
-<li><a href="#handlers">handlers</a></li>
-<li><a href="#loggers">loggers</a></li>
-<li><a href="#ロギングを使う">ロギングを使う</a></li>
-<li><a href="#例">例</a></li>
-</ul>
-
-<h2 id="ログレベル">ログレベル</h2>
-
-<p>ログはレベルをもつ。指定したログレベル以下では操作させない、といった設定ができる</p>
-
-<p>低位のレベルから以下のログレベルが存在する</p>
-
-<pre><code>* DEBUG: デバッグ目的で低いレベルのシステム情報
-* INFO: 一般的なシステム情報
-* WARNING: 発生した小さな問題についての情報
-* ERROR: 発生した大きな問題についての情報
-* CRITICAL: 発生した致命的な問題についての情報
-</code></pre>
-
-<h2 id="settingsでの設定">settingsでの設定</h2>
-
-<p>settings.pyにてloggingの設定を行う。</p>
-
-<pre><code>LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
-    'filters': {
-        'special': {
-            '()': 'project.logging.SpecialFilter',
-            'foo': 'bar',
-        }
-    },
-    'handlers': {
-        'null': {
-            'level':'DEBUG',
-            'class':'django.utils.log.NullHandler',
-        },
-        'console':{
-            'level':'DEBUG',
-            'class':'logging.StreamHandler',
-            'formatter': 'simple'
-        },
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
-            'filters': ['special']
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers':['null'],
-            'propagate': True,
-            'level':'INFO',
-        },
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-        'myproject.custom': {
-            'handlers': ['console', 'mail_admins'],
-            'level': 'INFO',
-            'filters': ['special']
-        }
-    }
-}
-</code></pre>
-
-<h2 id="formatters">formatters</h2>
-
-<ul>
-<li>ログの出力形式を定義できる</li>
-<li>handlerにて<code>'formatter': ‘simple'</code>とすることで出力形式を指定できる</li>
-</ul>
-
-<h2 id="filters">filters</h2>
-
-<ul>
-<li>ログに値を追加したり、特定の条件で表示・非表示のフィルタをかけられる</li>
-<li>この例では、
-
-<ul>
-<li>loggerで <code>'filters': ['special’]</code> と追加することで指定のloggerが以下の関数でフィルタされる</li>
-<li>ログに{&lsquo;foo&rsquo;: ‘bar’}が追加される</li>
-</ul></li>
-</ul>
-
-<pre><code># project/logging.py
-import logging
-
-class SpecialFilter(logging.Filter):
-     def filter(self, record):
-         record.user = record.request.user_profie['fullName']
-         return True
-</code></pre>
-
-<p>return Falseとすれば出力されないようにできる</p>
-
-<h2 id="handlers">handlers</h2>
-
-<ul>
-<li>ログレベルと、それに紐づく動作（標準出力やメール送信など）を定義できる</li>
-<li>ログが発生したときに指定したログレベル以上であれば、指定された動作が実行される</li>
-</ul>
-
-<p>この例では以下のようにハンドラが動作する</p>
-
-<pre><code>* null NullHandler です。 DEBUG 以上の全てのメッセージを /dev/null に捨てます。
-* console StreamHandler です。 DEBUG 以上の全てのメッセージを標準エ ラー出力に出力します。このハンドラは simple 出力フォーマットを使います。
-* mail_admins AdminEmailHandler です。 ERROR 以上の全てのメッセージ をサイト管理者にメール送信します。このハンドラは special フィルタを使 います。
-</code></pre>
-
-<h2 id="loggers">loggers</h2>
-
-<ul>
-<li>ロギングシステムのエントリポイントになる。　　</li>
-<li>ログレベル、ハンドラ、フィルタ、propagate(loggerを親に伝搬させるか)を設定する　　</li>
-<li>指定したログレベル以上であれば、指定したフィルタ、ハンドラが実行される</li>
-</ul>
-
-<p>ここでは以下の操作が定義されている</p>
-
-<pre><code>* django は INFO 以上のメッセージを null ハンドラに渡します。
-* django.request は全ての ERROR メッセージを mail_admins ハンド ラに渡します。さらに、このロガーはメッセージを伝播 しない ように印をつけ られています。これにより django に書かれたログメッセージを django ロガーは扱わないことになります。
-* myproject.custom は INFO 以上の全てのメッセージと special フィ ルタを 2 つのハンドラ console と mail_admins に渡します。全ての INFO レベル以上のメッセージはコンソールに出力され、 ERROR とCRITICAL メッセージはメール経由で出力されることになります。
-</code></pre>
-
-<h2 id="ロギングを使う">ロギングを使う</h2>
-
-<ul>
-<li>最初にログインスタンスを取得</li>
-<li>名前にはloggersの名前を指定する
-<code>
-logging.getLogger('project.interesting.stuff')
-</code></li>
-</ul>
-
-<p>その後、ログレベルを指定して実行することでロギングが実行される</p>
-
-<pre><code>* logger.critical()
-* logger.error()
-* logger.warning()
-* logger.info()
-* logger.debug()
-</code></pre>
-
-<h2 id="例">例</h2>
-
-<pre><code># logging ライブラリをインポートする
-import logging
-
-# ロガーインスタンスを取得
-logger = logging.getLogger('django.request')
-
-def my_view(request, arg1, arg):
-    ...
-    if bad_mojo:
-        # エラーメッセージをログ出力
-        logger.error('Something went wrong!')
+class SinglyLinkedListNode(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 </code></pre>
 
 		</div>
@@ -274,7 +107,7 @@ def my_view(request, arg1, arg):
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/django/" rel="tag">django</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
 	</ul>
 </div>
 
@@ -286,10 +119,10 @@ def my_view(request, arg1, arg):
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/csrf/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">csrf対策</p></a>
+		<a class="post-nav__link" href="/post/python_string/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">python string文字列の使い方</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/local_smartphone/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">android/iphoneでローカルサーバに接続する</p></a>
+		<a class="post-nav__link" href="/post/linked_list/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">連結リストの概要</p></a>
 	</div>
 </nav>
 
