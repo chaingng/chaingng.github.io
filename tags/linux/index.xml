@@ -6,10 +6,19 @@
     <description>Recent content in Linux on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 01 Jan 2017 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jan 2017 09:22:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>shebangから理解するUNIXの仕組み</title>
+      <link>https://chaingng.github.io/post/shebang_init/</link>
+      <pubDate>Sun, 29 Jan 2017 09:22:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/shebang_init/</guid>
+      <description>unixでシェルスクリプトを書くとき、冒頭に#!/bin/shと書くことは当たり前なのだけど、 時々コマンドなんだっけ、と忘れることがあった。</description>
+    </item>
     
     <item>
       <title>公開鍵によるsshアクセスの設定</title>

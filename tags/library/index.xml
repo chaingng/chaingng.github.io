@@ -20,5 +20,14 @@
       <description>目次 動作環境 インストール 自動起動設定 プラグインのインストール 起動確認 動かないとき 動作環境 Ubuntu14.04 インストール Java8が必要 apt-get install -y openjdk-8-jdk その後公式にそ</description>
     </item>
     
+    <item>
+      <title>crowi用のvagrantを公開しました</title>
+      <link>https://chaingng.github.io/post/vagrant_crowi/</link>
+      <pubDate>Sun, 12 Feb 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/vagrant_crowi/</guid>
+      <description>情報集約用にwikiをいろいろ試していて、crowiを試してみることにした。 いくつかセットアップが必要だったので、vagrantでワンタッチ</description>
+    </item>
+    
   </channel>
 </rss>

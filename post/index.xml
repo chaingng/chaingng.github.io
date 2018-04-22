@@ -278,12 +278,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>sorting overview</title>
+      <title>ソートの基礎</title>
       <link>https://chaingng.github.io/post/sorting/</link>
       <pubDate>Mon, 15 Jan 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/sorting/</guid>
-      <description>overview ソートは検索を早くするプリプロセスとして使われる 似ているアイテムを探すのにも使われる ヒープソート in-placeだが安定でない マージソート</description>
+      <description>overview ソートは検索を早くするプリプロセスとして使われる 似ているアイテムを探すのにも使われる ヒープソート - in-placeだが安定でない spaceO(1) マージソ</description>
     </item>
     
     <item>
