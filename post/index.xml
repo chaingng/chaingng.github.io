@@ -283,7 +283,7 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       <pubDate>Mon, 15 Jan 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/sorting/</guid>
-      <description>overview ソートは検索を早くするプリプロセスとして使われる 似ているアイテムを探すのにも使われる ヒープソート - in-placeだが安定でない spaceO(1) マージソ</description>
+      <description>overview ソートは検索を早くするプリプロセスとして使われる 似ているアイテムを探すのにも使われる ヒープソート in-placeだが安定でない spaceO(1) マージソー</description>
     </item>
     
     <item>
@@ -296,7 +296,7 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>Hash Tables</title>
+      <title>ハッシュテーブルの概要</title>
       <link>https://chaingng.github.io/post/hash/</link>
       <pubDate>Mon, 08 Jan 2018 10:00:00 +0900</pubDate>
       
