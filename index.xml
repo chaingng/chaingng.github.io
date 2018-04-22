@@ -323,6 +323,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>連結リストの概要</title>
+      <link>https://chaingng.github.io/post/linked_list/</link>
+      <pubDate>Sun, 31 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/linked_list/</guid>
+      <description>概要 挿入と削除がO(1) k番目の要素の取得がO(n) nodeはdata, nextフィールドを持つ dummy headを設けることで空のリストかのチェッ</description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>https://chaingng.github.io/me/</link>
       <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
