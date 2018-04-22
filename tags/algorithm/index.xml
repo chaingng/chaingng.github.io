@@ -182,5 +182,14 @@
       <description>class DoublyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None self.prev = None class SinglyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None  </description>
     </item>
     
+    <item>
+      <title>二分探索木の基礎</title>
+      <link>https://chaingng.github.io/post/binary_search_tree/</link>
+      <pubDate>Sun, 17 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/binary_search_tree/</guid>
+      <description>概要 keyを効率良く探すことができ、かつmin/maxも同様に効率的に探せる keyの範囲も探すことができる ソートされた配列と似ているが、ke</description>
+    </item>
+    
   </channel>
 </rss>
