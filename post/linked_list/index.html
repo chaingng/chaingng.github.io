@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.38-DEV" />
 <meta property="og:title" content="連結リストの概要" />
-<meta property="og:description" content="概要 挿入と削除がO(1) k番目の要素の取得がO(n) nodeはdata, nextフィールドを持つ dummy headを設けることで空のリストかのチェッ" />
+<meta property="og:description" content="概要 片方向リスト、双方向リスト、循環リストがある 挿入と削除がO(1) 検索がO(n) 配列と比較したトレードオフ 追加の場合、配列は限界がありフラ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/linked_list/" />
 
@@ -91,8 +91,15 @@ ga('send', 'pageview');
 <h2 id="概要">概要</h2>
 
 <ul>
+<li>片方向リスト、双方向リスト、循環リストがある</li>
 <li>挿入と削除がO(1)</li>
-<li>k番目の要素の取得がO(n)</li>
+<li>検索がO(n)</li>
+<li>配列と比較したトレードオフ
+
+<ul>
+<li>追加の場合、配列は限界がありフラグメンテーションでできないこともある</li>
+<li>シーケンシャルアクセスも配列のほうがはやい（キャッシュメモリと参照の局所性）</li>
+</ul></li>
 <li>nodeはdata, nextフィールドを持つ</li>
 <li>dummy headを設けることで空のリストかのチェックがいらなくなる</li>
 <li>2つのイテレータをもつ解法が有効なことがある</li>
