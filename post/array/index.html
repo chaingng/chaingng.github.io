@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ElasticSearchの導入</title>
+<title>配列の基礎</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="ElasticSearchの導入" />
-<meta property="og:description" content="目次 動作環境 インストール 自動起動設定 プラグインのインストール 起動確認 動かないとき 動作環境 Ubuntu14.04 インストール Java8が必要 apt-get install -y openjdk-8-jdk その後公式にそ" />
+<meta property="og:title" content="配列の基礎" />
+<meta property="og:description" content="概要 データの取得と更新がO(1) 削除がO(n-i) 時々resizingが必要になる brute forceでO(n)spaceだが、ソリューションによっ" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/elasticsearch_install/" />
+<meta property="og:url" content="https://chaingng.github.io/post/array/" />
 
 
 
-<meta property="article:published_time" content="2017-02-19T00:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2017-11-19T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2017-02-19T00:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-11-19T10:00:00&#43;09:00"/>
 
 
 
@@ -77,10 +77,10 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">ElasticSearchの導入</h1>
+			<h1 class="post__title">配列の基礎</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-02-19T00:00:00">February 19, 2017</time>
+				<time class="post__meta-date" datetime="2017-11-19T10:00:00">November 19, 2017</time>
 			</p>
 		</header>
 		
@@ -88,139 +88,44 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
-<h2 id="目次">目次</h2>
+<h2 id="概要">概要</h2>
 
 <ul>
-<li><a href="#動作環境">動作環境</a></li>
-<li><a href="#インストール">インストール</a></li>
-<li><a href="#自動起動設定">自動起動設定</a></li>
-<li><a href="#プラグインのインストール">プラグインのインストール</a></li>
-<li><a href="#起動確認">起動確認</a></li>
-<li><a href="#動かないとき">動かないとき</a></li>
+<li>データの取得と更新がO(1)</li>
+<li>削除がO(n-i)</li>
+<li>時々resizingが必要になる</li>
+<li>brute forceでO(n)spaceだが、ソリューションによってはO(1)space</li>
+<li>後ろから探索することが有効な時がある</li>
+<li>削除に変わって、オーバーライドが有効なこともある</li>
+<li>後ろから数字を扱うのが有効な時がある</li>
+<li>二次元配列には並行処理が有効な場合もある</li>
+<li>シミュレーションするとソリューションが浮かびやすいこともある</li>
 </ul>
 
-<h2 id="動作環境">動作環境</h2>
+<h2 id="5-1-dutch-flag-problem">5.1 Dutch flag problem</h2>
 
 <ul>
-<li>Ubuntu14.04</li>
+<li>数字の配列を、与えられたpivot以下、pivotと同じ値、pivotより大きい値に並べる</li>
 </ul>
 
-<h2 id="インストール">インストール</h2>
+<pre><code>def dutch_flag(pivot_index, A):
+    pivot = A[pivot_index]
+    smaller, equal, larger = 0, 0, len(A)
 
-<p>Java8が必要</p>
+    while equal &lt; larger:
+        if A[equal] &lt; pivot:
+            A[smaller], A[equal] = A[equal], A[smaller]
+            smaller, equal = smaller + 1, equal + 1
+        elif A[equal] == pivot:
+            equal += 1
+        else:
+            larger -= 1
+            A[equal], A[larger] = A[larger], A[equal]
+    return A
 
-<pre><code>apt-get install -y openjdk-8-jdk
-</code></pre>
 
-<p>その後<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html">公式</a>にそってelasticsearchをインストール</p>
-
-<pre><code>wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-sudo apt-get install -y apt-transport-https
-echo &quot;deb https://artifacts.elastic.co/packages/5.x/apt stable main&quot; | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
-sudo apt-get update
-sudo apt-get install -y elasticsearch
-</code></pre>
-
-<h2 id="自動起動設定">自動起動設定</h2>
-
-<p>公式通り</p>
-
-<pre><code>sudo /bin/systemctl daemon-reload
-sudo /bin/systemctl enable elasticsearch.service
-sudo systemctl start elasticsearch.service
-</code></pre>
-
-<h2 id="プラグインのインストール">プラグインのインストール</h2>
-
-<p><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/current/installation.html">Core ElasticSearch Plugins</a>は
-以下のようにインストール可能</p>
-
-<pre><code>sudo bin/elasticsearch-plugin install [plugin_name]
-</code></pre>
-
-<p>ただしbinは<code>/usr/share/elasticsearch/bin</code>にあるので、<br />
-実際には以下のようにインストールする</p>
-
-<pre><code>sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-kuromoji
-</code></pre>
-
-<h2 id="起動確認">起動確認</h2>
-
-<p><code>curl http://localhost:9200</code>でレスポンスが返ってくればOK</p>
-
-<pre><code># curl http://localhost:9200
-{
-  &quot;name&quot; : &quot;954WKXE&quot;,
-  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,
-  &quot;cluster_uuid&quot; : &quot;tLyD95oxTaSDbs4ZG5T0VQ&quot;,
-  &quot;version&quot; : {
-    &quot;number&quot; : &quot;5.5.1&quot;,
-    &quot;build_hash&quot; : &quot;19c13d0&quot;,
-    &quot;build_date&quot; : &quot;2017-07-18T20:44:24.823Z&quot;,
-    &quot;build_snapshot&quot; : false,
-    &quot;lucene_version&quot; : &quot;6.6.0&quot;
-  },
-  &quot;tagline&quot; : &quot;You Know, for Search&quot;
-}
-</code></pre>
-
-<h2 id="動かないとき">動かないとき</h2>
-
-<pre><code># curl http://localhost:9200
-curl: (7) Failed to connect to localhost port 9200: 接続を拒否されました
-</code></pre>
-
-<p>service statusを調べる</p>
-
-<pre><code># service elasticsearch status
-● elasticsearch.service - Elasticsearch
-  Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; disabled; vendor preset: enabled)
-  Active: failed (Result: exit-code) since 金 2017-08-04 15:19:12 JST; 37s ago
-  Docs: http://www.elastic.co
-  Process: 3961 ExecStart=/usr/share/elasticsearch/bin/elasticsearch -p ${PID_DIR}/elasticsearch.pid --quiet -Edefault.path.logs=${LOG_DIR} -Edefault.path.data=${DATA_DIR} -Edefault.path.conf=${CONF_DIR}
-  Process: 3956 ExecStartPre=/usr/share/elasticsearch/bin/elasticsearch-systemd-pre-exec (code=exited, status=0/SUCCESS)
- Main PID: 3961 (code=exited, status=1/FAILURE)
-
- 8月 04 15:19:11 xxx systemd[1]: Starting Elasticsearch...
- 8月 04 15:19:11 xxx systemd[1]: Started Elasticsearch.
- 8月 04 15:19:12 xxx elasticsearch[3961]: OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x000000008a660000, 1973026816, 0) failed; error='Cannot allocate memory' (errno=12)
- 8月 04 15:19:12 xxx elasticsearch[3961]: #
- 8月 04 15:19:12 xxx elasticsearch[3961]: # There is insufficient memory for the Java Runtime Environment to continue.
- 8月 04 15:19:12 xxx elasticsearch[3961]: # Native memory allocation (mmap) failed to map 1973026816 bytes for committing reserved memory.
- 8月 04 15:19:12 xxx systemd[1]: elasticsearch.service: Main process exited, code=exited, status=1/FAILURE
- 8月 04 15:19:12 xxx systemd[1]: elasticsearch.service: Unit entered failed state.
- 8月 04 15:19:12 xxx systemd[1]: elasticsearch.service: Failed with result 'exit-code'.
-</code></pre>
-
-<p>公式に<a href="https://github.com/elastic/elasticsearch/issues/15315">Issue</a>があり、メモリが足りない場合がある</p>
-
-<p>よって<code>/etc/elasticsearch/jvm.options</code>を以下のように変更</p>
-
-<pre><code># cat /etc/elasticsearch/jvm.options
-
-# Xms represents the initial size of total heap space
-# Xmx represents the maximum size of total heap space
-
-#-Xms2g
-#-Xmx2g
--Xms512m
--Xmx1g
-</code></pre>
-
-<p>メモリ不足であればこれで動くようになる</p>
-
-<pre><code># service elasticsearch status
-● elasticsearch.service - Elasticsearch
-  Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; disabled; vendor preset: enabled)
-  Active: active (running) since 金 2017-08-04 15:25:37 JST; 3s ago
-  Docs: http://www.elastic.co
-  Process: 4200 ExecStartPre=/usr/share/elasticsearch/bin/elasticsearch-systemd-pre-exec (code=exited, status=0/SUCCESS)
- Main PID: 4205 (java)
-  CGroup: /system.slice/elasticsearch.service
-  └─4205 /usr/bin/java -Xms512m -Xmx1g -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+AlwaysPreTouch -server -Xss1m -Djava.awt.headless=true
-
- 8月 04 15:25:37 xxx systemd[1]: Starting Elasticsearch...
- 8月 04 15:25:37 xxx systemd[1]: Started Elasticsearch.
+ret = dutch_flag(1, [4, 0, -1, 1, -1, 1, 0, 2])
+print(ret)
 </code></pre>
 
 		</div>
@@ -231,7 +136,7 @@ curl: (7) Failed to connect to localhost port 9200: 接続を拒否されまし�
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/library/" rel="tag">library</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
 	</ul>
 </div>
 
@@ -243,10 +148,10 @@ curl: (7) Failed to connect to localhost port 9200: 接続を拒否されまし�
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/vagrant_crowi/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">crowi用のvagrantを公開しました</p></a>
+		<a class="post-nav__link" href="/post/python_string/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">python string文字列の使い方</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/code_complete_15/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">[要約]CodeComplete 15章 条件文の使用</p></a>
+		<a class="post-nav__link" href="/post/string/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">文字列の基礎</p></a>
 	</div>
 </nav>
 

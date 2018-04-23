@@ -395,6 +395,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>配列の基礎</title>
+      <link>https://chaingng.github.io/post/array/</link>
+      <pubDate>Sun, 19 Nov 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/array/</guid>
+      <description>概要 データの取得と更新がO(1) 削除がO(n-i) 時々resizingが必要になる brute forceでO(n)spaceだが、ソリューションによっ</description>
+    </item>
+    
+    <item>
       <title>python string文字列の使い方</title>
       <link>https://chaingng.github.io/post/python_string/</link>
       <pubDate>Sun, 30 Apr 2017 10:00:00 +0900</pubDate>
