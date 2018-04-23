@@ -386,6 +386,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>文字列の基礎</title>
+      <link>https://chaingng.github.io/post/string/</link>
+      <pubDate>Sun, 26 Nov 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/string/</guid>
+      <description>概要 比較、コピー、連結、分割、マッチなど基本操作について理解する brute-forceではO(n)spaceだが、ソリューションによってはO</description>
+    </item>
+    
+    <item>
       <title>python string文字列の使い方</title>
       <link>https://chaingng.github.io/post/python_string/</link>
       <pubDate>Sun, 30 Apr 2017 10:00:00 +0900</pubDate>

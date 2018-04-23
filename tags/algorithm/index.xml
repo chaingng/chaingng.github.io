@@ -227,5 +227,14 @@
       <description>概要 sorting O(nlogn) search O(logn) mid = (low + high)/2 はオーバーフローしてしまう mid = low + (high - low)/2ならよい 実装 def bsearch(t,A): low, high = 0, len(A)-1 while low &amp;lt;= high: mid = (low + high)//2 if A[mid] &amp;lt; t: low = mid + 1 else if A[mid]</description>
     </item>
     
+    <item>
+      <title>文字列の基礎</title>
+      <link>https://chaingng.github.io/post/string/</link>
+      <pubDate>Sun, 26 Nov 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/string/</guid>
+      <description>概要 比較、コピー、連結、分割、マッチなど基本操作について理解する brute-forceではO(n)spaceだが、ソリューションによってはO</description>
+    </item>
+    
   </channel>
 </rss>
