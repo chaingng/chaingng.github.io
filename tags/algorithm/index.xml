@@ -200,5 +200,14 @@
       <description>概要 keyを効率良く探すことができ、かつmin/maxも同様に効率的に探せる keyの範囲も探すことができる ソートされた配列と似ているが、ke</description>
     </item>
     
+    <item>
+      <title>ヒープの基礎</title>
+      <link>https://chaingng.github.io/post/heap/</link>
+      <pubDate>Sun, 10 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/heap/</guid>
+      <description>概要 ヒープは特別な二分木 完全二分木である 親ノードの値は子よりも小さい（最小ヒープのとき） 配列で実装できる。親iの子は2i+1, 2i+2 挿入と削除が</description>
+    </item>
+    
   </channel>
 </rss>
