@@ -377,6 +377,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>二分探索の基礎と実装</title>
+      <link>https://chaingng.github.io/post/binary_search/</link>
+      <pubDate>Sun, 03 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/binary_search/</guid>
+      <description>概要 sorting O(nlogn) search O(logn) mid = (low + high)/2 はオーバーフローしてしまう mid = low + (high - low)/2ならよい 実装 def bsearch(t,A): low, high = 0, len(A)-1 while low &amp;lt;= high: mid = (low + high)//2 if A[mid] &amp;lt; t: low = mid + 1 else if A[mid]</description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>https://chaingng.github.io/me/</link>
       <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
