@@ -368,6 +368,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>二分木の基礎</title>
+      <link>https://chaingng.github.io/post/binary_tree/</link>
+      <pubDate>Sun, 10 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/binary_tree/</guid>
+      <description>概要 空であるか、左の二分木の子と右の二分木の子をもつroot nodeがある木 二分探索木としてのコンテキストでよく現れる すべての木をたどるには</description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>https://chaingng.github.io/me/</link>
       <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>

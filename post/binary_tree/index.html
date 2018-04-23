@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ハッシュテーブルの実装</title>
+<title>二分木の基礎</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="ハッシュテーブルの実装" />
-<meta property="og:description" content="class Item(object): def __init__(self, key, value): self.key = key self.value = value class HashTable(object): def __init__(self, size=10): self.size = size self.array = [[] for _ in range(self.size)] def _hash_function(self, key): return key % self.size def set(self, key, value): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: node.value = value return self.array[hash_index].append(Item(key, value)) def get(self, key): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: return node." />
+<meta property="og:title" content="二分木の基礎" />
+<meta property="og:description" content="概要 空であるか、左の二分木の子と右の二分木の子をもつroot nodeがある木 二分探索木としてのコンテキストでよく現れる すべての木をたどるには" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/hash_code/" />
+<meta property="og:url" content="https://chaingng.github.io/post/binary_tree/" />
 
 
 
-<meta property="article:published_time" content="2018-03-09T10:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2017-12-10T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2018-03-09T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-12-10T10:00:00&#43;09:00"/>
 
 
 
@@ -77,56 +77,63 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">ハッシュテーブルの実装</h1>
+			<h1 class="post__title">二分木の基礎</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-03-09T10:00:00">March 09, 2018</time>
+				<time class="post__meta-date" datetime="2017-12-10T10:00:00">December 10, 2017</time>
 			</p>
 		</header>
 		
 		
 		<div class="post__content clearfix">
-			<pre><code>class Item(object):
-    def __init__(self, key, value):
-        self.key = key
-        self.value = value
+			
 
-class HashTable(object):
-    def __init__(self, size=10):
-        self.size = size
-        self.array = [[] for _ in range(self.size)]
+<h2 id="概要">概要</h2>
 
-    def _hash_function(self, key):
-        return key % self.size
+<ul>
+<li>空であるか、左の二分木の子と右の二分木の子をもつroot nodeがある木</li>
+<li>二分探索木としてのコンテキストでよく現れる</li>
+<li>すべての木をたどるにはO(n)time, O(h)space</li>
+<li>木には再帰が有効であることがある</li>
+<li>nodeに親の参照があれば、timeとspaceを減らすことができる</li>
+</ul>
 
-    def set(self, key, value):
-        hash_index = self._hash_function(key)
-        for node in self.array[hash_index]:
-            if node.key == key:
-                node.value = value
-                return
-        self.array[hash_index].append(Item(key, value))
+<h2 id="二分木の実装">二分木の実装</h2>
+
+<pre><code>def BinaryTreeNode:
+  def __init__(self, data=None, left=None, right=None):
+    self.data = data
+    self.left = left
+    self.right = right
+</code></pre>
+
+<h2 id="9-1-二分木が平衡であるか判定">9.1 二分木が平衡であるか判定</h2>
+
+<ul>
+<li>左と右の部分木の高さの差が１以内であるとき、平衡</li>
+<li>O(h)space, O(n)time</li>
+</ul>
+
+<pre><code>def is_balanced_binary_tree(tree):
+  BalancedStatusWithHeight = collections.namedtuple('BalancedStatusWithHeight', ('balanced', 'height'))
+  
+  def check_balanced(tree):
+    if not tree:
+      return BalancedStatusWithHeight(True, -1)
+      
+    left_result = check_balanced(tree.left)
+    if not left_result.balanced:
+      return BalancedStatusWithHeight(False, 0)
+      
+    right_result = check_balanced(tree.right)
+    if not right_result.balanced:
+      return BalancedStatusWithHeight(False, 0)
+      
+    is_balanced = abs(left_result.height - left_result.height) &lt;= 1
+    height = max(left_result.height - left_result.height) + 1
+    return BalancedStatusWithHeight(is_balanced, height)
     
-    def get(self, key):
-        hash_index = self._hash_function(key)
-        for node in self.array[hash_index]:
-            if node.key == key:
-                return node.value
-        raise KeyError('key not found')
-
-    def remove(self, key):
-        hash_index = self._hash_function(key)
-        for index, item in enumerate(self.array[hash_index]):
-            if item.key == key:
-                del self.array[hash_index][index]
-                return
-        raise KeyError('key not found')
-
-hash_table = HashTable(10)
-hash_table.set(0, 'foo')
-print(hash_table.get(0))
-hash_table.set(1, 'bar')
-hash_table.remove(0)
+   return check_balanced(tree).balanced   
 </code></pre>
 
 		</div>
@@ -149,10 +156,10 @@ hash_table.remove(0)
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/heap_code/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">ヒープの実装</p></a>
+		<a class="post-nav__link" href="/post/python_string/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">python string文字列の使い方</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/priority_queue/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">優先度付きキューの実装</p></a>
+		<a class="post-nav__link" href="/post/heap/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">ヒープの基礎</p></a>
 	</div>
 </nav>
 

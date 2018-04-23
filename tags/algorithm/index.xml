@@ -209,5 +209,14 @@
       <description>概要 ヒープは特別な二分木 完全二分木である 親ノードの値は子よりも小さい（最小ヒープのとき） 配列で実装できる。親iの子は2i+1, 2i+2 挿入と削除が</description>
     </item>
     
+    <item>
+      <title>二分木の基礎</title>
+      <link>https://chaingng.github.io/post/binary_tree/</link>
+      <pubDate>Sun, 10 Dec 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/binary_tree/</guid>
+      <description>概要 空であるか、左の二分木の子と右の二分木の子をもつroot nodeがある木 二分探索木としてのコンテキストでよく現れる すべての木をたどるには</description>
+    </item>
+    
   </channel>
 </rss>
