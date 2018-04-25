@@ -395,6 +395,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>Javaとオブジェクト指向</title>
+      <link>https://chaingng.github.io/post/java_object/</link>
+      <pubDate>Sun, 19 Nov 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/java_object/</guid>
+      <description>javaファイルの作成と実行 MyFirstApp.java public class MyFirstApp{ public static void main(String [] args){ System.out.println(&amp;quot;Hello World!&amp;quot;); } } $javac MyFirstApp.java $java MyFirstApp Hello World! JVMとコンパイラ JVM プログラムを動かす – インタープリタ方式で逐次解釈・実</description>
+    </item>
+    
+    <item>
       <title>配列の基礎</title>
       <link>https://chaingng.github.io/post/array/</link>
       <pubDate>Sun, 19 Nov 2017 10:00:00 +0900</pubDate>
