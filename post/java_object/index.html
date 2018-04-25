@@ -140,7 +140,13 @@ Hello World!
 - インスタンス化することでオブジェクトが作成できる
   - クラスはオブジェクトの設計図
 - javaのプログラムはクラスの集まり
-- クラスが膨大になったら.jarファイルにまとめることができる</p>
+- クラスが膨大になったら.jarファイルにまとめることができる
+- privateにはできないが、publicにしないことはできる
+    - その場合、同じパッケージに属するクラスしか継承できないようになる
+- final指定することで継承させないことができる
+    - 勝手にメソッドの機能を書き換えさせたくない場合
+    - 例えばStringクラスはfinalになっている
+  </p>
 
 <h2 id="クラスの作成と使用">クラスの作成と使用</h2>
 
@@ -323,15 +329,153 @@ public class ArrayListTest {
 <ul>
 <li>クラスのメソッドやインスタンス変数を引き継ぐ</li>
 <li>元のクラスをスーパークラス、引き継いだクラスをサブクラスと呼ぶ</li>
-<li>重複を防ぐことができるメリットがある</li>
+<li>メリット
+   - コードの重複を減らす
+   - 複数のクラスに共通のプロトコルを適用する（ポリモーフィズムも利用できる）</li>
 <li>Parsonクラスを引き継ぐJapaneseクラス</li>
 <li>Japanese is a Parson, Parson has a Japanseという関係になる</li>
+<li>privateを指定されたメンバは継承できない</li>
+<li>継承する際の判断ポイント
+   - 新たに作るクラスは、元のクラスよりも具体的なものでなくてはならない
+   - 機能のかなりの部分が共通している同種のクラスを複数作る必要がある時に利用する
+   - 再利用の目的だけで継承しない（例えば、同種でなければ継承するべきではない）
+   - is a関係にする</li>
 </ul>
 
 <pre><code>public class FamilyDocter extends Doctor{
     void giveAdvice(){
     }
 }
+</code></pre>
+
+<h2 id="ポリモーフィズム">ポリモーフィズム</h2>
+
+<ul>
+<li>非常にシンプルかつフレキシブルで、効率的なコードが書けるようになる</li>
+<li>プログラムにサブクラスが追加されても、コードを修正する必要はない</li>
+</ul>
+
+<pre><code>Animal [] animals = new Animal [5];
+animals[0] = new Dog();
+animals[1] = new Cat();
+animals[2] = new Wolf();
+animals[3] = new Hippo();
+animals[4] = new Lion();
+
+for(int i=0; i&lt;animals.length; i++){
+    animals[i].eat();
+    animals[i].roam();
+}
+</code></pre>
+
+<p>##　オーバーライド
+- サブクラスでスーパークラスのメソッドを書き換える
+- final指定されているメソッドはオーバーライドできない
+- オーバーライド時にアクセスレベルを下げてはいけない
+- 引数の型は変えてはいけない</p>
+
+<h2 id="オーバーロード">オーバーロード</h2>
+
+<ul>
+<li>名前が同じで指定できる引数の異なるメソッドを作ることができる</li>
+<li>戻り値の型を変えることができる</li>
+<li>戻り値の型だけを変えることはできない
+-　アクセスレベルは上げることも下げることもできる</li>
+</ul>
+
+<pre><code>public class OverLoads{
+    public int addNums(int a, int b){
+    }
+    
+    public double addNums(double a, double b){
+    }
+}
+</code></pre>
+
+<p>##　抽象クラス
+- インスタンス化させたくないクラス
+- 例
+    - それ自体は使わないスーパークラスなど</p>
+
+<pre><code>abstract class Canine{
+    public void roam(){}
+}
+</code></pre>
+
+<h2 id="抽象メソッド">抽象メソッド</h2>
+
+<ul>
+<li>サブクラスで必ずオーバーライドしなくてはいけない</li>
+<li>より具体性の高い下位のクラスに持たせるべきメソッドに適用する</li>
+<li>抽象メソッドには本体がない</li>
+<li>１つでも抽象メソッドを含むクラスは、抽象クラスにしなければいけない</li>
+</ul>
+
+<h2 id="objectクラス">Objectクラス</h2>
+
+<ul>
+<li>JavaのクラスはすべてObjectクラスを継承したもの</li>
+<li>明示的に何かのクラスを継承していないクラスは、自動的にObjectを直接継承しているとみなされる</li>
+<li>持つメソッド
+
+<ul>
+<li><code>equals</code>, <code>getClass()</code>, <code>hashCode()</code>, <code>toString()</code></li>
+</ul></li>
+<li>Objectクラスに代入すると、元のクラスのメソッドは使えない</li>
+</ul>
+
+<pre><code>public abstract void eat();
+</code></pre>
+
+<h2 id="objectクラスの型を元に戻す">Objectクラスの型を元に戻す</h2>
+
+<pre><code>Object o = al.get(index);
+if(d instanceof Dog){
+    Dog d = (Dog)o;
+    d.roam();
+}
+</code></pre>
+
+<h2 id="多重継承">多重継承</h2>
+
+<ul>
+<li>2つ以上のクラスを継承すること</li>
+<li>例えばダイアモンド継承は、大きな問題を引き起こす
+   - DigitalRecoderスーパークラスは、burn()メソッドをもつ
+   - サブクラスCDBurner, DVDBurnerはburn()をオーバーライドする
+   - CDBurner, DVDBurnerを継承したサブクラスComboDriveは、どちらのburnが実行されるかわからない</li>
+<li>Javaでは多重継承はできない</li>
+<li>代わりにインタフェースを使う</li>
+</ul>
+
+<h2 id="インタフェース">インタフェース</h2>
+
+<ul>
+<li>完全な抽象クラスと呼ぶべきようなもの</li>
+<li>インタフェース中のメソッドはすべて抽象メソッド</li>
+<li>インタフェースはあらゆるクラスでインプリメントできる</li>
+<li>1つのクラスで複数のインタフェースをインプリメントすることもできる</li>
+</ul>
+
+<p>Pet.java</p>
+
+<pre><code>public interface Pet{
+    public abstract void beFriendly();
+    public abstract void play();
+}
+</code></pre>
+
+<p>Dog.java</p>
+
+<pre><code>public class Dog extends Canine implements Pet{
+    public void beFriendly(){}
+    public void play(){}
+}
+</code></pre>
+
+<h2 id="スーパークラスのメソッドを利用">スーパークラスのメソッドを利用</h2>
+
+<pre><code>super.runReport();
 </code></pre>
 
 <p>hoge</p>
