@@ -172,6 +172,17 @@ Hello World!
 <ul>
 <li>大きく分けて、プリミティブ型（整数など）と参照型）（オブジェクトの参照）の２種類がある</li>
 <li>変数に代入されるのは、オブジェクトそのものではなく、オブジェクトへの参照</li>
+<li>インスタンス変数はクラスの中で宣言する</li>
+<li>ローカル変数はメソッドの中で宣言する</li>
+<li>インスタンス変数は初期化をしない場合、以下のデフォルト値が代入される　
+
+<ul>
+<li>int 0</li>
+<li>float 0.0</li>
+<li>boolean false
+   - 参照型 null</li>
+</ul></li>
+<li>ローカル変数は利用する前に初期化が必要</li>
 </ul>
 
 <h2 id="オブジェクトリファレンス">オブジェクトリファレンス</h2>
@@ -238,6 +249,87 @@ Dog[0].bark();
         GoodDog two = new GoodDog();
         two.setSize(10);
         two.bark();
+    }
+}
+</code></pre>
+
+<h2 id="型変換">型変換</h2>
+
+<pre><code>Integer.parseInt(&quot;3&quot;);
+</code></pre>
+
+<h2 id="キャスト">キャスト</h2>
+
+<pre><code>log y = 42;
+int x = (int)y;
+</code></pre>
+
+<h2 id="arraylist">ArrayList</h2>
+
+<ul>
+<li>通常の配列と異なり、宣言時にサイズを決めなくても良い</li>
+</ul>
+
+<pre><code>import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+ 
+public class ArrayListTest {
+ 
+    public static void main(String[] args) {
+        List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+ 
+        list.add(1);
+        list.add(5);
+        list.add(2);
+        list.add(8);
+        
+        //size
+        int theSize = list.size();
+        System.out.println(theSize);
+        
+        //contain
+        boolean isIn = list.contains(8);
+        System.out.println(isIn);
+
+        // index
+        int idx = list.indexOf(1);
+        System.out.println(idx);
+
+        // check empty
+        boolean empty = list.isEmpty();
+        System.out.println(empty);
+        
+        list.remove(2);
+
+        for(Iterator it = list.iterator(); it.hasNext();) {
+            System.out.println(it.next());
+        }
+    }
+}
+</code></pre>
+
+<h2 id="java-apiライブラリの使用">Java APIライブラリの使用</h2>
+
+<ul>
+<li>java.langは例外的に指定しなくてもよい
+   - String、Mathなど</li>
+<li>標準拡張パッケージはjavax(今は標準パッケージと変わらないほど一般的になったものもあるが、慣例として分かれている)</li>
+<li>インポートはCのインクルードとは異なり、フルネームを逐一タイプする手間を省くもの</li>
+</ul>
+
+<h2 id="継承">継承</h2>
+
+<ul>
+<li>クラスのメソッドやインスタンス変数を引き継ぐ</li>
+<li>元のクラスをスーパークラス、引き継いだクラスをサブクラスと呼ぶ</li>
+<li>重複を防ぐことができるメリットがある</li>
+<li>Parsonクラスを引き継ぐJapaneseクラス</li>
+<li>Japanese is a Parson, Parson has a Japanseという関係になる</li>
+</ul>
+
+<pre><code>public class FamilyDocter extends Doctor{
+    void giveAdvice(){
     }
 }
 </code></pre>
