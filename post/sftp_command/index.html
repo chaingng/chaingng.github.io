@@ -149,139 +149,132 @@ example.log                                                                     
 
 <h3 id="rmdir">rmdir</h3>
 
-<pre><code>ディレクトリを削除
+<p>ディレクトリを削除</p>
+
+<pre><code>&gt; rmdir hoge
 </code></pre>
 
-<blockquote>
-<p>rmdir hoge</p>
+<p>ディレクトリ内にファイルがあると削除ができない</p>
 
-<pre><code>ディレクトリ内にファイルがあると削除ができない
+<h1 id="quit-bye-exit">quit / bye / exit</h1>
 
-# quit / bye / exit
-接続を閉じる
+<p>接続を閉じる</p>
+
+<pre><code>&gt; quit
 </code></pre>
 
-<p>quit</p>
-
-<pre><code>
+<pre><code>&gt; bye
 </code></pre>
 
-<p>bye</p>
-
-<pre><code>
+<pre><code>&gt; exit
 </code></pre>
 
-<p>exit</p>
+<h2 id="リモートディレクトリ関連">リモートディレクトリ関連</h2>
 
-<pre><code>
-## リモートディレクトリ関連
+<h3 id="ls">ls</h3>
 
-### ls 
-リモートディレクトリのファイル一覧を表示
+<p>リモートディレクトリのファイル一覧を表示</p>
+
+<pre><code>sftp&gt; ls
+backup       example.log  test.py      upload
 </code></pre>
 
-<p>sftp&gt; ls
-backup       example.log  test.py      upload</p>
+<h3 id="pwd">pwd</h3>
 
-<pre><code>
-### pwd
-リモートディレクトリのフルパスを表示
+<p>リモートディレクトリのフルパスを表示</p>
+
+<pre><code>sftp&gt; pwd
+Remote working directory: /
 </code></pre>
 
-<p>sftp&gt; pwd
-Remote working directory: /</p>
+<h3 id="mkdir">mkdir</h3>
 
-<pre><code>
-### mkdir
-リモートにディレクトリを作成
+<p>リモートにディレクトリを作成</p>
+
+<pre><code>&gt; lmkdir hoge
 </code></pre>
 
-<p>lmkdir hoge</p>
+<h3 id="cd">cd</h3>
 
-<pre><code>
-### cd
-リモートディレクトリを移動
+<p>リモートディレクトリを移動</p>
+
+<pre><code>&gt; cd hoge
 </code></pre>
 
-<p>cd hoge</p>
+<h2 id="ローカルディレクトリ関連">ローカルディレクトリ関連</h2>
 
-<pre><code>
-## ローカルディレクトリ関連
+<h3 id="lls">lls</h3>
 
-### lls
+<p>ローカルディレクトリのファイル一覧を表示</p>
 
-ローカルディレクトリのファイル一覧を表示
+<pre><code>&gt; lls
+hogefuga    Desktop                    emacs.d                    sample.csv
 </code></pre>
 
-<p>lls
-hogefuga    Desktop                    emacs.d                    sample.csv</p>
+<h3 id="lpwd">lpwd</h3>
 
-<pre><code>
-### lpwd
-ローカルディレクトリのフルパスを表示
+<p>ローカルディレクトリのフルパスを表示</p>
+
+<pre><code>&gt; lpwd
+Local working directory: /Users/hondatakatomo
 </code></pre>
 
-<p>lpwd
-Local working directory: /Users/hondatakatomo</p>
+<h3 id="lmkdir">lmkdir</h3>
 
-<pre><code>
-### lmkdir
-ローカルにディレクトリを作成
+<p>ローカルにディレクトリを作成</p>
+
+<pre><code>&gt; lmkdir hogefuga
 </code></pre>
 
-<p>lmkdir hogefuga</p>
+<h3 id="lcd">lcd</h3>
 
-<pre><code>
-### lcd
-ローカルディレクトリを移動
+<p>ローカルディレクトリを移動</p>
+
+<pre><code>&gt; lcd Documents
 </code></pre>
 
-<p>lcd Documents</p>
+<h2 id="その他">その他</h2>
 
-<pre><code>
-## その他
+<h3 id="rename">rename</h3>
 
-### rename
-ファイルをリネーム
+<p>ファイルをリネーム</p>
+
+<pre><code>&gt; rename example.log fuga.log
 </code></pre>
 
-<p>rename example.log fuga.log</p>
+<h3 id="df">df</h3>
 
-<pre><code>
-### df
-ディスク使用状況を表示
-</code></pre>
+<p>ディスク使用状況を表示</p>
 
-<p>df
+<pre><code>&gt; df
         Size         Used        Avail       (root)    %Capacity
-    30830568      5843356     24886964     24987212          18%</p>
-
-<pre><code>
-###help
-ヘルプを表示
+    30830568      5843356     24886964     24987212          18%
 </code></pre>
 
-<p>help
+<p>###help
+ヘルプを表示</p>
+
+<pre><code>&gt; help
 Available commands:
 bye                                Quit sftp
-cd path                            Change remote directory to &lsquo;path&rsquo;
-chgrp grp path                     Change group of file &lsquo;path&rsquo; to &lsquo;grp&rsquo;
-chmod mode path                    Change permissions of file &lsquo;path&rsquo; to &lsquo;mode&rsquo;
-chown own path                     Change owner of file &lsquo;path&rsquo; to &lsquo;own&rsquo;
+cd path                            Change remote directory to 'path'
+chgrp grp path                     Change group of file 'path' to 'grp'
+chmod mode path                    Change permissions of file 'path' to 'mode'
+chown own path                     Change owner of file 'path' to 'own'
 df [-hi] [path]                    Display statistics for current directory or
-                                   filesystem containing &lsquo;path&rsquo;
+                                   filesystem containing 'path'
 exit                               Quit sftp
 get [-afPpRr] remote [local]       Download file
 reget [-fPpRr] remote [local]      Resume download file
 reput [-fPpRr] [local] remote      Resume upload file
 help                               Display this help text
-lcd path                           Change local directory to &lsquo;path&rsquo;
+lcd path                           Change local directory to 'path'
 lls [ls-options [path]]            Display local directory listing
 lmkdir path                        Create local directory
 ln [-s] oldpath newpath            Link remote file (-s for symlink)
 lpwd                               Print local working directory
 ls [-1afhlnrSt] [path]             Display remote directory listing
-lumask umask                       Set local umask to &lsquo;umask&rsquo;
+lumask umask                       Set local umask to 'umask'
 mkdir path                         Create remote directory
 progress                           Toggle display of progress meter
 put [-afPpRr] local [remote]       Upload file
@@ -292,11 +285,10 @@ rm path                            Delete remote file
 rmdir path                         Remove remote directory
 symlink oldpath newpath            Symlink remote file
 version                            Show SFTP version
-!command                           Execute &lsquo;command&rsquo; in local shell
+!command                           Execute 'command' in local shell
 !                                  Escape to local shell
 ?                                  Synonym for help
-```</p>
-</blockquote>
+</code></pre>
 
 		</div>
 					
