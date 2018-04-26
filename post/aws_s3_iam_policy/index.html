@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.38-DEV" />
 <meta property="og:title" content="特定のs3バケットにのみアクセス権限を与えるiamポリシー" />
-<meta property="og:description" content="公式を参考に、以下のように設定すればよい。 特定のバケットに対するRead/Writeを権限を付与する { &quot;Version&quot;: &quot;2012-10-17&quot;, &quot;Statement&quot;: [ { &quot;Effect&quot;: &quot;Allow&quot;, &quot;Action&quot;: [&quot;s3:ListBucket&quot;], &quot;Resource&quot;: [&quot;arn:aws:s3:::&lt;BUCKET-NAME&gt;&quot;] }, { &quot;Effect&quot;: &quot;Allow&quot;, &quot;Action&quot;: [ &quot;s3:PutObject&quot;, &quot;s3:GetObject&quot;" />
+<meta property="og:description" content="公式を参考に、以下のように設定すればよい。 プログラムアクセスにより、特定のバケットに対するRead/Write権限を付与するiamポリシー {" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/aws_s3_iam_policy/" />
 
@@ -90,21 +90,22 @@ ga('send', 'pageview');
 
 <p><a href="https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/reference_policies_examples_s3_rw-bucket.html">公式</a>を参考に、以下のように設定すればよい。</p>
 
-<h2 id="特定のバケットに対するread-writeを権限を付与する">特定のバケットに対するRead/Writeを権限を付与する</h2>
+<h2 id="プログラムアクセスにより-特定のバケットに対するread-write権限を付与するiamポリシー">プログラムアクセスにより、特定のバケットに対するRead/Write権限を付与するiamポリシー</h2>
 
 <pre><code>{
    &quot;Version&quot;: &quot;2012-10-17&quot;,
    &quot;Statement&quot;: [
      {
        &quot;Effect&quot;: &quot;Allow&quot;,
-       &quot;Action&quot;: [&quot;s3:ListBucket&quot;],
+       &quot;Action&quot;: [&quot;s3:ListBucket&quot;, &quot;s3:GetBucketLocation&quot;],
        &quot;Resource&quot;: [&quot;arn:aws:s3:::&lt;BUCKET-NAME&gt;&quot;]
      },
      {
        &quot;Effect&quot;: &quot;Allow&quot;,
        &quot;Action&quot;: [
          &quot;s3:PutObject&quot;,
-         &quot;s3:GetObject&quot;
+         &quot;s3:GetObject&quot;,
+         &quot;s3:DeleteObject&quot;
        ],
        &quot;Resource&quot;: [&quot;arn:aws:s3:::&lt;BUCKET-NAME&gt;/*&quot;]
      }
@@ -112,9 +113,9 @@ ga('send', 'pageview');
  }
 </code></pre>
 
-<h2 id="プログラムによるアクセスに対して-特定のバケットに対するread-write権限を付与する">プログラムによるアクセスに対して、特定のバケットに対するRead/Write権限を付与する</h2>
+<h2 id="マネジメントコンソールにて-特定のバケットに対するread-writeを権限を付与するiamポリシー">マネジメントコンソールにて、特定のバケットに対するRead/Writeを権限を付与するiamポリシー</h2>
 
-<p>boto3では<code>s3:GetBucketLocation</code>,　<code>s3:ListAllMyBuckets</code>も必要なので、
+<p>マネジメントコンソールで閲覧する際は<code>s3:GetBucketLocation</code>,　<code>s3:ListAllMyBuckets</code>も必要なので、
 プログラムによるアクセスを許可する場合には以下のように設定する</p>
 
 <pre><code>{
@@ -137,7 +138,8 @@ ga('send', 'pageview');
        &quot;Effect&quot;: &quot;Allow&quot;,
        &quot;Action&quot;: [
          &quot;s3:PutObject&quot;,
-         &quot;s3:GetObject&quot;
+         &quot;s3:GetObject&quot;,
+         &quot;s3:DeleteObject&quot;
        ],
        &quot;Resource&quot;: [&quot;arn:aws:s3:::&lt;BUCKET-NAME&gt;/*&quot;]
      }

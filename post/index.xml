@@ -35,7 +35,7 @@
       <pubDate>Mon, 02 Apr 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/aws_s3_iam_policy/</guid>
-      <description>公式を参考に、以下のように設定すればよい。 特定のバケットに対するRead/Writeを権限を付与する { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Action&amp;quot;: [&amp;quot;s3:ListBucket&amp;quot;], &amp;quot;Resource&amp;quot;: [&amp;quot;arn:aws:s3:::&amp;lt;BUCKET-NAME&amp;gt;&amp;quot;] }, { &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Action&amp;quot;: [ &amp;quot;s3:PutObject&amp;quot;, &amp;quot;s3:GetObject&amp;quot;</description>
+      <description>公式を参考に、以下のように設定すればよい。 プログラムアクセスにより、特定のバケットに対するRead/Write権限を付与するiamポリシー {</description>
     </item>
     
     <item>
