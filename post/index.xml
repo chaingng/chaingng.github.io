@@ -413,6 +413,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>sftpコマンドまとめ</title>
+      <link>https://chaingng.github.io/post/sftp_command/</link>
+      <pubDate>Sun, 12 Nov 2017 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/sftp_command/</guid>
+      <description>基本操作 get ファイルをダウンロード sftp&amp;gt; get example.log Fetching /example.log to example.log /example.log 100% 69 1.8KB/s 00:00 ディレクトリを指定してのファイルダウンロード &amp;gt; get hoge/example.log Fetching /backup/hoge/example.log to example.log /backup/hoge/example.log 100% 69 3.5KB/s 00:00 ディレクトリごと</description>
+    </item>
+    
+    <item>
       <title>python string文字列の使い方</title>
       <link>https://chaingng.github.io/post/python_string/</link>
       <pubDate>Sun, 30 Apr 2017 10:00:00 +0900</pubDate>

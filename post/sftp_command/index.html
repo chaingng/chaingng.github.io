@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>連結リストの実装</title>
+<title>sftpコマンドまとめ</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="連結リストの実装" />
-<meta property="og:description" content="class DoublyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None self.prev = None class SinglyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None  " />
+<meta property="og:title" content="sftpコマンドまとめ" />
+<meta property="og:description" content="基本操作 get ファイルをダウンロード sftp&gt; get example.log Fetching /example.log to example.log /example.log 100% 69 1.8KB/s 00:00 ディレクトリを指定してのファイルダウンロード &gt; get hoge/example.log Fetching /backup/hoge/example.log to example.log /backup/hoge/example.log 100% 69 3.5KB/s 00:00 ディレクトリごと" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/linked_list_code/" />
+<meta property="og:url" content="https://chaingng.github.io/post/sftp_command/" />
 
 
 
-<meta property="article:published_time" content="2017-12-24T10:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2017-11-12T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2017-12-24T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-11-12T10:00:00&#43;09:00"/>
 
 
 
@@ -77,27 +77,226 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">連結リストの実装</h1>
+			<h1 class="post__title">sftpコマンドまとめ</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-12-24T10:00:00">December 24, 2017</time>
+				<time class="post__meta-date" datetime="2017-11-12T10:00:00">November 12, 2017</time>
 			</p>
 		</header>
 		
 		
 		<div class="post__content clearfix">
-			<pre><code>class DoublyLinkedListNode(object):
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-        self.prev = None
+			
 
+<h2 id="基本操作">基本操作</h2>
 
-class SinglyLinkedListNode(object):
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+<h3 id="get">get</h3>
+
+<h4 id="ファイルをダウンロード">ファイルをダウンロード</h4>
+
+<pre><code>sftp&gt; get example.log
+Fetching /example.log to example.log
+/example.log                                                                                                                        100%   69     1.8KB/s   00:00
 </code></pre>
+
+<h4 id="ディレクトリを指定してのファイルダウンロード">ディレクトリを指定してのファイルダウンロード</h4>
+
+<pre><code>&gt; get hoge/example.log
+Fetching /backup/hoge/example.log to example.log
+/backup/hoge/example.log                                                                                                            100%   69     3.5KB/s   00:00
+</code></pre>
+
+<h4 id="ディレクトリごとまとめてダウンロード">ディレクトリごとまとめてダウンロード</h4>
+
+<p><code>-r</code>オプションをつける</p>
+
+<pre><code>&gt; get -r hoge
+Fetching /backup/hoge/ to hoge
+Retrieving /backup/hoge
+/backup/hoge/myicon.jpg                                                                                                             100%  177KB   2.2MB/s   00:00
+/backup/hoge/example.log                                                                                                            100%   69     3.7KB/s   00:00
+</code></pre>
+
+<h3 id="put">put</h3>
+
+<h4 id="ファイルをアップロード">ファイルをアップロード</h4>
+
+<pre><code>&gt; put tmpssh.log
+Uploading tmpssh.log to /backup/tmpssh.log
+tmpssh.log                                                                                                                          100%    0     0.0KB/s   00:00
+</code></pre>
+
+<h4 id="ローカルディレクトリ内のファイルをアップロード">ローカルディレクトリ内のファイルをアップロード</h4>
+
+<pre><code>&gt; put Documents/myicon.jpg
+Uploading Documents/myicon.jpg to /backup/myicon.jpg
+Documents/myicon.jpg                                                                                                                100%  177KB 507.5KB/s   00:00
+</code></pre>
+
+<h5 id="アップロード先ディレクトリを指定してのファイルアップロード">アップロード先ディレクトリを指定してのファイルアップロード</h5>
+
+<pre><code>&gt; put example.log hoge/
+Uploading example.log to /backup/hoge/example.log
+example.log                                                                                                                         100%   69     7.2KB/s   00:00
+</code></pre>
+
+<h3 id="rm">rm</h3>
+
+<p>ファイルを削除</p>
+
+<pre><code>&gt; rm test.py
+</code></pre>
+
+<h3 id="rmdir">rmdir</h3>
+
+<pre><code>ディレクトリを削除
+</code></pre>
+
+<blockquote>
+<p>rmdir hoge</p>
+
+<pre><code>ディレクトリ内にファイルがあると削除ができない
+
+# quit / bye / exit
+接続を閉じる
+</code></pre>
+
+<p>quit</p>
+
+<pre><code>
+</code></pre>
+
+<p>bye</p>
+
+<pre><code>
+</code></pre>
+
+<p>exit</p>
+
+<pre><code>
+## リモートディレクトリ関連
+
+### ls 
+リモートディレクトリのファイル一覧を表示
+</code></pre>
+
+<p>sftp&gt; ls
+backup       example.log  test.py      upload</p>
+
+<pre><code>
+### pwd
+リモートディレクトリのフルパスを表示
+</code></pre>
+
+<p>sftp&gt; pwd
+Remote working directory: /</p>
+
+<pre><code>
+### mkdir
+リモートにディレクトリを作成
+</code></pre>
+
+<p>lmkdir hoge</p>
+
+<pre><code>
+### cd
+リモートディレクトリを移動
+</code></pre>
+
+<p>cd hoge</p>
+
+<pre><code>
+## ローカルディレクトリ関連
+
+### lls
+
+ローカルディレクトリのファイル一覧を表示
+</code></pre>
+
+<p>lls
+hogefuga    Desktop                    emacs.d                    sample.csv</p>
+
+<pre><code>
+### lpwd
+ローカルディレクトリのフルパスを表示
+</code></pre>
+
+<p>lpwd
+Local working directory: /Users/hondatakatomo</p>
+
+<pre><code>
+### lmkdir
+ローカルにディレクトリを作成
+</code></pre>
+
+<p>lmkdir hogefuga</p>
+
+<pre><code>
+### lcd
+ローカルディレクトリを移動
+</code></pre>
+
+<p>lcd Documents</p>
+
+<pre><code>
+## その他
+
+### rename
+ファイルをリネーム
+</code></pre>
+
+<p>rename example.log fuga.log</p>
+
+<pre><code>
+### df
+ディスク使用状況を表示
+</code></pre>
+
+<p>df
+        Size         Used        Avail       (root)    %Capacity
+    30830568      5843356     24886964     24987212          18%</p>
+
+<pre><code>
+###help
+ヘルプを表示
+</code></pre>
+
+<p>help
+Available commands:
+bye                                Quit sftp
+cd path                            Change remote directory to &lsquo;path&rsquo;
+chgrp grp path                     Change group of file &lsquo;path&rsquo; to &lsquo;grp&rsquo;
+chmod mode path                    Change permissions of file &lsquo;path&rsquo; to &lsquo;mode&rsquo;
+chown own path                     Change owner of file &lsquo;path&rsquo; to &lsquo;own&rsquo;
+df [-hi] [path]                    Display statistics for current directory or
+                                   filesystem containing &lsquo;path&rsquo;
+exit                               Quit sftp
+get [-afPpRr] remote [local]       Download file
+reget [-fPpRr] remote [local]      Resume download file
+reput [-fPpRr] [local] remote      Resume upload file
+help                               Display this help text
+lcd path                           Change local directory to &lsquo;path&rsquo;
+lls [ls-options [path]]            Display local directory listing
+lmkdir path                        Create local directory
+ln [-s] oldpath newpath            Link remote file (-s for symlink)
+lpwd                               Print local working directory
+ls [-1afhlnrSt] [path]             Display remote directory listing
+lumask umask                       Set local umask to &lsquo;umask&rsquo;
+mkdir path                         Create remote directory
+progress                           Toggle display of progress meter
+put [-afPpRr] local [remote]       Upload file
+pwd                                Display remote working directory
+quit                               Quit sftp
+rename oldpath newpath             Rename remote file
+rm path                            Delete remote file
+rmdir path                         Remove remote directory
+symlink oldpath newpath            Symlink remote file
+version                            Show SFTP version
+!command                           Execute &lsquo;command&rsquo; in local shell
+!                                  Escape to local shell
+?                                  Synonym for help
+```</p>
+</blockquote>
 
 		</div>
 					
@@ -107,7 +306,7 @@ class SinglyLinkedListNode(object):
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/library/" rel="tag">library</a></li>
 	</ul>
 </div>
 
@@ -119,10 +318,10 @@ class SinglyLinkedListNode(object):
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/queue_stack/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Stackの基礎</p></a>
+		<a class="post-nav__link" href="/post/python_string/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">python string文字列の使い方</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/linked_list/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">連結リストの概要</p></a>
+		<a class="post-nav__link" href="/post/array/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">配列の基礎</p></a>
 	</div>
 </nav>
 
