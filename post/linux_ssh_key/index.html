@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.38-DEV" />
 <meta property="og:title" content="公開鍵によるsshアクセスの設定" />
-<meta property="og:description" content="ssh-keygenにて公開鍵と秘密鍵を作成 $ ssh-keygen -t rsa -b 2048 Generating public/private rsa key pair. Enter file in which to save the key (/Users/hondatakatomo/.ssh/id_rsa): /Users/hondatakatomo/.ssh/hogefuga Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /Users/hondatakatomo/.ssh/hogefuga. Your public key has been saved in /Users/hondatakatomo/.ssh/hogefuga.pub. The key" />
+<meta property="og:description" content="手順 ssh-keygenにて公開鍵と秘密鍵を作成 秘密鍵のパーミッションを変更 サーバにて対象ユーザのauthorized_keysに作成した公" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/linux_ssh_key/" />
 
@@ -88,6 +88,17 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
+<h3 id="手順">手順</h3>
+
+<ul>
+<li><a href="#ssh-keygenにて公開鍵と秘密鍵を作成">ssh-keygenにて公開鍵と秘密鍵を作成</a></li>
+<li><a href="#秘密鍵のパーミッションを変更">秘密鍵のパーミッションを変更</a></li>
+<li><a href="#サーバにて対象ユーザのauthorized_keysに作成した公開鍵の内容を追加">サーバにて対象ユーザのauthorized_keysに作成した公開鍵の内容を追加</a></li>
+<li><a href="#sshd_condigにて公開鍵認証を有効化">sshd_condigにて公開鍵認証をON</a></li>
+<li><a href="#sshdサービスを再起動し設定を反映">sshdサービスを再起動し設定を有効化</a></li>
+<li><a href="#秘密鍵によるsshアクセスできるか確認">秘密鍵によるsshアクセスできるか確認</a></li>
+</ul>
+
 <h3 id="ssh-keygenにて公開鍵と秘密鍵を作成">ssh-keygenにて公開鍵と秘密鍵を作成</h3>
 
 <pre><code>$ ssh-keygen -t rsa -b 2048
@@ -113,7 +124,12 @@ The key's randomart image is:
 +----[SHA256]-----+
 </code></pre>
 
-<h3 id="サーバにログインし-ssh-authorized-keys-に作成した公開鍵の内容を追加">サーバにログインし、 <code>~/.ssh/authorized_keys</code> に作成した公開鍵の内容を追加</h3>
+<h3 id="秘密鍵のパーミッションを変更">秘密鍵のパーミッションを変更</h3>
+
+<pre><code>chmod 400 /Users/hondatakatomo/.ssh/hogefuga
+</code></pre>
+
+<h3 id="サーバにて対象ユーザのauthorized-keysに作成した公開鍵の内容を追加">サーバにて対象ユーザのauthorized_keysに作成した公開鍵の内容を追加</h3>
 
 <p>作成した公開鍵の内容をコピーし、</p>
 
@@ -121,17 +137,17 @@ The key's randomart image is:
 ssh-rsa xxxxx hondatakatomo@hondatakashisatoshinoMacBook-Pro.local
 </code></pre>
 
-<p><code>~/.ssh/authorized_keys</code>に追加する</p>
+<p>対象ユーザの<code>/home/[user]/.ssh/authorized_keys</code>に追加(<code>[user]</code>はユーザ名)</p>
 
-<pre><code>$ cat ~/.ssh/authorized_keys
+<pre><code>$ vi ~/.ssh/authorized_keys
 ....
 ....
 ssh-rsa xxxxx hondatakatomo@hondatakashisatoshinoMacBook-Pro.local
 </code></pre>
 
-<h3 id="etc-ssh-sshd-config-にて公開鍵認証をonにする">/etc/ssh/sshd_config にて公開鍵認証をonにする</h3>
+<h3 id="sshd-condigにて公開鍵認証を有効化">sshd_condigにて公開鍵認証を有効化</h3>
 
-<p>PubkeyAuthenticationをyesにすればよい</p>
+<p><code>/etc/ssh/sshd_config</code>にて、PubkeyAuthenticationをyesにする</p>
 
 <pre><code>$ cat /etc/ssh/sshd_config 
 ...
@@ -139,7 +155,14 @@ PubkeyAuthentication yes
 ...
 </code></pre>
 
-<h3 id="これで秘密鍵によるsshアクセスが可能になる">これで秘密鍵によるsshアクセスが可能になる</h3>
+<h3 id="sshdサービスを再起動し設定を反映">sshdサービスを再起動し設定を反映</h3>
+
+<pre><code>service sshd restart
+</code></pre>
+
+<h3 id="秘密鍵によるsshアクセスできるか確認">秘密鍵によるsshアクセスできるか確認</h3>
+
+<p>これで秘密鍵によるsshアクセスが可能になる</p>
 
 <pre><code>ssh -i ~/.ssh/hogefuga user@hostname
 </code></pre>

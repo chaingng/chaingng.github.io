@@ -571,7 +571,7 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
       <pubDate>Sun, 01 Jan 2017 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/linux_ssh_key/</guid>
-      <description>ssh-keygenにて公開鍵と秘密鍵を作成 $ ssh-keygen -t rsa -b 2048 Generating public/private rsa key pair. Enter file in which to save the key (/Users/hondatakatomo/.ssh/id_rsa): /Users/hondatakatomo/.ssh/hogefuga Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /Users/hondatakatomo/.ssh/hogefuga. Your public key has been saved in /Users/hondatakatomo/.ssh/hogefuga.pub. The key</description>
+      <description>手順 ssh-keygenにて公開鍵と秘密鍵を作成 秘密鍵のパーミッションを変更 サーバにて対象ユーザのauthorized_keysに作成した公</description>
     </item>
     
   </channel>
