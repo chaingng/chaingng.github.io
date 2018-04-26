@@ -6,10 +6,19 @@
     <description>Recent content on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 09 Apr 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Apr 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sftpでユーザがアクセスディレクトリを制限する</title>
+      <link>https://chaingng.github.io/post/sftp_chroot/</link>
+      <pubDate>Thu, 26 Apr 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/sftp_chroot/</guid>
+      <description>sftpでユーザがアクセスできるディレクトリを制限するには、chroot設定を行う。 同時にsftpのみ許可し、sshアクセスできないようにも</description>
+    </item>
     
     <item>
       <title>spacemacsでクリップボード共有を行う</title>
