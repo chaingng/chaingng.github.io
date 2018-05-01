@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>python2ではtimestamp()が使えないのでdatetimeに変換して日付を比較する</title>
+      <link>https://chaingng.github.io/post/python_timestamp/</link>
+      <pubDate>Tue, 02 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_timestamp/</guid>
+      <description>python3ではdatetimeをタイム・スタンプに変換するtimestamp()が使えるが、python2では存在しない。 そこで、日付の</description>
+    </item>
+    
+    <item>
       <title>pythonでユーザ用にランダムな英数字パスワードを生成する</title>
       <link>https://chaingng.github.io/post/python_random_user_password/</link>
       <pubDate>Mon, 01 Jan 2018 10:00:00 +0900</pubDate>
