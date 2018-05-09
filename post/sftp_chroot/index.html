@@ -96,6 +96,7 @@ ga('send', 'pageview');
 
 <ul>
 <li><a href="#ユーザホームフォルダをroot所有に変更">ユーザホームフォルダをroot所有に変更</a></li>
+<li><a href="#ユーザホームフォルダの権限を変更">ユーザホームフォルダの権限を変更</a></li>
 <li><a href="#sshd_configを修正し、chrootを有効化する">sshd_configを修正し、chrootを有効化する</a></li>
 <li><a href="#sshdサービスを再起動して設定を有効化">sshdサービスを再起動して設定を有効化</a></li>
 <li><a href="#アップロード用のディレクトリを作成">アップロード用のディレクトリを作成</a></li>
@@ -107,6 +108,15 @@ ga('send', 'pageview');
 <p>chrootではホームフォルダをroot所有に変更する必要があるため、以下のように変更する。</p>
 
 <pre><code>chown root:root /home/[user]
+</code></pre>
+
+<p><code>/home/[user]</code>はユーザのホームディレクトリ。</p>
+
+<h2 id="ユーザホームフォルダの権限を変更">ユーザホームフォルダの権限を変更</h2>
+
+<p>chrootではホームフォルダから指定フォルダに移動できる必要があるため、以下のように変更する。</p>
+
+<pre><code>chmod 655 /home/[user]
 </code></pre>
 
 <p><code>/home/[user]</code>はユーザのホームディレクトリ。</p>
