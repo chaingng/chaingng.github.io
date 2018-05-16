@@ -314,6 +314,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>linuxでダミーファイルを作成する</title>
+      <link>https://chaingng.github.io/post/dd/</link>
+      <pubDate>Thu, 04 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/dd/</guid>
+      <description>ブロック単位でファイルをコピー・変換するコマンドであるddを使う。 tempfile.txtという名前で50Mのファイルを作成 dd if=/dev/zero of=tempfile.txt bs=1024 count=50000 オプシ</description>
+    </item>
+    
+    <item>
       <title>python2ではtimestamp()が使えないのでdatetimeに変換して日付を比較する</title>
       <link>https://chaingng.github.io/post/python_timestamp/</link>
       <pubDate>Tue, 02 Jan 2018 10:00:00 +0900</pubDate>

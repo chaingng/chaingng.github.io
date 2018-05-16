@@ -6,10 +6,19 @@
     <description>Recent content in Linux on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Jan 2017 09:22:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jan 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linuxでダミーファイルを作成する</title>
+      <link>https://chaingng.github.io/post/dd/</link>
+      <pubDate>Thu, 04 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/dd/</guid>
+      <description>ブロック単位でファイルをコピー・変換するコマンドであるddを使う。 tempfile.txtという名前で50Mのファイルを作成 dd if=/dev/zero of=tempfile.txt bs=1024 count=50000 オプシ</description>
+    </item>
     
     <item>
       <title>shebangから理解するUNIXの仕組み</title>
