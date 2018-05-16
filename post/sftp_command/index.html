@@ -102,32 +102,32 @@ ga('send', 'pageview');
 <li><a href="#ファイルをアップロード">ファイルをアップロード</a></li>
 <li><a href="#ローカルディレクトリ内のファイルをアップロード">ローカルディレクトリ内のファイルをアップロード</a></li>
 <li><a href="#アップロード先ディレクトリを指定してのファイルアップロード">アップロード先ディレクトリを指定してのファイルアップロード</a></li>
-<li><a href="#rm">rm</a></li>
-<li><a href="#rmdir">rmdir</a></li>
-<li><a href="#bye">bye</a></li>
+<li><a href="#rm-ファイルを削除">rm-ファイルを削除</a></li>
+<li><a href="#rmdir-ディレクトリを削除">rmdir-ディレクトリを削除</a></li>
+<li><a href="#bye-接続を閉じる">bye-接続を閉じる</a></li>
 </ul></li>
 <li><a href="#リモートディレクトリ関連">リモートディレクトリ関連</a>
 
 <ul>
-<li><a href="#ls">ls</a></li>
-<li><a href="#pwd">pwd</a></li>
-<li><a href="#mkdir">mkdir</a></li>
-<li><a href="#cd">cd</a></li>
+<li><a href="#ls-リモートディレクトリのファイル一覧を表示">ls-リモートディレクトリのファイル一覧を表示</a></li>
+<li><a href="#pwd-リモートディレクトリのフルパスを表示">pwd-リモートディレクトリのフルパスを表示</a></li>
+<li><a href="#mkdir-リモートにディレクトリを作成">mkdir-リモートにディレクトリを作成</a></li>
+<li><a href="#cd-リモートディレクトリを移動">cd-リモートディレクトリを移動</a></li>
 </ul></li>
 <li><a href="#ローカルディレクトリ関連">ローカルディレクトリ関連</a>
 
 <ul>
-<li><a href="#lls">lls</a></li>
-<li><a href="#lpwd">lpwd</a></li>
-<li><a href="#lmkdir">lmkdir</a></li>
-<li><a href="#lcd">lcd</a></li>
+<li><a href="#lls-ローカルディレクトリのファイル一覧を表示">lls-ローカルディレクトリのファイル一覧を表示</a></li>
+<li><a href="#lpwd-ローカルディレクトリのフルパスを表示">lpwd-ローカルディレクトリのフルパスを表示</a></li>
+<li><a href="#lmkdir-ローカルにディレクトリを作成">lmkdir-ローカルにディレクトリを作成</a></li>
+<li><a href="#lcd-ローカルディレクトリを移動">lcd-ローカルディレクトリを移動</a></li>
 </ul></li>
 <li><a href="#その他">その他</a>
 
 <ul>
-<li><a href="#rename">rename</a></li>
-<li><a href="#df">df</a></li>
-<li><a href="#help">help</a></li>
+<li><a href="#rename-ファイルをリネーム">rename-ファイルをリネーム</a></li>
+<li><a href="#df-ディスク使用状況を表示">df-ディスク使用状況を表示</a></li>
+<li><a href="#help-ヘルプを表示">help-ヘルプを表示</a></li>
 </ul></li>
 </ul>
 
@@ -183,25 +183,19 @@ Uploading example.log to /backup/hoge/example.log
 example.log                                                                                                                         100%   69     7.2KB/s   00:00
 </code></pre>
 
-<h3 id="rm">rm</h3>
-
-<p>ファイルを削除</p>
+<h3 id="rm-ファイルを削除">rm-ファイルを削除</h3>
 
 <pre><code>&gt; rm test.py
 </code></pre>
 
-<h3 id="rmdir">rmdir</h3>
-
-<p>ディレクトリを削除</p>
+<h3 id="rmdir-ディレクトリを削除">rmdir-ディレクトリを削除</h3>
 
 <pre><code>&gt; rmdir hoge
 </code></pre>
 
 <p>ディレクトリ内にファイルがあると削除ができない</p>
 
-<h3 id="bye">bye</h3>
-
-<p>接続を閉じる</p>
+<h3 id="bye-接続を閉じる">bye-接続を閉じる</h3>
 
 <pre><code>&gt; bye
 </code></pre>
@@ -216,89 +210,67 @@ example.log                                                                     
 
 <h2 id="リモートディレクトリ関連">リモートディレクトリ関連</h2>
 
-<h3 id="ls">ls</h3>
-
-<p>リモートディレクトリのファイル一覧を表示</p>
+<h3 id="ls-リモートディレクトリのファイル一覧を表示">ls-リモートディレクトリのファイル一覧を表示</h3>
 
 <pre><code>sftp&gt; ls
 backup       example.log  test.py      upload
 </code></pre>
 
-<h3 id="pwd">pwd</h3>
-
-<p>リモートディレクトリのフルパスを表示</p>
+<h3 id="pwd-リモートディレクトリのフルパスを表示">pwd-リモートディレクトリのフルパスを表示</h3>
 
 <pre><code>sftp&gt; pwd
 Remote working directory: /
 </code></pre>
 
-<h3 id="mkdir">mkdir</h3>
-
-<p>リモートにディレクトリを作成</p>
+<h3 id="mkdir-リモートにディレクトリを作成">mkdir-リモートにディレクトリを作成</h3>
 
 <pre><code>&gt; lmkdir hoge
 </code></pre>
 
-<h3 id="cd">cd</h3>
-
-<p>リモートディレクトリを移動</p>
+<h3 id="cd-リモートディレクトリを移動">cd-リモートディレクトリを移動</h3>
 
 <pre><code>&gt; cd hoge
 </code></pre>
 
 <h2 id="ローカルディレクトリ関連">ローカルディレクトリ関連</h2>
 
-<h3 id="lls">lls</h3>
-
-<p>ローカルディレクトリのファイル一覧を表示</p>
+<h3 id="lls-ローカルディレクトリのファイル一覧を表示">lls-ローカルディレクトリのファイル一覧を表示</h3>
 
 <pre><code>&gt; lls
 hogefuga    Desktop                    emacs.d                    sample.csv
 </code></pre>
 
-<h3 id="lpwd">lpwd</h3>
-
-<p>ローカルディレクトリのフルパスを表示</p>
+<h3 id="lpwd-ローカルディレクトリのフルパスを表示">lpwd-ローカルディレクトリのフルパスを表示</h3>
 
 <pre><code>&gt; lpwd
 Local working directory: /Users/hondatakatomo
 </code></pre>
 
-<h3 id="lmkdir">lmkdir</h3>
-
-<p>ローカルにディレクトリを作成</p>
+<h3 id="lmkdir-ローカルにディレクトリを作成">lmkdir-ローカルにディレクトリを作成</h3>
 
 <pre><code>&gt; lmkdir hogefuga
 </code></pre>
 
-<h3 id="lcd">lcd</h3>
-
-<p>ローカルディレクトリを移動</p>
+<h3 id="lcd-ローカルディレクトリを移動">lcd-ローカルディレクトリを移動</h3>
 
 <pre><code>&gt; lcd Documents
 </code></pre>
 
 <h2 id="その他">その他</h2>
 
-<h3 id="rename">rename</h3>
-
-<p>ファイルをリネーム</p>
+<h3 id="rename-ファイルをリネーム">rename-ファイルをリネーム</h3>
 
 <pre><code>&gt; rename example.log fuga.log
 </code></pre>
 
-<h3 id="df">df</h3>
-
-<p>ディスク使用状況を表示</p>
+<h3 id="df-ディスク使用状況を表示">df-ディスク使用状況を表示</h3>
 
 <pre><code>&gt; df
         Size         Used        Avail       (root)    %Capacity
     30830568      5843356     24886964     24987212          18%
 </code></pre>
 
-<h3 id="help">help</h3>
-
-<p>ヘルプを表示</p>
+<h3 id="help-ヘルプを表示">help-ヘルプを表示</h3>
 
 <pre><code>&gt; help
 Available commands:
