@@ -6,10 +6,19 @@
     <description>Recent content in Linux on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 05 Jan 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jan 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linuxにおけるパッケージ管理</title>
+      <link>https://chaingng.github.io/post/linux_package_management/</link>
+      <pubDate>Sat, 06 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/linux_package_management/</guid>
+      <description>RPM Red Hat Package Managerと呼ばれ、元々はRed Hatによって開発され、実装。 その後、GNUオープンソースオペレーティングシステムで受け入れられ</description>
+    </item>
     
     <item>
       <title>linuxにおけるシグナルとkill</title>

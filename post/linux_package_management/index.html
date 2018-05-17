@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>配列の基礎</title>
+<title>linuxにおけるパッケージ管理</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="配列の基礎" />
-<meta property="og:description" content="概要 データの取得と更新がO(1) 削除がO(n-i) 時々resizingが必要になる brute forceでO(n)spaceだが、ソリューションによっ" />
+<meta property="og:title" content="linuxにおけるパッケージ管理" />
+<meta property="og:description" content="RPM Red Hat Package Managerと呼ばれ、元々はRed Hatによって開発され、実装。 その後、GNUオープンソースオペレーティングシステムで受け入れられ" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/array/" />
+<meta property="og:url" content="https://chaingng.github.io/post/linux_package_management/" />
 
 
 
-<meta property="article:published_time" content="2017-11-19T10:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2018-01-06T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2017-11-19T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2018-01-06T10:00:00&#43;09:00"/>
 
 
 
@@ -77,10 +77,10 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">配列の基礎</h1>
+			<h1 class="post__title">linuxにおけるパッケージ管理</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-11-19T10:00:00">November 19, 2017</time>
+				<time class="post__meta-date" datetime="2018-01-06T10:00:00">January 06, 2018</time>
 			</p>
 		</header>
 		
@@ -88,45 +88,33 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
-<h2 id="概要">概要</h2>
+<h2 id="rpm">RPM</h2>
 
-<ul>
-<li>データの取得と更新がO(1)</li>
-<li>削除がO(n-i)</li>
-<li>時々resizingが必要になる</li>
-<li>brute forceでO(n)spaceだが、ソリューションによってはO(1)space</li>
-<li>後ろから探索することが有効な時がある</li>
-<li>削除に変わって、オーバーライドが有効なこともある</li>
-<li>後ろから数字を扱うのが有効な時がある</li>
-<li>二次元配列には並行処理が有効な場合もある</li>
-<li>シミュレーションするとソリューションが浮かびやすいこともある</li>
-</ul>
+<p>Red Hat Package Managerと呼ばれ、元々はRed Hatによって開発され、実装。</p>
 
-<h2 id="5-1-dutch-flag-problem">5.1 Dutch flag problem</h2>
+<p>その後、GNUオープンソースオペレーティングシステムで受け入れられ、多くのLinuxシステム（RHEL）の確立されたソフトウェア標準となる。</p>
 
-<ul>
-<li>数字の配列を、与えられたpivot以下、pivotと同じ値、pivotより大きい値に並べる</li>
-</ul>
+<h3 id="gnuプロジェクト">GNUプロジェクト</h3>
 
-<pre><code>def dutch_flag(pivot_index, A):
-    pivot = A[pivot_index]
-    smaller, equal, larger = 0, 0, len(A)
+<p>フリーオペレーティング・システムを設立し、フリーでないソフトウェアを使わないで済むようUNIXに付帯するもの全てを提供することを目的としたプロジェクト。<br />
+目的のためにプログラムを実行する自由、プログラムのメカニックを研究して修正する自由、コピーを再配布する自由、そして公共利用のために修正したバージョンを改善し変更する自由がある。<br />
+Linuxソフトウェアは、GNUプロジェクトのソフトウェアを数多く利用している。</p>
 
-    while equal &lt; larger:
-        if A[equal] &lt; pivot:
-            A[smaller], A[equal] = A[equal], A[smaller]
-            smaller, equal = smaller + 1, equal + 1
-        elif A[equal] == pivot:
-            equal += 1
-        else:
-            larger -= 1
-            A[equal], A[larger] = A[larger], A[equal]
-    return A
+<h2 id="yum">YUM</h2>
 
+<p>RPMに基づいており、依存関係管理機能を持ち、ソフトウェアアップグレード機能を備えている。</p>
 
-ret = dutch_flag(1, [4, 0, -1, 1, -1, 1, 0, 2])
-print(ret)
-</code></pre>
+<h2 id="dpkg">dpkg</h2>
+
+<p>Debianのパッケージ管理の基礎となるソフトウェア。<br />
+低水準のものなので、依存関係を制御するにはAPTなど高水準のツールを使う。<br />
+RPMと類似している。</p>
+
+<h2 id="apt">APT</h2>
+
+<p>Advanced Packaging Tool。<br />
+Debian用に開発されたパッケージ管理システム。<br />
+dpkgのフロントエンドとして動作するように設計された。</p>
 
 		</div>
 					
@@ -136,7 +124,7 @@ print(ret)
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/linux/" rel="tag">linux</a></li>
 	</ul>
 </div>
 
@@ -148,10 +136,10 @@ print(ret)
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/sftp_command/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">sftpコマンドまとめ</p></a>
+		<a class="post-nav__link" href="/post/linux_process/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">linuxにおけるシグナルとkill</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/java_object/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">Javaとオブジェクト指向</p></a>
+		<a class="post-nav__link" href="/post/hash/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">ハッシュテーブルの概要</p></a>
 	</div>
 </nav>
 

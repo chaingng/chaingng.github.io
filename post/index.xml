@@ -314,6 +314,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>linuxにおけるパッケージ管理</title>
+      <link>https://chaingng.github.io/post/linux_package_management/</link>
+      <pubDate>Sat, 06 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/linux_package_management/</guid>
+      <description>RPM Red Hat Package Managerと呼ばれ、元々はRed Hatによって開発され、実装。 その後、GNUオープンソースオペレーティングシステムで受け入れられ</description>
+    </item>
+    
+    <item>
       <title>linuxにおけるシグナルとkill</title>
       <link>https://chaingng.github.io/post/linux_process/</link>
       <pubDate>Fri, 05 Jan 2018 10:00:00 +0900</pubDate>
