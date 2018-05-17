@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>キューの実装</title>
+<title>linuxにおけるシグナルとkill</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="キューの実装" />
-<meta property="og:description" content="scratch # queueのベースクラスを作成 # isEmpty, lenメソッド, 全nodeの一覧を持つ class AbstractQueue: def __init__(self): self.top = 0 def isEmpty(self): return self.top == 0 def __len__(self): return self.top def __str__(self): result = &#39;------\n&#39; for element in self: result &#43;= str(element) &#43; &#39;\n&#39; return" />
+<meta property="og:title" content="linuxにおけるシグナルとkill" />
+<meta property="og:description" content="シグナルとは シグナルとは、プロセスに対して通知するイベント。 シグナルを受け取ったプロセスは現在実行中の処理を中断し、シグナルに応じた処理を実" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/queue_code/" />
+<meta property="og:url" content="https://chaingng.github.io/post/linux_process/" />
 
 
 
-<meta property="article:published_time" content="2018-02-23T10:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2018-01-05T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2018-02-23T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2018-01-05T10:00:00&#43;09:00"/>
 
 
 
@@ -77,10 +77,10 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">キューの実装</h1>
+			<h1 class="post__title">linuxにおけるシグナルとkill</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-02-23T10:00:00">February 23, 2018</time>
+				<time class="post__meta-date" datetime="2018-01-05T10:00:00">January 05, 2018</time>
 			</p>
 		</header>
 		
@@ -88,101 +88,80 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
-<h2 id="scratch">scratch</h2>
+<h2 id="シグナルとは">シグナルとは</h2>
 
-<pre><code># queueのベースクラスを作成 
-# isEmpty, lenメソッド, 全nodeの一覧を持つ
-class AbstractQueue:
-    def __init__(self):
-        self.top = 0
+<p>シグナルとは、プロセスに対して通知するイベント。</p>
 
-    def isEmpty(self):
-        return self.top == 0
+<p>シグナルを受け取ったプロセスは現在実行中の処理を中断し、シグナルに応じた処理を実行する。</p>
 
-    def __len__(self):
-        return self.top
+<p>具体的には、killやCtrl+hogeでシグナルを発生させることができる。</p>
 
-    def __str__(self):
-        result = '------\n'
-        for element in self:
-            result += str(element) + '\n'
-        return result[:-1] + '\n------' 
+<h2 id="代表的なシグナル">代表的なシグナル</h2>
 
-# nodeクラスを作成　
-# 値：value, nextを持つ
-class QueueNode(object):
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+<table>
+<thead>
+<tr>
+<th align="left">シグナル</th>
+<th align="right">killコマンド</th>
+<th align="center">Ctrlコマンド</th>
+<th align="center">意味</th>
+</tr>
+</thead>
 
-# queueクラスを実装
-# 値：front, rearをもつ
-# メソッド：enqueue, dequeue, isEmptyを持つ
-# iter可能
-class LinkedListQueue(AbstractQueue):
-    def __init__(self):
-        AbstractQueue.__init__(self)
-        self.front = None
-        self.rear = None
+<tbody>
+<tr>
+<td align="left">SIGHUP</td>
+<td align="right">kill -1</td>
+<td align="center">-</td>
+<td align="center">ハングアップ（端末の切断などで発生）</td>
+</tr>
 
-    # enqueue
-    # rearに値を追加する
-    def enqueue(self, value):
-        node = QueueNode(value)
-        if not self.front:
-            self.front = node
-            self.rear = node
-        else:
-            self.rear.next = node
-            self.rear = node
-        self.top += 1
+<tr>
+<td align="left">SIGINT</td>
+<td align="right">kill -2</td>
+<td align="center">Ctrl+C</td>
+<td align="center">割り込みの発生</td>
+</tr>
 
-    # dequeue
-    # frontの値を削除する
-    def dequeue(self):
-        if self.isEmpty():
-            raise IndexError('queue is empty')
-        value = self.front.value
-        if self.front is self.rear:
-            self.front = None
-            self.rear = None
-        else:
-            self.front = self.front.next
-        self.top -= 1
-        return value
+<tr>
+<td align="left">SIGKILL</td>
+<td align="right">kill -9</td>
+<td align="center">-</td>
+<td align="center">プロセスの強制終了</td>
+</tr>
 
-    # __iter__を実装
-    def __iter__(self):
-        probe = self.front
-        while True:
-            if probe is None:
-                raise StopIteration
-            yield probe.value
-            probe = probe.next
+<tr>
+<td align="left">SIGTERM</td>
+<td align="right">kill -15</td>
+<td align="center">-</td>
+<td align="center">プロセスの終了</td>
+</tr>
 
+<tr>
+<td align="left">SIGTSTP</td>
+<td align="right">kill -TSTP</td>
+<td align="center">Ctrl+Z</td>
+<td align="center">プロセスの一時停止</td>
+</tr>
+</tbody>
+</table>
 
-q = LinkedListQueue()
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-q.dequeue()
-print(str(q))
+<p>シグナルを受け取ったプロセスは、シグナルごとに定義された処理が実行される。
+ただし、SIGKILLはプロセスの外部からプロセスを終了させるのでプロセスで独自の処理を定義できない。</p>
 
+<h2 id="ctrl-hogeの正体">Ctrl+hogeの正体</h2>
+
+<p>Ctrl＋hogeが入力されると、以下で定義されたシグナルが送信される。
+シグナルの送信先は、フォアグラウンドで動いているプロセスグループに属するすべてのプロセス。</p>
+
+<pre><code>stty -a
 </code></pre>
 
-<h2 id="pythonic">pythonic</h2>
+<p>ちなみに、Ctrl + DはEOFをプロセスに送っている。</p>
 
-<pre><code>&gt;&gt;&gt; from collections import deque
-&gt;&gt;&gt; queue = deque([&quot;Eric&quot;, &quot;John&quot;, &quot;Michael&quot;])
-&gt;&gt;&gt; queue.append(&quot;Terry&quot;)           # Terry arrives
-&gt;&gt;&gt; queue.append(&quot;Graham&quot;)          # Graham arrives
-&gt;&gt;&gt; queue.popleft()                 # The first to arrive now leaves
-'Eric'
-&gt;&gt;&gt; queue.popleft()                 # The second to arrive now leaves
-'John'
-&gt;&gt;&gt; queue                           # Remaining queue in order of arrival
-deque(['Michael', 'Terry', 'Graham'])
-</code></pre>
+<h2 id="kill">kill</h2>
+
+<p>シグナルの送信先は、指定されたプロセスのみ（プロセスグループではない）。</p>
 
 		</div>
 					
@@ -192,7 +171,7 @@ deque(['Michael', 'Terry', 'Graham'])
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/linux/" rel="tag">linux</a></li>
 	</ul>
 </div>
 
@@ -204,10 +183,10 @@ deque(['Michael', 'Terry', 'Graham'])
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/stack_code/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">スタックの実装</p></a>
+		<a class="post-nav__link" href="/post/dd/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">linuxでダミーファイルを作成する</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/heap_code/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">ヒープの実装</p></a>
+		<a class="post-nav__link" href="/post/hash/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">ハッシュテーブルの概要</p></a>
 	</div>
 </nav>
 

@@ -6,10 +6,19 @@
     <description>Recent content in Linux on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 04 Jan 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jan 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linuxにおけるシグナルとkill</title>
+      <link>https://chaingng.github.io/post/linux_process/</link>
+      <pubDate>Fri, 05 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/linux_process/</guid>
+      <description>シグナルとは シグナルとは、プロセスに対して通知するイベント。 シグナルを受け取ったプロセスは現在実行中の処理を中断し、シグナルに応じた処理を実</description>
+    </item>
     
     <item>
       <title>linuxでダミーファイルを作成する</title>

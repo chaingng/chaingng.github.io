@@ -168,6 +168,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/linux_process/</loc>
+    <lastmod>2018-01-05T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/dd/</loc>
     <lastmod>2018-01-04T10:00:00+09:00</lastmod>
   </url>
@@ -411,7 +416,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/linux/</loc>
-    <lastmod>2018-01-04T10:00:00+09:00</lastmod>
+    <lastmod>2018-01-05T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
