@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SQLの基礎</title>
+<title>linuxとmacにおける検索</title>
 
 <meta name="generator" content="Hugo 0.38-DEV" />
-<meta property="og:title" content="SQLの基礎" />
-<meta property="og:description" content="SQLの実行順序 FROM WHERE GROUP BY HAVING SELECT ORDER_GY DBの作成 CREATE DATABASE shop; テーブルの作成 CREATE TABLE Shohin (shohin_id CHAR(4) NOT NULL, shohin_mei VARCHAR(100) NOT NULL; PRIMARY KEY (shohin_id) ); DEFAULT制約をつければデフォルト値を入れられ" />
+<meta property="og:title" content="linuxとmacにおける検索" />
+<meta property="og:description" content="コマンドに対する検索 which 指定されたコマンドの場所を調べる $ which python /Users/hondatakatomo/.pyenv/shims/python オプション-aですべて調べる $ which -a python /Users/hondatakatomo/.pyenv/shims/python /usr/bin/python whereis 指定されたコマンドのバイナリーファイ" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/sql/" />
+<meta property="og:url" content="https://chaingng.github.io/post/linux_mac_find/" />
 
 
 
-<meta property="article:published_time" content="2018-01-15T10:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2018-01-07T10:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2018-01-15T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2018-01-07T10:00:00&#43;09:00"/>
 
 
 
@@ -77,10 +77,10 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">SQLの基礎</h1>
+			<h1 class="post__title">linuxとmacにおける検索</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-01-15T10:00:00">January 15, 2018</time>
+				<time class="post__meta-date" datetime="2018-01-07T10:00:00">January 07, 2018</time>
 			</p>
 		</header>
 		
@@ -88,539 +88,90 @@ ga('send', 'pageview');
 		<div class="post__content clearfix">
 			
 
-<h2 id="sqlの実行順序">SQLの実行順序</h2>
+<h1 id="コマンドに対する検索">コマンドに対する検索</h1>
 
-<ol>
-<li>FROM</li>
-<li>WHERE</li>
-<li>GROUP BY</li>
-<li>HAVING</li>
-<li>SELECT</li>
-<li>ORDER_GY</li>
-</ol>
+<h2 id="which">which</h2>
 
-<h2 id="dbの作成">DBの作成</h2>
+<p>指定されたコマンドの場所を調べる</p>
 
-<pre><code>CREATE DATABASE shop;
+<pre><code>$ which python
+/Users/hondatakatomo/.pyenv/shims/python
 </code></pre>
 
-<h2 id="テーブルの作成">テーブルの作成</h2>
+<p>オプション-aですべて調べる</p>
 
-<pre><code>CREATE TABLE Shohin 
-(shohin_id CHAR(4) NOT NULL, 
-shohin_mei VARCHAR(100) NOT NULL;
-PRIMARY KEY (shohin_id)
-); 
+<pre><code>$ which -a python
+/Users/hondatakatomo/.pyenv/shims/python
+/usr/bin/python
 </code></pre>
 
-<h3 id="default制約をつければデフォルト値を入れられる">DEFAULT制約をつければデフォルト値を入れられる</h3>
+<h2 id="whereis">whereis</h2>
 
-<pre><code>hanbai_tanka INTEGER DEFAULT 0
-</code></pre>
-
-<h2 id="テーブルの削除">テーブルの削除</h2>
-
-<pre><code>DROP TABLE Shohin;
-</code></pre>
-
-<h2 id="テーブル定義の変更">テーブル定義の変更</h2>
-
-<pre><code>ALTER TABLE ADD COLUMN shohin_mei;
-ALTER TABLE DROP COLUMN shohin_mei;
-</code></pre>
-
-<h2 id="データの型">データの型</h2>
-
-<h3 id="char">CHAR</h3>
+<p>指定されたコマンドのバイナリーファイル,ソースコード,マニュアルファイルの場所を検索</p>
 
 <ul>
-<li>固定長文字列</li>
-<li>CHAR(10)と指定したら最後に空白を埋めて必ず１０文字になる</li>
+<li>-b バイナリファイルだけ探す</li>
+<li>-m マニュアルだけ探す</li>
+<li>-B ディレクトリを指定して探す</li>
 </ul>
 
-<h3 id="varchar">VARCHAR　</h3>
+<h1 id="ファイルシステムの検索">ファイルシステムの検索</h1>
+
+<h2 id="locate">locate</h2>
+
+<p>あらかじめデータベースを作成しておくことで、高速に検索する</p>
+
+<pre><code>$ locate OUTPUT.mobi
+/Users/hondatakatomo/github/flask_book/OUTPUT.mobi
+</code></pre>
+
+<h3 id="linuxでのデータベースの作成">linuxでのデータベースの作成</h3>
+
+<pre><code>updatedb
+</code></pre>
+
+<h3 id="macでのデータベースの作成">macでのデータベースの作成</h3>
+
+<p>作成しないと以下のエラーがでる</p>
+
+<pre><code>$ locate sample
+&gt; WARNING: The locate database (/var/db/locate.database) does not exist.
+To create the database, run the following command:
+
+  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
+Please be aware that the database can take some time to generate; once
+the database has been created, this message will no longer appear.
+</code></pre>
+
+<p>これに従ってデータベースを作成</p>
+
+<pre><code>sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+</code></pre>
+
+<h2 id="find">find</h2>
+
+<p>都度ファイルシステムすべてを探して検索</p>
 
 <ul>
-<li>可変長文字列</li>
+<li>-type f　ファイルに対して検索</li>
+<li>-type d ディレクトリに対して検索</li>
 </ul>
 
-<h2 id="select">SELECT</h2>
-
-<pre><code>SELECT shohin_id, shohin_mei
-    FROM Shohin;
+<pre><code>$ find / -name OUTPUT.mobi
+/Users/hondatakatomo/Library/Application Support/Kindle/My Kindle Content/OUTPUT.mobi
+/Users/hondatakatomo/github/flask_book/OUTPUT.mobi
 </code></pre>
 
-<h3 id="全ての行を出力">全ての行を出力</h3>
+<h2 id="mdfind">mdfind</h2>
 
-<pre><code>SELECT * 
-    FROM Shohin;
+<p>macではSpotlightコマンドである、mdfindコマンドが存在する。<br />
+これは、mac Spotlightのデーモンによって常にデータベースは更新されているのでデータベースの手動更新が不要で、拘束に検索できる</p>
+
+<pre><code>$ mdfind OUTPUT.mobi
+/Users/hondatakatomo/Library/Application Support/Kindle/My Kindle Content/OUTPUT.mobi
+/Users/hondatakatomo/github/flask_book/OUTPUT.mobi
 </code></pre>
-
-<h3 id="別名をつける">別名をつける</h3>
-
-<pre><code>SELECT shohin_id AS id
-    FROM Shohin;
-</code></pre>
-
-<h3 id="定数をselect">定数をselect</h3>
-
-<pre><code>SELECT shohin_id AS id, “2009-02-04” AS hizuke
-    FROM Shohin;
-</code></pre>
-
-<h3 id="重複を省く">重複を省く</h3>
-
-<pre><code>SELECT DISTINCT shohin_id 
-    FROM Shohin;
-</code></pre>
-
-<h2 id="where">WHERE</h2>
-
-<pre><code>SELECT shohin_mei, shohin_bunrui
-    FROM Shohin
-WHERE shohin_bunrui = ‘衣服';
-</code></pre>
-
-<h2 id="算術演算">算術演算</h2>
-
-<p><code>+,-,*,/</code></p>
-
-<pre><code>SELECT shohin_mei, hanbai_tanka * 2, 
-    FROM Shohin;
-</code></pre>
-
-<p>NULLを含むと結果はNULLになる</p>
-
-<h2 id="比較演算">比較演算</h2>
-
-<h3 id="等しくない場合">等しくない場合　</h3>
-
-<pre><code>SELECT shohin_mei, shohin_bunrui
-    FROM Shohin
-WHERE hanbai_tanka &lt;&gt; 500;
-</code></pre>
-
-<p>NULLは比較演算子は使えない</p>
-
-<h3 id="nullを調べる">NULLを調べる</h3>
-
-<pre><code>SELECT shohin_mei, shohin_bunrui
-    FROM Shohin
-WHERE hanbai_tanka IS NULL;
-</code></pre>
-
-<p>逆は<code>IS NOT NULL</code></p>
-
-<h2 id="count">COUNT</h2>
-
-<h3 id="テーブルの全行数を数える">テーブルの全行数を数える</h3>
-
-<pre><code>SELECT COUNT(*)
-    FROM Shohin;
-</code></pre>
-
-<h3 id="nullを除外した行数を数える">NULLを除外した行数を数える</h3>
-
-<pre><code>SELECT COUNT(shiire_tanka)
-    FROM Shohin;
-</code></pre>
-
-<h2 id="sum">SUM</h2>
-
-<pre><code>SELECT SUM(hanbai_tanka)
-    FROM Shohin;
-</code></pre>
-
-<p>NULLは無視される</p>
-
-<h2 id="group-by">GROUP BY</h2>
-
-<p>列名で集約できる</p>
-
-<pre><code>SELECT shohin_bunrui, COUNT(*)
-    FROM Shohin
-GROUP BY shohin_bunrui;
-</code></pre>
-
-<ul>
-<li>このときのshohin_bunruiを集約キー</li>
-<li>NULLのグループがあればそれも１つとして表示される</li>
-</ul>
-
-<h3 id="注意事項">注意事項</h3>
-
-<ul>
-<li>SELECTに定数、集約関数、集約キー以外を指定するとエラーになる</li>
-<li>集約キーにSELECTの別名を使うとエラーになる（SELECTはGROUPBYより後に実行される）</li>
-</ul>
-
-<h2 id="having">HAVING</h2>
-
-<p>GROUPBYの結果に対して条件指定したいときに使う
-（WHEREはGROUPBYの前に実行されるため）</p>
-
-<pre><code>SELECT shohin_bunrui, COUNT(*)
-    FROM Shohin
-GROUP BY shohin_bunrui
-HAVING COUNT(*) = 2;
-</code></pre>
-
-<p>指定できるのは定数＆集約関数＆集約キーのみ</p>
-
-<h2 id="order-by">ORDER BY</h2>
-
-<p>検索結果の並び替え</p>
-
-<pre><code>SELECT shohin_id, hanbai_tanka
-    FROM Shohin
-ORDER BY hanbai_tanka;
-</code></pre>
-
-<p>NULLは先頭か末尾にまとめて表示される</p>
-
-<h3 id="降順に並び替え">降順に並び替え</h3>
-
-<pre><code>ORDER BY hanbai_tanka DESC;
-</code></pre>
-
-<h3 id="複数指定も可能">複数指定も可能</h3>
-
-<pre><code>ORDER BY hanbai_tanka, shohin_id;
-</code></pre>
-
-<h2 id="insert">INSERT</h2>
-
-<pre><code>INSERT INTO ShohinIns (shohin_id, shohin_mei) VALUES (‘0001’, ’Tシャツ’);
-</code></pre>
-
-<ul>
-<li>全ての列に対してINSERTを行う場合は列リストは省略できる</li>
-<li>NULLを入れたい場合はNULLを明示する</li>
-<li>明示的に<code>DEFAULT</code>と書くとデフォルト値が挿入される</li>
-</ul>
-
-<h3 id="コピーの書き方">コピーの書き方</h3>
-
-<p>INSERT SELECT</p>
-
-<pre><code>INSERT INTO ShohinCopy (shohin_id, shohin_mei)
-SELECT shohin_id, shohin_mei
-    FROM Shohin;
-</code></pre>
-
-<h2 id="delete">DELETE</h2>
-
-<h3 id="全てのデータを削除">全てのデータを削除</h3>
-
-<pre><code>DELETE FROM Shohin;
-</code></pre>
-
-<h3 id="条件指定で削除">条件指定で削除</h3>
-
-<pre><code>DELETE FROM Shohin
-    WHERE hanbai_tanka &gt;= 4000;
-</code></pre>
-
-<h2 id="update">UPDATE</h2>
-
-<h3 id="全てのレコードの列を変更">全てのレコードの列を変更</h3>
-
-<pre><code>UPDATE Shohin
-    SET torokubi = ‘2009-10-10'
-</code></pre>
-
-<p>複数列の更新も可能</p>
-
-<h3 id="条件に一致する行のみ変更">条件に一致する行のみ変更</h3>
-
-<pre><code>UPDATE Shohin
-    SET torokubi = ‘2009-10-10’
-WHERE shohin_bunrui = ‘キッチン用品'
-</code></pre>
-
-<h2 id="トランザクション">トランザクション</h2>
-
-<p>DBに対する１つ以上の更新をまとめて呼ぶときの名称</p>
-
-<pre><code>START TRANSACTION;
--- update文等
-COMMIT;
-</code></pre>
-
-<p>トランザクションが暗黙に開始される設定もある（標準SQL規格で定められている）</p>
-
-<h3 id="rollback">ROLLBACK</h3>
-
-<p>処理の取り消し</p>
-
-<pre><code>BEGIN TRANSACTION;
--— update
-ROLLBACK;
-</code></pre>
-
-<h3 id="acid特性を持つ">ACID特性を持つ</h3>
-
-<h4 id="原子性-acid">原子性(Acid)</h4>
-
-<p>トランザクションが終わったとき、更新処理はすべて実行されるか１つも実行されないか</p>
-
-<h4 id="一貫性-consistency">一貫性(Consistency)</h4>
-
-<p>トランザクションに含まれる処理は、DB制約を満たす。満たさなければロールバックされる</p>
-
-<h4 id="独立性-isolation">独立性(Isolation)</h4>
-
-<p>トランザクション同士が互いに干渉を受けない
-あるトランザクションの実行内容は、コミットされるまで外からは隠蔽される</p>
-
-<h4 id="永続性-durability">永続性(Durability)</h4>
-
-<p>トランザクションが終了したときにはデータが保存されることを保証する
-障害が発生してもログから復旧できる</p>
-
-<h2 id="ビュー">ビュー</h2>
-
-<ul>
-<li>SQLの観点から見るとテーブルと同じ</li>
-<li>ただし実際のデータは保存していない</li>
-<li>ビューが保存しているのはSELECT文</li>
-<li>実際のデータを保存しなくてよいので容量が節約できる</li>
-</ul>
-
-<pre><code>CREATE VIEW ShohinSum (shohin_bunrui, cnt_shohin)
-AS
-SELECT shohin_bunrui, COUNT(*)
-    FROM Shohin
-GROUP BY shohin_bunrui;
-</code></pre>
-
-<p>その後、ビュー名はテーブル名の用に使える</p>
-
-<pre><code>SELECT shohin_bunrui
-    FROM ShohinSum;
-</code></pre>
-
-<h3 id="注意事項-1">注意事項</h3>
-
-<ul>
-<li>ORDERBYは使えない（行には順序がないため）</li>
-<li>条件を満たしたときのみビューに対して更新が可能</li>
-<li>SELECTにDISTINCTが含まれない</li>
-<li>FROMに含まれるテーブルが１つ</li>
-<li>GROUPBY、HAVINGを使っていない</li>
-</ul>
-
-<h3 id="ビューの削除">ビューの削除</h3>
-
-<pre><code>DROP VIEW ShohinSum;
-</code></pre>
-
-<h2 id="サブクエリ">サブクエリ</h2>
-
-<ul>
-<li>使い捨てのビュー</li>
-<li>ビュー定義のSELECT分をそのままFROMに持ち込んだもの</li>
-</ul>
-
-<pre><code>SELECT shohin_bunrui
-    FROM (SELECT shohin_bunrui, COUNT(*)
-        FROM Shohin
-        GROUP BY shohin_bunrui) AS ShohinSum;
-</code></pre>
-
-<h2 id="スカラ-サブクエリ">スカラ・サブクエリ</h2>
-
-<ul>
-<li>必ず１行１列だけの戻り値を返す</li>
-<li>つまり、この結果を＝や＜＞などに使うこと</li>
-<li>定数や列名を書けるところすべてに使える</li>
-</ul>
-
-<pre><code>SELECT shihin_id
-    FROM Shohin
-WHERE hanbai_tanka &gt; (SELECT AVG(hanbai_tanka) FROM Shohin);   
-</code></pre>
-
-<h2 id="相関サブクエリ">相関サブクエリ</h2>
-
-<p>小分けにしたグループ内での比較をするときに使う</p>
-
-<pre><code>SELECT shohin_bunrui, shohin_mei
-    FROM Shohin AS S1
-WHERE hanbai_tanka &gt; (SELECT AVG(hanbai_tanka) 
-                        FROM Shohin AS S2
-                        WHERE S1.shohin.bunrui = S2.shohin_bunrui
-                        GROUP BY shohin_bunrui);
-</code></pre>
-
-<h2 id="型変換">型変換</h2>
-
-<pre><code>CAST（’0001’ AS INTEGER)
-</code></pre>
-
-<h2 id="nullを値に変換">NULLを値に変換</h2>
-
-<pre><code>COALESCE(str1, str2, ...)
-</code></pre>
-
-<h2 id="文字連結">文字連結</h2>
-
-<p>str1str2を返す</p>
-
-<pre><code>str1 || str2  
-</code></pre>
-
-<h2 id="like">LIKE</h2>
-
-<p>部分一致</p>
-
-<pre><code>WHERE str LIKE ‘ddd%’;
-WHERE str LIKE ‘%ddd%’;
-WHERE str LIKE ‘%ddd’;
-</code></pre>
-
-<h2 id="in">IN</h2>
-
-<p>含むかどうか</p>
-
-<pre><code>WHERE shiire_tanka IN (320, 500, 5000);
-</code></pre>
-
-<h2 id="exists">EXISTS</h2>
-
-<ul>
-<li>常に相関サブクエリを引数にとる</li>
-<li>レコードの存在有無しか見ないため、SELECTでどんな列が返されるか気にしない</li>
-<li><code>SELECT　*</code>と書くのは慣習
--TRUEかFALSEだけ返す</li>
-</ul>
-
-<pre><code>SELECT shohin_mei
-    FROM Shohin AS S
-WHERE EXISTS (SELECT * 
-                FROM TenpoShohinn AS TS
-                WHERE TS.tenpo_id = ‘00C’ AND TS.shohin_id = S.shohin_id);
-</code></pre>
-
-<h2 id="case">CASE</h2>
-
-<pre><code>SELECT shohin_mei, 
-    CASE WHEN shohin_bunrui = ‘衣服’
-        THEN ‘A:’ || shohin_bunrui
-        WHEN shohin_bunrui = ‘事務用品’
-        THEN ‘B:’ || shohin_bunrui
-        ELSE NULL
-    END AS shohin_bunrui
-FROM Shohin;
-</code></pre>
-
-<h2 id="union">UNION</h2>
-
-<p>行の結合</p>
-
-<pre><code>SELECT shohin_id, shohin_mei
-    FROM Shohin
-UNION
-SELECT shohin_id, shohin_mei
-    FROM Shohin2;
-</code></pre>
-
-<p>重複行は削除される</p>
-
-<h3 id="注意事項-2">注意事項</h3>
-
-<ul>
-<li>レコードの列数は同じであること</li>
-<li>対象列のデータ型が一致していること</li>
-<li>ORDER BYは最後に１つだけ</li>
-</ul>
-
-<h3 id="重複行を残す">重複行を残す</h3>
-
-<pre><code>SELECT shohin_id, shohin_mei
-    FROM Shohin
-UNION ALL
-SELECT shohin_id, shohin_mei
-    FROM Shohin2;
-</code></pre>
-
-<h2 id="intersect">INTERSECT</h2>
-
-<p>テーブルの共通部分の行選択</p>
-
-<pre><code>SELECT shohin_id, shohin_mei
-    FROM Shohin
-INTERSECT
-SELECT shohin_id, shohin_mei
-    FROM Shohin2;
-</code></pre>
-
-<h2 id="except">EXCEPT</h2>
-
-<p>行の引き算</p>
-
-<pre><code>SELECT shohin_id, shohin_mei
-    FROM Shohin
-EXCEPT
-SELECT shohin_id, shohin_mei
-    FROM Shohin2;
-</code></pre>
-
-<ul>
-<li>ShohinテーブルからShohin2テーブルのレコードを引いた残りになる</li>
-<li>ベン図の引き算と同じ</li>
-</ul>
-
-<h2 id="inner-join">INNER　JOIN</h2>
-
-<ul>
-<li>JOINは列の結合</li>
-<li>INNER JOINは両方に存在するレコードのみ出力される</li>
-</ul>
-
-<pre><code>SELECT TS.tenpo_id, TS.tenpo_mei, TS.shohin_id, S.shohin_mei, S.hanbai_tanka
-    FROM TenpoShohin AS TS INNER JOIN Shohin AS S
-        ON TS.shohin_id = S.shohin_id;
-</code></pre>
-
-<p>最後にWHEREを書いて、表示レコードに条件をつけることもできる</p>
-
-<h2 id="outer-join">OUTER JOIN</h2>
-
-<ul>
-<li>片方のみに存在するレコードも出力される</li>
-<li>OUTERは元のテーブルにない情報を結果に持ってくる、という意味</li>
-</ul>
-
-<pre><code>SELECT TS.tenpo_id, TS.tenpo_mei, TS.shohin_id, S.shohin_mei, S.hanbai_tanka
-    FROM TenpoShohin AS TS RIGHT OUTER JOIN Shohin AS S
-        ON TS.shohin_id = S.shohin_id;
-    FROM Shohin
-</code></pre>
-
-<p>マスターにする方をLEFTもしくはRIGHTで指定できる</p>
-
-<h3 id="3つ以上のテーブルを内部結合する">3つ以上のテーブルを内部結合する</h3>
-
-<pre><code>SELECT TS.tenpo_id, TS.tenpo_mei, TS.shohin_id, S.shohin_mei, S.hanbai_tanka, ZS.zaiko_suryo
-    FROM TenpoShohin AS TS INNER JOIN Shohin AS S
-        ON TS.shohin_id = S.shohin_id;
-            INNER JOIN ZaikoShohin AS ZS
-                ON TS.shohin_id = ZS.shohin_id
-</code></pre>
-
-<h2 id="cross-join">CROSS JOIN</h2>
-
-<ul>
-<li>レコードのすべての組み合わせを作る</li>
-<li>すべての結合演算の基礎
-<code>
-SELECT TS.tenpo_id, TS.tenpo_mei, TS.shohin_id, S.shohin_mei, S.hanbai_tanka
-FROM TenpoShohin AS TS CROSS JOIN Shohin AS S;
-</code></li>
-</ul>
-
-<p>つまり、集合演算の掛け算がこれにあたる</p>
 
 		</div>
 					
@@ -630,7 +181,7 @@ FROM TenpoShohin AS TS CROSS JOIN Shohin AS S;
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/linux/" rel="tag">linux</a></li>
 	</ul>
 </div>
 
@@ -642,10 +193,10 @@ FROM TenpoShohin AS TS CROSS JOIN Shohin AS S;
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/python_type_bits/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">pythonデータ型ごとのメモリサイズ</p></a>
+		<a class="post-nav__link" href="/post/linux_package_management/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">linuxにおけるパッケージ管理</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/dynamic_programming/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">動的計画法の基礎</p></a>
+		<a class="post-nav__link" href="/post/hash/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">ハッシュテーブルの概要</p></a>
 	</div>
 </nav>
 

@@ -314,6 +314,15 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
+      <title>linuxとmacにおける検索</title>
+      <link>https://chaingng.github.io/post/linux_mac_find/</link>
+      <pubDate>Sun, 07 Jan 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/linux_mac_find/</guid>
+      <description>コマンドに対する検索 which 指定されたコマンドの場所を調べる $ which python /Users/hondatakatomo/.pyenv/shims/python オプション-aですべて調べる $ which -a python /Users/hondatakatomo/.pyenv/shims/python /usr/bin/python whereis 指定されたコマンドのバイナリーファイ</description>
+    </item>
+    
+    <item>
       <title>linuxにおけるパッケージ管理</title>
       <link>https://chaingng.github.io/post/linux_package_management/</link>
       <pubDate>Sat, 06 Jan 2018 10:00:00 +0900</pubDate>
