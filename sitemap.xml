@@ -363,8 +363,14 @@
   </url>
   
   <url>
-    <loc>https://chaingng.github.io/tags/algorithm/</loc>
+    <loc>https://chaingng.github.io/tags/</loc>
     <lastmod>2018-03-09T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chaingng.github.io/tags/algorithm/</loc>
+    <lastmod>2018-03-02T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
