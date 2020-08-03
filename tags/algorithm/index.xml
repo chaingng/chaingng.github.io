@@ -17,7 +17,7 @@
       <pubDate>Fri, 23 Mar 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/tri_code/</guid>
-      <description>import collections class TriNode(object): def __init__(self): self.children = collections.defaultdict(TriNode) self.is_word = False class TriTree: def __init__(self): self.root = TriNode() def insert(self, word): current = self.root for letter in word: current = current.children[letter] current.is_word = True def search(self, word): current = self.root for letter in word: current = current.children[letter] if current is None: return False return current.is_word def startswith(self, prefix): current = self.root for letter in prefix: current = current.children[letter] if current is None: return False return True t = TriTree() t.</description>
+      <description>import collections class TriNode(object): def __init__(self): self.children = collections.defaultdict(TriNode) self.is_word = False class TriTree: def __init__(self): self.root = TriNode() def insert(self, word): current = self.root for letter in word: current = current.children[letter] current.is_word = True def search(self, word): current = self.root for letter in word: current = current.children[letter] if current is None: return False return current.is_word def startswith(self, prefix): current = self.root for letter in prefix: current = current.children[letter] if</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Fri, 09 Mar 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/hash_code/</guid>
-      <description>class Item(object): def __init__(self, key, value): self.key = key self.value = value class HashTable(object): def __init__(self, size=10): self.size = size self.array = [[] for _ in range(self.size)] def _hash_function(self, key): return key % self.size def set(self, key, value): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: node.value = value return self.array[hash_index].append(Item(key, value)) def get(self, key): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: return node.</description>
+      <description>class Item(object): def __init__(self, key, value): self.key = key self.value = value class HashTable(object): def __init__(self, size=10): self.size = size self.array = [[] for _ in range(self.size)] def _hash_function(self, key): return key % self.size def set(self, key, value): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: node.value = value return self.array[hash_index].append(Item(key, value)) def get(self, key): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: return</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Fri, 02 Mar 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/heap_code/</guid>
-      <description>class MinHeap(object): def __init__(self): self.array = [] def __len__(self): return len(self.array) def extract_min(self): if not self.array: return None if len(self.array) == 1: return self.array.pop(0) minimum = self.array[0] self.array[0] = self.array.pop(-1) self._bubble_down(index=0) return minimum def peek_min(self): return self.array[0] if self.array else None def insert(self, key): if key is None: raise TypeError(&#39;key cannot be none&#39;) self.array.append(key) self._bubble_up(index=len(self.array) - 1) def _bubble_down(self, index): min_child_index = self._find_smaller_child(index) if min_child_index == -1: return if self.</description>
+      <description>class MinHeap(object): def __init__(self): self.array = [] def __len__(self): return len(self.array) def extract_min(self): if not self.array: return None if len(self.array) == 1: return self.array.pop(0) minimum = self.array[0] self.array[0] = self.array.pop(-1) self._bubble_down(index=0) return minimum def peek_min(self): return self.array[0] if self.array else None def insert(self, key): if key is None: raise TypeError(&#39;key cannot be none&#39;) self.array.append(key) self._bubble_up(index=len(self.array) - 1) def _bubble_down(self, index): min_child_index = self._find_smaller_child(index) if min_child_index == -1: return if self.array[index]</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Fri, 23 Feb 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/stack_code/</guid>
-      <description>scratch  class AbstructStack: def __init__(self): self.top = 0 def isEmpty(self): return self.top == 0 def __len__(self): return self.top def __str__(self): result = &#39;------\n&#39; for element in self: result += str(element) + &#39;\n&#39; return result[:-1] + &#39;\n------&#39; class StackNode(object): def __init__(self, value): self.value = value self.next = None class LinkedListStack(AbstructStack): def __init__(self): AbstructStack.__init__(self) self.front = 0 def dequeue(self): if self.isEmpty(): raise IndexError(&#39;stack is empty&#39;) value = self.front.value self.front = self.</description>
+      <description>scratch class AbstructStack: def __init__(self): self.top = 0 def isEmpty(self): return self.top == 0 def __len__(self): return self.top def __str__(self): result = &#39;------\n&#39; for element in self: result += str(element) + &#39;\n&#39; return result[:-1] + &#39;\n------&#39; class StackNode(object): def __init__(self, value): self.value = value self.next = None class LinkedListStack(AbstructStack): def __init__(self): AbstructStack.__init__(self) self.front = 0 def dequeue(self): if self.isEmpty(): raise IndexError(&#39;stack is empty&#39;) value = self.front.value self.front = self.front.next self.top</description>
     </item>
     
     <item>
@@ -179,7 +179,7 @@
       <pubDate>Sun, 24 Dec 2017 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/linked_list_code/</guid>
-      <description>class DoublyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None self.prev = None class SinglyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None  </description>
+      <description>class DoublyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None self.prev = None class SinglyLinkedListNode(object): def __init__(self, value): self.value = value self.next = None</description>
     </item>
     
     <item>
