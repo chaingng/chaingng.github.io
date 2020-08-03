@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Blueprintでflaskアプリケーションをわかりやすく構造化する</title>
-      <link>https://chaingng.github.io/post/blueprint/</link>
+      <title>Blueprintでflaskアプリケーションをわかりやすく構造化</title>
+      <link>https://chaingng.github.io/post/flask_blueprint/</link>
       <pubDate>Mon, 08 Jan 2018 10:00:00 +0900</pubDate>
       
-      <guid>https://chaingng.github.io/post/blueprint/</guid>
+      <guid>https://chaingng.github.io/post/flask_blueprint/</guid>
       <description>blueprintを使うことで、flaskアプリケーションをわかりやすく構造化することができる。 まとめ ブループリントはアプリケーションを構造</description>
     </item>
     
