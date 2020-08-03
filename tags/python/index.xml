@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>Pythonでのスタックの実装</title>
+      <link>https://chaingng.github.io/post/stack_code/</link>
+      <pubDate>Fri, 23 Feb 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/stack_code/</guid>
+      <description>scratch class AbstructStack: def __init__(self): self.top = 0 def isEmpty(self): return self.top == 0 def __len__(self): return self.top def __str__(self): result = &#39;------\n&#39; for element in self: result += str(element) + &#39;\n&#39; return result[:-1] + &#39;\n------&#39; class StackNode(object): def __init__(self, value): self.value = value self.next = None class LinkedListStack(AbstructStack): def __init__(self): AbstructStack.__init__(self) self.front = 0 def dequeue(self): if self.isEmpty(): raise IndexError(&#39;stack is empty&#39;) value = self.front.value self.front = self.front.next self.top</description>
+    </item>
+    
+    <item>
       <title>pythonの比較におけるisと==の違い</title>
       <link>https://chaingng.github.io/post/python_is/</link>
       <pubDate>Tue, 30 Jan 2018 10:00:00 +0900</pubDate>
