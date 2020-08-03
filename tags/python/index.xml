@@ -48,6 +48,24 @@
     </item>
     
     <item>
+      <title>Pythonでのヒープの実装</title>
+      <link>https://chaingng.github.io/post/heap_code/</link>
+      <pubDate>Fri, 02 Mar 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/heap_code/</guid>
+      <description>class MinHeap(object): def __init__(self): self.array = [] def __len__(self): return len(self.array) def extract_min(self): if not self.array: return None if len(self.array) == 1: return self.array.pop(0) minimum = self.array[0] self.array[0] = self.array.pop(-1) self._bubble_down(index=0) return minimum def peek_min(self): return self.array[0] if self.array else None def insert(self, key): if key is None: raise TypeError(&#39;key cannot be none&#39;) self.array.append(key) self._bubble_up(index=len(self.array) - 1) def _bubble_down(self, index): min_child_index = self._find_smaller_child(index) if min_child_index == -1: return if self.array[index]</description>
+    </item>
+    
+    <item>
+      <title>Pythonでのキューの実装</title>
+      <link>https://chaingng.github.io/post/queue_code/</link>
+      <pubDate>Fri, 23 Feb 2018 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/queue_code/</guid>
+      <description>scratch # queueのベースクラスを作成 # isEmpty, lenメソッド, 全nodeの一覧を持つ class AbstractQueue: def __init__(self): self.top = 0 def isEmpty(self): return self.top == 0 def __len__(self): return self.top def __str__(self): result = &#39;------\n&#39; for element in self: result += str(element) + &#39;\n&#39; return</description>
+    </item>
+    
+    <item>
       <title>pythonの比較におけるisと==の違い</title>
       <link>https://chaingng.github.io/post/python_is/</link>
       <pubDate>Tue, 30 Jan 2018 10:00:00 +0900</pubDate>
