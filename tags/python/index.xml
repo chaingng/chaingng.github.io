@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Python classの使い方</title>
+      <link>https://chaingng.github.io/post/python-class/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python-class/</guid>
+      <description>classについて、たくさんあるが最小限の使い方についてメモ。 使い方 __init__でインスタンス作成時のオペレーションを定義する インスタン</description>
+    </item>
+    
+    <item>
       <title>pythonの比較におけるisと==の違い</title>
       <link>https://chaingng.github.io/post/python_is/</link>
       <pubDate>Tue, 30 Jan 2018 10:00:00 +0900</pubDate>
