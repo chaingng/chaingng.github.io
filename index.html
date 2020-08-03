@@ -252,9 +252,9 @@ if (!doNotTrack) {
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
-				<a href="/post/hash_code/" rel="bookmark">Pythonでのハッシュテーブルの実装</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/hash_code/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/hash_code/" alt="はてなブックマーク - Pythonでのハッシュテーブルの実装" title="はてなブックマーク - Pythonでのハッシュテーブルの実装">
+				<a href="/post/python_hash_code/" rel="bookmark">Pythonでのハッシュテーブルの実装</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_hash_code/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_hash_code/" alt="はてなブックマーク - Pythonでのハッシュテーブルの実装" title="はてなブックマーク - Pythonでのハッシュテーブルの実装">
 				</a>
 			</h3>
 			<div class="list__meta meta">
@@ -266,7 +266,7 @@ if (!doNotTrack) {
 			class Item(object): def __init__(self, key, value): self.key = key self.value = value class HashTable(object): def __init__(self, size=10): self.size = size self.array = [[] for _ in range(self.size)] def _hash_function(self, key): return key % self.size def set(self, key, value): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: node.value = value return self.array[hash_index].append(Item(key, value)) def get(self, key): hash_index = self._hash_function(key) for node in self.array[hash_index]: if node.key == key: return
 		</div>
 		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/hash_code/">Read more…</a>
+			<a class="list__footer-readmore btn" href="/post/python_hash_code/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -498,7 +498,7 @@ if (!doNotTrack) {
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python-class/">Python classの使い方</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/tri_code/">Pythonでのトライ木の実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/priority_queue/">Pythonでの優先度付きキューの実装</a></li>
-				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/hash_code/">Pythonでのハッシュテーブルの実装</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_hash_code/">Pythonでのハッシュテーブルの実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/heap_code/">Pythonでのヒープの実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/queue_code/">Pythonでのキューの実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/stack_code/">Pythonでのスタックの実装</a></li>
