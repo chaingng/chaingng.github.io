@@ -82,27 +82,27 @@ if (!doNotTrack) {
 <p>これだけの手順でよい。</p>
 
 <ol>
-<li><code>python-dotenv</code>をインストール</li>
-<li><code>.env</code>ファイルを作成</li>
-<li><code>settings.py</code>を作成</li>
-<li><code>settings</code>をインポートして実行</li>
+<li><a href="インストール"><code>python-dotenv</code>をインストール</a></li>
+<li><a href=".envファイルを作成"><code>.env</code>ファイルを作成</a></li>
+<li><a href="settings.pyを作成"><code>settings.py</code>を作成</a></li>
+<li><a href="settingsをインポートして実行"><code>settings</code>をインポートして実行</a></li>
 </ol>
 
 <p>最小限のコードは以下のとおり。</p>
 
-<h2 id="1-インストール">1) インストール</h2>
+<h2 id="インストール">インストール</h2>
 
 <pre><code>pip install python-dotenv
 </code></pre>
 
-<h2 id="2-envファイルを作成">2) .envファイルを作成</h2>
+<h2 id="envファイルを作成">.envファイルを作成</h2>
 
 <p>.env</p>
 
 <pre><code>API_KEY=ITSMYAPIKEY
 </code></pre>
 
-<h2 id="3-settings-pyを作成">3) settings.pyを作成</h2>
+<h2 id="settings-pyを作成">settings.pyを作成</h2>
 
 <p>settings.py</p>
 
@@ -113,16 +113,16 @@ from dotenv import load_dotenv
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-AP= os.environ.get(&quot;API_KEY&quot;)
+API_KEY= os.environ.get(&quot;API_KEY&quot;)
 </code></pre>
 
-<h2 id="4-settingsをインポートして実行">4) settingsをインポートして実行</h2>
+<h2 id="settingsをインポートして実行">settingsをインポートして実行</h2>
 
 <p>sample.py</p>
 
 <pre><code>import settings
 
-API_KEY = settings.AP
+API_KEY = settings.API_KEY
 print(API_KEY)
 </code></pre>
 
