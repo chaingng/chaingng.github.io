@@ -6,19 +6,10 @@
     <description>Recent content in Algorithm on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 Feb 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 12 Feb 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>クイックソートの実装</title>
-      <link>https://chaingng.github.io/post/quick_sort_code/</link>
-      <pubDate>Fri, 16 Feb 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/quick_sort_code/</guid>
-      <description># https://ja.wikipedia.org/wiki/%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%82%BD%E3%83%BC%E3%83%88 # http://www.ics.kagoshima-u.ac.jp/~fuchida/edu/algorithm/sort-algorithm/quick-sort.html def quick_sort(array, first, last): # あるpivotをもとに、そこから左だけはpivot以下の値だけに、右はpivot以上の値だけにする # 左と右の配列に対してq</description>
-    </item>
     
     <item>
       <title>バブルソートの実装</title>
@@ -27,15 +18,6 @@
       
       <guid>https://chaingng.github.io/post/bubble_sort_code/</guid>
       <description># https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88 # 交換を最大 n-1 , n-2, ... 1回 = n(n-1)/2 回 -&amp;gt; O(n^2) def bubble_sort(array): # 最初は0からn-1まで探索し一番大きい要素をn-1に # 次は0からn-2まで一番大きい要素をn-2</description>
-    </item>
-    
-    <item>
-      <title>マージソートの実装</title>
-      <link>https://chaingng.github.io/post/merge_sort_code/</link>
-      <pubDate>Fri, 09 Feb 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/merge_sort_code/</guid>
-      <description># https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%BC%E3%83%88 # http://www.ics.kagoshima-u.ac.jp/~fuchida/edu/algorithm/sort-algorithm/merge-sort.html def merge_sort(array): # 配列の長さが１ならソート不要なので返す if len(array) &amp;lt;= 1: return array # それより長いなら半分に分割してそれぞれにマージソートを適用する mid = len(array) // 2 left</description>
     </item>
     
     <item>
