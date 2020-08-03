@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>Python dot-envの使い方</title>
+      <link>https://chaingng.github.io/post/python_dotenv/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_dotenv/</guid>
+      <description>python-dotenvを使うことで、.envファイルを使って環境変数を扱うことができる。 これだけの手順でよい。 python-dotenv</description>
+    </item>
+    
+    <item>
       <title>python string文字列の使い方</title>
       <link>https://chaingng.github.io/post/python_string/</link>
       <pubDate>Sun, 30 Apr 2017 10:00:00 +0900</pubDate>

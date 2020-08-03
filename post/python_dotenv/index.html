@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>バブルソートの実装</title>
+<title>Python dot-envの使い方</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="バブルソートの実装" />
-<meta property="og:description" content="# https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88 # 交換を最大 n-1 , n-2, ... 1回 = n(n-1)/2 回 -&gt; O(n^2) def bubble_sort(array): # 最初は0からn-1まで探索し一番大きい要素をn-1に # 次は0からn-2まで一番大きい要素をn-2" />
+<meta property="og:title" content="Python dot-envの使い方" />
+<meta property="og:description" content="python-dotenvを使うことで、.envファイルを使って環境変数を扱うことができる。 これだけの手順でよい。 python-dotenv" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/bubble_sort_code/" /><meta property="article:published_time" content="2018-02-12T10:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2018-02-12T10:00:00&#43;09:00"/>
+<meta property="og:url" content="https://chaingng.github.io/post/python_dotenv/" /><meta property="article:published_time" content="2017-08-01T00:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-08-01T00:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -66,37 +66,64 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">バブルソートの実装</h1>
+			<h1 class="post__title">Python dot-envの使い方</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-02-12T10:00:00">February 12, 2018</time>
+				<time class="post__meta-date" datetime="2017-08-01T00:00:00">August 01, 2017</time>
 			</p>
 		</header>
 		
 		
 		<div class="post__content clearfix">
-			<pre><code># https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88
-# 交換を最大 n-1 , n-2, ... 1回 = n(n-1)/2 回 -&gt;  O(n^2)
+			
 
-def bubble_sort(array):
-    # 最初は0からn-1まで探索し一番大きい要素をn-1に
-    # 次は0からn-2まで一番大きい要素をn-2に
-    # 交換が発生しなければ終了
-    # 0から0になれば終了
-    for i in reversed(range(0, len(array))):
-        swapped = False
-        for j in range(0, i):
-            if array[j] &gt; array[j+1]:
-                array[j], array[j+1] = array[j+1], array[j]
-                swapped = True
-        if not swapped:
-            break
+<p>python-dotenvを使うことで、<code>.env</code>ファイルを使って環境変数を扱うことができる。</p>
 
-array = [1, 5, 65, 23, 57, 1232, -1, -5, -2, 242, 100,
-         4, 423, 2, 564, 9, 0, 10, 43, 64, 32, 1, 999]
-print(array)
-bubble_sort(array)
-print(array)
+<p>これだけの手順でよい。</p>
+
+<ol>
+<li><code>python-dotenv</code>をインストール</li>
+<li><code>.env</code>ファイルを作成</li>
+<li><code>settings.py</code>を作成</li>
+<li><code>settings</code>をインポートして実行</li>
+</ol>
+
+<p>最小限のコードは以下のとおり。</p>
+
+<h2 id="1-インストール">1) インストール</h2>
+
+<pre><code>pip install python-dotenv
+</code></pre>
+
+<h2 id="2-envファイルを作成">2) .envファイルを作成</h2>
+
+<p>.env</p>
+
+<pre><code>API_KEY=ITSMYAPIKEY
+</code></pre>
+
+<h2 id="3-settings-pyを作成">3) settings.pyを作成</h2>
+
+<p>settings.py</p>
+
+<pre><code>import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+AP= os.environ.get(&quot;API_KEY&quot;)
+</code></pre>
+
+<h2 id="4-settingsをインポートして実行">4) settingsをインポートして実行</h2>
+
+<p>sample.py</p>
+
+<pre><code>import settings
+
+API_KEY = settings.AP
+print(API_KEY)
 </code></pre>
 
 		</div>
@@ -107,7 +134,7 @@ print(array)
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
 	</ul>
 </div>
 
@@ -119,10 +146,10 @@ print(array)
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/merge_sort_code/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">マージソートの実装</p></a>
+		<a class="post-nav__link" href="/post/python_string/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">python string文字列の使い方</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/quick_sort_code/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">クイックソートの実装</p></a>
+		<a class="post-nav__link" href="/post/sftp_command/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">sftpコマンドまとめ</p></a>
 	</div>
 </nav>
 
