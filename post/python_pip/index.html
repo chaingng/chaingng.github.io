@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>貪欲法の基礎</title>
+<title>pipの使い方まとめ</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="貪欲法の基礎" />
-<meta property="og:description" content="overview 各ステップにおいて、局所的な最適な決定を繰り返すソリューション 必ずしも最適解を導くわけではない bootcamp 1,5,10,25,50,100セントを使" />
+<meta property="og:title" content="pipの使い方まとめ" />
+<meta property="og:description" content="目次 pipのインストール パッケージのインストール バージョンを指定してパッケージのインストール インストール済みのパッケージ一覧の確認 パッケージ" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/greedy/" /><meta property="article:published_time" content="2018-01-29T10:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2018-01-29T10:00:00&#43;09:00"/>
+<meta property="og:url" content="https://chaingng.github.io/post/python_pip/" /><meta property="article:published_time" content="2020-06-01T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2020-06-01T10:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -66,10 +66,10 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">貪欲法の基礎</h1>
+			<h1 class="post__title">pipの使い方まとめ</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-01-29T10:00:00">January 29, 2018</time>
+				<time class="post__meta-date" datetime="2020-06-01T10:00:00">June 01, 2020</time>
 			</p>
 		</header>
 		
@@ -77,51 +77,62 @@ if (!doNotTrack) {
 		<div class="post__content clearfix">
 			
 
-<h2 id="overview">overview</h2>
+<h2 id="目次">目次</h2>
 
 <ul>
-<li>各ステップにおいて、局所的な最適な決定を繰り返すソリューション</li>
-<li>必ずしも最適解を導くわけではない</li>
+<li><a href="#pipのインストール">pipのインストール</a></li>
+<li><a href="#パッケージのインストール">パッケージのインストール</a></li>
+<li><a href="#バージョンを指定してパッケージのインストール">バージョンを指定してパッケージのインストール</a></li>
+<li><a href="#インストール済みのパッケージ一覧の確認">インストール済みのパッケージ一覧の確認</a></li>
+<li><a href="#パッケージの検索">パッケージの検索</a></li>
+<li><a href="#パッケージのアンインストール">パッケージのアンインストール</a></li>
+<li><a href="#pipのバージョン確認">pipのバージョン確認</a></li>
+<li><a href="#pip自体のアップデート">pip自体のアップデート</a></li>
 </ul>
 
-<h2 id="bootcamp">bootcamp</h2>
+<h2 id="pipのインストール">pipのインストール</h2>
 
-<ul>
-<li>1,5,10,25,50,100セントを使って、ある金額をできるだけ少ない硬貨で払う</li>
-</ul>
+<p>Python3.4以上はデフォルトでインストールされているので不要。</p>
 
-<pre><code>def change_making(cents):
-  COINS = [100, 50, 25, 10, 5, 1]
-  num_coins = 0
-  for coin in COINS:
-    num_coins += cents // coin
-    cents %= coin
-  return num_coins
+<p>それ未満のバージョンの場合は、以下のコマンドでインストールする。</p>
+
+<pre><code>curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
 </code></pre>
 
-<h2 id="17-1-compute-an-optimum-assignment-of-tasks">17.1 Compute an Optimum Assignment of Tasks</h2>
+<h2 id="パッケージのインストール">パッケージのインストール</h2>
 
-<ul>
-<li>タスクが複数あり、完了までにかかる時間がわかっている。</li>
-<li>１人に対し２つのタスクを割り当てる。１つのタスクが終了したら、次のタスクを実行する</li>
-<li>このとき、すべてのタスクを終了させるのにかかる最短時間を求める</li>
-</ul>
+<pre><code>pip install numpy
+</code></pre>
 
-<h3 id="solution">solution</h3>
+<h2 id="バージョンを指定してパッケージのインストール">バージョンを指定してパッケージのインストール</h2>
 
-<ul>
-<li>sortし、最小と最大の時間がかかるタスクをペアにしていく</li>
-<li>O(nlogn)</li>
-</ul>
+<pre><code>pip install numpy==1.14.2
+</code></pre>
 
-<pre><code>PairedTasks = collections.namedtuple('PairedTasks', ('task_1', 'task_2'))
+<h2 id="インストール済みのパッケージ一覧の確認">インストール済みのパッケージ一覧の確認</h2>
 
-def optimum_task_assignment(task_durations):
-  task_durations.sort()
-  return [
-    PairedTasks(task_durations[i], task_durations[~i])
-    for i in range(len(task_durations) // 2)
-  ]
+<pre><code>pip list
+</code></pre>
+
+<h2 id="パッケージの検索">パッケージの検索</h2>
+
+<pre><code>pip search [search word]
+</code></pre>
+
+<h2 id="パッケージのアンインストール">パッケージのアンインストール</h2>
+
+<pre><code>pip uninstall numpy
+</code></pre>
+
+<h2 id="pipのバージョン確認">pipのバージョン確認</h2>
+
+<pre><code>pip -V
+</code></pre>
+
+<h2 id="pip自体のアップデート">pip自体のアップデート</h2>
+
+<pre><code>pip install -U pip
 </code></pre>
 
 		</div>
@@ -132,7 +143,7 @@ def optimum_task_assignment(task_durations):
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
 	</ul>
 </div>
 
@@ -144,10 +155,10 @@ def optimum_task_assignment(task_durations):
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/local_smartphone/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">android/iphoneでローカルサーバに接続する</p></a>
+		<a class="post-nav__link" href="/post/sftp_chroot/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">sftpでユーザがアクセスできるディレクトリを制限する</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/wait_dom_load/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">assetsの読み込み前にDOMの制御をしたい場合はDOMContentLoadedを使う</p></a>
+		<a class="post-nav__link" href="/post/python-class/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">Python classの使い方</p></a>
 	</div>
 </nav>
 

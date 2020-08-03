@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>pipの使い方まとめ</title>
+      <link>https://chaingng.github.io/post/python_pip/</link>
+      <pubDate>Mon, 01 Jun 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_pip/</guid>
+      <description>目次 pipのインストール パッケージのインストール バージョンを指定してパッケージのインストール インストール済みのパッケージ一覧の確認 パッケージ</description>
+    </item>
+    
+    <item>
       <title>Pythonでのトライ木の実装</title>
       <link>https://chaingng.github.io/post/tri_code/</link>
       <pubDate>Fri, 23 Mar 2018 10:00:00 +0900</pubDate>

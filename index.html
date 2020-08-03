@@ -114,6 +114,29 @@ if (!doNotTrack) {
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/post/python_pip/" rel="bookmark">pipの使い方まとめ</a>
+				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_pip/">
+					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_pip/" alt="はてなブックマーク - pipの使い方まとめ" title="はてなブックマーク - pipの使い方まとめ">
+				</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2020-06-01T10:00:00">June 01, 2020</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			目次 pipのインストール パッケージのインストール バージョンを指定してパッケージのインストール インストール済みのパッケージ一覧の確認 パッケージ
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/python_pip/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+				<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/post/sftp_chroot/" rel="bookmark">sftpでユーザがアクセスできるディレクトリを制限する</a>
 				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/sftp_chroot/">
 					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/sftp_chroot/" alt="はてなブックマーク - sftpでユーザがアクセスできるディレクトリを制限する" title="はてなブックマーク - sftpでユーザがアクセスできるディレクトリを制限する">
@@ -267,29 +290,6 @@ if (!doNotTrack) {
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/python_hash_code/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/heap_code/" rel="bookmark">Pythonでのヒープの実装</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/heap_code/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/heap_code/" alt="はてなブックマーク - Pythonでのヒープの実装" title="はてなブックマーク - Pythonでのヒープの実装">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2018-03-02T10:00:00">March 02, 2018</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			class MinHeap(object): def __init__(self): self.array = [] def __len__(self): return len(self.array) def extract_min(self): if not self.array: return None if len(self.array) == 1: return self.array.pop(0) minimum = self.array[0] self.array[0] = self.array.pop(-1) self._bubble_down(index=0) return minimum def peek_min(self): return self.array[0] if self.array else None def insert(self, key): if key is None: raise TypeError('key cannot be none') self.array.append(key) self._bubble_up(index=len(self.array) - 1) def _bubble_down(self, index): min_child_index = self._find_smaller_child(index) if min_child_index == -1: return if self.array[index]
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/heap_code/">Read more…</a>
 		</div>
 	</div>
 </article>
@@ -492,10 +492,11 @@ if (!doNotTrack) {
 			<ul class="widget__list">
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/nodejs_forever/">foreverでnode.jsアプリケーションをデーモン化</a></li>
 			</ul>
-		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python (19)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python (20)</a>
 			<ul class="widget__list">
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_dotenv/">Python dot-envの使い方</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python-class/">Python classの使い方</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_pip/">pipの使い方まとめ</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/tri_code/">Pythonでのトライ木の実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/priority_queue/">Pythonでの優先度付きキューの実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_hash_code/">Pythonでのハッシュテーブルの実装</a></li>
