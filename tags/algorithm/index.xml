@@ -6,19 +6,10 @@
     <description>Recent content in Algorithm on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 12 Feb 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2018 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>バブルソートの実装</title>
-      <link>https://chaingng.github.io/post/bubble_sort_code/</link>
-      <pubDate>Mon, 12 Feb 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/bubble_sort_code/</guid>
-      <description># https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88 # 交換を最大 n-1 , n-2, ... 1回 = n(n-1)/2 回 -&amp;gt; O(n^2) def bubble_sort(array): # 最初は0からn-1まで探索し一番大きい要素をn-1に # 次は0からn-2まで一番大きい要素をn-2</description>
-    </item>
     
     <item>
       <title>ビット操作の基礎</title>
