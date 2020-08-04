@@ -90,12 +90,12 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#まとめ">まとめ</a></li>
 <li><a href="#基本的な使い方">基本的な使い方</a></li>
-<li><a href="#オプション">オプション</a>
+<li><a href="#追加の設定">追加の設定</a>
 
 <ul>
-<li><a href="#url_prefixを追加">url_prefixを追加</a></li>
-<li><a href="#サブドメインを追加">サブドメインを追加</a></li>
-<li><a href="#viewに渡す前の前処理を追加">viewに渡す前の前処理を追加</a></li>
+<li><a href="#url_prefixを追加する">url_prefixを追加する</a></li>
+<li><a href="#サブドメインを追加する">サブドメインを追加する</a></li>
+<li><a href="#viewに渡す前の前処理を追加する">viewに渡す前の前処理を追加する</a></li>
 </ul></li>
 <li><a href="#Blueprintにおける２つのベストプラクティス">Blueprintにおける２つのベストプラクティス</a></li>
 </ul>
@@ -155,9 +155,9 @@ app = Flask(__name__)
 app.register_blueprint(profile)
 </code></pre>
 
-<h2 id="オプション">オプション</h2>
+<h2 id="追加の設定">追加の設定</h2>
 
-<h3 id="url-prefixを追加">url_prefixを追加</h3>
+<h3 id="url-prefixを追加する">url_prefixを追加する</h3>
 
 <p>ビュー側、もしくはアプリケーション側のいずれかでurl_prefixを定義することでルーティングにURL Prefixを追加できる。</p>
 
@@ -183,7 +183,7 @@ app = Flask(__name__)
 app.register_blueprint(profile, url_prefix='/&lt;user_url_slug&gt;')
 </code></pre>
 
-<h3 id="サブドメインを追加">サブドメインを追加</h3>
+<h3 id="サブドメインを追加する">サブドメインを追加する</h3>
 
 <p>ルーティングにサブドメインを追加することもできる。</p>
 
@@ -211,7 +211,7 @@ app = Flask(__name__)
 app.register_blueprint(profile, url_prefix='/&lt;user_url_slug&gt;')
 </code></pre>
 
-<h3 id="viewに渡す前の前処理を追加">viewに渡す前の前処理を追加</h3>
+<h3 id="viewに渡す前の前処理を追加する">viewに渡す前の前処理を追加する</h3>
 
 <p>url_value_preprocessor()を使うことで、viewに渡す前の前処理を記述することができる</p>
 
