@@ -103,24 +103,28 @@ if (!doNotTrack) {
 <h2 id="まとめ">まとめ</h2>
 
 <ul>
-<li>ブループリントはアプリケーションを構造化するのに役に立つ</li>
-<li>ブループリントを使うと、ビュー、テンプレート、staticfilesをまとめてアプリケーションに適用できる</li>
+<li>ブループリントによってアプリケーションの構造化が可能</li>
+<li>ブループリントを使うと、ビュー・テンプレート・staticfileを１つにまとめ、アプリケーションに適用することが可能</li>
 <li>ベストプラクティスとして、divisionalな構造化またはfunctionalな構造化がある
 
 <ul>
 <li>divisionalな構造では、各ブループリントはビュー、テンプレート、staticfileをまとめてアプリケーションの１つのセクションにする</li>
 <li>functionalな構造では、各ブループリントは単なるビューの集まりにする。テンプレートとstaticfileは共通のままにしておく</li>
 </ul></li>
+<li>追加の設定
+
+<ul>
 <li>url_value_preprocessor()を使うことで、viewに渡す前の前処理を追加できる</li>
-<li>url prefixを適用できる</li>
-<li>サブドメインを適用できる</li>
+<li>url prefixを適用することができる</li>
+<li>サブドメインを適用することができる</li>
+</ul></li>
 </ul>
 
 <h2 id="基本的な使い方">基本的な使い方</h2>
 
 <p>Blueprintに追加したいビューにて、Blueprintを作成する。</p>
 
-<p>ここでは、profileという名前でBlueprintを作成する</p>
+<p>ここでは、<code>profile</code>という名前でBlueprintを作成</p>
 
 <pre><code># facebook/views/profile.py
 
@@ -144,7 +148,7 @@ def about(user_url_slug):
     return render_template('profile/about.html')
 </code></pre>
 
-<p>flaskアプリケション側で、profileという名前で定義したBlueprintを登録する。</p>
+<p>flaskアプリケーション側で<code>profile</code>という名前でBlueprintに登録</p>
 
 <pre><code># facebook/__init__.py
 
@@ -159,7 +163,7 @@ app.register_blueprint(profile)
 
 <h3 id="url-prefixを追加する">url_prefixを追加する</h3>
 
-<p>ビュー側、もしくはアプリケーション側のいずれかでurl_prefixを定義することでルーティングにURL Prefixを追加できる。</p>
+<p>url_prefixを定義することでルーティングにURL Prefixを追加できる。</p>
 
 <h4 id="ビュー側で定義する場合">ビュー側で定義する場合</h4>
 
@@ -168,8 +172,6 @@ app.register_blueprint(profile)
 from flask import Blueprint, render_template
 
 profile = Blueprint('profile', __name__, url_prefix='/&lt;user_url_slug&gt;')
-
-# [...]
 </code></pre>
 
 <h4 id="アプリケーション側で定義する場合">アプリケーション側で定義する場合</h4>
@@ -185,9 +187,7 @@ app.register_blueprint(profile, url_prefix='/&lt;user_url_slug&gt;')
 
 <h3 id="サブドメインを追加する">サブドメインを追加する</h3>
 
-<p>ルーティングにサブドメインを追加することもできる。</p>
-
-<p>ビュー側、もしくはアプリケーション側で定義する。</p>
+<p>ルーティングにサブドメインを追加することも可能。</p>
 
 <h4 id="ビュー側で追加する場合">ビュー側で追加する場合</h4>
 
@@ -213,7 +213,9 @@ app.register_blueprint(profile, url_prefix='/&lt;user_url_slug&gt;')
 
 <h3 id="viewに渡す前の前処理を追加する">viewに渡す前の前処理を追加する</h3>
 
-<p>url_value_preprocessor()を使うことで、viewに渡す前の前処理を記述することができる</p>
+<p><code>url_value_preprocessor()</code>を使うことで、viewに渡す前の前処理を追加することが可能。</p>
+
+<p><code>g</code>はJinja2のコンテキスト。これに渡すとビューで参照できる。</p>
 
 <pre><code># facebook/views/profile.py
 
@@ -242,19 +244,18 @@ def about():
     return render_template('profile/about.html')
 </code></pre>
 
-<p>gはJinja2のコンテキスト。これに渡すとビューで参照できる</p>
-
 <h2 id="blueprintにおける２つのベストプラクティス">Blueprintにおける２つのベストプラクティス</h2>
 
 <p>blueprintを使ったアプリケーションの構造化にはプラクティスとして２つの観点がある。</p>
 
-<p>アプリケーションの特性に合わせて、いずれかを参考にするとよい。</p>
+<p>アプリケーションの特性に合わせて、いずれかを選択するとよい。</p>
 
 <h3 id="divisionalな構造化">divisionalな構造化</h3>
 
-<p>ビュー、テンプレート、staticfileをまとめてアプリケーションの１つのセクションにする方法。</p>
-
-<p>テンプレートやstaticfileを共有しておらず、blueprintにまとめたい部分の独立性が高い場合はこちらの方法をとる。</p>
+<ul>
+<li>ビュー、テンプレート、staticfileをまとめてアプリケーションの１つのセクションにする方法。</li>
+<li>テンプレートやstaticfileを共有しておらず、blueprintにまとめたい部分の独立性が高い場合はこちらの方法をとる。</li>
+</ul>
 
 <p>divisionalな構造にする場合は、以下のような構成になる。</p>
 
@@ -280,9 +281,10 @@ def about():
 
 <h3 id="functionalな構造化">functionalな構造化</h3>
 
-<p>ビューのみをblueprintに登録する方法。</p>
-
-<p>テンプレートに共通のレイアウトファイルがあったりstaticfileに共有するものが多い場合は、テンプレートとstaticfileは変わらず共通のままにして、ビューファイルのみblueprintに登録する。</p>
+<ul>
+<li>ビューのみをblueprintに登録する方法。</li>
+<li>テンプレートに共通のレイアウトファイルがあったりstaticfileに共有するものが多い場合は、テンプレートとstaticfileは変わらず共通のままにして、ビューファイルのみblueprintに登録する。</li>
+</ul>
 
 <p>functionalな構造にする場合は、以下のような構成になる。</p>
 
