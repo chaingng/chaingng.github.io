@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[flask]Blueprintでアプリケーションを分割する方法</title>
+<title>[flask]Blueprintでアプリケーションを分割する方法と２つのベストプラクティス</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="[flask]Blueprintでアプリケーションを分割する方法" />
+<meta property="og:title" content="[flask]Blueprintでアプリケーションを分割する方法と２つのベストプラクティス" />
 <meta property="og:description" content="Blueprintとは Blueprintとは、アプリケーションを分割するための機能です。 Blueprintを使うことで、関連するビューやコー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/flask_blueprint/" /><meta property="article:published_time" content="2018-01-08T10:00:00&#43;09:00"/>
@@ -66,7 +66,7 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">[flask]Blueprintでアプリケーションを分割する方法</h1>
+			<h1 class="post__title">[flask]Blueprintでアプリケーションを分割する方法と２つのベストプラクティス</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
 				<time class="post__meta-date" datetime="2018-01-08T10:00:00">January 08, 2018</time>
@@ -97,7 +97,7 @@ if (!doNotTrack) {
 <li><a href="#サブドメインを追加">サブドメインを追加</a></li>
 <li><a href="#viewに渡す前の前処理を追加">viewに渡す前の前処理を追加</a></li>
 </ul></li>
-<li><a href="#blueprintを使った構造化のtips">Blueprintの２種類のプラクティス</a></li>
+<li><a href="#Blueprintにおける２つのベストプラクティス">Blueprintにおける２つのベストプラクティス</a></li>
 </ul>
 
 <h2 id="まとめ">まとめ</h2>
@@ -105,9 +105,12 @@ if (!doNotTrack) {
 <ul>
 <li>ブループリントはアプリケーションを構造化するのに役に立つ</li>
 <li>ブループリントを使うと、ビュー、テンプレート、staticfilesをまとめてアプリケーションに適用できる</li>
-<li>プラクティスとして、divisionalな構造化またはfunctionalな構造化がある</li>
+<li>ベストプラクティスとして、divisionalな構造化またはfunctionalな構造化がある
+
+<ul>
 <li>divisionalな構造では、各ブループリントはビュー、テンプレート、staticfileをまとめてアプリケーションの１つのセクションにする</li>
 <li>functionalな構造では、各ブループリントは単なるビューの集まりにする。テンプレートとstaticfileは共通のままにしておく</li>
+</ul></li>
 <li>url_value_preprocessor()を使うことで、viewに渡す前の前処理を追加できる</li>
 <li>url prefixを適用できる</li>
 <li>サブドメインを適用できる</li>
@@ -115,9 +118,9 @@ if (!doNotTrack) {
 
 <h2 id="基本的な使い方">基本的な使い方</h2>
 
-<p>blueprintに追加したいビューにて、blueprintを作成する。</p>
+<p>Blueprintに追加したいビューにて、Blueprintを作成する。</p>
 
-<p>ここでは、profileという名前でblueprintを作成する</p>
+<p>ここでは、profileという名前でBlueprintを作成する</p>
 
 <pre><code># facebook/views/profile.py
 
@@ -141,7 +144,7 @@ def about(user_url_slug):
     return render_template('profile/about.html')
 </code></pre>
 
-<p>flaskアプリケション側で、profileという名前で定義したblueprintを登録する。</p>
+<p>flaskアプリケション側で、profileという名前で定義したBlueprintを登録する。</p>
 
 <pre><code># facebook/__init__.py
 
@@ -241,7 +244,7 @@ def about():
 
 <p>gはJinja2のコンテキスト。これに渡すとビューで参照できる</p>
 
-<h2 id="blueprintを使った構造化のtips">blueprintを使った構造化のtips</h2>
+<h2 id="blueprintにおける２つのベストプラクティス">Blueprintにおける２つのベストプラクティス</h2>
 
 <p>blueprintを使ったアプリケーションの構造化にはプラクティスとして２つの観点がある。</p>
 
@@ -469,7 +472,7 @@ def about():
 			</ul>
 		<a class="widget__link widget__link--taglist" href="/tags/flask" title="flask">flask (1)</a>
 			<ul class="widget__list">
-				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/flask_blueprint/">[flask]Blueprintでアプリケーションを分割する方法</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/flask_blueprint/">[flask]Blueprintでアプリケーションを分割する方法と２つのベストプラクティス</a></li>
 			</ul>
 		<a class="widget__link widget__link--taglist" href="/tags/git" title="git">git (3)</a>
 			<ul class="widget__list">
@@ -534,7 +537,7 @@ def about():
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_is/">pythonの比較におけるisと==の違い</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_repr/">[python]__repr__と__str__の違い</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_type_bits/">pythonデータ型ごとのメモリサイズ</a></li>
-				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/flask_blueprint/">[flask]Blueprintでアプリケーションを分割する方法</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/flask_blueprint/">[flask]Blueprintでアプリケーションを分割する方法と２つのベストプラクティス</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_timestamp/">python2ではtimestamp()が使えないのでdatetimeに変換して日付を比較する</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_random_user_password/">pythonでユーザ用にランダムな英数字パスワードを生成する</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_string/">python string文字列の使い方</a></li>
