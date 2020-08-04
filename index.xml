@@ -332,12 +332,12 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>Blueprintでflaskアプリケーションをわかりやすく構造化</title>
+      <title>[flask]Blueprintでアプリケーションを分割する方法</title>
       <link>https://chaingng.github.io/post/flask_blueprint/</link>
       <pubDate>Mon, 08 Jan 2018 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/flask_blueprint/</guid>
-      <description>blueprintを使うことで、flaskアプリケーションをわかりやすく構造化することができる。 まとめ ブループリントはアプリケーションを構造</description>
+      <description>Blueprintとは Blueprintとは、アプリケーションを分割するための機能です。 Blueprintを使うことで、関連するビューやコー</description>
     </item>
     
     <item>
