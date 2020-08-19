@@ -785,6 +785,7 @@ img {
 	width: auto\9; /* ie8 */
 	height: auto;
 	vertical-align: bottom;
+	margin: 5pt;
 }
 
 iframe, embed, object, video {
