@@ -6,10 +6,19 @@
     <description>Recent content in Python on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2020 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[python] 現在時刻を扱う</title>
+      <link>https://chaingng.github.io/post/python_datetime/</link>
+      <pubDate>Wed, 05 Aug 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_datetime/</guid>
+      <description>Pythonの標準モジュールdatetimeを使うと、日付や時間を操作できるようになる。 現在の時刻を取得 &amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; datetime.now() datetime.datetime(2020, 8, 25, 14, 4, 6, 131518) 文字列を</description>
+    </item>
     
     <item>
       <title>Python dot-envの使い方</title>

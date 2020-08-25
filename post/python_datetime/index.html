@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pythonでのキューの実装</title>
+<title>[python] 現在時刻を扱う</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="Pythonでのキューの実装" />
-<meta property="og:description" content="scratch # queueのベースクラスを作成 # isEmpty, lenメソッド, 全nodeの一覧を持つ class AbstractQueue: def __init__(self): self.top = 0 def isEmpty(self): return self.top == 0 def __len__(self): return self.top def __str__(self): result = &#39;------\n&#39; for element in self: result &#43;= str(element) &#43; &#39;\n&#39; return" />
+<meta property="og:title" content="[python] 現在時刻を扱う" />
+<meta property="og:description" content="Pythonの標準モジュールdatetimeを使うと、日付や時間を操作できるようになる。 現在の時刻を取得 &gt;&gt;&gt; from datetime import datetime &gt;&gt;&gt; datetime.now() datetime.datetime(2020, 8, 25, 14, 4, 6, 131518) 文字列を" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/queue_code/" /><meta property="article:published_time" content="2018-02-23T10:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2018-02-23T10:00:00&#43;09:00"/>
+<meta property="og:url" content="https://chaingng.github.io/post/python_datetime/" /><meta property="article:published_time" content="2020-08-05T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2020-08-05T10:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">Pythonでのキューの実装</h1>
+			<h1 class="post__title">[python] 現在時刻を扱う</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-02-23T10:00:00">February 23, 2018</time>
+				<time class="post__meta-date" datetime="2020-08-05T10:00:00">August 05, 2020</time>
 			</p>
 		</header>
 		
@@ -69,100 +69,45 @@ if (!doNotTrack) {
 		<div class="post__content clearfix">
 			
 
-<h2 id="scratch">scratch</h2>
+<p>Pythonの標準モジュール<code>datetime</code>を使うと、日付や時間を操作できるようになる。　</p>
 
-<pre><code># queueのベースクラスを作成 
-# isEmpty, lenメソッド, 全nodeの一覧を持つ
-class AbstractQueue:
-    def __init__(self):
-        self.top = 0
+<h2 id="現在の時刻を取得">現在の時刻を取得</h2>
 
-    def isEmpty(self):
-        return self.top == 0
-
-    def __len__(self):
-        return self.top
-
-    def __str__(self):
-        result = '------\n'
-        for element in self:
-            result += str(element) + '\n'
-        return result[:-1] + '\n------' 
-
-# nodeクラスを作成　
-# 値：value, nextを持つ
-class QueueNode(object):
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-
-# queueクラスを実装
-# 値：front, rearをもつ
-# メソッド：enqueue, dequeue, isEmptyを持つ
-# iter可能
-class LinkedListQueue(AbstractQueue):
-    def __init__(self):
-        AbstractQueue.__init__(self)
-        self.front = None
-        self.rear = None
-
-    # enqueue
-    # rearに値を追加する
-    def enqueue(self, value):
-        node = QueueNode(value)
-        if not self.front:
-            self.front = node
-            self.rear = node
-        else:
-            self.rear.next = node
-            self.rear = node
-        self.top += 1
-
-    # dequeue
-    # frontの値を削除する
-    def dequeue(self):
-        if self.isEmpty():
-            raise IndexError('queue is empty')
-        value = self.front.value
-        if self.front is self.rear:
-            self.front = None
-            self.rear = None
-        else:
-            self.front = self.front.next
-        self.top -= 1
-        return value
-
-    # __iter__を実装
-    def __iter__(self):
-        probe = self.front
-        while True:
-            if probe is None:
-                raise StopIteration
-            yield probe.value
-            probe = probe.next
-
-
-q = LinkedListQueue()
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-q.dequeue()
-print(str(q))
+<pre><code>&gt;&gt;&gt; from datetime import datetime
+&gt;&gt;&gt; datetime.now()
+datetime.datetime(2020, 8, 25, 14, 4, 6, 131518)
 
 </code></pre>
 
-<h2 id="pythonic">pythonic</h2>
+<h2 id="文字列を時刻に変換">文字列を時刻に変換</h2>
 
-<pre><code>&gt;&gt;&gt; from collections import deque
-&gt;&gt;&gt; queue = deque([&quot;Eric&quot;, &quot;John&quot;, &quot;Michael&quot;])
-&gt;&gt;&gt; queue.append(&quot;Terry&quot;)           # Terry arrives
-&gt;&gt;&gt; queue.append(&quot;Graham&quot;)          # Graham arrives
-&gt;&gt;&gt; queue.popleft()                 # The first to arrive now leaves
-'Eric'
-&gt;&gt;&gt; queue.popleft()                 # The second to arrive now leaves
-'John'
-&gt;&gt;&gt; queue                           # Remaining queue in order of arrival
-deque(['Michael', 'Terry', 'Graham'])
+<pre><code>&gt;&gt;&gt; prev_time = '2020.08.01 14:02:10'
+&gt;&gt;&gt; datetime.strptime(prev_time, '%Y.%m.%d %H:%M:%S')
+datetime.datetime(2020, 8, 1, 14, 2, 10)
+</code></pre>
+
+<h2 id="現在の時刻との差を計算">現在の時刻との差を計算</h2>
+
+<p>「<code>-</code>」 をすることで差を計算することができる</p>
+
+<pre><code>&gt;&gt;&gt; current_datetime = datetime.now()
+&gt;&gt;&gt; prev_datetime = datetime.strptime(prev_time, '%Y.%m.%d %H:%M:%S')
+&gt;&gt;&gt; current_datetime - prev_datetime
+datetime.timedelta(days=24, seconds=301, microseconds=671860)
+</code></pre>
+
+<p>差は、「日数(days) + 秒数(seconds) + マイクロ秒数(microseconds)の和」で表される</p>
+
+<h3 id="日数単位で差を取得したい時">日数単位で差を取得したい時</h3>
+
+<pre><code>&gt;&gt;&gt; (current_datetime - prev_datetime).days
+24
+</code></pre>
+
+<h3 id="秒数単位で差を取得したいとき">秒数単位で差を取得したいとき</h3>
+
+<pre><code>&gt;&gt;&gt; (current_datetime - prev_datetime).seconds +  (current_datetime - prev_datetime).days * 3600*24
+2073901
 </code></pre>
 
 		</div>
@@ -185,10 +130,7 @@ deque(['Michael', 'Terry', 'Graham'])
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/stack_code/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Pythonでのスタックの実装</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/heap_code/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">Pythonでのヒープの実装</p></a>
+		<a class="post-nav__link" href="/post/python_dotenv/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Python dot-envの使い方</p></a>
 	</div>
 </nav>
 
