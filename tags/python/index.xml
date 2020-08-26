@@ -6,10 +6,19 @@
     <description>Recent content in Python on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 05 Aug 2020 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2020 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[python] listをタブ区切り/スペース区切りで表示させる</title>
+      <link>https://chaingng.github.io/post/python_list_tab/</link>
+      <pubDate>Tue, 25 Aug 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_list_tab/</guid>
+      <description>タブ区切りで表示 &amp;gt;&amp;gt;&amp;gt; l = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;] &amp;gt;&amp;gt;&amp;gt; print(&#39;\t&#39;.join([str(i) for i in l])) a b c d e スペース区切りで表示 &amp;gt;&amp;gt;&amp;gt; l = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;] &amp;gt;&amp;gt;&amp;gt; print(&#39; &#39;.join([str(i) for i in l])) a b c d e コンマ区切りで表示 &amp;gt;&amp;gt;&amp;gt; l = [&#39;a&#39;,</description>
+    </item>
     
     <item>
       <title>[python] 現在時刻を扱う</title>
