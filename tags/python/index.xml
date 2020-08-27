@@ -57,7 +57,7 @@
     </item>
     
     <item>
-      <title>pipの使い方まとめ</title>
+      <title>[python] pipの使い方まとめ</title>
       <link>https://chaingng.github.io/post/python_pip/</link>
       <pubDate>Mon, 01 Jun 2020 10:00:00 +0900</pubDate>
       
@@ -165,7 +165,7 @@
     </item>
     
     <item>
-      <title>pythonデータ型ごとのメモリサイズ</title>
+      <title>[python] データ型ごとのメモリサイズ</title>
       <link>https://chaingng.github.io/post/python_type_bits/</link>
       <pubDate>Mon, 15 Jan 2018 10:00:00 +0900</pubDate>
       
