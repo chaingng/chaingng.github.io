@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>foreverでnode.jsアプリケーションをデーモン化</title>
+<title>[python] ファイルの読み書きまとめ</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="foreverでnode.jsアプリケーションをデーモン化" />
-<meta property="og:description" content="foreverを使うことで、nodeまたは任意のスクリプトをデーモン化することができる。 インストール npm install forever -g nodeスクリプトをデーモン起動" />
+<meta property="og:title" content="[python] ファイルの読み書きまとめ" />
+<meta property="og:description" content="目次 ファイルの書き込み ファイルの読み込み ファイルのデフォルト読み込み ファイルの追加書き込み ファイルの書き込み モードに&#39;w&#39;を指定する。 with open(&#39;sample.txt&#39;, &#39;w&#39;)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/nodejs_forever/" /><meta property="article:published_time" content="2017-04-16T10:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2017-04-16T10:00:00&#43;09:00"/>
+<meta property="og:url" content="https://chaingng.github.io/post/python_file/" /><meta property="article:published_time" content="2020-08-26T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2020-08-26T10:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">foreverでnode.jsアプリケーションをデーモン化</h1>
+			<h1 class="post__title">[python] ファイルの読み書きまとめ</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-04-16T10:00:00">April 16, 2017</time>
+				<time class="post__meta-date" datetime="2020-08-26T10:00:00">August 26, 2020</time>
 			</p>
 		</header>
 		
@@ -69,112 +69,62 @@ if (!doNotTrack) {
 		<div class="post__content clearfix">
 			
 
-<p><a href="https://github.com/foreverjs/forever">forever</a>を使うことで、nodeまたは任意のスクリプトをデーモン化することができる。</p>
+<h2 id="目次">目次</h2>
 
-<h3 id="インストール">インストール</h3>
+<ul>
+<li><a href="#ファイルの書き込み">ファイルの書き込み</a></li>
+<li><a href="#ファイルの読み込み">ファイルの読み込み</a></li>
+<li><a href="#ファイルのデフォルト読み込み">ファイルのデフォルト読み込み</a></li>
+<li><a href="#ファイルの追加書き込み">ファイルの追加書き込み</a></li>
+</ul>
 
-<pre><code>npm install forever -g
+<h2 id="ファイルの書き込み">ファイルの書き込み</h2>
+
+<p>モードに<code>'w'</code>を指定する。</p>
+
+<pre><code>with open('sample.txt', 'w') as f:
+    f.write('Hello, world!\n')
 </code></pre>
 
-<p><br></p>
+<h2 id="ファイルの読み込み">ファイルの読み込み</h2>
 
-<h3 id="nodeスクリプトをデーモン起動">nodeスクリプトをデーモン起動</h3>
+<p>モードに<code>'r'</code>を指定する。</p>
 
-<pre><code>$ forever start server.js
-warn:    --minUptime not set. Defaulting to: 1000ms
-warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
-info:    Forever processing file: server.js
+<pre><code>with open('sample.txt', 'r') as f:
+    data = f.read()
+
+print(data)
+# 'Hello, world!'
 </code></pre>
 
-<p><br></p>
+<h2 id="ファイルのデフォルト読み込み">ファイルのデフォルト読み込み</h2>
 
-<h3 id="環境変数を指定して起動">環境変数を指定して起動</h3>
+<p>モードは指定しなければ&rsquo;r&rsquo;となる。
+そのため、読み込み時はモードの指定は不要。</p>
 
-<p>foreverの先頭に環境変数を指定して起動する</p>
+<pre><code>with open('sample.txt') as f:
+    data = f.read()
 
-<pre><code>$ PROGRAM_PORT=8444 forever start server.js
-warn:    --minUptime not set. Defaulting to: 1000ms
-warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
-info:    Forever processing file: server.js
+print(data)
+# 'Hello, world!'
 </code></pre>
 
-<p><br></p>
+<h2 id="ファイルの追加書き込み">ファイルの追加書き込み</h2>
 
-<h3 id="foreverで起動しているプログラムの一覧を確認">foreverで起動しているプログラムの一覧を確認</h3>
+<p>モードに&rsquo;a&rsquo;を指定する。</p>
 
-<pre><code>$forever list
-info:    Forever processes running
-data:        uid  command                                              script    forever pid   id logfile                                uptime
-data:    [0] 2qrw /Users/hondatakatomo/.ndenv/versions/v6.9.1/bin/node server.js 30195   30203    /Users/hondatakatomo/.forever/2qrw.log 0:0:0:19.783
+<pre><code>with open('sample.txt', 'a') as f:
+    f.write('Hello, again!')
 </code></pre>
 
-<p><br></p>
+<p>追加書き込みがされていることが確認できる。</p>
 
-<h3 id="foreverで起動したプログラムの停止">foreverで起動したプログラムの停止</h3>
+<pre><code>with open('sample.txt') as f:
+    data = f.read()
 
-<p>forever stopで<code>[Id|Uid|Pid|Index|Script]</code>のいずれかを指定する</p>
-
-<pre><code>$ forever stop 30203
-info:    Forever stopped process:
-    uid  command                                              script    forever pid   id logfile                                uptime
-[0] 2qrw /Users/hondatakatomo/.ndenv/versions/v6.9.1/bin/node server.js 30195   30203    /Users/hondatakatomo/.forever/2qrw.log 0:0:1:57.597
-</code></pre>
-
-<p>きちんと停止しているのがわかる</p>
-
-<pre><code>$ forever list
-info:    No forever processes running
-</code></pre>
-
-<p><br></p>
-
-<h3 id="すべてのプログラムの停止">すべてのプログラムの停止</h3>
-
-<pre><code>$forever stopall
-</code></pre>
-
-<p><br></p>
-
-<h3 id="プログラムを再起動">プログラムを再起動</h3>
-
-<pre><code>$ forever restart server.js
-info:    Forever restarted process(es):
-data:        uid  command                                              script    forever pid  id logfile                                uptime
-data:    [0] lWr2 /Users/hondatakatomo/.ndenv/versions/v6.9.1/bin/node server.js 30517   9439    /Users/hondatakatomo/.forever/lWr2.log 0:0:0:16.294
-data:    [1] UIEE /Users/hondatakatomo/.ndenv/versions/v6.9.1/bin/node server.js 9401    9438    /Users/hondatakatomo/.forever/UIEE.log 0:0:0:16.361
-</code></pre>
-
-<p><br></p>
-
-<h3 id="logfileの設定を確認">logfileの設定を確認</h3>
-
-<pre><code>$ forever logs
-info:    Logs for running Forever processes
-data:        script    logfile
-data:    [0] server.js /Users/hondatakatomo/.forever/lWr2.log
-</code></pre>
-
-<pre><code>$ cat /Users/hondatakatomo/.forever/lWr2.log
-info    - EasyRTC: Starting EasyRTC Server (v1.1.0) on Node (v6.9.1)
-debug   - EasyRTC: Emitting event 'startup'
-debug   - EasyRTC: Running func 'onStartup'
-listening on https://localhost:8444
-</code></pre>
-
-<p><br></p>
-
-<h3 id="optionでログファイルの指定も可能">optionでログファイルの指定も可能</h3>
-
-<pre><code>    -l  LOGFILE      Logs the forever output to LOGFILE
-    -o  OUTFILE      Logs stdout from child script to OUTFILE
-    -e  ERRFILE      Logs stderr from child script to ERRFILE
-</code></pre>
-
-<p><br></p>
-
-<h3 id="おまけ-nodeプログラムだけでなく-シェルもデーモン化できる">(おまけ)Nodeプログラムだけでなく、シェルもデーモン化できる</h3>
-
-<pre><code>forever -c sh start my_daemon_script.sh
+print(data)
+# Hello, world!
+# Hello, again!
 </code></pre>
 
 		</div>
@@ -185,7 +135,7 @@ listening on https://localhost:8444
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/nodejs/" rel="tag">nodejs</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
 	</ul>
 </div>
 
@@ -197,10 +147,7 @@ listening on https://localhost:8444
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/nodejs_env/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">node.jsで環境変数を設定・取得</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/pipenv/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">pipenvの使い方</p></a>
+		<a class="post-nav__link" href="/post/python_list_tab/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">[python] listをタブ区切り/スペース区切りで表示させる</p></a>
 	</div>
 </nav>
 
