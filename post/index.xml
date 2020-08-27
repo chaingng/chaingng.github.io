@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>[python] 画像ファイルのダウンロード</title>
+      <link>https://chaingng.github.io/post/python_file_download/</link>
+      <pubDate>Mon, 10 Aug 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_file_download/</guid>
+      <description>この３行だけ。 from urllib import request url = &#39;https://blogimg.goo.ne.jp/user_image/5e/22/e09e5f4d4d96832d380c6d87b5ee8fc6.jpg&#39; request.urlretrieve(url, &amp;quot;sample.jpg&amp;quot;)</description>
+    </item>
+    
+    <item>
       <title>[python] 現在時刻を扱う</title>
       <link>https://chaingng.github.io/post/python_datetime/</link>
       <pubDate>Wed, 05 Aug 2020 10:00:00 +0900</pubDate>

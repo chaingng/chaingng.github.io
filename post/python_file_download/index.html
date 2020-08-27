@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Posts</title>
+<title>[python] 画像ファイルのダウンロード</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://chaingng.github.io/post/" />
-<meta property="og:updated_time" content="2020-08-27T10:00:00&#43;09:00"/>
+<meta property="og:title" content="[python] 画像ファイルのダウンロード" />
+<meta property="og:description" content="この３行だけ。 from urllib import request url = &#39;https://blogimg.goo.ne.jp/user_image/5e/22/e09e5f4d4d96832d380c6d87b5ee8fc6.jpg&#39; request.urlretrieve(url, &quot;sample.jpg&quot;)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chaingng.github.io/post/python_file_download/" /><meta property="article:published_time" content="2020-08-10T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2020-08-10T10:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-<link rel="alternate" type="application/rss+xml" title="Hack Engineering Feed" href="https://chaingng.github.io/post/index.xml">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="/js/scripts.js"></script>
@@ -55,245 +55,54 @@ if (!doNotTrack) {
 		<div class="wrapper clearfix">
 
 
-	<div class="main-content list content" role="main">
-		<header class="page-header">
-			<h1 class="page-header__title">Posts</h1>
-		</header>
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python_image/" rel="bookmark">[python] jpg画像をpng画像に変換</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_image/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_image/" alt="はてなブックマーク - [python] jpg画像をpng画像に変換" title="はてなブックマーク - [python] jpg画像をpng画像に変換">
-				</a>
-			</h3>
-			<div class="list__meta meta">
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">[python] 画像ファイルのダウンロード</h1>
+			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2020-08-27T10:00:00">August 27, 2020</time>
-			</div>
+				<time class="post__meta-date" datetime="2020-08-10T10:00:00">August 10, 2020</time>
+			</p>
 		</header>
-		<div class="list__excerpt">
-			pillowライブラリのインストール pillowはPythonにおける画像ライブラリ。 pillowライブラリを使用することで、様々な画像処理
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/python_image/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python_file/" rel="bookmark">[python] ファイルの読み書きまとめ</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_file/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_file/" alt="はてなブックマーク - [python] ファイルの読み書きまとめ" title="はてなブックマーク - [python] ファイルの読み書きまとめ">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2020-08-26T10:00:00">August 26, 2020</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			目次 ファイルの書き込み ファイルの読み込み ファイルのデフォルト読み込み ファイルの追加書き込み ファイルを１行ずつ読み込み ファイルをリストとして読
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/python_file/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python_list_tab/" rel="bookmark">[python] listをタブ区切り/スペース区切りで表示させる</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_list_tab/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_list_tab/" alt="はてなブックマーク - [python] listをタブ区切り/スペース区切りで表示させる" title="はてなブックマーク - [python] listをタブ区切り/スペース区切りで表示させる">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2020-08-25T10:00:00">August 25, 2020</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			タブ区切りで表示 &gt;&gt;&gt; l = ['a', 'b', 'c', 'd', 'e'] &gt;&gt;&gt; print('\t'.join([str(i) for i in l])) a b c d e スペース区切りで表示 &gt;&gt;&gt; l = ['a', 'b', 'c', 'd', 'e'] &gt;&gt;&gt; print(' '.join([str(i) for i in l])) a b c d e コンマ区切りで表示 &gt;&gt;&gt; l = ['a',
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/python_list_tab/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python_file_download/" rel="bookmark">[python] 画像ファイルのダウンロード</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_file_download/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_file_download/" alt="はてなブックマーク - [python] 画像ファイルのダウンロード" title="はてなブックマーク - [python] 画像ファイルのダウンロード">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2020-08-10T10:00:00">August 10, 2020</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			この３行だけ。 from urllib import request url = 'https://blogimg.goo.ne.jp/user_image/5e/22/e09e5f4d4d96832d380c6d87b5ee8fc6.jpg' request.urlretrieve(url, &quot;sample.jpg&quot;)
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python_datetime/" rel="bookmark">[python] 現在時刻を扱う</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_datetime/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_datetime/" alt="はてなブックマーク - [python] 現在時刻を扱う" title="はてなブックマーク - [python] 現在時刻を扱う">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2020-08-05T10:00:00">August 05, 2020</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Pythonの標準モジュールdatetimeを使うと、日付や時間を操作できるようになる。 現在の時刻を取得 &gt;&gt;&gt; from datetime import datetime &gt;&gt;&gt; datetime.now() datetime.datetime(2020, 8, 25, 14, 4, 6, 131518) 文字列を
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/python_datetime/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python_dotenv/" rel="bookmark">[python] dot-envの使い方</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_dotenv/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_dotenv/" alt="はてなブックマーク - [python] dot-envの使い方" title="はてなブックマーク - [python] dot-envの使い方">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2020-08-01T00:00:00">August 01, 2020</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			python-dotenvを使うことで、.envファイルを使って環境変数を扱うことができる。 これだけの手順でよい。 python-dotenv
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/python_dotenv/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python-class/" rel="bookmark">[python] classの使い方</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python-class/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python-class/" alt="はてなブックマーク - [python] classの使い方" title="はてなブックマーク - [python] classの使い方">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2020-07-01T00:00:00">July 01, 2020</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			classについて、たくさんあるが最小限の使い方についてメモ。 使い方 __init__でインスタンス作成時のオペレーションを定義する インスタン
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/python-class/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/python_pip/" rel="bookmark">[python] pipの使い方まとめ</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/python_pip/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/python_pip/" alt="はてなブックマーク - [python] pipの使い方まとめ" title="はてなブックマーク - [python] pipの使い方まとめ">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2020-06-01T10:00:00">June 01, 2020</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			目次 pipのインストール パッケージのインストール バージョンを指定してパッケージのインストール インストール済みのパッケージ一覧の確認 パッケージ
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/python_pip/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/sftp_chroot/" rel="bookmark">sftpでユーザがアクセスできるディレクトリを制限する</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/sftp_chroot/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/sftp_chroot/" alt="はてなブックマーク - sftpでユーザがアクセスできるディレクトリを制限する" title="はてなブックマーク - sftpでユーザがアクセスできるディレクトリを制限する">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2018-04-26T10:00:00">April 26, 2018</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			sftpでユーザがアクセスできるディレクトリを制限するには、chroot設定を行う。 同時にsftpのみ許可し、sshアクセスできないようにも
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/sftp_chroot/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-				<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/spacemacs_clipboard/" rel="bookmark">spacemacsでクリップボード共有を行う</a>
-				<a href="http://b.hatena.ne.jp/entry/https://chaingng.github.io/post/spacemacs_clipboard/">
-					<img src="http://b.hatena.ne.jp/entry/image/https://chaingng.github.io/post/spacemacs_clipboard/" alt="はてなブックマーク - spacemacsでクリップボード共有を行う" title="はてなブックマーク - spacemacsでクリップボード共有を行う">
-				</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2018-04-09T10:00:00">April 09, 2018</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			spacemacsでコピーしたデータは、デフォルトの設定だとspacemacs外ではペーストできない。 コピーしたデータをクリップボードにも共
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/spacemacs_clipboard/">Read more…</a>
-		</div>
-	</div>
-</article>
-
-
 		
-<div class="pagination clearfix">
-	<span class="pagination__item pagination__item--current">1/8</span>
-	<a class="pagination__item pagination__item--next" href="/post/page/2/">»</a>
+		
+		<div class="post__content clearfix">
+			<p>この３行だけ。</p>
+
+<pre><code>from urllib import request
+url = 'https://blogimg.goo.ne.jp/user_image/5e/22/e09e5f4d4d96832d380c6d87b5ee8fc6.jpg'
+request.urlretrieve(url, &quot;sample.jpg&quot;)
+</code></pre>
+
+		</div>
+					
+		
+		
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
+	</ul>
 </div>
 
+	</article>
+
+<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-normal" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+	
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/post/python_datetime/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">[python] 現在時刻を扱う</p></a>
 	</div>
+	<div class="post-nav__item post-nav__item--next col-1-2">
+		<a class="post-nav__link" href="/post/python_list_tab/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">[python] listをタブ区切り/スペース区切りで表示させる</p></a>
+	</div>
+</nav>
+
+	
+</div>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 	<div class="widget-taglist widget">
