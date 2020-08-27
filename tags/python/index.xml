@@ -183,7 +183,7 @@
     </item>
     
     <item>
-      <title>python2ではtimestamp()が使えないのでdatetimeに変換して日付を比較する</title>
+      <title>[python] python2ではtimestamp()が使えないのでdatetimeに変換して日付を比較する</title>
       <link>https://chaingng.github.io/post/python_timestamp/</link>
       <pubDate>Tue, 02 Jan 2018 10:00:00 +0900</pubDate>
       
