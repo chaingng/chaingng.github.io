@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pythonでのトライ木の実装</title>
+<title>[python] トライ木の実装</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="Pythonでのトライ木の実装" />
+<meta property="og:title" content="[python] トライ木の実装" />
 <meta property="og:description" content="import collections class TriNode(object): def __init__(self): self.children = collections.defaultdict(TriNode) self.is_word = False class TriTree: def __init__(self): self.root = TriNode() def insert(self, word): current = self.root for letter in word: current = current.children[letter] current.is_word = True def search(self, word): current = self.root for letter in word: current = current.children[letter] if current is None: return False return current.is_word def startswith(self, prefix): current = self.root for letter in prefix: current = current.children[letter] if" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/tri_code/" /><meta property="article:published_time" content="2018-03-23T10:00:00&#43;09:00"/>
@@ -58,7 +58,7 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">Pythonでのトライ木の実装</h1>
+			<h1 class="post__title">[python] トライ木の実装</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
 				<time class="post__meta-date" datetime="2018-03-23T10:00:00">March 23, 2018</time>
@@ -129,7 +129,7 @@ print(t.search('hogefuga'))
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/priority_queue/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Pythonでの優先度付きキューの実装</p></a>
+		<a class="post-nav__link" href="/post/priority_queue/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">[python] 優先度付きキューの実装</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
 		<a class="post-nav__link" href="/post/aws_s3_iam_policy/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">特定のs3バケットにのみアクセス権限を与えるiamポリシー</p></a>
@@ -337,8 +337,8 @@ print(t.search('hogefuga'))
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_dotenv/">Python dot-envの使い方</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python-class/">Python classの使い方</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_pip/">pipの使い方まとめ</a></li>
-				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/tri_code/">Pythonでのトライ木の実装</a></li>
-				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/priority_queue/">Pythonでの優先度付きキューの実装</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/tri_code/">[python] トライ木の実装</a></li>
+				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/priority_queue/">[python] 優先度付きキューの実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/python_hash_code/">Pythonでのハッシュテーブルの実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/heap_code/">Pythonでのヒープの実装</a></li>
 				<li class="widget__item"><a class="widget__link" href="https://chaingng.github.io/post/queue_code/">Pythonでのキューの実装</a></li>
