@@ -75,7 +75,7 @@
     </item>
     
     <item>
-      <title>Pythonでの優先度付きキューの実装</title>
+      <title>[python] 優先度付きキューの実装</title>
       <link>https://chaingng.github.io/post/priority_queue/</link>
       <pubDate>Fri, 16 Mar 2018 10:00:00 +0900</pubDate>
       
@@ -84,7 +84,7 @@
     </item>
     
     <item>
-      <title>Pythonでのハッシュテーブルの実装</title>
+      <title>[python] ハッシュテーブルの実装</title>
       <link>https://chaingng.github.io/post/python_hash_code/</link>
       <pubDate>Fri, 09 Mar 2018 10:00:00 +0900</pubDate>
       
@@ -93,7 +93,7 @@
     </item>
     
     <item>
-      <title>Pythonでのヒープの実装</title>
+      <title>[python] ヒープの実装</title>
       <link>https://chaingng.github.io/post/heap_code/</link>
       <pubDate>Fri, 02 Mar 2018 10:00:00 +0900</pubDate>
       
