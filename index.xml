@@ -557,7 +557,7 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>pipenvの使い方</title>
+      <title>[python] pipenvの使い方</title>
       <link>https://chaingng.github.io/post/pipenv/</link>
       <pubDate>Sun, 23 Apr 2017 10:00:00 +0900</pubDate>
       
@@ -674,7 +674,7 @@ Two distribution methods As delivery modes of Wi-Fi multicast technology, there 
     </item>
     
     <item>
-      <title>httpにおける適切なステータスコードの選択</title>
+      <title>適切なHTTPステータスコードの選択&amp;フローチャート</title>
       <link>https://chaingng.github.io/post/http_status_code/</link>
       <pubDate>Sun, 15 Jan 2017 10:00:00 +0900</pubDate>
       
