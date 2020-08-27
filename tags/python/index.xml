@@ -183,15 +183,6 @@
     </item>
     
     <item>
-      <title>[flask] Blueprintを用いたアプリケーションの分割とベストプラクティス</title>
-      <link>https://chaingng.github.io/post/flask_blueprint/</link>
-      <pubDate>Mon, 08 Jan 2018 10:00:00 +0900</pubDate>
-      
-      <guid>https://chaingng.github.io/post/flask_blueprint/</guid>
-      <description>Blueprintとは Blueprintとは、アプリケーションを分割するための機能です。 Blueprintを使うことで、関連するビューやコー</description>
-    </item>
-    
-    <item>
       <title>[python] python2ではtimestamp()が使えないのでdatetimeに変換して日付を比較する</title>
       <link>https://chaingng.github.io/post/python_timestamp/</link>
       <pubDate>Tue, 02 Jan 2018 10:00:00 +0900</pubDate>
