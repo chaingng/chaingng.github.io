@@ -17,7 +17,7 @@
       <pubDate>Wed, 26 Aug 2020 10:00:00 +0900</pubDate>
       
       <guid>https://chaingng.github.io/post/python_file/</guid>
-      <description>目次 ファイルの書き込み ファイルの読み込み ファイルのデフォルト読み込み ファイルの追加書き込み ファイルの書き込み モードに&#39;w&#39;を指定する。 with open(&#39;sample.txt&#39;, &#39;w&#39;)</description>
+      <description>目次 ファイルの書き込み ファイルの読み込み ファイルのデフォルト読み込み ファイルの追加書き込み ファイルを１行ずつ読み込み ファイルをリストとして読</description>
     </item>
     
     <item>
