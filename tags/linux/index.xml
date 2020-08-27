@@ -30,7 +30,7 @@
     </item>
     
     <item>
-      <title>linuxにおけるシグナルとkill</title>
+      <title>[linux]シグナルとkill</title>
       <link>https://chaingng.github.io/post/linux_process/</link>
       <pubDate>Fri, 05 Jan 2018 10:00:00 +0900</pubDate>
       
@@ -39,7 +39,7 @@
     </item>
     
     <item>
-      <title>linuxでダミーファイルを作成する</title>
+      <title>[linux] ダミーファイルを作成する</title>
       <link>https://chaingng.github.io/post/dd/</link>
       <pubDate>Thu, 04 Jan 2018 10:00:00 +0900</pubDate>
       
