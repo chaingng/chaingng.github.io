@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>[python] dictのマージ</title>
+      <link>https://chaingng.github.io/post/python_dict_merge/</link>
+      <pubDate>Tue, 04 Aug 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_dict_merge/</guid>
+      <description>update()でdictをマージすることができる。 d1 = {&#39;a&#39;:1 , &#39;b&#39;:2} d2 = {&#39;c&#39;:3 , &#39;d&#39;:4} d1.update(d2) print(d1) # {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 4}</description>
+    </item>
+    
+    <item>
       <title>[python] 文字列から条件付きで部分文字列を取得したい</title>
       <link>https://chaingng.github.io/post/python_grep/</link>
       <pubDate>Mon, 03 Aug 2020 10:00:00 +0900</pubDate>
