@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ハッシュテーブルの概要</title>
+<title>[python] 文字列から正規表現で数字だけ抽出</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="ハッシュテーブルの概要" />
-<meta property="og:description" content="overview 挿入、削除、参照がO(1) 衝突に対する実装が必要 linked-listを使うなど 衝突が発生すると、O(1&#43;n/m)に増えていく（m:配列の" />
+<meta property="og:title" content="[python] 文字列から正規表現で数字だけ抽出" />
+<meta property="og:description" content="目次 数字が１つだけの場合 数字が複数の場合 数字が１つだけの場合 re.search()で一致した文字列があればマッチオブジェクトを返す。 マッチオ" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/hash/" /><meta property="article:published_time" content="2018-01-08T10:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2018-01-08T10:00:00&#43;09:00"/>
+<meta property="og:url" content="https://chaingng.github.io/post/python_re_digit/" /><meta property="article:published_time" content="2020-08-02T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2020-08-02T10:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">ハッシュテーブルの概要</h1>
+			<h1 class="post__title">[python] 文字列から正規表現で数字だけ抽出</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-01-08T10:00:00">January 08, 2018</time>
+				<time class="post__meta-date" datetime="2020-08-02T10:00:00">August 02, 2020</time>
 			</p>
 		</header>
 		
@@ -69,88 +69,31 @@ if (!doNotTrack) {
 		<div class="post__content clearfix">
 			
 
-<h2 id="overview">overview</h2>
+<h2 id="目次">目次</h2>
 
 <ul>
-<li>挿入、削除、参照がO(1)</li>
-<li>衝突に対する実装が必要
-
-<ul>
-<li>linked-listを使うなど</li>
-<li>衝突が発生すると、O(1+n/m)に増えていく（m:配列の長さ）</li>
-<li>rehashingはO(n+m)</li>
-</ul></li>
-<li>keyが変更になった場合の対応に注意
-
-<ul>
-<li>昔のkeyのデータを消して、新しいkeyのデータを挿入する</li>
-</ul></li>
-<li>keyにはimmutableなものを使う<br /></li>
+<li><a href="#数字が１つだけの場合">数字が１つだけの場合</a></li>
+<li><a href="#数字が複数の場合">数字が複数の場合</a></li>
 </ul>
 
-<h2 id="bootcamp">bootcamp</h2>
+<h2 id="数字が１つだけの場合">数字が１つだけの場合</h2>
 
-<p>ある文字列のリストが与えられたとき、入れ替えると同じ文字になる集合を作る</p>
+<p><code>re.search()</code>で一致した文字列があればマッチオブジェクトを返す。</p>
 
-<h3 id="brute-force-solution">brute force solution</h3>
+<p>マッチオブジェクトから、<code>group()</code>でマッチした文字列を取得できる。</p>
 
-<ul>
-<li>文字列をソートし、各組み合わせをそれぞれ調べる</li>
-<li>O(n^2 * mlogm) m:うち最大の文字列の長さ</li>
-</ul>
-
-<h3 id="solution">solution</h3>
-
-<ul>
-<li>ソートした文字をhash tablesに入れていき、各keyごとに出力</li>
-<li>O(nmlogm)</li>
-</ul>
-
-<pre><code>def find_anagrams(dictionary):
-    sorted_strings = collections.defaultdict(list)
-    for s in dictionary:
-        sorted_strings[‘’.join(sorted(s))].append(s)
-    return [
-        group for group in sorted_string.values() if len(group) &gt;= 2
-    ]  
+<pre><code>import re
+re.search(r'[0-9]+', '4時間').group()
+## '4'
 </code></pre>
 
-<h2 id="hash-library">hash library</h2>
+<h2 id="数字が複数の場合">数字が複数の場合</h2>
 
-<ul>
-<li>collections.defaultdict()</li>
-<li>collections.Counter()</li>
-<li>items(), values()</li>
-</ul>
+<p><code>re.findall()</code>で一致した文字列をすべてlistで返す。</p>
 
-<h2 id="12-1-ある文字列が与えられたとき-並び替えることで回文が作れるか">12.1 ある文字列が与えられたとき、並び替えることで回文が作れるか？</h2>
-
-<h3 id="brute-force-solution-1">brute-force solution</h3>
-
-<p>すべての文字列並び替えパターンを作成し、それぞれが回文であるか調べる</p>
-
-<h3 id="solution-1">solution</h3>
-
-<p>point</p>
-
-<ul>
-<li>奇数の長さの文字列でなければ、回文のとき、全てのアルファベットは偶数回出現する</li>
-<li>文字列の長さが奇数のとき、１つのアルファベットを除いて全てのアルファベットは偶数回出現</li>
-<li>文字列の長さが偶数のとき、全てのアルファベットは偶数回出現</li>
-</ul>
-
-<p>conclusion</p>
-
-<ul>
-<li>各アルファベットの２で割ったあまりを足して、１以下になればよい</li>
-<li>このとき、長さが偶数であれば、必ず０になる</li>
-<li>このとき、長さが奇数であれば、必ず１になる</li>
-<li>時間計算量：O(n)</li>
-<li>空間計算量：O&copy; cはアルファベットの種類</li>
-</ul>
-
-<pre><code>def can_form_pelindrome(s):
-    return sum(v%2 for v in collections.Counter(s).values()) &lt;= 1
+<pre><code>import re
+re.findall(r'[0-9]+', '4時間 50分')
+# ['4', '50']
 </code></pre>
 
 		</div>
@@ -161,7 +104,7 @@ if (!doNotTrack) {
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
 	</ul>
 </div>
 
@@ -173,10 +116,10 @@ if (!doNotTrack) {
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/linux_mac_find/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">linuxとmacにおける検索</p></a>
+		<a class="post-nav__link" href="/post/python_dotenv/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">[python] dot-envの使い方</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/flask_blueprint/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">[flask] Blueprintを用いたアプリケーションの分割とベストプラクティス</p></a>
+		<a class="post-nav__link" href="/post/python_datetime/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">[python] 現在時刻を扱う</p></a>
 	</div>
 </nav>
 
