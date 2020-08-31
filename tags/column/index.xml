@@ -20,5 +20,14 @@
       <description>このたび「ゼロからFlaskがよくわかる本」がAmazon Prime Readingに掲載されました！ 9/24までです。 それまでAmazon Prime</description>
     </item>
     
+    <item>
+      <title>「Pythonで作るはじめてのサーバレスアプリケーション」がベストセラーを獲得しました</title>
+      <link>https://chaingng.github.io/post/book_python_serverless_bestseller/</link>
+      <pubDate>Fri, 25 Oct 2019 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/book_python_serverless_bestseller/</guid>
+      <description>Pythonで作るはじめてのサーバレスアプリケーションがこのたび「サーバ」カテゴリーでベストセラー１位を獲得いたしました！ （サーバ「レス」で</description>
+    </item>
+    
   </channel>
 </rss>
