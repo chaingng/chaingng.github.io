@@ -58,6 +58,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/flask_zero_prime/</loc>
+    <lastmod>2020-03-27T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/sftp_chroot/</loc>
     <lastmod>2018-04-26T10:00:00+09:00</lastmod>
   </url>
@@ -433,6 +438,12 @@
   
   <url>
     <loc>https://chaingng.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chaingng.github.io/tags/column/</loc>
+    <lastmod>2020-03-27T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
