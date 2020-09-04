@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>logjam脆弱性と対策</title>
+<title>[python] listからランダムに要素を選択する</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="logjam脆弱性と対策" />
-<meta property="og:description" content="Weak Diffie-Hellman and the Logjam Attackが公式ソース。こちらに書かれている、脆弱性と対策は以下の通り。" />
+<meta property="og:title" content="[python] listからランダムに要素を選択する" />
+<meta property="og:description" content="random.sample()を使うことで、リストから指定した要素分、ランダムに要素を選択することができる。 import random l = [0, 1, 2, 3, 4, 5] random.sample(l, 3) # [4, 0, 5]" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/logjam/" /><meta property="article:published_time" content="2017-03-26T10:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2017-03-26T10:00:00&#43;09:00"/>
+<meta property="og:url" content="https://chaingng.github.io/post/python_random_sample/" /><meta property="article:published_time" content="2020-08-06T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2020-08-06T10:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -58,186 +58,25 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">logjam脆弱性と対策</h1>
+			<h1 class="post__title">[python] listからランダムに要素を選択する</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-03-26T10:00:00">March 26, 2017</time>
+				<time class="post__meta-date" datetime="2020-08-06T10:00:00">August 06, 2020</time>
 			</p>
 		</header>
 		
 		
 		<div class="post__content clearfix">
-			
+			<p><code>random.sample()</code>を使うことで、リストから指定した要素分、ランダムに要素を選択することができる。</p>
 
-<p>logjamとは、DH鍵交換に存在する脆弱性を利用した攻撃。<br />
-公式ソースである<a href="https://weakdh.org/">Weak Diffie-Hellman and the Logjam Attack</a>に書かれている、脆弱性の詳細と対策についてまとめる。</p>
+<pre><code>import random
+l = [0, 1, 2, 3, 4, 5]
 
-<h2 id="目次">目次</h2>
+random.sample(l, 3)
+# [4, 0, 5]
 
-<ul>
-<li><a href="#logjamとは">logjamとは</a></li>
-<li><a href="#サーバに脆弱性があるかのテスト">サーバに脆弱性があるかのテスト</a></li>
-<li><a href="#クライアントブラウザの脆弱性テスト">クライアントブラウザの脆弱性テスト</a></li>
-<li><a href="#対策">対策</a></li>
-<li><a href="#TLSにおけるDiffie-Hellman設定のためのガイド">TLSにおけるDiffie-Hellman設定のためのガイド</a></li>
-</ul>
-
-<h2 id="logjamとは">logjamとは</h2>
-
-<p>ディフィー・ヘルマン鍵交換における脆弱性を利用した攻撃</p>
-
-<ul>
-<li><p>TLSプロトコルに対する攻撃</p>
-
-<ul>
-<li>中間者攻撃によりTLSコネクションを512ビットの暗号強度まで弱くすることができる</li>
-<li>暗号化スイートとしてDHE_EXPORTをサポートする、あらゆるサーバに影響がある</li>
-</ul></li>
-
-<li><p>ステートレベルでの脅威</p>
-
-<ul>
-<li>HTTPS, SSH, and VPNサーバはDH鍵交換に同じ素数を使っており、脆弱性ははこの素数に依存する</li>
-</ul></li>
-</ul>
-
-<p><br></p>
-
-<h2 id="サーバに脆弱性があるかのテスト">サーバに脆弱性があるかのテスト</h2>
-
-<p><a href="https://tools.keycdn.com/logjam">TLS Logjam Check</a>にてテストする。</p>
-
-<p><img width="1101" alt="2017-10-01 12 22 39" src="https://user-images.githubusercontent.com/3523368/31051448-8a0cc098-a6a3-11e7-950a-7d075160d7dc.png"></p>
-
-<p><strong>Warning</strong>と出れば要対策。</p>
-
-<p><br></p>
-
-<h2 id="クライアントブラウザの脆弱性テスト">クライアントブラウザの脆弱性テスト</h2>
-
-<p><a href="https://www.ssllabs.com/ssltest/viewMyClient.html">SSL/TLS Capabilities of Your Browser</a>にてテストする。</p>
-
-<p><img width="1215" alt="2017-10-01 12 23 41" src="https://user-images.githubusercontent.com/3523368/31051447-88749c9c-a6a3-11e7-9075-1c3418040d26.png"></p>
-
-<p>Logjam Vulnerabilityにて<strong>Your user agent is not vulnerable</strong>と出れば問題ない。</p>
-
-<p><br></p>
-
-<h2 id="対策">対策</h2>
-
-<p><br></p>
-
-<h3 id="クライアント">クライアント</h3>
-
-<p>Google Chrome (including Android Browser), Mozilla Firefox, Microsoft Internet Explorer, and Apple Safariの
-最新版はすでにlogjam対策がなされている。</p>
-
-<p>よって、ブラウザの最新版を利用すれば問題ない。</p>
-
-<p><br></p>
-
-<h3 id="システム管理者or-開発者">システム管理者or 開発者</h3>
-
-<ul>
-<li>TLSライブラリを最新化する</li>
-<li>サーバでは2048ビット以上の暗号強度にする</li>
-<li>クライアントでは1024ビット以下のDH鍵を使った場合に拒否するようにする</li>
-</ul>
-
-<p><br></p>
-
-<h3 id="サーバー">サーバー</h3>
-
-<ul>
-<li>webサーバ、メールサーバ
-
-<ul>
-<li>輸出グレードの暗号スイートを禁止する</li>
-<li>2048ビットのDiffie-Hellman groupを使用する</li>
-</ul></li>
-<li>SSH
-
-<ul>
-<li>サーバ、クライアントともに最新のOpenSSHを使用するようにする</li>
-<li>OpenSSHではElliptic-Curve Diffie-Hellman Key Exchangeを推奨する</li>
-</ul></li>
-</ul>
-
-<p>詳細については、<a href="https://weakdh.org/sysadmin.html"> Guide to Deploying Diffie-Hellman for TLS</a>　に従って対策を行う</p>
-
-<p><br></p>
-
-<h2 id="tlsにおけるdiffie-hellman設定のためのガイド">TLSにおけるDiffie-Hellman設定のためのガイド</h2>
-
-<p>対策方法まとめ</p>
-
-<ul>
-<li>輸出グレードの暗号スイートを無効化
-
-<ul>
-<li>すでに主要なブラウザは輸出暗号を利用しないようになっている</li>
-</ul></li>
-<li>Elliptic-Curve Diffie-Hellman (ECDHE)を利用</li>
-<li>より強固なDiffie Hellmanグループを利用
-
-<ul>
-<li>2048ビット以上の暗号キーを使用</li>
-<li>安全な素数を使用</li>
-</ul></li>
-</ul>
-
-<p><br></p>
-
-<h3 id="強固なdiffie-hellmanグループを利用するための設定">強固なDiffie Hellmanグループを利用するための設定</h3>
-
-<p>opensslの場合</p>
-
-<pre><code>openssl dhparam -out dhparams.pem 2048
-</code></pre>
-
-<p><br></p>
-
-<h3 id="nginxでの設定">nginxでの設定</h3>
-
-<p><code>/etc/nginx/sites-enabled/default</code>にて以下のように更新</p>
-
-<p>暗号スイートを設定</p>
-
-<pre><code>ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA';
-
-ssl_prefer_server_ciphers on;
-</code></pre>
-
-<p>DHパラメータを設定</p>
-
-<pre><code>ssl_dhparam {path to dhparams.pem};
-</code></pre>
-
-<p>最後に、設定をリロード</p>
-
-<pre><code>sudo nginx -s reload
-</code></pre>
-
-<h3 id="opensshでの設定">OpenSSHでの設定</h3>
-
-<p>OpenSSHはlogjam攻撃に対しては安全であるが
-多くのSSH実装では固定の素数を使っていたり、1024ビットの暗号キーが含まれていたりする</p>
-
-<p>もっとも簡単な対策としては、クライアントにelliptic-curve Diffie-Hellman（特に Curve 25519）を使うよう
-強制すること</p>
-
-<pre><code>KexAlgorithms curve25519-sha256@libssh.org
-</code></pre>
-
-<p>レアなケースかもしれないが、もしelliptic-curveでないDiffie-Hellmanを使いたい場合</p>
-
-<ul>
-<li>Group 1 を無効にする</li>
-<li>diffie-hellman-group1-sha1鍵交換も無効にする</li>
-</ul>
-
-<pre><code>ssh-keygen -G moduli-2048.candidates -b 2048
-ssh-keygen -T moduli-2048 -f moduli-2048.candidates
+random.sample(l, 3)
+# [2, 3, 1]
 </code></pre>
 
 		</div>
@@ -248,7 +87,7 @@ ssh-keygen -T moduli-2048 -f moduli-2048.candidates
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/security/" rel="tag">security</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
 	</ul>
 </div>
 
@@ -260,10 +99,10 @@ ssh-keygen -T moduli-2048 -f moduli-2048.candidates
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/how_to_buy_happiness/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">幸せをお金で買う方法(TED) - まとめ</p></a>
+		<a class="post-nav__link" href="/post/python_datetime/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">[python] 現在時刻を扱う</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/git_save_pw/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">gitでパスワードを保存する</p></a>
+		<a class="post-nav__link" href="/post/python_file_download/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">[python] 画像ファイルのダウンロード</p></a>
 	</div>
 </nav>
 

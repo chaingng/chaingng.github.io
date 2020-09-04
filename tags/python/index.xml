@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>[python] listからランダムに要素を選択する</title>
+      <link>https://chaingng.github.io/post/python_random_sample/</link>
+      <pubDate>Thu, 06 Aug 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_random_sample/</guid>
+      <description>random.sample()を使うことで、リストから指定した要素分、ランダムに要素を選択することができる。 import random l = [0, 1, 2, 3, 4, 5] random.sample(l, 3) # [4, 0, 5]</description>
+    </item>
+    
+    <item>
       <title>[python] 現在時刻を扱う</title>
       <link>https://chaingng.github.io/post/python_datetime/</link>
       <pubDate>Wed, 05 Aug 2020 10:00:00 +0900</pubDate>
