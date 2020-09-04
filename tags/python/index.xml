@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>[python] listをn個ずつ等分に分割</title>
+      <link>https://chaingng.github.io/post/python_list_split/</link>
+      <pubDate>Fri, 07 Aug 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_list_split/</guid>
+      <description>more-itertoolsを使うことで、listをn個ずつ等分に分割することができる。 more-itertools のインストール pip install more-itertools listをn個ずつ等分に分割 from</description>
+    </item>
+    
+    <item>
       <title>[python] listからランダムに要素を選択する</title>
       <link>https://chaingng.github.io/post/python_random_sample/</link>
       <pubDate>Thu, 06 Aug 2020 10:00:00 +0900</pubDate>
