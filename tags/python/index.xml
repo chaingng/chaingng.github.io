@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>[python] pep8規約まとめ</title>
+      <link>https://chaingng.github.io/post/python_pep8/</link>
+      <pubDate>Sat, 08 Aug 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/python_pep8/</guid>
+      <description>Pythonのコードスタイルガイドpep8のまとめ。 インデント 1レベルインデントするごとに、スペースを4つ使いましょう。 行を継続する場合は、</description>
+    </item>
+    
+    <item>
       <title>[python] listをn個ずつ等分に分割</title>
       <link>https://chaingng.github.io/post/python_list_split/</link>
       <pubDate>Fri, 07 Aug 2020 10:00:00 +0900</pubDate>

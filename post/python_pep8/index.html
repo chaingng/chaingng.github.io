@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>リモート追跡ブランチ・追跡ブランチ・リモートブランチの違い</title>
+<title>[python] pep8規約まとめ</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="リモート追跡ブランチ・追跡ブランチ・リモートブランチの違い" />
-<meta property="og:description" content="まとめ リモートブランチ リモートレポジトリに存在するブランチ (remote)/(branch)で表される リモート追跡ブランチ ローカルに存在 リモ" />
+<meta property="og:title" content="[python] pep8規約まとめ" />
+<meta property="og:description" content="Pythonのコードスタイルガイドpep8のまとめ。 インデント 1レベルインデントするごとに、スペースを4つ使いましょう。 行を継続する場合は、" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/git_branch/" /><meta property="article:published_time" content="2017-02-05T00:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2017-02-05T00:00:00&#43;09:00"/>
+<meta property="og:url" content="https://chaingng.github.io/post/python_pep8/" /><meta property="article:published_time" content="2020-08-08T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2020-08-08T10:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">リモート追跡ブランチ・追跡ブランチ・リモートブランチの違い</h1>
+			<h1 class="post__title">[python] pep8規約まとめ</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2017-02-05T00:00:00">February 05, 2017</time>
+				<time class="post__meta-date" datetime="2020-08-08T10:00:00">August 08, 2020</time>
 			</p>
 		</header>
 		
@@ -69,209 +69,292 @@ if (!doNotTrack) {
 		<div class="post__content clearfix">
 			
 
-<h1 id="まとめ">まとめ</h1>
+<p>Pythonのコードスタイルガイド<a href="https://pep8-ja.readthedocs.io/ja/latest/">pep8</a>のまとめ。</p>
 
-<p><br></p>
+<h2 id="インデント">インデント</h2>
 
-<h2 id="リモートブランチ">リモートブランチ</h2>
+<p>1レベルインデントするごとに、スペースを4つ使いましょう。</p>
+
+<p>行を継続する場合は、折り返された要素を縦に揃えるようにすべきです。</p>
+
+<p>正しい</p>
+
+<pre><code>foo = long_function_name(var_one, var_two,
+                         var_three, var_four)
+</code></pre>
+
+<p>間違い</p>
+
+<pre><code>foo = long_function_name(var_one, var_two,
+    var_three, var_four)
+</code></pre>
+
+<h2 id="突き出しインデントを使う場合は-はじめの行には引数を付けずに次の行以降をインデントし-継続行だとはっきりわかるようにしましょう">突き出しインデントを使う場合は、はじめの行には引数を付けずに次の行以降をインデントし、継続行だとはっきりわかるようにしましょう。</h2>
+
+<p>突き出しインデント は、はじめの行以外の全ての行をインデントするDTPのやり方です。Python の文脈では、括弧で囲む文の開き括弧を行の終わりに置いて、残りの行を閉じ括弧までインデントするスタイルのことを言います。</p>
+
+<pre><code># 突き出しインデントはインデントのレベルを深くする
+foo = long_function_name(
+    var_one, var_two,
+    var_three, var_four)
+</code></pre>
+
+<pre><code># 突き出しインデントはインデントのレベルを深くする
+foo = long_function_name(
+    var_one, var_two,
+    var_three, var_four)
+</code></pre>
+
+<h2 id="波括弧-ブラケット-括弧-を閉じる時は-リストの最後の要素が置かれた行の-はじめのホワイトスペースでない文字の直下-に閉じる記号を置いても構いません">波括弧/ブラケット/括弧 を閉じる時は、「リストの最後の要素が置かれた行の、はじめのホワイトスペースでない文字の直下」に閉じる記号を置いても構いません。</h2>
+
+<pre><code>my_list = [
+    1, 2, 3,
+    4, 5, 6,
+    ]
+result = some_function_that_takes_arguments(
+    'a', 'b', 'c',
+    'd', 'e', 'f',
+    )
+</code></pre>
+
+<h2 id="閉じる記号を-継続された行のはじめの文字-に合わせて置いても構いません">閉じる記号を「継続された行のはじめの文字」に合わせて置いても構いません。</h2>
+
+<pre><code>my_list = [
+    1, 2, 3,
+    4, 5, 6,
+]
+result = some_function_that_takes_arguments(
+    'a', 'b', 'c',
+    'd', 'e', 'f',
+)
+</code></pre>
+
+<h2 id="タブか-スペースか-スペースが好ましいインデントの方法です">タブか、スペースか?スペースが好ましいインデントの方法です。</h2>
 
 <ul>
-<li>リモートレポジトリに存在するブランチ</li>
-<li>(remote)/(branch)で表される</li>
+<li>Python 3 では、インデントにタブとスペースを混ぜることを禁止しています。</li>
+<li>インデントにタブとスペースを混ぜた Python 2 のコードは、スペースだけを使うように変換すべきです。</li>
+<li>Python 2 のコマンドラインインタプリタを -t オプションを付けて呼び出すと、タブとスペースをインデントに混ぜたコードに対して警告を出します。-tt を付けるとエラーになります。これらのオプションの使用を強く推奨します！</li>
 </ul>
 
-<p><br></p>
-
-<h2 id="リモート追跡ブランチ">リモート追跡ブランチ</h2>
+<h2 id="1行の長さ-すべての行の長さを-最大79文字までに制限しましょう">1行の長さ。すべての行の長さを、最大79文字までに制限しましょう。</h2>
 
 <ul>
-<li>ローカルに存在</li>
-<li>リモートブランチの状態を保持するブランチ</li>
-<li>remotes/(remote)/(branch)で表される</li>
-<li>リモートへpushすると自動的に作成される</li>
-<li>fetchすることにより、ローカルのリモート追跡ブランチの状態が最新化される</li>
+<li>エディタのウィンドウの幅を制限すると、複数のファイルを並べて開くことができ、二つのバージョンを隣り合ったカラムに表示するコードレビューツールを使うときにもうまくいきます。</li>
+<li>ほとんどのツールのデフォルトの折り返し動作は、コードの見た目の構造を壊し、理解するのを難しくします。79文字という制限は、ウィンドウの幅を80に制限し、行を折り返すときにツールが行末にマーカーを置いたとしても、エディタに折り返す動作をさせない目的で選ばれています。</li>
+<li>Python の標準ライブラリは保守的なので、1行の文字数は79文字に制限することが必須です(docstring やコメントは72文字)。</li>
 </ul>
 
-<p><br></p>
-
-<h2 id="追跡ブランチ">追跡ブランチ</h2>
+<h2 id="長い行を折り返す好ましい方法は-pythonが括弧やブラケット-波括弧の中では暗黙のうちに行を継続させることを利用することです">長い行を折り返す好ましい方法は、Pythonが括弧やブラケット、波括弧の中では暗黙のうちに行を継続させることを利用することです。</h2>
 
 <ul>
-<li>リモートブランチと直接のつながりをもつローカルブランチ</li>
-<li>git branch / git checkoutにて作成可能</li>
-<li>追跡ブランチであれば、git push時にブランチ名が省略可能になる</li>
+<li>長い行は文を括弧で囲むことで、複数行に分割できます。行を継続させるには、バックスラッシュよりもこれらを使用すべきです。</li>
 </ul>
 
-<p><br><br></p>
+<h2 id="段落の中にある式は-常に2項演算子や関係演算子の後で改行しますが-構造化された式は常に2項演算子の前で改行します">段落の中にある式は、常に2項演算子や関係演算子の後で改行しますが、構造化された式は常に2項演算子の前で改行します</h2>
 
-<h1 id="目次">目次</h1>
+<p>この数学の伝統に従うと、通常はもっと読みやすいコードになります:</p>
+
+<pre><code># 正しい:
+# 演算子とオペランドを一致させやすい
+income = (gross_wages
+          + taxable_interest
+          + (dividends - qualified_dividends)
+          - ira_deduction
+          - student_loan_interest)
+</code></pre>
+
+<pre><code># 間違い:
+# 演算子がオペランドと離れてしまっている
+income = (gross_wages +
+          taxable_interest +
+          (dividends - qualified_dividends) -
+          ira_deduction -
+          student_loan_interest)
+</code></pre>
+
+<h2 id="トップレベルの関数やクラスは-2行ずつ空けて定義するようにしてください">トップレベルの関数やクラスは、2行ずつ空けて定義するようにしてください。</h2>
+
+<h2 id="クラス内部では-1行ずつ空けてメソッドを定義してください">クラス内部では、1行ずつ空けてメソッドを定義してください。</h2>
+
+<h2 id="関数の中では-ロジックの境目を示すために-空行を控えめに使うようにします">関数の中では、ロジックの境目を示すために、空行を控えめに使うようにします。</h2>
+
+<h2 id="python-のコアディストリビューションに含まれるコードは常に-utf-8-python-2-では-ascii-を使用すべきです">Python のコアディストリビューションに含まれるコードは常に UTF-8 (Python 2 では ASCII) を使用すべきです。</h2>
 
 <ul>
-<li><a href="#リモート追跡ブランチ">リモート追跡ブランチ</a>
-
-<ul>
-<li><a href="#リモート追跡ブランチの定義">リモート追跡ブランチの定義</a></li>
-<li><a href="#リモート追跡ブランチの表示">リモート追跡ブランチの表示</a></li>
-<li><a href="#リモート追跡ブランチの更新">リモート追跡ブランチの更新</a></li>
-</ul></li>
-<li><a href="#追跡ブランチ">追跡ブランチ</a>
-
-<ul>
-<li><a href="#追跡ブランチの定義">追跡ブランチの定義</a></li>
-<li><a href="#追跡ブランチの作成">追跡ブランチの作成</a></li>
-<li><a href="#ローカルブランチを追跡ブランチにする">ローカルブランチを追跡ブランチにする</a></li>
-<li><a href="#ローカルブランチが追跡ブランチか確認">ローカルブランチが追跡ブランチか確認</a></li>
-</ul></li>
+<li>ASCII (Python 2) や UTF-8 (Python 3) を使用しているファイルにはエンコーディング宣言を入れるべきではありません。</li>
 </ul>
 
-<h1 id="リモート追跡ブランチ-1">リモート追跡ブランチ</h1>
+<h2 id="import文は-通常は行を分けるべきです">import文は、通常は行を分けるべきです:</h2>
 
-<p><br></p>
-
-<h2 id="リモート追跡ブランチの定義">リモート追跡ブランチの定義</h2>
-
-<p><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81">3.5 Git のブランチ機能 - リモートブランチ</a>より、リモートブランチの状態を持つ参照状態であることがわかる</p>
-
-<pre><code>リモート追跡ブランチは、リモートブランチの状態を保持する参照です。 
-ローカルに作成される参照ですが、自分で移動することはできません。ネットワーク越しの操作をしたときに自動的に移動します。 
-リモート追跡ブランチは、前回リモートリポジトリに接続したときにブランチがどの場所を指していたかを示すブックマークのようなものです。
+<pre><code># 正しい:
+import os
+import sys
 </code></pre>
 
-<p><br></p>
-
-<h2 id="リモート追跡ブランチの表示">リモート追跡ブランチの表示</h2>
-
-<p><code>git branch -a</code>でリモート追跡ブランチを含むブランチを表示する。</p>
-
-<pre><code>$ git branch -a
-* develop
-  remotes/origin/demo
-  remotes/origin/demo2
-  remotes/origin/demo3
-  remotes/origin/HEAD -&gt; origin/develop
+<pre><code># 悪い:
+import sys, os
 </code></pre>
 
-<p>このときremotes/(remote)/(branch)で表されるのがリモート追跡ブランチ。</p>
+<h2 id="１つのサブモジュールからインポートする場合は-行を分けなくてよい">１つのサブモジュールからインポートする場合は、行を分けなくてよい</h2>
 
-<p>最後の行はリモートブランチorigin/developがリモート追跡ブランチremotes/origin/HEADに紐付いていることを表す。</p>
-
-<p><br></p>
-
-<h2 id="リモート追跡ブランチの更新">リモート追跡ブランチの更新</h2>
-
-<p><a href="https://git-scm.com/docs/git-fetch">git-fetch</a>より、<code>git fetch</code>でリモート追跡ブランチが最新化されると書いてある。</p>
-
-<pre><code>Fetch branches and/or tags (collectively, &quot;refs&quot;) from one or more other repositories, 
-along with the objects necessary to complete their histories. 
-Remote-tracking branches are updated (see the description of &lt;refspec&gt; below for ways to control this behavior).
+<pre><code># 正しい:
+from subprocess import Popen, PIPE
 </code></pre>
 
-<p>以下の例では前回fetchしてから誰かがorigin/devを作成し、  
-新しくremotes/origin/devがリモート追跡ブランチとして追加されていることがわかる。</p>
+<h2 id="import文-は常にファイルの先頭-つまり-モジュールコメントや-docstring-の直後-そしてモジュールのグローバル変数や定数定義の前に置くようにします">import文 は常にファイルの先頭、つまり モジュールコメントや docstring の直後、そしてモジュールのグローバル変数や定数定義の前に置くようにします。</h2>
 
-<pre><code>$ git branch -a
-* demo2
-  demo3
-  develop
-  remotes/origin/DEV-475
-  remotes/origin/demo
-  remotes/origin/demo2
-  remotes/origin/demo3
+<h2 id="import文-は次の順番でグループ化すべきです">import文 は次の順番でグループ化すべきです:</h2>
 
-$ git fetch
-$ git branch -a
-* demo2
-  demo3
-  develop
-  remotes/origin/DEV-475
-  remotes/origin/demo
-  remotes/origin/demo2
-  remotes/origin/demo3
-  remotes/origin/dev
+<ol>
+<li>標準ライブラリ</li>
+<li>サードパーティに関連するもの</li>
+<li>ローカルな アプリケーション/ライブラリ に特有のもの</li>
+</ol>
+
+<p>上のグループそれぞれの間には、1行空白を置くべきです。</p>
+
+<h2 id="絶対import-を推奨します">絶対import を推奨します</h2>
+
+<p>なぜなら、絶対import の方が通常は読みやすく、importシステムが正しく設定されなかった(たとえばパッケージ内部のディレクトリが sys.path で終わっていた) 場合でも、より良い振る舞いをする(または少なくともより良いエラーメッセージを出す)からです:</p>
+
+<pre><code>import mypkg.sibling
+from mypkg import sibling
+from mypkg.sibling import example
 </code></pre>
 
-<p><br><br></p>
+<h2 id="クラスを含んだモジュールからクラスをimportする場合">クラスを含んだモジュールからクラスをimportする場合</h2>
 
-<h1 id="追跡ブランチ-1">追跡ブランチ</h1>
+<p>次のようにしても通常はOKです:</p>
 
-<p><br></p>
-
-<h2 id="追跡ブランチの定義">追跡ブランチの定義</h2>
-
-<p><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81">3.5 Git のブランチ機能 - リモートブランチ</a>より、リモートブランチと直接のつながりをもつブランチであることがわかる。</p>
-
-<pre><code>リモート追跡ブランチからローカルブランチにチェックアウトすると、
-“追跡ブランチ” というブランチが自動的に作成されます(そしてそれが追跡するブランチを`‘上流ブランチ’'といいます)。
-追跡ブランチとは、リモートブランチと直接のつながりを持つローカルブランチのことです。 
-追跡ブランチ上で git pull を実行すると、Git は自動的に取得元のサーバーとブランチを判断します。
+<pre><code>from myclass import MyClass
+from foo.bar.yourclass import YourClass
 </code></pre>
 
-<p><br></p>
+<p>このやり方で名前の衝突が起きたら、次のように明示的にimportします:</p>
 
-<h2 id="追跡ブランチの作成">追跡ブランチの作成</h2>
-
-<p><code>git branch (branch) (remote tracking branch)</code>で追跡ブランチを作成<br />
-リモート追跡ブランチを選択する。　</p>
-
-<pre><code>$ git branch demo3 origin/demo3
-Branch demo3 set up to track remote branch demo3 from origin.
+<pre><code>import myclass
+import foo.bar.yourclass
 </code></pre>
 
-<p>checkoutも同時に行いたいとき</p>
+<h2 id="ワイルドカードを使った-import-from-module-import-は避けるべきです">ワイルドカードを使った import (from <module> import *) は避けるべきです。</h2>
 
-<pre><code>$ git checkout -b demo2 origin/demo2
-Branch demo2 set up to track remote branch demo2 from origin.
-Switched to a new branch 'demo2'
+<ul>
+<li>なぜなら、どの名前が名前空間に存在しているかをわかりにくくし、コードの読み手や多くのツールを混乱させるからです。</li>
+<li>ワイルドカードを使った import を正当化できるユースケースがひとつあります。内部インターフェイスを公開APIとして再公開する場合 (たとえば、Pure Python の実装をオプションの高速化モジュールの内容で上書きし、どの定義が上書きされるかがあらかじめわからない場合) です。</li>
+</ul>
+
+<h2 id="モジュールレベルの-二重アンダースコア変数-変数名の前後にアンダースコアが2つ付いている変数-は-モジュールに関する-docstring-の後-そして-from-future-以外の-あらゆるimport文の前に置くべきです">モジュールレベルの &ldquo;二重アンダースコア変数&rdquo; (変数名の前後にアンダースコアが2つ付いている変数) は、モジュールに関する docstring の後、そして from <strong>future</strong> 以外の あらゆるimport文の前に置くべきです。</h2>
+
+<ul>
+<li>Python はfuture importを、docstring 以外のあらゆるコードの前に置くように強制します:</li>
+</ul>
+
+<pre><code>&quot;&quot;&quot;This is the example module.
+
+This module does stuff.
+&quot;&quot;&quot;
+
+from __future__ import barry_as_FLUFL
+
+__all__ = ['a', 'b', 'c']
+__version__ = '0.1'
+__author__ = 'Cardinal Biggles'
+
+import os
+import sys
+
 </code></pre>
 
-<p>以下でも同じ</p>
+<h2 id="三重引用符-で文字列を囲むときは-pep-257-での-docstring-に関するルールと一貫させるため-常に二重引用符-を使うようにします">三重引用符 で文字列を囲むときは、PEP 257 での docstring に関するルールと一貫させるため、常に二重引用符 &ldquo;&rdquo;&rdquo; を使うようにします。</h2>
 
-<pre><code>$ git checkout --track origin/demo2
-Branch demo2 set up to track remote branch demo2 from origin.
-Switched to a new branch 'demo2'
+<h2 id="括弧やブラケット-波括弧-のはじめの直後と-終わりの直前に-余計な空白文字を使うのはやめましょう">括弧やブラケット、波括弧 のはじめの直後と、終わりの直前に、余計な空白文字を使うのはやめましょう</h2>
+
+<pre><code># 正しい:
+spam(ham[1], {eggs: 2})
 </code></pre>
 
-<p><br></p>
-
-<h2 id="ローカルブランチを追跡ブランチにする">ローカルブランチを追跡ブランチにする</h2>
-
-<p>git branch -u で可能</p>
-
-<pre><code>$ git branch -u origin/serverfix
-Branch serverfix set up to track remote branch serverfix from origin.
+<pre><code># 間違い:
+spam( ham[ 1 ], { eggs: 2 } )
 </code></pre>
 
-<p><br></p>
+<h2 id="末尾のカンマと-その後に続く閉じカッコの間に-余計な空白文字を使うのはやめましょう">末尾のカンマと、その後に続く閉じカッコの間に、余計な空白文字を使うのはやめましょう</h2>
 
-<h2 id="ローカルブランチが追跡ブランチか確認">ローカルブランチが追跡ブランチか確認</h2>
-
-<p>git branch -vvを使う</p>
-
-<pre><code>$ git branch -vv
-  iss53 7e424c3 [origin/iss53: ahead 2] forgot the brackets
-  master 1ae2a45 [origin/master] deploying index fix
-* serverfix f8674d9 [teamone/server-fix-good: ahead 3, behind 1] this should do it
-  testing 5ea463a trying something new
+<pre><code># 正しい:
+foo = (0,)
 </code></pre>
 
-<p>このときiss53はorigin/iss53、master、serverfixは追跡ブランチで、testingは追跡ブランチではないことがわかる。</p>
-
-<p><br></p>
-
-<h2 id="追跡ブランチでは-git-push-でブランチ名が省略できる">追跡ブランチでは<code>git push</code>でブランチ名が省略できる</h2>
-
-<p>追跡ブランチは、<code>git push</code>にてブランチ名が省略可能。<br />
-省略時は追跡しているリモートブランチにpushする。</p>
-
-<pre><code>$ git push origin
-Counting objects: 3, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 306 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To github.com:xxx/xxx.git
-  0d66e69..ee7b38f  demo2 -&gt; demo2
+<pre><code># 間違い:
+bar = (0, )
 </code></pre>
+
+<h2 id="カンマやセミコロン-コロンの直前に-余計な空白文字を使うのはやめましょう">カンマやセミコロン、コロンの直前に、余計な空白文字を使うのはやめましょう</h2>
+
+<pre><code># 正しい:
+if x == 4: print x, y; x, y = y, x
+</code></pre>
+
+<pre><code># 間違い:
+if x == 4 : print x , y ; x , y = y , x
+</code></pre>
+
+<h2 id="スライスではコロンは二項演算子のように振る舞います-よって-コロンは優先度が最も低い演算子として扱われるので-両側に同じ数-訳注-無しでも可だと思われる-のスペースを置くべきです">スライスではコロンは二項演算子のように振る舞います。よって、(コロンは優先度が最も低い演算子として扱われるので)両側に同じ数(訳注: 無しでも可だと思われる)のスペースを置くべきです。</h2>
+
+<pre><code># 正しい:
+ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
+ham[lower:upper], ham[lower:upper:], ham[lower::step]
+ham[lower+offset : upper+offset]
+ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
+ham[lower + offset : upper + offset]
+</code></pre>
+
+<pre><code># 間違い:
+ham[lower + offset:upper + offset]
+ham[1: 9], ham[1 :9], ham[1:9 :3]
+ham[lower : : upper]
+ham[ : upper]
+</code></pre>
+
+<h2 id="関数呼び出しの引数リストをはじめる開き括弧の直前に-余計な空白文字を使うのはやめましょう">関数呼び出しの引数リストをはじめる開き括弧の直前に、余計な空白文字を使うのはやめましょう</h2>
+
+<pre><code># 正しい:
+spam(1)
+</code></pre>
+
+<pre><code># 間違い:
+spam (1)
+</code></pre>
+
+<h2 id="インデックスやスライスの開き括弧の直前に-余計な空白文字を使うのはやめましょう">インデックスやスライスの開き括弧の直前に、余計な空白文字を使うのはやめましょう</h2>
+
+<pre><code># 正しい:
+dct['key'] = lst[index]
+</code></pre>
+
+<pre><code># 間違い:
+dct ['key'] = lst [index]
+</code></pre>
+
+<h2 id="代入-や他の-演算子を揃えるために-演算子の周囲に1つ以上のスペースを入れることはやめましょう">代入(や他の)演算子を揃えるために、演算子の周囲に1つ以上のスペースを入れることはやめましょう</h2>
+
+<pre><code># 正しい:
+x = 1
+y = 2
+long_variable = 3
+</code></pre>
+
+<pre><code># 間違い:
+x             = 1
+y             = 2
+long_variable = 3
+</code></pre>
+
+<h2 id="行末に余計な空白文字を残さないようにしましょう">行末に余計な空白文字を残さないようにしましょう</h2>
+
+<ul>
+<li>通常それは目に見えないため、混乱のもとになるかもしれません。たとえば、バックスラッシュの後にスペースをひとつ入れて改行してしまうと、行を継続すると見なされません。</li>
+<li>エディタによっては行末の余計な空白文字を保存しないものもありますし、多くのプロジェクト (CPythonもそうです) ではコミット前のフックでそれを拒否するように設定しています。</li>
+</ul>
 
 		</div>
 					
@@ -281,7 +364,7 @@ To github.com:xxx/xxx.git
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/git/" rel="tag">git</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/python/" rel="tag">python</a></li>
 	</ul>
 </div>
 
@@ -304,10 +387,10 @@ To github.com:xxx/xxx.git
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/shebang_init/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">shebangから理解するUNIXの仕組み</p></a>
+		<a class="post-nav__link" href="/post/python_list_split/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">[python] listをn個ずつ等分に分割</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/vagrant_crowi/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">crowi用のvagrantを公開しました</p></a>
+		<a class="post-nav__link" href="/post/python_file_download/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">[python] 画像ファイルのダウンロード</p></a>
 	</div>
 </nav>
 
