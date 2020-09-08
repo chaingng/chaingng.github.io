@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.53" />
 <meta property="og:title" content="[python] pep8規約まとめ" />
-<meta property="og:description" content="Pythonのコードスタイルガイドpep8のまとめ。 インデント 1レベルインデントするごとに、スペースを4つ使いましょう。 行を継続する場合は、" />
+<meta property="og:description" content="Pythonのコードスタイルガイドpep8のまとめ。 コードのレイアウト インデント 1レベルインデントするごとに、スペースを4つ使いましょう。 行" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chaingng.github.io/post/python_pep8/" /><meta property="article:published_time" content="2020-08-08T10:00:00&#43;09:00"/>
 <meta property="article:modified_time" content="2020-08-08T10:00:00&#43;09:00"/>
@@ -70,6 +70,8 @@ if (!doNotTrack) {
 			
 
 <p>Pythonのコードスタイルガイド<a href="https://pep8-ja.readthedocs.io/ja/latest/">pep8</a>のまとめ。</p>
+
+<h2 id="コードのレイアウト">コードのレイアウト</h2>
 
 <h3 id="インデント">インデント</h3>
 
@@ -266,7 +268,11 @@ import sys
 
 </code></pre>
 
+<h2 id="文字列に含まれる引用符">文字列に含まれる引用符</h2>
+
 <h3 id="三重引用符-で文字列を囲むときは-pep-257-での-docstring-に関するルールと一貫させるため-常に二重引用符-を使うようにします">三重引用符 で文字列を囲むときは、PEP 257 での docstring に関するルールと一貫させるため、常に二重引用符 &ldquo;&rdquo;&rdquo; を使うようにします。</h3>
+
+<h2 id="式や文中の空白文字">式や文中の空白文字</h2>
 
 <h3 id="括弧やブラケット-波括弧-のはじめの直後と-終わりの直前に-余計な空白文字を使うのはやめましょう">括弧やブラケット、波括弧 のはじめの直後と、終わりの直前に、余計な空白文字を使うのはやめましょう</h3>
 
@@ -464,6 +470,8 @@ do_one(); do_two(); do_three(long, argument,
 if foo == 'blah': one(); two(); three()
 </code></pre>
 
+<h2 id="末尾にカンマを付けるべき場合">末尾にカンマを付けるべき場合</h2>
+
 <h3 id="要素数がひとつのタプルを作るときは-技術的には冗長ですが-括弧で囲むことを推奨します">要素数がひとつのタプルを作るときは、(技術的には冗長ですが) 括弧で囲むことを推奨します</h3>
 
 <pre><code># 正しい:
@@ -496,6 +504,8 @@ initialize(FILES,
 FILES = ['setup.cfg', 'tox.ini',]
 initialize(FILES, error=True,)
 </code></pre>
+
+<h2 id="コメント">コメント</h2>
 
 <h3 id="コードと矛盾するコメントは-コメントしないことよりタチが悪いです-コードを変更した時は-コメントを最新にすることをいつも優先させてください">コードと矛盾するコメントは、コメントしないことよりタチが悪いです。コードを変更した時は、コメントを最新にすることをいつも優先させてください</h3>
 
@@ -533,6 +543,8 @@ Optional plotz says to frobnicate the bizbaz first.
 </code></pre>
 
 <h3 id="docstring-が1行で終わる場合は-同じ行を-で閉じるようにしてください">docstring が1行で終わる場合は、同じ行を &ldquo;&rdquo;&rdquo; で閉じるようにしてください</h3>
+
+<h2 id="命名規約">命名規約</h2>
 
 <h3 id="公開されている-api-の一部としてユーザーに見える名前は-実装よりも使い方を反映した名前にすべきです">公開されている API の一部としてユーザーに見える名前は、実装よりも使い方を反映した名前にすべきです。</h3>
 
