@@ -6,10 +6,19 @@
     <description>Recent content in Flask on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 08 Jan 2018 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2020 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[flask] アプリケーションファクトリを作成してFlaskを起動</title>
+      <link>https://chaingng.github.io/post/flask_app_factory/</link>
+      <pubDate>Sat, 08 Aug 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/flask_app_factory/</guid>
+      <description>Flask本体の起動について、これまでは直接グローバルでFlaskインスタンスを作成する方法が行われていたところ、問題を引き起こす可能性があ</description>
+    </item>
     
     <item>
       <title>[flask] Blueprintを用いたアプリケーションの分割とベストプラクティス</title>

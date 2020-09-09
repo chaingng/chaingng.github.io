@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>https://chaingng.github.io/post/flask_app_factory/</loc>
+    <lastmod>2020-08-08T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chaingng.github.io/post/python_pep8/</loc>
     <lastmod>2020-08-08T10:00:00+09:00</lastmod>
   </url>
@@ -492,7 +497,7 @@
   
   <url>
     <loc>https://chaingng.github.io/tags/flask/</loc>
-    <lastmod>2018-01-08T10:00:00+09:00</lastmod>
+    <lastmod>2020-08-08T10:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
