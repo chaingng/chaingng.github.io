@@ -6,10 +6,19 @@
     <description>Recent content in Column on Hack Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 27 Mar 2020 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 10:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chaingng.github.io/tags/column/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mackerelアンバサダーに就任しました　＆　なぜMackerelを使うのか</title>
+      <link>https://chaingng.github.io/post/mackerel_ambassador/</link>
+      <pubDate>Thu, 10 Sep 2020 10:00:00 +0900</pubDate>
+      
+      <guid>https://chaingng.github.io/post/mackerel_ambassador/</guid>
+      <description>このたび、Mackerelアンバサダープログラムにご招待いただき、アンバサダーの一員として加えていただきました。 「Mackerel の有償機能</description>
+    </item>
     
     <item>
       <title>「ゼロからFlaskがよくわかる本」がPrime Readingに選出されました</title>

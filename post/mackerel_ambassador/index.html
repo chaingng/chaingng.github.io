@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ソートの基礎</title>
+<title>Mackerelアンバサダーに就任しました　＆　なぜMackerelを使うのか</title>
 
 <meta name="generator" content="Hugo 0.53" />
-<meta property="og:title" content="ソートの基礎" />
-<meta property="og:description" content="overview ソートは検索を早くするプリプロセスとして使われる 似ているアイテムを探すのにも使われる ヒープソート in-placeだが安定でない spaceO(1) マージソー" />
+<meta property="og:title" content="Mackerelアンバサダーに就任しました　＆　なぜMackerelを使うのか" />
+<meta property="og:description" content="このたび、Mackerelアンバサダープログラムにご招待いただき、アンバサダーの一員として加えていただきました。 「Mackerel の有償機能" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chaingng.github.io/post/sorting/" /><meta property="article:published_time" content="2018-01-15T10:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2018-01-15T10:00:00&#43;09:00"/>
+<meta property="og:url" content="https://chaingng.github.io/post/mackerel_ambassador/" /><meta property="article:published_time" content="2020-09-10T10:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2020-09-10T10:00:00&#43;09:00"/>
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">ソートの基礎</h1>
+			<h1 class="post__title">Mackerelアンバサダーに就任しました　＆　なぜMackerelを使うのか</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-01-15T10:00:00">January 15, 2018</time>
+				<time class="post__meta-date" datetime="2020-09-10T10:00:00">September 10, 2020</time>
 			</p>
 		</header>
 		
@@ -69,101 +69,62 @@ if (!doNotTrack) {
 		<div class="post__content clearfix">
 			
 
-<h2 id="overview">overview</h2>
+<p>このたび、<a href="https://mackerel.io/ja/blog/entry/ambassador/about">Mackerelアンバサダープログラム</a>にご招待いただき、アンバサダーの一員として加えていただきました。</p>
 
-<ul>
-<li>ソートは検索を早くするプリプロセスとして使われる</li>
-<li>似ているアイテムを探すのにも使われる</li>
-<li>ヒープソート
+<p>「Mackerel の有償機能を含むすべての機能が無料で利用可能」ということで、
+機能を活用させていただくとともに、エバンジェリスト活動に寄与させていただければと思います。</p>
 
-<ul>
-<li>in-placeだが安定でない</li>
-<li>spaceO(1)</li>
-</ul></li>
-<li>マージソート
+<h2 id="なぜmackerelを使うのか">なぜMackerelを使うのか？</h2>
 
-<ul>
-<li>安定だがin-placeでない</li>
-<li>space O(n)</li>
-<li>avarage: O(n logn)</li>
-<li>worst :O(n logn)</li>
-<li>best: O(n logn)</li>
-</ul></li>
-<li>クイックソート
+<p>そもそもMackerelを使うようになったのは、</p>
 
-<ul>
-<li>最悪ケースでO(n^2)、安定でない</li>
-<li>space O(n)</li>
-<li>avarage: O(n logn)</li>
-<li>worst :O(n^2)</li>
-<li>best: O(n logn)</li>
-</ul></li>
-<li>max/min-heap
+<p>数万ユーザー規模にも関わらずブラックボックスとなっているアプリケーションの内製化をお願いしたい、</p>
 
-<ul>
-<li>O(logn)で挿入・削除可能</li>
-<li>O(1)でmin/maxの要素を参照できる
-<br /></li>
-</ul></li>
-</ul>
+<p>と依頼をいただいたのがきっかけでした。</p>
 
-<h2 id="bootcamp">bootcamp</h2>
+<p>それからすぐにサービスがダウン。</p>
 
-<p>生徒名とGPAを持つ生徒を並び替える</p>
+<p>アプリケーションサーバとElasticSearch用サーバがあり、かろうじてSSHキーまでがある、、という状態だったのですが、ElasticSearchのディスクがフルになっていたのが原因と判明。</p>
 
-<pre><code>class Student(Object):
-  def __init__(self, name, grade_point):
-    self.name = name
-    self.grade_point = grade_point
-    
-  def __lt__(self, other):
-    return self.name &lt; other.name
-    
-students = [
-  Student('A', 4.0),
-  Student('B', 3.0),
-  Student('C', 3.2)
-]
+<p>ディスク容量を増強することでサービスは無事再開できたのですが、どうやら異常な速度でディスク容量が増え続けている様子。</p>
 
-sorted(students)
-students.sort(key=lambda student: student.grade_point)
-</code></pre>
+<p>リファクタリングを行うまでは、またディスク容量の増加に備える必要がありました。</p>
 
-<h2 id="know-libraries">know libraries</h2>
+<p>そこでまずはMackerelを入れることで障害を未然に防ぎつつリファクタを行うことができて、</p>
 
-<ul>
-<li>sort()
+<p>内製化も行うことができ、いまや数倍となる事業に成長することができました。</p>
 
-<ul>
-<li>in-place</li>
-</ul></li>
-<li>sorted()
+<p>とにかくすぐにサービス監視を行う必要がある、というときにMackerelは最適でして、</p>
 
-<ul>
-<li>return new list</li>
-</ul></li>
-</ul>
+<p>このようにOS種類を選んで、</p>
 
-<h2 id="13-1-2つのソートされた配列の共通する要素のみからなる配列を返す">13.1 2つのソートされた配列の共通する要素のみからなる配列を返す</h2>
+<p><img src="https://user-images.githubusercontent.com/3523368/59572844-c8601d80-90ea-11e9-997d-c59436a65159.png" alt="" /></p>
 
-<h3 id="brute-force-solution">brute force solution</h3>
+<p>表示されたコマンドをサーバで１行実行するだけで監視をはじめることができます。</p>
 
-<ul>
-<li>全ての組み合わせを調べる</li>
-<li>O(mn)</li>
-</ul>
+<p><img src="https://user-images.githubusercontent.com/3523368/59572871-ff363380-90ea-11e9-90a9-c659ecf92d81.png" alt="" /></p>
 
-<h3 id="solution-2">solution 2</h3>
+<p>そして、リソースの閾値も簡単に設定することができます。</p>
 
-<p>-　binary searchで片方の配列を調べる
-- O(mlogn) m:配列の長さ</p>
+<p><img src="https://user-images.githubusercontent.com/3523368/59344874-d9efa100-8d49-11e9-92e3-e4aa75dd82d9.png" alt="" /></p>
 
-<h3 id="best-solution">best solution</h3>
+<p>他にもオープンソース含めいろいろな監視サービスの良さはありますが、</p>
 
-<ul>
-<li>各配列を同時に左から順にみていき、比較していく</li>
-<li>O(m+n)</li>
-</ul>
+<p>すぐに監視をはじめなければいけない！</p>
+
+<p>というときに、まさに適したサービスと、実体験ベースで感じております。</p>
+
+<p>そのうえで、サーバからミドルウェア、クラウドサービスまで、運用しているサービスが構成されているすべてのレイヤーについて網羅的に監視が行えるので、サービスがスケールした今でもお世話になっております。</p>
+
+<p>「監視」というのは聞く人によってはハードルは高く感じることもあるかもしれませんが、</p>
+
+<p>誰でも簡単にすぐに行うことができる、ということを知っていただきたいと思い</p>
+
+<p><a href="(https://amzn.to/2DdI1DM)">Mackerelで作るはじめての監視サービス</a>という本も執筆させていただきました。</p>
+
+<p>特に、サービス監視に何も手につけられないと困っている方がいなくなるよう、</p>
+
+<p>より多くの方に広まっていただければ嬉しいと思っております。</p>
 
 		</div>
 					
@@ -173,7 +134,7 @@ students.sort(key=lambda student: student.grade_point)
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/algorithm/" rel="tag">algorithm</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/column/" rel="tag">column</a></li>
 	</ul>
 </div>
 
@@ -196,10 +157,7 @@ students.sort(key=lambda student: student.grade_point)
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/aws_credential_file/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">AWSの認証情報はshared credential fileで管理する</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/python_type_bits/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">[python] データ型ごとのメモリサイズ</p></a>
+		<a class="post-nav__link" href="/post/python_image/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">[python] jpg画像をpng画像に変換</p></a>
 	</div>
 </nav>
 
